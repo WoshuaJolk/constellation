@@ -3,14 +3,13 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { COVER, GRID, NB, NL, SURVEYS, rho, rmax, summed, toEcliptic } from "@/lib/sky";
+import { COVER, GRID, NB, NL, SURVEYS, rho, rmax, summed } from "@/lib/sky";
 
 const GREEN = 0x1baf7a;
 const BLUE = 0x2a78d6;
 const SIZE = 25000; // km, a Planet Nine of a few Earth masses
 const RINGS = [10, 30, 100, 1000, 10000, 100000];
 const RING_NAMES: Record<number, string> = { 30: "Neptune", 100000: "100k AU" };
-const P9 = { ...toEcliptic(50, 20), r: 500 };
 
 const DEG = Math.PI / 180;
 const pos = (lon: number, lat: number, r: number, out = new THREE.Vector3()) =>
@@ -84,9 +83,6 @@ export function Volume({ active }: { active: string }) {
       scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), ringMat));
     }
     scene.add(new THREE.Mesh(new THREE.SphereGeometry(0.012, 16, 16), new THREE.MeshBasicMaterial({ color: 0x0b0b0b })));
-    const dot = new THREE.Mesh(new THREE.SphereGeometry(0.014, 16, 16), new THREE.MeshBasicMaterial({ color: 0x0b0b0b }));
-    dot.position.copy(pos(P9.lon, P9.lat, rho(P9.r)));
-    scene.add(dot);
 
     const union = shell(GREEN, 0.28);
     const one = shell(BLUE, 0.4);
@@ -96,7 +92,7 @@ export function Volume({ active }: { active: string }) {
     state.current = { union, one };
 
     const tags = Array.from(labels.current?.children ?? []) as HTMLElement[];
-    const anchors = [dot.position.clone(), ...RINGS.map((r) => pos(300, 0, rho(r)))];
+    const anchors = RINGS.map((r) => pos(300, 0, rho(r)));
     const v = new THREE.Vector3();
     const resize = () => {
       const w = el.clientWidth;
@@ -146,9 +142,6 @@ export function Volume({ active }: { active: string }) {
   return (
     <div ref={box} className="relative w-full cursor-grab overflow-hidden">
       <div ref={labels} className="pointer-events-none absolute inset-0">
-        <span className="absolute left-0 top-0 whitespace-nowrap pl-2 text-[10px] leading-none text-[var(--text-secondary)]" style={{ marginTop: -5 }}>
-          Planet Nine, one proposed direction
-        </span>
         {RINGS.map((r) => (
           <span key={r} className="absolute left-0 top-0 whitespace-nowrap font-mono text-[9.5px] leading-none text-[var(--text-muted)]" style={{ marginTop: -12, marginLeft: -4 }}>
             {RING_NAMES[r] ?? `${fmt(r)}`}
