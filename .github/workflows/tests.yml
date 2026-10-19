@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - run: python -m pip install '.[test]'
+      - run: python -m pip install '.[test,research]'
       - run: python -m pytest -q
       - run: magictools demo demo-output
       - run: magictools orbit_demo orbit-demo-output
@@ -25,3 +25,4 @@ jobs:
       - run: magictools inject_all examples/selection.json -o simulated-selection-output.json
       - run: magictools match_all examples/matching.json -o assignment-output.json
       - run: magictools verify_match assignment-output.json -o certificate-check-output.json
+      - run: OPENBLAS_NUM_THREADS=1 python -m research.kepler_transform.experiments kepler-research-output.json

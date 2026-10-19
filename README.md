@@ -2,6 +2,12 @@
 
 Working implementations of twelve ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Version 0.6 adds **`fold_kepler`: shared orbit sums with bounded screening and precise candidate refinement**. A synthetic 64,000-orbit benchmark gives about 3.6× faster evaluation after compilation, with identical detections/top candidates to direct evaluation. Compilation makes a single-use run slower; the benefit is repeated searches with a reusable bank. See the [derivation, benchmark and limits](docs/fold-kepler.md). Earlier versions provide real ZTF inputs, measured PSFs, vetting, injections, null inference, finite survey selection, and verifiable finite assignments. Each has an explicit scope; all-survey completeness and validated discovery probabilities remain future work.
 
+The subsequent [full-objective research attempts](research/kepler_transform/README.md)
+test global compression, hierarchical phase factorization, and rotational
+harmonics with a directional light-time extension. **The full objective was
+not achieved.** Derivations, failures and reproducible experiments are preserved
+separately from the production tools; no breakthrough is claimed.
+
 | Tool | Available now | Still needed for the catalogue's full ambition |
 | --- | --- | --- |
 | `fold_kepler` | FFT likelihood maps, shared partial orbit sums, Bernstein score bounds, exact-position refinement and direct-baseline validation. Elliptic Kepler/light-time generator or supplied pixel trajectories. | A general continuous Kepler transform, profitable one-shot compilation, physical PSF/trailing/nuisance extensions and real-survey validation. No new mathematical breakthrough claimed. |

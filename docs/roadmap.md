@@ -30,6 +30,11 @@ Assessment of the 23 catalogue proposals after implementing twelve bounded tools
 
 ## Recommended next increment
 
+The subsequent [full-objective Kepler research](../research/kepler_transform/README.md)
+tested three routes plus a directional light-time repair. Conditional harmonic
+identities work, but construction cost, physical bandwidth and continuous radial
+coverage remain unresolved. The full transform is **not** marked complete.
+
 Choose one public, calibrated exposure set and a known moving source with reliable external ephemerides. Ingest variance/mask products, establish photometric units and PSF quality, and run position-held-fixed recovery. Inject sources over a grid of brightness and rate, repeat the real candidate-selection procedure on controls, then feed those measured efficiencies into `learn_null`. That produces a defensible survey-specific result before expanding to additional archives.
 
 ## Current execution order
