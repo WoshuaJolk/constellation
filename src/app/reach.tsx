@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { SURVEYS } from "@/lib/sky";
 
 // Smallest body with at least one detection, by distance from the Sun, for a wide-field survey.
 // Reflected light at opposition: m = H + 5 log10(r (r - 1)), D = 1329 / sqrt(p) * 10^(-H/5) km, albedo p = 0.1.
@@ -41,18 +42,6 @@ const BODIES: { name: string; r: number; d: number }[] = [
   { name: "Earth-mass body in the Oort cloud", r: 30000, d: 12700 },
 ];
 
-// Single-exposure 5 sigma depth of each wide-field survey.
-const SURVEYS: { name: string; m: number }[] = [
-  { name: "TESS", m: 17 },
-  { name: "ZTF", m: 20.5 },
-  { name: "Catalina", m: 21.5 },
-  { name: "Pan-STARRS", m: 22 },
-  { name: "SDSS", m: 22.5 },
-  { name: "DECam", m: 23.5 },
-  { name: "OmegaCAM", m: 24 },
-  { name: "MegaCam", m: 24.5 },
-  { name: "HSC", m: 26 },
-];
 
 const XT = [2, 10, 100, 1000, 10000, 100000];
 const YT = [1, 10, 100, 1000, 10000, 100000, 1000000];

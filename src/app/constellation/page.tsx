@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Reach } from "../reach";
+import { Volume } from "../volume";
 import { DATASETS, PRIVATE, RECORDS, PIXEL_STEPS, RECORD_STEPS, type Step } from "@/lib/constellation";
 
 export const metadata: Metadata = {
@@ -36,7 +37,7 @@ function Count({ steps, names }: { steps: Step[]; names: string[] }) {
   );
 }
 
-function Volume(tb: number) {
+function vol(tb: number) {
   return tb >= 1000 ? `${(tb / 1000).toFixed(1)} PB` : `${Math.round(tb)} TB`;
 }
 
@@ -54,12 +55,13 @@ export default function Page() {
         </p>
         <p>Progress is tracked per dataset: listed, access tested, footprint indexed, 2 sigma pass written.</p>
       </div>
+      <Volume />
       <Reach />
 
       <section className="mt-10">
         <h2 className="text-sm font-semibold">1. Every public image</h2>
         <p className="mt-1 max-w-[640px] text-sm leading-6 text-[var(--text-secondary)]">
-          {DATASETS.length} datasets, about {Volume(totalTb)} of pixels. Depth is one exposure at 5 sigma; the pass
+          {DATASETS.length} datasets, about {vol(totalTb)} of pixels. Depth is one exposure at 5 sigma; the pass
           keeps everything above 2.
         </p>
         <div className="mt-2">
