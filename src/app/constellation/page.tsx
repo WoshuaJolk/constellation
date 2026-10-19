@@ -19,7 +19,17 @@ function Status({ step }: { step: Step }) {
   );
 }
 
-function Table({ head, rows }: { head: string[]; rows: { key: string; step: Step; cells: string[] }[] }) {
+function Arrow({ href }: { href: string }) {
+  return (
+    <a href={href} target="_blank" rel="noreferrer" className="inline-block text-[var(--text-muted)] hover:text-[var(--foreground)]" aria-label="open archive">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M7 17 17 7M9 7h8v8" />
+      </svg>
+    </a>
+  );
+}
+
+function Table({ head, rows }: { head: string[]; rows: { key: string; step: Step; cells: string[]; url: string }[] }) {
   return (
     <div className="overflow-x-auto">
       <table className="w-full min-w-[640px] border-collapse">
@@ -31,6 +41,7 @@ function Table({ head, rows }: { head: string[]; rows: { key: string; step: Step
                 {h}
               </th>
             ))}
+            <th className={`${TH} w-10`} />
           </tr>
         </thead>
         <tbody>
@@ -40,10 +51,13 @@ function Table({ head, rows }: { head: string[]; rows: { key: string; step: Step
                 <Status step={r.step} />
               </td>
               {r.cells.map((c, i) => (
-                <td key={i} className={`${TD} ${i === 0 ? "font-medium text-[var(--foreground)]" : ""} ${i === head.length - 2 ? "whitespace-nowrap font-mono text-[11.5px] tabular-nums" : ""}`}>
+                <td key={i} className={`${TD} ${i === 0 ? "font-medium text-[var(--foreground)]" : ""} ${i === head.length - 1 ? "whitespace-nowrap text-[11.5px] tabular-nums" : ""}`}>
                   {c}
                 </td>
               ))}
+              <td className={`${TD} text-center`}>
+                <Arrow href={r.url} />
+              </td>
             </tr>
           ))}
         </tbody>
@@ -61,15 +75,15 @@ export default function Page() {
       <section className="mt-12">
         <h2 className="mb-3 text-sm font-semibold">Part 1: Compile every public image.</h2>
         <Table
-          head={["Dataset", "Depth", "Volume", "Archive"]}
-          rows={DATASETS.map((d) => ({ key: d.name, step: d.step, cells: [d.name, d.depth, d.volume, d.where] }))}
+          head={["Dataset", "Depth", "Volume"]}
+          rows={DATASETS.map((d) => ({ key: d.name, step: d.step, cells: [d.name, d.depth, d.volume], url: d.url }))}
         />
       </section>
       <section className="mt-12">
         <h2 className="mb-3 text-sm font-semibold">Part 2: Compile every known object.</h2>
         <Table
-          head={["Source", "Holds", "Size", "Where"]}
-          rows={RECORDS.map((r) => ({ key: r.name, step: r.step, cells: [r.name, r.holds, r.size, r.where] }))}
+          head={["Source", "Holds", "Size"]}
+          rows={RECORDS.map((r) => ({ key: r.name, step: r.step, cells: [r.name, r.holds, r.size], url: r.url }))}
         />
       </section>
     </main>
