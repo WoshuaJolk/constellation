@@ -37,7 +37,7 @@ function Arrow({ href }: { href: string }) {
 function Table({ head, rows }: { head: string[]; rows: { key: string; step: Step; cells: string[]; url: string }[] }) {
   return (
     <div className="overflow-x-auto">
-      <table className="w-full min-w-[640px] border-collapse">
+      <table className="w-full border-collapse">
         <thead>
           <tr className="border-b border-[var(--border)]">
             <th className={`${TH} w-10`} />
@@ -46,7 +46,7 @@ function Table({ head, rows }: { head: string[]; rows: { key: string; step: Step
                 {h}
               </th>
             ))}
-            <th className={`${TH} w-10`} />
+            <th className={`${TH} hidden w-10 md:table-cell`} />
           </tr>
         </thead>
         <tbody>
@@ -57,10 +57,16 @@ function Table({ head, rows }: { head: string[]; rows: { key: string; step: Step
               </td>
               {r.cells.map((c, i) => (
                 <td key={i} className={`${TD} ${i === 0 ? "font-medium text-[var(--foreground)]" : ""} ${i === head.length - 1 ? "whitespace-nowrap text-[11.5px] tabular-nums" : ""}`}>
-                  {c}
+                  {i === 0 ? (
+                    <a href={r.url} target="_blank" rel="noreferrer" className="hover:underline">
+                      {c}
+                    </a>
+                  ) : (
+                    c
+                  )}
                 </td>
               ))}
-              <td className={`${TD} text-center`}>
+              <td className={`${TD} hidden text-center md:table-cell`}>
                 <Arrow href={r.url} />
               </td>
             </tr>

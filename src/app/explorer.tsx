@@ -12,7 +12,7 @@ export function Explorer() {
   const [hover, setHover] = useState<string | null>(null);
   const active = hover ?? sel;
   return (
-    <div className="mt-4 grid grid-cols-[7rem_minmax(0,1fr)_minmax(0,1fr)] items-center gap-4">
+    <div className="mt-4 grid grid-cols-[6.5rem_minmax(0,1fr)] items-center gap-4 md:grid-cols-[7rem_minmax(0,1fr)_minmax(0,1fr)]">
       <ul className="flex flex-col gap-1 text-[12px]" onMouseLeave={() => setHover(null)}>
         {[{ name: "All", m: 0, n: 0 }, ...SURVEYS].map((s) => {
           const on = active === s.name;
@@ -35,7 +35,9 @@ export function Explorer() {
         })}
       </ul>
       <Volume active={active} />
-      <Reach active={active} />
+      <div className="col-span-2 md:col-span-1">
+        <Reach active={active} />
+      </div>
     </div>
   );
 }
