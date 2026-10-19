@@ -70,13 +70,7 @@ export function Reach() {
   const status = (b: { r: number; d: number }) => (b.d >= dlim(b.r, m) ? "pass" : "out");
   return (
     <section className="mt-6 max-w-[820px]">
-      <h2 className="text-base font-semibold tracking-tight">What a unified search of every survey could reach</h2>
-      <p className="mt-1 text-sm leading-6 text-[var(--text-secondary)]">
-        Smallest body that leaves a detection, by distance from the Sun, when every deep wide-field frame is summed along
-        the track to the noise floor. Reflected light at opposition, albedo 0.1. Above the line is searchable. Below it
-        left too few photons for any algorithm.
-      </p>
-      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-[var(--text-secondary)]">
+      <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-[var(--text-secondary)]">
         <span><span className="mr-1 inline-block h-2.5 w-4 align-[-1px] bg-[var(--added)] opacity-20" />searchable, summed to m {PASS}</span>
         <span><span className="mr-1 inline-block h-2.5 w-4 align-[-1px]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--axis) 0 1px, transparent 1px 3px)" }} />out of reach</span>
         <span><span className="mr-1 inline-block h-2 w-2 rounded-full border-[1.5px] border-[var(--text-secondary)] align-[-1px]" />example bodies, filled when reachable</span>

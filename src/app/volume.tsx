@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { COVER, GRID, NB, NL, R0, R1, SURVEYS, rho, rmax, summed, toEcliptic } from "@/lib/sky";
+import { COVER, GRID, NB, NL, SURVEYS, rho, rmax, summed, toEcliptic } from "@/lib/sky";
 
 const GREEN = 0x1baf7a;
 const BLUE = 0x2a78d6;
@@ -147,15 +147,8 @@ export function Volume() {
   }, [active]);
 
   return (
-    <section className="mt-8 max-w-[820px]">
-      <h2 className="text-base font-semibold tracking-tight">The searched volume</h2>
-      <p className="mt-1 text-sm leading-6 text-[var(--text-secondary)]">
-        How far from the Sun a {fmt(SIZE)} km body, a Planet Nine, leaves a detection in every direction when each
-        survey&apos;s exposures of that sky are summed along the track. Radius is logarithmic from {R0} to {fmt(R1)} AU.
-        Where the shell dips to the centre, nothing public has looked. Footprints and visit counts are typical values until
-        the exposure index exists.
-      </p>
-      <div className="mt-3 grid grid-cols-[minmax(0,1fr)_8rem] gap-4">
+    <section className="mt-6 max-w-[820px]">
+      <div className="grid grid-cols-[minmax(0,1fr)_8rem] gap-4">
         <div ref={box} className="relative w-full cursor-grab overflow-hidden">
           <div ref={labels} className="pointer-events-none absolute inset-0">
             <span className="absolute left-0 top-0 whitespace-nowrap pl-2 text-[10px] leading-none text-[var(--text-secondary)]" style={{ marginTop: -5 }}>
