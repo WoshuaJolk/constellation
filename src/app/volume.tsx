@@ -56,7 +56,9 @@ const fmt = (n: number) => (n >= 1000 ? `${Math.round(n / 1000)}k` : `${Math.rou
 export function Volume() {
   const box = useRef<HTMLDivElement>(null);
   const labels = useRef<HTMLDivElement>(null);
+  const [sel, setSel] = useState("All");
   const [hover, setHover] = useState<string | null>(null);
+  const active = hover ?? sel;
   const state = useRef<{ union: THREE.Mesh; one: THREE.Mesh } | null>(null);
 
   useEffect(() => {
@@ -138,11 +140,11 @@ export function Volume() {
   useEffect(() => {
     const s = state.current;
     if (!s) return;
-    const k = SURVEYS.findIndex((x) => x.name === hover);
+    const k = SURVEYS.findIndex((x) => x.name === active);
     s.one.visible = k >= 0;
     if (k >= 0) fill(s.one, radii([k]));
     (s.union.material as THREE.MeshStandardMaterial).opacity = k >= 0 ? 0.1 : 0.28;
-  }, [hover]);
+  }, [active]);
 
   return (
     <section className="mt-8 max-w-[820px]">
@@ -167,22 +169,26 @@ export function Volume() {
           </div>
         </div>
         <ul className="flex flex-col gap-1 pt-2 text-[12px]" onMouseLeave={() => setHover(null)}>
-          {SURVEYS.map((s) => (
-            <li key={s.name}>
-              <button
-                type="button"
-                onMouseEnter={() => setHover(s.name)}
-                onFocus={() => setHover(s.name)}
-                onBlur={() => setHover(null)}
-                onClick={() => setHover(hover === s.name ? null : s.name)}
-                title={`${s.m} in one exposure, ${summed(s).toFixed(1)} summed over about ${fmt(s.n)} exposures`}
-                className={`flex w-full justify-between font-mono tabular-nums ${hover === s.name ? "text-[var(--known)]" : "text-[var(--text-secondary)] hover:text-[var(--foreground)]"}`}
-              >
-                <span>{s.name}</span>
-                <span className="text-[var(--text-muted)]">{summed(s).toFixed(1)}</span>
-              </button>
-            </li>
-          ))}
+          {[{ name: "All", m: 0, n: 0 }, ...SURVEYS].map((s) => {
+            const on = active === s.name;
+            const color = s.name === "All" ? "text-[var(--added)]" : "text-[var(--known)]";
+            return (
+              <li key={s.name}>
+                <button
+                  type="button"
+                  onMouseEnter={() => setHover(s.name)}
+                  onFocus={() => setHover(s.name)}
+                  onBlur={() => setHover(null)}
+                  onClick={() => setSel(s.name)}
+                  title={s.n ? `${s.m} in one exposure, ${summed(s).toFixed(1)} summed over about ${fmt(s.n)} exposures` : "every survey together"}
+                  className={`flex w-full items-center justify-between rounded-md px-2 py-0.5 font-mono tabular-nums ${on ? `${color} bg-[var(--stripe)]` : "text-[var(--text-secondary)] hover:text-[var(--foreground)]"}`}
+                >
+                  <span>{s.name}</span>
+                  <span className="text-[var(--text-muted)]">{s.n ? summed(s).toFixed(1) : ""}</span>
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
