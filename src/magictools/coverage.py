@@ -9,14 +9,28 @@ import numpy as np
 
 from .io import _fields, _fits_plane, _named_rows, _provenance, read_json
 from .nulls import _weights, gaussian_log_null
-from .orbits import astrometric_direction, propagate_family
+from .orbits import astrometric_direction, propagate_family, observatory_positions
 from .photometry import forced_photometry
 
 
 def run_cover(manifest_path):
     path = Path(manifest_path).resolve()
     manifest = read_json(path)
-    _fields(manifest, ["schema_version", "epoch_mjd_tdb", "orbits", "exposures"], ["dynamics", "threshold_snr"])
+    _fields(manifest, ["schema_version", "epoch_mjd_tdb", "orbits"], ["exposures", "inventory", "dynamics", "threshold_snr"])
+    if ("exposures" in manifest) == ("inventory" in manifest):
+        raise ValueError("Supply exactly one of exposures or a ztf_fetch inventory path")
+    inventory_path, inventory = None, None
+    if "inventory" in manifest:
+        inventory_path = (path.parent / manifest["inventory"]).resolve()
+        inventory = read_json(inventory_path)
+        if inventory.get("tool") != "ztf_fetch" or inventory.get("schema_version") != 1:
+            raise ValueError("inventory must be a ztf_fetch report")
+        manifest["exposures"] = inventory["exposures"]
+        # Inventories are portable even when edited to use relative paths.
+        for exposure in manifest["exposures"]:
+            for key in ["image", "variance", "mask", "psf_image"]:
+                if isinstance(exposure.get(key), str):
+                    exposure[key] = str((inventory_path.parent / exposure[key]).resolve())
     if manifest["schema_version"] != 1:
         raise ValueError("Only schema_version 1 is supported")
     _named_rows(manifest["orbits"], "orbits")
@@ -34,13 +48,17 @@ def run_cover(manifest_path):
     options = {"kernel": "builtin", "light_time_margin_days": 10, "rtol": 1e-11,
                "atol": 1e-13, "ephemeris_step_days": 0.25, **supplied_options}
     files = [path]
+    if inventory_path:
+        files.append(inventory_path)
     if options.get("kernel", "builtin") != "builtin":
         options["kernel"] = str((path.parent / options["kernel"]).resolve(strict=True))
         files.append(options["kernel"])
     samples = []
     for exposure in manifest["exposures"]:
         _fields(exposure, ["id", "image", "variance", "psf_sigma_pixels", "mjd_tdb"],
-                ["image_hdu", "variance_hdu", "mask", "mask_hdu", "flux_scale", "exposure_seconds", "observer"])
+                ["image_hdu", "variance_hdu", "mask", "mask_hdu", "flux_scale", "exposure_seconds", "observer", "observatory", "psf_image", "psf_hdu"])
+        if "observer" in exposure and "observatory" in exposure:
+            raise ValueError("Supply observer state or observatory, not both")
         mid, duration = exposure["mjd_tdb"], exposure.get("exposure_seconds", 0)
         if not np.all(np.isfinite([mid, duration])) or duration < 0:
             raise ValueError("Exposure midpoint must be finite and duration nonnegative")
@@ -71,7 +89,7 @@ def run_cover(manifest_path):
         if data.ndim != 2 or min(data.shape) < 2 or not wcs.has_celestial:
             raise ValueError("Each exposure needs a 2D science image with celestial WCS")
         files.append(science_path)
-        clean = {key: value for key, value in exposure.items() if key not in {"mjd_tdb", "exposure_seconds", "observer"}}
+        clean = {key: value for key, value in exposure.items() if key not in {"mjd_tdb", "exposure_seconds", "observer", "observatory"}}
         clean["image"] = str(science_path)
         variance = exposure["variance"]
         if isinstance(variance, str):
@@ -93,6 +111,14 @@ def run_cover(manifest_path):
             clean["mask"] = str(mask_path)
             files.append(mask_path)
         sigma, scale = exposure["psf_sigma_pixels"], exposure.get("flux_scale", 1)
+        psf_kernel = None
+        if "psf_image" in exposure:
+            psf_path = (path.parent / exposure["psf_image"]).resolve()
+            psf_kernel = _fits_plane(psf_path, exposure.get("psf_hdu", 0))
+            from .photometry import validate_psf_kernel
+            psf_kernel = validate_psf_kernel(psf_kernel)
+            clean["psf_image"] = str(psf_path)
+            files.append(psf_path)
         if not np.all(np.isfinite([sigma, scale])) or sigma <= 0 or scale <= 0:
             raise ValueError("PSF sigma and flux scale must be finite and positive")
         photometry["exposures"].append(clean)
@@ -101,6 +127,8 @@ def run_cover(manifest_path):
         if "observer" in exposure:
             observer = exposure["observer"]
             observers = [np.array(observer["position_au"]) + (time - midpoint) * np.array(observer["velocity_au_per_day"]) for time in times]
+        elif "observatory" in exposure:
+            observers = observatory_positions(field, times, exposure["observatory"])
         else:
             observers = field.earth_position(times)
         height, width = data.shape
@@ -125,7 +153,7 @@ def run_cover(manifest_path):
                 try:
                     if curvature > 0.05:
                         raise ValueError("Trajectory curvature exceeds 0.05 pixel; use shorter exposures")
-                    measurement = forced_photometry(blank, variance, x, y, sigma, invalid, dx, dy)
+                    measurement = forced_photometry(blank, variance, x, y, sigma, invalid, dx, dy, psf_kernel)
                 except ValueError as error:
                     row["reason"] = str(error)
                 else:
@@ -150,5 +178,6 @@ def run_cover(manifest_path):
             "dynamics": {"kernel": field.kernel, "force_model": "Newtonian Sun + eight planets + Moon; massless targets",
                          "frame": "barycentric ICRS", "time_scale": "MJD TDB", "options": options,
                          "integration_evaluations": [solution.nfev for solution in solutions]},
-            "scope": "Supplied local FITS inventory; geometric astrometric directions with light time; Gaussian sensitivity",
+            "scope": "Supplied FITS inventory (downloaded cutouts when applicable); astrometric directions with light time; model-conditional Gaussian sensitivity",
+            "archive_calibration": inventory.get("calibration") if inventory else None,
             "exposures": exposure_reports, "photometry_manifest": photometry, "planning_manifest": planning}

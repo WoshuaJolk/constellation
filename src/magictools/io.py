@@ -112,7 +112,7 @@ def run_photometry(manifest_path, joint=False, alpha=0.01):
 
     for exposure in manifest["exposures"]:
         _fields(exposure, ["id", "image", "variance", "psf_sigma_pixels"],
-                ["image_hdu", "variance_hdu", "mask", "mask_hdu", "flux_scale"])
+                ["image_hdu", "variance_hdu", "mask", "mask_hdu", "flux_scale", "psf_image", "psf_hdu"])
         image_path = (path.parent / exposure["image"]).resolve()
         image_hdu = exposure.get("image_hdu", 0)
         # Resolve numeric and named HDUs to the same identity to prevent double use.
@@ -144,6 +144,13 @@ def run_photometry(manifest_path, joint=False, alpha=0.01):
             if mask.shape != image.shape:
                 raise ValueError("Mask shape must match science image")
         sigma, scale = exposure["psf_sigma_pixels"], exposure.get("flux_scale", 1.0)
+        psf_kernel = None
+        if "psf_image" in exposure:
+            psf_path = (path.parent / exposure["psf_image"]).resolve()
+            psf_kernel = _fits_plane(psf_path, exposure.get("psf_hdu", 0))
+            from .photometry import validate_psf_kernel
+            psf_kernel = validate_psf_kernel(psf_kernel)
+            files.append(psf_path)
         if not np.all(np.isfinite([sigma, scale])) or sigma <= 0 or scale <= 0:
             raise ValueError("PSF sigma and flux scale must be positive and finite")
         celestial_wcs = None
@@ -164,11 +171,12 @@ def run_photometry(manifest_path, joint=False, alpha=0.01):
                 x, y = map(float, celestial_wcs.world_to_pixel(coordinate))
             try:
                 measurement = forced_photometry(image, variance, x, y, sigma, mask,
-                                                position.get("trail_dx", 0), position.get("trail_dy", 0))
+                                                position.get("trail_dx", 0), position.get("trail_dy", 0), psf_kernel)
             except ValueError as error:
                 result["unavailable"].append({"exposure_id": exposure["id"], "reason": str(error)})
                 continue
             result["measurements"].append({"exposure_id": exposure["id"], "flux_scale": scale,
+                                           "psf_model": "native_pixel_empirical" if psf_kernel is not None else "gaussian",
                                            "trail_dx": position.get("trail_dx", 0), "trail_dy": position.get("trail_dy", 0),
                                            **measurement.to_dict()})
             fits_by_trajectory[trajectory_id].append(measurement)
@@ -182,7 +190,7 @@ def run_photometry(manifest_path, joint=False, alpha=0.01):
     if joint:
         candidates.sort(key=lambda row: row["joint"]["snr"] if row["joint"] else -np.inf, reverse=True)
     return {"schema_version": 1, "tool": "dig_floor" if joint else "force_track",
-            "model": "pixel-integrated circular Gaussian PSF, optional linear trail; constant local background; independent known Gaussian noise",
+            "model": "Gaussian or supplied native-pixel empirical PSF, optional linear trail; constant local background; independent supplied Gaussian variance",
             "provenance": _provenance(files), "trajectories": candidates}
 
 

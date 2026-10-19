@@ -1,18 +1,19 @@
 # Magictools astronomy
 
-Working implementations of seven ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Version 0.3 adds **`prove_floor`**, mathematical detection-power bounds and a likelihood-ratio detector for finite Gaussian template families, and **`find_ejector`**, uncertainty-aware stellar traceback searches with Galactic gravity and search-wide permutation controls. The tools use local inputs and explicit models; an all-survey archive and instrument-calibrated discovery pipeline remain future work.
+Working implementations of eight ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Version 0.4 adds **public ZTF archive access**, measured PSFs, observatory parallax, **`judge_line`** candidate diagnostics, and finite-bank injection recovery on real backgrounds. Each tool has an explicit scientific scope; an all-survey index and calibrated discovery pipeline remain future work. See the [archive workflow and live validation](docs/archive-workflow.md).
 
 | Tool | Available now | Still needed for the catalogue's full ambition |
 | --- | --- | --- |
 | `prove_floor` | Analytic upper bounds on any detector's prior-average power for a finite Gaussian template bank, a necessary-flux lower bound, and a prior-optimal mixture likelihood-ratio statistic with conservative calibration. Supports correlated noise and background projection. | Unknown/continuous orbit families, realistic nuisance and artifact distributions, survey-wide limits. Uses established theory; does not claim a new universal theorem. |
 | `find_ejector` | Search all eligible fixed-size stellar groups and specified times, propagate 6D uncertainty in a supplied Galactic potential, compare supplied source trajectories, and repeat the full search on velocity-permutation controls. | All-sky selection modeling, missing-velocity priors, cross-star systematics, uncertain/time-dependent Galactic potentials, physical identification of an ejector. |
-| `map_cover` | Numerically propagate barycentric orbit samples under the Sun, eight planets, and Moon; compute light-time-corrected directions, local FITS coverage, mask gaps, family fractions, motion trails, and expected S/N. Export inputs for photometry and observation planning. | Archive-wide indexing, orbit fitting/ranging, calibrated depth curves, survey-specific WCS checks. |
-| `force_track` | Forced PSF flux, uncertainty, S/N, local background, goodness of fit, and usable PSF fraction along each trajectory, with optional linear exposure trails. Pixel or ICRS coordinates; FITS science, variance, mask extensions. | Archive access, empirical PSFs, WCS refinement, stamp dossiers, instrument-specific reductions. |
+| `map_cover` | ZTF public exposure queries and selected cutouts; orbit propagation, light time, observatory parallax, FITS coverage and masks, family fractions, trails and estimated S/N. | Complete orbit-family archive indexing, orbit fitting/ranging, calibrated depth curves and further surveys. |
+| `force_track` | Gaussian or native-pixel empirical PSF fits with optional trails, signed flux and uncertainty, background, residuals and usable template fraction; ZTF input preparation. | Spatial/oversampled PSFs, WCS refinement, instrument-specific uncertainty and color calibration. |
+| `judge_line` | Leave-one-out and temporal-half fits, residual and constant-flux checks, stationary/reversed controls on common exposures, explicit diagnostic flags. | Orbit refits, astrometric confirmation, held-out artifact calibration and a validated combined acceptance rule. |
 | `weigh_stamp` | Compare a trailed source against a stationary PSF, extended source, dipole residual, cosmic-ray spike, narrow streak, and background using explicit priors and marginalized likelihoods. | Complete artifact families, empirical instrument models, blends/chip-edge modeling, injection calibration and multi-epoch vetting. |
-| `dig_floor` | Joint pixel-likelihood equivalent over a finite bank of trajectories, with different seeing, noise, and known photometric scales; Gaussian trial-count correction. | Orbit-bank generation, GPUs, correlated-noise models, full-archive indexing, survey injection calibration. |
+| `dig_floor` | Joint likelihood over a finite trajectory bank with empirical or Gaussian PSFs and known scales; Gaussian trial correction; `inject_tracks` reruns the search on signal injections into real or synthetic backgrounds. | Orbit-bank generation, GPUs, correlated-noise models, full-archive indexing and population-calibrated selection. |
 | `learn_null` | Bayesian reweighting of supplied hypotheses from non-detections and ranking of future exposures by expected information gain. Accepts measured efficiencies, an explicit Gaussian model, or planning inputs exported by `map_cover`. | Orbital ranging, population/brightness priors, real survey calibration. |
 
-These are Python library functions and command-line tools. No API keys, network services, or browser are needed at runtime. Real input files are never uploaded.
+These are Python library functions and command-line tools. Inference runs offline; the optional ZTF adapter downloads public data without API keys. Local images are never uploaded. Archive requests send only the supplied sky region, dates, and selected product identifiers.
 
 ## Install and try
 
@@ -29,6 +30,8 @@ magictools orbit_demo orbit-demo-output
 magictools floor_demo floor-demo-output
 magictools ejector_demo ejector-demo-output
 python -m pytest -q
+# Optional live archive experiment; downloads real ZTF images:
+python examples/ztf_workflow.py new-ztf-output
 ```
 
 The original `demo` creates 16 FITS images with different seeing, noise, photometric scales, and WCS pointings, plus predictions for an injected moving source and two control trajectories. The photometry, joint detection, and non-detection tools run, and their inputs, outputs, injection truth, and summary are saved. A fixed seed makes the experiment reproducible; an existing nonempty directory is never overwritten.
@@ -73,7 +76,7 @@ Use injection-measured `detection_probability` in `learn_null` when available. T
 
 ## Scientific scope
 
-- The likelihood assumes a correct, pixel-integrated circular Gaussian PSF, optionally integrated over a constant-rate linear trail; a constant background per stamp; known, independent Gaussian pixel noise; and independent exposures. Shared difference-image templates and resampling can violate independence. Correlated noise, blends, curved trails, PSF mismatch, and WCS errors need additional modeling.
+- The likelihood assumes a correct Gaussian or supplied empirical PSF, optionally integrated over a constant-rate linear trail; a constant background per stamp; known, independent Gaussian pixel noise; and independent exposures. ZTF preparation supplies an estimated noise model, so its Gaussian p-values need empirical calibration. Shared difference-image templates and resampling can violate independence. Correlated noise, blends, curved trails, PSF mismatch, and WCS errors need additional modeling.
 - Forced positions and the orbit family must be specified independently of the fitted pixel noise. `map_cover` propagates supplied states; it does not fit them to detections, search every possible orbit, or account for adaptive searches performed outside this run. It defaults to a geocentric observer; supply an observatory/spacecraft barycentric state when parallax matters.
 - `weigh_stamp` reports model-conditional posterior weights, Bayes factors, and profile likelihood ratios. These depend on the stated template bank and amplitude/model priors; they are not calibrated probabilities that an object is real. A zero-length trail is explicitly indistinguishable from the stationary-point template in a single stamp.
 - Each per-frame flux remains signed. The joint fit includes negative values and reports a signed S/N. The one-sided Gaussian p-value tests a positive source. Bonferroni uses **every supplied trajectory**, including candidates with no usable data; it controls only the stated Gaussian null model and does not establish an astrophysical discovery.

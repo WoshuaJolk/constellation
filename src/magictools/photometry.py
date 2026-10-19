@@ -5,6 +5,7 @@ from dataclasses import asdict, dataclass
 import numpy as np
 from scipy.special import ndtr
 from numpy.polynomial.legendre import leggauss
+from scipy.ndimage import map_coordinates
 
 
 @dataclass(frozen=True)
@@ -60,7 +61,45 @@ def trailed_psf(x_pixels, y_pixels, x, y, sigma, trail_dx=0, trail_dy=0):
                for node, weight in zip(nodes, weights))
 
 
-def forced_photometry(image, variance, x, y, psf_sigma, mask=None, trail_dx=0, trail_dy=0):
+def validate_psf_kernel(kernel):
+    """Normalize a complete native-pixel PSF once, never the fitted cutout.
+
+    Measured PSFs may have negative noise in their wings. These values are
+    retained, so this is an empirical linear template, not a positive density.
+    """
+    kernel = np.asarray(kernel, dtype=float)
+    if (kernel.ndim != 2 or min(kernel.shape) < 3 or max(kernel.shape) > 255
+            or any(size % 2 == 0 for size in kernel.shape)
+            or not np.all(np.isfinite(kernel)) or kernel.sum() <= 0):
+        raise ValueError("PSF kernel must be finite, odd-sized (3..255 pixels), with positive sum")
+    return kernel / kernel.sum()
+
+
+def sampled_psf(x_pixels, y_pixels, x, y, kernel, trail_dx=0, trail_dy=0):
+    """Native-pixel empirical PSF shifted by bilinear interpolation.
+
+    Zero padding preserves total template flux under subpixel shifts. This is
+    not a reconstructed oversampled optical PSF; interpolation broadens it.
+    """
+    kernel = validate_psf_kernel(kernel)
+    if not np.all(np.isfinite([x, y, trail_dx, trail_dy])):
+        raise ValueError("PSF positions and trails must be finite")
+    length = np.hypot(trail_dx, trail_dy)
+    if length > 64:
+        raise ValueError("Empirical PSF trails are limited to 64 pixels")
+    nodes, weights = leggauss(max(16, int(np.ceil(4 * length)))) if length else ([0], [2])
+    # Padding is essential: scipy's constant mode otherwise drops edge samples.
+    padded = np.pad(kernel, 1)
+    shape = np.broadcast_shapes(np.shape(x_pixels), np.shape(y_pixels))
+    result = np.zeros(shape)
+    for node, weight in zip(nodes, weights):
+        px = np.broadcast_to(np.asarray(x_pixels) - x - node * trail_dx / 2, shape) + (kernel.shape[1] - 1) / 2 + 1
+        py = np.broadcast_to(np.asarray(y_pixels) - y - node * trail_dy / 2, shape) + (kernel.shape[0] - 1) / 2 + 1
+        result += weight / 2 * map_coordinates(padded, [py, px], order=1, mode="constant", cval=0, prefilter=False)
+    return result
+
+
+def forced_photometry(image, variance, x, y, psf_sigma, mask=None, trail_dx=0, trail_dy=0, psf_kernel=None):
     """Fit image = flux * PSF + background using known independent variances.
 
     Invalid image/variance pixels and nonzero mask pixels are excluded. The
@@ -86,11 +125,13 @@ def forced_photometry(image, variance, x, y, psf_sigma, mask=None, trail_dx=0, t
         raise ValueError("Predicted centroid is outside the image footprint")
     if not np.all(np.isfinite([trail_dx, trail_dy])):
         raise ValueError("Trail offsets must be finite")
-    radius = int(np.ceil(5 * psf_sigma + max(abs(trail_dx), abs(trail_dy)) / 2))
+    support = 5 * psf_sigma if psf_kernel is None else (max(validate_psf_kernel(psf_kernel).shape) - 1) / 2 + 1
+    radius = int(np.ceil(support + max(abs(trail_dx), abs(trail_dy)) / 2))
     x0, x1 = max(0, int(np.floor(x)) - radius), min(width, int(np.floor(x)) + radius + 2)
     y0, y1 = max(0, int(np.floor(y)) - radius), min(height, int(np.floor(y)) + radius + 2)
     ys, xs = np.mgrid[y0:y1, x0:x1]
-    psf = trailed_psf(xs, ys, x, y, psf_sigma, trail_dx, trail_dy)
+    psf = (trailed_psf(xs, ys, x, y, psf_sigma, trail_dx, trail_dy) if psf_kernel is None
+           else sampled_psf(xs, ys, x, y, psf_kernel, trail_dx, trail_dy))
     data = image[y0:y1, x0:x1]
     var = variance[y0:y1, x0:x1]
     good = np.isfinite(data) & np.isfinite(var) & (var > 0)

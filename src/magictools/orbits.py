@@ -8,7 +8,9 @@ from pathlib import Path
 
 from astropy import units as u
 from astropy.coordinates import get_body_barycentric_posvel
+from astropy.coordinates import EarthLocation
 from astropy.time import Time
+from astropy.utils import iers
 import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.interpolate import CubicHermiteSpline
@@ -22,6 +24,23 @@ GM_KM = {"sun": 132712440041.279419, "mercury": 22031.868551,
 AU_KM = 149597870.7
 GM = {key: value * 86400**2 / AU_KM**3 for key, value in GM_KM.items()}
 C_AU_DAY = 299792.458 * 86400 / AU_KM
+
+
+def observatory_positions(field, times, observatory):
+    """Earth barycenter plus IERS-rotated site offset in celestial axes.
+
+    The meter-scale GCRS/ICRS origin-axis relativistic corrections are omitted,
+    consistent with the Newtonian astrometric direction model. IERS is offline.
+    """
+    from .io import _fields
+    _fields(observatory, ["longitude_deg", "latitude_deg", "height_m"])
+    lon, lat, height = [observatory[k] for k in ["longitude_deg", "latitude_deg", "height_m"]]
+    if not np.all(np.isfinite([lon, lat, height])) or not -180 <= lon <= 180 or not -90 <= lat <= 90 or not -500 <= height <= 10000:
+        raise ValueError("Invalid observatory geodetic coordinates")
+    site = EarthLocation.from_geodetic(lon * u.deg, lat * u.deg, height * u.m)
+    with iers.conf.set_temp("auto_download", False):
+        position, _ = site.get_gcrs_posvel(Time(times, format="mjd", scale="tdb"))
+    return field.earth_position(times) + position.xyz.to_value(u.au).T
 
 
 class SolarSystemField:
