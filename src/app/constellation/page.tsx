@@ -56,7 +56,7 @@ export default function Page() {
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-10 font-mono sm:px-6">
       <h1 className="text-2xl font-semibold tracking-tight">const ellation;</h1>
-      <p className="mt-2 text-sm text-[var(--text-secondary)]">find what every public record already holds.</p>
+      <p className="mt-2 text-sm text-[var(--text-secondary)]">mission: leverage the entire corpus of astronomical data all at once.</p>
       <Explorer />
       <section className="mt-12">
         <h2 className="mb-3 text-sm font-semibold">Part 1: Compile every public image.</h2>
