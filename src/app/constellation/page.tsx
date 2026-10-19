@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { DATASETS, PRIVATE, RECORDS, PIXEL_STEPS, RECORD_STEPS, type Step } from "@/lib/constellation";
 
 export const metadata: Metadata = {
@@ -44,11 +43,6 @@ export default function Page() {
   const totalTb = DATASETS.reduce((a, d) => a + d.tb, 0);
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <nav className="mb-4 text-[12px] text-[var(--text-muted)]">
-        <Link href="/" className="hover:text-[var(--foreground)]">
-          Magic tools
-        </Link>
-      </nav>
       <h1 className="font-mono text-2xl font-semibold tracking-tight">const ellation;</h1>
       <div className="mt-2 max-w-[640px] space-y-3 text-sm leading-6 text-[var(--text-secondary)]">
         <p>
