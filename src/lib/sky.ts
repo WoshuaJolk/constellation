@@ -34,18 +34,21 @@ export function toEcliptic(ra: number, dec: number): { lon: number; lat: number 
 const inRa = (ra: number, a: number, b: number) => (a <= b ? ra >= a && ra <= b : ra >= a || ra <= b);
 const box = (d: Dir, a: number, b: number, d0: number, d1: number) => inRa(d.ra, a, b) && d.dec >= d0 && d.dec <= d1;
 
-// Single-exposure 5 sigma depth and an approximate footprint for each wide-field survey.
-export const SURVEYS: { name: string; m: number; cover: (d: Dir) => boolean }[] = [
-  { name: "TESS", m: 17, cover: () => true },
-  { name: "ZTF", m: 20.5, cover: (d) => d.dec > -31 },
-  { name: "Catalina", m: 21.5, cover: (d) => d.dec > -35 && d.dec < 75 },
-  { name: "Pan-STARRS", m: 22, cover: (d) => d.dec > -30 },
-  { name: "SDSS", m: 22.5, cover: (d) => (d.b > 30 && d.dec > -10 && d.dec < 70) || box(d, 310, 60, -1.3, 1.3) },
-  { name: "DECam", m: 23.5, cover: (d) => d.dec < 32 && (Math.abs(d.b) > 10 || d.dec < -20) },
-  { name: "OmegaCAM", m: 24, cover: (d) => (d.dec > -40 && d.dec < -10 && Math.abs(d.b) > 20) || box(d, 128, 238, -5, 4) || (Math.abs(d.b) < 5 && d.dec < 0) },
-  { name: "MegaCam", m: 24.5, cover: (d) => (d.dec > 30 && d.dec < 80 && Math.abs(d.b) > 25) || box(d, 30, 40, -7, -3) || box(d, 208, 221, 51, 58) },
-  { name: "HSC", m: 26, cover: (d) => box(d, 128, 227, -2, 5) || box(d, 330, 40, -7, 7) || box(d, 200, 250, 42.5, 44.5) },
+// Single-exposure 5 sigma depth, typical exposures per sky position, and an approximate footprint.
+export const SURVEYS: { name: string; m: number; n: number; cover: (d: Dir) => boolean }[] = [
+  { name: "TESS", m: 17, n: 3000, cover: () => true },
+  { name: "ZTF", m: 20.5, n: 1500, cover: (d) => d.dec > -31 },
+  { name: "Catalina", m: 21.5, n: 1000, cover: (d) => d.dec > -35 && d.dec < 75 },
+  { name: "Pan-STARRS", m: 22, n: 60, cover: (d) => d.dec > -30 },
+  { name: "SDSS", m: 22.5, n: 1, cover: (d) => (d.b > 30 && d.dec > -10 && d.dec < 70) || box(d, 310, 60, -1.3, 1.3) },
+  { name: "DECam", m: 23.5, n: 20, cover: (d) => d.dec < 32 && (Math.abs(d.b) > 10 || d.dec < -20) },
+  { name: "OmegaCAM", m: 24, n: 20, cover: (d) => (d.dec > -40 && d.dec < -10 && Math.abs(d.b) > 20) || box(d, 128, 238, -5, 4) || (Math.abs(d.b) < 5 && d.dec < 0) },
+  { name: "MegaCam", m: 24.5, n: 6, cover: (d) => (d.dec > 30 && d.dec < 80 && Math.abs(d.b) > 25) || box(d, 30, 40, -7, -3) || box(d, 208, 221, 51, 58) },
+  { name: "HSC", m: 26, n: 30, cover: (d) => box(d, 128, 227, -2, 5) || box(d, 330, 40, -7, 7) || box(d, 200, 250, 42.5, 44.5) },
 ];
+
+export const GAIN_CAP = 4; // mag; beyond this flat-field and background systematics set the floor
+export const summed = (s: { m: number; n: number }) => s.m + Math.min(1.25 * Math.log10(s.n), GAIN_CAP);
 
 const ALBEDO = 0.1;
 export const R0 = 2;
