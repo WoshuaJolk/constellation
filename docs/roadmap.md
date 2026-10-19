@@ -1,6 +1,6 @@
 # From catalogue to working research tools
 
-Assessment of the 23 catalogue proposals after implementing five local-data tools. These are engineering judgments, not proofs of feasibility or a literature survey establishing novelty.
+Assessment of the 23 catalogue proposals after implementing seven local-data tools. These are engineering judgments, not proofs of feasibility or a literature survey establishing novelty.
 
 | Idea | Assessment and next concrete step |
 | --- | --- |
@@ -14,7 +14,7 @@ Assessment of the 23 catalogue proposals after implementing five local-data tool
 | `map_complete` | Start with one survey's actual pointings and full discovery rules, including required linked nights. A union of surveys requires overlaps and dependence, not addition of completeness fractions. |
 | `inject_all` | Build on validated per-survey simulators and use population likelihoods. The current seeded demo is only an implementation test, not this population experiment. |
 | `fuse_astrom` | Start with a bounded crossmatched field, common reference frame, epoch-dependent systematics, and covariance model; an all-sky catalogue is a data-intensive project. |
-| `find_ejector` | A bounded covariance-aware traceback search is implementable with supplied astrometry, radial velocities, and Galactic potential. Missing velocities and encounter significance require careful modeling. |
+| `find_ejector` | Bounded 6D uncertainty propagation, Galactic dynamics, complete fixed-size group/time search, supplied-counterpart comparison, and velocity-permutation controls implemented. Missing velocities, selection, potential uncertainty, and causal interpretation remain substantial work. |
 | `map_glow` | Research prototype possible on a small image set. Demonstrate separation from static sky, flat-field errors, and correlated noise before mapping power to population mass. |
 | `weigh_tno` | First calculate expected perturbation amplitudes and parameter identifiability for actual astrometric baselines. Precision and degeneracies may prevent useful mass estimates. |
 | `map_sedna` | Wrap a specified formation population and survey selection simulator; do not invent a universal inner-Oort prior. |
@@ -24,7 +24,7 @@ Assessment of the 23 catalogue proposals after implementing five local-data tool
 | `run_hunt` | Orchestration becomes useful after inputs, calibrated acceptance rules, and orbit refitting are available. Do not automate acceptance of an unvalidated high-S/N peak. |
 | `fold_kepler` | A general sub-trajectory-cost transform is a mathematical research problem. The current implementation makes no such complexity claim. |
 | `match_all` | Small finite assignment problems can be solved exactly, but global physical completeness/false-link guarantees require explicit assumptions and new proofs. |
-| `prove_floor` | Fixed-template Gaussian variance is available from the implemented information calculation. Unknown trajectories, nuisance parameters, artifacts, and multiple testing prevent calling it a universal detection bound. |
+| `prove_floor` | Finite-family Gaussian power bounds, a necessary-flux lower bound, and a calibrated prior-optimal mixture-LR statistic implemented, including correlated noise and projected backgrounds. Continuous orbit families, unknown noise/artifact laws, and global archive limits remain open. |
 | `fit_sky` | Begin with a small patch and a tractable joint generative model. An all-photon, all-instrument posterior is beyond this implementation. |
 | `invert_chaos` | Explore posterior identifiability over finite times and stated priors. Lost historical information cannot be restored by a generic inverse solver. |
 

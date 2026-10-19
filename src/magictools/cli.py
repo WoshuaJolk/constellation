@@ -13,7 +13,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Moving-source astronomy tools for local FITS data")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
-    for name in ["force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp"]:
+    for name in ["force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp", "find_ejector", "prove_floor"]:
         command = commands.add_parser(name)
         command.add_argument("manifest", type=Path)
         command.add_argument("-o", "--output", type=Path, help="Write new JSON file (default: stdout)")
@@ -28,9 +28,22 @@ def main(argv=None):
     orbit_demo = commands.add_parser("orbit_demo", help="Generate an orbit-family coverage and artifact-model experiment")
     orbit_demo.add_argument("directory", type=Path)
     orbit_demo.add_argument("--seed", type=int, default=2026)
+    for name in ["floor_demo", "ejector_demo"]:
+        command = commands.add_parser(name, help="Generate and run a reproducible research experiment")
+        command.add_argument("directory", type=Path)
+        command.add_argument("--seed", type=int, default=2026)
     args = parser.parse_args(argv)
     try:
-        if args.command == "orbit_demo":
+        if args.command in {"floor_demo", "ejector_demo"}:
+            from .research_demo import create_floor_demo, create_ejector_demo
+            result = (create_floor_demo if args.command == "floor_demo" else create_ejector_demo)(args.directory, args.seed)
+        elif args.command == "find_ejector":
+            from .ejector import run_ejector
+            result = run_ejector(args.manifest)
+        elif args.command == "prove_floor":
+            from .prove_floor import run_floor
+            result = run_floor(args.manifest)
+        elif args.command == "orbit_demo":
             from .orbit_demo import create_orbit_demo
             result = create_orbit_demo(args.directory, args.seed)
         elif args.command == "demo":

@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "magictools-astro"
-version = "0.2.0"
-description = "Reproducible trajectory photometry, joint detection, and non-detection inference"
+version = "0.3.0"
+description = "Astronomical inference, orbit searches, stellar tracebacks, and Gaussian detection bounds"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "astropy>=6,<9"]

@@ -17,3 +17,5 @@ jobs:
       - run: python -m pytest -q
       - run: magictools demo demo-output
       - run: magictools orbit_demo orbit-demo-output
+      - run: magictools floor_demo floor-demo-output
+      - run: magictools ejector_demo ejector-demo-output

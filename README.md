@@ -1,9 +1,11 @@
 # Magictools astronomy
 
-Working implementations of five ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/), using local calibrated FITS images. Version 0.2 adds numerical orbit-family propagation, detector coverage, motion-trail fitting, and Bayesian comparisons against explicit artifact models. These are bounded research tools; an all-survey archive and instrument-calibrated discovery pipeline remain future work.
+Working implementations of seven ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Version 0.3 adds **`prove_floor`**, mathematical detection-power bounds and a likelihood-ratio detector for finite Gaussian template families, and **`find_ejector`**, uncertainty-aware stellar traceback searches with Galactic gravity and search-wide permutation controls. The tools use local inputs and explicit models; an all-survey archive and instrument-calibrated discovery pipeline remain future work.
 
 | Tool | Available now | Still needed for the catalogue's full ambition |
 | --- | --- | --- |
+| `prove_floor` | Analytic upper bounds on any detector's prior-average power for a finite Gaussian template bank, a necessary-flux lower bound, and a prior-optimal mixture likelihood-ratio statistic with conservative calibration. Supports correlated noise and background projection. | Unknown/continuous orbit families, realistic nuisance and artifact distributions, survey-wide limits. Uses established theory; does not claim a new universal theorem. |
+| `find_ejector` | Search all eligible fixed-size stellar groups and specified times, propagate 6D uncertainty in a supplied Galactic potential, compare supplied source trajectories, and repeat the full search on velocity-permutation controls. | All-sky selection modeling, missing-velocity priors, cross-star systematics, uncertain/time-dependent Galactic potentials, physical identification of an ejector. |
 | `map_cover` | Numerically propagate barycentric orbit samples under the Sun, eight planets, and Moon; compute light-time-corrected directions, local FITS coverage, mask gaps, family fractions, motion trails, and expected S/N. Export inputs for photometry and observation planning. | Archive-wide indexing, orbit fitting/ranging, calibrated depth curves, survey-specific WCS checks. |
 | `force_track` | Forced PSF flux, uncertainty, S/N, local background, goodness of fit, and usable PSF fraction along each trajectory, with optional linear exposure trails. Pixel or ICRS coordinates; FITS science, variance, mask extensions. | Archive access, empirical PSFs, WCS refinement, stamp dossiers, instrument-specific reductions. |
 | `weigh_stamp` | Compare a trailed source against a stationary PSF, extended source, dipole residual, cosmic-ray spike, narrow streak, and background using explicit priors and marginalized likelihoods. | Complete artifact families, empirical instrument models, blends/chip-edge modeling, injection calibration and multi-epoch vetting. |
@@ -24,6 +26,8 @@ source .venv/bin/activate
 python -m pip install -e '.[test]'
 magictools demo demo-output
 magictools orbit_demo orbit-demo-output
+magictools floor_demo floor-demo-output
+magictools ejector_demo ejector-demo-output
 python -m pytest -q
 ```
 
@@ -32,6 +36,10 @@ The original `demo` creates 16 FITS images with different seeing, noise, photome
 For the default seed `2026`, the injected reference flux is 85, the recovered flux is about **100.08 ± 10.42**, the strongest single-frame S/N is **4.22**, and the joint S/N is **9.60**. The correct trajectory ranks first. This is a synthetic recovery test, not an observation of a real object or a survey completeness measurement.
 
 The new `orbit_demo` starts from a JPL Horizons Ceres state, creates four orbit hypotheses and eight **synthetic** images with a detector gap, exports coverage and planning inputs, and recovers the injected trajectory at **10.54σ**, with flux **96.77 ± 9.18** for an injection of 100. Separate source and cosmic-ray controls prefer the expected image models. The example is not an observation of Ceres.
+
+`floor_demo` uses four trajectory templates in six frames with correlated noise and unknown frame backgrounds. At a 1% false-alarm limit, the faint-source experiment has an **analytic upper bound of 17.3% average detection power**; the implemented detector achieves about **13.3%**. The brighter experiment reaches about **98.6%**. These are model-conditional statements, not survey limits. See [the derivation and assumptions](docs/prove-floor.md).
+
+`ejector_demo` hides four synthetic stars with a shared origin among four field stars, then searches without knowing the member IDs. It recovers the injected **2.4 Myr** convergence and compares it with a moving synthetic cluster. It includes correlated phase-space errors, 63 full-search controls, and a smaller-step integration check. Its control p-value is conditional on velocity exchangeability and has resolution 1/64. See [the stellar-search guide](docs/find-ejector.md).
 
 Run the tools separately:
 
@@ -45,6 +53,8 @@ magictools map_cover orbit-demo-output/orbits.json -o coverage.json \
 magictools dig_floor tracks.json -o orbit-search.json
 magictools learn_null plan.json -o next-exposure.json
 magictools weigh_stamp orbit-demo-output/moving-source-input.json -o stamp-evidence.json
+magictools prove_floor floor-demo-output/faint-input.json -o detection-bound.json
+magictools find_ejector ejector-demo-output/input.json -o origins.json
 ```
 
 Omit `-o` for JSON on stdout. Output files must be new. Errors return exit code 2. `python -m magictools` is equivalent to `magictools`. Reports contain the software versions and SHA-256 hashes of every input file, including the manifest.
@@ -52,6 +62,8 @@ Omit `-o` for JSON on stdout. Output files must be new. Errors return exit code 
 ## Using your own data
 
 See [input and output reference](docs/formats.md) for complete manifests. Supply calibrated images, **variance** (not standard deviation or inverse variance), the Gaussian PSF sigma in pixels, and positions at the actual exposure times. Positions may be zero-based pixel centers or ICRS RA/Dec in degrees. Paths are relative to the manifest, so commands work from any directory.
+
+`prove_floor` instead accepts pixel templates and a known covariance, or their noise-weighted Gram matrix. `find_ejector` accepts present-day Galactocentric 6D states/covariances or complete posterior samples, including an optional ICRS conversion. Missing radial velocities and uncertain distances require supplied posteriors; neither is silently invented.
 
 Alternatively, provide barycentric Cartesian orbit samples in **ICRS axes, AU and AU/day, at an explicit MJD TDB epoch**, and let `map_cover` generate the positions. The [orbit coverage and stamp comparison guide](docs/ambitious-tools.md) specifies the new formats, observer conventions, model priors, and limitations. The dynamics default uses Astropy's offline approximate ephemerides; optionally supply a local JPL SPK kernel after installing `.[ephemeris]`.
 

@@ -1,6 +1,6 @@
 # Version 1 input and output formats
 
-All analysis commands accept a local JSON manifest. Unknown fields, duplicate JSON keys, `NaN`/`Infinity`, repeated IDs, and ambiguous coordinate pairs are rejected. Arrays are ordered. FITS images are read one exposure at a time; memory use includes that exposure's science, variance, and mask arrays plus the measurements for all hypotheses. See [the new tool guide](ambitious-tools.md) for `map_cover` and `weigh_stamp` manifests.
+All analysis commands accept a local JSON manifest. Unknown fields, duplicate JSON keys, `NaN`/`Infinity`, repeated IDs, and ambiguous coordinate pairs are rejected. Arrays are ordered. FITS images are read one exposure at a time; memory use includes that exposure's science, variance, and mask arrays plus the measurements for all hypotheses. See [orbit and stamp formats](ambitious-tools.md), [detection-bound formats](prove-floor.md), and [stellar-search formats](find-ejector.md) for the newer tools.
 
 ## `force_track` and `dig_floor`
 
