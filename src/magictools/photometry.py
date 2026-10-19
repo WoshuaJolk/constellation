@@ -4,6 +4,7 @@ from dataclasses import asdict, dataclass
 
 import numpy as np
 from scipy.special import ndtr
+from numpy.polynomial.legendre import leggauss
 
 
 @dataclass(frozen=True)
@@ -43,7 +44,23 @@ def gaussian_psf(x_pixels, y_pixels, x, y, sigma):
     return px * py
 
 
-def forced_photometry(image, variance, x, y, psf_sigma, mask=None):
+def trailed_psf(x_pixels, y_pixels, x, y, sigma, trail_dx=0, trail_dy=0):
+    """Constant-rate, constant-flux exposure, centered on the supplied midpoint."""
+    if not np.all(np.isfinite([trail_dx, trail_dy, sigma])) or sigma <= 0:
+        raise ValueError("Trail must be finite and PSF sigma positive")
+    length = np.hypot(trail_dx, trail_dy)
+    if length == 0:
+        return gaussian_psf(x_pixels, y_pixels, x, y, sigma)
+    count = max(16, int(np.ceil(4 * length / sigma)))
+    if count > 256:
+        raise ValueError("Trail exceeds 64 PSF sigma; split the model into shorter exposures")
+    nodes, weights = leggauss(count)
+    return sum(weight / 2 * gaussian_psf(x_pixels, y_pixels, x + node * trail_dx / 2,
+                                        y + node * trail_dy / 2, sigma)
+               for node, weight in zip(nodes, weights))
+
+
+def forced_photometry(image, variance, x, y, psf_sigma, mask=None, trail_dx=0, trail_dy=0):
     """Fit image = flux * PSF + background using known independent variances.
 
     Invalid image/variance pixels and nonzero mask pixels are excluded. The
@@ -67,11 +84,13 @@ def forced_photometry(image, variance, x, y, psf_sigma, mask=None):
     height, width = image.shape
     if not (-0.5 <= x < width - 0.5 and -0.5 <= y < height - 0.5):
         raise ValueError("Predicted centroid is outside the image footprint")
-    radius = int(np.ceil(5 * psf_sigma))
+    if not np.all(np.isfinite([trail_dx, trail_dy])):
+        raise ValueError("Trail offsets must be finite")
+    radius = int(np.ceil(5 * psf_sigma + max(abs(trail_dx), abs(trail_dy)) / 2))
     x0, x1 = max(0, int(np.floor(x)) - radius), min(width, int(np.floor(x)) + radius + 2)
     y0, y1 = max(0, int(np.floor(y)) - radius), min(height, int(np.floor(y)) + radius + 2)
     ys, xs = np.mgrid[y0:y1, x0:x1]
-    psf = gaussian_psf(xs, ys, x, y, psf_sigma)
+    psf = trailed_psf(xs, ys, x, y, psf_sigma, trail_dx, trail_dy)
     data = image[y0:y1, x0:x1]
     var = variance[y0:y1, x0:x1]
     good = np.isfinite(data) & np.isfinite(var) & (var > 0)

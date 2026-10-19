@@ -86,21 +86,23 @@ def run_photometry(manifest_path, joint=False, alpha=0.01):
     predictions, results = {}, {}
     for trajectory in manifest["trajectories"]:
         _fields(trajectory, ["id", "positions"])
-        if not isinstance(trajectory["positions"], list) or not trajectory["positions"]:
-            raise ValueError("Each trajectory needs at least one position")
+        if not isinstance(trajectory["positions"], list):
+            raise ValueError("Trajectory positions must be a list (empty means no coverage)")
         lookup = {}
         for position in trajectory["positions"]:
-            _fields(position, ["exposure_id"], ["x", "y", "ra_deg", "dec_deg"])
+            _fields(position, ["exposure_id"], ["x", "y", "ra_deg", "dec_deg", "trail_dx", "trail_dy"])
             exp_id = position["exposure_id"]
             if exp_id not in exposure_ids or exp_id in lookup:
                 raise ValueError("Position references an unknown or repeated exposure_id")
-            keys = set(position) - {"exposure_id"}
+            keys = set(position) - {"exposure_id", "trail_dx", "trail_dy"}
             if keys not in ({"x", "y"}, {"ra_deg", "dec_deg"}):
                 raise ValueError("Position requires exactly x,y or ra_deg,dec_deg")
             if not all(isinstance(position[k], (int, float)) and np.isfinite(position[k]) for k in keys):
                 raise ValueError("Position coordinates must be finite numbers")
             if "dec_deg" in position and not (-90 <= position["dec_deg"] <= 90 and 0 <= position["ra_deg"] < 360):
                 raise ValueError("ICRS RA must be in [0,360), Dec in [-90,90] degrees")
+            if not np.all(np.isfinite([position.get("trail_dx", 0), position.get("trail_dy", 0)])):
+                raise ValueError("Trail offsets must be finite pixels")
             lookup[exp_id] = position
         predictions[trajectory["id"]] = lookup
         results[trajectory["id"]] = {"id": trajectory["id"], "measurements": [], "unavailable": []}
@@ -161,11 +163,13 @@ def run_photometry(manifest_path, joint=False, alpha=0.01):
                 coordinate = SkyCoord(position["ra_deg"], position["dec_deg"], unit="deg", frame="icrs")
                 x, y = map(float, celestial_wcs.world_to_pixel(coordinate))
             try:
-                measurement = forced_photometry(image, variance, x, y, sigma, mask)
+                measurement = forced_photometry(image, variance, x, y, sigma, mask,
+                                                position.get("trail_dx", 0), position.get("trail_dy", 0))
             except ValueError as error:
                 result["unavailable"].append({"exposure_id": exposure["id"], "reason": str(error)})
                 continue
             result["measurements"].append({"exposure_id": exposure["id"], "flux_scale": scale,
+                                           "trail_dx": position.get("trail_dx", 0), "trail_dy": position.get("trail_dy", 0),
                                            **measurement.to_dict()})
             fits_by_trajectory[trajectory_id].append(measurement)
             scales_by_trajectory[trajectory_id].append(scale)
@@ -178,7 +182,7 @@ def run_photometry(manifest_path, joint=False, alpha=0.01):
     if joint:
         candidates.sort(key=lambda row: row["joint"]["snr"] if row["joint"] else -np.inf, reverse=True)
     return {"schema_version": 1, "tool": "dig_floor" if joint else "force_track",
-            "model": "pixel-integrated circular Gaussian PSF; constant local background; independent known Gaussian noise",
+            "model": "pixel-integrated circular Gaussian PSF, optional linear trail; constant local background; independent known Gaussian noise",
             "provenance": _provenance(files), "trajectories": candidates}
 
 

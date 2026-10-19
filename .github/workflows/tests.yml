@@ -16,3 +16,4 @@ jobs:
       - run: python -m pip install '.[test]'
       - run: python -m pytest -q
       - run: magictools demo demo-output
+      - run: magictools orbit_demo orbit-demo-output

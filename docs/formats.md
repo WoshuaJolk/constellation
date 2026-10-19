@@ -1,6 +1,6 @@
 # Version 1 input and output formats
 
-All commands accept a local JSON manifest. Unknown fields, duplicate JSON keys, `NaN`/`Infinity`, repeated IDs, and ambiguous coordinate pairs are rejected. Arrays are ordered. FITS images are read one exposure at a time; memory use includes that exposure's science, variance, and mask arrays plus the measurements for all hypotheses.
+All analysis commands accept a local JSON manifest. Unknown fields, duplicate JSON keys, `NaN`/`Infinity`, repeated IDs, and ambiguous coordinate pairs are rejected. Arrays are ordered. FITS images are read one exposure at a time; memory use includes that exposure's science, variance, and mask arrays plus the measurements for all hypotheses. See [the new tool guide](ambitious-tools.md) for `map_cover` and `weigh_stamp` manifests.
 
 ## `force_track` and `dig_floor`
 
@@ -45,7 +45,9 @@ Required exposure fields: `id`, `image`, `variance`, `psf_sigma_pixels`. Other e
 
 `flux_scale` defaults to 1. It must be positive and gives image flux for a unit reference flux. All units and filter corrections are supplied by the user. A PSF is integrated over pixels and normalized over the infinite plane; cropped or masked stamps are never renormalized. The centroid must be within the detector's pixel footprint, from -0.5 inclusive to width/height minus 0.5 exclusive. This check describes a rectangular image, not a survey chip model; encode detector gaps in the mask.
 
-Each trajectory has at most one position per exposure. Omitted positions are explicitly unavailable. Pixel coordinates are `(x, y)`, zero-based centers, while arrays are indexed `[y, x]`. Sky coordinates are ICRS degrees (`0 <= ra_deg < 360`, `-90 <= dec_deg <= 90`). Astropy transforms ICRS into the WCS's celestial frame. There is no interpolation in time: generate the positions externally for each actual exposure midpoint, using a consistent observer location/time scale and light-time convention. No within-exposure motion integration is done.
+Each trajectory has at most one position per exposure. Omitted positions are explicitly unavailable; an empty `positions` list is permitted for a wholly uncovered orbit and still counts toward the trajectory-bank trial count. Pixel coordinates are `(x, y)`, zero-based centers, while arrays are indexed `[y, x]`. Sky coordinates are ICRS degrees (`0 <= ra_deg < 360`, `-90 <= dec_deg <= 90`). Astropy transforms ICRS into the WCS's celestial frame. Generate positions externally or with `map_cover` at each exposure midpoint, using a consistent observer location/time scale and light-time convention.
+
+Each position may additionally include `trail_dx` and `trail_dy`, the signed total displacement in **detector pixels** from exposure start to end (default zero). These apply even when the midpoint is given as RA/Dec. The model integrates a constant-flux Gaussian along the linear segment centered on the midpoint using Gauss–Legendre quadrature. The fitted stamp grows to enclose the trail plus five PSF sigma. Trails longer than 64 PSF sigma are rejected; curved or variable-flux trajectories require another model. Both the measured flux uncertainty and the joint likelihood account for the supplied trail.
 
 ### Reports
 

@@ -1,0 +1,54 @@
+{
+  "source": "NASA/JPL Horizons; Ceres JPL#48, planetary ephemeris DE441",
+  "retrieved_date": "2026-10-19",
+  "barycentric_query_url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=1%3B&OBJ_DATA=NO&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&CENTER=%400&START_TIME=2023-02-25&STOP_TIME=2023-03-07&STEP_SIZE=10+d&REF_PLANE=FRAME&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&CSV_FORMAT=YES&VEC_CORR=NONE&TIME_TYPE=TDB",
+  "barycentric": [
+    {
+      "mjd_tdb": 60000.0,
+      "state": [
+        -2.512136901356719,
+        0.05592387543738495,
+        0.5361712539349595,
+        -0.001470661278658604,
+        -0.01011189067455166,
+        -0.004469093415014039
+      ]
+    },
+    {
+      "mjd_tdb": 60010.0,
+      "state": [
+        -2.52463562389712,
+        -0.04521497687244176,
+        0.4910215000320922,
+        -0.001028973437647701,
+        -0.01011291519379475,
+        -0.004559481526238707
+      ]
+    }
+  ],
+  "geocentric_light_time_query_url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=1%3B&OBJ_DATA=NO&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&CENTER=%40399&START_TIME=2023-02-25&STOP_TIME=2023-03-07&STEP_SIZE=10+d&REF_PLANE=FRAME&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&CSV_FORMAT=YES&VEC_CORR=LT&TIME_TYPE=TDB",
+  "geocentric_light_time": [
+    {
+      "mjd_tdb": 60000.0,
+      "state": [
+        -1.60046376150526,
+        -0.3158951454260193,
+        0.3747549771852847,
+        0.005857968633808686,
+        0.004358280691493134,
+        0.00180430441892786
+      ]
+    },
+    {
+      "mjd_tdb": 60010.0,
+      "state": [
+        -1.553771824086096,
+        -0.2674716072344736,
+        0.3944417754763637,
+        0.00345873603641526,
+        0.005254038107880403,
+        0.002101582786642166
+      ]
+    }
+  ]
+}

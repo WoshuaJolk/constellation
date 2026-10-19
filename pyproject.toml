@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "magictools-astro"
-version = "0.1.0"
+version = "0.2.0"
 description = "Reproducible trajectory photometry, joint detection, and non-detection inference"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -12,6 +12,7 @@ dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "astropy>=6,<9"]
 
 [project.optional-dependencies]
 test = ["pytest>=8,<10"]
+ephemeris = ["jplephem>=2.22,<3"]
 
 [project.scripts]
 magictools = "magictools.cli:main"

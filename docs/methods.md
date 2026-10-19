@@ -2,7 +2,7 @@
 
 ## Forced photometry
 
-For usable stamp pixels, model `d = f p + b + noise`, with known diagonal variance `v`. The template `p` is a circular Gaussian integrated analytically across each pixel using normal-CDF differences. Its infinite-plane integral is one. No recentering on the observed image is performed.
+For usable stamp pixels, model `d = f p + b + noise`, with known diagonal variance `v`. The template `p` is a circular Gaussian integrated analytically across each pixel using normal-CDF differences. With supplied trail offsets, Gauss–Legendre quadrature additionally averages it along the linear exposure path. Its infinite-plane integral is one. No recentering on the observed image is performed. The [orbit and evidence guide](ambitious-tools.md) describes orbit propagation and the additional model-comparison calculations.
 
 With `w = 1/v`, weighted means `p_bar` and `d_bar`, and
 
