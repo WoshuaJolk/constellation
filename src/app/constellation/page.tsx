@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import { Explorer } from "../explorer";
 import { DATASETS, RECORDS, type Step } from "@/lib/constellation";
 
+const TITLE = "const ellation;";
+const DESC = "mission: leverage the entire corpus of astronomical data all at once.";
+
 export const metadata: Metadata = {
-  title: "const ellation",
-  description: "Every 2 sigma detection in every public dataset, every public record of every known object, and the difference.",
+  title: TITLE,
+  description: DESC,
+  openGraph: { title: TITLE, description: DESC, url: "https://const-ellation.com", siteName: TITLE, images: [{ url: "/og.png", width: 1200, height: 630 }] },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESC, images: ["/og.png"] },
 };
 
 const TH = "px-2 py-1.5 text-left align-bottom text-[10px] font-medium uppercase tracking-[0.08em] text-[var(--text-muted)]";

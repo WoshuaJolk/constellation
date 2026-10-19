@@ -6,6 +6,7 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://const-ellation.com"),
   title: "Magic tools",
   description: "These tools require breakthroughs, but if possible, may radically change astronomical work. For humans and agents.",
 };
