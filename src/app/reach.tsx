@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 // Smallest body with at least one detection, by distance from the Sun, for a wide-field survey.
 // Reflected light at opposition: m = H + 5 log10(r (r - 1)), D = 1329 / sqrt(p) * 10^(-H/5) km, albedo p = 0.1.
 const PASS = 26; // deep wide-field frames summed to the noise floor along the track
@@ -37,6 +41,19 @@ const BODIES: { name: string; r: number; d: number }[] = [
   { name: "Earth-mass body in the Oort cloud", r: 30000, d: 12700 },
 ];
 
+// Single-exposure 5 sigma depth of each wide-field survey.
+const SURVEYS: { name: string; m: number }[] = [
+  { name: "TESS", m: 17 },
+  { name: "ZTF", m: 20.5 },
+  { name: "Catalina", m: 21.5 },
+  { name: "Pan-STARRS", m: 22 },
+  { name: "SDSS", m: 22.5 },
+  { name: "DECam", m: 23.5 },
+  { name: "OmegaCAM", m: 24 },
+  { name: "MegaCam", m: 24.5 },
+  { name: "HSC", m: 26 },
+];
+
 const XT = [2, 10, 100, 1000, 10000, 100000];
 const YT = [1, 10, 100, 1000, 10000, 100000, 1000000];
 const fmt = (n: number) => (n >= 1000000 ? `${n / 1000000}M` : n >= 1000 ? `${n / 1000}k` : `${n}`);
@@ -50,14 +67,18 @@ function path(m: number) {
   return pts;
 }
 
+const yFloor = ly(D[0]);
+const yTop = ly(D[1]);
+const above = (pts: string[]) => `M${pts.join(" L")} L${lx(R[1])},${yTop} L${lx(R[0])},${yTop} Z`;
+
 export function Reach() {
+  const [hover, setHover] = useState<string | null>(null);
+  const survey = SURVEYS.find((s) => s.name === hover) ?? null;
   const pass = path(PASS);
-  const yFloor = ly(D[0]);
-  const yTop = ly(D[1]);
-  const band = `M${pass.join(" L")} L${lx(R[1])},${yTop} L${lx(R[0])},${yTop} Z`;
   const under = `M${pass.join(" L")} L${lx(R[1])},${yFloor} L${lx(R[0])},${yFloor} Z`;
-  const status = (b: { r: number; d: number }) => (b.d >= dlim(b.r, PASS) ? "pass" : "out");
-  const fill = { pass: "var(--added)", out: "var(--background)" } as const;
+  const m = survey ? survey.m : PASS;
+  const color = survey ? "var(--known)" : "var(--added)";
+  const status = (b: { r: number; d: number }) => (b.d >= dlim(b.r, m) ? "pass" : "out");
   return (
     <section className="mt-6 max-w-[820px]">
       <h2 className="text-base font-semibold tracking-tight">What a unified search of every survey could reach</h2>
@@ -70,6 +91,22 @@ export function Reach() {
         <span><span className="mr-1 inline-block h-2.5 w-4 align-[-1px] bg-[var(--added)] opacity-20" />searchable, summed to m {PASS}</span>
         <span><span className="mr-1 inline-block h-2.5 w-4 align-[-1px]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--axis) 0 1px, transparent 1px 3px)" }} />out of reach</span>
         <span><span className="mr-1 inline-block h-2 w-2 rounded-full border-[1.5px] border-[var(--text-secondary)] align-[-1px]" />example bodies, filled when reachable</span>
+      </div>
+      <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-[11px]" onMouseLeave={() => setHover(null)}>
+        <span className="text-[var(--text-muted)]">one exposure of</span>
+        {SURVEYS.map((s) => (
+          <button
+            key={s.name}
+            type="button"
+            onMouseEnter={() => setHover(s.name)}
+            onFocus={() => setHover(s.name)}
+            onBlur={() => setHover(null)}
+            onClick={() => setHover(hover === s.name ? null : s.name)}
+            className={`font-mono tabular-nums ${hover === s.name ? "text-[var(--known)]" : "text-[var(--text-secondary)] hover:text-[var(--foreground)]"}`}
+          >
+            {s.name} <span className="text-[var(--text-muted)]">{s.m}</span>
+          </button>
+        ))}
       </div>
       <svg viewBox={`0 0 ${W} ${H}`} className="mt-2 w-full" role="img" aria-label="Smallest searchable body against distance from the Sun with a unified search of every survey">
         <defs>
@@ -91,8 +128,14 @@ export function Reach() {
           </text>
         ))}
         <path d={under} fill="url(#hatch)" />
-        <path d={band} fill="var(--added)" fillOpacity="0.12" />
-        <path d={`M${pass.join(" L")}`} fill="none" stroke="var(--added)" strokeWidth="2" strokeLinejoin="round" />
+        <path d={above(pass)} fill="var(--added)" fillOpacity={survey ? 0.05 : 0.12} />
+        <path d={`M${pass.join(" L")}`} fill="none" stroke="var(--added)" strokeWidth="2" strokeLinejoin="round" strokeOpacity={survey ? 0.4 : 1} />
+        {survey && (
+          <>
+            <path d={above(path(survey.m))} fill="var(--known)" fillOpacity="0.12" />
+            <path d={`M${path(survey.m).join(" L")}`} fill="none" stroke="var(--known)" strokeWidth="2" strokeLinejoin="round" />
+          </>
+        )}
         {REGIONS.map((g, i) => (
           <g key={g.name}>
             <rect x={lx(g.from)} y={H - PAD.b + 24} width={lx(g.to) - lx(g.from) - 2} height="6" rx="1" fill={i % 2 ? "var(--axis)" : "var(--border)"} />
@@ -107,7 +150,7 @@ export function Reach() {
             <g key={b.name}>
               <title>{`${b.name}: ${s === "pass" ? "searchable" : "out of reach"}`}</title>
               <circle cx={lx(b.r)} cy={ly(b.d)} r="9" fill="transparent" />
-              <circle cx={lx(b.r)} cy={ly(b.d)} r="4" fill={fill[s]} stroke={s === "out" ? "var(--text-secondary)" : "var(--background)"} strokeWidth="2" />
+              <circle cx={lx(b.r)} cy={ly(b.d)} r="4" fill={s === "pass" ? color : "var(--background)"} stroke={s === "out" ? "var(--text-secondary)" : "var(--background)"} strokeWidth="2" />
             </g>
           );
         })}

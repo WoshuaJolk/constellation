@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Reach } from "../reach";
 import { DATASETS, PRIVATE, RECORDS, PIXEL_STEPS, RECORD_STEPS, type Step } from "@/lib/constellation";
 
 export const metadata: Metadata = {
@@ -53,6 +54,7 @@ export default function Page() {
         </p>
         <p>Progress is tracked per dataset: listed, access tested, footprint indexed, 2 sigma pass written.</p>
       </div>
+      <Reach />
 
       <section className="mt-10">
         <h2 className="text-sm font-semibold">1. Every public image</h2>

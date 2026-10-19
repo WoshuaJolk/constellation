@@ -1,6 +1,5 @@
 import { loadCatalog, type Scale } from "@/lib/catalog";
 import { List } from "./list";
-import { Reach } from "./reach";
 
 function Code({ text }: { text: string }) {
   const parts = text.split(/(`[^`]+`)/);
@@ -59,7 +58,6 @@ export default function Home() {
           </p>
         ))}
       </div>
-      <Reach />
       <div className="mt-8 max-w-[640px] space-y-4">
         {cat.scales.map((sc) => (
           <Spectrum key={sc.name} scale={sc} />
