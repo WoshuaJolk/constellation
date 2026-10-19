@@ -59,7 +59,7 @@ export default function Page() {
       <p className="mt-2 text-sm text-[var(--text-secondary)]">find what every public record already holds.</p>
       <Explorer />
       <section className="mt-12">
-        <h2 className="mb-3 text-sm font-semibold">Part 1: Compile every image.</h2>
+        <h2 className="mb-3 text-sm font-semibold">Part 1: Compile every public image.</h2>
         <Table
           head={["Dataset", "Depth", "Volume", "Archive"]}
           rows={DATASETS.map((d) => ({ key: d.name, step: d.step, cells: [d.name, d.depth, d.volume, d.where] }))}
