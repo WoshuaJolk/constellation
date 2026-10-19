@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
     ];
   },
   async rewrites() {
-    return [{ source: "/", has: [{ type: "host", value: HOST }], destination: "/constellation" }];
+    return { beforeFiles: [{ source: "/", has: [{ type: "host", value: HOST }], destination: "/constellation" }], afterFiles: [], fallback: [] };
   },
 };
 
