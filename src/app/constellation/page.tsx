@@ -56,17 +56,17 @@ export default function Page() {
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-10 font-mono sm:px-6">
       <h1 className="text-2xl font-semibold tracking-tight">const ellation;</h1>
-      <p className="mt-2 text-sm text-[var(--text-secondary)]">an initiative to map the entire known universe.</p>
+      <p className="mt-2 text-sm text-[var(--text-secondary)]">find what every public record already holds.</p>
       <Explorer />
       <section className="mt-12">
-        <h2 className="mb-3 text-sm font-semibold">Every public image</h2>
+        <h2 className="mb-3 text-sm font-semibold">Part 1: Compile every image.</h2>
         <Table
           head={["Dataset", "Depth", "Volume", "Archive"]}
           rows={DATASETS.map((d) => ({ key: d.name, step: d.step, cells: [d.name, d.depth, d.volume, d.where] }))}
         />
       </section>
       <section className="mt-12">
-        <h2 className="mb-3 text-sm font-semibold">Every public record of a known object</h2>
+        <h2 className="mb-3 text-sm font-semibold">Part 2: Compile every known object.</h2>
         <Table
           head={["Source", "Holds", "Size", "Where"]}
           rows={RECORDS.map((r) => ({ key: r.name, step: r.step, cells: [r.name, r.holds, r.size, r.where] }))}
