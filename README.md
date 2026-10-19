@@ -1,6 +1,6 @@
 # Magictools astronomy
 
-Working implementations of eight ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Version 0.4 adds **public ZTF archive access**, measured PSFs, observatory parallax, **`judge_line`** candidate diagnostics, and finite-bank injection recovery on real backgrounds. Each tool has an explicit scientific scope; an all-survey index and calibrated discovery pipeline remain future work. See the [archive workflow and live validation](docs/archive-workflow.md).
+Working implementations of eleven ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Versions 0.4–0.5 advance the first nine priorities: real ZTF archive inputs, measured PSFs, candidate vetting and injections, brightness/calibration uncertainty, finite survey selection, population simulation, and **`match_all` with verifiable integer optimality certificates**. Each has an explicit scope; all-survey completeness and validated discovery probabilities remain future work. See the [archive workflow](docs/archive-workflow.md) and [selection, uncertainty and assignment guide](docs/selection-and-assignment.md).
 
 | Tool | Available now | Still needed for the catalogue's full ambition |
 | --- | --- | --- |
@@ -9,9 +9,12 @@ Working implementations of eight ideas in the [Magic tools catalogue](https://ma
 | `map_cover` | ZTF public exposure queries and selected cutouts; orbit propagation, light time, observatory parallax, FITS coverage and masks, family fractions, trails and estimated S/N. | Complete orbit-family archive indexing, orbit fitting/ranging, calibrated depth curves and further surveys. |
 | `force_track` | Gaussian or native-pixel empirical PSF fits with optional trails, signed flux and uncertainty, background, residuals and usable template fraction; ZTF input preparation. | Spatial/oversampled PSFs, WCS refinement, instrument-specific uncertainty and color calibration. |
 | `judge_line` | Leave-one-out and temporal-half fits, residual and constant-flux checks, stationary/reversed controls on common exposures, explicit diagnostic flags. | Orbit refits, astrometric confirmation, held-out artifact calibration and a validated combined acceptance rule. |
-| `weigh_stamp` | Compare a trailed source against a stationary PSF, extended source, dipole residual, cosmic-ray spike, narrow streak, and background using explicit priors and marginalized likelihoods. | Complete artifact families, empirical instrument models, blends/chip-edge modeling, injection calibration and multi-epoch vetting. |
+| `weigh_stamp` | Measured-PSF moving/stationary/dipole models, additional empirical artifact templates, and finite-class Bayesian comparisons on common pixels. | Held-out real-artifact validation, spatial PSF models, blends and calibrated acceptance probabilities. |
 | `dig_floor` | Joint likelihood over a finite trajectory bank with empirical or Gaussian PSFs and known scales; Gaussian trial correction; `inject_tracks` reruns the search on signal injections into real or synthetic backgrounds. | Orbit-bank generation, GPUs, correlated-noise models, full-archive indexing and population-calibrated selection. |
-| `learn_null` | Bayesian reweighting of supplied hypotheses from non-detections and ranking of future exposures by expected information gain. Accepts measured efficiencies, an explicit Gaussian model, or planning inputs exported by `map_cover`. | Orbital ranging, population/brightness priors, real survey calibration. |
+| `learn_null` | Bayesian updates and exposure ranking with orbit/brightness marginalization, finite-calibration uncertainty, and correct integration of reused efficiencies. | Orbital ranging, independently calibrated real-survey selection and continuous population priors. |
+| `map_complete` | Exact finite-population cadence selection and survey-union probabilities, retaining shared-exposure dependence. | Validated detection probabilities, correlated exposure models, actual orbit-linking acceptance and complete survey histories. |
+| `inject_all` | Reproducible population selection Monte Carlo, error bounds and conditional Poisson count likelihoods. | Full pixel/dynamics population injections, selection-calibration uncertainty and orbital-property likelihoods. |
+| `match_all` | Exact integer weighted assignment of supplied candidates with checkable branch/clique certificates; honest bounds when work is capped. | Candidate generation, physical completeness and false-link calibration at archive scale. |
 
 These are Python library functions and command-line tools. Inference runs offline; the optional ZTF adapter downloads public data without API keys. Local images are never uploaded. Archive requests send only the supplied sky region, dates, and selected product identifiers.
 
@@ -58,6 +61,11 @@ magictools learn_null plan.json -o next-exposure.json
 magictools weigh_stamp orbit-demo-output/moving-source-input.json -o stamp-evidence.json
 magictools prove_floor floor-demo-output/faint-input.json -o detection-bound.json
 magictools find_ejector ejector-demo-output/input.json -o origins.json
+magictools learn_null examples/null-calibration.json -o calibrated-nulls.json
+magictools map_complete examples/selection.json -o exact-selection.json
+magictools inject_all examples/selection.json -o simulated-selection.json
+magictools match_all examples/matching.json -o assignments.json
+magictools verify_match assignments.json -o verified.json
 ```
 
 Omit `-o` for JSON on stdout. Output files must be new. Errors return exit code 2. `python -m magictools` is equivalent to `magictools`. Reports contain the software versions and SHA-256 hashes of every input file, including the manifest.

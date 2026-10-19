@@ -3,7 +3,7 @@
 import numpy as np
 from scipy.special import log_ndtr, logsumexp
 
-from .photometry import gaussian_psf, trailed_psf
+from .photometry import gaussian_psf, trailed_psf, sampled_psf, validate_psf_kernel
 
 
 def template_evidence(data, variance, templates, flux_prior_sigma):
@@ -35,7 +35,7 @@ def _evidence_statistics(information, score, prior_sigma):
     return log_bf, improvement
 
 
-def weigh_stamp(image, variance, x, y, psf_sigma, trail_dx, trail_dy, flux_prior_sigma, mask=None, model_priors=None):
+def weigh_stamp(image, variance, x, y, psf_sigma, trail_dx, trail_dy, flux_prior_sigma, mask=None, model_priors=None, psf_kernel=None, empirical_artifacts=None):
     """Compare a moving Gaussian PSF against a finite, explicitly named model bank.
 
     Reports both marginal evidence ratios and profile likelihood ratios. Neither
@@ -73,15 +73,19 @@ def weigh_stamp(image, variance, x, y, psf_sigma, trail_dx, trail_dy, flux_prior
         models[name] = {"log_evidence_vs_background": float(logsumexp(log_bf) - np.log(len(bank))),
                         "profile_chi2_improvement": float(np.max(improvement)),
                         "template_count": len(bank), "best_template": labels[best]}
-    add("moving_source", [trailed_psf(xx, yy, x, y, psf_sigma, trail_dx, trail_dy)], ["specified linear trail"])
-    add("stationary_point", [gaussian_psf(xx, yy, x, y, psf_sigma)], ["untrailed PSF at specified centroid"])
+    if psf_kernel is not None:
+        psf_kernel = validate_psf_kernel(psf_kernel)
+    def point(px, py, dx=0, dy=0):
+        return (trailed_psf(xx, yy, px, py, psf_sigma, dx, dy) if psf_kernel is None
+                else sampled_psf(xx, yy, px, py, psf_kernel, dx, dy))
+    add("moving_source", [point(x, y, trail_dx, trail_dy)], ["specified linear trail"])
+    add("stationary_point", [point(x, y)], ["untrailed PSF at specified centroid"])
     add("extended_source", [gaussian_psf(xx, yy, x, y, psf_sigma * factor) for factor in [1.5, 2, 3]],
         [f"sigma multiplier {factor}" for factor in [1.5, 2, 3]])
     templates, labels = [], []
     for angle in np.arange(8) * np.pi / 4:
         dx, dy = psf_sigma * np.cos(angle), psf_sigma * np.sin(angle)
-        templates.append(gaussian_psf(xx, yy, x - dx / 2, y - dy / 2, psf_sigma) -
-                         gaussian_psf(xx, yy, x + dx / 2, y + dy / 2, psf_sigma))
+        templates.append(point(x - dx / 2, y - dy / 2) - point(x + dx / 2, y + dy / 2))
         labels.append(f"positive-minus-negative PSF; angle {np.degrees(angle):g} deg")
     add("dipole_residual", templates, labels)
     templates, labels = [], []
@@ -90,6 +94,22 @@ def weigh_stamp(image, variance, x, y, psf_sigma, trail_dx, trail_dy, flux_prior
             templates.append(trailed_psf(xx, yy, x, y, 0.35, length * np.cos(angle), length * np.sin(angle)))
             labels.append(f"sigma 0.35; length {length}; angle {np.degrees(angle):g} deg")
     add("narrow_streak", templates, labels)
+    if empirical_artifacts is not None:
+        if not isinstance(empirical_artifacts, dict) or not 1 <= len(empirical_artifacts) <= 128:
+            raise ValueError("Supply 1..128 named empirical artifact templates")
+        templates, labels = [], []
+        for label, template in empirical_artifacts.items():
+            template = np.asarray(template, dtype=float)
+            if not isinstance(label, str) or not label or template.shape != image.shape or not np.all(np.isfinite(template)):
+                raise ValueError("Artifact templates need names and finite arrays matching the stamp")
+            positive_mass = np.maximum(template, 0).sum()
+            if not np.isfinite(positive_mass) or positive_mass <= 0:
+                raise ValueError("Artifact templates must have positive template mass")
+            # One amplitude unit is one unit of positive-lobe flux; negative
+            # lobes remain at their supplied ratio. Normalize before masking.
+            templates.append(template / positive_mass)
+            labels.append(label)
+        add("empirical_artifact", templates, labels)
     # Exact impulse-at-each-valid-pixel statistics, avoiding an N by N array.
     w = 1 / v
     information = w - w**2 / w.sum()
@@ -119,6 +139,7 @@ def weigh_stamp(image, variance, x, y, psf_sigma, trail_dx, trail_dy, flux_prior
     background_chi2 = float(np.sum(w * (d - np.average(d, weights=w))**2))
     return {"models": models, "preferred_model": max(models, key=lambda name: models[name]["posterior_within_model_set"]),
             "zero_motion_degeneracy": bool(trail_dx == 0 and trail_dy == 0),
+            "point_source_psf": "native_pixel_empirical" if psf_kernel is not None else "gaussian",
             "n_valid_pixels": int(valid.sum()), "background_only_chi2": background_chi2,
             "moving_source_profile_chi2": max(0.0, background_chi2 - source["profile_chi2_improvement"]),
             "flux_prior": {"distribution": "positive half-normal", "sigma": flux_prior_sigma},
@@ -131,7 +152,7 @@ def run_stamp(manifest_path):
     path = Path(manifest_path).resolve()
     manifest = read_json(path)
     _fields(manifest, ["schema_version", "image", "variance", "x", "y", "psf_sigma_pixels", "trail_dx", "trail_dy", "flux_prior_sigma"],
-            ["image_hdu", "variance_hdu", "mask", "mask_hdu", "model_priors"])
+            ["image_hdu", "variance_hdu", "mask", "mask_hdu", "model_priors", "psf_image", "psf_hdu", "stamp_radius_pixels", "empirical_artifacts"])
     if manifest["schema_version"] != 1:
         raise ValueError("Only schema_version 1 is supported")
     files = [path]
@@ -142,6 +163,41 @@ def run_stamp(manifest_path):
     image = plane("image")
     variance = plane("variance") if isinstance(manifest["variance"], str) else manifest["variance"]
     mask = plane("mask") if "mask" in manifest else None
-    result = weigh_stamp(image, variance, manifest["x"], manifest["y"], manifest["psf_sigma_pixels"],
-                         manifest["trail_dx"], manifest["trail_dy"], manifest["flux_prior_sigma"], mask, manifest.get("model_priors"))
-    return {"schema_version": 1, "tool": "weigh_stamp", "provenance": _provenance(files), **result}
+    kernel = None
+    if "psf_image" in manifest:
+        psf_path = (path.parent / manifest["psf_image"]).resolve()
+        kernel = _fits_plane(psf_path, manifest.get("psf_hdu", 0))
+        files.append(psf_path)
+    x, y = manifest["x"], manifest["y"]
+    if image.ndim != 2 or not np.all(np.isfinite([x, y])) or not (-.5 <= x < image.shape[1]-.5 and -.5 <= y < image.shape[0]-.5):
+        raise ValueError("Candidate must be inside the 2D image")
+    for value in [variance, mask]:
+        if value is not None and np.ndim(value) != 0 and np.shape(value) != image.shape:
+            raise ValueError("Variance and mask shapes must match image before cutting stamp")
+    bounds = None
+    if "stamp_radius_pixels" in manifest:
+        radius = manifest["stamp_radius_pixels"]
+        if isinstance(radius, bool) or not isinstance(radius, int) or not 1 <= radius <= 63:
+            raise ValueError("stamp_radius_pixels must be an integer in [1,63]")
+        x0, x1 = max(0, int(np.floor(x))-radius), min(image.shape[1], int(np.floor(x))+radius+2)
+        y0, y1 = max(0, int(np.floor(y))-radius), min(image.shape[0], int(np.floor(y))+radius+2)
+        image = image[y0:y1, x0:x1]
+        if np.ndim(variance) == 2:
+            variance = variance[y0:y1, x0:x1]
+        if mask is not None:
+            mask = mask[y0:y1, x0:x1]
+        x, y = x-x0, y-y0
+        bounds = {"x_start": x0, "x_stop": x1, "y_start": y0, "y_stop": y1}
+    artifacts = None
+    if "empirical_artifacts" in manifest:
+        from .io import _named_rows
+        _named_rows(manifest["empirical_artifacts"], "empirical_artifacts")
+        artifacts = {}
+        for row in manifest["empirical_artifacts"]:
+            _fields(row, ["id", "image"], ["image_hdu"])
+            filename = (path.parent / row["image"]).resolve()
+            files.append(filename)
+            artifacts[row["id"]] = _fits_plane(filename, row.get("image_hdu", 0))
+    result = weigh_stamp(image, variance, x, y, manifest["psf_sigma_pixels"],
+                         manifest["trail_dx"], manifest["trail_dy"], manifest["flux_prior_sigma"], mask, manifest.get("model_priors"), kernel, artifacts)
+    return {"schema_version": 1, "tool": "weigh_stamp", "provenance": _provenance(files), "stamp_bounds": bounds, **result}

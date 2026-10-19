@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "hypotheses": [
+    {"id": "A-faint", "orbit_id": "A", "reference_flux": 1, "prior_weight": 1},
+    {"id": "A-bright", "orbit_id": "A", "reference_flux": 10, "prior_weight": 1},
+    {"id": "B-faint", "orbit_id": "B", "reference_flux": 1, "prior_weight": 1},
+    {"id": "B-bright", "orbit_id": "B", "reference_flux": 10, "prior_weight": 1}
+  ],
+  "calibrations": [
+    {"id": "selection-1", "recovered": [2, 18, 0, 0], "injected": [20, 20, 20, 20]}
+  ],
+  "non_detections": [
+    {"id": "observed-1", "calibration_id": "selection-1"},
+    {"id": "observed-2", "calibration_id": "selection-1"}
+  ],
+  "candidate_exposures": [
+    {"id": "repeat-selection", "calibration_id": "selection-1"},
+    {"id": "covers-B", "detection_probability": [0, 0, 0.7, 0.99]}
+  ],
+  "ranking_target": "orbit"
+}

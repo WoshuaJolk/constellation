@@ -13,7 +13,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Moving-source astronomy tools for local FITS data")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
-    for name in ["force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp", "find_ejector", "prove_floor", "ztf_search", "ztf_fetch", "judge_line", "inject_tracks"]:
+    for name in ["force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp", "find_ejector", "prove_floor", "ztf_search", "ztf_fetch", "judge_line", "inject_tracks", "map_complete", "inject_all", "match_all", "verify_match"]:
         command = commands.add_parser(name)
         command.add_argument("manifest", type=Path)
         command.add_argument("-o", "--output", type=Path, help="Write new JSON file (default: stdout)")
@@ -36,7 +36,13 @@ def main(argv=None):
     try:
         if getattr(args, "output", None) and args.output.exists():
             raise ValueError("Output file already exists")
-        if args.command == "judge_line":
+        if args.command in {"match_all", "verify_match"}:
+            from .matching import run_match, run_verify_match
+            result = (run_match if args.command == "match_all" else run_verify_match)(args.manifest)
+        elif args.command in {"map_complete", "inject_all"}:
+            from .selection import run_selection
+            result = run_selection(args.manifest, monte_carlo=args.command == "inject_all")
+        elif args.command == "judge_line":
             from .vetting import run_judge
             result = run_judge(args.manifest)
         elif args.command == "inject_tracks":

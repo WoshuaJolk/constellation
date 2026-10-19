@@ -197,12 +197,22 @@ def run_photometry(manifest_path, joint=False, alpha=0.01):
 def run_nulls(manifest_path):
     path = Path(manifest_path).resolve()
     manifest = read_json(path)
-    _fields(manifest, ["schema_version", "hypotheses", "non_detections"], ["candidate_exposures"])
+    _fields(manifest, ["schema_version", "hypotheses", "non_detections"], ["candidate_exposures", "calibrations", "ranking_target"])
     if manifest["schema_version"] != 1:
         raise ValueError("Only schema_version 1 is supported")
     _named_rows(manifest["hypotheses"], "hypotheses")
     for hypothesis in manifest["hypotheses"]:
-        _fields(hypothesis, ["id", "prior_weight"])
+        _fields(hypothesis, ["id", "prior_weight"], ["orbit_id", "reference_flux"])
+        if "orbit_id" in hypothesis and (not isinstance(hypothesis["orbit_id"], str) or not hypothesis["orbit_id"]):
+            raise ValueError("orbit_id must be a nonempty string")
+        if "reference_flux" in hypothesis and (not np.isfinite(hypothesis["reference_flux"]) or hypothesis["reference_flux"] < 0):
+            raise ValueError("reference_flux must be finite and nonnegative")
+    grouped = any("orbit_id" in h for h in manifest["hypotheses"])
+    if grouped and not all("orbit_id" in h for h in manifest["hypotheses"]):
+        raise ValueError("Supply orbit_id for every hypothesis or none")
+    ranking_target = manifest.get("ranking_target", "hypothesis")
+    if ranking_target not in {"hypothesis", "orbit"} or (ranking_target == "orbit" and not grouped):
+        raise ValueError("ranking_target is hypothesis or orbit; orbit requires orbit_id labels")
     n = len(manifest["hypotheses"])
     observed = manifest["non_detections"]
     future = manifest.get("candidate_exposures", [])
@@ -214,7 +224,41 @@ def run_nulls(manifest_path):
         _named_rows(future, "candidate_exposures")
     if {row["id"] for row in observed} & {row["id"] for row in future}:
         raise ValueError("An observed exposure cannot also be a future candidate")
+    calibration_rows = manifest.get("calibrations", [])
+    if not isinstance(calibration_rows, list):
+        raise ValueError("calibrations must be a list")
+    if calibration_rows:
+        _named_rows(calibration_rows, "calibrations")
+    calibrations, null_counts = {}, {}
+    for row in calibration_rows:
+        _fields(row, ["id", "recovered", "injected"], ["beta_prior_alpha", "beta_prior_beta"])
+        recovered, injected = np.asarray(row["recovered"], dtype=float), np.asarray(row["injected"], dtype=float)
+        if (recovered.shape != (n,) or injected.shape != (n,) or not np.all(np.isfinite([recovered, injected]))
+                or np.any(recovered < 0) or np.any(injected < recovered) or np.any(injected > 1e9)
+                or np.any(recovered != np.floor(recovered)) or np.any(injected != np.floor(injected))):
+            raise ValueError("Calibration needs integer 0 <= recovered <= injected <= 1e9 per hypothesis")
+        a, b = row.get("beta_prior_alpha", .5), row.get("beta_prior_beta", .5)
+        if not np.all(np.isfinite([a, b])) or min(a, b) <= 0 or max(a, b) > 1e9:
+            raise ValueError("Calibration Beta prior parameters must be in (0,1e9]")
+        calibrations[row["id"]] = (a + recovered, b + injected - recovered)
+        null_counts[row["id"]] = 0
+    direct_observed = []
+    for row in observed:
+        if "calibration_id" in row:
+            _fields(row, ["id", "calibration_id"])
+            if row["calibration_id"] not in calibrations:
+                raise ValueError("Unknown calibration_id")
+            null_counts[row["calibration_id"]] += 1
+        else:
+            direct_observed.append(row)
     def log_probabilities(row):
+        if "calibration_id" in row:
+            _fields(row, ["id", "calibration_id"])
+            if row["calibration_id"] not in calibrations:
+                raise ValueError("Unknown calibration_id")
+            a, b = calibrations[row["calibration_id"]]
+            b = b + null_counts[row["calibration_id"]]
+            return -np.logaddexp(0, np.log(a) - np.log(b))
         if "detection_probability" in row:
             _fields(row, ["id", "detection_probability"])
             values = np.asarray(row["detection_probability"], dtype=float)
@@ -229,12 +273,36 @@ def run_nulls(manifest_path):
         if result.shape != (n,):
             raise ValueError("Threshold/coverage must be scalar or one value per hypothesis")
         return result
-    likelihood = np.array([log_probabilities(row) for row in observed]).reshape(len(observed), n)
+    likelihood_rows = [log_probabilities(row) for row in direct_observed]
+    # The same unknown efficiency reused m times must be integrated jointly:
+    # E[(1-p)^m] = B(a,b+m)/B(a,b), NOT E[1-p]^m.
+    for key, (a, b) in calibrations.items():
+        count = null_counts[key]
+        if count:
+            # Log rising-factor ratio avoids cancellation in betaln at large n.
+            likelihood_rows.append(-sum(np.logaddexp(0, np.log(a) - np.log(b + j)) for j in range(count)))
+    likelihood = np.array(likelihood_rows).reshape(len(likelihood_rows), n)
     result = update_nulls([h["prior_weight"] for h in manifest["hypotheses"]], likelihood)
     candidates = np.array([-np.expm1(log_probabilities(row)) for row in future]).reshape(len(future), n)
-    ranking = rank_exposures(result["posterior_weights"], candidates)
+    posterior = np.asarray(result["posterior_weights"])
+    orbit_summary, orbit_ranking = [], []
+    if grouped:
+        orbit_ids = list(dict.fromkeys(h["orbit_id"] for h in manifest["hypotheses"]))
+        indices = [np.array([h["orbit_id"] == oid for h in manifest["hypotheses"]]) for oid in orbit_ids]
+        orbit_weights = np.array([posterior[index].sum() for index in indices])
+        orbit_probabilities = np.column_stack([candidates[:, index] @ posterior[index] / weight if weight > 0 else np.zeros(len(future))
+                                               for index, weight in zip(indices, orbit_weights)])
+        orbit_ranking = rank_exposures(orbit_weights, orbit_probabilities)
+        orbit_summary = [{"orbit_id": oid, "posterior_weight": float(weight),
+                          "hypothesis_ids": [h["id"] for h, select in zip(manifest["hypotheses"], index) if select]}
+                         for oid, weight, index in zip(orbit_ids, orbit_weights, indices)]
+    ranking = orbit_ranking if ranking_target == "orbit" else rank_exposures(posterior, candidates)
     for row in ranking:
         row["id"] = future[row.pop("index")]["id"]
     return {"schema_version": 1, "tool": "learn_null", "provenance": _provenance([path]),
             "hypothesis_ids": [h["id"] for h in manifest["hypotheses"]],
-            "n_non_detections": len(observed), **result, "ranked_exposures": ranking}
+            "n_non_detections": len(observed), **result, "ranked_exposures": ranking,
+            "ranking_target": ranking_target, "orbit_posterior": orbit_summary,
+            "calibration_posteriors_conditional_on_hypothesis": [
+                {"id": key, "alpha": a.tolist(), "beta": (b + null_counts[key]).tolist(), "observed_nulls": null_counts[key]}
+                for key, (a, b) in calibrations.items()]}

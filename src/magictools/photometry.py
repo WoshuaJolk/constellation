@@ -70,7 +70,7 @@ def validate_psf_kernel(kernel):
     kernel = np.asarray(kernel, dtype=float)
     if (kernel.ndim != 2 or min(kernel.shape) < 3 or max(kernel.shape) > 255
             or any(size % 2 == 0 for size in kernel.shape)
-            or not np.all(np.isfinite(kernel)) or kernel.sum() <= 0):
+            or not np.all(np.isfinite(kernel)) or not np.isfinite(kernel.sum()) or kernel.sum() <= 0):
         raise ValueError("PSF kernel must be finite, odd-sized (3..255 pixels), with positive sum")
     return kernel / kernel.sum()
 

@@ -1,5 +1,7 @@
 # Version 1 input and output formats
 
+The [selection and assignment guide](selection-and-assignment.md) documents v0.5 calibration uncertainty, brightness grouping, empirical artifacts, survey selection and integer assignment certificates.
+
 See the [archive, empirical-PSF, vetting and injection formats](archive-workflow.md) for the v0.4 additions.
 
 All analysis commands accept a local JSON manifest. Unknown fields, duplicate JSON keys, `NaN`/`Infinity`, repeated IDs, and ambiguous coordinate pairs are rejected. Arrays are ordered. Basic photometry reads FITS images one exposure at a time (vetting and injections cache their supplied image bank); memory use includes that exposure's science, variance, and mask arrays plus the measurements for all hypotheses. See [orbit and stamp formats](ambitious-tools.md), [detection-bound formats](prove-floor.md), and [stellar-search formats](find-ejector.md) for the newer tools.
