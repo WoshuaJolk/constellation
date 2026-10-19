@@ -42,7 +42,7 @@ def scan_convergences(paths, lookback_myr, radius_pc, group_size=3, min_support=
     if not isinstance(group_size, int) or not 3 <= group_size <= min(6, n_stars):
         raise ValueError("group_size must be an integer between three and min(6, catalogue size)")
     best, evaluated = {}, 0
-    required = int(np.ceil(min_support * n_samples - 1e-12))
+    required = max(1, int(np.ceil(min_support * n_samples - 1e-12)))
     for time_index, positions in enumerate(paths[..., :3]):
         adjacency = np.zeros((n_stars, n_stars), dtype=bool)
         for i in range(n_stars - 1):
@@ -130,6 +130,9 @@ def _dossier(candidate, paths, times, stars, counterparts, counterpart_paths, se
 def run_ejector(manifest_path):
     path = Path(manifest_path).resolve()
     manifest = read_json(path)
+    if manifest.get("schema_version") == 2:
+        from .ejector_continuous import run_continuous_ejector
+        return run_continuous_ejector(path)
     _fields(manifest, ["schema_version", "epoch_label", "potential", "stars", "search"],
             ["counterparts", "galactocentric_frame"])
     if manifest["schema_version"] != 1 or not isinstance(manifest["epoch_label"], str) or not manifest["epoch_label"]:

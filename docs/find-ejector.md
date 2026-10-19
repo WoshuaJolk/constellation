@@ -1,5 +1,7 @@
 # `find_ejector`: uncertain stellar trajectories and common-origin candidates
 
+Schema 2 now supports larger catalogues, continuous interpolation encounters, Gaia input preparation and complete traceback archives. See [the catalogue-search guide](find-ejector-catalogue.md) and [real-data campaign](../research/ejector_catalogue/README.md). The documentation below describes the retained schema-1 interface.
+
 The tool searches for simultaneous spatial convergence of several stars in a **supplied finite catalogue**. It propagates complete 6D uncertainty under an explicit, smooth Galactic potential, searches every eligible group of a chosen size at every grid time, and compares each candidate with supplied source/cluster trajectories. It also repeats the entire search on velocity-permuted catalogues to measure how unusual the result is under that particular null.
 
 A convergence is kinematic evidence to investigate. It can reflect a common birthplace, chance coincidence, a poor model, or other causes. It does not establish an ejection mechanism, identify an intermediate-mass black hole, or prove a source is dark.

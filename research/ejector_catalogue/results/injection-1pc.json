@@ -1,0 +1,86 @@
+{
+  "tool": "find_ejector_tighter_radius",
+  "parent_catalogue_size": 38892,
+  "searched_member_union": 72,
+  "parent_radius_pc": 10.0,
+  "radius_pc": 1.0,
+  "candidates": [
+    {
+      "lookback_myr": 2.3449856254551373,
+      "relative_rms_speed_given_convergence_percentiles_kms": [
+        549.7249679170126,
+        549.769419103481,
+        549.8087289070544
+      ],
+      "peak_on_search_boundary": false,
+      "score": 0.9633497415987075,
+      "support": 0.9375,
+      "support_count": 15,
+      "ensemble_rms_radius_pc": 0.5081223270887202,
+      "origin_given_convergence_percentiles_pc": [
+        [
+          -8000.190476976497,
+          -0.2888266200115983,
+          19.814300952435126
+        ],
+        [
+          -8000.046562906352,
+          -0.062314413511710263,
+          19.965673311011326
+        ],
+        [
+          -7999.738653672481,
+          0.12312888515290793,
+          20.177713128900763
+        ]
+      ],
+      "convergence_intervals_myr": [
+        [
+          2.3434748685022044,
+          2.3466542576673466
+        ]
+      ],
+      "star_ids": [
+        "SYNTHETIC-injection-A",
+        "SYNTHETIC-injection-B",
+        "SYNTHETIC-injection-C"
+      ]
+    }
+  ],
+  "search_counts": {
+    "group_segment_evaluations": 1,
+    "broad_phase_pair_checks": 16903,
+    "segments": 100
+  },
+  "completeness": "Full parent catalogue, unchanged sampled piecewise-linear paths/support/group size/time range; tighter events are a subset of parent events",
+  "significance": null,
+  "parent_numerics": {
+    "half_step_max_position_difference_pc": 0.018643924140778464,
+    "max_midpoint_chord_error_pc": 0.06874067799113981
+  },
+  "numerical_diagnostics_within_tenth_of_new_radius": true,
+  "provenance": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "inputs": [
+      {
+        "path": "/workspace/scratch/ejector/full-injection/tracebacks/complete.json",
+        "sha256": "1d7e2e3d72991b4f4e0216ace7d7a6a78e17e4c2d041767b12a568dbf5ee123f"
+      },
+      {
+        "path": "/workspace/scratch/ejector/full-injection/tracebacks/lookback_myr.npy",
+        "sha256": "5115f9e53ff303b4c2bbf8a7f1fcca7d3ea44c9a87c9be653f13c7eba13b3c67"
+      },
+      {
+        "path": "/workspace/scratch/ejector/full-injection/tracebacks/source_ids.npy",
+        "sha256": "9bd81370d7c445b253b2988ede791dcb9c96c489add27a578c5b03d60fe42323"
+      },
+      {
+        "path": "/workspace/scratch/ejector/full-injection/tracebacks/states.npy",
+        "sha256": "f9cafa7d6f975bbeacb7fd363733dd5cac13e84e420b3faf97ed743b6c4c4ecb"
+      }
+    ]
+  }
+}

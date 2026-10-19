@@ -1,0 +1,2415 @@
+{
+  "final-baseline": {
+    "scenario": "baseline",
+    "priors": {
+      "distance_length_pc": 1350.0,
+      "missing_rv_mean_kms": 0.0,
+      "missing_rv_sigma_kms": 300.0,
+      "parallax_zero_point_mas": -0.017,
+      "shared_zero_point_sigma_mas": 0.01
+    },
+    "frame": {
+      "galcen_distance_pc": 8122.0,
+      "z_sun_pc": 20.8,
+      "galcen_v_sun_kms": [
+        12.9,
+        245.6,
+        7.78
+      ]
+    },
+    "potential": {
+      "components": [
+        {
+          "type": "plummer",
+          "mass_msun": 5000000000.0,
+          "scale_pc": 500.0
+        },
+        {
+          "type": "miyamoto_nagai",
+          "mass_msun": 68000000000.0,
+          "a_pc": 3000.0,
+          "b_pc": 280.0
+        },
+        {
+          "type": "log_halo",
+          "speed_kms": 180.0,
+          "core_pc": 12000.0
+        }
+      ]
+    },
+    "input_rows": 38889,
+    "included_rows": 38889,
+    "excluded_rows": 0,
+    "rv_measurement_rows": 13317,
+    "rv_prior_rows": 25572,
+    "search_summary": {
+      "catalogue_size": 38889,
+      "n_samples": 16,
+      "qualifying_groups": 48,
+      "group_segment_evaluations": 453,
+      "broad_phase_pair_checks": 255231562,
+      "segments": 100
+    },
+    "settings": {
+      "group_size": 3,
+      "min_support": 0.25,
+      "max_step_myr": 0.05,
+      "n_controls": 3,
+      "seed": 20261019,
+      "max_group_evaluations": 1000000,
+      "max_pair_checks": 100000000,
+      "lookback_max_myr": 10.0,
+      "time_step_myr": 0.1,
+      "radius_pc": 10.0
+    },
+    "numerics": {
+      "half_step_max_position_difference_pc": 0.018643924140778464,
+      "max_midpoint_chord_error_pc": 0.06874067799113981
+    },
+    "elapsed_seconds": 1110.1086918469991,
+    "raw_sha256": "37ab63a540977af6374cd73dc2582ce7e6b20c5a317c0972a5f1d21d3edae018",
+    "full_objective_complete": false,
+    "control_maxima": [
+      1.0241893493345489,
+      1.0235741129274372,
+      1.0235741129274372
+    ],
+    "control_method": "velocity_permutation",
+    "groups_with_nonzero_lookback": 47,
+    "groups_involving_rv_prior": 20,
+    "top_candidates": [
+      {
+        "lookback_myr": 0.23663962997140614,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          546.9743132759354,
+          550.899041816253,
+          554.0904454666087
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0288256513201322,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 2.006444257788413,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8095.905233283221,
+            -60.78932951941545,
+            33.99198651284762
+          ],
+          [
+            -8095.493491230078,
+            -60.57960561482952,
+            34.217394146536066
+          ],
+          [
+            -8095.254863575808,
+            -60.43960107128851,
+            34.381079723240795
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.22099764593913157,
+            0.25321941282529176
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "5331557897713152640",
+          "6266029394177561088"
+        ],
+        "search_wide_velocity_permutation_p": 0.25,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.1969535470549499,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          496.0098923893219,
+          501.63538596875424,
+          506.36018669212314
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.025369690463103,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.437638857661397,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8124.016900640343,
+            -44.97143803694379,
+            21.530421457619024
+          ],
+          [
+            -8123.12946105728,
+            -44.127262203852084,
+            21.805609223295853
+          ],
+          [
+            -8122.235812681258,
+            -43.501309538241614,
+            22.05614391770648
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.18445507701421374,
+            0.21275925865382986
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "6065148413638143360"
+        ],
+        "search_wide_velocity_permutation_p": 0.25,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.1813293962466251,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          520.9976026511329,
+          524.89522596376,
+          527.8467065723192
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0246885177570884,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.917034509799778,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8132.488188783815,
+            -39.687331199465696,
+            15.797555246435861
+          ],
+          [
+            -8132.017647745788,
+            -39.33564857279292,
+            16.454597634578192
+          ],
+          [
+            -8131.316631713261,
+            -39.13495338859489,
+            16.961072747441364
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.17115915433106177,
+            0.1929422111486611
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "1451976542670188160"
+        ],
+        "search_wide_velocity_permutation_p": 0.25,
+        "members_with_rv_prior": []
+      }
+    ]
+  },
+  "final-measured": {
+    "scenario": "measured_rv",
+    "priors": {
+      "distance_length_pc": 1350.0,
+      "missing_rv_mean_kms": 0.0,
+      "missing_rv_sigma_kms": 300.0,
+      "parallax_zero_point_mas": -0.017,
+      "shared_zero_point_sigma_mas": 0.01
+    },
+    "frame": {
+      "galcen_distance_pc": 8122.0,
+      "z_sun_pc": 20.8,
+      "galcen_v_sun_kms": [
+        12.9,
+        245.6,
+        7.78
+      ]
+    },
+    "potential": {
+      "components": [
+        {
+          "type": "plummer",
+          "mass_msun": 5000000000.0,
+          "scale_pc": 500.0
+        },
+        {
+          "type": "miyamoto_nagai",
+          "mass_msun": 68000000000.0,
+          "a_pc": 3000.0,
+          "b_pc": 280.0
+        },
+        {
+          "type": "log_halo",
+          "speed_kms": 180.0,
+          "core_pc": 12000.0
+        }
+      ]
+    },
+    "input_rows": 38889,
+    "included_rows": 38889,
+    "excluded_rows": 0,
+    "rv_measurement_rows": 13317,
+    "rv_prior_rows": 25572,
+    "search_summary": {
+      "catalogue_size": 13317,
+      "n_samples": 16,
+      "qualifying_groups": 28,
+      "group_segment_evaluations": 126,
+      "broad_phase_pair_checks": 5512647,
+      "segments": 100
+    },
+    "settings": {
+      "group_size": 3,
+      "min_support": 0.25,
+      "max_step_myr": 0.05,
+      "n_controls": 19,
+      "seed": 20261019,
+      "max_group_evaluations": 1000000,
+      "max_pair_checks": 100000000,
+      "lookback_max_myr": 10.0,
+      "time_step_myr": 0.1,
+      "radius_pc": 10.0
+    },
+    "numerics": {
+      "half_step_max_position_difference_pc": 0.018643924140778464,
+      "max_midpoint_chord_error_pc": 0.06874067799113981
+    },
+    "elapsed_seconds": 1287.7942166519988,
+    "raw_sha256": "37ab63a540977af6374cd73dc2582ce7e6b20c5a317c0972a5f1d21d3edae018",
+    "full_objective_complete": false,
+    "control_maxima": [
+      0.3294626684972243,
+      0.0,
+      0.0,
+      1.0237138838037303,
+      0.3281349262221921,
+      0.8984878503899248,
+      1.024470594563505,
+      0.0,
+      0.8981300738284062,
+      0.7728141589972713,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.26089554068775755,
+      0.0,
+      0.0,
+      0.2692852845012368,
+      0.3251020947318966
+    ],
+    "control_method": "velocity_permutation",
+    "groups_with_nonzero_lookback": 28,
+    "groups_involving_rv_prior": 0,
+    "top_candidates": [
+      {
+        "lookback_myr": 0.23663962997140614,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          546.9743132759354,
+          550.899041816253,
+          554.0904454666087
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0288256513201322,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 2.006444257788413,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8095.905233283221,
+            -60.78932951941545,
+            33.99198651284762
+          ],
+          [
+            -8095.493491230078,
+            -60.57960561482952,
+            34.217394146536066
+          ],
+          [
+            -8095.254863575808,
+            -60.43960107128851,
+            34.381079723240795
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.22099764593913157,
+            0.25321941282529176
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "5331557897713152640",
+          "6266029394177561088"
+        ],
+        "search_wide_velocity_permutation_p": 0.05,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.1969535470549499,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          496.0098923893219,
+          501.63538596875424,
+          506.36018669212314
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.025369690463103,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.437638857661397,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8124.016900640343,
+            -44.97143803694379,
+            21.530421457619024
+          ],
+          [
+            -8123.12946105728,
+            -44.127262203852084,
+            21.805609223295853
+          ],
+          [
+            -8122.235812681258,
+            -43.501309538241614,
+            22.05614391770648
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.18445507701421374,
+            0.21275925865382986
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "6065148413638143360"
+        ],
+        "search_wide_velocity_permutation_p": 0.05,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.1813293962466251,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          520.9976026511329,
+          524.89522596376,
+          527.8467065723192
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0246885177570884,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.917034509799778,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8132.488188783815,
+            -39.687331199465696,
+            15.797555246435861
+          ],
+          [
+            -8132.017647745788,
+            -39.33564857279292,
+            16.454597634578192
+          ],
+          [
+            -8131.316631713261,
+            -39.13495338859489,
+            16.961072747441364
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.17115915433106177,
+            0.1929422111486611
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "1451976542670188160"
+        ],
+        "search_wide_velocity_permutation_p": 0.05,
+        "members_with_rv_prior": []
+      }
+    ]
+  },
+  "final-broad-rv": {
+    "scenario": "broad_rv",
+    "priors": {
+      "distance_length_pc": 1350.0,
+      "missing_rv_mean_kms": 0.0,
+      "missing_rv_sigma_kms": 600.0,
+      "parallax_zero_point_mas": -0.017,
+      "shared_zero_point_sigma_mas": 0.01
+    },
+    "frame": {
+      "galcen_distance_pc": 8122.0,
+      "z_sun_pc": 20.8,
+      "galcen_v_sun_kms": [
+        12.9,
+        245.6,
+        7.78
+      ]
+    },
+    "potential": {
+      "components": [
+        {
+          "type": "plummer",
+          "mass_msun": 5000000000.0,
+          "scale_pc": 500.0
+        },
+        {
+          "type": "miyamoto_nagai",
+          "mass_msun": 68000000000.0,
+          "a_pc": 3000.0,
+          "b_pc": 280.0
+        },
+        {
+          "type": "log_halo",
+          "speed_kms": 180.0,
+          "core_pc": 12000.0
+        }
+      ]
+    },
+    "input_rows": 38889,
+    "included_rows": 38889,
+    "excluded_rows": 0,
+    "rv_measurement_rows": 13317,
+    "rv_prior_rows": 25572,
+    "search_summary": {
+      "catalogue_size": 38889,
+      "n_samples": 16,
+      "qualifying_groups": 39,
+      "group_segment_evaluations": 523,
+      "broad_phase_pair_checks": 1142059532,
+      "segments": 100
+    },
+    "settings": {
+      "group_size": 3,
+      "min_support": 0.25,
+      "max_step_myr": 0.05,
+      "n_controls": 0,
+      "seed": 20261019,
+      "max_group_evaluations": 1000000,
+      "max_pair_checks": 100000000,
+      "lookback_max_myr": 10.0,
+      "time_step_myr": 0.1,
+      "radius_pc": 10.0
+    },
+    "numerics": {
+      "half_step_max_position_difference_pc": 0.019738680844740477,
+      "max_midpoint_chord_error_pc": 0.06874067799113981
+    },
+    "elapsed_seconds": 445.8173027619996,
+    "raw_sha256": "37ab63a540977af6374cd73dc2582ce7e6b20c5a317c0972a5f1d21d3edae018",
+    "full_objective_complete": false,
+    "control_maxima": [],
+    "control_method": "velocity_permutation",
+    "groups_with_nonzero_lookback": 38,
+    "groups_involving_rv_prior": 11,
+    "top_candidates": [
+      {
+        "lookback_myr": 0.23663962997140614,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          546.9743132759354,
+          550.899041816253,
+          554.0904454666087
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0288256513201322,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 2.006444257788413,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8095.905233283221,
+            -60.78932951941545,
+            33.99198651284762
+          ],
+          [
+            -8095.493491230078,
+            -60.57960561482952,
+            34.217394146536066
+          ],
+          [
+            -8095.254863575808,
+            -60.43960107128851,
+            34.381079723240795
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.22099764593913157,
+            0.25321941282529176
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "5331557897713152640",
+          "6266029394177561088"
+        ],
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.1969535470549499,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          496.0098923893219,
+          501.63538596875424,
+          506.36018669212314
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.025369690463103,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.437638857661397,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8124.016900640343,
+            -44.97143803694379,
+            21.530421457619024
+          ],
+          [
+            -8123.12946105728,
+            -44.127262203852084,
+            21.805609223295853
+          ],
+          [
+            -8122.235812681258,
+            -43.501309538241614,
+            22.05614391770648
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.18445507701421374,
+            0.21275925865382986
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "6065148413638143360"
+        ],
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.1813293962466251,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          520.9976026511329,
+          524.89522596376,
+          527.8467065723192
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0246885177570884,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.917034509799778,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8132.488188783815,
+            -39.687331199465696,
+            15.797555246435861
+          ],
+          [
+            -8132.017647745788,
+            -39.33564857279292,
+            16.454597634578192
+          ],
+          [
+            -8131.316631713261,
+            -39.13495338859489,
+            16.961072747441364
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.17115915433106177,
+            0.1929422111486611
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "1451976542670188160"
+        ],
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      }
+    ]
+  },
+  "final-long-distance": {
+    "scenario": "long_distance",
+    "priors": {
+      "distance_length_pc": 5000.0,
+      "missing_rv_mean_kms": 0.0,
+      "missing_rv_sigma_kms": 300.0,
+      "parallax_zero_point_mas": -0.017,
+      "shared_zero_point_sigma_mas": 0.01
+    },
+    "frame": {
+      "galcen_distance_pc": 8122.0,
+      "z_sun_pc": 20.8,
+      "galcen_v_sun_kms": [
+        12.9,
+        245.6,
+        7.78
+      ]
+    },
+    "potential": {
+      "components": [
+        {
+          "type": "plummer",
+          "mass_msun": 5000000000.0,
+          "scale_pc": 500.0
+        },
+        {
+          "type": "miyamoto_nagai",
+          "mass_msun": 68000000000.0,
+          "a_pc": 3000.0,
+          "b_pc": 280.0
+        },
+        {
+          "type": "log_halo",
+          "speed_kms": 180.0,
+          "core_pc": 12000.0
+        }
+      ]
+    },
+    "input_rows": 38889,
+    "included_rows": 38889,
+    "excluded_rows": 0,
+    "rv_measurement_rows": 13317,
+    "rv_prior_rows": 25572,
+    "search_summary": {
+      "catalogue_size": 38889,
+      "n_samples": 16,
+      "qualifying_groups": 48,
+      "group_segment_evaluations": 452,
+      "broad_phase_pair_checks": 251989704,
+      "segments": 100
+    },
+    "settings": {
+      "group_size": 3,
+      "min_support": 0.25,
+      "max_step_myr": 0.05,
+      "n_controls": 0,
+      "seed": 20261019,
+      "max_group_evaluations": 1000000,
+      "max_pair_checks": 100000000,
+      "lookback_max_myr": 10.0,
+      "time_step_myr": 0.1,
+      "radius_pc": 10.0
+    },
+    "numerics": {
+      "half_step_max_position_difference_pc": 0.020381758646228796,
+      "max_midpoint_chord_error_pc": 0.06872443911105015
+    },
+    "elapsed_seconds": 283.49999545799983,
+    "raw_sha256": "37ab63a540977af6374cd73dc2582ce7e6b20c5a317c0972a5f1d21d3edae018",
+    "full_objective_complete": false,
+    "control_maxima": [],
+    "control_method": "velocity_permutation",
+    "groups_with_nonzero_lookback": 47,
+    "groups_involving_rv_prior": 20,
+    "top_candidates": [
+      {
+        "lookback_myr": 0.2366399937268752,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          546.974303887533,
+          550.899032491656,
+          554.090436099157
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0288256401310991,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 2.006463603482678,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8095.905185509256,
+            -60.78935194268994,
+            33.99201181355031
+          ],
+          [
+            -8095.493442555387,
+            -60.57962775224225,
+            34.21741873917956
+          ],
+          [
+            -8095.254813420023,
+            -60.43962230264267,
+            34.38110497338502
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.2209980830274676,
+            0.2532198564431635
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "5331557897713152640",
+          "6266029394177561088"
+        ],
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.19695394695424032,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          496.00989098111364,
+          501.6353844409085,
+          506.360185150635
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0253696170324709,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.43769208689828,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8124.016987726101,
+            -44.97144156204937,
+            21.53040644036423
+          ],
+          [
+            -8123.129545014423,
+            -44.1272639490524,
+            21.805594179256943
+          ],
+          [
+            -8122.2358914914375,
+            -43.50130785404337,
+            22.056130070250777
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.18445548414304158,
+            0.21275964665757172
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "6065148413638143360"
+        ],
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.18132978860837096,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          520.9976220696291,
+          524.8952450100387,
+          527.8467256034955
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0246883914218177,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.917120991343668,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8132.488267823184,
+            -39.68737133082699,
+            15.797510914033255
+          ],
+          [
+            -8132.017722128323,
+            -39.33568579713493,
+            16.454555919664436
+          ],
+          [
+            -8131.316703884002,
+            -39.1349911931417,
+            16.961031957894615
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.17115968748521843,
+            0.19294253029452915
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "1451976542670188160"
+        ],
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      }
+    ]
+  },
+  "heavy-galaxy": {
+    "scenario": "heavy_galaxy",
+    "priors": {
+      "distance_length_pc": 1350.0,
+      "missing_rv_mean_kms": 0.0,
+      "missing_rv_sigma_kms": 300.0,
+      "parallax_zero_point_mas": -0.017,
+      "shared_zero_point_sigma_mas": 0.01
+    },
+    "frame": {
+      "galcen_distance_pc": 8122.0,
+      "z_sun_pc": 20.8,
+      "galcen_v_sun_kms": [
+        12.9,
+        255.6,
+        7.78
+      ]
+    },
+    "potential": {
+      "components": [
+        {
+          "type": "plummer",
+          "mass_msun": 6000000000.0,
+          "scale_pc": 500.0
+        },
+        {
+          "type": "miyamoto_nagai",
+          "mass_msun": 81600000000.0,
+          "a_pc": 3000.0,
+          "b_pc": 280.0
+        },
+        {
+          "type": "log_halo",
+          "speed_kms": 197.18012070185978,
+          "core_pc": 12000.0
+        }
+      ]
+    },
+    "input_rows": 38889,
+    "included_rows": 38889,
+    "excluded_rows": 0,
+    "rv_measurement_rows": 13317,
+    "rv_prior_rows": 25572,
+    "search_summary": {
+      "catalogue_size": 38889,
+      "n_samples": 16,
+      "qualifying_groups": 48,
+      "group_segment_evaluations": 454,
+      "broad_phase_pair_checks": 258015966,
+      "segments": 100
+    },
+    "settings": {
+      "group_size": 3,
+      "min_support": 0.25,
+      "max_step_myr": 0.05,
+      "n_controls": 0,
+      "seed": 20261019,
+      "control_method": "velocity_permutation",
+      "max_group_evaluations": 1000000,
+      "max_pair_checks": 100000000,
+      "lookback_max_myr": 10.0,
+      "time_step_myr": 0.1,
+      "radius_pc": 10.0
+    },
+    "numerics": {
+      "half_step_max_position_difference_pc": 0.02218224564527909,
+      "max_midpoint_chord_error_pc": 0.08247761812837148
+    },
+    "elapsed_seconds": 552.4413076820001,
+    "raw_sha256": "37ab63a540977af6374cd73dc2582ce7e6b20c5a317c0972a5f1d21d3edae018",
+    "full_objective_complete": false,
+    "control_maxima": [],
+    "control_method": "velocity_permutation",
+    "groups_with_nonzero_lookback": 47,
+    "groups_involving_rv_prior": 20,
+    "top_candidates": [
+      {
+        "lookback_myr": 0.23663896418794703,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          546.9765326773531,
+          550.9012425447288,
+          554.0926411913922
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0288255716828467,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 2.0065819457336103,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8095.874122310291,
+            -63.2092044428592,
+            33.990959450989976
+          ],
+          [
+            -8095.4623815799705,
+            -62.999481406419406,
+            34.216369607468515
+          ],
+          [
+            -8095.22375346529,
+            -62.859477379534496,
+            34.380050794129346
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.22099716333633465,
+            0.2532185354524879
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "present_close_comoving_pairs": [],
+        "star_ids": [
+          "71309655549854080",
+          "5331557897713152640",
+          "6266029394177561088"
+        ],
+        "search_wide_control_rank_fraction": null,
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.1969534882146596,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          496.0101983672856,
+          501.635693085075,
+          506.3604903165128
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0253698631192896,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.4375136992228414,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8123.996120053326,
+            -46.985669656516656,
+            21.530222803527067
+          ],
+          [
+            -8123.1086794347275,
+            -46.141494917372825,
+            21.805409927020385
+          ],
+          [
+            -8122.215029947897,
+            -45.51554334118483,
+            22.055941931785508
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.18445471690217746,
+            0.21275968673290063
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "present_close_comoving_pairs": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "6065148413638143360"
+        ],
+        "search_wide_control_rank_fraction": null,
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.1813283197832569,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          521.0020082339317,
+          524.8995441617847,
+          527.8510169899031
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0246884386014417,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.917088695100774,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8132.470237903685,
+            -41.54131460848373,
+            15.797152314264515
+          ],
+          [
+            -8131.999696668562,
+            -41.18963314503927,
+            16.4541857062717
+          ],
+          [
+            -8131.29868162317,
+            -40.98893979232929,
+            16.960654176532298
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.1711584607788228,
+            0.19294115157903038
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "present_close_comoving_pairs": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "1451976542670188160"
+        ],
+        "search_wide_control_rank_fraction": null,
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      }
+    ]
+  },
+  "measured-radial-control": {
+    "scenario": "measured_rv",
+    "priors": {
+      "distance_length_pc": 1350.0,
+      "missing_rv_mean_kms": 0.0,
+      "missing_rv_sigma_kms": 300.0,
+      "parallax_zero_point_mas": -0.017,
+      "shared_zero_point_sigma_mas": 0.01
+    },
+    "frame": {
+      "galcen_distance_pc": 8122.0,
+      "z_sun_pc": 20.8,
+      "galcen_v_sun_kms": [
+        12.9,
+        245.6,
+        7.78
+      ]
+    },
+    "potential": {
+      "components": [
+        {
+          "type": "plummer",
+          "mass_msun": 5000000000.0,
+          "scale_pc": 500.0
+        },
+        {
+          "type": "miyamoto_nagai",
+          "mass_msun": 68000000000.0,
+          "a_pc": 3000.0,
+          "b_pc": 280.0
+        },
+        {
+          "type": "log_halo",
+          "speed_kms": 180.0,
+          "core_pc": 12000.0
+        }
+      ]
+    },
+    "input_rows": 38889,
+    "included_rows": 38889,
+    "excluded_rows": 0,
+    "rv_measurement_rows": 13317,
+    "rv_prior_rows": 25572,
+    "search_summary": {
+      "catalogue_size": 13317,
+      "n_samples": 16,
+      "qualifying_groups": 28,
+      "group_segment_evaluations": 126,
+      "broad_phase_pair_checks": 5512647,
+      "segments": 100
+    },
+    "settings": {
+      "group_size": 3,
+      "min_support": 0.25,
+      "max_step_myr": 0.05,
+      "n_controls": 7,
+      "seed": 20261019,
+      "control_method": "tangent_rotation",
+      "max_group_evaluations": 1000000,
+      "max_pair_checks": 100000000,
+      "lookback_max_myr": 10.0,
+      "time_step_myr": 0.1,
+      "radius_pc": 10.0,
+      "observer_state_pc_kms": [
+        -8121.9733661223,
+        0.0,
+        20.8,
+        12.9,
+        245.6,
+        7.78
+      ]
+    },
+    "numerics": {
+      "half_step_max_position_difference_pc": 0.018643924140778464,
+      "max_midpoint_chord_error_pc": 0.06874067799113981
+    },
+    "elapsed_seconds": 571.4475590759994,
+    "raw_sha256": "37ab63a540977af6374cd73dc2582ce7e6b20c5a317c0972a5f1d21d3edae018",
+    "full_objective_complete": false,
+    "control_maxima": [
+      1.0268730157624635,
+      1.027847163024494,
+      1.0266709760606807,
+      1.0260090078188635,
+      1.026454740215873,
+      1.0262264188516106,
+      1.0259022812508887
+    ],
+    "control_method": "tangent_rotation",
+    "groups_with_nonzero_lookback": 28,
+    "groups_involving_rv_prior": 0,
+    "top_candidates": [
+      {
+        "lookback_myr": 0.23663962997140614,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          546.9743132759354,
+          550.899041816253,
+          554.0904454666087
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0288256513201322,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 2.006444257788413,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8095.905233283221,
+            -60.78932951941545,
+            33.99198651284762
+          ],
+          [
+            -8095.493491230078,
+            -60.57960561482952,
+            34.217394146536066
+          ],
+          [
+            -8095.254863575808,
+            -60.43960107128851,
+            34.381079723240795
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.22099764593913157,
+            0.25321941282529176
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "5331557897713152640",
+          "6266029394177561088"
+        ],
+        "search_wide_control_rank_fraction": 0.125,
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.1969535470549499,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          496.0098923893219,
+          501.63538596875424,
+          506.36018669212314
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.025369690463103,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.437638857661397,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8124.016900640343,
+            -44.97143803694379,
+            21.530421457619024
+          ],
+          [
+            -8123.12946105728,
+            -44.127262203852084,
+            21.805609223295853
+          ],
+          [
+            -8122.235812681258,
+            -43.501309538241614,
+            22.05614391770648
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.18445507701421374,
+            0.21275925865382986
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "6065148413638143360"
+        ],
+        "search_wide_control_rank_fraction": 1.0,
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.1813293962466251,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          520.9976026511329,
+          524.89522596376,
+          527.8467065723192
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0246885177570884,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.917034509799778,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8132.488188783815,
+            -39.687331199465696,
+            15.797555246435861
+          ],
+          [
+            -8132.017647745788,
+            -39.33564857279292,
+            16.454597634578192
+          ],
+          [
+            -8131.316631713261,
+            -39.13495338859489,
+            16.961072747441364
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.17115915433106177,
+            0.1929422111486611
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "1451976542670188160"
+        ],
+        "search_wide_control_rank_fraction": 1.0,
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      }
+    ]
+  },
+  "quality-refinement": {
+    "scenario": "baseline",
+    "priors": {
+      "distance_length_pc": 1350.0,
+      "missing_rv_mean_kms": 0.0,
+      "missing_rv_sigma_kms": 300.0,
+      "parallax_zero_point_mas": -0.017,
+      "shared_zero_point_sigma_mas": 0.01
+    },
+    "frame": {
+      "galcen_distance_pc": 8122.0,
+      "z_sun_pc": 20.8,
+      "galcen_v_sun_kms": [
+        12.9,
+        245.6,
+        7.78
+      ]
+    },
+    "potential": {
+      "components": [
+        {
+          "type": "plummer",
+          "mass_msun": 5000000000.0,
+          "scale_pc": 500.0
+        },
+        {
+          "type": "miyamoto_nagai",
+          "mass_msun": 68000000000.0,
+          "a_pc": 3000.0,
+          "b_pc": 280.0
+        },
+        {
+          "type": "log_halo",
+          "speed_kms": 180.0,
+          "core_pc": 12000.0
+        }
+      ]
+    },
+    "input_rows": 4,
+    "included_rows": 4,
+    "excluded_rows": 0,
+    "rv_measurement_rows": 4,
+    "rv_prior_rows": 0,
+    "search_summary": {
+      "catalogue_size": 4,
+      "n_samples": 512,
+      "qualifying_groups": 2,
+      "group_segment_evaluations": 7,
+      "broad_phase_pair_checks": 42830,
+      "segments": 60
+    },
+    "settings": {
+      "group_size": 3,
+      "min_support": 0.25,
+      "max_step_myr": 0.01,
+      "n_controls": 31,
+      "seed": 20261019,
+      "control_method": "tangent_rotation",
+      "max_group_evaluations": 1000000,
+      "max_pair_checks": 100000000,
+      "lookback_max_myr": 3.0,
+      "time_step_myr": 0.05,
+      "radius_pc": 10.0,
+      "observer_state_pc_kms": [
+        -8121.9733661223,
+        0.0,
+        20.8,
+        12.9,
+        245.6,
+        7.78
+      ]
+    },
+    "numerics": {
+      "half_step_max_position_difference_pc": 1.558734598842705e-05,
+      "max_midpoint_chord_error_pc": 0.0020408152205926705
+    },
+    "elapsed_seconds": 68.28870759500023,
+    "raw_sha256": "2f094d303dd668badcf2b1be1f58c79707cee9a9660cf7de6ff974129bebd195",
+    "full_objective_complete": false,
+    "control_maxima": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "control_method": "tangent_rotation",
+    "groups_with_nonzero_lookback": 2,
+    "groups_involving_rv_prior": 0,
+    "top_candidates": [
+      {
+        "lookback_myr": 0.5233066167675737,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          319.8227987292213,
+          322.0119124468863,
+          324.1392360875917
+        ],
+        "peak_on_search_boundary": false,
+        "score": 0.9070678700667347,
+        "support": 0.90625,
+        "support_count": 464,
+        "ensemble_rms_radius_pc": 5.922567869940057,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -7899.362137133819,
+            7.398228819197526,
+            -291.8993124873287
+          ],
+          [
+            -7898.10127277856,
+            7.958066625037484,
+            -289.9601152405699
+          ],
+          [
+            -7896.550816453711,
+            8.619099277476497,
+            -288.24171869607255
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.5121422180283521,
+            0.545861895662847
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "present_close_comoving_pairs": [
+          {
+            "star_ids": [
+              "2364812051194680448",
+              "2364812055490127488"
+            ],
+            "sample_fraction_within_1pc_and_5kms": 0.337890625,
+            "separation_percentiles_pc": [
+              0.38024793948374264,
+              1.3915975425154032,
+              2.85079853722642
+            ],
+            "relative_speed_percentiles_kms": [
+              1.8695366387424055,
+              3.6948359360522134,
+              5.609157212474261
+            ]
+          }
+        ],
+        "star_ids": [
+          "2364812051194680448",
+          "2364812055490127488",
+          "6395326738923518976"
+        ],
+        "search_wide_control_rank_fraction": 0.03125,
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 1.4086618478402495,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          81.72966446318976,
+          82.7844944061086,
+          83.8554674663956
+        ],
+        "peak_on_search_boundary": false,
+        "score": 0.5182810142431276,
+        "support": 0.517578125,
+        "support_count": 265,
+        "ensemble_rms_radius_pc": 8.085644089730414,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -7563.847866699937,
+            -64.49586276073418,
+            -350.01266965202893
+          ],
+          [
+            -7561.713747001338,
+            -63.2507769454424,
+            -347.64478856698156
+          ],
+          [
+            -7558.735441646335,
+            -61.802825098517516,
+            -345.85230051788903
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            1.3443997817679167,
+            1.446055039117767
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "present_close_comoving_pairs": [
+          {
+            "star_ids": [
+              "2364812051194680448",
+              "2364812055490127488"
+            ],
+            "sample_fraction_within_1pc_and_5kms": 0.337890625,
+            "separation_percentiles_pc": [
+              0.38024793948374264,
+              1.3915975425154032,
+              2.85079853722642
+            ],
+            "relative_speed_percentiles_kms": [
+              1.8695366387424055,
+              3.6948359360522134,
+              5.609157212474261
+            ]
+          }
+        ],
+        "star_ids": [
+          "2364812051194680448",
+          "2364812055490127488",
+          "4979220221218050432"
+        ],
+        "search_wide_control_rank_fraction": 0.03125,
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      }
+    ]
+  },
+  "full-injection": {
+    "scenario": "injection",
+    "priors": {
+      "distance_length_pc": 1350.0,
+      "missing_rv_mean_kms": 0.0,
+      "missing_rv_sigma_kms": 300.0,
+      "parallax_zero_point_mas": -0.017,
+      "shared_zero_point_sigma_mas": 0.01
+    },
+    "frame": {
+      "galcen_distance_pc": 8122.0,
+      "z_sun_pc": 20.8,
+      "galcen_v_sun_kms": [
+        12.9,
+        245.6,
+        7.78
+      ]
+    },
+    "potential": {
+      "components": [
+        {
+          "type": "plummer",
+          "mass_msun": 5000000000.0,
+          "scale_pc": 500.0
+        },
+        {
+          "type": "miyamoto_nagai",
+          "mass_msun": 68000000000.0,
+          "a_pc": 3000.0,
+          "b_pc": 280.0
+        },
+        {
+          "type": "log_halo",
+          "speed_kms": 180.0,
+          "core_pc": 12000.0
+        }
+      ]
+    },
+    "input_rows": 38889,
+    "included_rows": 38889,
+    "excluded_rows": 0,
+    "rv_measurement_rows": 13317,
+    "rv_prior_rows": 25572,
+    "search_summary": {
+      "catalogue_size": 38892,
+      "n_samples": 16,
+      "qualifying_groups": 49,
+      "group_segment_evaluations": 454,
+      "broad_phase_pair_checks": 255277368,
+      "segments": 100
+    },
+    "settings": {
+      "group_size": 3,
+      "min_support": 0.25,
+      "max_step_myr": 0.05,
+      "n_controls": 0,
+      "seed": 20261019,
+      "control_method": "velocity_permutation",
+      "max_group_evaluations": 1000000,
+      "max_pair_checks": 100000000,
+      "lookback_max_myr": 10.0,
+      "time_step_myr": 0.1,
+      "radius_pc": 10.0
+    },
+    "numerics": {
+      "half_step_max_position_difference_pc": 0.018643924140778464,
+      "max_midpoint_chord_error_pc": 0.06874067799113981
+    },
+    "elapsed_seconds": 387.5140382890004,
+    "raw_sha256": "37ab63a540977af6374cd73dc2582ce7e6b20c5a317c0972a5f1d21d3edae018",
+    "full_objective_complete": false,
+    "injection_validation": {
+      "injected_ids": [
+        "SYNTHETIC-injection-A",
+        "SYNTHETIC-injection-B",
+        "SYNTHETIC-injection-C"
+      ],
+      "age_myr": 2.345,
+      "recovered": true,
+      "recovered_age_myr": 2.3449856254551373
+    },
+    "control_maxima": [],
+    "control_method": "velocity_permutation",
+    "groups_with_nonzero_lookback": 48,
+    "groups_involving_rv_prior": 20,
+    "top_candidates": [
+      {
+        "lookback_myr": 2.3449856254551373,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          549.7284144815386,
+          549.769495410248,
+          549.8056195222812
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0293738203355909,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 0.5081223270887202,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8000.264295871378,
+            -0.28615264752905545,
+            19.814803156104556
+          ],
+          [
+            -8000.063256904454,
+            -0.06189920255444381,
+            19.987362524946718
+          ],
+          [
+            -7999.748251230677,
+            0.11793855781533626,
+            20.198473084283325
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            2.3280261216590925,
+            2.361368592166801
+          ]
+        ],
+        "supplied_counterpart_comparisons": [
+          {
+            "id": "SYNTHETIC-source",
+            "separation_percentiles_pc": [
+              0.213149969386026,
+              0.34463802238165064,
+              0.5682946642840235
+            ],
+            "conditional_proximity_fraction": 1.0
+          }
+        ],
+        "present_close_comoving_pairs": [],
+        "star_ids": [
+          "SYNTHETIC-injection-A",
+          "SYNTHETIC-injection-B",
+          "SYNTHETIC-injection-C"
+        ],
+        "search_wide_control_rank_fraction": null,
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.23663962997140614,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          546.9743132759354,
+          550.899041816253,
+          554.0904454666087
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.0288256513201322,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 2.006444257788413,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8095.905233283221,
+            -60.78932951941545,
+            33.99198651284762
+          ],
+          [
+            -8095.493491230078,
+            -60.57960561482952,
+            34.217394146536066
+          ],
+          [
+            -8095.254863575808,
+            -60.43960107128851,
+            34.381079723240795
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.22099764593913157,
+            0.25321941282529176
+          ]
+        ],
+        "supplied_counterpart_comparisons": [
+          {
+            "id": "SYNTHETIC-source",
+            "separation_percentiles_pc": [
+              545.5576083407325,
+              545.6119978596439,
+              545.7434914554352
+            ],
+            "conditional_proximity_fraction": 0.0
+          }
+        ],
+        "present_close_comoving_pairs": [],
+        "star_ids": [
+          "71309655549854080",
+          "5331557897713152640",
+          "6266029394177561088"
+        ],
+        "search_wide_control_rank_fraction": null,
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.1969535470549499,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          496.0098923893219,
+          501.63538596875424,
+          506.36018669212314
+        ],
+        "peak_on_search_boundary": false,
+        "score": 1.025369690463103,
+        "support": 1.0,
+        "support_count": 16,
+        "ensemble_rms_radius_pc": 5.437638857661397,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -8124.016900640343,
+            -44.97143803694379,
+            21.530421457619024
+          ],
+          [
+            -8123.12946105728,
+            -44.127262203852084,
+            21.805609223295853
+          ],
+          [
+            -8122.235812681258,
+            -43.501309538241614,
+            22.05614391770648
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.18445507701421374,
+            0.21275925865382986
+          ]
+        ],
+        "supplied_counterpart_comparisons": [
+          {
+            "id": "SYNTHETIC-source",
+            "separation_percentiles_pc": [
+              543.9517115521058,
+              544.3787338885304,
+              544.9596577911766
+            ],
+            "conditional_proximity_fraction": 0.0
+          }
+        ],
+        "present_close_comoving_pairs": [],
+        "star_ids": [
+          "71309655549854080",
+          "451427180510779136",
+          "6065148413638143360"
+        ],
+        "search_wide_control_rank_fraction": null,
+        "search_wide_velocity_permutation_p": null,
+        "members_with_rv_prior": []
+      }
+    ]
+  },
+  "web-field-final": {
+    "scenario": "baseline",
+    "priors": {
+      "distance_length_pc": 1350.0,
+      "missing_rv_mean_kms": 0.0,
+      "missing_rv_sigma_kms": 300.0,
+      "parallax_zero_point_mas": -0.017,
+      "shared_zero_point_sigma_mas": 0.01
+    },
+    "frame": {
+      "galcen_distance_pc": 8122.0,
+      "z_sun_pc": 20.8,
+      "galcen_v_sun_kms": [
+        12.9,
+        245.6,
+        7.78
+      ]
+    },
+    "potential": {
+      "components": [
+        {
+          "type": "plummer",
+          "mass_msun": 5000000000.0,
+          "scale_pc": 500.0
+        },
+        {
+          "type": "miyamoto_nagai",
+          "mass_msun": 68000000000.0,
+          "a_pc": 3000.0,
+          "b_pc": 280.0
+        },
+        {
+          "type": "log_halo",
+          "speed_kms": 180.0,
+          "core_pc": 12000.0
+        }
+      ]
+    },
+    "input_rows": 162,
+    "included_rows": 158,
+    "excluded_rows": 4,
+    "rv_measurement_rows": 15,
+    "rv_prior_rows": 143,
+    "search_summary": {
+      "catalogue_size": 158,
+      "n_samples": 16,
+      "qualifying_groups": 1153,
+      "group_segment_evaluations": 19725,
+      "broad_phase_pair_checks": 265613,
+      "segments": 30
+    },
+    "settings": {
+      "group_size": 3,
+      "min_support": 0.25,
+      "max_step_myr": 0.01,
+      "n_controls": 3,
+      "seed": 20261019,
+      "max_group_evaluations": 1000000,
+      "max_pair_checks": 100000000,
+      "lookback_max_myr": 3.0,
+      "time_step_myr": 0.1,
+      "radius_pc": 1.0
+    },
+    "numerics": {
+      "half_step_max_position_difference_pc": 0.00011279899751738204,
+      "max_midpoint_chord_error_pc": 0.025329794471732146
+    },
+    "elapsed_seconds": 9.129384567999296,
+    "raw_sha256": "0509d332de2acdff838e63a08b7a237cf29561f0d5113afa939c55eecb44908e",
+    "full_objective_complete": false,
+    "control_maxima": [
+      0.9626494447051892,
+      0.9627475477397954,
+      0.9626760742954323
+    ],
+    "control_method": "velocity_permutation",
+    "groups_with_nonzero_lookback": 951,
+    "groups_involving_rv_prior": 1099,
+    "top_candidates": [
+      {
+        "lookback_myr": 0.03960657943085131,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          4.111707818983448,
+          4.656884298389971,
+          5.2013102656334125
+        ],
+        "peak_on_search_boundary": false,
+        "score": 0.9631417197835859,
+        "support": 0.9375,
+        "support_count": 15,
+        "ensemble_rms_radius_pc": 0.5237824936365595,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -7993.193311243308,
+            -24.736985469073918,
+            60.03058734579992
+          ],
+          [
+            -7992.803643305017,
+            -24.698804987642916,
+            60.1490160005763
+          ],
+          [
+            -7992.469028633382,
+            -24.654367123720988,
+            60.251268762789685
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.0,
+            0.22236643414718782
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "6049142032584969088",
+          "6049152267490979072",
+          "6049174605616916608"
+        ],
+        "search_wide_velocity_permutation_p": 0.25,
+        "members_with_rv_prior": []
+      },
+      {
+        "lookback_myr": 0.002877997543732965,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          18.418491968751503,
+          77.97661650801808,
+          130.87432803747805
+        ],
+        "peak_on_search_boundary": false,
+        "score": 0.8990977207066438,
+        "support": 0.875,
+        "support_count": 14,
+        "ensemble_rms_radius_pc": 0.631312117466175,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -7991.662588309947,
+            -16.32856342025381,
+            60.60583708288059
+          ],
+          [
+            -7991.383658762571,
+            -16.308659126587028,
+            60.690873350256986
+          ],
+          [
+            -7991.212930783448,
+            -16.275156875477023,
+            60.742425485896426
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.0,
+            0.023884363183037577
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "6049163679220111744",
+          "6049357433785068672",
+          "6049166805956306944"
+        ],
+        "search_wide_velocity_permutation_p": 1.0,
+        "members_with_rv_prior": [
+          "6049163679220111744"
+        ]
+      },
+      {
+        "lookback_myr": 0.04283829286504487,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          4.390590693203834,
+          4.526090455591038,
+          5.486656537726413
+        ],
+        "peak_on_search_boundary": false,
+        "score": 0.8363195024098233,
+        "support": 0.8125,
+        "support_count": 13,
+        "ensemble_rms_radius_pc": 0.6494460412582546,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -7993.137256609822,
+            -25.806201639576713,
+            59.99293891458552
+          ],
+          [
+            -7992.605332193307,
+            -25.784436152370507,
+            60.154501396116395
+          ],
+          [
+            -7992.412349024973,
+            -25.72057766798104,
+            60.21461343520422
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.0,
+            0.19235203568420708
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "star_ids": [
+          "6049135813472323072",
+          "6049142032584969088",
+          "6049152267490979072"
+        ],
+        "search_wide_velocity_permutation_p": 1.0,
+        "members_with_rv_prior": []
+      }
+    ]
+  },
+  "overview": {
+    "file": "traceback-overview.npz",
+    "stars": 38889,
+    "times": 11,
+    "description": "Pointwise coordinate percentiles from 16 draws at 1 Myr spacing, float32; not physical orbits or a search input. Full float64 joint-draw archive is reproducible with run.py.",
+    "sha256": "3b88eb4ae5fca5c3595958bd79a109452e61c60532cb2ada980dc2a8456dcfd8"
+  },
+  "quality-pair-control": {
+    "targeted_not_catalogue_wide": true,
+    "search_summary": {
+      "catalogue_size": 4,
+      "n_samples": 512,
+      "qualifying_groups": 2,
+      "group_segment_evaluations": 7,
+      "broad_phase_pair_checks": 42830,
+      "segments": 60
+    },
+    "candidates": [
+      {
+        "lookback_myr": 0.5233066167675737,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          319.8227987292213,
+          322.0119124468863,
+          324.1392360875917
+        ],
+        "peak_on_search_boundary": false,
+        "score": 0.9070678700667347,
+        "support": 0.90625,
+        "support_count": 464,
+        "ensemble_rms_radius_pc": 5.922567869940057,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -7899.362137133819,
+            7.398228819197526,
+            -291.8993124873287
+          ],
+          [
+            -7898.10127277856,
+            7.958066625037484,
+            -289.9601152405699
+          ],
+          [
+            -7896.550816453711,
+            8.619099277476497,
+            -288.24171869607255
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            0.5121422180283521,
+            0.545861895662847
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "present_close_comoving_pairs": [
+          {
+            "star_ids": [
+              "2364812051194680448",
+              "2364812055490127488"
+            ],
+            "sample_fraction_within_1pc_and_5kms": 0.337890625,
+            "separation_percentiles_pc": [
+              0.38024793948374264,
+              1.3915975425154032,
+              2.85079853722642
+            ],
+            "relative_speed_percentiles_kms": [
+              1.8695366387424055,
+              3.6948359360522134,
+              5.609157212474261
+            ]
+          }
+        ],
+        "star_ids": [
+          "2364812051194680448",
+          "2364812055490127488",
+          "6395326738923518976"
+        ],
+        "search_wide_control_rank_fraction": 0.03125,
+        "search_wide_velocity_permutation_p": null
+      },
+      {
+        "lookback_myr": 1.4086618478402495,
+        "relative_rms_speed_given_convergence_percentiles_kms": [
+          81.72966446318976,
+          82.7844944061086,
+          83.8554674663956
+        ],
+        "peak_on_search_boundary": false,
+        "score": 0.5182810142431276,
+        "support": 0.517578125,
+        "support_count": 265,
+        "ensemble_rms_radius_pc": 8.085644089730414,
+        "origin_given_convergence_percentiles_pc": [
+          [
+            -7563.847866699937,
+            -64.49586276073418,
+            -350.01266965202893
+          ],
+          [
+            -7561.713747001338,
+            -63.2507769454424,
+            -347.64478856698156
+          ],
+          [
+            -7558.735441646335,
+            -61.802825098517516,
+            -345.85230051788903
+          ]
+        ],
+        "convergence_intervals_myr": [
+          [
+            1.3443997817679167,
+            1.446055039117767
+          ]
+        ],
+        "supplied_counterpart_comparisons": [],
+        "present_close_comoving_pairs": [
+          {
+            "star_ids": [
+              "2364812051194680448",
+              "2364812055490127488"
+            ],
+            "sample_fraction_within_1pc_and_5kms": 0.337890625,
+            "separation_percentiles_pc": [
+              0.38024793948374264,
+              1.3915975425154032,
+              2.85079853722642
+            ],
+            "relative_speed_percentiles_kms": [
+              1.8695366387424055,
+              3.6948359360522134,
+              5.609157212474261
+            ]
+          }
+        ],
+        "star_ids": [
+          "2364812051194680448",
+          "2364812055490127488",
+          "4979220221218050432"
+        ],
+        "search_wide_control_rank_fraction": 0.03125,
+        "search_wide_velocity_permutation_p": null
+      }
+    ],
+    "controls": {
+      "method": "tangent_rotation",
+      "max_search_scores": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "numerics": [
+        {
+          "half_step_max_position_difference_pc": 2.4328183615418597e-05,
+          "max_midpoint_chord_error_pc": 0.0019564107554561837
+        },
+        {
+          "half_step_max_position_difference_pc": 5.29965277959109e-05,
+          "max_midpoint_chord_error_pc": 0.001986020181650416
+        },
+        {
+          "half_step_max_position_difference_pc": 5.356438166642784e-05,
+          "max_midpoint_chord_error_pc": 0.001887023669081299
+        },
+        {
+          "half_step_max_position_difference_pc": 4.625610482853678e-05,
+          "max_midpoint_chord_error_pc": 0.00196467989053379
+        },
+        {
+          "half_step_max_position_difference_pc": 5.45992006911877e-05,
+          "max_midpoint_chord_error_pc": 0.0017699827487846923
+        },
+        {
+          "half_step_max_position_difference_pc": 1.7824636220707378e-05,
+          "max_midpoint_chord_error_pc": 0.0017568248872323357
+        },
+        {
+          "half_step_max_position_difference_pc": 5.3514699572291965e-05,
+          "max_midpoint_chord_error_pc": 0.001958848676013094
+        },
+        {
+          "half_step_max_position_difference_pc": 3.8334236456097604e-05,
+          "max_midpoint_chord_error_pc": 0.002055293505689313
+        },
+        {
+          "half_step_max_position_difference_pc": 1.594916100300832e-05,
+          "max_midpoint_chord_error_pc": 0.0017580249934309674
+        },
+        {
+          "half_step_max_position_difference_pc": 5.388539125640821e-05,
+          "max_midpoint_chord_error_pc": 0.0020277424446659502
+        },
+        {
+          "half_step_max_position_difference_pc": 2.875123270813094e-05,
+          "max_midpoint_chord_error_pc": 0.0018683344354105073
+        },
+        {
+          "half_step_max_position_difference_pc": 2.3844992145247632e-05,
+          "max_midpoint_chord_error_pc": 0.0018027898523189072
+        },
+        {
+          "half_step_max_position_difference_pc": 1.8976425236142125e-05,
+          "max_midpoint_chord_error_pc": 0.0020544175685572887
+        },
+        {
+          "half_step_max_position_difference_pc": 5.394207638909529e-05,
+          "max_midpoint_chord_error_pc": 0.0020287485592066206
+        },
+        {
+          "half_step_max_position_difference_pc": 2.0045579086103405e-05,
+          "max_midpoint_chord_error_pc": 0.0020461292929948908
+        },
+        {
+          "half_step_max_position_difference_pc": 5.034100019231909e-05,
+          "max_midpoint_chord_error_pc": 0.0019688520183697242
+        },
+        {
+          "half_step_max_position_difference_pc": 5.461297673106196e-05,
+          "max_midpoint_chord_error_pc": 0.0017709706553768766
+        },
+        {
+          "half_step_max_position_difference_pc": 2.2818381648099995e-05,
+          "max_midpoint_chord_error_pc": 0.001757984644066499
+        },
+        {
+          "half_step_max_position_difference_pc": 5.076374150731954e-05,
+          "max_midpoint_chord_error_pc": 0.0018112809207407807
+        },
+        {
+          "half_step_max_position_difference_pc": 2.1159360204947316e-05,
+          "max_midpoint_chord_error_pc": 0.0020523855838835195
+        },
+        {
+          "half_step_max_position_difference_pc": 3.211648878429233e-05,
+          "max_midpoint_chord_error_pc": 0.002010977582978845
+        },
+        {
+          "half_step_max_position_difference_pc": 3.0671612057447894e-05,
+          "max_midpoint_chord_error_pc": 0.0018961196989251698
+        },
+        {
+          "half_step_max_position_difference_pc": 4.3093252004886084e-05,
+          "max_midpoint_chord_error_pc": 0.0020606529586842184
+        },
+        {
+          "half_step_max_position_difference_pc": 2.3665898824737747e-05,
+          "max_midpoint_chord_error_pc": 0.0020007682521202665
+        },
+        {
+          "half_step_max_position_difference_pc": 3.2329516018285435e-05,
+          "max_midpoint_chord_error_pc": 0.0017538516548855213
+        },
+        {
+          "half_step_max_position_difference_pc": 5.376534033138061e-05,
+          "max_midpoint_chord_error_pc": 0.0017571167400294437
+        },
+        {
+          "half_step_max_position_difference_pc": 5.4284606723792e-05,
+          "max_midpoint_chord_error_pc": 0.0020286110984137746
+        },
+        {
+          "half_step_max_position_difference_pc": 4.047684804810156e-05,
+          "max_midpoint_chord_error_pc": 0.0019317334896831178
+        },
+        {
+          "half_step_max_position_difference_pc": 5.46628440142089e-05,
+          "max_midpoint_chord_error_pc": 0.001992841956793517
+        },
+        {
+          "half_step_max_position_difference_pc": 2.409148022060148e-05,
+          "max_midpoint_chord_error_pc": 0.0017807850380132612
+        },
+        {
+          "half_step_max_position_difference_pc": 4.632039767015937e-05,
+          "max_midpoint_chord_error_pc": 0.0018600166706008888
+        }
+      ],
+      "rotation_groups_supplied": true,
+      "rotation_group_count": 3,
+      "assumption": "Uniform/exchangeable heliocentric tangential angles at fixed positions, RVs and speeds; not a Galactic population model"
+    },
+    "numerics": {
+      "half_step_max_position_difference_pc": 1.558734598842705e-05,
+      "max_midpoint_chord_error_pc": 0.0020408152205926705
+    }
+  },
+  "quality-1pc": {
+    "targeted_not_catalogue_wide": true,
+    "search_summary": {
+      "catalogue_size": 4,
+      "n_samples": 512,
+      "qualifying_groups": 0,
+      "group_segment_evaluations": 0,
+      "broad_phase_pair_checks": 35875,
+      "segments": 60
+    },
+    "candidates": [],
+    "controls": {
+      "method": "tangent_rotation",
+      "max_search_scores": [],
+      "numerics": [],
+      "rotation_groups_supplied": false,
+      "rotation_group_count": 4,
+      "assumption": "Uniform/exchangeable heliocentric tangential angles at fixed positions, RVs and speeds; not a Galactic population model"
+    },
+    "numerics": {
+      "half_step_max_position_difference_pc": 1.558734598842705e-05,
+      "max_midpoint_chord_error_pc": 0.0020408152205926705
+    }
+  },
+  "one_pc_rescans": {
+    "baseline": {
+      "parent_catalogue_size": 38889,
+      "searched_member_union": 69,
+      "radius_pc": 1.0,
+      "numerical_diagnostics_within_tenth_of_new_radius": true,
+      "qualifying_groups": 0
+    },
+    "measured": {
+      "parent_catalogue_size": 13317,
+      "searched_member_union": 25,
+      "radius_pc": 1.0,
+      "numerical_diagnostics_within_tenth_of_new_radius": true,
+      "qualifying_groups": 0
+    },
+    "broad-rv": {
+      "parent_catalogue_size": 38889,
+      "searched_member_union": 55,
+      "radius_pc": 1.0,
+      "numerical_diagnostics_within_tenth_of_new_radius": true,
+      "qualifying_groups": 0
+    },
+    "long-distance": {
+      "parent_catalogue_size": 38889,
+      "searched_member_union": 69,
+      "radius_pc": 1.0,
+      "numerical_diagnostics_within_tenth_of_new_radius": true,
+      "qualifying_groups": 0
+    },
+    "heavy-galaxy": {
+      "parent_catalogue_size": 38889,
+      "searched_member_union": 69,
+      "radius_pc": 1.0,
+      "numerical_diagnostics_within_tenth_of_new_radius": true,
+      "qualifying_groups": 0
+    },
+    "injection": {
+      "parent_catalogue_size": 38892,
+      "searched_member_union": 72,
+      "radius_pc": 1.0,
+      "numerical_diagnostics_within_tenth_of_new_radius": true,
+      "qualifying_groups": 1
+    }
+  },
+  "implementation_sha256": {
+    "ejector.py": "ad20ee5e16923afe99e46226f4b9ec5dcd2aa619876ffa9131bbbfe53f245172",
+    "ejector_continuous.py": "b0a04a9afe6926c35430e577e5263ffcc0b4a5c29368ade6021f42bb4811102e",
+    "ejector_gaia.py": "d4194824c9d5ffd738a858f4cbc4c6e405e34f6a402ae3de0a8568bed70fc8c0",
+    "galactic.py": "566ba3bb3a68995ee50c8d23102f9febd93c53c63de4a4ab0cb0fd393b8c82d6"
+  },
+  "full_objective_complete": false,
+  "breakthrough_claimed": false
+}

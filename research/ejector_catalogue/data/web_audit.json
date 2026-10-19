@@ -1,0 +1,870 @@
+{
+  "source_ids": [],
+  "control_strata": [],
+  "ledger": [
+    {
+      "source_id": "6049140894418039296",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049141856490750976",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049158044223688832",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049164396478646400",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049169245497732224",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049328983921845504",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049330564469810816",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049330633189287808",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049355406561168640",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049355505342820736",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049355784517627520",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049356162472784000",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357429490158336",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049135813472323072",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049137325300811520",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049137943776073216",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049167905467933056",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049170413729501952",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049175430249142272",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049175597753897856",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049330457093469312",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049355711503234304",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049141242310986752",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049147667582029568",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049356540431872768",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357811742191104",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049134915822443904",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049134920119124736",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049136809905388416",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049139897984510848",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049329013986438144",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049140039720072832",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049142474966040448",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049142822858952192",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049143505757041408",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049152203067495808",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049171165347099392",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049330491453297920",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049331011146409984",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357223329741312",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357326410940032",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357944886228608",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049358086620099200",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049142032584969088",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049143338255028096",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049171650679414528",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049174674334897024",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049175735192848256",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357704368064512",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357738727801600",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049137600178735744",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049141306733762304",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049164499558341504",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049166805956306944",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049168214705579776",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049356055100569856",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049141306733763328",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049142341822614656",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049142410542091648",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049152267490979072",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049165706444676992",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049167424432264832",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049170134555475840",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049174773119825280",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049175498970115456",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049331006849290368",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049331320384612224",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049332140722664576",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049355642781731968",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357360769468160",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357605583860096",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049136431948265600",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049142440605151488",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049142646763564800",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049161819498750208",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049161888218226688",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049167630588533632",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049174399459153024",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049330869412310912",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049332140720993024",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049158177365995904",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049161514556593920",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049165500286247040",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049168077267293568",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049169653519154560",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049136569386567296",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049139657467458176",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049142788499213568",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049162545348745984",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049163915442308992",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049169138121857024",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049169554735377152",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049169997115994624",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049171096626943744",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049356918389183232",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049164396479164928",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049165122327618560",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049165392911576320",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049330491455189376",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049332140722663808",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049136019630681728",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049139593043473664",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049144983226879232",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049161961233192576",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049163060744821632",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049163060744821760",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049167591933629952",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049356501777215872",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357227624670720",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357601288133504",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049123615765201536",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049134954478791168",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049140142798016384",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049140142799358592",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049142681124470912",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049142925938167552",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049162133032555008",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049167149554376960",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049170065835471488",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049330972491525632",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049331144288315008",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049331526542488064",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049332248097034880",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049355853237104512",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049163679218606720",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049169206842529920",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049331011144600704",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049356467415725440",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049356948452098816",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357223329749504",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357395128401280",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357395128679168",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049358086620099072",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049138356092963200",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049142956001219584",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049161136599471360",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049164916170694912",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049168008547148416",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049169481720463872",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049174605616916608",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049331041211003648",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049332106360989568",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049355681439075840",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357051531314176",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049123650124940160",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049163679220111744",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049164327759169536",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049356162472783872",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357433785068672",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357773087540608",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049138149935184896",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049152130052048640",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049330903770145920",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049135259420915328",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049163644861043328",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049331728404132480",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049354715070775552",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049356329976542592",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049164877514306688",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049174571257177472",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049331247367530624",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    },
+    {
+      "source_id": "6049357360769468416",
+      "included": false,
+      "reason": "missing_required_columns: dec_error,dec_parallax_corr,dec_pmdec_corr,dec_pmra_corr,parallax_error,parallax_pmdec_corr,parallax_pmra_corr,pmdec_error,pmra_error,pmra_pmdec_corr,ra_dec_corr,ra_error,ra_parallax_corr,ra_pmdec_corr,ra_pmra_corr,ref_epoch"
+    }
+  ],
+  "shared_zero_point_draws_mas": [
+    -0.016375956537071884,
+    -0.027797510361881987,
+    -0.012838011444039472,
+    -0.010464339397156075,
+    -0.021628260607093032,
+    -0.025647984961907414,
+    -0.022474308564500115,
+    -0.010578244754406087,
+    -0.014682477860981938,
+    -0.013649343370252113,
+    0.0006981865655149022,
+    -0.01956383726898691,
+    -0.017077383593381262,
+    -0.006558875039212101,
+    -0.0206452340783845,
+    -0.006301952961624901
+  ],
+  "priors": {
+    "distance_length_pc": 1350.0,
+    "missing_rv_mean_kms": 0.0,
+    "missing_rv_sigma_kms": 300.0,
+    "parallax_zero_point_mas": -0.017,
+    "shared_zero_point_sigma_mas": 0.01
+  },
+  "frame": {
+    "galcen_distance_pc": 8122.0,
+    "z_sun_pc": 20.8,
+    "galcen_v_sun_kms": [
+      12.9,
+      245.6,
+      7.78
+    ]
+  },
+  "input_rows": 162,
+  "included_rows": 0,
+  "excluded_rows": 162,
+  "caveats": [
+    "EDSD is a chosen distance prior, not a halo-population inference",
+    "RV prior is heliocentric Gaussian; unmeasured RV remains unmeasured",
+    "Global zero-point approximation is not the source-dependent Gaia DR3 calibration",
+    "Gaussian single-source astrometry omits unresolved binaries, heavy tails and spatial systematics",
+    "Fixed solar frame; rerun scenarios to assess model sensitivity"
+  ],
+  "web_repo_commit": "6c1bd47af192bd46e62453f88caa07fe5bea33d8",
+  "source_path": "rogue-planets/gaia_field.fits",
+  "source_sha256": "da28ecb438a4a00299da4c4d2abb6bb4fb97d0d3ec3aa975f1b347cedaae75e2",
+  "source_catalogue_rows": 162,
+  "enrichment_ids_exact_match": true,
+  "audit_note": "Raw web FITS lacks errors/correlations/RVs and is not an all-sky fast-star catalogue. Enriched the exact same 162 IDs from Gaia DR3. The 169,000-star pool described by app/stars/page.tsx is absent from this checkout.",
+  "web_dossier_sources_in_allsky_selection": {
+    "4444484419062859520": true,
+    "3730655773522657152": true
+  }
+}

@@ -16,11 +16,18 @@ orbit coverage still fails the target; **the full detection-limit objective is
 not achieved**. The research includes derivations of the conditional bounds,
 reproducible failures, and explicit Monte Carlo confidence/arithmetic limits.
 
+The [real-data `find_ejector` campaign](research/ejector_catalogue/README.md)
+adds a sparse continuous-time search, correlated Gaia likelihood sampling,
+explicit missing-RV priors, shared calibration draws, and disk-backed tracebacks.
+It searches an uncapped **38,889-source all-sky Gaia DR3 selection** and audits
+actual web-repo data. See the campaign for results and remaining full-objective
+gaps; a kinematic convergence is not an ejection discovery.
+
 | Tool | Available now | Still needed for the catalogue's full ambition |
 | --- | --- | --- |
 | `fold_kepler` | FFT likelihood maps, shared partial orbit sums, Bernstein score bounds, exact-position refinement and direct-baseline validation. Elliptic Kepler/light-time generator or supplied pixel trajectories. | A general continuous Kepler transform, profitable one-shot compilation, physical PSF/trailing/nuisance extensions and real-survey validation. No new mathematical breakthrough claimed. |
 | `prove_floor` | Analytic upper bounds on any detector's prior-average power for a finite Gaussian template bank, a necessary-flux lower bound, and a prior-optimal mixture likelihood-ratio statistic with conservative calibration. Supports correlated noise and background projection. | Unknown/continuous orbit families, realistic nuisance and artifact distributions, survey-wide limits. Uses established theory; does not claim a new universal theorem. |
-| `find_ejector` | Search all eligible fixed-size stellar groups and specified times, propagate 6D uncertainty in a supplied Galactic potential, compare supplied source trajectories, and repeat the full search on velocity-permutation controls. | All-sky selection modeling, missing-velocity priors, cross-star systematics, uncertain/time-dependent Galactic potentials, physical identification of an ejector. |
+| `find_ejector` | Sparse continuous interpolation search over all fixed-size groups, correlated Gaia inputs, explicit RV/distance priors and shared calibration, complete traceback archives, supplied counterparts, whole-search controls and real-data sensitivity runs. | All-survey completeness, population-calibrated missing velocities and selection, certified exact-flow bounds, realistic Galactic histories, source visibility and physical confirmation of an ejector. |
 | `map_cover` | ZTF public exposure queries and selected cutouts; orbit propagation, light time, observatory parallax, FITS coverage and masks, family fractions, trails and estimated S/N. | Complete orbit-family archive indexing, orbit fitting/ranging, calibrated depth curves and further surveys. |
 | `force_track` | Gaussian or native-pixel empirical PSF fits with optional trails, signed flux and uncertainty, background, residuals and usable template fraction; ZTF input preparation. | Spatial/oversampled PSFs, WCS refinement, instrument-specific uncertainty and color calibration. |
 | `judge_line` | Leave-one-out and temporal-half fits, residual and constant-flux checks, stationary/reversed controls on common exposures, explicit diagnostic flags. | Orbit refits, astrometric confirmation, held-out artifact calibration and a validated combined acceptance rule. |
@@ -31,7 +38,7 @@ reproducible failures, and explicit Monte Carlo confidence/arithmetic limits.
 | `inject_all` | Reproducible population selection Monte Carlo, error bounds and conditional Poisson count likelihoods. | Full pixel/dynamics population injections, selection-calibration uncertainty and orbital-property likelihoods. |
 | `match_all` | Exact integer weighted assignment of supplied candidates with checkable branch/clique certificates; honest bounds when work is capped. | Candidate generation, physical completeness and false-link calibration at archive scale. |
 
-These are Python library functions and command-line tools. Inference runs offline; the optional ZTF adapter downloads public data without API keys. Local images are never uploaded. Archive requests send only the supplied sky region, dates, and selected product identifiers.
+These are Python library functions and command-line tools. Inference runs offline; the optional ZTF adapter and Gaia campaign fetcher download public data without API keys. Local images are never uploaded. Archive requests send only the supplied sky region, dates, and selected product identifiers.
 
 ## Install and try
 
