@@ -13,7 +13,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Moving-source astronomy tools for local FITS data")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
-    for name in ["force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp", "find_ejector", "prove_floor", "ztf_search", "ztf_fetch", "judge_line", "inject_tracks", "map_complete", "inject_all", "match_all", "verify_match"]:
+    for name in ["force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp", "find_ejector", "prove_floor", "ztf_search", "ztf_fetch", "judge_line", "inject_tracks", "map_complete", "inject_all", "match_all", "verify_match", "fold_kepler"]:
         command = commands.add_parser(name)
         command.add_argument("manifest", type=Path)
         command.add_argument("-o", "--output", type=Path, help="Write new JSON file (default: stdout)")
@@ -28,6 +28,11 @@ def main(argv=None):
     orbit_demo = commands.add_parser("orbit_demo", help="Generate an orbit-family coverage and artifact-model experiment")
     orbit_demo.add_argument("directory", type=Path)
     orbit_demo.add_argument("--seed", type=int, default=2026)
+    fold_demo = commands.add_parser("fold_demo", help="Benchmark a shared-subpath search on synthetic Kepler orbits")
+    fold_demo.add_argument("directory", type=Path)
+    fold_demo.add_argument("--seed", type=int, default=2026)
+    fold_demo.add_argument("--grid-size", type=int, default=24)
+    fold_demo.add_argument("--frames", type=int, default=32)
     for name in ["floor_demo", "ejector_demo"]:
         command = commands.add_parser(name, help="Generate and run a reproducible research experiment")
         command.add_argument("directory", type=Path)
@@ -36,7 +41,13 @@ def main(argv=None):
     try:
         if getattr(args, "output", None) and args.output.exists():
             raise ValueError("Output file already exists")
-        if args.command in {"match_all", "verify_match"}:
+        if args.command == "fold_kepler":
+            from .fold_kepler import run_fold
+            result = run_fold(args.manifest)
+        elif args.command == "fold_demo":
+            from .fold_demo import create_fold_demo
+            result = create_fold_demo(args.directory, args.seed, args.grid_size, args.frames)
+        elif args.command in {"match_all", "verify_match"}:
             from .matching import run_match, run_verify_match
             result = (run_match if args.command == "match_all" else run_verify_match)(args.manifest)
         elif args.command in {"map_complete", "inject_all"}:

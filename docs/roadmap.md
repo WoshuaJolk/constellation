@@ -1,6 +1,6 @@
 # From catalogue to working research tools
 
-Assessment of the 23 catalogue proposals after implementing eleven bounded tools and a public ZTF adapter. These are engineering judgments, not proofs of feasibility or a literature survey establishing novelty.
+Assessment of the 23 catalogue proposals after implementing twelve bounded tools and a public ZTF adapter. These are engineering judgments, not proofs of feasibility or a literature survey establishing novelty.
 
 | Idea | Assessment and next concrete step |
 | --- | --- |
@@ -22,7 +22,7 @@ Assessment of the 23 catalogue proposals after implementing eleven bounded tools
 | `read_oort` | Combine original comet orbits with stellar encounter posteriors and a dynamical response model. Direction matching alone cannot establish causation. |
 | `twin_system` | Couple explicit formation simulations with survey simulators. An end-to-end fit remains a large, model-dependent inference project. |
 | `run_hunt` | Orchestration becomes useful after inputs, calibrated acceptance rules, and orbit refitting are available. Do not automate acceptance of an unvalidated high-S/N peak. |
-| `fold_kepler` | A general sub-trajectory-cost transform is a mathematical research problem. The current implementation makes no such complexity claim. |
+| `fold_kepler` | Restricted finite-bank transform implemented: FFT sufficient statistics, shared orbit-cell subpaths, Bernstein bounds and precise refinement. A 64,000-orbit benchmark evaluates about 3.6× faster after compilation, with identical direct-search results. Compilation makes a single-use run slower. General continuous-orbit transforms, formally rounded bounds and real-survey validation remain open. |
 | `match_all` | Exact integer set packing for up to 128 supplied candidates implemented with independently checkable branch/clique certificates and honest bounded status. Physical candidate completeness, score calibration and archive-scale guarantees remain open. |
 | `prove_floor` | Finite-family Gaussian power bounds, a necessary-flux lower bound, and a calibrated prior-optimal mixture-LR statistic implemented, including correlated noise and projected backgrounds. Continuous orbit families, unknown noise/artifact laws, and global archive limits remain open. |
 | `fit_sky` | Begin with a small patch and a tractable joint generative model. An all-photon, all-instrument posterior is beyond this implementation. |
@@ -42,7 +42,7 @@ examples, and assignment certificates are reproducible from `examples/`.
 The remaining queue, in the requested order, is:
 
 10. `link_world`: bounded physical orbit-candidate generation and linkage controls.
-11. `fold_kepler`: investigate restricted trajectory transforms and approximation error.
+11. `fold_kepler`: initial restricted transform implemented at the user's request; extend reuse, physical models and verified arithmetic (see [guide](fold-kepler.md)).
 12. `prove_floor`: continuous-template and uncertain-noise extensions.
 13. `run_hunt`: orchestrate validated searches and audit records.
 14. `fuse_astrom`: one-field multi-epoch astrometry with covariance/systematics.

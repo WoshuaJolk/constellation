@@ -19,6 +19,7 @@ jobs:
       - run: magictools orbit_demo orbit-demo-output
       - run: magictools floor_demo floor-demo-output
       - run: magictools ejector_demo ejector-demo-output
+      - run: magictools fold_demo fold-demo-output --grid-size 10 --frames 8
       - run: magictools learn_null examples/null-calibration.json -o null-calibration-output.json
       - run: magictools map_complete examples/selection.json -o exact-selection-output.json
       - run: magictools inject_all examples/selection.json -o simulated-selection-output.json

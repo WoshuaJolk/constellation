@@ -108,3 +108,10 @@ Each observed or future exposure uses exactly one of:
 `non_detections` may be empty. `candidate_exposures` is optional and may be empty. IDs cannot repeat or appear in both sets. Statistical independence is still the caller's responsibility; different IDs do not make shared pixels independent. If all prior-supported hypotheses make the observed nulls impossible, the tool returns an error instead of inventing a posterior.
 
 The output provides `hypothesis_ids`, normalized `posterior_weights`, `log_evidence` (probability of all nulls under the normalized prior), `effective_sample_size` (1 / sum of squared weights), discrete `entropy_nats`, and `ranked_exposures`. Each ranked entry reports ID, posterior predictive `detection_probability`, and `expected_information_nats`. Ranking optimizes a single binary observation, without scheduling costs, weather, visibility, or joint optimization of a multi-exposure campaign. Entropy is relative to the supplied discretization, not a coordinate-invariant orbit-space volume.
+
+## Folded orbit search
+
+`fold_kepler` accepts explicit pixel banks or elliptic Kepler elements with
+observer positions and FITS WCS. It requires **known backgrounds** and uses a
+bilinear native-pixel PSF model. Its schema, bound derivation, direct validation
+mode and benchmark are documented in [fold-kepler.md](fold-kepler.md).

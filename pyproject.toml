@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "magictools-astro"
-version = "0.5.0"
+version = "0.6.0"
 description = "Astronomical inference, orbit searches, stellar tracebacks, and Gaussian detection bounds"
 readme = "README.md"
 requires-python = ">=3.10"

@@ -1,9 +1,10 @@
 # Magictools astronomy
 
-Working implementations of eleven ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Versions 0.4–0.5 advance the first nine priorities: real ZTF archive inputs, measured PSFs, candidate vetting and injections, brightness/calibration uncertainty, finite survey selection, population simulation, and **`match_all` with verifiable integer optimality certificates**. Each has an explicit scope; all-survey completeness and validated discovery probabilities remain future work. See the [archive workflow](docs/archive-workflow.md) and [selection, uncertainty and assignment guide](docs/selection-and-assignment.md).
+Working implementations of twelve ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Version 0.6 adds **`fold_kepler`: shared orbit sums with bounded screening and precise candidate refinement**. A synthetic 64,000-orbit benchmark gives about 3.6× faster evaluation after compilation, with identical detections/top candidates to direct evaluation. Compilation makes a single-use run slower; the benefit is repeated searches with a reusable bank. See the [derivation, benchmark and limits](docs/fold-kepler.md). Earlier versions provide real ZTF inputs, measured PSFs, vetting, injections, null inference, finite survey selection, and verifiable finite assignments. Each has an explicit scope; all-survey completeness and validated discovery probabilities remain future work.
 
 | Tool | Available now | Still needed for the catalogue's full ambition |
 | --- | --- | --- |
+| `fold_kepler` | FFT likelihood maps, shared partial orbit sums, Bernstein score bounds, exact-position refinement and direct-baseline validation. Elliptic Kepler/light-time generator or supplied pixel trajectories. | A general continuous Kepler transform, profitable one-shot compilation, physical PSF/trailing/nuisance extensions and real-survey validation. No new mathematical breakthrough claimed. |
 | `prove_floor` | Analytic upper bounds on any detector's prior-average power for a finite Gaussian template bank, a necessary-flux lower bound, and a prior-optimal mixture likelihood-ratio statistic with conservative calibration. Supports correlated noise and background projection. | Unknown/continuous orbit families, realistic nuisance and artifact distributions, survey-wide limits. Uses established theory; does not claim a new universal theorem. |
 | `find_ejector` | Search all eligible fixed-size stellar groups and specified times, propagate 6D uncertainty in a supplied Galactic potential, compare supplied source trajectories, and repeat the full search on velocity-permutation controls. | All-sky selection modeling, missing-velocity priors, cross-star systematics, uncertain/time-dependent Galactic potentials, physical identification of an ejector. |
 | `map_cover` | ZTF public exposure queries and selected cutouts; orbit propagation, light time, observatory parallax, FITS coverage and masks, family fractions, trails and estimated S/N. | Complete orbit-family archive indexing, orbit fitting/ranging, calibrated depth curves and further surveys. |
@@ -32,6 +33,7 @@ magictools demo demo-output
 magictools orbit_demo orbit-demo-output
 magictools floor_demo floor-demo-output
 magictools ejector_demo ejector-demo-output
+magictools fold_demo fold-demo-output
 python -m pytest -q
 # Optional live archive experiment; downloads real ZTF images:
 python examples/ztf_workflow.py new-ztf-output
@@ -66,6 +68,7 @@ magictools map_complete examples/selection.json -o exact-selection.json
 magictools inject_all examples/selection.json -o simulated-selection.json
 magictools match_all examples/matching.json -o assignments.json
 magictools verify_match assignments.json -o verified.json
+magictools fold_kepler fold-demo-output/input.json -o folded-search.json
 ```
 
 Omit `-o` for JSON on stdout. Output files must be new. Errors return exit code 2. `python -m magictools` is equivalent to `magictools`. Reports contain the software versions and SHA-256 hashes of every input file, including the manifest.
