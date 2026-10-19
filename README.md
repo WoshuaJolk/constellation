@@ -23,6 +23,12 @@ It searches an uncapped **38,889-source all-sky Gaia DR3 selection** and audits
 actual web-repo data. See the campaign for results and remaining full-objective
 gaps; a kinematic convergence is not an ejection discovery.
 
+The [observed-system follow-up](research/ejector_fit/README.md) adds
+[`ejector_fit`](docs/ejector-fit.md): constrained fits in measured astrometry and
+radial velocity, including several launch times from one shared moving source.
+It tests historical and updated Orion measurements and explicitly checks why
+a low Monte Carlo hit rate cannot exclude a compatible common origin.
+
 | Tool | Available now | Still needed for the catalogue's full ambition |
 | --- | --- | --- |
 | `fold_kepler` | FFT likelihood maps, shared partial orbit sums, Bernstein score bounds, exact-position refinement and direct-baseline validation. Elliptic Kepler/light-time generator or supplied pixel trajectories. | A general continuous Kepler transform, profitable one-shot compilation, physical PSF/trailing/nuisance extensions and real-survey validation. No new mathematical breakthrough claimed. |

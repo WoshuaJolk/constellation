@@ -1,0 +1,138 @@
+{
+  "tool": "ejector_fit",
+  "schema_version": 1,
+  "epoch_label": "Gaia DR3 J2016.0",
+  "status": "no_converged_feasible_fit",
+  "best_fit": null,
+  "trials": [
+    {
+      "start_myr": [
+        1.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 453.79459659949396,
+      "iterations": 62,
+      "constraint_violation_pc": 0.013284681501747109,
+      "half_step_max_position_difference_pc": 4.6758799291958417e-07
+    },
+    {
+      "start_myr": [
+        2.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 453.7945906399326,
+      "iterations": 74,
+      "constraint_violation_pc": 0.013284681507980789,
+      "half_step_max_position_difference_pc": 4.67587414919673e-07
+    },
+    {
+      "start_myr": [
+        2.5
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 453.7945963560005,
+      "iterations": 57,
+      "constraint_violation_pc": 0.013284681508145102,
+      "half_step_max_position_difference_pc": 4.6758773268305817e-07
+    },
+    {
+      "start_myr": [
+        3.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 453.7945914957097,
+      "iterations": 52,
+      "constraint_violation_pc": 0.01328468151092288,
+      "half_step_max_position_difference_pc": 4.6758714362123215e-07
+    },
+    {
+      "start_myr": [
+        4.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 453.79459290168285,
+      "iterations": 132,
+      "constraint_violation_pc": 0.01328468150344797,
+      "half_step_max_position_difference_pc": 4.6758807468248687e-07
+    },
+    {
+      "start_myr": [
+        5.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 453.7945925389969,
+      "iterations": 165,
+      "constraint_violation_pc": 0.01328468151007467,
+      "half_step_max_position_difference_pc": 4.6758728729806446e-07
+    }
+  ],
+  "settings": {
+    "starts_myr": [
+      [
+        1.0
+      ],
+      [
+        2.0
+      ],
+      [
+        2.5
+      ],
+      [
+        3.0
+      ],
+      [
+        4.0
+      ],
+      [
+        5.0
+      ]
+    ],
+    "max_step_myr": 0.02,
+    "max_sigma": 8.0,
+    "min_parallax_mas": 0.1,
+    "max_iterations": 250,
+    "constraint_tolerance_pc": 0.001
+  },
+  "full_objective_complete": false,
+  "discovery_probability": null,
+  "interpretation": [
+    "Chi2 is squared Mahalanobis displacement of supplied measurements; no prior or p-value is applied.",
+    "Angular positions are fixed; covariance covers parallax, pmra, pmdec, radial velocity, independently between objects.",
+    "Shared objects have one fitted state across all encounters; separate encounter times allow repeated launches.",
+    "Multistart local optimization is not a global optimum or exclusion certificate; failed fits are inconclusive.",
+    "A feasible encounter is compatibility under the supplied model, not evidence of causal ejection.",
+    "Finite-radius events constrain every member relative to their arithmetic centroid, not a designated source surface.",
+    "Half-step checks estimate numerical error but do not rigorously bound integration error."
+  ],
+  "provenance": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "inputs": [
+      {
+        "path": "manifests/HIP_22061_Collinder_69.json",
+        "sha256": "7ded356f74c6dc2b84a3d3f2325ef4a4820db9664e8c5d7afa0396e92f50c1ac"
+      }
+    ]
+  },
+  "manifest": "HIP_22061_Collinder_69.json"
+}

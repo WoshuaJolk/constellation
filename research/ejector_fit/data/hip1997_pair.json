@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "epoch_label": "J1991.25",
+  "frame": {
+    "galcen_distance_pc": 8122.0,
+    "z_sun_pc": 20.8,
+    "galcen_v_sun_kms": [
+      12.9,
+      245.6,
+      7.78
+    ]
+  },
+  "potential": {
+    "components": [
+      {
+        "type": "plummer",
+        "mass_msun": 5000000000.0,
+        "scale_pc": 500.0
+      },
+      {
+        "type": "miyamoto_nagai",
+        "mass_msun": 68000000000.0,
+        "a_pc": 3000.0,
+        "b_pc": 280.0
+      },
+      {
+        "type": "log_halo",
+        "speed_kms": 180.0,
+        "core_pc": 12000.0
+      }
+    ]
+  },
+  "objects": [
+    {
+      "id": "AE_Aur",
+      "ra_deg": 79.075625,
+      "dec_deg": 34.31222222222222,
+      "mean": [
+        2.24,
+        -4.05,
+        43.22,
+        57.5
+      ],
+      "covariance": [
+        [
+          0.5476,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.43560000000000004,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.1936,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.44
+        ]
+      ],
+      "notes": "Hoogerwerf et al. 2001 Table 3; J1991.25. Printed marginal errors, diagonal covariance approximation. iota Ori uses systemic RV."
+    },
+    {
+      "id": "mu_Col",
+      "ra_deg": 86.49954166666666,
+      "dec_deg": -32.30638888888888,
+      "mean": [
+        2.52,
+        3.01,
+        -22.62,
+        109.0
+      ],
+      "covariance": [
+        [
+          0.30250000000000005,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.27040000000000003,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          6.25
+        ]
+      ],
+      "notes": "Hoogerwerf et al. 2001 Table 3; J1991.25. Printed marginal errors, diagonal covariance approximation. iota Ori uses systemic RV."
+    }
+  ],
+  "encounters": [
+    {
+      "id": "AE_Aur_mu_Col",
+      "members": [
+        "AE_Aur",
+        "mu_Col"
+      ],
+      "lookback_bounds_myr": [
+        0.1,
+        6.0
+      ],
+      "radius_pc": 0.0
+    }
+  ],
+  "fit": {
+    "starts_myr": [
+      [
+        1.0
+      ],
+      [
+        2.0
+      ],
+      [
+        2.5
+      ],
+      [
+        3.0
+      ],
+      [
+        4.0
+      ],
+      [
+        5.0
+      ]
+    ],
+    "max_step_myr": 0.02,
+    "max_sigma": 8.0,
+    "min_parallax_mas": 0.1,
+    "max_iterations": 250,
+    "constraint_tolerance_pc": 0.001
+  },
+  "notes": "Historical benchmark approximation, not an exact reproduction of original covariance, Galactic potential, or distance cuts. Fits fixed sky angles. No distance prior."
+}

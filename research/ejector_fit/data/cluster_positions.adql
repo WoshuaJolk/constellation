@@ -1,0 +1,1 @@
+SELECT b.main_id,b.ra,b.dec FROM basic AS b JOIN ident AS i ON i.oidref=b.oid WHERE i.id IN ('Cl Collinder 69','NAME Orion Nebula Cluster')

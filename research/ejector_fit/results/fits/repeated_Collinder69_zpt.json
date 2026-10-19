@@ -1,0 +1,162 @@
+{
+  "tool": "ejector_fit",
+  "schema_version": 1,
+  "epoch_label": "Gaia DR3 J2016.0",
+  "status": "no_converged_feasible_fit",
+  "best_fit": null,
+  "trials": [
+    {
+      "start_myr": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "optimizer_success": false,
+      "message": "More than 3*n iterations in LSQ subproblem",
+      "feasible": false,
+      "converged": false,
+      "chi2": 507.1460638966656,
+      "iterations": 58,
+      "constraint_violation_pc": 32.72856700227574,
+      "half_step_max_position_difference_pc": 8.011863490474995e-06
+    },
+    {
+      "start_myr": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "optimizer_success": false,
+      "message": "More than 3*n iterations in LSQ subproblem",
+      "feasible": false,
+      "converged": false,
+      "chi2": 455.68013969224864,
+      "iterations": 108,
+      "constraint_violation_pc": 41.176187444674085,
+      "half_step_max_position_difference_pc": 6.063132480613988e-06
+    },
+    {
+      "start_myr": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "optimizer_success": false,
+      "message": "More than 3*n iterations in LSQ subproblem",
+      "feasible": false,
+      "converged": false,
+      "chi2": 505.398468331995,
+      "iterations": 59,
+      "constraint_violation_pc": 44.02935738866731,
+      "half_step_max_position_difference_pc": 5.3786023611305905e-06
+    },
+    {
+      "start_myr": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "optimizer_success": false,
+      "message": "Iteration limit reached",
+      "feasible": false,
+      "converged": false,
+      "chi2": 513.5672705714182,
+      "iterations": 250,
+      "constraint_violation_pc": 123.06372515106732,
+      "half_step_max_position_difference_pc": 4.6840766816973133e-07
+    },
+    {
+      "start_myr": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "optimizer_success": false,
+      "message": "More than 3*n iterations in LSQ subproblem",
+      "feasible": false,
+      "converged": false,
+      "chi2": 504.4747759889958,
+      "iterations": 62,
+      "constraint_violation_pc": 43.797649144116626,
+      "half_step_max_position_difference_pc": 1.1502078660478583e-05
+    },
+    {
+      "start_myr": [
+        0.5,
+        2.0,
+        4.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 455.7009715859267,
+      "iterations": 64,
+      "constraint_violation_pc": 76.43215257120879,
+      "half_step_max_position_difference_pc": 2.097943459538899e-05
+    }
+  ],
+  "settings": {
+    "starts_myr": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        2.0,
+        2.0,
+        2.0
+      ],
+      [
+        3.0,
+        3.0,
+        3.0
+      ],
+      [
+        4.0,
+        4.0,
+        4.0
+      ],
+      [
+        5.0,
+        5.0,
+        5.0
+      ],
+      [
+        0.5,
+        2.0,
+        4.0
+      ]
+    ],
+    "max_step_myr": 0.02,
+    "max_sigma": 8.0,
+    "min_parallax_mas": 0.1,
+    "max_iterations": 250,
+    "constraint_tolerance_pc": 0.001
+  },
+  "full_objective_complete": false,
+  "discovery_probability": null,
+  "interpretation": [
+    "Chi2 is squared Mahalanobis displacement of supplied measurements; no prior or p-value is applied.",
+    "Angular positions are fixed; covariance covers parallax, pmra, pmdec, radial velocity, independently between objects.",
+    "Shared objects have one fitted state across all encounters; separate encounter times allow repeated launches.",
+    "Multistart local optimization is not a global optimum or exclusion certificate; failed fits are inconclusive.",
+    "A feasible encounter is compatibility under the supplied model, not evidence of causal ejection.",
+    "Finite-radius events constrain every member relative to their arithmetic centroid, not a designated source surface.",
+    "Half-step checks estimate numerical error but do not rigorously bound integration error."
+  ],
+  "provenance": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "inputs": [
+      {
+        "path": "manifests/repeated_Collinder69_zpt.json",
+        "sha256": "48a98e26e5a651f593ac99dcb8ada5d99f8880b942482b9837f8e77715920df1"
+      }
+    ]
+  },
+  "manifest": "repeated_Collinder69_zpt.json"
+}

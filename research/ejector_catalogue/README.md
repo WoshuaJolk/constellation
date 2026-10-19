@@ -14,6 +14,12 @@ specified sampled-support threshold; the heavier-Galaxy run also returns zero. T
 10 Myr interval, potential and sampled uncertainty; they are not an exclusion
 of ejectors in the Galaxy.
 
+**Follow-up:** the [observation-space encounter fitter](../ejector_fit/README.md)
+recovers a compatible historical Orion triple even when a 16-draw, 25%-support
+search reports no group. The zero counts above must not be read as physical
+exclusions: small sampled support and the >400 km/s selection both limit
+recovery. The new work also tests distinct launch times from one shared source.
+
 ![Campaign overview](results/campaign.png)
 
 [Machine-readable campaign summary](results/campaign.json) · [All-source traceback overview](results/traceback-overview.npz)

@@ -59,7 +59,7 @@ The remaining queue, in the requested order, is:
 12. `prove_floor`: continuous-template and uncertain-noise extensions.
 13. `run_hunt`: orchestrate validated searches and audit records.
 14. `fuse_astrom`: one-field multi-epoch astrometry with covariance/systematics.
-15. `find_ejector`: [real Gaia catalogue campaign](../research/ejector_catalogue/README.md) implemented at the user's request; full-source coverage and astrophysical confirmation remain open.
+15. `find_ejector`: [real Gaia catalogue campaign](../research/ejector_catalogue/README.md) and [observed-system encounter fits](../research/ejector_fit/README.md), including shared-source fits at distinct launch times. Full-source coverage, calibrated discovery tests and astrophysical confirmation remain open.
 16. `map_sedna`: explicit formation populations through calibrated selection.
 17. `read_belt`: migration-simulation likelihoods and degeneracy checks.
 18. `map_glow`: controlled motion-compensated power experiments.
