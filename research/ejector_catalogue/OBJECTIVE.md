@@ -1,5 +1,11 @@
 # Full objective and stopping claims
 
+The subsequent [catalogue decision campaign](../ejector_search/README.md)
+certifies continuous-ODE exclusions and existence witnesses for every triple
+in explicit finite, bounded measurement/model domains. This closes the
+Monte-Carlo/optimizer exclusion gap for those domains. It does not satisfy all
+six requirements below or enumerate all possible origins of a positive group.
+
 The original objective is a precomputed traceback for every fast star in the
 all-survey fused astrometric catalogue, and every common space-time origin of
 several such stars, with what is visible there.

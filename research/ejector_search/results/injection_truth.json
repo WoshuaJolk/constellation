@@ -1,0 +1,16 @@
+{
+  "star_ids": [
+    "trial_2a91",
+    "trial_70bb",
+    "trial_8e04"
+  ],
+  "lookback_myr": 2.345,
+  "source": "Collinder_69",
+  "origin_pc": [
+    -8466.497969733395,
+    -665.877830891522,
+    -67.61332223011908
+  ],
+  "error_model": "Independent synthetic Gaussian 4-observable errors, fixed angular positions",
+  "injection_selection": "Added after literature selection, so this tests conditional search recovery, not survey detection completeness."
+}

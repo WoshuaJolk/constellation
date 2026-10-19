@@ -12,6 +12,7 @@ from scipy.optimize import minimize
 from .galactic import GalacticPotential, KMS_TO_PC_MYR
 from .io import _fields, _named_rows, _provenance, read_json
 from .stellar_inputs import icrs_to_galactocentric
+from ._ejector_accel import compiled_positions, pack_potential
 
 
 class EncounterProblem:
@@ -27,6 +28,7 @@ class EncounterProblem:
             raise ValueError('Require 2--32 objects and 1--16 encounters')
         self.n = len(self.ids)
         self.potential = GalacticPotential(spec['potential'])
+        self.packed_potential = pack_potential(self.potential)
         settings = spec['fit']
         _fields(settings, ['starts_myr', 'max_step_myr', 'max_sigma', 'min_parallax_mas', 'max_iterations', 'constraint_tolerance_pc'])
         for key in ['max_step_myr', 'max_sigma', 'min_parallax_mas', 'constraint_tolerance_pc']:
@@ -112,6 +114,9 @@ class EncounterProblem:
         states = self.states(x)
         output = []
         for e, (indices, radius, steps) in enumerate(self.events):
+            if compiled_positions is not None and self.potential.components:
+                output.append(compiled_positions(states, indices, x[:, 4*self.n+e], steps*refinement, self.packed_potential))
+                continue
             p = states[:, indices, :3].copy()
             v = states[:, indices, 3:].copy()*KMS_TO_PC_MYR
             steps *= refinement

@@ -1,0 +1,366 @@
+{
+  "truth": {
+    "star_ids": [
+      "trial_2a91",
+      "trial_70bb",
+      "trial_8e04"
+    ],
+    "lookback_myr": 2.345,
+    "source": "Collinder_69",
+    "origin_pc": [
+      -8466.497969733395,
+      -665.877830891522,
+      -67.61332223011908
+    ],
+    "error_model": "Independent synthetic Gaussian 4-observable errors, fixed angular positions",
+    "injection_selection": "Added after literature selection, so this tests conditional search recovery, not survey detection completeness."
+  },
+  "recovered": true,
+  "candidate": {
+    "indices": [
+      14,
+      15,
+      20
+    ],
+    "star_ids": [
+      "trial_2a91",
+      "trial_70bb",
+      "trial_8e04"
+    ],
+    "best_fit": {
+      "chi2": 0.1386432443247391,
+      "events": [
+        {
+          "id": "common_origin",
+          "members": [
+            "trial_2a91",
+            "trial_70bb",
+            "trial_8e04"
+          ],
+          "origin_pc": [
+            -8467.001790788348,
+            -663.1679915686292,
+            -67.79166305956137
+          ],
+          "max_centroid_radius_pc": 0.9999999940658317,
+          "constraint_violation_pc": 0.0,
+          "lookback_myr": 2.3367947979005392
+        }
+      ],
+      "fitted_objects": [
+        {
+          "id": "trial_2a91",
+          "mean": [
+            1.6510162939959037,
+            -17.7764235540908,
+            16.001802578349416,
+            127.16375001255145
+          ],
+          "marginal_sigma_shift": [
+            -0.23675321892219586,
+            -0.0022775164308264095,
+            0.00277406254269863,
+            -0.06449885496257934
+          ]
+        },
+        {
+          "id": "trial_70bb",
+          "mean": [
+            2.53101767060642,
+            43.346121250969,
+            -31.96935158766205,
+            61.91124809228187
+          ],
+          "marginal_sigma_shift": [
+            0.24061854391369172,
+            -0.004517772121204189,
+            0.0021854895338790925,
+            0.12381185838284144
+          ]
+        },
+        {
+          "id": "trial_8e04",
+          "mean": [
+            7.284662770931729,
+            -55.822429216682266,
+            56.74546712667866,
+            -76.87474301009794
+          ],
+          "marginal_sigma_shift": [
+            -0.016378793387191358,
+            -0.0003673844018337036,
+            0.0005517441341140739,
+            -0.06998301231472699
+          ]
+        }
+      ],
+      "active_bound_parameter_indices": [],
+      "constraint_violation_pc": 0.0,
+      "half_step_max_position_difference_pc": 5.054452252884045e-06
+    },
+    "search_wide_rotation_rank": null,
+    "independent_validation": {
+      "passed": true,
+      "constraint_violation_pc": 0.0,
+      "max_centroid_radius_pc": 0.999999992051426,
+      "origin_pc": [
+        -8467.001790900918,
+        -663.1679906398907,
+        -67.79166247671071
+      ],
+      "relative_rms_speed_kms": 119.18018815419751,
+      "member_velocities_kms": [
+        [
+          -97.20947520091548,
+          345.2811095116785,
+          -27.156975178964164
+        ],
+        [
+          42.648286497628185,
+          143.8441658983025,
+          53.29640573199704
+        ],
+        [
+          83.18474449355332,
+          285.3232103920242,
+          22.881725846911884
+        ]
+      ],
+      "interpretation": "Independent numerical check of this fitted trajectory, not causal confirmation"
+    },
+    "counterparts": {
+      "matches": [
+        {
+          "id": "Collinder_69",
+          "separation_pc": 0.8414649099827537,
+          "match_radius_pc": 21.82354446,
+          "within_radius": true,
+          "present_icrs": [
+            83.81417628,
+            9.88805505,
+            393.77513132,
+            1.21490066,
+            -2.04664903,
+            20.87411271
+          ],
+          "historical_velocity_kms": [
+            -17.26315382107436,
+            235.46631565753685,
+            2.785214092032668
+          ],
+          "metadata": {
+            "catalogue": "Hunt & Reffert 2023, VizieR J/A+A/673/A114 (retrieved 2026-10-19)",
+            "aliases": "Collinder_69,FSR_0934,FSR_934,MWSC_585",
+            "type": "o",
+            "members": 1247,
+            "rv_count": 192,
+            "current_epoch": "Gaia DR3 J2016.0",
+            "e_RV": 2.01347372,
+            "s_RV": 27.89951032,
+            "r50pc": 6.62750073,
+            "rtpc": 21.82354446,
+            "logAge16": 6.53201008,
+            "logAge50": 6.71929884,
+            "logAge84": 6.84672165,
+            "CST": 99.0
+          }
+        }
+      ],
+      "nearest": [
+        {
+          "id": "Collinder_69",
+          "separation_pc": 0.8414649099827537,
+          "match_radius_pc": 21.82354446,
+          "within_radius": true,
+          "present_icrs": [
+            83.81417628,
+            9.88805505,
+            393.77513132,
+            1.21490066,
+            -2.04664903,
+            20.87411271
+          ],
+          "historical_velocity_kms": [
+            -17.26315382107436,
+            235.46631565753685,
+            2.785214092032668
+          ],
+          "metadata": {
+            "catalogue": "Hunt & Reffert 2023, VizieR J/A+A/673/A114 (retrieved 2026-10-19)",
+            "aliases": "Collinder_69,FSR_0934,FSR_934,MWSC_585",
+            "type": "o",
+            "members": 1247,
+            "rv_count": 192,
+            "current_epoch": "Gaia DR3 J2016.0",
+            "e_RV": 2.01347372,
+            "s_RV": 27.89951032,
+            "r50pc": 6.62750073,
+            "rtpc": 21.82354446,
+            "logAge16": 6.53201008,
+            "logAge50": 6.71929884,
+            "logAge84": 6.84672165,
+            "CST": 99.0
+          }
+        },
+        {
+          "id": "OC_0322",
+          "separation_pc": 42.361097693652,
+          "match_radius_pc": 13.8594031,
+          "within_radius": false,
+          "present_icrs": [
+            79.41769192,
+            7.16412271,
+            386.33217776,
+            2.29105189,
+            -3.66599514,
+            6.21911781
+          ],
+          "historical_velocity_kms": [
+            -2.375612402284283,
+            235.87712415079258,
+            4.9931977711922695
+          ],
+          "metadata": {
+            "catalogue": "Hunt & Reffert 2023, VizieR J/A+A/673/A114 (retrieved 2026-10-19)",
+            "aliases": "CWNU_216,OC_0322",
+            "type": "o",
+            "members": 53,
+            "rv_count": 15,
+            "current_epoch": "Gaia DR3 J2016.0",
+            "e_RV": 5.24196629,
+            "s_RV": 20.30204815,
+            "r50pc": 2.24382593,
+            "rtpc": 13.8594031,
+            "logAge16": 6.50237751,
+            "logAge50": 6.72789145,
+            "logAge84": 6.85259724,
+            "CST": 8.30172864
+          }
+        },
+        {
+          "id": "CWNU_522",
+          "separation_pc": 45.23724068109422,
+          "match_radius_pc": 23.4624059,
+          "within_radius": false,
+          "present_icrs": [
+            75.678003,
+            8.08101379,
+            381.08438607,
+            0.88316847,
+            -4.48388334,
+            17.20134788
+          ],
+          "historical_velocity_kms": [
+            -11.906564555033874,
+            234.37656783511784,
+            -1.9939331625306445
+          ],
+          "metadata": {
+            "catalogue": "Hunt & Reffert 2023, VizieR J/A+A/673/A114 (retrieved 2026-10-19)",
+            "aliases": "CWNU_522,LISC-III_3611",
+            "type": "o",
+            "members": 173,
+            "rv_count": 53,
+            "current_epoch": "Gaia DR3 J2016.0",
+            "e_RV": 1.34714425,
+            "s_RV": 9.80735816,
+            "r50pc": 10.34259737,
+            "rtpc": 23.4624059,
+            "logAge16": 7.26702261,
+            "logAge50": 7.55394101,
+            "logAge84": 7.78235006,
+            "CST": 16.61709431
+          }
+        },
+        {
+          "id": "UPK_398",
+          "separation_pc": 51.563909465814895,
+          "match_radius_pc": 5.56592471,
+          "within_radius": false,
+          "present_icrs": [
+            85.95597768,
+            7.05923289,
+            436.64426824,
+            -3.25699586,
+            -1.74801742,
+            25.23069983
+          ],
+          "historical_velocity_kms": [
+            -20.698652479184354,
+            237.77611999073977,
+            -5.379036368883297
+          ],
+          "metadata": {
+            "catalogue": "Hunt & Reffert 2023, VizieR J/A+A/673/A114 (retrieved 2026-10-19)",
+            "aliases": "Theia_36,UPK_398",
+            "type": "o",
+            "members": 84,
+            "rv_count": 8,
+            "current_epoch": "Gaia DR3 J2016.0",
+            "e_RV": 3.31329585,
+            "s_RV": 9.37141584,
+            "r50pc": 1.59790064,
+            "rtpc": 5.56592471,
+            "logAge16": 6.800138,
+            "logAge50": 7.06739569,
+            "logAge84": 7.39886475,
+            "CST": 13.10779734
+          }
+        },
+        {
+          "id": "ASCC_21",
+          "separation_pc": 52.162946349510165,
+          "match_radius_pc": 10.63163356,
+          "within_radius": false,
+          "present_icrs": [
+            82.21204038,
+            3.60658547,
+            340.73440964,
+            1.5323534,
+            -0.57628365,
+            10.16829406
+          ],
+          "historical_velocity_kms": [
+            -7.702224772252679,
+            239.6573189059621,
+            5.615056960886949
+          ],
+          "metadata": {
+            "catalogue": "Hunt & Reffert 2023, VizieR J/A+A/673/A114 (retrieved 2026-10-19)",
+            "aliases": "ASCC_21",
+            "type": "o",
+            "members": 116,
+            "rv_count": 48,
+            "current_epoch": "Gaia DR3 J2016.0",
+            "e_RV": 4.04269659,
+            "s_RV": 28.00862356,
+            "r50pc": 2.7465291,
+            "rtpc": 10.63163356,
+            "logAge16": 6.65925741,
+            "logAge50": 6.83873701,
+            "logAge84": 7.00066328,
+            "CST": 11.05617115
+          }
+        }
+      ],
+      "objects_tested": 5749,
+      "excluded_count": 1418,
+      "coverage": {
+        "input_rows": 7167,
+        "included": 5749,
+        "excluded": 1418,
+        "source_catalogue": "https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/673/A114",
+        "complete_for_all_visible_sources": false,
+        "limitations": [
+          "Open/moving/globular groups found in Gaia; not all visible objects or all clusters.",
+          "No selection function, extinction correction, or luminosity-completeness limit.",
+          "No missing RV is invented. Excluded rows remain in the ledger.",
+          "Nominal trajectories omit cluster distance/kinematic, centroid and dynamical uncertainty.",
+          "A tidal-radius overlap is an association lead, not a compact source or birth-site identification."
+        ]
+      },
+      "interpretation": "Nominal orbit proximity to fitted origin. Cluster extent is a match scale, not astrometric uncertainty. No-match is not a dark source."
+    }
+  },
+  "evaluated_groups": 1330
+}

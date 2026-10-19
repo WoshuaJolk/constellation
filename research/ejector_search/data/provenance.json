@@ -1,0 +1,50 @@
+{
+  "retrieved_utc": "2026-10-19",
+  "url": "https://vizier.cds.unistra.fr/viz-bin/votable?-source=J%2FA%2BA%2F673%2FA114%2Fclusters&-out.all=1&-out.max=unlimited",
+  "rows": 7167,
+  "raw_sha256": "bc0da144904d2a40f2ab9a7d52457e1a86436eaba97f49d528feb2213cb743a6",
+  "compressed_sha256": "a5330ba1ee22010fe11e47b9d9770f62fde07983df1f615037a6db0d1acb3b42",
+  "response_metadata": [
+    {
+      "name": "service_protocol",
+      "value": "ASU"
+    },
+    {
+      "name": "request_date",
+      "value": "2026-10-19T21:19:58"
+    },
+    {
+      "name": "request",
+      "value": "https://vizier.cds.unistra.fr/viz-bin/votable?-source=J%2FA%2BA%2F673%2FA114%2Fclusters&-out.all=1&-out.max=unlimited"
+    },
+    {
+      "name": "contact",
+      "value": "cds-question@unistra.fr"
+    },
+    {
+      "name": "server_software",
+      "value": "VizieR/7.6.1"
+    },
+    {
+      "name": "publisher",
+      "value": "CDS"
+    }
+  ],
+  "stellar_input_data_sha256": {
+    "research/ejector_fit/data/README.md": "f5dbce10b4c4a8799d50c1c40552a7ffafe10b3e62e08d818bd331da17601079",
+    "research/ejector_fit/data/cluster_positions.adql": "8e5d04ed8940a52bb21bc2ccc5731a5d9ee6d18d9d66c9b4b53c021cf5c4eb59",
+    "research/ejector_fit/data/cluster_positions.csv": "3fea11a663950173371b41443b26037368c62d787f7aa2cd1f22362a7bc7c8db",
+    "research/ejector_fit/data/gaia_orion.adql": "7d8259820f80a816647f82aaefc7e11394e77ba2a56d6b87813dd827d799e68b",
+    "research/ejector_fit/data/gaia_orion.vot": "4e4592bcf76e91b148f82723632d144f52a8bef00c387e78eadea1602189f938",
+    "research/ejector_fit/data/gaia_pair.json": "a7209bab3c844ea153dcb89c9f6cd2c86942660fe4535901ff9ae06675859662",
+    "research/ejector_fit/data/gaia_runaways.adql": "728706a8b8b4f0569608bbb90670c4c65e06a79ea708344ed1102e927d578f67",
+    "research/ejector_fit/data/gaia_runaways.vot": "c148f8b99b72d58837a07d4e14e2ac88b2128dc6f9f3f07e17287d1692e110b4",
+    "research/ejector_fit/data/gaia_triple.json": "e8cac281e9a687c12887a523279fafa79bd1d5b828b7af695aa6ee0bd54dac68",
+    "research/ejector_fit/data/hip1997_pair.json": "8c53d2a96873d9efb7b0804eae2673fa68837bffde18f7ea00054cf3cd3442b1",
+    "research/ejector_fit/data/hip1997_triple.json": "e09a325c8701aff0c2fe0ae2f78be934eed4add88dace2f6b3af5be1c69c3ed8",
+    "research/ejector_fit/data/hip2007_pair.json": "d9aae56782868cd4783e6c3dda733b11eeb4e016a2dd82df73bd2a7319ba3b64",
+    "research/ejector_fit/data/hip2007_triple.json": "56a6a2aa6e004a8749b300763caeb704a90100598d6688765a5ac9b19a3f9996",
+    "research/ejector_fit/data/literature_rvs.json": "d7c0fd1b44288246464659276fcf0a5f1379868c9ed934c434a5a7ba9250b063",
+    "research/ejector_fit/data/provenance.json": "f344c6076ff43395a4017483faf085b5454fca756f40aa7bf54c3b38cfae0d1e"
+  }
+}

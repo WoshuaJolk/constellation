@@ -14,7 +14,7 @@ Assessment of the 23 catalogue proposals after implementing twelve bounded tools
 | `map_complete` | Exact enumeration for a finite population, exposure probabilities and cadence rules implemented, including shared-exposure survey unions. Needs real calibrated selection inputs, cross-exposure dependence and actual linkage acceptance. |
 | `inject_all` | Finite-population selection Monte Carlo, Monte Carlo error intervals and conditional Poisson count likelihoods implemented. Full pixel/dynamics population simulation remains larger work. |
 | `fuse_astrom` | Start with a bounded crossmatched field, common reference frame, epoch-dependent systematics, and covariance model; an all-sky catalogue is a data-intensive project. |
-| `find_ejector` | Continuous interpolation search, disk-backed catalogues, correlated Gaia likelihoods, shared calibration, explicit missing-RV priors and real-data sensitivity campaign implemented. Complete all-survey input, calibrated selection/null models, exact-flow certification, source visibility and ejection confirmation remain open. |
+| `find_ejector` | Continuous searches, disk-backed catalogues, Gaia likelihoods, all-group fits, published cluster matching, and validated ODE exclusion/existence certificates in bounded fixed-model domains. Complete all-survey input, shared model uncertainty, calibrated selection/null models, full source visibility and ejection confirmation remain open. |
 | `map_glow` | Research prototype possible on a small image set. Demonstrate separation from static sky, flat-field errors, and correlated noise before mapping power to population mass. |
 | `weigh_tno` | First calculate expected perturbation amplitudes and parameter identifiability for actual astrometric baselines. Precision and degeneracies may prevent useful mass estimates. |
 | `map_sedna` | Wrap a specified formation population and survey selection simulator; do not invent a universal inner-Oort prior. |
@@ -59,7 +59,7 @@ The remaining queue, in the requested order, is:
 12. `prove_floor`: continuous-template and uncertain-noise extensions.
 13. `run_hunt`: orchestrate validated searches and audit records.
 14. `fuse_astrom`: one-field multi-epoch astrometry with covariance/systematics.
-15. `find_ejector`: [real Gaia catalogue campaign](../research/ejector_catalogue/README.md) and [observed-system encounter fits](../research/ejector_fit/README.md), including shared-source fits at distinct launch times. Full-source coverage, calibrated discovery tests and astrophysical confirmation remain open.
+15. `find_ejector`: [real Gaia catalogue campaign](../research/ejector_catalogue/README.md), [observed-system encounter fits](../research/ejector_fit/README.md), and [complete bounded catalogue decisions](../research/ejector_search/README.md). The latter decides every triple in real and injection samples using continuous-flow interval certificates. Full-source coverage, shared physical-model uncertainty, calibrated discovery tests and astrophysical confirmation remain open.
 16. `map_sedna`: explicit formation populations through calibrated selection.
 17. `read_belt`: migration-simulation likelihoods and degeneracy checks.
 18. `map_glow`: controlled motion-compensated power experiments.

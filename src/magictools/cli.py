@@ -13,12 +13,15 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Moving-source astronomy tools for local FITS data")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
-    for name in ["force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp", "find_ejector", "ejector_prepare", "ejector_fit", "prove_floor", "ztf_search", "ztf_fetch", "judge_line", "inject_tracks", "map_complete", "inject_all", "match_all", "verify_match", "fold_kepler"]:
+    for name in ["force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp", "find_ejector", "ejector_prepare", "ejector_fit", "ejector_search", "ejector_bound", "prove_floor", "ztf_search", "ztf_fetch", "judge_line", "inject_tracks", "map_complete", "inject_all", "match_all", "verify_match", "fold_kepler"]:
         command = commands.add_parser(name)
         command.add_argument("manifest", type=Path)
         command.add_argument("-o", "--output", type=Path, help="Write new JSON file (default: stdout)")
         if name == "dig_floor":
             command.add_argument("--alpha", type=float, default=0.01, help="Family-wise Gaussian false-positive threshold")
+        if name == "ejector_bound":
+            command.add_argument("--refine-nodes", type=int, default=0, help="Maximum branch nodes per unresolved group; zero disables refinement")
+            command.add_argument("--verify-witnesses", action="store_true", help="Seek and interval-verify positive-radius encounter witnesses")
         if name == "map_cover":
             command.add_argument("--photometry-output", type=Path, help="Export a ready-to-run force_track/dig_floor manifest")
             command.add_argument("--planning-output", type=Path, help="Export a learn_null manifest with future candidates, no assumed non-detections")
@@ -65,6 +68,12 @@ def main(argv=None):
         elif args.command in {"floor_demo", "ejector_demo"}:
             from .research_demo import create_floor_demo, create_ejector_demo
             result = (create_floor_demo if args.command == "floor_demo" else create_ejector_demo)(args.directory, args.seed)
+        elif args.command == "ejector_bound":
+            from .ejector_bounds import run_bounds
+            result = run_bounds(args.manifest, args.refine_nodes, args.verify_witnesses)
+        elif args.command == "ejector_search":
+            from .ejector_search import run_search
+            result = run_search(args.manifest)
         elif args.command == "ejector_fit":
             from .ejector_fit import run_fit
             result = run_fit(args.manifest)

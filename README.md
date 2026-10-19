@@ -29,11 +29,20 @@ radial velocity, including several launch times from one shared moving source.
 It tests historical and updated Orion measurements and explicitly checks why
 a low Monte Carlo hit rate cannot exclude a compatible common origin.
 
+The [catalogue decision campaign](research/ejector_search/README.md) adds
+[`ejector_search` and `ejector_bound`](docs/ejector-search.md): all-group fits,
+whole-search controls, a 7,167-object published source catalogue, and validated
+continuous-time interval decisions. It excludes all 816 triples in a real
+18-star sample within a declared cost/model domain, certifies the historical
+Orion encounter, and identifies the sole injected group and its source among
+1,330 recovery hypotheses. These are completed bounded decision problems;
+the original all-survey discovery objective remains open.
+
 | Tool | Available now | Still needed for the catalogue's full ambition |
 | --- | --- | --- |
 | `fold_kepler` | FFT likelihood maps, shared partial orbit sums, Bernstein score bounds, exact-position refinement and direct-baseline validation. Elliptic Kepler/light-time generator or supplied pixel trajectories. | A general continuous Kepler transform, profitable one-shot compilation, physical PSF/trailing/nuisance extensions and real-survey validation. No new mathematical breakthrough claimed. |
 | `prove_floor` | Analytic upper bounds on any detector's prior-average power for a finite Gaussian template bank, a necessary-flux lower bound, and a prior-optimal mixture likelihood-ratio statistic with conservative calibration. Supports correlated noise and background projection. | Unknown/continuous orbit families, realistic nuisance and artifact distributions, survey-wide limits. Uses established theory; does not claim a new universal theorem. |
-| `find_ejector` | Sparse continuous interpolation search over all fixed-size groups, correlated Gaia inputs, explicit RV/distance priors and shared calibration, complete traceback archives, supplied counterparts, whole-search controls and real-data sensitivity runs. | All-survey completeness, population-calibrated missing velocities and selection, certified exact-flow bounds, realistic Galactic histories, source visibility and physical confirmation of an ejector. |
+| `find_ejector` | Sparse continuous searches, correlated Gaia inputs, explicit RV/distance priors, traceback archives, all-group measurement fits, whole-search controls, published cluster matching, and Arb continuous-flow exclusion/existence certificates in a bounded fixed model. | All-survey completeness, population-calibrated missing velocities and selection, uncertainty in Galactic histories/frame, complete source visibility and physical confirmation of an ejector. |
 | `map_cover` | ZTF public exposure queries and selected cutouts; orbit propagation, light time, observatory parallax, FITS coverage and masks, family fractions, trails and estimated S/N. | Complete orbit-family archive indexing, orbit fitting/ranging, calibrated depth curves and further surveys. |
 | `force_track` | Gaussian or native-pixel empirical PSF fits with optional trails, signed flux and uncertainty, background, residuals and usable template fraction; ZTF input preparation. | Spatial/oversampled PSFs, WCS refinement, instrument-specific uncertainty and color calibration. |
 | `judge_line` | Leave-one-out and temporal-half fits, residual and constant-flux checks, stationary/reversed controls on common exposures, explicit diagnostic flags. | Orbit refits, astrometric confirmation, held-out artifact calibration and a validated combined acceptance rule. |
