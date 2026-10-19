@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { loadCatalog, type Scale } from "@/lib/catalog";
 import { List } from "./list";
 import { Reach } from "./reach";
@@ -51,7 +52,12 @@ export default function Home() {
   const cat = loadCatalog();
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <h1 className="text-2xl font-semibold tracking-tight">Magic tools</h1>
+      <div className="flex items-baseline justify-between gap-4">
+        <h1 className="text-2xl font-semibold tracking-tight">Magic tools</h1>
+        <Link href="/constellation" className="font-mono text-[12px] text-[var(--text-muted)] hover:text-[var(--foreground)]">
+          const ellation;
+        </Link>
+      </div>
       <div className="mt-2 max-w-[640px] space-y-3 text-sm leading-6 text-[var(--text-secondary)]">
         {cat.intro.map((p, i) => (
           <p key={i}>
