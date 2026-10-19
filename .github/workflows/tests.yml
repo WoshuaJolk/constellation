@@ -26,3 +26,4 @@ jobs:
       - run: magictools match_all examples/matching.json -o assignment-output.json
       - run: magictools verify_match assignment-output.json -o certificate-check-output.json
       - run: OPENBLAS_NUM_THREADS=1 python -m research.kepler_transform.experiments kepler-research-output.json
+      - run: OPENBLAS_NUM_THREADS=1 python -m research.detection_limit.experiments detection-research-output.json

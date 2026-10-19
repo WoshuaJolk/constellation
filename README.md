@@ -8,6 +8,14 @@ harmonics with a directional light-time extension. **The full objective was
 not achieved.** Derivations, failures and reproducible experiments are preserved
 separately from the production tools; no breakthrough is claimed.
 
+The [full-objective `prove_floor` research](research/detection_limit/README.md)
+adds continuous-family detection certificates, least-favorable-prior searches,
+and interval orbital image models. It closes the power gap below one percentage
+point in explicit controls and a narrow multimodal orbit family. Broad continuous
+orbit coverage still fails the target; **the full detection-limit objective is
+not achieved**. The research includes derivations of the conditional bounds,
+reproducible failures, and explicit Monte Carlo confidence/arithmetic limits.
+
 | Tool | Available now | Still needed for the catalogue's full ambition |
 | --- | --- | --- |
 | `fold_kepler` | FFT likelihood maps, shared partial orbit sums, Bernstein score bounds, exact-position refinement and direct-baseline validation. Elliptic Kepler/light-time generator or supplied pixel trajectories. | A general continuous Kepler transform, profitable one-shot compilation, physical PSF/trailing/nuisance extensions and real-survey validation. No new mathematical breakthrough claimed. |

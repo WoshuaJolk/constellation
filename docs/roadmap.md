@@ -35,6 +35,14 @@ tested three routes plus a directional light-time repair. Conditional harmonic
 identities work, but construction cost, physical bandwidth and continuous radial
 coverage remain unresolved. The full transform is **not** marked complete.
 
+The [full-objective detection-limit research](../research/detection_limit/README.md)
+now pairs detector power with universal dual upper bounds and validated
+continuous orbit-cell errors. It meets a one-percentage-point gap in solvable
+controls and a narrowly uncertain multimodal orbital example. A 4,096-cell broad
+orbit cover still fails badly. Tight whole-population mixture bounds, scalable
+minimax validation, instrument-model extensions and complete numerical
+certification remain open; `prove_floor` is not marked fully solved.
+
 Choose one public, calibrated exposure set and a known moving source with reliable external ephemerides. Ingest variance/mask products, establish photometric units and PSF quality, and run position-held-fixed recovery. Inject sources over a grid of brightness and rate, repeat the real candidate-selection procedure on controls, then feed those measured efficiencies into `learn_null`. That produces a defensible survey-specific result before expanding to additional archives.
 
 ## Current execution order

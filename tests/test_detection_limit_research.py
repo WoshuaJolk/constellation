@@ -9,6 +9,7 @@ from scipy.stats import ncx2, norm, poisson
 from research.detection_limit.certificates import (
     GaussianCover, certify, certify_likelihood, gaussian_tv, geometric_detector,
     least_favorable_weights, log_lr, rejection_probability,
+    flux_bracket,
 )
 
 flint=pytest.importorskip("flint")
@@ -114,6 +115,31 @@ def test_compression_charges_the_discarded_direction():
     np.testing.assert_allclose(compressed.radii,cover.radii+residual,atol=1e-15)
 
 
+def test_flux_bracket_contains_exact_detection_floor_and_tracks_confidence():
+    cover=GaussianCover([[1.,0.]],[0],[1])
+    report=flux_bracket(cover,maximum_flux=5.,samples=65536,max_samples=262144,
+                        max_evaluations=8,relative_tolerance=.1)
+    exact=norm.isf(.01)+norm.ppf(.9)
+    lo,hi=report["flux_interval"]
+    assert hi is not None and lo<=exact<=hi
+    assert len(report["evaluations"])<=8
+    assert all(x["certificate"]["simultaneous_confidence"]==1-.01/8 for x in report["evaluations"])
+    impossible=flux_bracket(GaussianCover([[0.]],[0],[1]),maximum_flux=5.,max_evaluations=2,
+                            samples=1000,max_samples=1000)
+    assert impossible["flux_interval"][1] is None
+    assert impossible["gap_target_met"] is False
+
+
+def test_null_order_statistic_repair_for_bright_source():
+    cover=GaussianCover([[6.]],[0],[1])
+    report=certify(cover,calibration="null_order_statistic",training_samples=65536,samples=65536)
+    assert report["null_probability_upper"]<=.01
+    assert report["certified_detector_power_lower"]>.99
+    assert report["optimal_power_interval"][1]>=norm.sf(norm.isf(.01)-6)
+    with pytest.raises(ValueError):
+        certify(cover,calibration="null_order_statistic",training_samples=1000,alpha=1e-7)
+
+
 def test_validated_flow_encloses_analytic_circle_and_parabola():
     with ctx.workprec(96):
         mu=arb(MU);radius=arb(3);omega=(mu/(radius*radius*radius)).sqrt()
@@ -153,19 +179,24 @@ def test_gaussian_pixel_range_contains_interior_and_mode():
 def test_continuous_cell_encloses_independent_retarded_pixels():
     mu=float(MU);center=np.array([3.,0,0,0,np.sqrt(mu/3),0])
     half=np.array([1e-6]*3+[1e-8]*3)
-    exposure=Exposure(1.,(1,0,0),(1,0,0),(0,1,0),(0,0,1),shape=(5,5))
-    # The PSF is far outside this stamp; use a WCS pointed at the moving source.
-    angle=(center[4]/2)*1
-    exposure.center=(float(np.cos(angle)),float(np.sin(angle)),0.)
-    exposure.east=(-float(np.sin(angle)),float(np.cos(angle)),0.)
+    observer=np.array([1.,0,0])
+    def rhs(t,y):return np.r_[y[3:],-mu*y[:3]/np.linalg.norm(y[:3])**3]
+    central=solve_ivp(rhs,[0,1.],center,method="DOP853",rtol=2e-13,atol=2e-14,dense_output=True)
+    emission=1.
+    for _ in range(10):emission=1.-np.linalg.norm(central.sol(emission)[:3]-observer)/float(C_AU_DAY)
+    direction=central.sol(emission)[:3]-observer;direction/=np.linalg.norm(direction)
+    east=np.cross([0.,0.,1.],direction);east/=np.linalg.norm(east)
+    north=np.cross(direction,east)
+    exposure=Exposure(1.,tuple(observer),tuple(direction),tuple(east),tuple(north),shape=(5,5))
     with ctx.workprec(96):
         cell=uniform_boxes(center,half,[0]*6)[0]
         enclosure=pixel_means(cell,[exposure],10,light_time_max=.1)
         representative,radius=mean_ball(enclosure)
+    assert np.linalg.norm(representative)>2
+    assert 0<radius<1
     rng=np.random.default_rng(123)
     for _ in range(6):
         initial=center+rng.uniform(-1,1,6)*half
-        def rhs(t,y):return np.r_[y[3:],-mu*y[:3]/np.linalg.norm(y[:3])**3]
         solution=solve_ivp(rhs,[0,1.],initial,method="DOP853",rtol=2e-13,atol=2e-14,dense_output=True)
         emission=1.
         for _ in range(10):emission=1.-np.linalg.norm(solution.sol(emission)[:3]-exposure.observer)/float(C_AU_DAY)

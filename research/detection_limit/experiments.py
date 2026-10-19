@@ -17,17 +17,22 @@ from scipy.special import i0e
 from scipy.stats import norm, poisson
 
 from .certificates import (GaussianCover,certify,certify_likelihood,geometric_detector,
-                           least_favorable_weights)
+                           least_favorable_weights,flux_bracket)
 from .exact_controls import circle_power
 from .interval_orbits import MU,Exposure,orbit_cover
 from research.kepler_transform.universal import apparent as approximate_apparent
+
+
+# Fixed after the pilot run; fresh streams keep validation independent of the
+# pilot results used to choose this larger budget. Do not search for good seeds.
+VALIDATION_SEED=92026
 
 
 def exact_cases():
     reports=[]
     for alpha,signal in [(.01,3.),(1e-7,3.),(1e-7,6.)]:
         draw=lambda rng,n: signal*(rng.normal(size=n)+signal)-signal**2/2
-        report=certify_likelihood(draw,alpha=alpha,samples=1048576,training_samples=131072)
+        report=certify_likelihood(draw,alpha=alpha,samples=4194304,training_samples=1048576,seed=VALIDATION_SEED)
         report["independent_exact_power"]=float(norm.sf(norm.isf(alpha)-signal))
         report["model"]={"kind":"known Gaussian source","mean_norm":signal}
         reports.append(report)
@@ -35,7 +40,7 @@ def exact_cases():
         y=rng.normal(size=(n,2));y[:,0]+=3
         z=3*np.linalg.norm(y,axis=1)
         return -4.5+np.log(i0e(z))+z
-    circle=certify_likelihood(circle_draw,samples=1048576,training_samples=131072)
+    circle=certify_likelihood(circle_draw,samples=4194304,training_samples=1048576,seed=VALIDATION_SEED)
     circle["independent_exact_result"]=circle_power(3)
     circle["model"]={"kind":"continuous circle of means","radius":3,
                      "interpretation":"classical symmetry control, not an orbital source family"}
@@ -46,7 +51,7 @@ def exact_cases():
         boundary=(alpha-poisson.sf(k,background))/poisson.pmf(k,background)
         exact=poisson.sf(k,background+signal)+boundary*poisson.pmf(k,background+signal)
         draw=lambda rng,n:rng.poisson(background+signal,n)*np.log1p(signal/background)-signal
-        report=certify_likelihood(draw,alpha=alpha,samples=1048576,training_samples=131072)
+        report=certify_likelihood(draw,alpha=alpha,samples=4194304,training_samples=1048576,seed=VALIDATION_SEED)
         report["independent_exact_power"]=float(exact)
         report["model"]={"kind":"known Poisson source","background":background,"source_counts":signal}
         reports.append(report)
@@ -57,13 +62,13 @@ def minimax_cases():
     means=np.array([[2.2,0.],[0.,2.9]])
     cover=GaussianCover(means,np.zeros(2),[.5,.5])
     weights,optimization=least_favorable_weights(means,samples=262144)
-    uniform=certify(cover,objective="minimax",samples=1048576,training_samples=131072)
+    uniform=certify(cover,objective="minimax",samples=1048576,training_samples=131072,seed=VALIDATION_SEED)
     optimized=certify(cover,objective="minimax",detector_weights=weights,
-                     samples=2097152,training_samples=262144)
+                     samples=2097152,training_samples=262144,seed=VALIDATION_SEED)
     # Nonzero balls cover every mean in two continuous neighborhoods, not just
     # their centers. The same weights remain only a candidate, never a proof.
     continuous=certify(GaussianCover(means,[.001,.001],[.5,.5]),objective="minimax",
-                       detector_weights=weights,samples=2097152,training_samples=262144)
+                       detector_weights=weights,samples=2097152,training_samples=262144,seed=VALIDATION_SEED)
     return {"means":means.tolist(),"optimization":optimization,"weights":weights.tolist(),
             "uniform_weights":uniform,"optimized_weights":optimized,
             "continuous_mean_balls":continuous,"mean_ball_radius":.001}
@@ -99,7 +104,14 @@ def resolved_multimodal_orbits():
     construction=time.perf_counter()-start
     compressed,compression=cover.compressed(1e-8)
     # Save the executable reduced means and mapping, as well as original inputs.
-    result=certify(compressed,samples=1048576,training_samples=131072)
+    result=certify(compressed,samples=4194304,training_samples=1048576,seed=VALIDATION_SEED)
+    bright=GaussianCover(compressed.means*2,compressed.radii*2,compressed.weights)
+    result["bright_source_calibration_probe"]={
+        method:certify(bright,samples=262144,training_samples=131072,seed=VALIDATION_SEED+2,
+                       calibration=method) for method in ("alternative","null_order_statistic")}
+    unit_flux=GaussianCover(compressed.means/6,compressed.radii/6,compressed.weights)
+    result["brightness_limit"]=flux_bracket(unit_flux,maximum_flux=12.,samples=262144,
+                                           seed=VALIDATION_SEED+1,calibration="null_order_statistic")
     result.update({"model":"uniform prior on 16 disjoint six-dimensional orbit boxes",
                    "centers":centers,"half_widths":half,"flux":6.,
                    "exposures":[asdict(e) for e in exposures],
@@ -120,7 +132,10 @@ def broad_orbits():
         state=np.array([radius,0,0,0,speed_factor*np.sqrt(float(MU)/radius),0])
         exposures=exposures_for(state)
         half=[1e-3,2e-5,2e-5,1e-5,3e-6,3e-6]
-        for levels in ([0]*6,[0,2,2,0,1,1],[0,3,3,0,1,1]):
+        refinements=[[0]*6,[0,2,2,0,1,1],[0,3,3,0,1,1]]
+        if label=="bound":
+            refinements.append([1,4,4,1,1,1])
+        for levels in refinements:
             start=time.perf_counter()
             result={"case":label,"center":state.tolist(),"half_widths":half,"levels":levels,
                     "flux":6.,"exposures":[asdict(e) for e in exposures]}
@@ -136,7 +151,7 @@ def broad_orbits():
                 result["score_dimension"]=metadata["score_dimension"]
                 # A small validation budget is sufficient to demonstrate that
                 # these large covering errors cannot meet the requested gap.
-                result["certificate"]=certify(compressed,samples=16384,training_samples=8192)
+                result["certificate"]=certify(compressed,samples=16384,training_samples=8192,seed=VALIDATION_SEED)
                 result["gap_target_met"]=result["certificate"]["gap_target_met"]
             except (ValueError,ArithmeticError) as error:
                 result.update({"construction_seconds":time.perf_counter()-start,
@@ -151,7 +166,7 @@ def nuisance_cases():
     results=[]
     for null_tv in [0.,1e-5,1e-3,.02]:
         try:
-            result=certify(cover,null_tv=null_tv,alternative_tv=1e-4,samples=1048576,training_samples=131072)
+            result=certify(cover,null_tv=null_tv,alternative_tv=1e-4,samples=1048576,training_samples=131072,seed=VALIDATION_SEED)
         except ValueError as error:
             result={"null_tv_radius":null_tv,"failure":str(error),"gap_target_met":False}
         results.append(result)
@@ -173,7 +188,7 @@ def main():
     args=parser.parse_args()
     if args.output.exists():
         parser.error("Output exists; choose a new file")
-    result={"seed":2026,"requested_gap":.01,
+    result={"seed":VALIDATION_SEED,"requested_gap":.01,
             "confidence_scope":"Each stochastic certificate separately has 99% confidence; no experiment-wide joint confidence claimed",
             "software":{"python":platform.python_version(),**{p:importlib.metadata.version(p) for p in ["numpy","scipy","python-flint"]}},
             "source_sha256":{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(Path(__file__).parent.glob("*.py"))}}
@@ -187,6 +202,7 @@ def main():
     requirements={
         "exact_control_gap_targets_met":all(r["gap_target_met"] for r in result["exact_controls"]),
         "multimodal_continuous_orbit_gap_target_met":result["resolved_multimodal_orbits"]["gap_target_met"],
+        "multimodal_brightness_limit_bracket_target_met":result["resolved_multimodal_orbits"]["brightness_limit"]["gap_target_met"],
         "continuous_minimax_control_gap_target_met":result["minimax"]["continuous_mean_balls"]["gap_target_met"],
         "broad_resolved_orbit_gap_targets_met":all(r["gap_target_met"] for r in result["broad_orbit_families"]),
         "general_instrument_noise_and_nuisance_models":False,

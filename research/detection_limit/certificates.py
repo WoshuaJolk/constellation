@@ -11,7 +11,7 @@ import math
 import numpy as np
 from scipy.optimize import minimize
 from scipy.special import erf, logsumexp
-from scipy.stats import beta, norm
+from scipy.stats import beta, binom, norm
 
 
 def gaussian_tv(radius):
@@ -201,7 +201,7 @@ def certify_likelihood(draw_log_lr, *, alpha=0.01, confidence=0.99, samples=2621
 def certify(cover, *, alpha=0.01, confidence=0.99, samples=262144,
             training_samples=16384, seed=2026, objective="average",
             detector_weights=None, null_tv=0.0, alternative_tv=0.0,
-            requested_gap=0.01, component_samples=None):
+            requested_gap=0.01, component_samples=None, calibration="alternative"):
     """Certify an executable randomized LR detector and an optimal-power bound.
 
     Independent training chooses lambda. Under Q, H=(1-lambda/L)+ and
@@ -214,6 +214,14 @@ def certify(cover, *, alpha=0.01, confidence=0.99, samples=262144,
     """
     if objective not in {"average", "minimax"}:
         raise ValueError("objective must be average or minimax")
+    if calibration not in {"alternative","null_order_statistic"}:
+        raise ValueError("Unknown threshold calibration method")
+    for count in (samples,training_samples):
+        if not isinstance(count,int) or isinstance(count,bool) or count<1:
+            raise ValueError("Positive integer sample counts required")
+    if component_samples is not None and (not isinstance(component_samples,int)
+                                          or isinstance(component_samples,bool) or component_samples<1):
+        raise ValueError("Positive integer component sample count required")
     if not 0 < alpha < 1 or not 0 < confidence < 1:
         raise ValueError("alpha and confidence must lie in (0,1)")
     if not 0 <= null_tv < alpha or not 0 <= alternative_tv < 1:
@@ -227,14 +235,29 @@ def certify(cover, *, alpha=0.01, confidence=0.99, samples=262144,
     weights = cover.weights if detector_weights is None else _weights(detector_weights, len(cover.means))
     generators = [np.random.default_rng(s) for s in np.random.SeedSequence(seed).spawn(3)]
     alpha_work = alpha - null_tv
-    trained = mixture_scores(cover.means, weights, training_samples, generators[0])
-    threshold,tie_probability = choose_rule(trained, alpha_work)
+    events = (3 if objective == "average" else 2 + len(cover.means)) + (calibration=="null_order_statistic")
+    failure = (1-confidence) / events
+    if calibration=="alternative":
+        trained = mixture_scores(cover.means, weights, training_samples, generators[0])
+        threshold,tie_probability = choose_rule(trained, alpha_work)
+        calibration_order=None
+    else:
+        calibration_order=int(binom.ppf(1-failure,training_samples,1-alpha_work))+1
+        if calibration_order>training_samples:
+            raise ValueError("Too few null calibration samples for requested alpha/confidence")
+        trained=[]
+        for start in range(0,training_samples,2048):
+            y=generators[0].normal(size=(min(2048,training_samples-start),cover.means.shape[1]))
+            trained.extend(log_lr(y,cover.means,weights))
+        threshold=float(np.partition(np.asarray(trained),calibration_order-1)[calibration_order-1])
+        tie_probability=0.0  # strict rejection remains valid with atoms
     evaluated = mixture_scores(cover.means, weights, samples, generators[1])
     rejects = _reject(evaluated,threshold,tie_probability,generators[1])
-    events = 3 if objective == "average" else 2 + len(cover.means)
-    failure = (1-confidence) / events
     lam,w,h,slack,nominal_null_upper,gamma,dual = _importance_bounds(
         evaluated,rejects,threshold,alpha_work,alpha+null_tv,failure)
+    if calibration=="null_order_statistic":
+        nominal_null_upper=min(nominal_null_upper,alpha_work)
+        gamma=1.0
     model_errors = np.minimum(1.0, cover.tv + alternative_tv)
     average_error = float(weights @ model_errors)
     # A true-null-feasible test has nominal size <= alpha + null_tv.
@@ -275,6 +298,7 @@ def certify(cover, *, alpha=0.01, confidence=0.99, samples=262144,
         "continuous_maximum_tv_error": float(np.max(model_errors)),
         "null_tv_radius": null_tv, "extra_alternative_tv_radius": alternative_tv,
         "dual_lambda": lam, "dual_h_mean": float(np.mean(h)),
+        "threshold_calibration":calibration,"null_calibration_order":calibration_order,
         "importance_w_mean": float(np.mean(w)), "bounded_expectation_slack": slack,
         "component_power_lower_bounds": component_lower,
         "work": {"training_samples": training_samples, "mixture_validation_samples": samples,
@@ -295,6 +319,67 @@ def rejection_probability(observation, means, report):
     threshold=detector["log_lr_threshold"]
     base=1.0 if score>threshold else detector["boundary_acceptance_probability"] if score==threshold else 0.0
     return base*detector["acceptance_probability_above_threshold"]
+
+
+def flux_bracket(unit_flux_cover, *, maximum_flux, target_power=.9, alpha=.01,
+                 confidence=.99, relative_tolerance=.02, max_evaluations=16,
+                 samples=262144, max_samples=4194304, training_samples=131072,
+                 seed=2026, calibration="alternative"):
+    """Bracket the prior-average Gaussian flux limit, with an explicit gap.
+
+    All source means and radii scale with flux; noise and cell prior are fixed.
+    Power is nondecreasing by the Gaussian degradation channel. Allocate the
+    failure probability across the maximum number of adaptive evaluations.
+    An unresolved power interval never licenses discarding half the flux range.
+    """
+    if not np.isfinite(maximum_flux) or maximum_flux<=0:
+        raise ValueError("Positive finite maximum flux required")
+    if not 0<alpha<target_power<1 or not 0<confidence<1 or not 0<relative_tolerance<1:
+        raise ValueError("Require 0 < alpha < target power < 1 and valid confidence/tolerance")
+    if not isinstance(max_evaluations,int) or max_evaluations<1:
+        raise ValueError("Positive maximum evaluation count required")
+    if not isinstance(max_samples,int) or max_samples<samples:
+        raise ValueError("Maximum sample budget must be at least samples")
+    per_confidence=1-(1-confidence)/max_evaluations
+    children=np.random.SeedSequence(seed).spawn(max_evaluations)
+    lower,upper=0.,None
+    evaluations=[]
+    candidate=float(maximum_flux)
+    budget=samples
+    for i in range(max_evaluations):
+        scaled=GaussianCover(unit_flux_cover.means*candidate,unit_flux_cover.radii*candidate,
+                             unit_flux_cover.weights)
+        report=certify(scaled,alpha=alpha,confidence=per_confidence,samples=budget,
+                       training_samples=training_samples,seed=int(children[i].generate_state(1)[0]),
+                       calibration=calibration)
+        lo,hi=report["optimal_power_interval"]
+        evaluations.append({"flux":candidate,"certificate":report})
+        if hi<target_power:
+            lower=max(lower,candidate)
+        elif lo>=target_power:
+            upper=candidate if upper is None else min(upper,candidate)
+        else:
+            if budget<max_samples:
+                budget=min(max_samples,4*budget)
+                continue
+            break
+        if upper is None:
+            # The supplied upper search limit has not been shown sufficient.
+            break
+        if upper-lower<=relative_tolerance*upper:
+            break
+        candidate=(lower+upper)/2
+        budget=samples
+    width=None if upper is None else upper-lower
+    return {"objective":"prior-average minimum flux attaining target power",
+            "target_power":target_power,"alpha":alpha,"simultaneous_confidence":confidence,
+            "flux_interval":[lower,upper],"absolute_width":width,
+            "relative_width":None if upper is None else width/upper,
+            "requested_relative_tolerance":relative_tolerance,
+            "gap_target_met":bool(upper is not None and width<=relative_tolerance*upper),
+            "evaluations":evaluations,"maximum_evaluations":max_evaluations,
+            "uncertainty":"Conditional Monte Carlo confidence plus supplied continuous cover; float64 evaluation",
+            "status":"bracketed" if upper is not None else "upper flux not shown sufficient"}
 
 
 def least_favorable_weights(means, *, alpha=0.01, samples=32768, seed=12026):
