@@ -97,6 +97,9 @@ export default function Page() {
           rows={RECORDS.map((r) => ({ key: r.name, step: r.step, cells: [r.name, r.holds, r.size], url: r.url }))}
         />
       </section>
+      <section className="mt-12">
+        <h2 className="text-sm font-semibold">Part 3: Cross-analyze the data to uncover secrets across the solar system.</h2>
+      </section>
     </main>
   );
 }
