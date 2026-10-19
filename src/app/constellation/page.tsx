@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Reach } from "../reach";
-import { Volume } from "../volume";
+import { Explorer } from "../explorer";
 import { DATASETS, RECORDS, type Step } from "@/lib/constellation";
 
 export const metadata: Metadata = {
@@ -55,10 +54,10 @@ function Table({ head, rows }: { head: string[]; rows: { key: string; step: Step
 
 export default function Page() {
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-      <h1 className="font-mono text-2xl font-semibold tracking-tight">const ellation;</h1>
-      <Volume />
-      <Reach />
+    <main className="mx-auto w-full max-w-6xl px-4 py-10 font-mono sm:px-6">
+      <h1 className="text-2xl font-semibold tracking-tight">const ellation;</h1>
+      <p className="mt-2 text-sm text-[var(--text-secondary)]">an initiative to map the entire known universe.</p>
+      <Explorer />
       <section className="mt-12">
         <h2 className="mb-3 text-sm font-semibold">Every public image</h2>
         <Table

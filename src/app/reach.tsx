@@ -1,21 +1,18 @@
-"use client";
-
-import { useState } from "react";
-import { SURVEYS } from "@/lib/sky";
+import { SURVEYS, summed } from "@/lib/sky";
 
 // Smallest body with at least one detection, by distance from the Sun, for a wide-field survey.
 // Reflected light at opposition: m = H + 5 log10(r (r - 1)), D = 1329 / sqrt(p) * 10^(-H/5) km, albedo p = 0.1.
-const PASS = 26; // deep wide-field frames summed to the noise floor along the track
+const PASS = Math.max(...SURVEYS.map(summed));
 const ALBEDO = 0.1;
 const R = [2, 100000] as const;
 const D = [1, 1000000] as const;
-const W = 820;
+const W = 540;
 const H = 300;
-const PAD = { l: 56, r: 40, t: 10, b: 64 };
+const PAD = { l: 50, r: 30, t: 10, b: 64 };
 
 const dlim = (r: number, m: number) => (1329 / Math.sqrt(ALBEDO)) * 10 ** (-(m - 5 * Math.log10(r * (r - 1))) / 5);
-const lx = (r: number) => PAD.l + ((Math.log10(r) - Math.log10(R[0])) / (Math.log10(R[1]) - Math.log10(R[0]))) * (W - PAD.l - PAD.r);
-const ly = (d: number) => PAD.t + (1 - (Math.log10(d) - Math.log10(D[0])) / (Math.log10(D[1]) - Math.log10(D[0]))) * (H - PAD.t - PAD.b);
+const lx = (r: number) => Math.round((PAD.l + ((Math.log10(r) - Math.log10(R[0])) / (Math.log10(R[1]) - Math.log10(R[0]))) * (W - PAD.l - PAD.r)) * 100) / 100;
+const ly = (d: number) => Math.round((PAD.t + (1 - (Math.log10(d) - Math.log10(D[0])) / (Math.log10(D[1]) - Math.log10(D[0]))) * (H - PAD.t - PAD.b)) * 100) / 100;
 const clampD = (d: number) => Math.min(Math.max(d, D[0]), D[1]);
 
 const REGIONS: { name: string; from: number; to: number }[] = [
@@ -60,38 +57,16 @@ const yFloor = ly(D[0]);
 const yTop = ly(D[1]);
 const above = (pts: string[]) => `M${pts.join(" L")} L${lx(R[1])},${yTop} L${lx(R[0])},${yTop} Z`;
 
-export function Reach() {
-  const [hover, setHover] = useState<string | null>(null);
-  const survey = SURVEYS.find((s) => s.name === hover) ?? null;
+export function Reach({ active }: { active: string }) {
+  const survey = SURVEYS.find((s) => s.name === active) ?? null;
   const pass = path(PASS);
   const under = `M${pass.join(" L")} L${lx(R[1])},${yFloor} L${lx(R[0])},${yFloor} Z`;
-  const m = survey ? survey.m : PASS;
+  const m = survey ? summed(survey) : PASS;
   const color = survey ? "var(--known)" : "var(--added)";
   const status = (b: { r: number; d: number }) => (b.d >= dlim(b.r, m) ? "pass" : "out");
   return (
-    <section className="mt-6 max-w-[820px]">
-      <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-[var(--text-secondary)]">
-        <span><span className="mr-1 inline-block h-2.5 w-4 align-[-1px] bg-[var(--added)] opacity-20" />searchable, summed to m {PASS}</span>
-        <span><span className="mr-1 inline-block h-2.5 w-4 align-[-1px]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--axis) 0 1px, transparent 1px 3px)" }} />out of reach</span>
-        <span><span className="mr-1 inline-block h-2 w-2 rounded-full border-[1.5px] border-[var(--text-secondary)] align-[-1px]" />example bodies, filled when reachable</span>
-      </div>
-      <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-[11px]" onMouseLeave={() => setHover(null)}>
-        <span className="text-[var(--text-muted)]">one exposure of</span>
-        {SURVEYS.map((s) => (
-          <button
-            key={s.name}
-            type="button"
-            onMouseEnter={() => setHover(s.name)}
-            onFocus={() => setHover(s.name)}
-            onBlur={() => setHover(null)}
-            onClick={() => setHover(hover === s.name ? null : s.name)}
-            className={`font-mono tabular-nums ${hover === s.name ? "text-[var(--known)]" : "text-[var(--text-secondary)] hover:text-[var(--foreground)]"}`}
-          >
-            {s.name} <span className="text-[var(--text-muted)]">{s.m}</span>
-          </button>
-        ))}
-      </div>
-      <svg viewBox={`0 0 ${W} ${H}`} className="mt-2 w-full" role="img" aria-label="Smallest searchable body against distance from the Sun with a unified search of every survey">
+    <div>
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full" fontFamily="var(--font-geist-mono)" role="img" aria-label="Smallest searchable body against distance from the Sun with a unified search of every survey">
         <defs>
           <pattern id="hatch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
             <line x1="0" y1="0" x2="0" y2="4" stroke="var(--axis)" strokeWidth="1" />
@@ -115,8 +90,8 @@ export function Reach() {
         <path d={`M${pass.join(" L")}`} fill="none" stroke="var(--added)" strokeWidth="2" strokeLinejoin="round" strokeOpacity={survey ? 0.4 : 1} />
         {survey && (
           <>
-            <path d={above(path(survey.m))} fill="var(--known)" fillOpacity="0.12" />
-            <path d={`M${path(survey.m).join(" L")}`} fill="none" stroke="var(--known)" strokeWidth="2" strokeLinejoin="round" />
+            <path d={above(path(m))} fill="var(--known)" fillOpacity="0.12" />
+            <path d={`M${path(m).join(" L")}`} fill="none" stroke="var(--known)" strokeWidth="2" strokeLinejoin="round" />
           </>
         )}
         {REGIONS.map((g, i) => (
@@ -156,6 +131,6 @@ export function Reach() {
           );
         })}
       </svg>
-    </section>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { COVER, GRID, NB, NL, SURVEYS, rho, rmax, summed, toEcliptic } from "@/lib/sky";
@@ -53,12 +53,9 @@ function fill(mesh: THREE.Mesh, rad: Float32Array) {
 
 const fmt = (n: number) => (n >= 1000 ? `${Math.round(n / 1000)}k` : `${Math.round(n)}`);
 
-export function Volume() {
+export function Volume({ active }: { active: string }) {
   const box = useRef<HTMLDivElement>(null);
   const labels = useRef<HTMLDivElement>(null);
-  const [sel, setSel] = useState("All");
-  const [hover, setHover] = useState<string | null>(null);
-  const active = hover ?? sel;
   const state = useRef<{ union: THREE.Mesh; one: THREE.Mesh } | null>(null);
 
   useEffect(() => {
@@ -103,7 +100,7 @@ export function Volume() {
     const v = new THREE.Vector3();
     const resize = () => {
       const w = el.clientWidth;
-      const h = Math.round(w * 0.7);
+      const h = Math.round(w * 0.68);
       renderer.setSize(w, h);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
@@ -147,43 +144,17 @@ export function Volume() {
   }, [active]);
 
   return (
-    <section className="mt-6 max-w-[820px]">
-      <div className="grid grid-cols-[minmax(0,1fr)_8rem] gap-4">
-        <div ref={box} className="relative w-full cursor-grab overflow-hidden">
-          <div ref={labels} className="pointer-events-none absolute inset-0">
-            <span className="absolute left-0 top-0 whitespace-nowrap pl-2 text-[10px] leading-none text-[var(--text-secondary)]" style={{ marginTop: -5 }}>
-              Planet Nine, one proposed direction
-            </span>
-            {RINGS.map((r) => (
-              <span key={r} className="absolute left-0 top-0 whitespace-nowrap font-mono text-[9.5px] leading-none text-[var(--text-muted)]" style={{ marginTop: -12, marginLeft: -4 }}>
-                {RING_NAMES[r] ?? `${fmt(r)}`}
-              </span>
-            ))}
-          </div>
-        </div>
-        <ul className="flex flex-col gap-1 pt-2 text-[12px]" onMouseLeave={() => setHover(null)}>
-          {[{ name: "All", m: 0, n: 0 }, ...SURVEYS].map((s) => {
-            const on = active === s.name;
-            const color = s.name === "All" ? "text-[var(--added)]" : "text-[var(--known)]";
-            return (
-              <li key={s.name}>
-                <button
-                  type="button"
-                  onMouseEnter={() => setHover(s.name)}
-                  onFocus={() => setHover(s.name)}
-                  onBlur={() => setHover(null)}
-                  onClick={() => setSel(s.name)}
-                  title={s.n ? `${s.m} in one exposure, ${summed(s).toFixed(1)} summed over about ${fmt(s.n)} exposures` : "every survey together"}
-                  className={`flex w-full items-center justify-between rounded-md px-2 py-0.5 font-mono tabular-nums ${on ? `${color} bg-[var(--stripe)]` : "text-[var(--text-secondary)] hover:text-[var(--foreground)]"}`}
-                >
-                  <span>{s.name}</span>
-                  <span className="text-[var(--text-muted)]">{s.n ? summed(s).toFixed(1) : ""}</span>
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+    <div ref={box} className="relative w-full cursor-grab overflow-hidden">
+      <div ref={labels} className="pointer-events-none absolute inset-0">
+        <span className="absolute left-0 top-0 whitespace-nowrap pl-2 text-[10px] leading-none text-[var(--text-secondary)]" style={{ marginTop: -5 }}>
+          Planet Nine, one proposed direction
+        </span>
+        {RINGS.map((r) => (
+          <span key={r} className="absolute left-0 top-0 whitespace-nowrap font-mono text-[9.5px] leading-none text-[var(--text-muted)]" style={{ marginTop: -12, marginLeft: -4 }}>
+            {RING_NAMES[r] ?? `${fmt(r)}`}
+          </span>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
