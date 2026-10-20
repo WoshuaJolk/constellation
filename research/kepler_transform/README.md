@@ -1,6 +1,16 @@
 # Full-objective Kepler transform attempts
 
-**Latest:** the [segment-composition attempt](segment_theory.md) follows the
+**Latest:** the [segment-field construction](segment_field_theory.md) now builds
+actual shared fields bottom-up, encloses whole chart transitions with a
+reception-coordinate interval ODE, and implements a second interpolation route
+using six one-dimensional cascade stages. It supplies an algebraic adjoint and
+an explicitly regularized inverse of the finite nodal operator. The real ZTF
+experiment uses raw pixels and full TPV WCS for both likelihood sufficient
+statistics. [Results and replay](segment_field_results/README.md) retain the
+unfavorable broad-domain timings and unresolved cascade error certification.
+**This is a working research construction, not a completed FKT or breakthrough.**
+
+The preceding [segment-composition attempt](segment_theory.md) follows the
 FaXT/FDMT literature leads without substituting straight tracks for Kepler
 orbits. It implements exact reception-time state composition, certifies that
 two angular endpoints leave two locally independent orbital degrees of freedom,
