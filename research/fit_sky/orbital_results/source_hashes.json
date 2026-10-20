@@ -1,0 +1,8 @@
+{
+  "research/fit_sky/orbital_experiments.py": "e70ce5fd4aad90ac0d9085be1860308cc229011ffef4a1c3b4802fbed8f28b14",
+  "research/fit_sky/orbital.py": "a59bdbdd9a31e7a8809298a13a38df51463d7509de53dc6ebd77f450160bdae8",
+  "research/fit_sky/sequential.py": "8451f480920c0f7fbe1f4821a380f2860ed198fb738b6ff729ebb85c5b5bbb41",
+  "research/fit_sky/reference.py": "900aa9cbb7ba31bbab0a0e53372142f1a5d4d890bd7ef42a7d5e627e24cda6b8",
+  "research/kepler_transform/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+  "research/detection_limit/interval_orbits.py": "7cebff4f060921b497d1c41c70d16b50e99334e023a56f9b977f47f9a14099fd"
+}

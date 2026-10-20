@@ -11,6 +11,13 @@ The [contract](OBJECTIVE.md) was committed before implementation. The
 before measurements. The work is isolated from ongoing Kepler development:
 the existing orbital modules and archived exposures are read-only dependencies.
 
+The [Kepler integration](KEPLER_INTEGRATION.md) adds all-conic orbital propagation
+to the sequential renderer. It retains unknown count/class, overlapping pixel
+contributions and shared calibration. Independent ODE and ambiguous 24-day
+controls validate the implementation, including continuous orbital velocity.
+The particle results remain uncertified; Kepler's transform objective and
+research files are unchanged.
+
 The latest [30-exposure follow-up](sequential_results/README.md) implements
 resumable approximate inference on the original broad mixed scene, preserving
 unknown Poisson counts and shared calibration. Conditional flux updates and
