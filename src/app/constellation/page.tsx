@@ -96,16 +96,6 @@ export default function Page() {
       <Explorer />
       <section className="mt-12">
         <h2 className="mb-3 text-sm font-semibold">Part 1: Compile every public image.</h2>
-        <p className="mb-4 max-w-3xl text-xs leading-5 text-[var(--text-secondary)]">
-          Planning inventory reviewed October 20, 2026. Tool roles describe proposed use, not integration status.
-          Index observation metadata first and retrieve images when candidate orbits intersect.
-          Access-dependent and evaluate entries need release or product checks before inclusion.
-        </p>
-        <p className="mb-4 max-w-3xl text-xs leading-5 text-[var(--text-muted)]">
-          Depths use different bands and product types; they are not uniform single-exposure limits.
-          Counts and volumes are rough planning estimates, not verified archive totals.
-          Unknown-volume candidates are listed separately below. Deduplicate exposures shared by surveys and archives.
-        </p>
         <Table
           head={["Dataset", "Tool role", "Depth / product", "Volume"]}
           rows={QUANTIFIED_DATASETS.map((d) => ({ key: d.name, step: d.step, cells: [d.name, d.role, d.depth, d.volume], url: d.url, note: d.note, reference: d.reference }))}
@@ -126,11 +116,6 @@ export default function Page() {
       </section>
       <section className="mt-12">
         <h2 className="mb-3 text-sm font-semibold">Part 2: Compile every known object.</h2>
-        <p className="mb-4 max-w-3xl text-xs leading-5 text-[var(--text-secondary)]">
-          Orbits support predictions; detection catalogs help recover candidates; static-source and variable catalogs
-          help interpret them. SSOIS, MOST and CATCH provide archive searches. These sources complement the image
-          inventory and do not each represent additional exposures. Planned releases are labeled below.
-        </p>
         <Table
           head={["Source", "Holds", "Size"]}
           rows={RECORDS.map((r) => ({ key: r.name, step: r.step, cells: [r.name, r.holds, r.size], url: r.url, note: r.note, reference: r.reference }))}
