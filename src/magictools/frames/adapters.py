@@ -316,7 +316,7 @@ def query_noirlab(job, x, transport, s):
 def query_hsc(job, x, transport, s):
     credentials = transport.credentials.get("hsc") if transport.credentials else {}
     if not credentials.get("username") or not credentials.get("password"):
-        raise Blocked("HSC-SSP account required. Set HSC_SSP_CAS_USER and HSC_SSP_CAS_PASSWORD, or run `magictools frames credentials init`.")
+        raise Blocked("HSC-SSP account required. Set HSC_SSP_CAS_USER and HSC_SSP_CAS_PASSWORD, or run `constellation credentials init`.")
     w = job.window
     for schema in ["pdr3_wide", "pdr3_dud_rev"]:
         # Unit-vector cube conservatively encloses the circular cone. areacube

@@ -89,7 +89,7 @@ class Transport:
             headers.setdefault("Content-Type", "application/json")
         elif isinstance(body, str):
             body = body.encode()
-        headers.setdefault("User-Agent", "magictools-astro/frame-search (+https://github.com/WoshuaJolk/magictools)")
+        headers.setdefault("User-Agent", "constellation/frame-search (+https://github.com/WoshuaJolk/constellation)")
         if auth:
             if urllib.parse.urlsplit(url).scheme != "https":
                 raise Blocked("Credentials require HTTPS; this archive endpoint is public HTTP only")

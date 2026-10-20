@@ -1,6 +1,6 @@
 # Archive frames for agents
 
-`magictools frames` searches image indexes by field, designation, orbit family,
+`constellation` searches image indexes by field, designation, orbit family,
 MPC80 arc, or supplied ephemeris. It writes native product IDs, retrieval links,
 query receipts and reusable CSV/JSON manifests. It does not download images or
 infer detectability from a survey's nominal depth.
@@ -11,9 +11,9 @@ locking are required (Linux/macOS). Install from this checkout:
 
 ```sh
 python -m pip install -e .
-magictools frames capabilities
-magictools frames credentials status
-magictools frames search examples/frames/field.json --run-dir runs/field
+constellation capabilities
+constellation credentials status
+constellation search examples/frames/field.json --run-dir runs/field
 ```
 
 ## Agent workflow
@@ -31,10 +31,10 @@ magictools frames search examples/frames/field.json --run-dir runs/field
    of an immediately downloadable FITS file.
 
 ```sh
-magictools frames status runs/field
-magictools frames audit runs/field --checksums
-magictools frames search examples/frames/field.json --run-dir runs/field --resume --timeout 900
-magictools frames merge runs/field/manifest.json runs/orbits/manifest.json -o combined.json
+constellation status runs/field
+constellation audit runs/field --checksums
+constellation search examples/frames/field.json --run-dir runs/field --resume --timeout 900
+constellation merge runs/field/manifest.json runs/orbits/manifest.json -o combined.json
 ```
 
 Exit codes: **0** all scheduled checks completed; **3** incomplete archive
@@ -131,7 +131,7 @@ SIA1, SIA2, and ObsCore services. All **51 imaging entries** in the
 constellation inventory are mapped to adapters and explicit coverage limits:
 
 ```sh
-magictools frames coverage
+constellation coverage
 ```
 
 The report is also included in `capabilities` and each run manifest, where it
@@ -246,12 +246,12 @@ omit undated products. SIA1 filters returned observation dates locally.
 Find services and inspect their schema before querying:
 
 ```sh
-magictools frames discover --text Chandra --output-dir runs/discovery
-magictools frames discover --protocol sia2 --text infrared --output-dir runs/infrared-services
-magictools frames inspect alma --output-dir runs/alma-schema
-magictools frames inspect my-service.json --output-dir runs/custom-schema
-magictools frames search examples/frames/custom-services.json --run-dir runs/custom --plan
-magictools frames search examples/frames/multiwavelength.json --run-dir runs/crab
+constellation discover --text Chandra --output-dir runs/discovery
+constellation discover --protocol sia2 --text infrared --output-dir runs/infrared-services
+constellation inspect alma --output-dir runs/alma-schema
+constellation inspect my-service.json --output-dir runs/custom-schema
+constellation search examples/frames/custom-services.json --run-dir runs/custom --plan
+constellation search examples/frames/multiwavelength.json --run-dir runs/crab
 ```
 
 `discover` queries RegTAP and returns candidate service configurations. A TAP
@@ -262,7 +262,7 @@ responses, SHA-256 receipts, and `report.json` in a new output directory.
 To resolve a public DataLink URL returned by an archive:
 
 ```sh
-magictools frames links 'https://archive.example/datalink?ID=native-id' --output-dir runs/product-links
+constellation links 'https://archive.example/datalink?ID=native-id' --output-dir runs/product-links
 ```
 
 This returns native links, semantics, errors, and service references without
@@ -301,8 +301,8 @@ unknown constituent times are retained without assuming an exposure midpoint.
 Public queries need no configuration. To prepare account-dependent archives:
 
 ```sh
-magictools frames credentials init
-magictools frames credentials status
+constellation credentials init
+constellation credentials status
 ```
 
 `init` creates `~/.config/magictools/credentials.json` with mode `0600` and
@@ -397,7 +397,7 @@ fuzzily collapsed. Product links and provenance are retained when keys merge.
 The CLI can expose the request contract to another agent process:
 
 ```sh
-magictools frames serve --directory runs --port 8765
+constellation serve --directory runs --port 8765
 curl -H 'Content-Type: application/json' --data-binary @examples/frames/field.json \
   http://127.0.0.1:8765/api/frames
 ```
@@ -465,7 +465,7 @@ IGAPS/IPHAS serves its 527,736-row metadata index through documented HTTP;
 HTTPS returns HTTP 503. The live FITS schema and UTC `utstart` epochs were
 validated. Immutable metadata is shared within a run with per-query receipts,
 and the parsed table is reused to avoid repeatedly loading the 40 MB download.
-HSC and Rubin await account-backed validation. `magictools frames coverage` retains these limitations alongside
+HSC and Rubin await account-backed validation. `constellation coverage` retains these limitations alongside
 NGTS cadence, PS1 release, AKARI phase 3, and other collection-level gaps.
 
 Protocol references:

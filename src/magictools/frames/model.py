@@ -212,6 +212,6 @@ def validate(value, base=Path(".")):
     expanded = [f"most:{c}" for c in x.get("mostCatalogs", MOST_CATALOGS)]
     requested = [p for v in requested for p in (expanded if v == "most" else [v])]
     if any(not isinstance(p, str) or p not in PROVIDERS and p not in services for p in requested):
-        raise ValueError("Unknown provider; run `magictools frames capabilities`")
+        raise ValueError("Unknown provider; run `constellation capabilities`")
     x["providers"] = list(dict.fromkeys(requested))
     return x

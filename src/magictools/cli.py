@@ -22,7 +22,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Moving-source astronomy tools for local FITS data")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
-    commands.add_parser("frames", help="Resumable multi-archive image discovery; run `magictools frames --help`")
+    commands.add_parser("frames", help="Resumable multi-archive image discovery; run `constellation --help`")
     for name in ["force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp", "find_ejector", "ejector_prepare", "ejector_fit", "ejector_search", "ejector_bound", "prove_floor", "ztf_search", "ztf_fetch", "judge_line", "inject_tracks", "map_complete", "inject_all", "match_all", "verify_match", "fold_kepler"]:
         command = commands.add_parser(name)
         command.add_argument("manifest", type=Path)

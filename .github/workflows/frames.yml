@@ -19,5 +19,5 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install '.[test]'
       - run: python -m pytest tests/test_frames.py tests/test_frames_expanded.py tests/test_frames_vo.py tests/test_cli.py tests/test_ztf.py -q
-      - run: magictools frames capabilities
-      - run: magictools frames search examples/frames/ephemeris.json --run-dir runs/plan --plan
+      - run: constellation capabilities
+      - run: constellation search examples/frames/ephemeris.json --run-dir runs/plan --plan

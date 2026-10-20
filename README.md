@@ -1,6 +1,6 @@
 # Magictools astronomy
 
-**Archive frame discovery for agents:** [`magictools frames`](docs/frames.md)
+**Archive frame discovery for agents:** [`constellation`](docs/frames.md)
 accepts fields, orbit families, MPC80 arcs and ephemerides, searches 17 archive
 connections, and saves resumable query receipts plus CSV/JSON request lists.
 It runs locally as a CLI and supports private credential profiles for archives

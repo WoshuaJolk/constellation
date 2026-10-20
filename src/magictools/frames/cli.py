@@ -15,7 +15,7 @@ def capabilities():
     return {"version": 2, "providers": PROVIDERS, "mostCatalogs": MOST_CATALOGS,
             "modes": ["field", "object", "orbits", "arc", "ephemeris"],
             "defaultTimeoutSeconds": 600, "clientRowLimit": None, "dateSpanLimit": None,
-            "orbitCountLimit": None, "credentials": {"init": "magictools frames credentials init", "status": "magictools frames credentials status"},
+            "orbitCountLimit": None, "credentials": {"init": "constellation credentials init", "status": "constellation credentials status"},
             "limitations": LIMITATIONS, "datasetCoverage": coverage(),
             "customServices": {"protocols": ["obscore", "sia1", "sia2"], "idPrefix": "vo:",
                                "configuration": "services object in the search manifest", "credentials": "Private credential profile with explicit HTTPS allowedOrigins"},
@@ -24,7 +24,7 @@ def capabilities():
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(prog="magictools frames", description="Resumable archive image discovery for agents")
+    parser = argparse.ArgumentParser(prog="constellation", description="Resumable archive image discovery for agents")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("capabilities", help="Print adapters, schemas, limits, and credential instructions as JSON")
     commands.add_parser("coverage", help="Map every constellation imaging dataset to adapters and explicit gaps")
