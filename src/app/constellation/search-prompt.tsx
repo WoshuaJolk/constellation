@@ -48,7 +48,7 @@ export function SearchPrompt() {
     <div className="mt-5 text-xs">
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
         <a href="https://github.com/WoshuaJolk/constellation/blob/main/README.md" className="underline underline-offset-4">
-          Search surveys with constelllation search
+          Search surveys with constellation search
         </a>
         <button
           type="button"
