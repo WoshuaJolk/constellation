@@ -90,6 +90,11 @@ export const DATASETS: Dataset[] = [
   { name: "SOHO LASCO", role: "Specialized", instrument: "SOHO LASCO", years: "See archive", sky: "near the Sun", depth: "Product-dependent", exposures: "See archive", volume: "Not verified", tb: null, where: "SOHO archive", url: "https://soho.nascom.nasa.gov/data/archive/", step: 0, note: "Useful for sungrazing-comet searches; low priority for distant-planet searches. Account for coronagraph masks and observer geometry." },
 ];
 
+// Keep unknown-volume candidates available without diluting the planning table.
+// Numeric volumes are planning estimates, not newly verified measurements.
+export const QUANTIFIED_DATASETS = DATASETS.filter((dataset) => dataset.tb !== null);
+export const DATASET_CANDIDATES = DATASETS.filter((dataset) => dataset.tb === null);
+
 // Access limits to check per product; this is not a complete list of private data.
 export const PRIVATE = [
   "Rubin LSST survey images (two-year proprietary period, data-rights holders only)",

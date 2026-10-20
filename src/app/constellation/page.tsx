@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Explorer } from "../explorer";
-import { DATASETS, RECORDS, type Step } from "@/lib/constellation";
+import { QUANTIFIED_DATASETS, DATASET_CANDIDATES, RECORDS, type Step } from "@/lib/constellation";
 
 const TITLE = "const ellation;";
 const DESC = "mission: leverage the entire corpus of astronomical data all at once.";
@@ -92,7 +92,7 @@ export default function Page() {
     <main className="mx-auto w-full max-w-6xl px-4 py-10 font-mono sm:px-6">
       <h1 className="text-2xl font-semibold tracking-tight">const ellation;</h1>
       <p className="mt-2 text-sm text-[var(--text-secondary)]">mission: leverage the entire corpus of astronomical data all at once.</p>
-      <a href="/constellation/search" className="mt-5 inline-block rounded bg-[var(--foreground)] px-4 py-2.5 text-xs text-white">Find survey frames by field or orbit →</a>
+      <a href="https://github.com/WoshuaJolk/magictools/blob/codex/archive-frame-cli/docs/frames.md" className="mt-5 inline-block text-xs underline underline-offset-4">Find survey frames with the magictools CLI →</a>
       <Explorer />
       <section className="mt-12">
         <h2 className="mb-3 text-sm font-semibold">Part 1: Compile every public image.</h2>
@@ -104,12 +104,25 @@ export default function Page() {
         <p className="mb-4 max-w-3xl text-xs leading-5 text-[var(--text-muted)]">
           Depths use different bands and product types; they are not uniform single-exposure limits.
           Counts and volumes are rough planning estimates, not verified archive totals.
-          “Not verified” means unknown, not zero. Deduplicate exposures shared by surveys and archives.
+          Unknown-volume candidates are listed separately below. Deduplicate exposures shared by surveys and archives.
         </p>
         <Table
           head={["Dataset", "Tool role", "Depth / product", "Volume"]}
-          rows={DATASETS.map((d) => ({ key: d.name, step: d.step, cells: [d.name, d.role, d.depth, d.volume], url: d.url, note: d.note, reference: d.reference }))}
+          rows={QUANTIFIED_DATASETS.map((d) => ({ key: d.name, step: d.step, cells: [d.name, d.role, d.depth, d.volume], url: d.url, note: d.note, reference: d.reference }))}
         />
+        <details className="mt-6 rounded border border-[var(--border)] p-4">
+          <summary className="cursor-pointer text-xs font-semibold">Candidates awaiting volume or product verification ({DATASET_CANDIDATES.length})</summary>
+          <p className="mt-3 text-xs leading-5 text-[var(--text-muted)]">These remain in scope. Unknown volume means unmeasured, not zero; archive connectivity and product access are separate questions.</p>
+          <ul className="mt-4 space-y-4">
+            {DATASET_CANDIDATES.map((d) => (
+              <li key={d.name} className="text-xs leading-5">
+                <a href={d.url} target="_blank" rel="noreferrer" className="font-medium underline underline-offset-2">{d.name}</a>
+                <span className="text-[var(--text-muted)]"> · {d.where}</span>
+                {d.note && <p className="text-[var(--text-secondary)]">{d.note}</p>}
+              </li>
+            ))}
+          </ul>
+        </details>
       </section>
       <section className="mt-12">
         <h2 className="mb-3 text-sm font-semibold">Part 2: Compile every known object.</h2>
