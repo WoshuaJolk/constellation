@@ -61,6 +61,10 @@ that PFKT time compression worked on actual pixels.
 
 ## PFKT on real pixels: correcting the adapter-only gap
 
+For a simple two-curve view, see [PFKT versus direct first-use timing](results/scaling/pfkt-vs-direct.png).
+It plots the same measured real-pixel results below, using the two-field PFKT
+setting and its stated accuracy tradeoff.
+
 ![Real-pixel PFKT accuracy and measured cost](results/scaling/real-time-comparison.png)
 
 The [additional executable](real_time.py) runs the same time-field construction
@@ -216,6 +220,7 @@ python -m research.kepler_transform.detector_time.scaling_plot NEW/dense/results
 python -m research.kepler_transform.detector_time.real_time NEW/real-time
 python -m research.kepler_transform.detector_time.verify_real_time NEW/real-time
 python -m research.kepler_transform.detector_time.real_time_plot NEW/real-time/results.json NEW/real-time-comparison
+python -m research.kepler_transform.detector_time.simple_comparison_plot NEW/real-time/results.json NEW/pfkt-vs-direct
 ```
 
 Run timing campaigns sequentially to avoid competing for resources. Output
