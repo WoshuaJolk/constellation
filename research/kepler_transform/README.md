@@ -1,6 +1,17 @@
 # Full-objective Kepler transform attempts
 
-**Latest:** the [global mathematical campaign](global_results/README.md) derives
+**Latest:** the [segment-composition attempt](segment_theory.md) follows the
+FaXT/FDMT literature leads without substituting straight tracks for Kepler
+orbits. It implements exact reception-time state composition, certifies that
+two angular endpoints leave two locally independent orbital degrees of freedom,
+and derives a conditional short-segment cost mechanism. It also certifies a
+whole-domain near-null direction at a nonzero spatial frequency: removing DC
+does not supply a uniformly stable inverse. [Results and replay](segment_results/README.md)
+include the original three orbit boxes and an identity check on real ZTF pixels
+with their full WCS. **The full objective is still unresolved; no new fast
+transform or breakthrough is claimed.**
+
+The [global mathematical campaign](global_results/README.md) derives
 a source-interpolating hierarchy over the entire six-coordinate output box,
 certifies its exact-arithmetic kernel error using complex-time interval
 enclosures, and executes the sufficient orders on all three declared domains.
@@ -9,6 +20,11 @@ count, construction and interpolation instability. It also records an exact
 regularization identity and the obstruction to a common exposure clock.
 **It does not establish sublinear cost in resolved trajectories, a general
 inverse, or a mathematical breakthrough.**
+
+Explicit output of N values necessarily costs at least O(N). The relevant
+FFT-like target is favorable total input-plus-output cost compared with separate
+orbit-by-exposure evaluation. Sublinear construction of a compressed continuous
+representation is a stronger goal, not a property of the FFT itself.
 
 The preceding [observer-chart campaign](chart_results/README.md) resolves
 the declared broad geometry domains with adaptive quadratic/quartic atlases,
