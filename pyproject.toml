@@ -32,7 +32,16 @@ magictools-fit-sky-stream = "research.fit_sky.sequential_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src", "."]
-include = ["magictools*", "research.kepler_transform", "research.detection_limit", "research.fit_sky"]
+include = [
+    "magictools*",
+    "research.kepler_transform",
+    "research.kepler_transform.temporal",
+    "research.kepler_transform.timing",
+    "research.kepler_transform.ordered",
+    "research.kepler_transform.detector_time",
+    "research.detection_limit",
+    "research.fit_sky",
+]
 namespaces = true
 
 [tool.pytest.ini_options]

@@ -1,0 +1,26 @@
+[
+  {
+    "modes_per_exposure": 1,
+    "pfkt_plan_and_build_seconds": 3.6565243160002865,
+    "pfkt_apply_seconds": 0.003529531333091048,
+    "largest_query_count": 4096,
+    "direct_seconds_at_largest_count": 0.016892813000595197,
+    "pfkt_query_seconds_at_largest_count": 1.4070614959928207,
+    "pfkt_total_seconds_at_largest_count": 5.067115343326199,
+    "pfkt_query_to_direct_ratio_at_largest_count": 83.2934985986789,
+    "measured_counts_pfkt_query_faster": [],
+    "maximum_sampled_error_per_coefficient_l1": 2.0353423872386024e-14
+  },
+  {
+    "modes_per_exposure": 64,
+    "pfkt_plan_and_build_seconds": 3.4291435110062594,
+    "pfkt_apply_seconds": 0.004425794200506062,
+    "largest_query_count": 4096,
+    "direct_seconds_at_largest_count": 0.03203198000846896,
+    "pfkt_query_seconds_at_largest_count": 1.698536702999263,
+    "pfkt_total_seconds_at_largest_count": 5.132106008206028,
+    "pfkt_query_to_direct_ratio_at_largest_count": 53.02627881730026,
+    "measured_counts_pfkt_query_faster": [],
+    "maximum_sampled_error_per_coefficient_l1": 4.320020474540606e-15
+  }
+]

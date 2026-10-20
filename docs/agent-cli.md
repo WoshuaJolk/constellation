@@ -2,7 +2,7 @@
 
 `constellation` provides discovery, JSON Schemas, runnable examples, validation,
 execution and inspection through one noninteractive command. Existing science
-commands and research engines are unchanged. Use Python 3.10 or later.
+commands and research engines are unchanged. Use Python 3.11 or later for the complete research installation below.
 
 The executable is now `constellation` (formerly `magictools-agent`). Reinstall
 or upgrade this checkout to refresh the console script. The Python distribution
@@ -19,7 +19,7 @@ constellation list
 Until the CLI branch is merged, installation directly from GitHub is:
 
 ```sh
-python -m pip install 'magictools-astro[research,agent] @ git+https://github.com/WoshuaJolk/magictools.git@codex/agent-cli'
+python -m pip install 'magictools-astro[research,agent] @ git+https://github.com/WoshuaJolk/constellation.git@main'
 ```
 
 The equivalent module invocation is `python -m magictools.agent_cli`. No server,

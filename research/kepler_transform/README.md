@@ -1,6 +1,50 @@
 # Full-objective Kepler transform attempts
 
-**Latest:** the [constructive factorization](constructive_factorization.md)
+**Latest:** the [finite-detector time-compression phase](detector_time/README.md)
+adds a common Fourier grid for masked, heteroscedastic Gaussian pixel
+likelihoods with affine astrometry and explicit model-error bounds. It checks
+the adapter on real ZTF pixels and the complete pipeline on 1,024 simulated
+exposures over eight days. The initial comparison loses through 4,096 queries.
+The [larger-query follow-up](detector_time/SCALING.md) finds a first-use
+crossover at 16,384 queries and tests memory sensitivity and real-pixel
+performance separately. It also applies the time representation to actual ZTF
+pixels and recorded observer positions: two fields replace three exposures at
+sampled maximum S/N error 1.15e-5, while four fields reach 1.6e-10.
+These empirical short-stack checks have no whole-domain time certificate and
+are not a whole-archive benchmark.
+
+The preceding [certified time compression](temporal/README.md)
+replaces the six-dimensional field with a sum of two-dimensional Fourier
+fields at certified time nodes. It includes pixel FFTs, fast time moments,
+arbitrary query access, and direct baselines with geometry, NUFFT-plan and
+dense-response caching. The original near and distant boxes require 82 nodes
+over eight days and 127 over 30 days. This is a bounded common-grid forward
+construction, not a general archive transform or stable inverse.
+
+**Earlier measured timing:** [PFKT versus direct evaluation](timing/README.md) plots
+runtime against queried-orbit count for the small executable construction.
+It separates arbitrary queries, native output-grid queries, cached direct
+responses, and setup costs. These measurements are not archive-scale forecasts.
+
+The preceding [stage-aware construction](ordered/README.md) changes hidden
+coordinates first and preserves exact coordinate identities. Instantaneous
+exposure grids are therefore two-dimensional, and internal sensitivities are
+bounded using each child segment’s own time span. Its independent replay checks
+stage classification, geometry, whole-tree errors and every mixed-grid count.
+The [results](local_resolution_results/README.md) retain both this variant and
+the larger baseline counts. **Archive affordability and the full FKT remain open.**
+
+The preceding [locally sufficient grids](local_resolution.md) now choose separate
+analytic neighborhoods, cell counts and interpolation orders for every coordinate
+and segment. `LocalHierarchyPlan` closes an exact-arithmetic Fourier-field error
+budget through the complete tree, counts every intermediate grid and matrix,
+and guards allocation before constructing large arrays. `LocalAtlasPlan` retains
+whole-domain coverage through subdivision. The [results and replay](local_resolution_results/README.md)
+separate much smaller local grid estimates from the still-expensive full trees,
+and state the uniform regularity assumptions needed for the derived cost law.
+**The full FKT, practical archive cost and floating-point guarantee remain open.**
+
+The preceding [constructive factorization](constructive_factorization.md)
 certifies the cascade's intermediate coordinate inverses over whole real and
 complex domains, constructs child padding, and refines child polynomials
 separably before changing coordinates. `CertifiedAtlasTransform` integrates

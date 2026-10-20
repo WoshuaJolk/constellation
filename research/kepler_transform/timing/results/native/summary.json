@@ -1,0 +1,28 @@
+[
+  {
+    "modes_per_exposure": 1,
+    "pfkt_setup_seconds": 4.346128769000643,
+    "first_measured_count_pfkt_faster": 1024,
+    "full_grid_orbits": 13464,
+    "full_grid_direct_seconds": 0.06221030700544361,
+    "full_grid_pfkt_apply_seconds": 0.003960275801364333,
+    "full_grid_reuse_speedup": 15.7085794337889,
+    "full_grid_pfkt_first_use_seconds": 4.350089044802007,
+    "full_grid_direct_cached_apply_seconds": 3.485521709578287e-05,
+    "full_grid_direct_cache_setup_seconds": 0.07159991399385035,
+    "max_sampled_error_per_coefficient_l1": 1.2074624582817844e-14
+  },
+  {
+    "modes_per_exposure": 64,
+    "pfkt_setup_seconds": 4.2121051930007525,
+    "first_measured_count_pfkt_faster": 1024,
+    "full_grid_orbits": 13464,
+    "full_grid_direct_seconds": 0.1545357130089542,
+    "full_grid_pfkt_apply_seconds": 0.005478189999848837,
+    "full_grid_reuse_speedup": 28.209264923855944,
+    "full_grid_pfkt_first_use_seconds": 4.217583383000601,
+    "full_grid_direct_cached_apply_seconds": 0.003122231126326369,
+    "full_grid_direct_cache_setup_seconds": 0.17539633900742047,
+    "max_sampled_error_per_coefficient_l1": 1.0776742423973825e-15
+  }
+]
