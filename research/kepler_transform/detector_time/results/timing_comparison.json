@@ -1,0 +1,57 @@
+{
+  "source": "dense-1024/results.json",
+  "source_sha256": "c30f708389df34de4fec7e4f11a62edef9a83feafc9a8d89d01ef12b12fd1669",
+  "queries": [
+    256,
+    1024,
+    4096
+  ],
+  "seconds": {
+    "first_direct_seconds": [
+      0.8731489799829433,
+      3.3430063589912606,
+      13.96078253799351
+    ],
+    "first_compressed_seconds": [
+      25.59066889900714,
+      25.991600584980915,
+      27.694371928999317
+    ],
+    "new_image_direct_seconds": [
+      0.05641309199563693,
+      0.17001637000066694,
+      0.49897400999907404
+    ],
+    "new_image_compressed_seconds": [
+      2.274390321006649,
+      2.309870644006878,
+      2.4425567819998832
+    ]
+  },
+  "workload": {
+    "frames": 1024,
+    "pixels_per_image": 1089,
+    "image_side": 33,
+    "span_days": 8.0,
+    "case": "original full near box",
+    "seed": 20261105,
+    "synthetic_independent_exposures": true,
+    "real_survey_stack": false,
+    "injected_flux": 10.0,
+    "injected_query_index": 0,
+    "pointing": "tracks the reference orbit in the certified circular-observer model",
+    "full_detector_side": 269,
+    "retained_fourier_side": 103,
+    "information_fourier_side": 133,
+    "information_time_order": 378,
+    "time_order": 299,
+    "compression_backend": "dense",
+    "cache_budget_bytes": 3000000000
+  },
+  "notes": [
+    "Recorded complete comparison times; no new benchmark measurements.",
+    "Three measured query counts; connecting lines are not a scaling claim.",
+    "Synthetic eight-day stack; not the three-exposure real ZTF replay.",
+    "Application timings use recorded medians; setup stages are single measurements."
+  ]
+}

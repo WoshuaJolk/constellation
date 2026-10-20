@@ -104,6 +104,14 @@ independent of image values when variance/masks/PSFs remain fixed.
 | 1,024 | 3.343 | 25.992 | 0.170 | 2.310 |
 | 4,096 | 13.961 | 27.694 | 0.499 | 2.443 |
 
+![Measured compute time versus orbit queries](results/timing_comparison.png)
+
+Download the graph as [SVG](results/timing_comparison.svg) or
+[PDF](results/timing_comparison.pdf). The [plotted data](results/timing_comparison.json)
+records the source report hash. Regenerate it with
+`python -m research.kepler_transform.detector_time.plot`.
+Lines connect measured points only; no crossover or asymptotic scaling is inferred.
+
 The direct factor caches fit the declared **3 GB** cache budget, including the
 4,096-query case. The full pixel-response cache is also measured when it fits.
 The report chooses the fastest measured direct option. It does not compare the
