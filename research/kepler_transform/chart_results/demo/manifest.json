@@ -1,0 +1,56 @@
+{
+  "chart": {
+    "observer": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "velocity": [
+      0.0,
+      0.017202098949957226,
+      0.0
+    ],
+    "normal": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "east": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "north": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "retarded_epoch": true
+  },
+  "center": [
+    0.5000000005483682,
+    1.8989404306735653e-07,
+    0.0,
+    -8.111978294259573e-05,
+    0.0,
+    -0.0015783219777299232
+  ],
+  "widths": [
+    0.05,
+    0.001,
+    9.69627362219072e-06,
+    4.84813681109536e-05,
+    4.84813681109536e-05,
+    9.69627362219072e-06
+  ],
+  "schema_version": 1,
+  "arrays": "inputs.npz",
+  "position_tolerance_arcsec": 0.0005,
+  "phase_tolerance": 0.0001,
+  "max_leaves": 16,
+  "max_seconds": 600,
+  "outer_degree": 2,
+  "translated_certificate": false,
+  "allow_direct_fallback": false,
+  "audit_count": 2
+}

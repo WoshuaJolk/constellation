@@ -68,9 +68,11 @@ class Jet:
         return Jet(result)
 
 
-def acceleration(position):
+def acceleration(position, mu=flow.MU, origin=None):
+    if origin is not None:
+        position = [s+o for s, o in zip(position, origin)]
     square = sum((x*x for x in position), Jet(0))
-    factor = -Jet(flow.MU)/(square*square.sqrt())
+    factor = -Jet.cast(mu)/(square*square.sqrt())
     return [factor*x for x in position]
 
 
@@ -78,12 +80,12 @@ def inflate(jet):
     return Jet([arb(x.mid(), x.rad()*arb("1.25")+arb("1e-28")) for x in jet.c])
 
 
-def tube(state, h):
+def tube(state, h, mu=flow.MU, origin=None):
     span = arb(0).union(h)
-    derivative = state[3:]+acceleration(state[:3])
+    derivative = state[3:]+acceleration(state[:3], mu, origin)
     enclosure = [inflate(y+d*span) for y, d in zip(state, derivative)]
     for _ in range(40):
-        derivative = enclosure[3:]+acceleration(enclosure[:3])
+        derivative = enclosure[3:]+acceleration(enclosure[:3], mu, origin)
         image = [y+d*span for y, d in zip(state, derivative)]
         if all(all(a.contains_interior(b) for a, b in zip(t.c, z.c)) for t, z in zip(enclosure, image)):
             return enclosure
@@ -93,8 +95,11 @@ def tube(state, h):
     raise ValueError("Could not close extended variational Picard tube")
 
 
-def series(state, order):
+def series(state, order, mu=flow.MU, origin=None):
     r = [[state[axis], state[axis+3]]+[Jet(0) for _ in range(order-1)] for axis in range(3)]
+    if origin is not None:
+        for axis in range(3):
+            r[axis][0] += origin[axis]
     q, g = [], []
     exponent = arb(-3)/2
     for n in range(order-1):
@@ -104,15 +109,18 @@ def series(state, order):
         else:
             g.append(sum((q[j]*g[n-j]*((exponent+1)*j-n) for j in range(1, n+1)), Jet(0))/(q[0]*n))
         for a in range(3):
-            r[a][n+2] = sum((r[a][j]*g[n-j] for j in range(n+1)), Jet(0))*(-arb(flow.MU)/((n+1)*(n+2)))
+            r[a][n+2] = sum((r[a][j]*g[n-j] for j in range(n+1)), Jet(0))*(-Jet.cast(mu)/((n+1)*(n+2)))
+    if origin is not None:
+        for axis in range(3):
+            r[axis][0] = state[axis]
     return r
 
 
-def step(state, h, order=8):
+def step(state, h, order=8, mu=flow.MU, origin=None):
     """Time-Taylor enclosure of every coefficient of the variational solution."""
     h = arb(h)
-    enclosure = tube(state, h)
-    coefficients, remainder = series(state, order+1), series(enclosure, order+2)
+    enclosure = tube(state, h, mu, origin)
+    coefficients, remainder = series(state, order+1, mu, origin), series(enclosure, order+2, mu, origin)
     powers = [arb(1)]
     for _ in range(order+1):
         powers.append(powers[-1]*h)
@@ -128,40 +136,55 @@ def step(state, h, order=8):
     return result
 
 
-def propagate(state, time, max_step=1.):
+def propagate(state, time, max_step=1., mu=flow.MU, origin=None):
     time = arb(time)
     count = max(1, int(math.ceil(flow.upper_float(abs(time))/max_step)))
     for _ in range(count):
-        state = step(state, time/count)
+        state = step(state, time/count, mu=mu, origin=origin)
     return state
 
 
-def retarded_jets(initial, time, observer, light_time_max=1.):
-    received = propagate(initial, time)
+def retarded_jets(initial, time, observer, light_time_max=1., *, mu=flow.MU,
+                  light_speed=flow.C_AU_DAY, path_offset=None, origin=None):
+    mu, light_speed = Jet.cast(mu), Jet.cast(light_speed)
+    if not mu.c[0] > 0 or not light_speed.c[0] > 0:
+        raise ValueError("Positive gravitational parameter and light speed required")
+    received = propagate(initial, time, mu=mu, origin=origin)
     received_scalar = [jet.c[0] for jet in received]
-    observer = [arb(float(x)) for x in observer]
-    delay = arb(-light_time_max).union(arb(0))
-    enclosing = flow._tube(received_scalar, delay, arb(flow.MU))
-    if not flow._norm(enclosing[3:]) < arb(flow.C_AU_DAY):
+    observer = [Jet.cast(float(x) if isinstance(x, (float, int)) else x) for x in observer]
+    delay = arb(-light_time_max).union(arb(light_time_max if path_offset is not None else 0))
+    offset = Jet(0) if path_offset is None else Jet.cast(path_offset)
+    scalar_origin = [o.c[0] for o in origin] if origin is not None else None
+    absolute_scalar = ([s+o for s, o in zip(received_scalar[:3], scalar_origin)]+received_scalar[3:]
+                       if scalar_origin is not None else received_scalar)
+    enclosing = flow._tube(absolute_scalar, delay, mu.c[0])
+    if not flow._norm(enclosing[3:]) < light_speed.c[0]:
         raise ValueError("Cannot certify unique retarded root")
     for iteration in range(12):
-        scalar = flow.step(received_scalar, delay)
-        updated = -flow._norm([x-o for x, o in zip(scalar[:3], observer)])/arb(flow.C_AU_DAY)
+        if origin is None:
+            scalar = flow.step(received_scalar, delay, mu=mu.c[0])
+        else:
+            from .translated_flow import scalar_step
+            scalar = scalar_step(received_scalar, delay, scalar_origin, mu.c[0])
+        updated = (offset.c[0]-flow._norm([x-o.c[0] for x, o in zip(scalar[:3], observer)]))/light_speed.c[0]
         if iteration == 0 and not delay.contains(updated):
             raise ValueError("Retarded interval is not invariant")
         delay = delay.intersection(updated)
-    emitted = step(received, delay)
+    emitted = step(received, delay, mu=mu, origin=origin)
     q = [r-o for r, o in zip(emitted[:3], observer)]
-    v, a = emitted[3:], acceleration(emitted[:3])
-    radius2 = sum((r*r for r in emitted[:3]), Jet(0))
+    v, a = emitted[3:], acceleration(emitted[:3], mu, origin)
+    physical_position = ([s+o for s, o in zip(emitted[:3], origin)] if origin is not None else emitted[:3])
+    radius2 = sum((r*r for r in physical_position), Jet(0))
     radius = radius2.sqrt()
-    rv = sum((r*vel for r, vel in zip(emitted[:3], v)), Jet(0))
-    jerk = [(vel/(radius2*radius)-r*rv*3/(radius2*radius2*radius))*(-arb(flow.MU))
-            for r, vel in zip(emitted[:3], v)]
+    rv = sum((r*vel for r, vel in zip(physical_position, v)), Jet(0))
+    # Factoring avoids forming a very wide R^5 ball whose enclosure can
+    # spuriously cross zero even when R is separated from the origin.
+    jerk = [(vel-r*rv*3/radius2)*(-mu/(radius2*radius))
+            for r, vel in zip(physical_position, v)]
     distance0 = flow._norm([jet.c[0] for jet in q])
     if not distance0 > 0:
         raise ValueError("Retarded box may intersect observer")
-    denominator = arb(flow.C_AU_DAY)+sum((r.c[0]*vel.c[0] for r, vel in zip(q, v)), arb(0))/distance0
+    denominator = light_speed.c[0]+sum((r.c[0]*vel.c[0] for r, vel in zip(q, v)), arb(0))/distance0
     if not denominator > 0:
         raise ValueError("Light-time implicit derivative is singular")
     dh = Jet(0)
@@ -172,7 +195,11 @@ def retarded_jets(initial, time, observer, light_time_max=1.):
     for order in range(1, 4):
         composed = composition()
         distance = sum((r*r for r in composed), Jet(0)).sqrt()
-        dh.c[order] = -distance.c[order]/denominator
+        # In scaled coordinates c*rho also depends on the chart parameter.
+        # Its derivatives times the (enclosed) delay must enter the implicit
+        # equation. For constant c this reduces to the original recurrence.
+        residual = light_speed*(Jet(delay)+dh)+distance-offset
+        dh.c[order] = -residual.c[order]/denominator
     return composition()
 
 

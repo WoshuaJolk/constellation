@@ -18,9 +18,17 @@ accelerate = ["numba>=0.60,<1"]
 
 [project.scripts]
 magictools = "magictools.cli:main"
+magictools-fold-chart = "research.kepler_transform.chart_search:main"
+
+[tool.setuptools.package-dir]
+"" = "src"
+"research.kepler_transform" = "research/kepler_transform"
+"research.detection_limit" = "research/detection_limit"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["src", "."]
+include = ["magictools*", "research.kepler_transform", "research.detection_limit"]
+namespaces = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

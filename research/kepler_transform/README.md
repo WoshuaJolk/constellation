@@ -1,5 +1,12 @@
 # Full-objective Kepler transform attempts
 
+**Latest:** the [observer-chart campaign](chart_results/README.md) resolves
+the declared broad geometry domains with adaptive quadratic/quartic atlases,
+tests actual ZTF pixels, and ships an experimental installed command and
+library. Its [derivation and usage](chart_construction.md) separate continuous
+geometry proofs from the remaining numerical and global-transform gaps.
+Compiled direct-physics comparisons are the performance reference.
+
 **Update:** the [second construction campaign](construction_results/README.md)
 implements a sampled butterfly and a stronger localized NUFFT construction
 with a six-dimensional geometry atlas. It achieves useful one-shot gains and
@@ -8,12 +15,12 @@ domain failures. See its [derivation](construction.md). The first campaign and
 its negative results are preserved below; its rotation method is no longer the
 strongest implementation in this repository.
 
-**Result: the full objective was not achieved. No breakthrough claim or new
-production tool is made.** This directory preserves three approaches and a
+**First-campaign result: the full objective was not achieved. No breakthrough
+was claimed.** The original campaign below preserves three approaches and a
 further attempt to repair the strongest one, including the negative results.
 The [acceptance criteria](objective.md) were committed before these experiments.
 
-The strongest intermediate result is a transform over all orbital orientations
+Its strongest intermediate result was a transform over all orbital orientations
 for specified radial dynamics and harmonic response fields. Its directional
 extension handles orientation-dependent light time in a smooth test. However,
 constructing its response coefficients still evaluates every orientation at

@@ -14,8 +14,18 @@ atlas with validated continuous geometry bounds. A million-query bounded test
 runs **2.10× faster including geometry certification** than exact propagation
 plus per-frame NUFFTs. A stronger comparison using the same approximate geometry
 finds accumulation gains at longer cadences, but a loss at eight exposures.
-Broad-domain accuracy and resource tests still fail; this is a research backend,
+That campaign's broad-domain accuracy and resource tests failed; it is a research backend,
 **not completion of the general all-orbit transform**.
+
+The subsequent [observer-chart campaign](research/kepler_transform/chart_results/README.md)
+adds adaptive continuous coverage, a higher-order construction that resolves
+the widest declared stress domain, a finite-detector likelihood adapter tested
+on real ZTF pixels, and an installed experimental command:
+`magictools-fold-chart`. Its benchmarks include a compiled direct-orbit solver
+and an optimized same-geometry comparison. See the
+[library, derivation and manifest guide](research/kepler_transform/chart_construction.md).
+Full fast numerical certification and economical general outer-coordinate
+synthesis remain open; no new mathematical breakthrough is claimed.
 
 The [full-objective `prove_floor` research](research/detection_limit/README.md)
 adds continuous-family detection certificates, least-favorable-prior searches,

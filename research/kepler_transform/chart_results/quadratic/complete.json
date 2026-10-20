@@ -1,0 +1,4305 @@
+{
+  "quick": false,
+  "cases": {
+    "near": {
+      "case": "near",
+      "quick": false,
+      "frames": 8,
+      "modes": 256,
+      "cover": {
+        "method": "adaptive observer-chart geometry cover",
+        "chart": {
+          "observer": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "velocity": [
+            0.0,
+            0.017202098949957226,
+            0.0
+          ],
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "east": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "north": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "retarded_epoch": true
+        },
+        "center": [
+          0.5000000005483682,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.05,
+          0.001,
+          9.69627362219072e-06,
+          4.84813681109536e-05,
+          4.84813681109536e-05,
+          9.69627362219072e-06
+        ],
+        "position_tolerance_radians": 2.42406840554768e-09,
+        "construction_seconds": 5.652715210999304,
+        "leaves": [
+          {
+            "path": "0L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.4750000005483682,
+              1.8989404306735653e-07,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.025000000000000026,
+              0.0010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "resolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              1.1260845324174294e-09,
+              3.8110870237304473e-10,
+              6.386074602860071e-17,
+              6.6998229906810204e-18,
+              9.831791272574144e-18,
+              1.267190301812224e-16
+            ],
+            "position_error_bound_radians": 1.5071940196629053e-09,
+            "atlas_sha256": "46773e49821a4647b8b7e78e8095b79d26c2fc618b277b613d6c545fda9ca390",
+            "nodal_orbit_time_enclosures": 5832,
+            "variational_orbit_time_enclosures": 48,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 2.671393730001
+          },
+          {
+            "path": "0R",
+            "normalized_bounds": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5250000005483683,
+              1.8989404306735653e-07,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.025000000000000026,
+              0.0010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "resolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              9.327159870914011e-10,
+              3.8110378453597346e-10,
+              5.761180269181446e-17,
+              6.61375894781293e-18,
+              1.124411273029968e-17,
+              1.1427247855359435e-16
+            ],
+            "position_error_bound_radians": 1.313099618292601e-09,
+            "atlas_sha256": "ed3740e9ac049a3b30dc2f4838fbe522ed06cfe13504dafe2e0373a519427c1f",
+            "nodal_orbit_time_enclosures": 5832,
+            "variational_orbit_time_enclosures": 48,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 2.7042938890008372
+          }
+        ],
+        "history": [
+          {
+            "path": "",
+            "normalized_bounds": [
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5000000005483682,
+              1.8989404306735653e-07,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.05000000000000001,
+              0.0010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              2.249411002558853e-08,
+              6.408001825817797e-10,
+              7.165905966974347e-17,
+              1.4368063299728463e-17,
+              2.0944701428499852e-17,
+              1.4374509515925954e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.2755597810028121
+          },
+          {
+            "path": "0L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.4750000005483682,
+              1.8989404306735653e-07,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.025000000000000026,
+              0.0010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "resolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              1.1260845324174294e-09,
+              3.8110870237304473e-10,
+              6.386074602860071e-17,
+              6.6998229906810204e-18,
+              9.831791272574144e-18,
+              1.267190301812224e-16
+            ],
+            "position_error_bound_radians": 1.5071940196629053e-09,
+            "atlas_sha256": "46773e49821a4647b8b7e78e8095b79d26c2fc618b277b613d6c545fda9ca390",
+            "nodal_orbit_time_enclosures": 5832,
+            "variational_orbit_time_enclosures": 48,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 2.671393730001
+          },
+          {
+            "path": "0R",
+            "normalized_bounds": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5250000005483683,
+              1.8989404306735653e-07,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.025000000000000026,
+              0.0010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "resolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              9.327159870914011e-10,
+              3.8110378453597346e-10,
+              5.761180269181446e-17,
+              6.61375894781293e-18,
+              1.124411273029968e-17,
+              1.1427247855359435e-16
+            ],
+            "position_error_bound_radians": 1.313099618292601e-09,
+            "atlas_sha256": "ed3740e9ac049a3b30dc2f4838fbe522ed06cfe13504dafe2e0373a519427c1f",
+            "nodal_orbit_time_enclosures": 5832,
+            "variational_orbit_time_enclosures": 48,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 2.7042938890008372
+          }
+        ],
+        "cell_evaluations": 3,
+        "all_cells_resolved": true,
+        "continuous_geometry_cover": true,
+        "all_arithmetic_certified": false,
+        "full_objective_complete": false
+      },
+      "input_data_l1": 14.189909897247174,
+      "full_objective_complete": false,
+      "real_survey_data": false,
+      "benchmark_status": "completed",
+      "queries": 2097152,
+      "sampled_energy_counts": {
+        "bound": 524288,
+        "unbound": 1572864
+      },
+      "seconds": {
+        "slices": 18.080735280018416,
+        "polynomial": 22.35286324601475,
+        "physical": 212.10129635102203,
+        "chart_mapping": 4.805467734018748
+      },
+      "blocks": [
+        {
+          "leaf": "0L",
+          "outer": [
+            -0.7,
+            -0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.2029011599952355,
+            "polynomial": 1.8478694040022674,
+            "physical": 16.41727109200292
+          },
+          "maximum_score_difference": 2.5451366243851335e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            -0.7,
+            -0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 1.558444864997,
+            "slices": 1.1279411239956971,
+            "physical": 15.977214207989164
+          },
+          "maximum_score_difference": 2.5817624557306067e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            -0.7,
+            0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.0539761109976098,
+            "polynomial": 1.4887395019977703,
+            "physical": 15.898828981000406
+          },
+          "maximum_score_difference": 2.743593091674534e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            -0.7,
+            0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 1.2105088379976223,
+            "slices": 1.0769271480021416,
+            "physical": 16.031802260004042
+          },
+          "maximum_score_difference": 2.4954207383911742e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            0.7,
+            -0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.0941600350051885,
+            "polynomial": 1.5543021889970987,
+            "physical": 16.15589551100129
+          },
+          "maximum_score_difference": 2.53993699128571e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            0.7,
+            -0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 1.2384483620044193,
+            "slices": 1.1503854670008877,
+            "physical": 16.282328084002074
+          },
+          "maximum_score_difference": 2.5652449259882166e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            0.7,
+            0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.1246267720052856,
+            "polynomial": 1.2651735880062915,
+            "physical": 16.324242623006285
+          },
+          "maximum_score_difference": 2.795951546595843e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 0.9789239330057171,
+            "slices": 1.1020714699989185,
+            "physical": 16.83484474200668
+          },
+          "maximum_score_difference": 2.390324071416931e-05
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            -0.7,
+            -0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.257743024994852,
+            "polynomial": 1.8049244009962422,
+            "physical": 16.24495438500162
+          },
+          "maximum_score_difference": 2.5571200923380533e-05
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            -0.7,
+            -0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 1.5238756090038805,
+            "slices": 1.1207600850029849,
+            "physical": 16.001817386000766
+          },
+          "maximum_score_difference": 2.5566595173969495e-05
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            -0.7,
+            0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.0717386060059653,
+            "polynomial": 1.4758500800016918,
+            "physical": 16.346722360998683
+          },
+          "maximum_score_difference": 2.7448789799001433e-05
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            -0.7,
+            0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 1.2544178840034874,
+            "slices": 1.1021268860058626,
+            "physical": 16.004918449994875
+          },
+          "maximum_score_difference": 2.4808167681398975e-05
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            0.7,
+            -0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.1580254740038072,
+            "polynomial": 1.5316232100012712,
+            "physical": 4.548589755009743
+          },
+          "maximum_score_difference": 2.55324681722452e-05
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            0.7,
+            -0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 1.2966388190034195,
+            "slices": 1.1004759520001244,
+            "physical": 4.233006530994317
+          },
+          "maximum_score_difference": 2.5687348735525127e-05
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            0.7,
+            0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.1355595950008137,
+            "polynomial": 1.2643330949940719,
+            "physical": 4.30668298600358
+          },
+          "maximum_score_difference": 2.8080586940199055e-05
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 1.058789467002498,
+            "slices": 1.2013163700030418,
+            "physical": 4.492176996005583
+          },
+          "maximum_score_difference": 2.397383912218485e-05
+        }
+      ],
+      "arbitrary_queries": {
+        "slice_queries": 0,
+        "polynomial_queries": 32768,
+        "direct_queries": 0,
+        "slice_transforms": 0,
+        "resource_fallbacks": 0,
+        "application_seconds": 0.4054085679963464,
+        "queries": 32768,
+        "all_queries_evaluated": true,
+        "full_score_error_certified": false,
+        "physical_reference_seconds": 4.846114571999351,
+        "maximum_score_difference": 2.5610120365636397e-05,
+        "relative_score_difference": 6.721466321916674e-06
+      },
+      "audits": [
+        {
+          "real_interval": [
+            -0.8533439715457537,
+            -0.8533439715457535
+          ],
+          "imaginary_interval": [
+            -0.24537495244943935,
+            -0.2453749524494393
+          ],
+          "absolute_error_upper": 1.5667543407161727e-05
+        },
+        {
+          "real_interval": [
+            -0.48154500029478947,
+            -0.48154500029478936
+          ],
+          "imaginary_interval": [
+            0.5083995163700248,
+            0.508399516370025
+          ],
+          "absolute_error_upper": 4.323275210565348e-06
+        }
+      ],
+      "maximum_score_difference": 2.8080586940199055e-05,
+      "relative_score_difference": 8.594499614114162e-06,
+      "maximum_difference_same_geometry": 2.5536801551923596e-11,
+      "uniform_geometry_score_contribution": 0.0014863570604461771,
+      "uniform_analytic_phase_tail_contribution": 1.7833194743258647e-10,
+      "full_arithmetic_score_certified": false,
+      "total_slice_seconds": 23.73345049101772,
+      "total_same_geometry_seconds": 28.005578457014053,
+      "speedup_physical": 8.936808258508174,
+      "speedup_same_geometry": 1.180004503247987,
+      "application_speedup_same_geometry": 1.236280654510638
+    },
+    "distant": {
+      "case": "distant",
+      "quick": false,
+      "frames": 32,
+      "modes": 1024,
+      "cover": {
+        "method": "adaptive observer-chart geometry cover",
+        "chart": {
+          "observer": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "velocity": [
+            0.0,
+            0.017202098949957226,
+            0.0
+          ],
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "east": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "north": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "retarded_epoch": true
+        },
+        "center": [
+          0.02500000000293594,
+          1.0166843448090043e-09,
+          0.0,
+          -2.1942973452641135e-05,
+          0.0,
+          -0.00033506977184013923
+        ],
+        "widths": [
+          0.00625,
+          0.0001,
+          9.69627362219072e-06,
+          4.84813681109536e-05,
+          4.84813681109536e-05,
+          9.69627362219072e-06
+        ],
+        "position_tolerance_radians": 2.42406840554768e-09,
+        "construction_seconds": 33.46406581399788,
+        "leaves": [
+          {
+            "path": "0L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.021875000002935942,
+              1.0166843448090043e-09,
+              0.0,
+              -2.1942973452641135e-05,
+              0.0,
+              -0.00033506977184013923
+            ],
+            "widths": [
+              0.0031250000000000015,
+              0.00010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "resolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              1.8430309685941716e-09,
+              1.1875125404597597e-11,
+              1.930220884710671e-14,
+              2.2516768873828494e-18,
+              9.550999089314623e-20,
+              3.778820079379999e-14
+            ],
+            "position_error_bound_radians": 1.8549648424023387e-09,
+            "atlas_sha256": "ea0d640497c7840f4230a569db7caf012de4752fe3f937eec8ac6268148a463f",
+            "nodal_orbit_time_enclosures": 23328,
+            "variational_orbit_time_enclosures": 192,
+            "ordinary_geometry_state_time_pairs": 23328,
+            "construction_seconds": 15.862733066998771
+          },
+          {
+            "path": "0R",
+            "normalized_bounds": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.02812500000293594,
+              1.0166843448090043e-09,
+              0.0,
+              -2.1942973452641135e-05,
+              0.0,
+              -0.00033506977184013923
+            ],
+            "widths": [
+              0.0031250000000000015,
+              0.00010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "resolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              8.769406796196816e-10,
+              1.1675489981711258e-11,
+              1.4469516625063237e-14,
+              2.2642288836899456e-18,
+              1.2222641095222195e-19,
+              2.8349996251325368e-14
+            ],
+            "position_error_bound_radians": 8.886601960304228e-10,
+            "atlas_sha256": "9c6987003285c11a1504ddea533659a7164f295dde462816ab2e05e8c02c9edc",
+            "nodal_orbit_time_enclosures": 23328,
+            "variational_orbit_time_enclosures": 192,
+            "ordinary_geometry_state_time_pairs": 23328,
+            "construction_seconds": 16.55211223600054
+          }
+        ],
+        "history": [
+          {
+            "path": "",
+            "normalized_bounds": [
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.02500000000293594,
+              1.0166843448090043e-09,
+              0.0,
+              -2.1942973452641135e-05,
+              0.0,
+              -0.00033506977184013923
+            ],
+            "widths": [
+              0.006250000000000001,
+              0.00010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              3.3396133600574487e-08,
+              1.4209975747459511e-11,
+              1.954799660853104e-14,
+              2.3762122949016098e-18,
+              2.265739801841074e-19,
+              3.827333789198858e-14
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 23328,
+            "construction_seconds": 1.048148925001442
+          },
+          {
+            "path": "0L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.021875000002935942,
+              1.0166843448090043e-09,
+              0.0,
+              -2.1942973452641135e-05,
+              0.0,
+              -0.00033506977184013923
+            ],
+            "widths": [
+              0.0031250000000000015,
+              0.00010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "resolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              1.8430309685941716e-09,
+              1.1875125404597597e-11,
+              1.930220884710671e-14,
+              2.2516768873828494e-18,
+              9.550999089314623e-20,
+              3.778820079379999e-14
+            ],
+            "position_error_bound_radians": 1.8549648424023387e-09,
+            "atlas_sha256": "ea0d640497c7840f4230a569db7caf012de4752fe3f937eec8ac6268148a463f",
+            "nodal_orbit_time_enclosures": 23328,
+            "variational_orbit_time_enclosures": 192,
+            "ordinary_geometry_state_time_pairs": 23328,
+            "construction_seconds": 15.862733066998771
+          },
+          {
+            "path": "0R",
+            "normalized_bounds": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.02812500000293594,
+              1.0166843448090043e-09,
+              0.0,
+              -2.1942973452641135e-05,
+              0.0,
+              -0.00033506977184013923
+            ],
+            "widths": [
+              0.0031250000000000015,
+              0.00010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "resolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              8.769406796196816e-10,
+              1.1675489981711258e-11,
+              1.4469516625063237e-14,
+              2.2642288836899456e-18,
+              1.2222641095222195e-19,
+              2.8349996251325368e-14
+            ],
+            "position_error_bound_radians": 8.886601960304228e-10,
+            "atlas_sha256": "9c6987003285c11a1504ddea533659a7164f295dde462816ab2e05e8c02c9edc",
+            "nodal_orbit_time_enclosures": 23328,
+            "variational_orbit_time_enclosures": 192,
+            "ordinary_geometry_state_time_pairs": 23328,
+            "construction_seconds": 16.55211223600054
+          }
+        ],
+        "cell_evaluations": 3,
+        "all_cells_resolved": true,
+        "continuous_geometry_cover": true,
+        "all_arithmetic_certified": false,
+        "full_objective_complete": false
+      },
+      "input_data_l1": 28.12732171503549,
+      "full_objective_complete": false,
+      "real_survey_data": false,
+      "benchmark_status": "completed",
+      "queries": 2097152,
+      "sampled_energy_counts": {
+        "bound": 0,
+        "unbound": 2097152
+      },
+      "seconds": {
+        "slices": 18.847034445978352,
+        "polynomial": 47.39262059799512,
+        "physical": 1180.344888019019,
+        "chart_mapping": 5.973058541007049
+      },
+      "blocks": [
+        {
+          "leaf": "0L",
+          "outer": [
+            -0.7,
+            -0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.3216391099995235,
+            "polynomial": 3.322670403002121,
+            "physical": 72.61934800400195
+          },
+          "maximum_score_difference": 2.5599597690175662e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            -0.7,
+            -0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 3.1439724860028946,
+            "slices": 1.1627043159969617,
+            "physical": 73.63722895200044
+          },
+          "maximum_score_difference": 2.536606024362502e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            -0.7,
+            0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.211642470996594,
+            "polynomial": 3.146202951997111,
+            "physical": 73.39466645799985
+          },
+          "maximum_score_difference": 2.3814059471937543e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            -0.7,
+            0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 2.846603943995433,
+            "slices": 1.1802873439955874,
+            "physical": 75.49765918299818
+          },
+          "maximum_score_difference": 2.4065341117019723e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            0.7,
+            -0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.1803386339961435,
+            "polynomial": 3.00899493900215,
+            "physical": 73.50959872399835
+          },
+          "maximum_score_difference": 1.973797038968179e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            0.7,
+            -0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 2.923228500003461,
+            "slices": 1.1100311370028066,
+            "physical": 72.8470123320003
+          },
+          "maximum_score_difference": 1.8755608172295608e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            0.7,
+            0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.1412671979996958,
+            "polynomial": 2.7768132259952836,
+            "physical": 73.37363894900045
+          },
+          "maximum_score_difference": 1.9602247245179377e-05
+        },
+        {
+          "leaf": "0L",
+          "outer": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 2.523343296998064,
+            "slices": 1.1161838839980192,
+            "physical": 73.50065355499828
+          },
+          "maximum_score_difference": 1.9513556095549628e-05
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            -0.7,
+            -0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.1253673279934446,
+            "polynomial": 3.3189274600008503,
+            "physical": 73.7456650420063
+          },
+          "maximum_score_difference": 8.4319975369195e-06
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            -0.7,
+            -0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 2.983276038998156,
+            "slices": 1.123486516000412,
+            "physical": 73.86192356799438
+          },
+          "maximum_score_difference": 8.033149895415972e-06
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            -0.7,
+            0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.2299826279995614,
+            "polynomial": 3.247260880001704,
+            "physical": 74.10252376600693
+          },
+          "maximum_score_difference": 9.571881217750745e-06
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            -0.7,
+            0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 2.8439495299971895,
+            "slices": 1.1840730240000994,
+            "physical": 72.91101202199934
+          },
+          "maximum_score_difference": 8.806496634241144e-06
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            0.7,
+            -0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.1612624569970649,
+            "polynomial": 3.1187826309978846,
+            "physical": 73.87728825800878
+          },
+          "maximum_score_difference": 7.899618142819896e-06
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            0.7,
+            -0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 2.8335026720014866,
+            "slices": 1.1945403490026365,
+            "physical": 72.71209177199489
+          },
+          "maximum_score_difference": 6.441111311908842e-06
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            0.7,
+            0.7,
+            -0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "slices": 1.2240015560018946,
+            "polynomial": 2.902844598997035,
+            "physical": 74.62450761300715
+          },
+          "maximum_score_difference": 8.381458948535444e-06
+        },
+        {
+          "leaf": "0R",
+          "outer": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "queries": 131072,
+          "seconds": {
+            "polynomial": 2.452247040004295,
+            "slices": 1.1802264939979068,
+            "physical": 76.13006982100342
+          },
+          "maximum_score_difference": 7.979548826726496e-06
+        }
+      ],
+      "arbitrary_queries": {
+        "slice_queries": 0,
+        "polynomial_queries": 32768,
+        "direct_queries": 0,
+        "slice_transforms": 0,
+        "resource_fallbacks": 0,
+        "application_seconds": 0.7815546749989153,
+        "queries": 32768,
+        "all_queries_evaluated": true,
+        "full_score_error_certified": false,
+        "physical_reference_seconds": 19.200311205000617,
+        "maximum_score_difference": 3.104807228896799e-05,
+        "relative_score_difference": 3.4185377719166716e-06
+      },
+      "audits": [
+        {
+          "real_interval": [
+            -0.7941036620662617,
+            -0.7941036620662615
+          ],
+          "imaginary_interval": [
+            0.34485161033707457,
+            0.3448516103370747
+          ],
+          "absolute_error_upper": 8.791431386812266e-06
+        },
+        {
+          "real_interval": [
+            1.2377770982421608,
+            1.2377770982421612
+          ],
+          "imaginary_interval": [
+            0.12820489581542593,
+            0.128204895815426
+          ],
+          "absolute_error_upper": 1.538404154014512e-06
+        }
+      ],
+      "maximum_score_difference": 2.5599597690175662e-05,
+      "relative_score_difference": 5.361872515497462e-06,
+      "maximum_difference_same_geometry": 1.9401533588766196e-10,
+      "uniform_geometry_score_contribution": 0.004984825603818572,
+      "uniform_analytic_phase_tail_contribution": 2.1792833398810973e-09,
+      "full_arithmetic_score_certified": false,
+      "total_slice_seconds": 52.31110025997623,
+      "total_same_geometry_seconds": 80.856686411993,
+      "speedup_physical": 22.563946889913023,
+      "speedup_same_geometry": 1.545688888403238,
+      "application_speedup_same_geometry": 2.5145929845800183
+    },
+    "stress": {
+      "case": "stress",
+      "quick": false,
+      "frames": 8,
+      "modes": 256,
+      "cover": {
+        "method": "adaptive observer-chart geometry cover",
+        "chart": {
+          "observer": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "velocity": [
+            0.0,
+            0.017202098949957226,
+            0.0
+          ],
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "east": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "north": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "retarded_epoch": true
+        },
+        "center": [
+          0.5000000005483682,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.25,
+          0.01,
+          9.69627362219072e-06,
+          4.84813681109536e-05,
+          4.84813681109536e-05,
+          9.69627362219072e-06
+        ],
+        "position_tolerance_radians": 2.42406840554768e-09,
+        "construction_seconds": 9.524969279998913,
+        "leaves": [
+          {
+            "path": "0L1L0L0L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                -0.75
+              ],
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.28125000054836824,
+              -0.004999810105956933,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.03125000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              1.44838441538699e-08,
+              5.4209789166825484e-08,
+              1.1746536380327351e-16,
+              1.126476475146915e-17,
+              1.0492828997901824e-17,
+              2.326971459228305e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.34596181599772535
+          },
+          {
+            "path": "0L1L0L0R",
+            "normalized_bounds": [
+              [
+                -0.75,
+                -0.5
+              ],
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.34375000054836824,
+              -0.004999810105956933,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.03125000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              7.950407053899736e-09,
+              5.420265699819959e-08,
+              9.390725517832467e-17,
+              1.1281329728935114e-17,
+              1.1864835343152637e-17,
+              1.8668176238648502e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.30690940199565375
+          },
+          {
+            "path": "0L1L0R1L",
+            "normalized_bounds": [
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                -1.0,
+                -0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.43750000054836824,
+              -0.0074998101059569324,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              8.951621544170463e-08,
+              1.1508472786364445e-08,
+              8.672944853434726e-17,
+              2.1996241846336907e-17,
+              2.8174159912866585e-17,
+              1.7325042985249058e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.33119332200294593
+          },
+          {
+            "path": "0L1L0R1R",
+            "normalized_bounds": [
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.43750000054836824,
+              -0.0024998101059569328,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              9.133609730981882e-08,
+              1.2519071816973792e-08,
+              9.161379984141659e-17,
+              2.093643606068559e-17,
+              2.6970739984405258e-17,
+              1.8306091712099786e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3417846649972489
+          },
+          {
+            "path": "0L1R0L0L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                -0.75
+              ],
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.28125000054836824,
+              0.005000189894043067,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.03125000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              1.571934594327095e-08,
+              6.41307151693207e-08,
+              1.325691777071304e-16,
+              1.1379714876980558e-17,
+              1.0690211381852415e-17,
+              2.6265251009233245e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.33581203000358073
+          },
+          {
+            "path": "0L1R0L0R",
+            "normalized_bounds": [
+              [
+                -0.75,
+                -0.5
+              ],
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.34375000054836824,
+              0.005000189894043067,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.03125000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              8.670361912501285e-09,
+              6.412460712974379e-08,
+              1.0603296635274927e-16,
+              1.1477636118320092e-17,
+              1.2264685314538468e-17,
+              2.1082067436621097e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.343477440001152
+          },
+          {
+            "path": "0L1R0R1L",
+            "normalized_bounds": [
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                0.0,
+                0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.43750000054836824,
+              0.0025001898940430673,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              9.565833487636006e-08,
+              1.3691148839842676e-08,
+              9.7466396812803e-17,
+              2.1420173995173253e-17,
+              2.7745868106902464e-17,
+              1.9478991324356917e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3569199129997287
+          },
+          {
+            "path": "0L1R0R1R",
+            "normalized_bounds": [
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                0.5,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.43750000054836824,
+              0.007500189894043068,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              1.0132411516331647e-07,
+              1.5049069544873094e-08,
+              1.0475475171427499e-16,
+              2.3535212960603417e-17,
+              3.061180984518275e-17,
+              2.093574474743635e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3426195310021285
+          },
+          {
+            "path": "0R1L0L1L",
+            "normalized_bounds": [
+              [
+                0.0,
+                0.5
+              ],
+              [
+                -1.0,
+                -0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5625000005483682,
+              -0.0074998101059569324,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              5.395940457238572e-08,
+              1.1491198472628743e-08,
+              6.509891864072696e-17,
+              2.430556134242048e-17,
+              3.386679375072422e-17,
+              1.3096593099598667e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3437213729994255
+          },
+          {
+            "path": "0R1L0L1R",
+            "normalized_bounds": [
+              [
+                0.0,
+                0.5
+              ],
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5625000005483682,
+              -0.0024998101059569328,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              5.546786217911713e-08,
+              1.2502301854207029e-08,
+              6.881185617954262e-17,
+              2.387000262218883e-17,
+              3.3313424703298485e-17,
+              1.3850436195478232e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.32901634199515684
+          },
+          {
+            "path": "0R1L0R1L",
+            "normalized_bounds": [
+              [
+                0.5,
+                1.0
+              ],
+              [
+                -1.0,
+                -0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6875000005483682,
+              -0.0074998101059569324,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              4.083860895032044e-08,
+              1.1480154462008717e-08,
+              5.212041186935987e-17,
+              2.841104847057595e-17,
+              3.898973089350269e-17,
+              1.0555312204734466e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3393126880037016
+          },
+          {
+            "path": "0R1L0R1R",
+            "normalized_bounds": [
+              [
+                0.5,
+                1.0
+              ],
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6875000005483682,
+              -0.0024998101059569328,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              4.214588155834763e-08,
+              1.2491428185687233e-08,
+              5.5091502805702095e-17,
+              2.8317861989886214e-17,
+              3.886304627745449e-17,
+              1.116934556880335e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.27826363700296497
+          },
+          {
+            "path": "0R1R0L1L",
+            "normalized_bounds": [
+              [
+                0.0,
+                0.5
+              ],
+              [
+                0.0,
+                0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5625000005483682,
+              0.0025001898940430673,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              5.810739121516673e-08,
+              1.3669464990210762e-08,
+              7.318990726748594e-17,
+              2.468901376136238e-17,
+              3.4323803780546945e-17,
+              1.4735472382318717e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3373607429966796
+          },
+          {
+            "path": "0R1R0L1R",
+            "normalized_bounds": [
+              [
+                0.0,
+                0.5
+              ],
+              [
+                0.5,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5625000005483682,
+              0.007500189894043068,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              6.154918705176702e-08,
+              1.502543278917868e-08,
+              7.860972328310911e-17,
+              2.681154916865599e-17,
+              3.695496126309269e-17,
+              1.5826790809395683e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3851041720045032
+          },
+          {
+            "path": "0R1R0R1L",
+            "normalized_bounds": [
+              [
+                0.5,
+                1.0
+              ],
+              [
+                0.0,
+                0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6875000005483682,
+              0.0025001898940430673,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              4.41750845443674e-08,
+              1.3654010129226709e-08,
+              5.861513265930576e-17,
+              2.9281369744608184e-17,
+              4.005323457541983e-17,
+              1.1887335234634253e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.2966038929953356
+          },
+          {
+            "path": "0R1R0R1R",
+            "normalized_bounds": [
+              [
+                0.5,
+                1.0
+              ],
+              [
+                0.5,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6875000005483682,
+              0.007500189894043068,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              4.6875363260508643e-08,
+              1.5008498906285136e-08,
+              6.283642393133505e-17,
+              3.1318311662097004e-17,
+              4.2577763178323986e-17,
+              1.274454440193606e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.33719528900110163
+          }
+        ],
+        "history": [
+          {
+            "path": "",
+            "normalized_bounds": [
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5000000005483682,
+              1.8989404306735653e-07,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.25000000000000006,
+              0.010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "reason": "Positive gravitational parameter and light speed required",
+            "split_axis": 0,
+            "construction_seconds": 0.11084150500391843
+          },
+          {
+            "path": "0L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.37500000054836824,
+              1.8989404306735653e-07,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.12500000000000003,
+              0.010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "reason": "Positive gravitational parameter and light speed required",
+            "split_axis": 1,
+            "construction_seconds": 0.1265528980002273
+          },
+          {
+            "path": "0R",
+            "normalized_bounds": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6250000005483682,
+              1.8989404306735653e-07,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.12500000000000003,
+              0.010000000000000002,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              2.8193501702323517e-06,
+              3.0139693601794288e-06,
+              1.348079771427541e-16,
+              1.2718818846642118e-16,
+              1.6019788652616687e-16,
+              2.7210282383390153e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3269752519991016
+          },
+          {
+            "path": "0L1L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.37500000054836824,
+              -0.004999810105956933,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.12500000000000003,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "reason": "Positive gravitational parameter and light speed required",
+            "split_axis": 0,
+            "construction_seconds": 0.12939269799971953
+          },
+          {
+            "path": "0L1R",
+            "normalized_bounds": [
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.37500000054836824,
+              0.005000189894043067,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.12500000000000003,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "reason": "Positive gravitational parameter and light speed required",
+            "split_axis": 0,
+            "construction_seconds": 0.13659392400586512
+          },
+          {
+            "path": "0R1L",
+            "normalized_bounds": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6250000005483682,
+              -0.004999810105956933,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.12500000000000003,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              2.2886083424449544e-06,
+              2.998351432063913e-07,
+              1.109274007956128e-16,
+              1.0269971815721e-16,
+              1.3047795079387449e-16,
+              2.2390615196019626e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3195969509979477
+          },
+          {
+            "path": "0R1R",
+            "normalized_bounds": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6250000005483682,
+              0.005000189894043067,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.12500000000000003,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              2.59186688867503e-06,
+              3.7256770322246154e-07,
+              1.2947683561635676e-16,
+              1.1059102336898852e-16,
+              1.4013141360740041e-16,
+              2.6155737729881575e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3153155039981357
+          },
+          {
+            "path": "0L1L0L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                -0.5
+              ],
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.31250000054836824,
+              -0.004999810105956933,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              2.645011064553965e-07,
+              1.0096984398794156e-07,
+              1.389797713159472e-16,
+              2.3375252751604007e-17,
+              2.58577569217629e-17,
+              2.756243698376021e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.34801384700404014
+          },
+          {
+            "path": "0L1L0R",
+            "normalized_bounds": [
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.43750000054836824,
+              -0.004999810105956933,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              9.892866564382506e-08,
+              1.0065956549842029e-07,
+              9.273185248013793e-17,
+              2.466824033320965e-17,
+              3.152614861411379e-17,
+              1.852510755641379e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.350600983001641
+          },
+          {
+            "path": "0L1R0L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                -0.5
+              ],
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.31250000054836824,
+              0.005000189894043067,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              2.8906458210838837e-07,
+              1.209834364690555e-07,
+              1.57679030988364e-16,
+              2.416052068410939e-17,
+              2.6787464957143998e-17,
+              3.1278314321946136e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.338416288002918
+          },
+          {
+            "path": "0L1R0R",
+            "normalized_bounds": [
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.43750000054836824,
+              0.005000189894043067,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              1.0797704091171091e-07,
+              1.2061201882436765e-07,
+              1.0526908243200762e-16,
+              2.5725581705492707e-17,
+              3.316198972255189e-17,
+              2.1036743982205016e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.37642014900484355
+          },
+          {
+            "path": "0R1L0L",
+            "normalized_bounds": [
+              [
+                0.0,
+                0.5
+              ],
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5625000005483682,
+              -0.004999810105956933,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              5.975236043713037e-08,
+              1.0049923542898825e-07,
+              6.964523492617978e-17,
+              2.7338572057546603e-17,
+              3.7525849445022725e-17,
+              1.4013753457013835e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.31503639400034444
+          },
+          {
+            "path": "0R1L0R",
+            "normalized_bounds": [
+              [
+                0.5,
+                1.0
+              ],
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6875000005483682,
+              -0.004999810105956933,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              4.5233433787663734e-08,
+              1.0039707830249909e-07,
+              5.576525532718009e-17,
+              3.168931460182245e-17,
+              4.295470046966649e-17,
+              1.1301441824521543e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.32783074300095905
+          },
+          {
+            "path": "0R1R0L",
+            "normalized_bounds": [
+              [
+                0.0,
+                0.5
+              ],
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5625000005483682,
+              0.005000189894043067,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              6.54794390906582e-08,
+              1.2039909216959498e-07,
+              7.901274347645113e-17,
+              2.909778952918164e-17,
+              3.96878457198785e-17,
+              1.590597746580611e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3234185629989952
+          },
+          {
+            "path": "0R1R0R",
+            "normalized_bounds": [
+              [
+                0.5,
+                1.0
+              ],
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6875000005483682,
+              0.005000189894043067,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              4.97294989624545e-08,
+              1.2024930450055282e-07,
+              6.320345278677312e-17,
+              3.376625717024628e-17,
+              4.551226688482921e-17,
+              1.2816839149012217e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.30157101299846545
+          },
+          {
+            "path": "0L1L0L0L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                -0.75
+              ],
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.28125000054836824,
+              -0.004999810105956933,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.03125000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              1.44838441538699e-08,
+              5.4209789166825484e-08,
+              1.1746536380327351e-16,
+              1.126476475146915e-17,
+              1.0492828997901824e-17,
+              2.326971459228305e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.34596181599772535
+          },
+          {
+            "path": "0L1L0L0R",
+            "normalized_bounds": [
+              [
+                -0.75,
+                -0.5
+              ],
+              [
+                -1.0,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.34375000054836824,
+              -0.004999810105956933,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.03125000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              7.950407053899736e-09,
+              5.420265699819959e-08,
+              9.390725517832467e-17,
+              1.1281329728935114e-17,
+              1.1864835343152637e-17,
+              1.8668176238648502e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.30690940199565375
+          },
+          {
+            "path": "0L1L0R1L",
+            "normalized_bounds": [
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                -1.0,
+                -0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.43750000054836824,
+              -0.0074998101059569324,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              8.951621544170463e-08,
+              1.1508472786364445e-08,
+              8.672944853434726e-17,
+              2.1996241846336907e-17,
+              2.8174159912866585e-17,
+              1.7325042985249058e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.33119332200294593
+          },
+          {
+            "path": "0L1L0R1R",
+            "normalized_bounds": [
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.43750000054836824,
+              -0.0024998101059569328,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              9.133609730981882e-08,
+              1.2519071816973792e-08,
+              9.161379984141659e-17,
+              2.093643606068559e-17,
+              2.6970739984405258e-17,
+              1.8306091712099786e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3417846649972489
+          },
+          {
+            "path": "0L1R0L0L",
+            "normalized_bounds": [
+              [
+                -1.0,
+                -0.75
+              ],
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.28125000054836824,
+              0.005000189894043067,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.03125000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              1.571934594327095e-08,
+              6.41307151693207e-08,
+              1.325691777071304e-16,
+              1.1379714876980558e-17,
+              1.0690211381852415e-17,
+              2.6265251009233245e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.33581203000358073
+          },
+          {
+            "path": "0L1R0L0R",
+            "normalized_bounds": [
+              [
+                -0.75,
+                -0.5
+              ],
+              [
+                0.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.34375000054836824,
+              0.005000189894043067,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.03125000000000001,
+              0.005000000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 1,
+            "screen_directional_max_radians": [
+              8.670361912501285e-09,
+              6.412460712974379e-08,
+              1.0603296635274927e-16,
+              1.1477636118320092e-17,
+              1.2264685314538468e-17,
+              2.1082067436621097e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.343477440001152
+          },
+          {
+            "path": "0L1R0R1L",
+            "normalized_bounds": [
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                0.0,
+                0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.43750000054836824,
+              0.0025001898940430673,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              9.565833487636006e-08,
+              1.3691148839842676e-08,
+              9.7466396812803e-17,
+              2.1420173995173253e-17,
+              2.7745868106902464e-17,
+              1.9478991324356917e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3569199129997287
+          },
+          {
+            "path": "0L1R0R1R",
+            "normalized_bounds": [
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                0.5,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.43750000054836824,
+              0.007500189894043068,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              1.0132411516331647e-07,
+              1.5049069544873094e-08,
+              1.0475475171427499e-16,
+              2.3535212960603417e-17,
+              3.061180984518275e-17,
+              2.093574474743635e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3426195310021285
+          },
+          {
+            "path": "0R1L0L1L",
+            "normalized_bounds": [
+              [
+                0.0,
+                0.5
+              ],
+              [
+                -1.0,
+                -0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5625000005483682,
+              -0.0074998101059569324,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              5.395940457238572e-08,
+              1.1491198472628743e-08,
+              6.509891864072696e-17,
+              2.430556134242048e-17,
+              3.386679375072422e-17,
+              1.3096593099598667e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3437213729994255
+          },
+          {
+            "path": "0R1L0L1R",
+            "normalized_bounds": [
+              [
+                0.0,
+                0.5
+              ],
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5625000005483682,
+              -0.0024998101059569328,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              5.546786217911713e-08,
+              1.2502301854207029e-08,
+              6.881185617954262e-17,
+              2.387000262218883e-17,
+              3.3313424703298485e-17,
+              1.3850436195478232e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.32901634199515684
+          },
+          {
+            "path": "0R1L0R1L",
+            "normalized_bounds": [
+              [
+                0.5,
+                1.0
+              ],
+              [
+                -1.0,
+                -0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6875000005483682,
+              -0.0074998101059569324,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              4.083860895032044e-08,
+              1.1480154462008717e-08,
+              5.212041186935987e-17,
+              2.841104847057595e-17,
+              3.898973089350269e-17,
+              1.0555312204734466e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3393126880037016
+          },
+          {
+            "path": "0R1L0R1R",
+            "normalized_bounds": [
+              [
+                0.5,
+                1.0
+              ],
+              [
+                -0.5,
+                0.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6875000005483682,
+              -0.0024998101059569328,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              4.214588155834763e-08,
+              1.2491428185687233e-08,
+              5.5091502805702095e-17,
+              2.8317861989886214e-17,
+              3.886304627745449e-17,
+              1.116934556880335e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.27826363700296497
+          },
+          {
+            "path": "0R1R0L1L",
+            "normalized_bounds": [
+              [
+                0.0,
+                0.5
+              ],
+              [
+                0.0,
+                0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5625000005483682,
+              0.0025001898940430673,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              5.810739121516673e-08,
+              1.3669464990210762e-08,
+              7.318990726748594e-17,
+              2.468901376136238e-17,
+              3.4323803780546945e-17,
+              1.4735472382318717e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3373607429966796
+          },
+          {
+            "path": "0R1R0L1R",
+            "normalized_bounds": [
+              [
+                0.0,
+                0.5
+              ],
+              [
+                0.5,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.5625000005483682,
+              0.007500189894043068,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              6.154918705176702e-08,
+              1.502543278917868e-08,
+              7.860972328310911e-17,
+              2.681154916865599e-17,
+              3.695496126309269e-17,
+              1.5826790809395683e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.3851041720045032
+          },
+          {
+            "path": "0R1R0R1L",
+            "normalized_bounds": [
+              [
+                0.5,
+                1.0
+              ],
+              [
+                0.0,
+                0.5
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6875000005483682,
+              0.0025001898940430673,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.0025000000000000005,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              4.41750845443674e-08,
+              1.3654010129226709e-08,
+              5.861513265930576e-17,
+              2.9281369744608184e-17,
+              4.005323457541983e-17,
+              1.1887335234634253e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.2966038929953356
+          },
+          {
+            "path": "0R1R0R1R",
+            "normalized_bounds": [
+              [
+                0.5,
+                1.0
+              ],
+              [
+                0.5,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ],
+              [
+                -1.0,
+                1.0
+              ]
+            ],
+            "center": [
+              0.6875000005483682,
+              0.007500189894043068,
+              0.0,
+              -8.111978294259573e-05,
+              0.0,
+              -0.0015783219777299232
+            ],
+            "widths": [
+              0.06250000000000001,
+              0.002500000000000001,
+              9.696273622190721e-06,
+              4.8481368110953604e-05,
+              4.8481368110953604e-05,
+              9.696273622190721e-06
+            ],
+            "status": "unresolved",
+            "split_axis": 0,
+            "screen_directional_max_radians": [
+              4.6875363260508643e-08,
+              1.5008498906285136e-08,
+              6.283642393133505e-17,
+              3.1318311662097004e-17,
+              4.2577763178323986e-17,
+              1.274454440193606e-16
+            ],
+            "reason": "Variational screen cannot meet requested tolerance",
+            "nodal_orbit_time_enclosures": 0,
+            "variational_orbit_time_enclosures": 6,
+            "ordinary_geometry_state_time_pairs": 5832,
+            "construction_seconds": 0.33719528900110163
+          }
+        ],
+        "cell_evaluations": 31,
+        "all_cells_resolved": false,
+        "continuous_geometry_cover": true,
+        "all_arithmetic_certified": false,
+        "full_objective_complete": false
+      },
+      "input_data_l1": 14.189909897247174,
+      "full_objective_complete": false,
+      "real_survey_data": false,
+      "strict_evaluation_refused": "Query in unresolved cell '0L1L0L0L': Variational screen cannot meet requested tolerance",
+      "fallback": {
+        "slice_queries": 0,
+        "polynomial_queries": 0,
+        "direct_queries": 128,
+        "slice_transforms": 0,
+        "resource_fallbacks": 0,
+        "application_seconds": 0.5340302119948319,
+        "queries": 128,
+        "all_queries_evaluated": true,
+        "full_score_error_certified": false
+      },
+      "audits": [
+        {
+          "real_interval": [
+            -1.0739949929774066,
+            -1.0739949929774062
+          ],
+          "imaginary_interval": [
+            -0.09631454680349008,
+            -0.09631454680349005
+          ],
+          "absolute_error_upper": 2.500502171610556e-12
+        },
+        {
+          "real_interval": [
+            0.4431398835508847,
+            0.4431398835508848
+          ],
+          "imaginary_interval": [
+            0.7826897976224987,
+            0.7826897976224989
+          ],
+          "absolute_error_upper": 2.6418595542040234e-12
+        }
+      ],
+      "benchmark_status": "continuous_geometry_budget_failure"
+    }
+  },
+  "full_objective_complete": false,
+  "provenance": {
+    "python": "3.12.14",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "finufft": "2.5.1",
+      "python-flint": "0.8.0"
+    },
+    "source_sha256": {
+      "/workspace/magictools/research/kepler_transform/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+      "/workspace/magictools/research/kepler_transform/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+      "/workspace/magictools/research/kepler_transform/chart_atlas.py": "a3d0706813b97ace3ac17c4060f96b681cedac39c11d8580ac6c2b14150fea4a",
+      "/workspace/magictools/research/kepler_transform/chart_cover.py": "c482444970f7d2019f2dd0e32162d10034b9823378172727957bcbfcd8fcf7aa",
+      "/workspace/magictools/research/kepler_transform/chart_experiments.py": "d58d42e1acce8e63225f53b917659c15128286d30ac50783fc1b32e8a3526501",
+      "/workspace/magictools/research/kepler_transform/chart_operator.py": "3244e0e81d86b4e382794ea1ad74792de38fd3122266fb2ca948bf13b1619550",
+      "/workspace/magictools/research/kepler_transform/chart_search.py": "e9b87fe2b082606ba2cc74a547408157f5216767e0ee93bea994efdefc083de8",
+      "/workspace/magictools/research/kepler_transform/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20",
+      "/workspace/magictools/research/kepler_transform/compiled_reference.py": "be7b544051613f0bee2d5b169087b4ef2471ce5f4885325861b3bad3a8630251",
+      "/workspace/magictools/research/kepler_transform/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+      "/workspace/magictools/research/kepler_transform/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+      "/workspace/magictools/research/kepler_transform/detector_fields.py": "31138bd7bdc7c17e196584f6481c7e4cacd8240b7a3c72d4e607b42f5a4b9274",
+      "/workspace/magictools/research/kepler_transform/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+      "/workspace/magictools/research/kepler_transform/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+      "/workspace/magictools/research/kepler_transform/fifth_geometry.py": "81305674540c492a89770469c0587254a769d51dea46d67aa53db0a4b5f7e4f3",
+      "/workspace/magictools/research/kepler_transform/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+      "/workspace/magictools/research/kepler_transform/jet_geometry.py": "2fcc25edd90836531ff342170e738df587c38d9bd6140f4aba316a06a68a9b6b",
+      "/workspace/magictools/research/kepler_transform/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+      "/workspace/magictools/research/kepler_transform/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+      "/workspace/magictools/research/kepler_transform/observer_chart.py": "c198a52e5c8b67179a232466bea55f50381d5ecf4e5b7caa437d0f32fff4647e",
+      "/workspace/magictools/research/kepler_transform/phase_budget.py": "d1d707d2526cd14873295e7b81ef432c6853e8be499adedaedc36d0701e61342",
+      "/workspace/magictools/research/kepler_transform/plot_construction.py": "65ce671e1296215b329f06d8d3cb59a5bacdf5cedb9b14cd3bcc5c36a1df0adf",
+      "/workspace/magictools/research/kepler_transform/quartic_atlas.py": "ca4adf9f3c17cf4cbf949c767eb14740f468255d5967630152559fba99c3489a",
+      "/workspace/magictools/research/kepler_transform/quartic_experiments.py": "b89e2cc973ca5d80aa9e74e78935694fab78109b5c7127dafbdd4bd42486201a",
+      "/workspace/magictools/research/kepler_transform/real_exposure_experiment.py": "40b4d8a2342482bcb55169b7328b1e4952509bdc68b8dfdaa1db58d248c5d55f",
+      "/workspace/magictools/research/kepler_transform/replay_chart.py": "72b62d779050020ad8ea46896d150d48093642f6eee33ee7fdc24e92588945f8",
+      "/workspace/magictools/research/kepler_transform/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+      "/workspace/magictools/research/kepler_transform/structured_comparison.py": "67bfce198f590f04b9d313d0eabc8f6b335d383b0e5dc0ec66a91c4bf7287c98",
+      "/workspace/magictools/research/kepler_transform/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+      "/workspace/magictools/research/kepler_transform/validated_universal.py": "8f41611a6e6354e466be1480ab2626f75165d9db4c3f98e8520bac3832e91622",
+      "/workspace/magictools/research/kepler_transform/verify_construction.py": "242bf118a71647785b5640ac64eea72cafadf6350906e700e58ab595a31fb467"
+    }
+  },
+  "executed_source_sha256": {
+    "research/kepler_transform/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+    "research/kepler_transform/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+    "research/kepler_transform/quartic_atlas.py": "17109a8f6220a1158cd63008477342012d5ac6f303faecb37d9c8e0b926d10d6",
+    "research/kepler_transform/chart_operator.py": "3244e0e81d86b4e382794ea1ad74792de38fd3122266fb2ca948bf13b1619550",
+    "research/kepler_transform/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+    "research/kepler_transform/observer_chart.py": "c198a52e5c8b67179a232466bea55f50381d5ecf4e5b7caa437d0f32fff4647e",
+    "research/kepler_transform/plot_construction.py": "65ce671e1296215b329f06d8d3cb59a5bacdf5cedb9b14cd3bcc5c36a1df0adf",
+    "research/kepler_transform/chart_atlas.py": "2fca9b477f060546b076593258ca820b412a779061ad63c3195b0a4a274bac1d",
+    "research/kepler_transform/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+    "research/kepler_transform/detector_fields.py": "31138bd7bdc7c17e196584f6481c7e4cacd8240b7a3c72d4e607b42f5a4b9274",
+    "research/kepler_transform/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+    "research/kepler_transform/chart_search.py": "e1cf55d82ca75450be227a3db5bc2c9904b4e060bd4b89663499fd3d65cebb67",
+    "research/kepler_transform/fifth_geometry.py": "81305674540c492a89770469c0587254a769d51dea46d67aa53db0a4b5f7e4f3",
+    "research/kepler_transform/verify_construction.py": "242bf118a71647785b5640ac64eea72cafadf6350906e700e58ab595a31fb467",
+    "research/kepler_transform/chart_experiments.py": "d58d42e1acce8e63225f53b917659c15128286d30ac50783fc1b32e8a3526501",
+    "research/kepler_transform/real_exposure_experiment.py": "40b4d8a2342482bcb55169b7328b1e4952509bdc68b8dfdaa1db58d248c5d55f",
+    "research/kepler_transform/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+    "research/kepler_transform/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "research/kepler_transform/validated_universal.py": "81c83dcaa3edf79bc460ac8b1a2120625f62f54b037dfe53df73c1af9407a695",
+    "research/kepler_transform/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+    "research/kepler_transform/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+    "research/kepler_transform/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+    "research/kepler_transform/chart_cover.py": "c32fcad7fe74b6436d8b5c6ef09db906d2d1781b0c53e4eb603241ed7f0272f8",
+    "research/kepler_transform/jet_geometry.py": "2fcc25edd90836531ff342170e738df587c38d9bd6140f4aba316a06a68a9b6b",
+    "research/kepler_transform/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+    "research/kepler_transform/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20"
+  },
+  "provenance_note": "Source hashes in the original provenance record were collected at process end, while later experiments edited the checkout. Use executed_source_sha256 and source_snapshot for this historical run. Its Python and unoptimized polynomial baselines are superseded by compiled-comparison.json."
+}
