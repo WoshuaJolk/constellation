@@ -1,0 +1,9 @@
+{
+  "mode": "ephemeris",
+  "start": "2025-01-01",
+  "end": "2025-01-02",
+  "observer": "T09",
+  "providers": ["smoka", "hsc"],
+  "sigmaMultiplier": 3,
+  "ephemerisFile": "track.csv"
+}

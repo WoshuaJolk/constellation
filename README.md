@@ -1,5 +1,11 @@
 # Magictools astronomy
 
+**Archive frame discovery for agents:** [`magictools frames`](docs/frames.md)
+accepts fields, orbit families, MPC80 arcs and ephemerides, searches 17 archive
+connections, and saves resumable query receipts plus CSV/JSON request lists.
+It runs locally as a CLI and supports private credential profiles for archives
+such as HSC-SSP.
+
 Working implementations of twelve ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Version 0.6 adds **`fold_kepler`: shared orbit sums with bounded screening and precise candidate refinement**. A synthetic 64,000-orbit benchmark gives about 3.6× faster evaluation after compilation, with identical detections/top candidates to direct evaluation. Compilation makes a single-use run slower; the benefit is repeated searches with a reusable bank. See the [derivation, benchmark and limits](docs/fold-kepler.md). Earlier versions provide real ZTF inputs, measured PSFs, vetting, injections, null inference, finite survey selection, and verifiable finite assignments. Each has an explicit scope; all-survey completeness and validated discovery probabilities remain future work.
 
 The subsequent [full-objective research attempts](research/kepler_transform/README.md)

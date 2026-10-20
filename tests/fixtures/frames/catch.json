@@ -1,0 +1,68 @@
+{
+  "count": 2,
+  "data": [
+    {
+      "airmass": null,
+      "archive_url": "https://sbnarchive.psi.edu/pds4/surveys/gbo.ast.catalina.survey/data_calibrated/G96/2020/20Apr15/G96_20200415_2B_S01082_01_0002.arch.fz",
+      "css:telescope": "Mount Lemmon Survey, 60-inch telescope (G96)",
+      "cutout_url": "https://uxzqjwo0ye.execute-api.us-west-1.amazonaws.com/api/images/urn:nasa:pds:gbo.ast.catalina.survey:data_calibrated:g96_20200415_2b_s01082_01_0002.arch?ra=180.0&dec=0.0&size=5.00arcmin&format=fits",
+      "date": "2020-04-15 04:12:26.281",
+      "diff_url": null,
+      "exposure": 30.0,
+      "filter": null,
+      "fov": "177.785600:0.009120,180.014940:0.009120,180.014940:-2.220220,177.785600:-2.220220",
+      "maglimit": null,
+      "mjd_start": 58954.17513056713,
+      "mjd_stop": 58954.17547778935,
+      "preview_url": "https://uxzqjwo0ye.execute-api.us-west-1.amazonaws.com/api/images/urn:nasa:pds:gbo.ast.catalina.survey:data_calibrated:g96_20200415_2b_s01082_01_0002.arch?ra=180.0&dec=0.0&size=5.00arcmin&format=jpeg",
+      "product_id": "urn:nasa:pds:gbo.ast.catalina.survey:data_calibrated:g96_20200415_2b_s01082_01_0002.arch",
+      "seeing": null,
+      "source": "catalina_lemmon",
+      "source_name": "Catalina Sky Survey, Mt. Lemmon"
+    },
+    {
+      "airmass": null,
+      "archive_url": "https://sbnarchive.psi.edu/pds4/surveys/gbo.ast.catalina.survey/data_calibrated/G96/2020/20Apr15/G96_20200415_2B_S01082_01_0004.arch.fz",
+      "css:telescope": "Mount Lemmon Survey, 60-inch telescope (G96)",
+      "cutout_url": "https://uxzqjwo0ye.execute-api.us-west-1.amazonaws.com/api/images/urn:nasa:pds:gbo.ast.catalina.survey:data_calibrated:g96_20200415_2b_s01082_01_0004.arch?ra=180.0&dec=0.0&size=5.00arcmin&format=fits",
+      "date": "2020-04-15 04:28:26.296",
+      "diff_url": null,
+      "exposure": 30.0,
+      "filter": null,
+      "fov": "177.788470:0.013900,180.017810:0.013900,180.017810:-2.215440,177.788470:-2.215440",
+      "maglimit": null,
+      "mjd_start": 58954.18624185185,
+      "mjd_stop": 58954.186589074074,
+      "preview_url": "https://uxzqjwo0ye.execute-api.us-west-1.amazonaws.com/api/images/urn:nasa:pds:gbo.ast.catalina.survey:data_calibrated:g96_20200415_2b_s01082_01_0004.arch?ra=180.0&dec=0.0&size=5.00arcmin&format=jpeg",
+      "product_id": "urn:nasa:pds:gbo.ast.catalina.survey:data_calibrated:g96_20200415_2b_s01082_01_0004.arch",
+      "seeing": null,
+      "source": "catalina_lemmon",
+      "source_name": "Catalina Sky Survey, Mt. Lemmon"
+    }
+  ],
+  "message": "",
+  "query": {
+    "dec": 0.0,
+    "intersection_type": "ImageIntersectsArea",
+    "ra": 180.0,
+    "radius": 3.0,
+    "sources": [
+      "atlas_haleakela",
+      "atlas_mauna_loa",
+      "atlas_rio_hurtado",
+      "atlas_sutherland",
+      "catalina_bigelow",
+      "catalina_lemmon",
+      "catalina_bokneosurvey",
+      "loneos",
+      "neat_palomar_tricam",
+      "neat_maui_geodss",
+      "ps1dr2",
+      "skymapper_dr4",
+      "spacewatch"
+    ],
+    "start_date": "2020-01-01 00:00:00.000",
+    "stop_date": "2021-01-01 00:00:00.000"
+  },
+  "version": "3.0.0"
+}
