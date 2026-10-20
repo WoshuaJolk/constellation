@@ -236,3 +236,11 @@ flux updates and split/merge moves. The
 [30-exposure mixed-scene follow-up](research/fit_sky/sequential_results/README.md)
 retains the original broad priors. Its global accuracy bounds remain unresolved;
 handling more exposures is not a full-solution claim.
+
+## Website
+
+The Next.js catalogue and archive inventory now share `main` with the Python
+scientific tools. With Node.js 24 installed, run `npm ci` and `npm run dev`.
+`npm run lint` and `npm run build` check the website; `npm start` serves the
+production build. The website is informational: the scientific CLI runs
+locally and is not a hosted inference service.

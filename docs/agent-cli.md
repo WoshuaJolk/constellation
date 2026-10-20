@@ -16,7 +16,7 @@ constellation doctor
 constellation list
 ```
 
-Until the CLI branch is merged, installation directly from GitHub is:
+Install directly from GitHub:
 
 ```sh
 python -m pip install 'magictools-astro[research,agent] @ git+https://github.com/WoshuaJolk/constellation.git@main'
