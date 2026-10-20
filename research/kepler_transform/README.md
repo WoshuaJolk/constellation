@@ -1,6 +1,24 @@
 # Full-objective Kepler transform attempts
 
-**Latest:** the [constructive factorization](constructive_factorization.md)
+**Latest:** the [stage-aware construction](ordered/README.md) changes hidden
+coordinates first and preserves exact coordinate identities. Instantaneous
+exposure grids are therefore two-dimensional, and internal sensitivities are
+bounded using each child segment’s own time span. Its independent replay checks
+stage classification, geometry, whole-tree errors and every mixed-grid count.
+The [results](local_resolution_results/README.md) retain both this variant and
+the larger baseline counts. **Archive affordability and the full FKT remain open.**
+
+The preceding [locally sufficient grids](local_resolution.md) now choose separate
+analytic neighborhoods, cell counts and interpolation orders for every coordinate
+and segment. `LocalHierarchyPlan` closes an exact-arithmetic Fourier-field error
+budget through the complete tree, counts every intermediate grid and matrix,
+and guards allocation before constructing large arrays. `LocalAtlasPlan` retains
+whole-domain coverage through subdivision. The [results and replay](local_resolution_results/README.md)
+separate much smaller local grid estimates from the still-expensive full trees,
+and state the uniform regularity assumptions needed for the derived cost law.
+**The full FKT, practical archive cost and floating-point guarantee remain open.**
+
+The preceding [constructive factorization](constructive_factorization.md)
 certifies the cascade's intermediate coordinate inverses over whole real and
 complex domains, constructs child padding, and refines child polynomials
 separably before changing coordinates. `CertifiedAtlasTransform` integrates

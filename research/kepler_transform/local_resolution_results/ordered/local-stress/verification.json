@@ -1,0 +1,9 @@
+{
+  "grids": 1,
+  "nodes": 899,
+  "source_files_hashed": 72,
+  "input_sha256": "14425c7a22bd6b248b17723ca18b911be44b4811fd3a85be499138b740bea677",
+  "seconds": 0.28574878300423734,
+  "full_objective_complete": false,
+  "floating_point_evaluation_certified": false
+}
