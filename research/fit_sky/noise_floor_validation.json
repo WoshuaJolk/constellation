@@ -28,7 +28,7 @@
   },
   "artifact_inventories_checked": {
     "noise_floor_results": 23,
-    "noise_floor_diagnostics": 13,
+    "noise_floor_diagnostics": 15,
     "noise_floor_predictive_results": 25,
     "noise_floor_catalogues": 19,
     "adaptive_noise_results": 44,

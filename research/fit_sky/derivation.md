@@ -369,7 +369,39 @@ integrates out to recover the original training model. This propagates shared
 background uncertainty instead of resetting it to a best fit. Wide predictive
 bounds remain a failure to establish a useful prediction.
 
-## Primary prior work
+## Exploratory compound-Poisson change of measure
+
+An additional pilot investigates a route that sums the Poisson count prior
+analytically. For a fixed instrument state, let a single source contribute f,
+let K have Poisson mean lambda, and let S be the sum of the K independent
+source contributions. For any vector a, Gaussian completion of the square and
+the Poisson generating function give
+
+    Z_scaled <= exp(-a^T y + a^T C a/2
+                    + lambda*(E_source exp(a^T f)-1)).
+
+There is also an exact change of measure: tilt the source-process intensity
+from lambda*p(theta) to lambda*p(theta)*exp(a^T f(theta)).
+Writing M = E_source exp(a^T f), the new count mean is lambda*M, and
+
+    Z_scaled = exp(-a^T y + a^T C a/2 + lambda*(M-1))
+               * E_tilted exp(-||y-Ca-S||_(C^-1)^2/2).
+
+This identity retains unbounded source counts. To make it an inference method,
+one must compute or enclose M, sample the tilted continuous source distribution
+correctly, and preserve shared instrument uncertainty. With a random shared
+instrument state, its conditional M and change of measure must remain inside
+the outer instrument integral; replacing it by a nominal instrument is invalid.
+
+`noise_floor_diagnostics/poisson-tilt-pilot.json` is explicitly **uncertified**.
+It optimizes a plug-in moment estimate from 100,000 source draws with instrument
+nuisance fixed for that diagnostic. A separate complete-prior point estimate
+is very noisy. Neither number is a valid bound for the original broad problem,
+and this pilot is not counted as a successful validation. It supplies a
+candidate direction for further research, not another completed inference
+route or a full FitSky solution.
+
+## Primary prior work and novelty limits
 
 - Portillo et al., [probabilistic cataloging](https://arxiv.org/abs/1703.01303):
   catalogue ensembles, source-count uncertainty and blending.
