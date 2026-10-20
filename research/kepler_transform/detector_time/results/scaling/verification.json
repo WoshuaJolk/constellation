@@ -1,0 +1,77 @@
+{
+  "focused_pytest": {
+    "passed": 12,
+    "files": [
+      "tests/test_kepler_detector_time.py",
+      "tests/test_kepler_detector_scaling.py",
+      "tests/test_kepler_real_time.py"
+    ]
+  },
+  "scaling_replays": [
+    {
+      "kind": "synthetic",
+      "full_vectors_checked": 10,
+      "independent_pixel_queries_recomputed": 96,
+      "time_proofs_replayed": 2,
+      "source_input_and_artifact_hashes_checked": true
+    },
+    {
+      "kind": "real",
+      "full_vectors_checked": 14,
+      "independent_pixel_queries_recomputed": 96,
+      "time_proofs_replayed": 0,
+      "source_input_and_artifact_hashes_checked": true
+    }
+  ],
+  "real_time_replay": {
+    "kind": "real_empirical_time",
+    "order_score_pairs_replayed": 9,
+    "queries_per_pair": 65536,
+    "holdout_queries": 8192,
+    "independent_pixel_queries_recomputed": 96,
+    "fresh_time_orders_checked": [
+      4,
+      2
+    ],
+    "source_input_and_artifact_hashes_checked": true,
+    "whole_domain_time_certificate": false
+  },
+  "final_audit": {
+    "source_and_artifact_hashes": [
+      "dense",
+      "real",
+      "real-time"
+    ],
+    "cache_probe_input_and_source_hashes": [
+      "cache-6gb.json",
+      "cache-12gb.json"
+    ]
+  },
+  "artifact_sha256": {
+    "cache-12gb.json": "41efaa9b758c624a0cbc83adb92932f357bba869340ada4631074140db8fd220",
+    "cache-6gb.json": "65b57b7464710d7d1549e24e08853a2207462cdd883a783f9b8ff6d2dcad02b7",
+    "comparison.json": "8724c5df911791d804a660225c883a87fc63f446408547cee72fb040e28bc6f8",
+    "comparison.pdf": "7cd7e045fa3f4a0bdb674d215aa0bcdcebf8ee87d31658f719e656c423c77686",
+    "comparison.png": "7187718e29d069a83d246c9c56f32183460223681456ad27e5e3d25c6bc8f348",
+    "comparison.svg": "bdb8f22b0a3c544ff90209cfdaa7a0608919f2d896dd5815151a8680cc1685f1",
+    "dense/queries.npz": "b4fd1ab22bcb167c66cd866fb71ee8c9084ce621e80693db21b321b1aeb65bdf",
+    "dense/results.json": "c9a5cbb99589fe06e905d7df7d5b3b4da95cddcad9d0d1b701e1600fae66433a",
+    "dense/scores.npz": "46ef5a64f2d16f34a3dee496f0230e73106a80ae4d856e3016e32958e7c3ef83",
+    "real/queries.npz": "5d49e57aba14e10ce364c65e62c8925d3ee50e9ec456973b19ea7b8c9a5fa8dd",
+    "real/results.json": "a944af779bfdd1a64692eaeac9e1e17b728302b27041af7adc1b358541221b36",
+    "real/scores.npz": "64503015df3b870bb2da06075129af501bfbf2f923e812e0cc1cb05d74b66573",
+    "real-availability/index.json": "a8885e02237ef277d28cd11d6645ac4e6094e74c35959d756b7eb9e605eb9476",
+    "real-availability/query.json": "e077cdbc49001e05fcb503b9a987e6f1b5e372126b8d71d0a49eeb7907fa8a1f",
+    "real-time/results.json": "5c3b1d1ef9344716d598da824957b40c35861bbd095470ea0dd604f2822a71f8",
+    "real-time/scores.npz": "3fd6fd7569d9e8d80e37173eae5c561027d960a27dcd864ad15fbcafc40a4708",
+    "real-time-comparison.json": "eeb745fdb9f95aea853b438b5909ee16cd0c10fe99535e4acdf4e47731300d05",
+    "real-time-comparison.pdf": "6be631d82ec9883bc76b9689a875a65c3587fb2ac29f52efdddf133fcd1e87a9",
+    "real-time-comparison.png": "c629249681a3b4d82089371649197756a82131e8568a82b35121167136322d29",
+    "real-time-comparison.svg": "cdb779570914c2d1ac4abf976472d02b3b08ff76e6b4463e9e799960f52e0c10"
+  },
+  "limitations": [
+    "Focused tests and numerical/proof replays; full repository test suite not rerun in this phase.",
+    "Real-data time accuracy is empirical, not a whole-domain certificate."
+  ],
+  "svg_packaging": "Trailing line whitespace removed from generated SVGs; numeric plot data unchanged."
+}

@@ -1,0 +1,252 @@
+{
+  "references": [
+    {
+      "log_evidence": -184.01353028909014,
+      "queries": {
+        "count=0": 0.0007272513734683944,
+        "count=1": 0.36283868713065476,
+        "count=2": 0.6364340614958706,
+        "has:star": 0.5492658762145403,
+        "has:orbit_a": 0.5161508877865368,
+        "has:orbit_b": 0.4922581145746901
+      },
+      "nuisance_mean": {
+        "A_dx": 0.04425633672454723,
+        "B_dx": 0.007531776168978058
+      },
+      "order": 8,
+      "scope": "Independent numerical quadrature; not a certificate"
+    },
+    {
+      "log_evidence": -184.01353028908989,
+      "queries": {
+        "count=0": 0.0007272513734682075,
+        "count=1": 0.36283868713056777,
+        "count=2": 0.6364340614959694,
+        "has:star": 0.5492658762145654,
+        "has:orbit_a": 0.5161508877865795,
+        "has:orbit_b": 0.4922581145747092
+      },
+      "nuisance_mean": {
+        "A_dx": 0.04425633672464029,
+        "B_dx": 0.0075317761689686815
+      },
+      "order": 12,
+      "scope": "Independent numerical quadrature; not a certificate"
+    }
+  ],
+  "runs": [
+    {
+      "seed": 20261021,
+      "summary": {
+        "assimilated_exposures": 4,
+        "log_evidence_estimate": -184.05401608050255,
+        "queries": {
+          "count=0": {
+            "estimate": 0.0009765625,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "count=1": {
+            "estimate": 0.37109375,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "count=2": {
+            "estimate": 0.6279296875,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "has:star": {
+            "estimate": 0.5478515625,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "has:orbit_a": {
+            "estimate": 0.5087890625,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "has:orbit_b": {
+            "estimate": 0.4892578125,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "count_distribution_estimate": {
+          "0": 0.0009765625,
+          "1": 0.37109375,
+          "2": 0.6279296875
+        },
+        "nuisance_mean_estimate": {
+          "A_dx": 0.05039265099032768,
+          "B_dx": 0.007793752787966132
+        },
+        "maximum_sampled_count": 2,
+        "stages": 5,
+        "seconds": 4.814738812012365
+      },
+      "max_query_error": 0.008504373995969372
+    },
+    {
+      "seed": 20261022,
+      "summary": {
+        "assimilated_exposures": 4,
+        "log_evidence_estimate": -183.9981885649421,
+        "queries": {
+          "count=0": {
+            "estimate": 0.0029296875,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "count=1": {
+            "estimate": 0.384765625,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "count=2": {
+            "estimate": 0.6123046875,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "has:star": {
+            "estimate": 0.53515625,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "has:orbit_a": {
+            "estimate": 0.513671875,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "has:orbit_b": {
+            "estimate": 0.484375,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "count_distribution_estimate": {
+          "0": 0.0029296875,
+          "1": 0.384765625,
+          "2": 0.6123046875
+        },
+        "nuisance_mean_estimate": {
+          "A_dx": 0.042539361047081684,
+          "B_dx": 0.0008118985090047966
+        },
+        "maximum_sampled_count": 2,
+        "stages": 4,
+        "seconds": 3.680698404001305
+      },
+      "max_query_error": 0.024129373995969372
+    },
+    {
+      "seed": 20261023,
+      "summary": {
+        "assimilated_exposures": 4,
+        "log_evidence_estimate": -184.01445117236884,
+        "queries": {
+          "count=0": {
+            "estimate": 0.0009765625,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "count=1": {
+            "estimate": 0.3662109375,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "count=2": {
+            "estimate": 0.6328125,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "has:star": {
+            "estimate": 0.5439453125,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "has:orbit_a": {
+            "estimate": 0.5166015625,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          },
+          "has:orbit_b": {
+            "estimate": 0.4970703125,
+            "certified_interval": [
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "count_distribution_estimate": {
+          "0": 0.0009765625,
+          "1": 0.3662109375,
+          "2": 0.6328125
+        },
+        "nuisance_mean_estimate": {
+          "A_dx": 0.04583921300509929,
+          "B_dx": 0.0011327062203250605
+        },
+        "maximum_sampled_count": 2,
+        "stages": 5,
+        "seconds": 4.614583933973336
+      },
+      "max_query_error": 0.005320563714565352
+    }
+  ],
+  "shortlist_recomputed_prior": {
+    "log_evidence": -184.02919171972786,
+    "queries": {
+      "count=0": 0.000738730828112,
+      "count=1": 0.3190571784372654,
+      "count=2": 0.6802040907346142,
+      "has:star": 0.6871376967011058,
+      "has:orbit_a": 0.8974769981267225
+    },
+    "nuisance_mean": {
+      "A_dx": 0.04611802228128052,
+      "B_dx": 0.007637837293004275
+    },
+    "order": 12,
+    "scope": "Independent numerical quadrature; not a certificate"
+  },
+  "excluded_original_posterior_event": 0.4922581145747092,
+  "status": "approximate_uncertified",
+  "full_objective_complete": false,
+  "note": "Synthetic finite orbit-class control; no whole-domain posterior guarantee"
+}

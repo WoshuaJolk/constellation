@@ -1,0 +1,11 @@
+{
+  "grids": 3,
+  "atlas_covers": 0,
+  "entries": 4518396,
+  "nodes": 76464,
+  "edges": 2,
+  "source_files_hashed": 66,
+  "seconds": 0.3495322149974527,
+  "full_objective_complete": false,
+  "floating_point_evaluation_certified": false
+}

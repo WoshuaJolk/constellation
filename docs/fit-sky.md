@@ -28,9 +28,11 @@ magictools-fit-sky-stream input-with-more-exposures.json /tmp/fit-sky-next \
 This separate command does not replace certified integration. It reports
 `approximate_uncertified`, keeps the accuracy target unmet, and never presents
 particle agreement or ESS as a confidence interval. Its point estimates can
-still miss posterior modes. It supports star/galaxy populations, motion,
+still miss posterior modes. It supports star/galaxy/Kepler populations, motion,
 parallax, variability and shared instrument uncertainty, with unbounded Poisson
-counts if specified. Kepler propagation is not implemented in this renderer.
+counts if specified. Kepler sources use Cartesian initial states, all-conic
+two-body propagation and observer-dependent light time inside the joint pixel
+likelihood. See the [integration and validation report](../research/fit_sky/KEPLER_INTEGRATION.md).
 
 `--exposure-batch` defaults to one new exposure per assimilation; all previous
 images remain in the joint likelihood. `--pixel-block` bounds rendering
@@ -52,6 +54,13 @@ observations while requiring existing data, priors and instrument definitions
 to remain unchanged. Duplicate exposure IDs are rejected. Conflicting resume
 settings require a fresh run. A failed assimilation writes `failure.json` and
 retains the last completed checkpoint.
+
+New checkpoints use `fit-sky-sequential-v2`, with four additional source
+coordinates. Legacy v1 non-orbital checkpoints load with the same physical
+particles, weights and evidence; their subsequent random-number consumption
+differs from the old executable. Existing archived checkpoints are not rewritten.
+Orbital projection or solver failure aborts assimilation; it is not interpreted
+as zero likelihood for an excluded part of the prior.
 
 See the [sequential derivation](../research/fit_sky/sequential_derivation.md)
 and [fixed 30-exposure campaign](../research/fit_sky/SEQUENTIAL_CAMPAIGN.md).

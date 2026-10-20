@@ -18,12 +18,13 @@ from scipy.special import logsumexp, ndtr, xlogy, gammaln
 from scipy.stats import truncnorm
 
 from .scene import Scene
+from .orbital import OrbitProjection, STATE_PARAMETERS
 
 
 PARAMETERS = ("x", "y", "flux", "vx", "vy", "parallax", "variability",
-              "color", "sigma_x", "sigma_y")
+              "color", "sigma_x", "sigma_y", "rx", "ry", "rz", "vz")
 PARAMETER_INDEX = {name: i for i, name in enumerate(PARAMETERS)}
-SCHEMA = "fit-sky-sequential-v1"
+SCHEMA = "fit-sky-sequential-v2"
 
 
 def digest(value):
@@ -95,8 +96,8 @@ class BlockModel:
             raise ValueError("Sequential blocks require diagonal noise; use linear_nuisance for shared covariance")
         manifest = deepcopy(manifest)
         self.scene = scene = Scene(manifest)
-        if any(t["kind"] == "kepler" for t in scene.types):
-            raise ValueError("Sequential renderer does not yet implement Kepler propagation")
+        self.orbital = np.array([t["kind"] == "kepler" for t in scene.types])
+        self.orbit_projection = OrbitProjection(scene.exposures) if np.any(self.orbital) else None
         self.manifest = deepcopy(manifest)
         self.pixel_block = pixel_block
         self.nuisance_names = sorted(scene.nuisance)
@@ -130,8 +131,8 @@ class BlockModel:
         self.cameras = sorted({e.get("instrument", "default") for e in scene.exposures})
         geometry = {k: [] for k in ["xx", "yy", "time", "px", "py", "psf", "gain",
                                     "band", "background", "camera", "a00", "a01", "a10",
-                                    "a11", "ox", "oy"]}
-        for e, active in zip(scene.exposures, scene.active):
+                                    "a11", "ox", "oy", "exposure"]}
+        for exposure_index, (e, active) in enumerate(zip(scene.exposures, scene.active)):
             shape = np.shape(e["data"])
             a, off = e.get("affine", [[1, 0], [0, 1]]), e.get("offset", [0, 0])
             constants = dict(time=e["time"], px=e.get("parallax_x", 0),
@@ -140,7 +141,7 @@ class BlockModel:
                              background=e.get("background", 0),
                              camera=self.cameras.index(e.get("instrument", "default")),
                              a00=a[0][0], a01=a[0][1], a10=a[1][0], a11=a[1][1],
-                             ox=off[0], oy=off[1])
+                             ox=off[0], oy=off[1], exposure=exposure_index)
             geometry["xx"].extend(i-(shape[1]-1)/2 for j, i in active)
             geometry["yy"].extend(j-(shape[0]-1)/2 for j, i in active)
             for key, value in constants.items():
@@ -197,7 +198,7 @@ class BlockModel:
         nuisance = b[:, 0]+population.nuisance*(b[:, 1]-b[:, 0])
         return sources, nuisance
 
-    def _means(self, population, sources, nuisance, lo, hi):
+    def _means(self, population, sources, nuisance, lo, hi, orbit_cache=None):
         g = {k: v[lo:hi] for k, v in self.geometry.items()}
         n = len(population.counts)
 
@@ -219,6 +220,22 @@ class BlockModel:
             p = {name: sources[rows, slot, j, None] for j, name in enumerate(PARAMETERS)}
             x = p["x"]+p["vx"]*g["time"]+p["parallax"]*g["px"]
             y = p["y"]+p["vy"]*g["time"]+p["parallax"]*g["py"]
+            orbital = self.orbital[population.classes[rows, slot]]
+            if np.any(orbital):
+                states = np.column_stack([p[k][orbital, 0] for k in STATE_PARAMETERS])
+                for exposure in np.unique(g["exposure"]):
+                    # Cache only the latest exposure per source slot, within
+                    # this likelihood/flux update. Never reuse changed states.
+                    cached = None if orbit_cache is None else orbit_cache.get(slot)
+                    if cached is None or cached[0] != exposure:
+                        xy = self.orbit_projection.coordinates(states, int(exposure))
+                        if orbit_cache is not None:
+                            orbit_cache[slot] = (exposure, xy)
+                    else:
+                        xy = cached[1]
+                    columns = g["exposure"] == exposure
+                    x[np.ix_(orbital, columns)] = xy[:, 0, None]
+                    y[np.ix_(orbital, columns)] = xy[:, 1, None]
             x, y = g["a00"]*x+g["a01"]*y+g["ox"]+dx[rows], g["a10"]*x+g["a11"]*y+g["oy"]+dy[rows]
             extended = self.extended[population.classes[rows, slot], None]
             sx = np.hypot(psf[rows], np.where(extended, p["sigma_x"], 0.))
@@ -241,11 +258,12 @@ class BlockModel:
         rank = 0 if self.linear is None else self.linear.shape[1]
         energy, score = np.zeros(n), np.zeros((n, rank))
         result, last = {}, 0
+        orbit_cache = {}
         for endpoint in unique:
             end = self.ends[endpoint]
             for lo in range(last, end, self.pixel_block):
                 hi = min(end, lo+self.pixel_block)
-                means = self._means(population, sources, nuisance, lo, hi)
+                means = self._means(population, sources, nuisance, lo, hi, orbit_cache)
                 if self.scene.noise == "gaussian":
                     r = (self.data[lo:hi]-means)/self.sigma[lo:hi]
                     energy += np.sum(r*r, axis=1)
@@ -322,13 +340,14 @@ class BlockModel:
         info, score = np.zeros(n), np.zeros(n)
         pa, pr = np.zeros((n, rank)), np.zeros((n, rank))
         statistics, last = {}, 0
+        orbit_cache = {}
         for endpoint in sorted(set(endpoints)):
             end = self.ends[endpoint]
             for lo in range(last, end, self.pixel_block):
                 hi = min(end, lo+self.pixel_block)
-                base = self._means(population, sources, nuisance, lo, hi)
+                base = self._means(population, sources, nuisance, lo, hi, orbit_cache)
                 sources[rows, slots, PARAMETER_INDEX["flux"]] = 1.
-                response = self._means(population, sources, nuisance, lo, hi)-base
+                response = self._means(population, sources, nuisance, lo, hi, orbit_cache)-base
                 sources[rows, slots, PARAMETER_INDEX["flux"]] = 0.
                 a = response/self.sigma[lo:hi]
                 r = (self.data[lo:hi]-base)/self.sigma[lo:hi]
@@ -758,6 +777,9 @@ class SequentialFit:
             "source_count_scope": "Complete Poisson prior, no enumeration cutoff" if self.model.count_probabilities is None
                                   else "Complete supplied finite count prior",
             "linear_nuisance_scope": "Shared Gaussian linear nuisance integrated jointly, not sampled",
+            "orbital_scope": ("All-conic two-body Cartesian states; reception observers and iterated light time; "
+                              "pixel-integrated Gaussian PSF; no detected-source shortlist, trailing or perturbations")
+                             if self.model.orbit_projection is not None else "No orbital source class",
             "summary": self.summary(), "history": self.history, "stages": self.stages,
             "work": {"catalogue_evaluations": self.model.evaluated_catalogues,
                      "catalogue_pixels": int(self.model.evaluated_catalogue_pixels),
@@ -822,7 +844,7 @@ class SequentialFit:
         """
         with np.load(path, allow_pickle=False) as saved:
             metadata = json.loads(str(saved["metadata"]))
-            if metadata["schema"] != SCHEMA:
+            if metadata["schema"] not in (SCHEMA, "fit-sky-sequential-v1"):
                 raise ValueError("Unsupported sequential checkpoint")
             original = metadata["manifest"]
             manifest = deepcopy(original if manifest is None else manifest)
@@ -842,6 +864,14 @@ class SequentialFit:
                 raise ValueError("Generative prior or instrument configuration changed")
             fit = cls(manifest, **metadata["settings"], queries=metadata["queries"])
             fit.population = Population(*(saved[k].copy() for k in ("counts", "classes", "unit", "nuisance")))
+            if metadata["schema"] == "fit-sky-sequential-v1":
+                if fit.population.unit.shape[-1] != 10 or fit.model.orbit_projection is not None:
+                    raise ValueError("Invalid legacy non-orbital checkpoint")
+                # New coordinates are unused by every legacy source class.
+                # Physical particles/weights/evidence are preserved exactly;
+                # subsequent RNG consumption differs from the v1 executable.
+                fit.population.unit = np.pad(fit.population.unit, ((0, 0), (0, 0), (0, 4)),
+                                             constant_values=.5)
             fit.population.validate(fit.model)
             fit.log_weights = saved["log_weights"].copy()
             if (fit.log_weights.shape != (fit.settings["particles"],)
