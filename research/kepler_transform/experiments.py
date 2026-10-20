@@ -298,7 +298,7 @@ def run_all():
     result = {"seed": 2026,
               "status": "research attempts; conditional identities are not a full Kepler transform",
               "software": {"python": platform.python_version(), **{name: importlib.metadata.version(name)
-                              for name in ["numpy", "scipy", "finufft", "magictools-astro"]}}}
+                              for name in ["numpy", "scipy", "finufft", "constellation"]}}}
     result["source_sha256"] = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
                                 for p in sorted(Path(__file__).parent.glob("*.py"))}
     for name, run in stages:

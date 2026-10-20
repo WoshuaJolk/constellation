@@ -26,7 +26,7 @@ BASE = "https://irsa.ipac.caltech.edu/ibe"
 def _download(url, limit):
     if limit <= 0:
         raise ValueError("Archive download exhausted max_total_bytes")
-    request = Request(url, headers={"User-Agent": "magictools-astro (public astronomical research)"})
+    request = Request(url, headers={"User-Agent": "constellation (public astronomical research)"})
     for attempt in range(3):
         try:
             with urlopen(request, timeout=30) as response:

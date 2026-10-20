@@ -4,6 +4,17 @@ All installed tools are available under **`constellation`**. Run
 `constellation list` for the machine-readable command catalogue or
 `constellation --help` for help, including archive, manifest and research tools.
 
+Install the full Python toolset directly from this public repository (Python 3.11+):
+
+```sh
+pipx install 'constellation[research,agent] @ git+https://github.com/WoshuaJolk/constellation.git@main'
+constellation list
+```
+
+The distribution is named `constellation`; the Python import namespace remains
+`magictools` for compatibility. See the [installation guide](docs/agent-cli.md)
+when upgrading from the former distribution.
+
 **For agents:** [`constellation`](docs/agent-cli.md) offers JSON discovery,
 schemas, runnable examples, input validation, execution and checkpoint inspection
 for Kepler and FitSky. Install with `pip install '.[research,agent]'`, then run

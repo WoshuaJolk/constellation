@@ -6,7 +6,7 @@ query receipts and reusable CSV/JSON manifests. It does not download images or
 infer detectability from a survey's nominal depth.
 
 This is a local Python CLI, independent of the constellation website. It adds
-no runtime dependencies to `magictools-astro`. Python 3.10+ and POSIX advisory
+no runtime dependencies to `constellation`. Python 3.10+ and POSIX advisory
 locking are required (Linux/macOS). Install from this checkout:
 
 ```sh

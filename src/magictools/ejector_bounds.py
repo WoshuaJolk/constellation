@@ -22,7 +22,7 @@ def _arb():
     try:
         from flint import arb, arb_mat, ctx
     except ImportError as error:
-        raise ImportError('ejector_bound requires python-flint; install magictools-astro[research]') from error
+        raise ImportError('ejector_bound requires python-flint; install constellation[research]') from error
     return arb, arb_mat, ctx
 
 
