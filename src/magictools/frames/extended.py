@@ -120,19 +120,22 @@ def query_lco(job, x, t, s):
             next_url = data.get("next")
 
 
-def query_sia1(job, x, t, s):
+def query_sia1(job, x, t, s, *, endpoint=None, auth=None, config=None):
+    from .vo import endpoint_url
     w = job.window
+    s["canSplitTime"] = False  # SIA1 has no standard temporal constraint.
     # SIA1 SIZE is longitude/latitude extent, not a spherical angular radius.
     regions = list(boxes(w["ra"], w["dec"], max(w["radius"], 1e-8)))
     if job.provider == "dss" and w["radius"] > 1/3:
         raise Blocked("DSS cutout service accepts at most 40 arcmin per axis. Use smaller regions; no complete large-area plate index is exposed here.")
     for left, right, bottom, top in regions:
-        query = url(SIA1[job.provider], dict(POS=f"{(left+right)/2},{(bottom+top)/2}", SIZE=f"{right-left},{top-bottom}", FORMAT="image/fits"))
+        query = endpoint_url(endpoint or SIA1[job.provider], dict(POS=f"{(left+right)/2},{(bottom+top)/2}", SIZE=f"{right-left},{top-bottom}", FORMAT="image/fits"))
         def convert(r):
+            lower = {k.lower(): k for k in r}
             def field(*names, ucd=None):
                 for name in names:
-                    if r.get(name):
-                        return r[name]
+                    if r.get(lower.get(name.lower())):
+                        return r[lower[name.lower()]]
                 if ucd:
                     for key, meta in s.get("fields", {}).items():
                         if meta.get("ucd", "").upper() == ucd.upper():
@@ -143,19 +146,48 @@ def query_sia1(job, x, t, s):
             if "fits" not in fmt.lower():
                 return None
             when = numeric(field("Image_MJDateObs", ucd="VOX:Image_MJDateObs"))
+            if when is None and field("START_TIME"):
+                when = observation_time(field("START_TIME"))
+            stop = observation_time(field("END_TIME"))
+            exposure = numeric(field("exptime", "DURATION", ucd="TIME_EXPTIME"))
+            if exposure is not None:
+                units = next((meta.get("unit", "s").lower() for key, meta in s.get("fields", {}).items() if key.lower() == "exptime"), "s")
+                if units in {"s", "sec", "ks", "d", "min"}:
+                    exposure *= {"ks": 1000, "d": 86400, "min": 60}.get(units, 1)
+                else:
+                    exposure = None
             identity = field("Name", "Title", ucd="VOX:Image_Title")
+            if job.provider in {"xmm", "xmm:slew"} and access:
+                # XSA currently emits its internal backend hostname. Only this
+                # verified path is mapped to the public HTTPS archive service.
+                parts = urlsplit(access)
+                if parts.hostname == "nxsa.ebe.lan" and parts.path in {"/nxsa-sl/servlet/data-action-aio", "/nxsa-sl/servlet/data-action"}:
+                    access = "https://nxsa.esac.esa.int" + parts.path + "?" + parts.query
             # Titles can be shared by every field; access URL retains actual identity.
             f = frame(job, r, id=access or identity, survey=job.provider.upper(), instrument=field("Telescope_Instrument") or job.provider.upper(),
-                      startMjd=when, ra=numeric(field("RA", "Ra", ucd="POS_EQ_RA_MAIN")), dec=numeric(field("DEC", "Dec", ucd="POS_EQ_DEC_MAIN")),
+                      startMjd=when, endMjd=stop, exposureSeconds=exposure,
+                      ra=numeric(field("RA", "s_ra", ucd="POS_EQ_RA_MAIN")), dec=numeric(field("DEC", "s_dec", ucd="POS_EQ_DEC_MAIN")),
                       filter=field("BandPass", "Bandpass", "SurveyName"), url=access,
-                      productKind="cutout" if job.provider == "dss" else "image")
+                      productKind="observation bundle" if job.provider.startswith("xmm") else "cutout" if job.provider == "dss" else "image",
+                      timeScale=(config or {}).get("timeScale", "UTC"))
+            # Native SIA pixel dimensions give a conservative pointing envelope,
+            # not a detector polygon; rotation and chip gaps remain unverified.
+            dimensions = field("naxis", ucd="VOX:Image_Naxis")
+            scale = field("imgscale", "SCALE", ucd="VOX:Image_Scale")
+            if dimensions and scale:
+                try:
+                    dims, scales = [float(v) for v in dimensions.split()], [float(v) for v in scale.split()]
+                    if len(dims) >= 2 and len(scales) >= 2:
+                        f["fovRadius"] = math.hypot(dims[0]*scales[0], dims[1]*scales[1])/2
+                except ValueError:
+                    pass
             if when is None:
                 s["partial"] = "Image discovery succeeded, but SIA1 omits observation dates; requested temporal coverage is unverified."
             return f
         # Filter browse products before row conversion so malformed science rows
         # remain isolated by convert_rows rather than aborting their provider.
         def rows():
-            for r in votable(t.request(query), s):
+            for r in votable(t.request(query, **({"auth": auth} if auth is not None else {})), s):
                 formats = [r.get(k, "") for k, meta in s.get("fields", {}).items()
                            if meta.get("ucd", "").upper() == "VOX:IMAGE_FORMAT"]
                 fmt = r.get("Format") or r.get("format") or " ".join(formats)

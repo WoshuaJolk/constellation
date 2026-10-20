@@ -57,13 +57,21 @@ def frame(job, row, **values):
 
 
 def obscore(job, r):
-    return frame(job, r, id=r.get("obs_id") or r.get("obs_publisher_did"),
+    identity = r.get("obs_id")
+    # Retain recognizable native frame IDs for cross-index deduplication, but
+    # do not collapse every product in a shared visit to a bare obs_id.
+    if not identity or not re.search(r"(?:\.(?:fits|fit)(?:\.(?:fz|gz))?$|^\d+[op]$|^ztf_\d|^c4d_\d|^HSC[A-Z]\d)", str(identity), re.I):
+        identity = r.get("obs_publisher_did") or r.get("access_url") or identity
+    result = frame(job, r, id=identity,
                  survey=r.get("obs_collection", job.provider), instrument=r.get("instrument_name", ""),
                  startMjd=numeric(r.get("t_min")), endMjd=numeric(r.get("t_max")),
                  exposureSeconds=numeric(r.get("t_exptime")), filter=r.get("energy_bandpassname") or r.get("filters"),
                  ra=numeric(r.get("s_ra")), dec=numeric(r.get("s_dec")), footprint=r.get("s_region"),
                  url=r.get("access_url"), linkKind="DataLink" if "datalink" in (r.get("access_format") or "").lower() else "archive product",
-                 calibrationLevel=numeric(r.get("calib_level")))
+                 calibrationLevel=numeric(r.get("calib_level")), productKind=r.get("dataproduct_type") or "image")
+    if (numeric(r.get("calib_level")) or 0) >= 3:
+        result["timeSpanUnknown"] = True
+    return result
 
 
 def ssois_row(job, r):
@@ -175,6 +183,16 @@ def most_params(job, x):
 
 def execute(job, x, transport, s):
     provider, w = job.provider, job.window
+    from .profiles import VO_PROFILES
+    if provider in VO_PROFILES or provider.startswith("vo:"):
+        from .vo import execute_vo
+        config = VO_PROFILES.get(provider) or job.params.get("service") or x["services"][provider]
+        yield from execute_vo(job, x, transport, s, config)
+        return
+    if provider in {"kmtnet", "miris"}:
+        from .kasi import query_kasi
+        yield from query_kasi(job, x, transport, s)
+        return
     if provider == "ssois":
         p = ssois_params(job, x)
         # Native CGI GET remains the proven path for pinned element/name runs.

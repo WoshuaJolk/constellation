@@ -200,14 +200,18 @@ def validate(value, base=Path(".")):
             if len(points) < 2 or any(a["mjd"] == b["mjd"] for a, b in zip(points, points[1:])):
                 raise ValueError("Each track needs at least two unique epochs")
         x["ephemeris"] = [p for points in groups.values() for p in points]
+    from .vo import validate_services
+    services = validate_services(x.get("services", {}))
+    if services:
+        x["services"] = services
     requested = x.get("providers", "all")
     if requested == "all":
-        requested = list(PROVIDERS)
+        requested = list(PROVIDERS) + list(services)
     if not isinstance(requested, list) or not requested:
         raise ValueError("providers must be 'all' or a nonempty list")
     expanded = [f"most:{c}" for c in x.get("mostCatalogs", MOST_CATALOGS)]
     requested = [p for v in requested for p in (expanded if v == "most" else [v])]
-    if any(p not in PROVIDERS for p in requested):
+    if any(not isinstance(p, str) or p not in PROVIDERS and p not in services for p in requested):
         raise ValueError("Unknown provider; run `magictools frames capabilities`")
     x["providers"] = list(dict.fromkeys(requested))
     return x

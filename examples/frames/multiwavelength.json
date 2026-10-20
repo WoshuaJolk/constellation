@@ -1,0 +1,11 @@
+{
+  "mode": "field",
+  "ra": 83.633,
+  "dec": 22.0145,
+  "radius": 0.01,
+  "start": "2016-01-01",
+  "end": "2017-01-01",
+  "providers": ["chandra", "xmm", "xmm:slew", "heasarc", "alma", "nrao", "casda", "gavo", "kmtnet", "miris"],
+  "timeoutSeconds": 600,
+  "concurrency": 3
+}

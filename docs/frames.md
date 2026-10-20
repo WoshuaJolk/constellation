@@ -25,20 +25,22 @@ magictools frames search examples/frames/field.json --run-dir runs/field
    frames remain in the run artifacts. `--format csv` prints the final CSV.
 4. Inspect **both** `checks` and `unqueried`. A zero count with `error`, `blocked`,
    `limited`, or an unqueried service does not establish absence of observations.
+   Read `coverageAssessment` or run `audit` to assess the evidence behind matches.
 5. Retrieve the desired native products using `url`, `linkKind` and `products`.
    Some archives supply a product manifest or registered request page instead
    of an immediately downloadable FITS file.
 
 ```sh
 magictools frames status runs/field
+magictools frames audit runs/field --checksums
 magictools frames search examples/frames/field.json --run-dir runs/field --resume --timeout 900
 magictools frames merge runs/field/manifest.json runs/orbits/manifest.json -o combined.json
 ```
 
 Exit codes: **0** all scheduled checks completed; **3** incomplete archive
-checks; **2** invalid input/configuration; **130** interrupted. A completed run
-can still contain `unqueried` providers: completion is relative to the scheduled
-checks, never a claim about all public surveys.
+checks; **2** invalid input/configuration; **4** artifact-integrity audit failure;
+**130** interrupted. Unqueried providers make the search incomplete. Successful
+execution is never a claim about all public surveys or detectability.
 
 There is no client row cap, date-span cap, or orbit-family size cap. The default
 per-request timeout is 600 seconds; set `timeoutSeconds` or `--timeout`.
@@ -105,10 +107,11 @@ the caller's responsibility.
 
 Ephemeris samples are interpolated on great-circle segments with linearly
 interpolated sigma. Sampling must resolve the motion. The search uses
-conservative monthly cones and then compares each exposure midpoint with its
-footprint or pointing envelope. No extrapolation is performed. Broad combined
-products and missing geometry remain labeled candidates. This does not
-integrate a fast target's trail throughout an exposure.
+conservative monthly cones and then encloses the predicted trail throughout
+each exposure before testing its footprint or pointing envelope. The midpoint
+prediction remains in the output for reference. No extrapolation is performed.
+Broad combined products and missing geometry remain labeled candidates. Trail
+envelopes retain possible crossings; they do not integrate flux along a trail.
 
 `sigmaMultiplier` (default 1) scales the supplied angular envelope. Direct
 matching adds `radius + (sigmaMultiplier * sigmaArcsec + eellipse)/3600`.
@@ -123,7 +126,8 @@ unqueried; the tool does not silently propagate orbits itself.
 
 ## Connections
 
-The registry contains **39 provider IDs**. All **51 imaging entries** in the
+The registry contains **49 built-in provider IDs**, plus arbitrary configured
+SIA1, SIA2, and ObsCore services. All **51 imaging entries** in the
 constellation inventory are mapped to adapters and explicit coverage limits:
 
 ```sh
@@ -169,6 +173,14 @@ and several services supply only points, stacks, cutouts, or released subsets.
 | `mast:targetpixels` | Kepler/K2 target-pixel FITS cubes; light curves excluded | field, ephemeris candidates |
 | `rubin` | RSP SIA2 authorized image collections | field, ephemeris; token/data rights required |
 | `iphas` | IGAPS IPHAS/UVEX FITS metadata index | field, ephemeris; public HTTP index |
+| `alma` | Science Archive images/cubes; native spectral-window identities, DataLink products | field, ephemeris candidates |
+| `nrao` | VLA/VLASS and other NRAO image/visibility records; portal retrieval | field, ephemeris candidates |
+| `casda` | Released ASKAP images and cubes, including undated products | field, ephemeris candidates |
+| `heasarc` | Multi-mission ObsCore images with indexed footprints and times | field, ephemeris |
+| `chandra` | Chandra direct image products, exposure times converted from ks | field, ephemeris |
+| `xmm`, `xmm:slew` | XMM-Newton pointed bundles and slew products, with public retrieval URLs | field, ephemeris candidates |
+| `gavo` | Heterogeneous published GAVO image/cube collections | field, ephemeris candidates |
+| `kmtnet`, `miris` | KASI public FITS metadata, UTC times, conservative camera envelopes | field, ephemeris candidates; exhaustion unverified |
 
 
 SMOKA's encoder coordinates and NOIRLab's pointing metadata give conservative
@@ -188,6 +200,101 @@ NOIRLab and MAST paginate. TAP/SIA overflow flags and SMOKA's 20,000-row
 boundary trigger persisted date subdivision down to one day. Remaining
 overflow stays `limited`. Splitting cannot fix every archive limit; critically,
 SSOIS results are never reduced to an arbitrary first 300 rows.
+SIA1 and KASI do not accept the temporal constraint; their overflow is retained
+without issuing identical queries recursively.
+
+## Bring an archive endpoint
+
+Custom providers live in the input manifest, with IDs prefixed `vo:`. No code
+change or global registry mutation is required. `providers: "all"` includes
+these services alongside the built-ins. Endpoint configuration is part of each
+persisted job's identity, so resuming cannot silently switch archives.
+
+```json
+{
+  "mode": "field", "ra": 10, "dec": 20, "radius": 0.1,
+  "start": "2000-01-01", "end": "2026-01-01",
+  "providers": ["vo:my-archive"],
+  "services": {
+    "vo:my-archive": {
+      "protocol": "obscore",
+      "endpoint": "https://example.org/tap/sync",
+      "table": "ivoa.obscore",
+      "productTypes": ["image", "cube"],
+      "includeUnknownAxes": true
+    }
+  }
+}
+```
+
+Use the actual query endpoint: TAP `/sync`, SIA1 query URL, or SIA2 query URL.
+Existing URL query parameters, such as a collection selector, are preserved.
+Options include `collections`, `productTypes` (`image`, `cube`, `visibility`),
+`maxrec` (explicit server boundary; overflow never means complete), `spatial`
+(`footprint` or `pointing`), `timeScale` (`UTC` or `archive-defined`), and
+`credentialProfile`. Table identifiers are validated; collection literals are
+escaped. The implementation uses synchronous TAP with local resumable jobs and
+date subdivision on actual overflow; it does not yet submit remote TAP/UWS jobs.
+
+ObsCore queries normally include records with missing spatial/time axes as
+unresolved candidates. This can be expensive on large indexes.
+`includeUnknownAxes: false` explicitly excludes them and records that scope in
+the receipt. HEASARC uses this setting because its null-inclusive query timed
+out in validation. SIA2 applies the archive's TIME filter, which can likewise
+omit undated products. SIA1 filters returned observation dates locally.
+
+Find services and inspect their schema before querying:
+
+```sh
+magictools frames discover --text Chandra --output-dir runs/discovery
+magictools frames discover --protocol sia2 --text infrared --output-dir runs/infrared-services
+magictools frames inspect alma --output-dir runs/alma-schema
+magictools frames inspect my-service.json --output-dir runs/custom-schema
+magictools frames search examples/frames/custom-services.json --run-dir runs/custom --plan
+magictools frames search examples/frames/multiwavelength.json --run-dir runs/crab
+```
+
+`discover` queries RegTAP and returns candidate service configurations. A TAP
+registration does not guarantee an ObsCore table or image content; `inspect`
+checks the schema and never claims coverage. Inspection/discovery save native
+responses, SHA-256 receipts, and `report.json` in a new output directory.
+
+To resolve a public DataLink URL returned by an archive:
+
+```sh
+magictools frames links 'https://archive.example/datalink?ID=native-id' --output-dir runs/product-links
+```
+
+This returns native links, semantics, errors, and service references without
+downloading images or executing staging/cutout services. Service descriptors
+remain in the saved native response. Authenticated DataLink staging is not yet
+automated; use the archive's authenticated retrieval interface.
+
+## Coverage evidence and audits
+
+Every new receipt includes `coverageAssessment`: query success, index-exhaustion
+evidence, product-kind counts, UTC intervals, parseable footprints, retrieval
+references, and unresolved gaps. A valid empty table differs from an error,
+an invalid schema, or a response that lacks a completion marker.
+
+- `evidence-found`: at least one returned product has a bounded UTC interval
+  and an intersecting footprint. It is not proof of a detection.
+- `candidates-only`: potentially useful products need time/geometry inspection.
+- `no-matches-in-queried-index`: the exhausted, scoped index returned no matches.
+- `unverified`: exhaustion or successful execution was not established.
+
+`entireRequestedRegionCovered` remains null: this CLI does not integrate sky/time
+coverage masks. `allObservationsCovered` and `detectabilityAssessed` remain false.
+The assessment's counts describe query windows and can overlap; final frame
+lists are deduplicated separately. Legacy receipts without evidence fields
+remain unverified. `audit --checksums` additionally verifies the latest saved
+responses against their SHA-256 receipts and exits 4 on missing/corrupt artifacts.
+
+Moving-target matching encloses the full predicted trail during each exposure,
+including per-date uncertainty, rather than discarding a crossing because its
+midpoint misses the detector. These envelope intersections are candidates until
+the actual trail, chip masks, and observing location are checked. Products with
+unknown constituent times are retained without assuming an exposure midpoint.
 
 ## Credentials
 
@@ -228,6 +335,24 @@ Custom environment names or mounted secret files are supported:
 ```
 
 Use `--credentials /path/to/config.json` on `search` or `serve`.
+Custom services also accept that option on `inspect`. Their credentials require
+an explicit origin grant in the private credential file, separate from the
+search manifest:
+
+```json
+{
+  "providers": {
+    "my-archive": {
+      "token": {"env": "MY_ARCHIVE_TOKEN"},
+      "allowedOrigins": ["https://example.org"]
+    }
+  }
+}
+```
+
+Set `credentialProfile: "my-archive"` in the service definition. HTTPS origins
+must match exactly, including an explicit port. Username/password profiles are
+also supported. Anonymous custom endpoints receive no ambient credentials.
 Credential config and secret files must be owner-only on POSIX. Literal
 credential strings are accepted in that private config, but environment/file
 references make rotation easier. Status reports availability, never values,
@@ -358,3 +483,38 @@ Protocol references:
 [SCANPI](https://irsa.ipac.caltech.edu/applications/Scanpi/docs/ScanpiProgramInterface.html),
 [AKARI native index](https://data.darts.isas.jaxa.jp/pub/akari/AKARI-IRC_Image_Pointed_POIphase1-2_1.0.1/browse/dataList.html),
 [VSO schema](https://sdac.virtualsolar.org/API/VSOi_rpc_literal.wsdl).
+
+### Configurable services and multiwavelength validation (2026-10-20)
+
+Live searches returned ALMA science products (10), ASKAP/CASDA products (134),
+GAVO candidates (9 after local filtering), Chandra images (6), XMM pointed image
+bundles (4), XMM slew products (12), a NRAO/VLASS image (1), KMTNet images (185),
+and MIRIS images (11). ALMA schema inspection returned 73 columns; its DataLink
+resolver returned seven product/service entries. These counts describe the
+selected test fields/date windows, not independent exposures or completeness.
+
+HEASARC's null-inclusive ObsCore query timed out at 240 seconds. A query requiring
+indexed footprints and times returned four image records; this restriction is
+explicit in the built-in profile and receipts. NRAO publishes invalid zero end
+times for some images; these remain candidates with unknown temporal extent.
+Some ASKAP cubelets lack epochs. KASI has no independent total/overflow marker,
+so its queries remain partial even when the returned table is below the request
+boundary. KMTNet/MIRIS image dimensions are degrees; exact footprints need FITS WCS.
+
+KMTNet exposes actual FITS images and was added. OGLE publishes reference FITS
+images, but a verified per-exposure search interface was not established here.
+ASAS-SN's documented Sky Patrol client returns photometry/light curves, not an
+image-frame index. MOA also remains an investigation candidate. None is advertised
+as a working per-exposure adapter merely because a catalog or web page exists.
+
+Sources: [ALMA notebooks](https://almascience.nrao.edu/alma-data/archive/archive-notebooks),
+[NRAO scripted access](https://science.nrao.edu/facilities/vla/archive/scripted-access-to-the-nrao-archive),
+[CASDA TAP](https://casda.csiro.au/casda_vo_tools/tap),
+[Chandra archive](https://cxc.harvard.edu/cda/),
+[XSA](https://www.cosmos.esa.int/web/xmm-newton/xsa),
+[HEASARC VO resources](https://heasarc.gsfc.nasa.gov/navo/summary/resources.html),
+[KASI API documentation](https://data.kasi.re.kr/confluence/display/KSDA/KASI+Science+Data+Archive+APIs),
+[KASI releases](https://data.kasi.re.kr/notice),
+[GAVO TAP](https://dc.g-vo.org/tap),
+[OGLE reference images](https://ftp.astrouw.edu.pl/ogle/ogle3/maps/blg/),
+[ASAS-SN client](https://github.com/asas-sn/skypatrol).
