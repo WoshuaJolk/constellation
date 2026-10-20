@@ -1,0 +1,15 @@
+{
+  "checkpoint.npz": "00c112cea4b7ae9db587a4b21b58946a550d4486ddde7b9b2b34aa9c31f11dea",
+  "contract.json": "869466c357d7ad49cdb0dfd84aa8cc55b3b1abeb449146faaab32d33421f951e",
+  "input.json": "0aff81c4974a65ac9d3ef91e6c97a55e30e45f95c82c5774a1a4e975a544953b",
+  "prefix-10.json": "dbd7d1139e88cace247dc3f9c3081dc2a3db227f79ded45d5962d696eed22149",
+  "prefix-3.json": "80bf96c588125a3e0f9330343c1ae7944db228f85b3e694e94becca292d6464c",
+  "prefix-30.json": "7dc35677f7faf7a8b20589081428c7c4a260d9a4802a6df40a809d0425cc5877",
+  "report.json": "0f79f54afb0f3e89a9565b00d6111cc22f1ff678f65dfeafbdecc9bce100bf0d",
+  "source_snapshot/arithmetic.py": "aac9c4d3ff0dc05dd8321f287cc47fd540d737444067995eb9d05960de942965",
+  "source_snapshot/experiments.py": "92f90e2d113c109d2545b9cbd2fb9bf23e9cf09c3c44b577c9e1a23ce5feeb25",
+  "source_snapshot/reference.py": "900aa9cbb7ba31bbab0a0e53372142f1a5d4d890bd7ef42a7d5e627e24cda6b8",
+  "source_snapshot/scene.py": "21ca897cfeab2614b65fd1e86fb0ad2697b69bb1647f0d41b7f30d562d484df7",
+  "source_snapshot/sequential.py": "6c6093678e1c1d59f68ec44b61f3c21e486571638f9d4cad4f4d0a0ef95ced5c",
+  "source_snapshot/sequential_experiments.py": "a288e1b6ea0e90b3271de512e19bf7f5ab60af86ce1e747369a01a0e382be6c8"
+}

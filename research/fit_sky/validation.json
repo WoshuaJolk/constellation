@@ -1,0 +1,74 @@
+{
+  "suite": {
+    "command": "OPENBLAS_NUM_THREADS=1 python -m pytest -q",
+    "passed": 340,
+    "skipped": 1,
+    "skip": "Optional local JPL SPK kernel not supplied",
+    "log_sha256": "fa4fd2b6ca38a14eca387ce62555e35b0330c42d53cf69e37b9820e587e49168"
+  },
+  "wheel": {
+    "sha256": "1784a5b84ff147866773fa5262409998ab556d58e78cece1bfe24c5a9ddb2640",
+    "installed_outside_repository": true,
+    "all_fitsky_python_sources_equal_to_wheel": true,
+    "command": "magictools-fit-sky examples/fit-sky.json NEW_OUTPUT --verify --samples 20 --statistical-samples 100000",
+    "demo_report": "research/fit_sky/installed_demo/report.json"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "astropy": "8.0.2",
+    "python-flint": "0.8.0",
+    "pytest": "9.1.1"
+  },
+  "artifact_inventory_files_checked": {
+    "results": 33,
+    "statistical_results": 20,
+    "confused_followup": 16,
+    "real_followup": 16,
+    "pilot_results": 28,
+    "predictive_results": 3
+  },
+  "successful_recorded_certificate_replays": [
+    "research/fit_sky/results/real-verified.json",
+    "research/fit_sky/results/scalar-gauss-verified.json",
+    "research/fit_sky/results/confused-auto-verified.json",
+    "research/fit_sky/results/scalar-hybrid-verified.json",
+    "research/fit_sky/results/broad-auto-verified.json",
+    "research/fit_sky/results/moving-auto-verified.json",
+    "research/fit_sky/results/scalar-range-verified.json",
+    "research/fit_sky/predictive_results/verified.json"
+  ],
+  "source_sha256": {
+    "research/fit_sky/arithmetic.py": "aac9c4d3ff0dc05dd8321f287cc47fd540d737444067995eb9d05960de942965",
+    "research/fit_sky/reference.py": "900aa9cbb7ba31bbab0a0e53372142f1a5d4d890bd7ef42a7d5e627e24cda6b8",
+    "research/fit_sky/experiments.py": "92f90e2d113c109d2545b9cbd2fb9bf23e9cf09c3c44b577c9e1a23ce5feeb25",
+    "research/fit_sky/cli.py": "3d9fb57476b55f2780b8daad31fbf506c0b12c0f4a0b484006cd25b8ecf72131",
+    "research/fit_sky/statistical.py": "9334ca28a0040696068215827f97510ef0116012b559c28d366e956fb69de26c",
+    "research/fit_sky/sampling.py": "5cd9262e6d3253f5963665edd41226a48f64647f2e27ef2074f7049d83da5605",
+    "research/fit_sky/predictive_experiment.py": "d441b894f967ff3231be0fd3d38054280a8a24a31a9cda93e09db8db66fd237d",
+    "research/fit_sky/envelope.py": "261327f0ea6942ef4ce046d25558dc61edacc4a849fee30ec088ec4d2e19a0be",
+    "research/fit_sky/statistical_experiments.py": "e0cd7895283cefcaa1b030deb8dc8e33bd6abcde5adcb5dfca3a958d3043fafc",
+    "research/fit_sky/scene.py": "21ca897cfeab2614b65fd1e86fb0ad2697b69bb1647f0d41b7f30d562d484df7",
+    "research/fit_sky/graph.py": "c6f2dfe7ca6c3872d39396fd693034899cd8f111c520b0f3bec8e8440a1aadad",
+    "research/fit_sky/__init__.py": "5ca2ddfd8a0392459e58a189686877fd3773c6bced114f19bb659305d6a2c929",
+    "research/fit_sky/integrate.py": "2ad2d6fcc42ea3e42ee3808cfd62ea03dc39be5fca9d50ba696a2018ebdbfd12",
+    "tests/test_fit_sky.py": "fdd9f4f1cd728374b4ef1a6bbf521d69c95e8bb96d72d69ac8af038c8cf824f0",
+    "pyproject.toml": "3e76cf1a4ac7ddc321e83a9b501f45b693ed0b15ada1b32af75a266cf0a2c400"
+  },
+  "kepler_files_modified": false,
+  "base_commit": "1f8449742ec7be58a871229ff8581f1605bf5377",
+  "readonly_dependency_sha256": {
+    "research/detection_limit/interval_orbits.py": "7cebff4f060921b497d1c41c70d16b50e99334e023a56f9b977f47f9a14099fd"
+  },
+  "full_objective_complete": false,
+  "postmerge_validation": {
+    "merged_main_commit": "f102865d996973dfefc551f344a5a758e6ee6f54",
+    "integration_commit": "a282c3840437b2f2b7767556c30accc7843f0c8d",
+    "passed": 367,
+    "skipped": 1,
+    "log_sha256": "f7f5b3119f43959d057935400378a97d3a9b40f90c134344058bac5ce963ac22",
+    "all_previously_validated_source_hashes_unchanged": true,
+    "kepler_diff_against_merged_main": []
+  }
+}

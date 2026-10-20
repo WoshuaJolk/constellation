@@ -1,0 +1,36 @@
+[
+  {
+    "log_evidence": -184.01353028909014,
+    "queries": {
+      "count=0": 0.0007272513734683944,
+      "count=1": 0.36283868713065476,
+      "count=2": 0.6364340614958706,
+      "has:star": 0.5492658762145403,
+      "has:orbit_a": 0.5161508877865368,
+      "has:orbit_b": 0.4922581145746901
+    },
+    "nuisance_mean": {
+      "A_dx": 0.04425633672454723,
+      "B_dx": 0.007531776168978058
+    },
+    "order": 8,
+    "scope": "Independent numerical quadrature; not a certificate"
+  },
+  {
+    "log_evidence": -184.01353028908989,
+    "queries": {
+      "count=0": 0.0007272513734682075,
+      "count=1": 0.36283868713056777,
+      "count=2": 0.6364340614959694,
+      "has:star": 0.5492658762145654,
+      "has:orbit_a": 0.5161508877865795,
+      "has:orbit_b": 0.4922581145747092
+    },
+    "nuisance_mean": {
+      "A_dx": 0.04425633672464029,
+      "B_dx": 0.0075317761689686815
+    },
+    "order": 12,
+    "scope": "Independent numerical quadrature; not a certificate"
+  }
+]

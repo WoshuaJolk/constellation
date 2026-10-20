@@ -1,0 +1,8 @@
+research/fit_sky/**/*.json linguist-generated=true
+research/fit_sky/**/source_snapshot/** linguist-generated=true
+research/fit_sky/**/cover_source_snapshot/** linguist-generated=true
+research/fit_sky/*test-output.txt linguist-generated=true
+research/fit_sky/**/*.json.gz linguist-generated=true
+research/fit_sky/**/*.jsonl linguist-generated=true
+research/fit_sky/**/*.npz linguist-generated=true
+research/fit_sky/photon_partition_pilot/results/** linguist-generated=true

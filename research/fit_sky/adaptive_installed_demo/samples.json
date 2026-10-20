@@ -1,0 +1,911 @@
+{
+  "catalogues": [
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.7763480221923866
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.7318004856169633
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.051653034824304
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.4161298457369056
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.2267616061995104
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.587423464942055
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.5583694761927305
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.6078234231663224
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.1681845305794019
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.8956226983065063
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.563220240864627
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.7373238838576803
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.6007322020079995
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.4175498989447126
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.4543284137128367
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.614215081824666
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.8649562407673796
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.973714075988198
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.5054176586709944
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.5284013001720091
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.1417497717758354
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.1542199075830806
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.175800671665573
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.7764210051996117
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.8889015965689917
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.8950521837062384
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.859418656299936
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.2098442907280784
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.5441844812492085
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.137369990531621
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.5364779138382283
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.7800169473052718
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.1630332484873005
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.1080395640531828
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.0252318148394575
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.2642970072524242
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.369182375913778
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.8252568256723456
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.5547798924556782
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.4780470377165094
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.4088632713409472
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.055431039701989
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.2541483319990203
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.2044940778516786
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.49160242206136
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.978054526960503
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.1569184196371336
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.9296511037866466
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.4265001831446669
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.3338761319193813
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    }
+  ],
+  "proposals": 100,
+  "evaluated_proposals": 2048,
+  "seed": 20261021,
+  "complete": true,
+  "conditional_on_represented_source_counts": true,
+  "excluded_posterior_mass_upper": 0.0,
+  "sampling_arithmetic": "float64 RNG, proposal weights and forward-model acceptance"
+}

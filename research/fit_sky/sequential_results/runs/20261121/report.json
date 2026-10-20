@@ -1,0 +1,3379 @@
+{
+  "schema": "fit-sky-sequential-v1",
+  "status": "approximate_uncertified",
+  "full_objective_complete": false,
+  "accuracy_target_met": false,
+  "manifest_sha256": "1d519227ec049187e61551d2a6717e13bac2a3e8e53912c31076c8adc0f71860",
+  "settings": {
+    "particles": 2048,
+    "seed": 20261121,
+    "sweeps": 20,
+    "ess_fraction": 0.8,
+    "pixel_block": 128,
+    "max_stages": 1000,
+    "gibbs_flux": true
+  },
+  "scope": "Float64 sequential Monte Carlo estimates; no finite-sample mode-coverage or evidence-error certificate.",
+  "source_count_scope": "Complete Poisson prior, no enumeration cutoff",
+  "linear_nuisance_scope": "Shared Gaussian linear nuisance integrated jointly, not sampled",
+  "summary": {
+    "assimilated_exposures": 30,
+    "log_evidence_estimate": -259.23178112490893,
+    "queries": {
+      "count=0": {
+        "estimate": 0.0,
+        "certified_interval": [
+          0.0,
+          1.0
+        ]
+      },
+      "count=1": {
+        "estimate": 0.0,
+        "certified_interval": [
+          0.0,
+          1.0
+        ]
+      },
+      "count=2": {
+        "estimate": 0.0,
+        "certified_interval": [
+          0.0,
+          1.0
+        ]
+      },
+      "count=3": {
+        "estimate": 0.68994140625,
+        "certified_interval": [
+          0.0,
+          1.0
+        ]
+      },
+      "has:stationary": {
+        "estimate": 0.9248046875,
+        "certified_interval": [
+          0.0,
+          1.0
+        ]
+      },
+      "has:moving": {
+        "estimate": 1.0,
+        "certified_interval": [
+          0.0,
+          1.0
+        ]
+      },
+      "has:galaxy": {
+        "estimate": 0.93701171875,
+        "certified_interval": [
+          0.0,
+          1.0
+        ]
+      },
+      "any:moving:vx:0:1": {
+        "estimate": 1.0,
+        "certified_interval": [
+          0.0,
+          1.0
+        ]
+      }
+    },
+    "count_distribution_estimate": {
+      "3": 0.68994140625,
+      "4": 0.2724609375,
+      "5": 0.03466796875,
+      "6": 0.00244140625,
+      "7": 0.00048828125
+    },
+    "nuisance_mean_estimate": {
+      "b_dx": 0.0836952213040433,
+      "b_log_gain": -0.014863873763647843
+    },
+    "maximum_sampled_count": 7,
+    "stages": 90,
+    "seconds": 3041.4519916149948
+  },
+  "history": [
+    {
+      "assimilated_exposures": 1,
+      "log_evidence_estimate": -16.619863248716328,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.06982421875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.38330078125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.3583984375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.74560546875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.70556640625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.51611328125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.41162109375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "1": 0.06982421875,
+        "2": 0.38330078125,
+        "3": 0.3583984375,
+        "4": 0.1474609375,
+        "5": 0.03515625,
+        "6": 0.0048828125,
+        "7": 0.0009765625
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": -0.0026768574618759476,
+        "b_log_gain": 0.001348024059606029
+      },
+      "maximum_sampled_count": 7,
+      "stages": 9,
+      "seconds": 83.7470131839982
+    },
+    {
+      "assimilated_exposures": 2,
+      "log_evidence_estimate": -26.393019035404798,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.02490234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.4833984375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.36865234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.94873046875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.51123046875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.3955078125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.294921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "1": 0.02490234375,
+        "2": 0.4833984375,
+        "3": 0.36865234375,
+        "4": 0.10546875,
+        "5": 0.015625,
+        "6": 0.001953125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.004766980884872658,
+        "b_log_gain": -0.001844380551829852
+      },
+      "maximum_sampled_count": 6,
+      "stages": 14,
+      "seconds": 171.8802760239996
+    },
+    {
+      "assimilated_exposures": 3,
+      "log_evidence_estimate": -35.44707927048228,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.013671875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.50390625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.369140625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.96630859375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.564453125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.44189453125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.23388671875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "1": 0.013671875,
+        "2": 0.50390625,
+        "3": 0.369140625,
+        "4": 0.10107421875,
+        "5": 0.01123046875,
+        "6": 0.0009765625
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.05030734329540289,
+        "b_log_gain": -0.0047289056921197255
+      },
+      "maximum_sampled_count": 6,
+      "stages": 18,
+      "seconds": 232.11010595899643
+    },
+    {
+      "assimilated_exposures": 4,
+      "log_evidence_estimate": -46.74555057270262,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.00390625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.56689453125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.34716796875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.86962890625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.82177734375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.2587890625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.46240234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "1": 0.00390625,
+        "2": 0.56689453125,
+        "3": 0.34716796875,
+        "4": 0.07080078125,
+        "5": 0.009765625,
+        "6": 0.00146484375
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.018027819818568304,
+        "b_log_gain": -0.010787152760119913
+      },
+      "maximum_sampled_count": 6,
+      "stages": 25,
+      "seconds": 368.14202307199594
+    },
+    {
+      "assimilated_exposures": 5,
+      "log_evidence_estimate": -53.661993924891696,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.00341796875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.56982421875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.3427734375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.93310546875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.71923828125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.37158203125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "1": 0.00341796875,
+        "2": 0.56982421875,
+        "3": 0.3427734375,
+        "4": 0.07666015625,
+        "5": 0.00732421875
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.04721701921862531,
+        "b_log_gain": -0.037674091884004224
+      },
+      "maximum_sampled_count": 5,
+      "stages": 28,
+      "seconds": 425.1892759129951
+    },
+    {
+      "assimilated_exposures": 6,
+      "log_evidence_estimate": -64.75202342992561,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.603515625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.31787109375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.9755859375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.544921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.20361328125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.255859375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.603515625,
+        "3": 0.31787109375,
+        "4": 0.07080078125,
+        "5": 0.005859375,
+        "6": 0.001953125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.04281471626280409,
+        "b_log_gain": -0.03685017794802515
+      },
+      "maximum_sampled_count": 6,
+      "stages": 31,
+      "seconds": 503.1004891179946
+    },
+    {
+      "assimilated_exposures": 7,
+      "log_evidence_estimate": -75.77025371632816,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.50146484375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.3818359375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.97900390625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.3974609375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.29052734375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.23828125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.50146484375,
+        "3": 0.3818359375,
+        "4": 0.099609375,
+        "5": 0.0146484375,
+        "6": 0.00244140625
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.165536371373586,
+        "b_log_gain": -0.04204218984502731
+      },
+      "maximum_sampled_count": 6,
+      "stages": 35,
+      "seconds": 582.5808309859967
+    },
+    {
+      "assimilated_exposures": 8,
+      "log_evidence_estimate": -84.56012574149678,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.41552734375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.44482421875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.97607421875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.482421875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.28125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.31982421875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.41552734375,
+        "3": 0.44482421875,
+        "4": 0.12353515625,
+        "5": 0.01513671875,
+        "6": 0.0009765625
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.15299691847679256,
+        "b_log_gain": -0.03603735157541205
+      },
+      "maximum_sampled_count": 6,
+      "stages": 38,
+      "seconds": 629.5791130409962
+    },
+    {
+      "assimilated_exposures": 9,
+      "log_evidence_estimate": -91.61776132265574,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.470703125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.39599609375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.984375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.41845703125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.27294921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.23828125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.470703125,
+        "3": 0.39599609375,
+        "4": 0.12109375,
+        "5": 0.01123046875,
+        "6": 0.0009765625
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.13219919153871204,
+        "b_log_gain": -0.03960611345891226
+      },
+      "maximum_sampled_count": 6,
+      "stages": 40,
+      "seconds": 683.093271676993
+    },
+    {
+      "assimilated_exposures": 10,
+      "log_evidence_estimate": -102.13375255046202,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.2998046875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.49462890625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.9365234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.64453125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.41455078125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.39501953125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.2998046875,
+        "3": 0.49462890625,
+        "4": 0.177734375,
+        "5": 0.02587890625,
+        "6": 0.001953125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.08736336594011698,
+        "b_log_gain": -0.027358187894430404
+      },
+      "maximum_sampled_count": 6,
+      "stages": 44,
+      "seconds": 788.1559732739915
+    },
+    {
+      "assimilated_exposures": 11,
+      "log_evidence_estimate": -108.52454572593822,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.2734375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.4873046875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.927734375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.6953125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.4912109375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.427734375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.2734375,
+        "3": 0.4873046875,
+        "4": 0.208984375,
+        "5": 0.02978515625,
+        "6": 0.00048828125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.06020209928583475,
+        "b_log_gain": -0.030308430232179464
+      },
+      "maximum_sampled_count": 6,
+      "stages": 46,
+      "seconds": 833.6642266769923
+    },
+    {
+      "assimilated_exposures": 12,
+      "log_evidence_estimate": -116.5459082603386,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.15087890625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.5478515625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.8984375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.78955078125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.5810546875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.6123046875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.15087890625,
+        "3": 0.5478515625,
+        "4": 0.2470703125,
+        "5": 0.04833984375,
+        "6": 0.00537109375,
+        "7": 0.00048828125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.035077188498773046,
+        "b_log_gain": -0.035540511075247125
+      },
+      "maximum_sampled_count": 7,
+      "stages": 48,
+      "seconds": 897.905026234992
+    },
+    {
+      "assimilated_exposures": 13,
+      "log_evidence_estimate": -124.88815845391673,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.1142578125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.61669921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.865234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.951171875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.61669921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.7705078125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.1142578125,
+        "3": 0.61669921875,
+        "4": 0.2236328125,
+        "5": 0.041015625,
+        "6": 0.00341796875,
+        "7": 0.0009765625
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.017010510729958725,
+        "b_log_gain": -0.03598968304749935
+      },
+      "maximum_sampled_count": 7,
+      "stages": 51,
+      "seconds": 978.7093135369905
+    },
+    {
+      "assimilated_exposures": 14,
+      "log_evidence_estimate": -132.5278930652853,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.091796875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.62451171875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.8583984375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.9404296875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.62841796875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.77734375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.091796875,
+        "3": 0.62451171875,
+        "4": 0.2470703125,
+        "5": 0.03369140625,
+        "6": 0.0029296875
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.039854480561709815,
+        "b_log_gain": -0.035373634510212984
+      },
+      "maximum_sampled_count": 6,
+      "stages": 53,
+      "seconds": 1078.2646603759895
+    },
+    {
+      "assimilated_exposures": 15,
+      "log_evidence_estimate": -139.56650626791688,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0361328125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.65966796875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.80517578125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.9765625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.7255859375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.9091796875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.0361328125,
+        "3": 0.65966796875,
+        "4": 0.263671875,
+        "5": 0.0361328125,
+        "6": 0.00439453125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.06437311782685837,
+        "b_log_gain": -0.029931994555617694
+      },
+      "maximum_sampled_count": 6,
+      "stages": 55,
+      "seconds": 1179.3967321109885
+    },
+    {
+      "assimilated_exposures": 16,
+      "log_evidence_estimate": -147.79445069829856,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0068359375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.7109375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.78857421875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.99951171875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.76416015625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.98095703125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.0068359375,
+        "3": 0.7109375,
+        "4": 0.24755859375,
+        "5": 0.03271484375,
+        "6": 0.001953125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.04444516970055891,
+        "b_log_gain": -0.03059233523023838
+      },
+      "maximum_sampled_count": 6,
+      "stages": 58,
+      "seconds": 1315.9405855169898
+    },
+    {
+      "assimilated_exposures": 17,
+      "log_evidence_estimate": -156.35958320925437,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.00146484375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.70703125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.75341796875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.83642578125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.98193359375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.00146484375,
+        "3": 0.70703125,
+        "4": 0.26123046875,
+        "5": 0.0283203125,
+        "6": 0.001953125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.013320505975470858,
+        "b_log_gain": -0.04025468109951127
+      },
+      "maximum_sampled_count": 6,
+      "stages": 61,
+      "seconds": 1448.5315004509903
+    },
+    {
+      "assimilated_exposures": 18,
+      "log_evidence_estimate": -164.74315520609116,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0009765625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.72509765625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.71240234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.89208984375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.9873046875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.0009765625,
+        "3": 0.72509765625,
+        "4": 0.23876953125,
+        "5": 0.0322265625,
+        "6": 0.0029296875
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.016067245341046865,
+        "b_log_gain": -0.038297304284680964
+      },
+      "maximum_sampled_count": 6,
+      "stages": 63,
+      "seconds": 1501.357711413988
+    },
+    {
+      "assimilated_exposures": 19,
+      "log_evidence_estimate": -172.37280559406236,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0009765625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.67578125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.72314453125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.8876953125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.9931640625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.0009765625,
+        "3": 0.67578125,
+        "4": 0.28759765625,
+        "5": 0.033203125,
+        "6": 0.001953125,
+        "7": 0.00048828125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.03158595490875213,
+        "b_log_gain": -0.03177303761340143
+      },
+      "maximum_sampled_count": 7,
+      "stages": 65,
+      "seconds": 1586.484043258988
+    },
+    {
+      "assimilated_exposures": 20,
+      "log_evidence_estimate": -178.64067484642896,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.00048828125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.65234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.73193359375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.908203125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.9892578125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.00048828125,
+        "3": 0.65234375,
+        "4": 0.2998046875,
+        "5": 0.04296875,
+        "6": 0.00390625,
+        "7": 0.00048828125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.03865311932997194,
+        "b_log_gain": -0.03925385280103662
+      },
+      "maximum_sampled_count": 7,
+      "stages": 67,
+      "seconds": 1680.720536190991
+    },
+    {
+      "assimilated_exposures": 21,
+      "log_evidence_estimate": -183.9319083081531,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.00146484375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.67578125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.74365234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.8994140625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.98974609375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.00146484375,
+        "3": 0.67578125,
+        "4": 0.27783203125,
+        "5": 0.04248046875,
+        "6": 0.00244140625
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.03749127605422323,
+        "b_log_gain": -0.04162467034576815
+      },
+      "maximum_sampled_count": 6,
+      "stages": 68,
+      "seconds": 1742.6148693209907
+    },
+    {
+      "assimilated_exposures": 22,
+      "log_evidence_estimate": -191.9979222489871,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.634765625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.73193359375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.9033203125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.990234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "3": 0.634765625,
+        "4": 0.3076171875,
+        "5": 0.04931640625,
+        "6": 0.00830078125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.054481394235732075,
+        "b_log_gain": -0.048083321306206336
+      },
+      "maximum_sampled_count": 6,
+      "stages": 71,
+      "seconds": 1959.8251467829905
+    },
+    {
+      "assimilated_exposures": 23,
+      "log_evidence_estimate": -198.09395972956432,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.6064453125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.759765625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.919921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.9921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "3": 0.6064453125,
+        "4": 0.31884765625,
+        "5": 0.06787109375,
+        "6": 0.00634765625,
+        "8": 0.00048828125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.039970618594435625,
+        "b_log_gain": -0.04452531351700972
+      },
+      "maximum_sampled_count": 8,
+      "stages": 73,
+      "seconds": 2038.0169373179888
+    },
+    {
+      "assimilated_exposures": 24,
+      "log_evidence_estimate": -211.05669654900547,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.5712890625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.6865234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.90966796875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.98876953125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "3": 0.5712890625,
+        "4": 0.3408203125,
+        "5": 0.076171875,
+        "6": 0.01025390625,
+        "7": 0.0009765625,
+        "8": 0.00048828125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.06394473959318463,
+        "b_log_gain": -0.04185748203559302
+      },
+      "maximum_sampled_count": 8,
+      "stages": 76,
+      "seconds": 2142.1488041969933
+    },
+    {
+      "assimilated_exposures": 25,
+      "log_evidence_estimate": -219.85277320973142,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.61572265625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.82421875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.9296875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.9990234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "3": 0.61572265625,
+        "4": 0.32470703125,
+        "5": 0.0556640625,
+        "6": 0.00390625
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.055669456137936515,
+        "b_log_gain": -0.03315852648172071
+      },
+      "maximum_sampled_count": 6,
+      "stages": 79,
+      "seconds": 2360.584503301994
+    },
+    {
+      "assimilated_exposures": 26,
+      "log_evidence_estimate": -227.20492997932172,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.61328125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.8427734375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.91748046875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.99951171875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "3": 0.61328125,
+        "4": 0.32666015625,
+        "5": 0.056640625,
+        "6": 0.00341796875
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.06764552429650571,
+        "b_log_gain": -0.030376450162414213
+      },
+      "maximum_sampled_count": 6,
+      "stages": 81,
+      "seconds": 2516.4349094609934
+    },
+    {
+      "assimilated_exposures": 27,
+      "log_evidence_estimate": -236.13371970688965,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.00048828125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.6689453125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.8349609375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.9267578125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 0.99755859375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.00048828125,
+        "3": 0.6689453125,
+        "4": 0.28955078125,
+        "5": 0.0390625,
+        "6": 0.001953125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.07030410707737236,
+        "b_log_gain": -0.018312024693251105
+      },
+      "maximum_sampled_count": 6,
+      "stages": 84,
+      "seconds": 2653.368801080993
+    },
+    {
+      "assimilated_exposures": 28,
+      "log_evidence_estimate": -245.13646854852416,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.68115234375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.92919921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "3": 0.68115234375,
+        "4": 0.27392578125,
+        "5": 0.04150390625,
+        "6": 0.00341796875
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.07181682302955575,
+        "b_log_gain": -0.020734163237123862
+      },
+      "maximum_sampled_count": 6,
+      "stages": 87,
+      "seconds": 2879.3363908809915
+    },
+    {
+      "assimilated_exposures": 29,
+      "log_evidence_estimate": -253.0867797888853,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.669921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.92431640625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.93212890625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "3": 0.669921875,
+        "4": 0.29248046875,
+        "5": 0.037109375,
+        "6": 0.00048828125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.0873653016897588,
+        "b_log_gain": -0.020138273574772415
+      },
+      "maximum_sampled_count": 6,
+      "stages": 89,
+      "seconds": 2965.7993872839943
+    },
+    {
+      "assimilated_exposures": 30,
+      "log_evidence_estimate": -259.23178112490893,
+      "queries": {
+        "count=0": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=1": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=2": {
+          "estimate": 0.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "count=3": {
+          "estimate": 0.68994140625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:stationary": {
+          "estimate": 0.9248046875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.93701171875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "any:moving:vx:0:1": {
+          "estimate": 1.0,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "3": 0.68994140625,
+        "4": 0.2724609375,
+        "5": 0.03466796875,
+        "6": 0.00244140625,
+        "7": 0.00048828125
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.0836952213040433,
+        "b_log_gain": -0.014863873763647843
+      },
+      "maximum_sampled_count": 7,
+      "stages": 90,
+      "seconds": 3041.4519916149948
+    }
+  ],
+  "stages": [
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.04041586968378752,
+      "ess_before_resampling": 1638.4000000000074,
+      "distinct_resampled_parents": 1677,
+      "log_evidence_increment_estimate": -1.6350902952308601,
+      "count_acceptance": 0.7189403166869671,
+      "parameter_acceptance": 0.9666259765625,
+      "maximum_sampled_count": 8
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.08111458880342043,
+      "ess_before_resampling": 1638.400000000035,
+      "distinct_resampled_parents": 1639,
+      "log_evidence_increment_estimate": -1.422060287854138,
+      "count_acceptance": 0.6375961800143497,
+      "parameter_acceptance": 0.9323974609375,
+      "maximum_sampled_count": 9
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.12829849871420104,
+      "ess_before_resampling": 1638.400000000006,
+      "distinct_resampled_parents": 1650,
+      "log_evidence_increment_estimate": -1.3339517019675808,
+      "count_acceptance": 0.5554956236055606,
+      "parameter_acceptance": 0.895751953125,
+      "maximum_sampled_count": 8
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.18569541477143514,
+      "ess_before_resampling": 1638.4000000000046,
+      "distinct_resampled_parents": 1614,
+      "log_evidence_increment_estimate": -1.3545355833407235,
+      "count_acceptance": 0.4837495723571673,
+      "parameter_acceptance": 0.862060546875,
+      "maximum_sampled_count": 8
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.26505990575726707,
+      "ess_before_resampling": 1638.4000000000103,
+      "distinct_resampled_parents": 1621,
+      "log_evidence_increment_estimate": -1.540405270590977,
+      "count_acceptance": 0.4231201171875,
+      "parameter_acceptance": 0.8296142578125,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.36873609684155917,
+      "ess_before_resampling": 1638.4000000000074,
+      "distinct_resampled_parents": 1622,
+      "log_evidence_increment_estimate": -1.6895492923370847,
+      "count_acceptance": 0.376220703125,
+      "parameter_acceptance": 0.8004638671875,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.5180824666477492,
+      "ess_before_resampling": 1638.4,
+      "distinct_resampled_parents": 1635,
+      "log_evidence_increment_estimate": -2.078719704278728,
+      "count_acceptance": 0.327783203125,
+      "parameter_acceptance": 0.7732177734375,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.730413721347777,
+      "ess_before_resampling": 1638.3999999999987,
+      "distinct_resampled_parents": 1619,
+      "log_evidence_increment_estimate": -2.5923449727647325,
+      "count_acceptance": 0.2849853515625,
+      "parameter_acceptance": 0.74228515625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 1.0,
+      "ess_before_resampling": 1684.2674026691964,
+      "distinct_resampled_parents": 1665,
+      "log_evidence_increment_estimate": -2.9732061403515058,
+      "count_acceptance": 0.2462890625,
+      "parameter_acceptance": 0.7208251953125,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 1,
+      "to_exposures": 2,
+      "beta": 0.0958146161611424,
+      "ess_before_resampling": 1638.4000000000046,
+      "distinct_resampled_parents": 1608,
+      "log_evidence_increment_estimate": -1.350907321242043,
+      "count_acceptance": 0.2296630859375,
+      "parameter_acceptance": 0.7194580078125,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 1,
+      "to_exposures": 2,
+      "beta": 0.2571476471648547,
+      "ess_before_resampling": 1638.400000000009,
+      "distinct_resampled_parents": 1639,
+      "log_evidence_increment_estimate": -1.8336498365379592,
+      "count_acceptance": 0.21728515625,
+      "parameter_acceptance": 0.7126708984375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 1,
+      "to_exposures": 2,
+      "beta": 0.492536099706855,
+      "ess_before_resampling": 1638.4000000000046,
+      "distinct_resampled_parents": 1644,
+      "log_evidence_increment_estimate": -2.3085692186454576,
+      "count_acceptance": 0.1935546875,
+      "parameter_acceptance": 0.700927734375,
+      "maximum_sampled_count": 8
+    },
+    {
+      "from_exposures": 1,
+      "to_exposures": 2,
+      "beta": 0.7880184906859239,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1610,
+      "log_evidence_increment_estimate": -2.583820203601787,
+      "count_acceptance": 0.1622802734375,
+      "parameter_acceptance": 0.6880615234375,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 1,
+      "to_exposures": 2,
+      "beta": 1.0,
+      "ess_before_resampling": 1873.974267639606,
+      "distinct_resampled_parents": 1780,
+      "log_evidence_increment_estimate": -1.6962092066612238,
+      "count_acceptance": 0.1442626953125,
+      "parameter_acceptance": 0.6796630859375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 2,
+      "to_exposures": 3,
+      "beta": 0.16138538515400214,
+      "ess_before_resampling": 1638.4000000000046,
+      "distinct_resampled_parents": 1621,
+      "log_evidence_increment_estimate": -1.7995064529880143,
+      "count_acceptance": 0.14150390625,
+      "parameter_acceptance": 0.66611328125,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 2,
+      "to_exposures": 3,
+      "beta": 0.4008988508931768,
+      "ess_before_resampling": 1638.4,
+      "distinct_resampled_parents": 1629,
+      "log_evidence_increment_estimate": -2.2952743062469017,
+      "count_acceptance": 0.1339599609375,
+      "parameter_acceptance": 0.6563720703125,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 2,
+      "to_exposures": 3,
+      "beta": 0.7529008642735506,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1624,
+      "log_evidence_increment_estimate": -2.99507403886244,
+      "count_acceptance": 0.1212158203125,
+      "parameter_acceptance": 0.641796875,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 2,
+      "to_exposures": 3,
+      "beta": 1.0,
+      "ess_before_resampling": 1893.4827657862047,
+      "distinct_resampled_parents": 1815,
+      "log_evidence_increment_estimate": -1.9642054369801265,
+      "count_acceptance": 0.1212158203125,
+      "parameter_acceptance": 0.63828125,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 3,
+      "to_exposures": 4,
+      "beta": 0.06584766932613562,
+      "ess_before_resampling": 1638.4000000000192,
+      "distinct_resampled_parents": 1628,
+      "log_evidence_increment_estimate": -1.4008627756075285,
+      "count_acceptance": 0.116796875,
+      "parameter_acceptance": 0.629296875,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 3,
+      "to_exposures": 4,
+      "beta": 0.14878101689751522,
+      "ess_before_resampling": 1638.4000000000046,
+      "distinct_resampled_parents": 1641,
+      "log_evidence_increment_estimate": -1.4548107107340904,
+      "count_acceptance": 0.1161865234375,
+      "parameter_acceptance": 0.61904296875,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 3,
+      "to_exposures": 4,
+      "beta": 0.24690347146942052,
+      "ess_before_resampling": 1638.4,
+      "distinct_resampled_parents": 1630,
+      "log_evidence_increment_estimate": -1.4551480716190426,
+      "count_acceptance": 0.1106201171875,
+      "parameter_acceptance": 0.6084228515625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 3,
+      "to_exposures": 4,
+      "beta": 0.37327654485284656,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1627,
+      "log_evidence_increment_estimate": -1.546119852108598,
+      "count_acceptance": 0.1061767578125,
+      "parameter_acceptance": 0.5993408203125,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 3,
+      "to_exposures": 4,
+      "beta": 0.5331772968565262,
+      "ess_before_resampling": 1638.3999999999987,
+      "distinct_resampled_parents": 1629,
+      "log_evidence_increment_estimate": -1.6438761685618086,
+      "count_acceptance": 0.1018798828125,
+      "parameter_acceptance": 0.592724609375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 3,
+      "to_exposures": 4,
+      "beta": 0.7489639797842806,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1628,
+      "log_evidence_increment_estimate": -1.8870245657710427,
+      "count_acceptance": 0.093701171875,
+      "parameter_acceptance": 0.572607421875,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 3,
+      "to_exposures": 4,
+      "beta": 1.0,
+      "ess_before_resampling": 1700.809887266409,
+      "distinct_resampled_parents": 1678,
+      "log_evidence_increment_estimate": -1.9106291578182368,
+      "count_acceptance": 0.0838134765625,
+      "parameter_acceptance": 0.5567138671875,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 4,
+      "to_exposures": 5,
+      "beta": 0.33864930638121393,
+      "ess_before_resampling": 1638.4,
+      "distinct_resampled_parents": 1623,
+      "log_evidence_increment_estimate": -2.526829938965731,
+      "count_acceptance": 0.0815185546875,
+      "parameter_acceptance": 0.55126953125,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 4,
+      "to_exposures": 5,
+      "beta": 0.8398775210469122,
+      "ess_before_resampling": 1638.4,
+      "distinct_resampled_parents": 1615,
+      "log_evidence_increment_estimate": -3.369313228311671,
+      "count_acceptance": 0.0779052734375,
+      "parameter_acceptance": 0.534423828125,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 4,
+      "to_exposures": 5,
+      "beta": 1.0,
+      "ess_before_resampling": 2012.5794054307573,
+      "distinct_resampled_parents": 1953,
+      "log_evidence_increment_estimate": -1.0203001849116742,
+      "count_acceptance": 0.0776611328125,
+      "parameter_acceptance": 0.538818359375,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 5,
+      "to_exposures": 6,
+      "beta": 0.34985974788294527,
+      "ess_before_resampling": 1638.400000000003,
+      "distinct_resampled_parents": 1652,
+      "log_evidence_increment_estimate": -4.072378296024268,
+      "count_acceptance": 0.0749755859375,
+      "parameter_acceptance": 0.5305419921875,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 5,
+      "to_exposures": 6,
+      "beta": 0.7369232493053687,
+      "ess_before_resampling": 1638.4,
+      "distinct_resampled_parents": 1659,
+      "log_evidence_increment_estimate": -4.261458621562973,
+      "count_acceptance": 0.068994140625,
+      "parameter_acceptance": 0.530810546875,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 5,
+      "to_exposures": 6,
+      "beta": 1.0,
+      "ess_before_resampling": 1861.6531785085494,
+      "distinct_resampled_parents": 1793,
+      "log_evidence_increment_estimate": -2.7561925874466757,
+      "count_acceptance": 0.0663330078125,
+      "parameter_acceptance": 0.5275634765625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 6,
+      "to_exposures": 7,
+      "beta": 0.2189713233195114,
+      "ess_before_resampling": 1638.400000000003,
+      "distinct_resampled_parents": 1642,
+      "log_evidence_increment_estimate": -2.746884530817054,
+      "count_acceptance": 0.0674560546875,
+      "parameter_acceptance": 0.5248046875,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 6,
+      "to_exposures": 7,
+      "beta": 0.46790502621014907,
+      "ess_before_resampling": 1638.400000000006,
+      "distinct_resampled_parents": 1639,
+      "log_evidence_increment_estimate": -2.855283115025056,
+      "count_acceptance": 0.067919921875,
+      "parameter_acceptance": 0.524365234375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 6,
+      "to_exposures": 7,
+      "beta": 0.755036362707849,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1645,
+      "log_evidence_increment_estimate": -3.022219288790213,
+      "count_acceptance": 0.0642578125,
+      "parameter_acceptance": 0.5205078125,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 6,
+      "to_exposures": 7,
+      "beta": 1.0,
+      "ess_before_resampling": 1787.7550776393284,
+      "distinct_resampled_parents": 1722,
+      "log_evidence_increment_estimate": -2.3938433517702213,
+      "count_acceptance": 0.0649169921875,
+      "parameter_acceptance": 0.5216064453125,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 7,
+      "to_exposures": 8,
+      "beta": 0.4368145044243015,
+      "ess_before_resampling": 1638.400000000006,
+      "distinct_resampled_parents": 1645,
+      "log_evidence_increment_estimate": -3.988268687267597,
+      "count_acceptance": 0.06064453125,
+      "parameter_acceptance": 0.5214111328125,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 7,
+      "to_exposures": 8,
+      "beta": 0.8904045604633418,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1654,
+      "log_evidence_increment_estimate": -3.8917326587228906,
+      "count_acceptance": 0.0561767578125,
+      "parameter_acceptance": 0.5191650390625,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 7,
+      "to_exposures": 8,
+      "beta": 1.0,
+      "ess_before_resampling": 2022.5262032476362,
+      "distinct_resampled_parents": 1961,
+      "log_evidence_increment_estimate": -0.9098706791781357,
+      "count_acceptance": 0.0524169921875,
+      "parameter_acceptance": 0.5149169921875,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 8,
+      "to_exposures": 9,
+      "beta": 0.5968471354523714,
+      "ess_before_resampling": 1638.400000000003,
+      "distinct_resampled_parents": 1642,
+      "log_evidence_increment_estimate": -4.289999607479134,
+      "count_acceptance": 0.0515380859375,
+      "parameter_acceptance": 0.513134765625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 8,
+      "to_exposures": 9,
+      "beta": 1.0,
+      "ess_before_resampling": 1883.5379344151197,
+      "distinct_resampled_parents": 1800,
+      "log_evidence_increment_estimate": -2.7676359736798277,
+      "count_acceptance": 0.0538330078125,
+      "parameter_acceptance": 0.5111083984375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 9,
+      "to_exposures": 10,
+      "beta": 0.2375829731447574,
+      "ess_before_resampling": 1638.4,
+      "distinct_resampled_parents": 1652,
+      "log_evidence_increment_estimate": -2.833753563260352,
+      "count_acceptance": 0.0526123046875,
+      "parameter_acceptance": 0.5088134765625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 9,
+      "to_exposures": 10,
+      "beta": 0.49153475509452876,
+      "ess_before_resampling": 1638.4000000000046,
+      "distinct_resampled_parents": 1653,
+      "log_evidence_increment_estimate": -2.7709998660872968,
+      "count_acceptance": 0.052880859375,
+      "parameter_acceptance": 0.510009765625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 9,
+      "to_exposures": 10,
+      "beta": 0.7803854873485276,
+      "ess_before_resampling": 1638.3999999999987,
+      "distinct_resampled_parents": 1629,
+      "log_evidence_increment_estimate": -2.871682132045227,
+      "count_acceptance": 0.052685546875,
+      "parameter_acceptance": 0.5173828125,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 9,
+      "to_exposures": 10,
+      "beta": 1.0,
+      "ess_before_resampling": 1831.3496077235452,
+      "distinct_resampled_parents": 1776,
+      "log_evidence_increment_estimate": -2.0395556664134267,
+      "count_acceptance": 0.0514892578125,
+      "parameter_acceptance": 0.5181396484375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 10,
+      "to_exposures": 11,
+      "beta": 0.8106663379266621,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1644,
+      "log_evidence_increment_estimate": -5.210846123766977,
+      "count_acceptance": 0.0507568359375,
+      "parameter_acceptance": 0.51640625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 10,
+      "to_exposures": 11,
+      "beta": 1.0,
+      "ess_before_resampling": 2025.5014579300873,
+      "distinct_resampled_parents": 1964,
+      "log_evidence_increment_estimate": -1.1799470517092372,
+      "count_acceptance": 0.0562255859375,
+      "parameter_acceptance": 0.5208984375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 11,
+      "to_exposures": 12,
+      "beta": 0.5338728960780905,
+      "ess_before_resampling": 1638.4000000000046,
+      "distinct_resampled_parents": 1659,
+      "log_evidence_increment_estimate": -4.382264844384378,
+      "count_acceptance": 0.0534423828125,
+      "parameter_acceptance": 0.519140625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 11,
+      "to_exposures": 12,
+      "beta": 1.0,
+      "ess_before_resampling": 1757.459020326602,
+      "distinct_resampled_parents": 1720,
+      "log_evidence_increment_estimate": -3.639097690015995,
+      "count_acceptance": 0.0473876953125,
+      "parameter_acceptance": 0.5217529296875,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 12,
+      "to_exposures": 13,
+      "beta": 0.3181747029452282,
+      "ess_before_resampling": 1638.4,
+      "distinct_resampled_parents": 1633,
+      "log_evidence_increment_estimate": -2.8744360779484346,
+      "count_acceptance": 0.0461181640625,
+      "parameter_acceptance": 0.5158447265625,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 12,
+      "to_exposures": 13,
+      "beta": 0.6925792519920312,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1630,
+      "log_evidence_increment_estimate": -3.096188375402823,
+      "count_acceptance": 0.044287109375,
+      "parameter_acceptance": 0.518603515625,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 12,
+      "to_exposures": 13,
+      "beta": 1.0,
+      "ess_before_resampling": 1814.0658888446105,
+      "distinct_resampled_parents": 1753,
+      "log_evidence_increment_estimate": -2.371625740226878,
+      "count_acceptance": 0.0432373046875,
+      "parameter_acceptance": 0.5130126953125,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 13,
+      "to_exposures": 14,
+      "beta": 0.6091614835614187,
+      "ess_before_resampling": 1638.400000000006,
+      "distinct_resampled_parents": 1643,
+      "log_evidence_increment_estimate": -4.729919522630697,
+      "count_acceptance": 0.0417724609375,
+      "parameter_acceptance": 0.5153076171875,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 13,
+      "to_exposures": 14,
+      "beta": 1.0,
+      "ess_before_resampling": 1889.4964008194115,
+      "distinct_resampled_parents": 1806,
+      "log_evidence_increment_estimate": -2.909815088737859,
+      "count_acceptance": 0.0428955078125,
+      "parameter_acceptance": 0.5073974609375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 14,
+      "to_exposures": 15,
+      "beta": 0.5390711683708673,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1634,
+      "log_evidence_increment_estimate": -3.89658006793238,
+      "count_acceptance": 0.0371826171875,
+      "parameter_acceptance": 0.5068115234375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 14,
+      "to_exposures": 15,
+      "beta": 1.0,
+      "ess_before_resampling": 1791.1943192262113,
+      "distinct_resampled_parents": 1740,
+      "log_evidence_increment_estimate": -3.1420331346992034,
+      "count_acceptance": 0.0368408203125,
+      "parameter_acceptance": 0.51298828125,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 15,
+      "to_exposures": 16,
+      "beta": 0.35636324397264474,
+      "ess_before_resampling": 1638.400000000003,
+      "distinct_resampled_parents": 1635,
+      "log_evidence_increment_estimate": -3.1276792300944347,
+      "count_acceptance": 0.0352783203125,
+      "parameter_acceptance": 0.5153564453125,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 15,
+      "to_exposures": 16,
+      "beta": 0.7819962310703684,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1648,
+      "log_evidence_increment_estimate": -3.435624844030488,
+      "count_acceptance": 0.0358154296875,
+      "parameter_acceptance": 0.5144287109375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 15,
+      "to_exposures": 16,
+      "beta": 1.0,
+      "ess_before_resampling": 1942.0324135223948,
+      "distinct_resampled_parents": 1856,
+      "log_evidence_increment_estimate": -1.6646403562567622,
+      "count_acceptance": 0.0322021484375,
+      "parameter_acceptance": 0.514013671875,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 16,
+      "to_exposures": 17,
+      "beta": 0.4163639364228686,
+      "ess_before_resampling": 1638.400000000003,
+      "distinct_resampled_parents": 1649,
+      "log_evidence_increment_estimate": -3.7157681239129268,
+      "count_acceptance": 0.02939453125,
+      "parameter_acceptance": 0.5093017578125,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 16,
+      "to_exposures": 17,
+      "beta": 0.8791288364863536,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1638,
+      "log_evidence_increment_estimate": -3.876046513502387,
+      "count_acceptance": 0.0314208984375,
+      "parameter_acceptance": 0.509765625,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 16,
+      "to_exposures": 17,
+      "beta": 1.0,
+      "ess_before_resampling": 2019.5023617645859,
+      "distinct_resampled_parents": 1963,
+      "log_evidence_increment_estimate": -0.9733178735404842,
+      "count_acceptance": 0.03203125,
+      "parameter_acceptance": 0.5138427734375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 17,
+      "to_exposures": 18,
+      "beta": 0.6054188367901254,
+      "ess_before_resampling": 1638.4000000000046,
+      "distinct_resampled_parents": 1663,
+      "log_evidence_increment_estimate": -5.145321819274487,
+      "count_acceptance": 0.03056640625,
+      "parameter_acceptance": 0.50703125,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 17,
+      "to_exposures": 18,
+      "beta": 1.0,
+      "ess_before_resampling": 1875.8348743822905,
+      "distinct_resampled_parents": 1787,
+      "log_evidence_increment_estimate": -3.238250177562292,
+      "count_acceptance": 0.0311279296875,
+      "parameter_acceptance": 0.5097412109375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 18,
+      "to_exposures": 19,
+      "beta": 0.5586419901772004,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1653,
+      "log_evidence_increment_estimate": -4.349637707969842,
+      "count_acceptance": 0.02958984375,
+      "parameter_acceptance": 0.5048583984375,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 18,
+      "to_exposures": 19,
+      "beta": 1.0,
+      "ess_before_resampling": 1808.4020527582018,
+      "distinct_resampled_parents": 1760,
+      "log_evidence_increment_estimate": -3.2800126800013514,
+      "count_acceptance": 0.027197265625,
+      "parameter_acceptance": 0.499560546875,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 19,
+      "to_exposures": 20,
+      "beta": 0.6250879632379878,
+      "ess_before_resampling": 1638.4,
+      "distinct_resampled_parents": 1627,
+      "log_evidence_increment_estimate": -3.9869399350073422,
+      "count_acceptance": 0.028466796875,
+      "parameter_acceptance": 0.4969970703125,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 19,
+      "to_exposures": 20,
+      "beta": 1.0,
+      "ess_before_resampling": 1918.0709065136489,
+      "distinct_resampled_parents": 1830,
+      "log_evidence_increment_estimate": -2.28092931735926,
+      "count_acceptance": 0.029052734375,
+      "parameter_acceptance": 0.497021484375,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 20,
+      "to_exposures": 21,
+      "beta": 1.0,
+      "ess_before_resampling": 1875.8918726460054,
+      "distinct_resampled_parents": 1800,
+      "log_evidence_increment_estimate": -5.291233461724141,
+      "count_acceptance": 0.0259033203125,
+      "parameter_acceptance": 0.488818359375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 21,
+      "to_exposures": 22,
+      "beta": 0.3810258831570259,
+      "ess_before_resampling": 1638.4,
+      "distinct_resampled_parents": 1658,
+      "log_evidence_increment_estimate": -3.246785934690209,
+      "count_acceptance": 0.0247802734375,
+      "parameter_acceptance": 0.49521484375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 21,
+      "to_exposures": 22,
+      "beta": 0.8134773069406158,
+      "ess_before_resampling": 1638.400000000003,
+      "distinct_resampled_parents": 1649,
+      "log_evidence_increment_estimate": -3.4189112623202593,
+      "count_acceptance": 0.0255126953125,
+      "parameter_acceptance": 0.4865478515625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 21,
+      "to_exposures": 22,
+      "beta": 1.0,
+      "ess_before_resampling": 1973.7854599621567,
+      "distinct_resampled_parents": 1888,
+      "log_evidence_increment_estimate": -1.4003167438234998,
+      "count_acceptance": 0.02509765625,
+      "parameter_acceptance": 0.4829833984375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 22,
+      "to_exposures": 23,
+      "beta": 0.6488250708059127,
+      "ess_before_resampling": 1638.400000000003,
+      "distinct_resampled_parents": 1626,
+      "log_evidence_increment_estimate": -4.020033739464687,
+      "count_acceptance": 0.02392578125,
+      "parameter_acceptance": 0.4849365234375,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 22,
+      "to_exposures": 23,
+      "beta": 1.0,
+      "ess_before_resampling": 1936.0122051254875,
+      "distinct_resampled_parents": 1851,
+      "log_evidence_increment_estimate": -2.0760037411125305,
+      "count_acceptance": 0.02314453125,
+      "parameter_acceptance": 0.4856689453125,
+      "maximum_sampled_count": 8
+    },
+    {
+      "from_exposures": 23,
+      "to_exposures": 24,
+      "beta": 0.4505675376644973,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1677,
+      "log_evidence_increment_estimate": -5.981172653570303,
+      "count_acceptance": 0.0234130859375,
+      "parameter_acceptance": 0.47802734375,
+      "maximum_sampled_count": 8
+    },
+    {
+      "from_exposures": 23,
+      "to_exposures": 24,
+      "beta": 0.8993013688221513,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1675,
+      "log_evidence_increment_estimate": -5.7279174347063835,
+      "count_acceptance": 0.0219482421875,
+      "parameter_acceptance": 0.4774169921875,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 23,
+      "to_exposures": 24,
+      "beta": 1.0,
+      "ess_before_resampling": 2025.6762952247905,
+      "distinct_resampled_parents": 1972,
+      "log_evidence_increment_estimate": -1.2536467311644799,
+      "count_acceptance": 0.020703125,
+      "parameter_acceptance": 0.4761474609375,
+      "maximum_sampled_count": 8
+    },
+    {
+      "from_exposures": 24,
+      "to_exposures": 25,
+      "beta": 0.3661853667063113,
+      "ess_before_resampling": 1638.400000000003,
+      "distinct_resampled_parents": 1645,
+      "log_evidence_increment_estimate": -3.405611249659188,
+      "count_acceptance": 0.0207275390625,
+      "parameter_acceptance": 0.4707275390625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 24,
+      "to_exposures": 25,
+      "beta": 0.7778737206780495,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1652,
+      "log_evidence_increment_estimate": -3.5593606323647453,
+      "count_acceptance": 0.0189208984375,
+      "parameter_acceptance": 0.4674560546875,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 24,
+      "to_exposures": 25,
+      "beta": 1.0,
+      "ess_before_resampling": 1926.5390633062113,
+      "distinct_resampled_parents": 1850,
+      "log_evidence_increment_estimate": -1.831104778702021,
+      "count_acceptance": 0.019189453125,
+      "parameter_acceptance": 0.4666259765625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 25,
+      "to_exposures": 26,
+      "beta": 0.761961581168439,
+      "ess_before_resampling": 1638.4,
+      "distinct_resampled_parents": 1644,
+      "log_evidence_increment_estimate": -5.638458093169168,
+      "count_acceptance": 0.0186767578125,
+      "parameter_acceptance": 0.46435546875,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 25,
+      "to_exposures": 26,
+      "beta": 1.0,
+      "ess_before_resampling": 2007.8695918813644,
+      "distinct_resampled_parents": 1943,
+      "log_evidence_increment_estimate": -1.7136986764211413,
+      "count_acceptance": 0.018896484375,
+      "parameter_acceptance": 0.45859375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 26,
+      "to_exposures": 27,
+      "beta": 0.44103446304903215,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1638,
+      "log_evidence_increment_estimate": -4.07059080357104,
+      "count_acceptance": 0.0185791015625,
+      "parameter_acceptance": 0.456884765625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 26,
+      "to_exposures": 27,
+      "beta": 0.9337327525594658,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1640,
+      "log_evidence_increment_estimate": -4.297589191034327,
+      "count_acceptance": 0.0176025390625,
+      "parameter_acceptance": 0.4541259765625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 26,
+      "to_exposures": 27,
+      "beta": 1.0,
+      "ess_before_resampling": 2039.6696022169904,
+      "distinct_resampled_parents": 1990,
+      "log_evidence_increment_estimate": -0.5606097329625852,
+      "count_acceptance": 0.0180419921875,
+      "parameter_acceptance": 0.457470703125,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 27,
+      "to_exposures": 28,
+      "beta": 0.33421162978385865,
+      "ess_before_resampling": 1638.4000000000046,
+      "distinct_resampled_parents": 1668,
+      "log_evidence_increment_estimate": -3.2110842893068945,
+      "count_acceptance": 0.0189697265625,
+      "parameter_acceptance": 0.454296875,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 27,
+      "to_exposures": 28,
+      "beta": 0.6997501990609601,
+      "ess_before_resampling": 1638.4000000000046,
+      "distinct_resampled_parents": 1653,
+      "log_evidence_increment_estimate": -3.2783918954965756,
+      "count_acceptance": 0.019140625,
+      "parameter_acceptance": 0.4506103515625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 27,
+      "to_exposures": 28,
+      "beta": 1.0,
+      "ess_before_resampling": 1795.7028685861949,
+      "distinct_resampled_parents": 1748,
+      "log_evidence_increment_estimate": -2.5132726568310613,
+      "count_acceptance": 0.01728515625,
+      "parameter_acceptance": 0.450439453125,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 28,
+      "to_exposures": 29,
+      "beta": 0.5171406287822826,
+      "ess_before_resampling": 1638.4000000000017,
+      "distinct_resampled_parents": 1649,
+      "log_evidence_increment_estimate": -4.215066095284467,
+      "count_acceptance": 0.016943359375,
+      "parameter_acceptance": 0.44462890625,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 28,
+      "to_exposures": 29,
+      "beta": 1.0,
+      "ess_before_resampling": 1763.3113632908503,
+      "distinct_resampled_parents": 1715,
+      "log_evidence_increment_estimate": -3.735245145076677,
+      "count_acceptance": 0.0169189453125,
+      "parameter_acceptance": 0.445849609375,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 29,
+      "to_exposures": 30,
+      "beta": 1.0,
+      "ess_before_resampling": 1750.3218852843765,
+      "distinct_resampled_parents": 1708,
+      "log_evidence_increment_estimate": -6.145001336023647,
+      "count_acceptance": 0.0167236328125,
+      "parameter_acceptance": 0.44462890625,
+      "maximum_sampled_count": 7
+    }
+  ],
+  "work": {
+    "catalogue_evaluations": 11304960,
+    "catalogue_pixels": 1293705216,
+    "pixel_block": 128
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "method": "bounded_weight_importance",
+  "status": "unresolved",
+  "scaled_evidence": [
+    1.883941577255329e-36,
+    1.0861157647343838e-35
+  ],
+  "relative_evidence_gap": 4.765124448905261,
+  "queries": {
+    "has:stationary": [
+      0.0,
+      0.824977869314588
+    ],
+    "has:moving": [
+      0.0,
+      0.8249575930013734
+    ]
+  },
+  "point_estimates_not_certificates": {
+    "has:stationary": 0.04598879789187686,
+    "has:moving": 0.04669642996826888
+  },
+  "simultaneous_confidence": 0.99,
+  "samples": 1000000,
+  "seed": 20261023,
+  "proposal_envelope": 4.950842947273678e-31,
+  "maximum_observed_scaled_weight": 7.564003302664945e-05,
+  "dual_envelope_requested": true,
+  "noise_floor_applied": true,
+  "analytically_integrated_cells": 1,
+  "deterministic_scaled_evidence": [
+    1.883941577255329e-36,
+    1.8839415772553298e-36
+  ],
+  "represented_source_count_tail_upper": 0.0,
+  "maximum_sampled_source_count": 1,
+  "construction_seconds": 3.253919347000192,
+  "seconds": 24.315417514999353,
+  "arithmetic": "float64 sampling, rendering and concentration bounds; not formal arithmetic certification",
+  "confidence_scope": "fixed-budget draws conditional on exact stated sampling/evaluation/model assumptions",
+  "full_objective_complete": false
+}

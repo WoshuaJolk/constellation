@@ -1,0 +1,13 @@
+{
+  "log_predictive_density_bounds": [
+    -284.8386839330752,
+    -272.94677627189986
+  ],
+  "simultaneous_confidence_lower": 0.99,
+  "confidence_combination": "union bound for two fixed-budget 99.5% evidence intervals",
+  "definition": "log Z(training + held-out pixels) - log Z(training pixels)",
+  "heldout_used_to_choose_prior": false,
+  "shared_background_marginalized": true,
+  "conditional_on_stated_model_and_float_sampling_assumptions": true,
+  "full_objective_complete": false
+}

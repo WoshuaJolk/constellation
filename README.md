@@ -1,4 +1,9 @@
-# Magictools astronomy
+# Constellation astronomy
+
+**For agents:** [`constellation`](docs/agent-cli.md) offers JSON discovery,
+schemas, runnable examples, input validation, execution and checkpoint inspection
+for Kepler and FitSky. Install with `pip install '.[research,agent]'`, then run
+`constellation list`. Scientific limitations remain explicit in every run.
 
 Working implementations of twelve ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Version 0.6 adds **`fold_kepler`: shared orbit sums with bounded screening and precise candidate refinement**. A synthetic 64,000-orbit benchmark gives about 3.6× faster evaluation after compilation, with identical detections/top candidates to direct evaluation. Compilation makes a single-use run slower; the benefit is repeated searches with a reusable bank. See the [derivation, benchmark and limits](docs/fold-kepler.md). Earlier versions provide real ZTF inputs, measured PSFs, vetting, injections, null inference, finite survey selection, and verifiable finite assignments. Each has an explicit scope; all-survey completeness and validated discovery probabilities remain future work.
 
@@ -106,11 +111,11 @@ These are Python library functions and command-line tools. Inference runs offlin
 
 ## Install and try
 
-Python 3.10 or newer:
+Python 3.10 or newer for the core tools; Python 3.11 or newer for the research and Constellation agent installation:
 
 ```bash
-git clone https://github.com/WoshuaJolk/magictools.git
-cd magictools
+git clone https://github.com/WoshuaJolk/constellation.git
+cd constellation
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[test]'
@@ -197,6 +202,31 @@ posterior = update_nulls([1, 1, 1], log_null)
 ranked = rank_exposures(posterior['posterior_weights'], [[0.5, 0.95, 0.05]])
 ```
 
-Runtime dependencies: NumPy, SciPy, Astropy. Tests use pytest. The repository includes GitHub Actions checks on Python 3.10 and 3.12.
+Runtime dependencies: NumPy, SciPy, Astropy. Tests use pytest. The repository includes GitHub Actions research checks on Python 3.11 and 3.12; archive checks also cover Python 3.10.
 
 Independent validation includes analytic bound/unbound two-body trajectories, light-time/parallax cases, and frozen JPL Horizons Ceres vectors. In the ten-day Ceres check, the propagated position differs by about **0.18 km** and the geocentric direction by **0.034–0.038 arcseconds**. These results validate that particular case, not arbitrary close encounters, long arcs, or astrometric precision across the sky. All tests run offline.
+
+## FitSky full-objective research
+
+The [FitSky campaign](research/fit_sky/README.md) implements joint catalogue
+inference with source interactions, continuous source/count uncertainty, shared
+instrument nuisance, replayable posterior bounds, and global statistical
+integration. A confused-source experiment meets its declared evidence and
+posterior accuracy targets while retaining ambiguity between one and two
+sources. A subsequent continuous-template bound also brings the original
+moving-source, two-image, and three-image ZTF experiments within their declared
+accuracy targets, with posterior catalogue draws and a bounded held-out
+predictive calculation. Broad mixed scenes remain unresolved: **the full FitSky objective is
+not achieved**. The original rubric,
+failed attempts, source snapshots, and independent controls are retained.
+
+The optional research command is `magictools-fit-sky`; see its
+[model and interface guide](docs/fit-sky.md). This work adds no modifications to
+the existing Kepler implementation.
+
+`magictools-fit-sky-stream` adds resumable, approximate inference across
+exposure sequences, with unknown source counts, shared calibration, conditional
+flux updates and split/merge moves. The
+[30-exposure mixed-scene follow-up](research/fit_sky/sequential_results/README.md)
+retains the original broad priors. Its global accuracy bounds remain unresolved;
+handling more exposures is not a full-solution claim.

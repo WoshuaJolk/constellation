@@ -1,0 +1,19 @@
+{
+  "real": {
+    "status": "unresolved",
+    "queries": {
+      "has:stationary": [
+        0.0,
+        1.0
+      ],
+      "has:moving": [
+        0.0,
+        1.0
+      ]
+    },
+    "relative_evidence_gap": 4.707008174202525e+30,
+    "seconds": 25.51744602000008,
+    "maximum_sampled_source_count": 1,
+    "full_objective_complete": false
+  }
+}

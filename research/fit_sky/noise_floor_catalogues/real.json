@@ -1,0 +1,4940 @@
+{
+  "catalogues": [
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 1.0911947461893778,
+            "x": 1.7698109866043086,
+            "y": 0.7085321135640547
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 12.461494733407344,
+            "x": -1.7342418498910483,
+            "y": 0.05634324842248328
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 5.094922139272212,
+            "vx": -1.4638597214618017,
+            "vy": -18.357794506356413,
+            "x": -1.2858301733167072,
+            "y": -1.1618109121229894
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 7.659829381003669,
+            "x": -0.3507703877079421,
+            "y": 1.67230539128792
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 0.34394566706766605,
+            "x": 1.4406541297655877,
+            "y": -0.9483971764777126
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 2.6453512832522286,
+            "vx": -25.713753743917113,
+            "vy": 16.804883975988844,
+            "x": -1.689121667698424,
+            "y": 0.546892368039483
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 1.7643497276400368,
+            "vx": 6.359042657696783,
+            "vy": -4.394812614128291,
+            "x": -1.1984630522493984,
+            "y": -0.11828237271910624
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 20.378477137762385,
+            "vx": -19.22072664946229,
+            "vy": 7.320397490367597,
+            "x": -1.9150571430074739,
+            "y": 1.5517465443617873
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 9.568937839897698,
+            "x": -1.758283374928351,
+            "y": -0.33830030031128444
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 3.9764743671417206,
+            "vx": -17.5376606861537,
+            "vy": -27.975595100841954,
+            "x": -0.973019014115812,
+            "y": 0.7019279753980299
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 5.72188148515696,
+            "x": 1.9385277219050563,
+            "y": -1.8572867598053344
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 9.154310126958462,
+            "vx": 28.16473944702942,
+            "vy": 1.183388228495101,
+            "x": 1.5113840906157563,
+            "y": -1.486334639709928
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 1.0376662400248857,
+            "vx": -7.072314481747938,
+            "vy": 24.898023528986805,
+            "x": -0.7044430143701859,
+            "y": 1.02402172789905
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 3.421056991545353,
+            "vx": 28.57262938266669,
+            "vy": 28.678529268155458,
+            "x": -1.6074673386240996,
+            "y": -0.05132147376645524
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 8.293908192181396,
+            "x": 1.2173756806156328,
+            "y": -1.246036467074698
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 4.735511202735659,
+            "x": -0.8589611590471954,
+            "y": 0.5210693187582452
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 15.435664781541277,
+            "vx": -6.437292448439308,
+            "vy": -5.217756746863429,
+            "x": -1.9214503795244178,
+            "y": 0.18176143855852234
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 1.2790936636332517,
+            "vx": -1.5778692477072873,
+            "vy": -24.89786725278168,
+            "x": 0.5213411947836015,
+            "y": 1.7968169311337059
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 8.093775525527363,
+            "x": -1.75417901678638,
+            "y": 1.4336235842244958
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 0.11621568419658279,
+            "vx": 5.133070795739918,
+            "vy": -3.289022143179949,
+            "x": 1.1069606574163808,
+            "y": 0.44639523022545635
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 9.581770238027085,
+            "x": -1.8621126879802157,
+            "y": 0.8133650911407234
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 5.479412290847771,
+            "x": -0.08645900149345787,
+            "y": 1.0664918479167285
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 3.663154589191503,
+            "x": -1.7392748640596305,
+            "y": 0.9313661498594521
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 6.409444956618334,
+            "vx": -26.457488115537878,
+            "vy": 24.246267843459925,
+            "x": -1.6030554535421007,
+            "y": 0.5283484991265464
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 5.837427527136491,
+            "vx": -29.671526067751756,
+            "vy": 2.4339215809649772,
+            "x": 1.4686869913798555,
+            "y": -0.8258388252873929
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 1.4582169865920758,
+            "x": 1.7777332740214824,
+            "y": 1.163557951799824
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 3.4941112774116183,
+            "vx": -28.12174288165306,
+            "vy": -16.383982502522635,
+            "x": 1.8335248057815048,
+            "y": -0.5262112379727735
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 5.297554060892909,
+            "x": -1.157877603464001,
+            "y": -1.9064072170549564
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 15.00021630733001,
+            "x": -1.4765912344252068,
+            "y": -0.9689290012606462
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 6.224295828643814,
+            "x": -0.16431410515867506,
+            "y": 0.4214229280951217
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 8.150566580432361,
+            "x": -1.8937639091979923,
+            "y": 1.4440126213817357
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 5.558056367019495,
+            "vx": -9.427280699078707,
+            "vy": 14.041992567570446,
+            "x": 1.8242671210089236,
+            "y": 1.0308582793333887
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 5.336357299143868,
+            "x": 1.1813461686235227,
+            "y": -1.423854087941272
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 10.829195483411192,
+            "vx": -15.871033590176252,
+            "vy": 8.3616367384937,
+            "x": -1.6745551685019793,
+            "y": -0.4584258637749007
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 19.31651376243802,
+            "vx": -6.28089833104594,
+            "vy": -8.893915330342196,
+            "x": -1.6125095364713915,
+            "y": 0.3437676860414045
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 0.11891371865826728,
+            "x": 1.1599601789210872,
+            "y": 1.5129376041323161
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 10.397220161692925,
+            "vx": 7.847047481053444,
+            "vy": 25.363604708103445,
+            "x": -0.9673819446300899,
+            "y": 0.22794925397112198
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 1.0435323787647888,
+            "x": -0.28154617526549386,
+            "y": 0.39488160530825966
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 10.072537447557947,
+            "x": -1.866208697796203,
+            "y": 0.017397851355087535
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 14.20207838815778,
+            "x": 1.9870495580837195,
+            "y": -1.92835558497049
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 13.273867526370642,
+            "x": -1.9905615611874525,
+            "y": 0.10039369788982999
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 2.60606506555498,
+            "x": 1.6330278498345518,
+            "y": -1.5881946803680103
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 10.88052573294436,
+            "vx": -21.92307904907479,
+            "vy": -8.377072526178285,
+            "x": 1.4857700711263426,
+            "y": -1.7337526730769461
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 0.4567018155860525,
+            "x": -1.3087595464565003,
+            "y": -1.1826776890967663
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 4.0262974928391255,
+            "vx": 2.1632549228701663,
+            "vy": 24.449425222473486,
+            "x": -1.3672327644159967,
+            "y": -1.632590587406438
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 7.370276780958164,
+            "vx": 17.92246178574507,
+            "vy": -10.24223413952053,
+            "x": -0.3702467324770742,
+            "y": 1.8499030056696228
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 15.47623665417339,
+            "vx": 27.51312754286863,
+            "vy": -6.895191638366189,
+            "x": 1.9295532977084964,
+            "y": -1.949617467641239
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 12.09025767588605,
+            "x": -1.540344706687661,
+            "y": 0.4208581783315446
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 0.10539230751986095,
+            "vx": 21.992923543114337,
+            "vy": 11.666091149847503,
+            "x": 1.6436105315803131,
+            "y": 1.3499224832940975
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 11.802212271594993,
+            "vx": 3.4405740784783703,
+            "vy": -10.944633343822815,
+            "x": -1.781988453604527,
+            "y": 0.6510429037321057
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 6.855054720622861,
+            "x": -0.5706606279326459,
+            "y": -0.712433088896505
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 3.3670160019890676,
+            "vx": -28.976330583684554,
+            "vy": 24.775074971622047,
+            "x": 0.9429275932817414,
+            "y": 1.8692101533497567
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 4.687287251000782,
+            "x": -0.041769295346942736,
+            "y": 0.05335424735772254
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 7.097720033090981,
+            "vx": 7.0022757458025495,
+            "vy": 7.010702472223066,
+            "x": 0.36225249815536087,
+            "y": 1.602700020171845
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 5.5525132506168235,
+            "vx": -2.2713109780659195,
+            "vy": 2.6164729640408737,
+            "x": -1.4924726680972022,
+            "y": 0.5821418423515793
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 3.722967693900947,
+            "vx": -2.093336948727689,
+            "vy": -6.665129824477582,
+            "x": 1.070771632770668,
+            "y": 1.8001085809739745
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 4.264646989418777,
+            "vx": -10.459159517329361,
+            "vy": -7.151221699863193,
+            "x": 1.6192301521991217,
+            "y": 1.3036913613314933
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 8.654018730946945,
+            "x": -1.1498800691442934,
+            "y": -0.2736008139122623
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 9.480047435185954,
+            "vx": -8.354530575412657,
+            "vy": 26.143723609317867,
+            "x": -1.2546927282883051,
+            "y": 0.6763118335345075
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 3.010504664199491,
+            "vx": -17.84467765992842,
+            "vy": -9.617332216258191,
+            "x": -0.017148377422844585,
+            "y": -0.6140794367605708
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 4.199690510999446,
+            "x": 1.296160078006637,
+            "y": -0.6348516446951381
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 10.84252145468676,
+            "x": -1.8588863433243192,
+            "y": 0.15469702004254615
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 1.7893727833146411,
+            "x": -0.8750394249469707,
+            "y": 0.6122146350235285
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 6.168254422232508,
+            "vx": -24.643364543183175,
+            "vy": -17.423118270354717,
+            "x": 1.358675425984835,
+            "y": -1.1578898995115652
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 14.095199762908258,
+            "x": -1.9187208342333062,
+            "y": -0.23247699519181553
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 3.72557220967257,
+            "x": -0.9943591947045949,
+            "y": 1.9076789963305614
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 12.200104118259677,
+            "vx": 27.660453220710572,
+            "vy": -4.634727697256121,
+            "x": 1.4073588324120316,
+            "y": -1.8454504422325848
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 13.86870145778198,
+            "x": -0.7440643902251733,
+            "y": -0.4598951787614075
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 4.79910943815332,
+            "x": -1.3269838680066464,
+            "y": 0.46732183242121417
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 4.432673580035338,
+            "vx": -19.85288090404494,
+            "vy": 10.654179528378435,
+            "x": -1.34221314227614,
+            "y": 0.4991628322864943
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 0.5282479419379787,
+            "x": -0.027904440378689,
+            "y": -0.7550671329350712
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 3.6400722096180727,
+            "x": -0.7948467655910751,
+            "y": -0.25849388465058165
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 10.288293919852318,
+            "x": -1.5298291970262068,
+            "y": -0.679842311850172
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 8.711498329718614,
+            "x": 0.9844682298229089,
+            "y": 0.9991180935861838
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 5.922013668490226,
+            "x": 1.6892532068898847,
+            "y": -1.3475499706692877
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 0.3402213262041376,
+            "vx": 14.2145314321072,
+            "vy": 13.749769776517802,
+            "x": -0.4004848090525639,
+            "y": -1.3074218760025138
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 5.172087444637585,
+            "x": -0.3951791149171118,
+            "y": 0.013786240728304477
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 0.8151600746316684,
+            "vx": 23.79984220932812,
+            "vy": -21.689187637175127,
+            "x": -0.41542283562231574,
+            "y": -1.356503525709754
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 2.695448137659637,
+            "x": 0.7618216482193803,
+            "y": -0.49440589132098023
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 2.1592447746560746,
+            "vx": -21.576403219358312,
+            "vy": -0.7577984691894173,
+            "x": 0.009769703436824928,
+            "y": 0.7242161786679467
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 1.5056281876697248,
+            "vx": -11.400392486328975,
+            "vy": -3.5904622947236184,
+            "x": 0.2735811015944184,
+            "y": 1.0117042892678323
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 2.955529105035351,
+            "x": 0.817589346248523,
+            "y": -0.8324398467439025
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "flux": 6.8783196573440035,
+            "x": -1.947641529218339,
+            "y": -1.5594604602550035
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "flux": 1.5839771239405331,
+            "vx": -10.02278063563066,
+            "vy": 23.7338978219723,
+            "x": 1.3202602885633554,
+            "y": -1.4064625927766432
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    }
+  ],
+  "proposals": 536195,
+  "evaluated_proposals": 536576,
+  "seed": 20261030,
+  "complete": true,
+  "conditional_on_represented_source_counts": true,
+  "excluded_posterior_mass_upper": 0.0,
+  "sampling_arithmetic": "float64 RNG, proposal weights and forward-model acceptance",
+  "seconds": 16.721383405999404,
+  "identical_to_pre_refactor_seeded_catalogues": true,
+  "input_sha256": {
+    "research/fit_sky/results/real.json": "381417d493fc4892b535fcfab8b0bddd8570c4a94d3a35275ee2b661cd485c47",
+    "research/fit_sky/noise_floor_results/real-global.json": "8c68cf7c3487f9451851dd507d3fe4c3ea77720692deed77408c8d866523ac53",
+    "research/fit_sky/noise_floor_results/real-conditional.json": "a377954dc89477ae4c446e428d8c7c6d984126e42d5268cbb62f853c9bf98aa4"
+  },
+  "class_counts": {
+    "stationary": 45,
+    "moving": 39
+  }
+}
