@@ -33,6 +33,7 @@ include = [
     "research.kepler_transform.temporal",
     "research.kepler_transform.timing",
     "research.kepler_transform.ordered",
+    "research.kepler_transform.detector_time",
     "research.detection_limit",
 ]
 namespaces = true

@@ -1,6 +1,14 @@
 # Full-objective Kepler transform attempts
 
-**Latest research phase:** [certified time compression](temporal/README.md)
+**Latest:** the [finite-detector time-compression phase](detector_time/README.md)
+adds a common Fourier grid for masked, heteroscedastic Gaussian pixel
+likelihoods with affine astrometry and explicit model-error bounds. It checks
+the adapter on real ZTF pixels and the complete pipeline on 1,024 simulated
+exposures over eight days. Likelihood accuracy holds, but optimized direct
+pixel methods and their factor caches are faster in the measured workloads.
+The earlier Fourier-input wins do not yet establish pixel-to-detection speedups.
+
+The preceding [certified time compression](temporal/README.md)
 replaces the six-dimensional field with a sum of two-dimensional Fourier
 fields at certified time nodes. It includes pixel FFTs, fast time moments,
 arbitrary query access, and direct baselines with geometry, NUFFT-plan and

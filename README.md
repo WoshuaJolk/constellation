@@ -45,6 +45,14 @@ construction and output access, and include cached direct methods.
 The useful regime is dense cadence; arbitrary archive inputs, a numerical
 certificate and a stable inverse remain open.
 
+The [finite-detector follow-up](research/kepler_transform/detector_time/README.md)
+connects masked pixels, varying Gaussian PSFs and affine astrometry to both
+likelihood statistics on a common Fourier grid. Real ZTF pixel checks and a
+1,024-exposure controlled experiment preserve likelihood accuracy. The complete
+pipeline is slower than the tested optimized direct pixel methods, including
+their caches; the earlier Fourier-input speedups are not yet end-to-end
+astronomical detection speedups.
+
 The [full-objective `prove_floor` research](research/detection_limit/README.md)
 adds continuous-family detection certificates, least-favorable-prior searches,
 and interval orbital image models. It closes the power gap below one percentage

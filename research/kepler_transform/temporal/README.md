@@ -1,5 +1,11 @@
 # A focused research phase: compress time, eliminate the orbit tensor
 
+**Follow-up:** the [finite-detector likelihood campaign](../detector_time/README.md)
+validates a real-pixel adapter and an eight-day, 1,024-exposure controlled stack.
+Its complete likelihood pipeline is slower than optimized direct pixels and
+their caches. The speedups below remain specific to their declared Fourier
+inputs and Fourier evaluation baselines.
+
 The objective of this phase is to make both transform application and result
 access cheaper, with a justified total cost and accuracy across the full orbit
 box. The candidate is a **different representation**, not a smaller
