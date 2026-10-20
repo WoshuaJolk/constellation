@@ -1,0 +1,19 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "numba": "0.68.0",
+    "python-flint": "0.8.0",
+    "finufft": "2.5.1",
+    "pytest": "9.1.1"
+  },
+  "test_command": "OPENBLAS_NUM_THREADS=1 python -m pytest -q",
+  "test_result": {
+    "passed": 338,
+    "skipped": 1
+  },
+  "full_objective_complete": false
+}

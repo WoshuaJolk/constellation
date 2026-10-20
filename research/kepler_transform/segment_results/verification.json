@@ -1,0 +1,9 @@
+{
+  "verified_source_files": 48,
+  "endpoint_rank_certificates_recomputed": 3,
+  "inverse_certificates_recomputed": 2,
+  "real_ZTF_pixel_identity_recomputed": true,
+  "original_orbit_domains_preserved": true,
+  "complete_fast_transform_constructed": false,
+  "full_objective_complete": false
+}
