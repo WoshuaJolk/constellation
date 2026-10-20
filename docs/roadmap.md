@@ -52,6 +52,15 @@ baselines, not only the earlier Python propagation baseline. General outer
 synthesis, full numerical certification and realistic large-survey performance
 still prevent marking the original objective complete.
 
+The [global mathematical campaign](../research/kepler_transform/global_results/README.md)
+now gives a continuous six-coordinate response representation, a conditional
+complexity theorem, and quantitative complex-time certificates on the declared
+near/distant/stress boxes. This removes the need to select fixed outer-coordinate
+slices for that bounded forward representation. It does not remove the
+six-dimensional resolution cost. The next full-objective mathematical obstacle
+is that representation cost together with a properly defined inverse; another
+benchmark speedup does not close either gap.
+
 The [full-objective detection-limit research](../research/detection_limit/README.md)
 now pairs detector power with universal dual upper bounds and validated
 continuous orbit-cell errors. It meets a one-percentage-point gap in solvable

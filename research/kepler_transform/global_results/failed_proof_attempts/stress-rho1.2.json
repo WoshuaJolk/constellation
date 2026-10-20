@@ -1,0 +1,3999 @@
+{
+  "case": "stress",
+  "depth": 1,
+  "ellipse_parameter": 1.2,
+  "chart": {
+    "observer": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "velocity": [
+      0.0,
+      0.017202098949957226,
+      0.0
+    ],
+    "normal": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "east": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "north": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "retarded_epoch": true
+  },
+  "root_center": [
+    0.5000000005483682,
+    1.8989404306735653e-07,
+    0.0,
+    -8.111978294259573e-05,
+    0.0,
+    -0.0015783219777299232
+  ],
+  "root_widths": [
+    0.25,
+    0.01,
+    9.69627362219072e-06,
+    4.84813681109536e-05,
+    4.84813681109536e-05,
+    9.69627362219072e-06
+  ],
+  "time_half_span_days": 4.0,
+  "frequency_scale": 206264.80624709636,
+  "global_physical_root_certificate": {
+    "nonzero_angular_momentum_certified": true,
+    "global_periapsis_speed_over_light_speed_upper": 0.15289812418632212,
+    "unique_physical_retarded_root": true
+  },
+  "records": [
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.65646672248841,
+      "frequency_phase_amplitudes": [
+        65.28452158696892,
+        10.30807085695655
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536821482274,
+        "contraction_upper": 0.16131336544640365,
+        "image_radius_upper": 3.6203731831008192,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702238470317,
+        "contraction_upper": 0.1637136342469603,
+        "image_radius_upper": 3.750580565892399,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.608417391777046,
+      "frequency_phase_amplitudes": [
+        65.12477900966827,
+        10.3080728489395
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536821482288,
+        "contraction_upper": 0.16131742205470803,
+        "image_radius_upper": 3.6203909218516204,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702238470317,
+        "contraction_upper": 0.16371801216155293,
+        "image_radius_upper": 3.7506003396811716,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.65935456752778,
+      "frequency_phase_amplitudes": [
+        65.28452200529316,
+        10.313202228299946
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536821482277,
+        "contraction_upper": 0.16131336661055687,
+        "image_radius_upper": 3.6203731893712634,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702238470317,
+        "contraction_upper": 0.16371363541111353,
+        "image_radius_upper": 3.750580572246756,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.61130517721177,
+      "frequency_phase_amplitudes": [
+        65.12477924808434,
+        10.31320426496419
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.37253682148229,
+        "contraction_upper": 0.1613174229860306,
+        "image_radius_upper": 3.620390927613034,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702238470317,
+        "contraction_upper": 0.16371801379136744,
+        "image_radius_upper": 3.750600347087155,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.54422646760941,
+      "frequency_phase_amplitudes": [
+        64.83913876156524,
+        10.308069461799283
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536754312936,
+        "contraction_upper": 0.1613116888329387,
+        "image_radius_upper": 3.620365797965661,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702165827156,
+        "contraction_upper": 0.16371187916956845,
+        "image_radius_upper": 3.7505725786395456,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.496172368526466,
+      "frequency_phase_amplitudes": [
+        64.67939412841953,
+        10.30807142391333
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536754312943,
+        "contraction_upper": 0.16131574218161407,
+        "image_radius_upper": 3.620383522139317,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702165827156,
+        "contraction_upper": 0.16371625475585463,
+        "image_radius_upper": 3.7505923415820903,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.54711395502091,
+      "frequency_phase_amplitudes": [
+        64.83913912028483,
+        10.31320081824152
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536754312939,
+        "contraction_upper": 0.16131168976426127,
+        "image_radius_upper": 3.620365803727075,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702165827156,
+        "contraction_upper": 0.16371188033372167,
+        "image_radius_upper": 3.7505725831312575,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.49906021356583,
+      "frequency_phase_amplitudes": [
+        64.6793943668356,
+        10.313202817586278
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.3725367543129465,
+        "contraction_upper": 0.16131574357859793,
+        "image_radius_upper": 3.6203835289187913,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702165827156,
+        "contraction_upper": 0.16371625592000785,
+        "image_radius_upper": 3.750592346073802,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.65935456752778,
+      "frequency_phase_amplitudes": [
+        65.28452200529316,
+        10.313202228299946
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536821482277,
+        "contraction_upper": 0.16131336661055687,
+        "image_radius_upper": 3.6203731893712634,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702238470317,
+        "contraction_upper": 0.16371363541111353,
+        "image_radius_upper": 3.750580572246756,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.61130517721177,
+      "frequency_phase_amplitudes": [
+        65.12477924808434,
+        10.31320426496419
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.37253682148229,
+        "contraction_upper": 0.1613174229860306,
+        "image_radius_upper": 3.620390927613034,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702238470317,
+        "contraction_upper": 0.16371801379136744,
+        "image_radius_upper": 3.750600347087155,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.65646672248841,
+      "frequency_phase_amplitudes": [
+        65.28452158696892,
+        10.30807085695655
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536821482274,
+        "contraction_upper": 0.16131336544640365,
+        "image_radius_upper": 3.6203731831008192,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702238470317,
+        "contraction_upper": 0.1637136342469603,
+        "image_radius_upper": 3.750580565892399,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.608417391777046,
+      "frequency_phase_amplitudes": [
+        65.12477900966827,
+        10.3080728489395
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536821482288,
+        "contraction_upper": 0.16131742205470803,
+        "image_radius_upper": 3.6203909218516204,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702238470317,
+        "contraction_upper": 0.16371801216155293,
+        "image_radius_upper": 3.7506003396811716,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.54711395502091,
+      "frequency_phase_amplitudes": [
+        64.83913912028483,
+        10.31320081824152
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536754312939,
+        "contraction_upper": 0.16131168976426127,
+        "image_radius_upper": 3.620365803727075,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702165827156,
+        "contraction_upper": 0.16371188033372167,
+        "image_radius_upper": 3.7505725831312575,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.49906021356583,
+      "frequency_phase_amplitudes": [
+        64.6793943668356,
+        10.313202817586278
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.3725367543129465,
+        "contraction_upper": 0.16131574357859793,
+        "image_radius_upper": 3.6203835289187913,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702165827156,
+        "contraction_upper": 0.16371625592000785,
+        "image_radius_upper": 3.750592346073802,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.54422646760941,
+      "frequency_phase_amplitudes": [
+        64.83913876156524,
+        10.308069461799283
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536754312936,
+        "contraction_upper": 0.1613116888329387,
+        "image_radius_upper": 3.620365797965661,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702165827156,
+        "contraction_upper": 0.16371187916956845,
+        "image_radius_upper": 3.7505725786395456,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.496172368526466,
+      "frequency_phase_amplitudes": [
+        64.67939412841953,
+        10.30807142391333
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.372536754312943,
+        "contraction_upper": 0.16131574218161407,
+        "image_radius_upper": 3.620383522139317,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516702165827156,
+        "contraction_upper": 0.16371625475585463,
+        "image_radius_upper": 3.7505923415820903,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.651766061782844,
+      "frequency_phase_amplitudes": [
+        65.29636179883028,
+        10.31319625806052
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.371863435943947,
+        "contraction_upper": 0.16124202543869617,
+        "image_radius_upper": 3.6195037465948325,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006646677853,
+        "contraction_upper": 0.16364095197059217,
+        "image_radius_upper": 3.749674727278,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.603704810142524,
+      "frequency_phase_amplitudes": [
+        65.13661920410456,
+        10.31319825742019
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.37186343594396,
+        "contraction_upper": 0.16124606970697644,
+        "image_radius_upper": 3.6195214272030305,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006646677853,
+        "contraction_upper": 0.16364531754516068,
+        "image_radius_upper": 3.749694441878014,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.64884102344514,
+      "frequency_phase_amplitudes": [
+        65.29636162001384,
+        10.307928287798473
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.3718634359439505,
+        "contraction_upper": 0.16124202427454296,
+        "image_radius_upper": 3.619503740324785,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006646677853,
+        "contraction_upper": 0.1636409510392696,
+        "image_radius_upper": 3.7496747214497805,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.60077971220017,
+      "frequency_phase_amplitudes": [
+        65.13661902528813,
+        10.307930242454661
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.371863435943963,
+        "contraction_upper": 0.16124606854282322,
+        "image_radius_upper": 3.619521420932983,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006646677853,
+        "contraction_upper": 0.16364531638100746,
+        "image_radius_upper": 3.749694435524062,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.53734767436982,
+      "frequency_phase_amplitudes": [
+        64.8431321917995,
+        10.313195091152927
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.371863368776348,
+        "contraction_upper": 0.161242495989427,
+        "image_radius_upper": 3.6195057494478973,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006579622627,
+        "contraction_upper": 0.1636414332315326,
+        "image_radius_upper": 3.7496768441109998,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.489283621311195,
+      "frequency_phase_amplitudes": [
+        64.68338920973399,
+        10.313197090490405
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.3718633687763555,
+        "contraction_upper": 0.16124654188752177,
+        "image_radius_upper": 3.6195234373439082,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006579622627,
+        "contraction_upper": 0.16364580066874626,
+        "image_radius_upper": 3.7496965685046613,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.53442257642747,
+      "frequency_phase_amplitudes": [
+        64.84313219179698,
+        10.307927128341463
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.371863368776352,
+        "contraction_upper": 0.16124249505810442,
+        "image_radius_upper": 3.6195057436868017,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006579622627,
+        "contraction_upper": 0.16364143206737938,
+        "image_radius_upper": 3.749676839619693,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.48635840415955,
+      "frequency_phase_amplitudes": [
+        64.68338903091755,
+        10.307929090426036
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.371863368776358,
+        "contraction_upper": 0.1612465404905379,
+        "image_radius_upper": 3.619523430564909,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006579622627,
+        "contraction_upper": 0.1636457997374237,
+        "image_radius_upper": 3.7496965626764416,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.64884102344514,
+      "frequency_phase_amplitudes": [
+        65.29636162001384,
+        10.307928287798473
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.3718634359439505,
+        "contraction_upper": 0.16124202427454296,
+        "image_radius_upper": 3.619503740324785,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006646677853,
+        "contraction_upper": 0.1636409510392696,
+        "image_radius_upper": 3.7496747214497805,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.60077971220017,
+      "frequency_phase_amplitudes": [
+        65.13661902528813,
+        10.307930242454661
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.371863435943963,
+        "contraction_upper": 0.16124606854282322,
+        "image_radius_upper": 3.619521420932983,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006646677853,
+        "contraction_upper": 0.16364531638100746,
+        "image_radius_upper": 3.749694435524062,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.651766061782844,
+      "frequency_phase_amplitudes": [
+        65.29636179883028,
+        10.31319625806052
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.371863435943947,
+        "contraction_upper": 0.16124202543869617,
+        "image_radius_upper": 3.6195037465948325,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006646677853,
+        "contraction_upper": 0.16364095197059217,
+        "image_radius_upper": 3.749674727278,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.603704810142524,
+      "frequency_phase_amplitudes": [
+        65.13661920410456,
+        10.31319825742019
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.37186343594396,
+        "contraction_upper": 0.16124606970697644,
+        "image_radius_upper": 3.6195214272030305,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006646677853,
+        "contraction_upper": 0.16364531754516068,
+        "image_radius_upper": 3.749694441878014,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.53442257642747,
+      "frequency_phase_amplitudes": [
+        64.84313219179698,
+        10.307927128341463
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.371863368776352,
+        "contraction_upper": 0.16124249505810442,
+        "image_radius_upper": 3.6195057436868017,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006579622627,
+        "contraction_upper": 0.16364143206737938,
+        "image_radius_upper": 3.749676839619693,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.48635840415955,
+      "frequency_phase_amplitudes": [
+        64.68338903091755,
+        10.307929090426036
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.371863368776358,
+        "contraction_upper": 0.1612465404905379,
+        "image_radius_upper": 3.619523430564909,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006579622627,
+        "contraction_upper": 0.1636457997374237,
+        "image_radius_upper": 3.7496965626764416,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.53734767436982,
+      "frequency_phase_amplitudes": [
+        64.8431321917995,
+        10.313195091152927
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.371863368776348,
+        "contraction_upper": 0.161242495989427,
+        "image_radius_upper": 3.6195057494478973,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006579622627,
+        "contraction_upper": 0.1636414332315326,
+        "image_radius_upper": 3.7496768441109998,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.37500000054836824,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 43.489283621311195,
+      "frequency_phase_amplitudes": [
+        64.68338920973399,
+        10.313197090490405
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.3718633687763555,
+        "contraction_upper": 0.16124654188752177,
+        "image_radius_upper": 3.6195234373439082,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 4.516006579622627,
+        "contraction_upper": 0.16364580066874626,
+        "image_radius_upper": 3.7496965685046613,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.438583016395576,
+      "frequency_phase_amplitudes": [
+        58.302056891962344,
+        10.309398888954032
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6961159897266116,
+        "contraction_upper": 0.13527978095225993,
+        "image_radius_upper": 2.96408709479746,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154629319907,
+        "contraction_upper": 0.13736334419809285,
+        "image_radius_upper": 3.069910909037976,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.37279152870179,
+      "frequency_phase_amplitudes": [
+        58.12712721148503,
+        10.309400184515845
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.696115989726615,
+        "contraction_upper": 0.13528429181315008,
+        "image_radius_upper": 2.9641037683296823,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154629319907,
+        "contraction_upper": 0.13736821431666615,
+        "image_radius_upper": 3.069929504795449,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.441421687603004,
+      "frequency_phase_amplitudes": [
+        58.30205689196151,
+        10.314279063949591
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6961159897266125,
+        "contraction_upper": 0.1352797818835825,
+        "image_radius_upper": 2.9640870965185986,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154629319907,
+        "contraction_upper": 0.13736334512941542,
+        "image_radius_upper": 3.069910912678588,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.37563025951386,
+      "frequency_phase_amplitudes": [
+        58.1271272114842,
+        10.314280374412565
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.696115989726616,
+        "contraction_upper": 0.13528429274447265,
+        "image_radius_upper": 2.964103770050821,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154629319907,
+        "contraction_upper": 0.13736821548081937,
+        "image_radius_upper": 3.069929508880553,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.31414943933488,
+      "frequency_phase_amplitudes": [
+        57.85274945245703,
+        10.309397962500155
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.696115937042606,
+        "contraction_upper": 0.13527788058854642,
+        "image_radius_upper": 2.9640800274549037,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154579028488,
+        "contraction_upper": 0.13736135442741218,
+        "image_radius_upper": 3.0699032717714974,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.24835467338563,
+      "frequency_phase_amplitudes": [
+        57.677818295949415,
+        10.309399258007794
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.696115937042608,
+        "contraction_upper": 0.13528238958679142,
+        "image_radius_upper": 2.9640966938194393,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154579028488,
+        "contraction_upper": 0.13736622338183227,
+        "image_radius_upper": 3.0699218615810993,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.316988110542304,
+      "frequency_phase_amplitudes": [
+        57.852749631270136,
+        10.314278122594553
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.696115937042607,
+        "contraction_upper": 0.13527788128703835,
+        "image_radius_upper": 2.964080028745758,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154579028488,
+        "contraction_upper": 0.13736135535873475,
+        "image_radius_upper": 3.069903275412109,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.2511934041977,
+      "frequency_phase_amplitudes": [
+        57.677818295948576,
+        10.314279440453934
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6961159370426087,
+        "contraction_upper": 0.135282390518114,
+        "image_radius_upper": 2.964096695540578,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154579028488,
+        "contraction_upper": 0.1373662240803242,
+        "image_radius_upper": 3.0699218647772195,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.441421687603004,
+      "frequency_phase_amplitudes": [
+        58.30205689196151,
+        10.314279063949591
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6961159897266125,
+        "contraction_upper": 0.1352797818835825,
+        "image_radius_upper": 2.9640870965185986,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154629319907,
+        "contraction_upper": 0.13736334512941542,
+        "image_radius_upper": 3.069910912678588,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.37563025951386,
+      "frequency_phase_amplitudes": [
+        58.1271272114842,
+        10.314280374412565
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.696115989726616,
+        "contraction_upper": 0.13528429274447265,
+        "image_radius_upper": 2.964103770050821,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154629319907,
+        "contraction_upper": 0.13736821548081937,
+        "image_radius_upper": 3.069929508880553,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.438583016395576,
+      "frequency_phase_amplitudes": [
+        58.302056891962344,
+        10.309398888954032
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6961159897266116,
+        "contraction_upper": 0.13527978095225993,
+        "image_radius_upper": 2.96408709479746,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154629319907,
+        "contraction_upper": 0.13736334419809285,
+        "image_radius_upper": 3.069910909037976,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.37279152870179,
+      "frequency_phase_amplitudes": [
+        58.12712721148503,
+        10.309400184515845
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.696115989726615,
+        "contraction_upper": 0.13528429181315008,
+        "image_radius_upper": 2.9641037683296823,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154629319907,
+        "contraction_upper": 0.13736821431666615,
+        "image_radius_upper": 3.069929504795449,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.316988110542304,
+      "frequency_phase_amplitudes": [
+        57.852749631270136,
+        10.314278122594553
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.696115937042607,
+        "contraction_upper": 0.13527788128703835,
+        "image_radius_upper": 2.964080028745758,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154579028488,
+        "contraction_upper": 0.13736135535873475,
+        "image_radius_upper": 3.069903275412109,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.2511934041977,
+      "frequency_phase_amplitudes": [
+        57.677818295948576,
+        10.314279440453934
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6961159370426087,
+        "contraction_upper": 0.135282390518114,
+        "image_radius_upper": 2.964096695540578,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154579028488,
+        "contraction_upper": 0.1373662240803242,
+        "image_radius_upper": 3.0699218647772195,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.31414943933488,
+      "frequency_phase_amplitudes": [
+        57.85274945245703,
+        10.309397962500155
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.696115937042606,
+        "contraction_upper": 0.13527788058854642,
+        "image_radius_upper": 2.9640800274549037,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154579028488,
+        "contraction_upper": 0.13736135442741218,
+        "image_radius_upper": 3.0699032717714974,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        -0.004999810105956933,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.24835467338563,
+      "frequency_phase_amplitudes": [
+        57.677818295949415,
+        10.309399258007794
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.696115937042608,
+        "contraction_upper": 0.13528238958679142,
+        "image_radius_upper": 2.9640966938194393,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.818154579028488,
+        "contraction_upper": 0.13736622338183227,
+        "image_radius_upper": 3.0699218615810993,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.4387692809105,
+      "frequency_phase_amplitudes": [
+        58.31784125225734,
+        10.314285795554662
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.695774452265156,
+        "contraction_upper": 0.1352449238765985,
+        "image_radius_upper": 2.963684375135457,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.8178018182516107,
+        "contraction_upper": 0.13732755929231646,
+        "image_radius_upper": 3.0694906202295327,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.372974216938026,
+      "frequency_phase_amplitudes": [
+        58.14291312409821,
+        10.314287120894786
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6957744522651605,
+        "contraction_upper": 0.1352494258899242,
+        "image_radius_upper": 2.9637010129216126,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.8178018182516107,
+        "contraction_upper": 0.13733242033049467,
+        "image_radius_upper": 3.0695091773052186,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.435905575752265,
+      "frequency_phase_amplitudes": [
+        58.31784125225651,
+        10.309326644406957
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.695774452265157,
+        "contraction_upper": 0.13524492317810657,
+        "image_radius_upper": 2.9636843738447234,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.8178018182516107,
+        "contraction_upper": 0.13732755859382453,
+        "image_radius_upper": 3.0694906170335354,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.37011057138444,
+      "frequency_phase_amplitudes": [
+        58.14291312409737,
+        10.309327932494178
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.695774452265161,
+        "contraction_upper": 0.13524942519143227,
+        "image_radius_upper": 2.963701011630879,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.8178018182516107,
+        "contraction_upper": 0.13733241963200274,
+        "image_radius_upper": 3.069509175971867,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.3112964630127,
+      "frequency_phase_amplitudes": [
+        57.8598945393965,
+        10.314285050895927
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6957744107577595,
+        "contraction_upper": 0.13524585682898763,
+        "image_radius_upper": 2.9636877897319276,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.817801773548127,
+        "contraction_upper": 0.13732851855456832,
+        "image_radius_upper": 3.069494245749155,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.245498359203346,
+      "frequency_phase_amplitudes": [
+        57.68496565077044,
+        10.31428635386264
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6957744107577613,
+        "contraction_upper": 0.13525036023929718,
+        "image_radius_upper": 2.963704433824747,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.817801773548127,
+        "contraction_upper": 0.13733338122256103,
+        "image_radius_upper": 3.069512809661177,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.30843299627305,
+      "frequency_phase_amplitudes": [
+        57.85989453939567,
+        10.309325892297641
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6957744107577604,
+        "contraction_upper": 0.1352458561304957,
+        "image_radius_upper": 2.963687788441194,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.817801773548127,
+        "contraction_upper": 0.13732851762324574,
+        "image_radius_upper": 3.069494242108707,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        -4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.242635071277626,
+      "frequency_phase_amplitudes": [
+        57.684965650769605,
+        10.309327180363193
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.695774410757762,
+        "contraction_upper": 0.13525035954080525,
+        "image_radius_upper": 2.963704432534014,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.817801773548127,
+        "contraction_upper": 0.13733338029123845,
+        "image_radius_upper": 3.0695128060207293,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.435905575752265,
+      "frequency_phase_amplitudes": [
+        58.31784125225651,
+        10.309326644406957
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.695774452265157,
+        "contraction_upper": 0.13524492317810657,
+        "image_radius_upper": 2.9636843738447234,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.8178018182516107,
+        "contraction_upper": 0.13732755859382453,
+        "image_radius_upper": 3.0694906170335354,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.37011057138444,
+      "frequency_phase_amplitudes": [
+        58.14291312409737,
+        10.309327932494178
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.695774452265161,
+        "contraction_upper": 0.13524942519143227,
+        "image_radius_upper": 2.963701011630879,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.8178018182516107,
+        "contraction_upper": 0.13733241963200274,
+        "image_radius_upper": 3.069509175971867,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.4387692809105,
+      "frequency_phase_amplitudes": [
+        58.31784125225734,
+        10.314285795554662
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.695774452265156,
+        "contraction_upper": 0.1352449238765985,
+        "image_radius_upper": 2.963684375135457,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.8178018182516107,
+        "contraction_upper": 0.13732755929231646,
+        "image_radius_upper": 3.0694906202295327,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -0.00010536046699807253,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.372974216938026,
+      "frequency_phase_amplitudes": [
+        58.14291312409821,
+        10.314287120894786
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6957744522651605,
+        "contraction_upper": 0.1352494258899242,
+        "image_radius_upper": 2.9637010129216126,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.8178018182516107,
+        "contraction_upper": 0.13733242033049467,
+        "image_radius_upper": 3.0695091773052186,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.30843299627305,
+      "frequency_phase_amplitudes": [
+        57.85989453939567,
+        10.309325892297641
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6957744107577604,
+        "contraction_upper": 0.1352458561304957,
+        "image_radius_upper": 2.963687788441194,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.817801773548127,
+        "contraction_upper": 0.13732851762324574,
+        "image_radius_upper": 3.069494242108707,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        -2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.242635071277626,
+      "frequency_phase_amplitudes": [
+        57.684965650769605,
+        10.309327180363193
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.695774410757762,
+        "contraction_upper": 0.13525035954080525,
+        "image_radius_upper": 2.963704432534014,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.817801773548127,
+        "contraction_upper": 0.13733338029123845,
+        "image_radius_upper": 3.0695128060207293,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015831701145410187
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.3112964630127,
+      "frequency_phase_amplitudes": [
+        57.8598945393965,
+        10.314285050895927
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6957744107577595,
+        "contraction_upper": 0.13524585682898763,
+        "image_radius_upper": 2.9636877897319276,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.817801773548127,
+        "contraction_upper": 0.13732851855456832,
+        "image_radius_upper": 3.069494245749155,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    },
+    {
+      "level": 1,
+      "target": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "time_index": 0,
+      "physical_cell_center": [
+        0.6250000005483682,
+        0.005000189894043067,
+        4.84813681109536e-06,
+        -5.6879098887118934e-05,
+        2.42406840554768e-05,
+        -0.0015734738409188278
+      ],
+      "physical_cell_widths": [
+        0.12500000000000003,
+        0.005000000000000001,
+        4.848136811095361e-06,
+        2.4240684055476802e-05,
+        2.4240684055476802e-05,
+        4.8481368110954445e-06
+      ],
+      "time_log_modulus_bound": 47.245498359203346,
+      "frequency_phase_amplitudes": [
+        57.68496565077044,
+        10.31428635386264
+      ],
+      "real_root": {
+        "certified": true,
+        "ellipse_parameter": 1.0,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.6957744107577613,
+        "contraction_upper": 0.13525036023929718,
+        "image_radius_upper": 2.963704433824747,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      },
+      "complex_root": {
+        "certified": true,
+        "ellipse_parameter": 1.2,
+        "time_center_days": 0.0,
+        "time_half_width_days": 4.0,
+        "anomaly_disk_center": 0.0,
+        "anomaly_disk_radius": 3.817801773548127,
+        "contraction_upper": 0.13733338122256103,
+        "image_radius_upper": 3.069512809661177,
+        "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+        "retarded_observer_cancellation_preserved": true,
+        "connected_to_known_reference_emission_root": true,
+        "positive_real_retarded_root_derivative": true
+      }
+    }
+  ],
+  "failures": [
+    {
+      "level": 0,
+      "target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "time_index": 0,
+      "reason": "Complex square-root argument leaves the right half-plane"
+    },
+    {
+      "level": 0,
+      "target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "time_index": 1,
+      "reason": "Complex square-root argument leaves the right half-plane"
+    }
+  ],
+  "all_hypotheses_certified": false,
+  "maximum_time_log_modulus_bound": 47.441422581672676,
+  "maximum_frequency_phase_amplitudes": [
+    65.29637026826181,
+    10.314287455976006
+  ],
+  "physical_orbit_domain_shrunk": false,
+  "fast_floating_point_output_certified": false,
+  "full_objective_complete": false
+}
