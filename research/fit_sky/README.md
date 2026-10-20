@@ -11,6 +11,16 @@ The [contract](OBJECTIVE.md) was committed before implementation. The
 before measurements. The work is isolated from ongoing Kepler development:
 the existing orbital modules and archived exposures are read-only dependencies.
 
+The latest [30-exposure follow-up](sequential_results/README.md) implements
+resumable approximate inference on the original broad mixed scene, preserving
+unknown Poisson counts and shared calibration. Conditional flux updates and
+split/merge moves are tested independently. The 10- and 30-exposure global
+audits still return `[0,1]` probability bounds: **the first exposure milestone
+does not meet the accuracy contract**. The combined suite now passes 467 tests
+with one optional skip after incorporating upstream Kepler commit `14e07b3`.
+See [validation provenance](sequential_validation.json) and the separate
+[photon-partition identity control](photon_partition_pilot/README.md).
+
 ## Implemented routes
 
 1. **Joint interaction graphs:** finite source-existence inference with all
@@ -30,6 +40,15 @@ the existing orbital modules and archived exposures are read-only dependencies.
    motion, parallax, variability, Gaussian/Poisson noise, and Kepler states;
    public ZTF exposures with shared backgrounds and a held-out predictive
    likelihood calculation.
+6. **Sequential approximate catalogues:** block likelihood evaluation,
+   joint shared-nuisance marginalization, tempered exposure updates,
+   variable-count/class proposals, Gaussian conditional flux draws,
+   flux/centroid-conserving split/merge, predictive queries and checkpoints.
+   These particles do not provide a global accuracy certificate.
+7. **Photon-partition controls:** analytic integration of an unbounded Poisson
+   source population for fixed-geometry photon models, including continuous
+   flux. The exact subset recurrence is exponential and is not an implementation
+   of general continuous-sky inference.
 
 The [derivation](derivation.md) distinguishes established identities,
 deterministic enclosures, statistical confidence, numerical assumptions and

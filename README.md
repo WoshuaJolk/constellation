@@ -197,3 +197,10 @@ failed attempts, source snapshots, and independent controls are retained.
 The optional research command is `magictools-fit-sky`; see its
 [model and interface guide](docs/fit-sky.md). This work adds no modifications to
 the existing Kepler implementation.
+
+`magictools-fit-sky-stream` adds resumable, approximate inference across
+exposure sequences, with unknown source counts, shared calibration, conditional
+flux updates and split/merge moves. The
+[30-exposure mixed-scene follow-up](research/fit_sky/sequential_results/README.md)
+retains the original broad priors. Its global accuracy bounds remain unresolved;
+handling more exposures is not a full-solution claim.
