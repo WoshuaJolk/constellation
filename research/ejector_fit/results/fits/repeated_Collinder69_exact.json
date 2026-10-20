@@ -1,0 +1,162 @@
+{
+  "tool": "ejector_fit",
+  "schema_version": 1,
+  "epoch_label": "Gaia DR3 J2016.0",
+  "status": "no_converged_feasible_fit",
+  "best_fit": null,
+  "trials": [
+    {
+      "start_myr": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "optimizer_success": false,
+      "message": "Iteration limit reached",
+      "feasible": false,
+      "converged": false,
+      "chi2": 579.7815670794506,
+      "iterations": 250,
+      "constraint_violation_pc": 212.78531218007993,
+      "half_step_max_position_difference_pc": 6.07368977271618e-07
+    },
+    {
+      "start_myr": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 707.9708940409234,
+      "iterations": 23,
+      "constraint_violation_pc": 84.10328685210725,
+      "half_step_max_position_difference_pc": 3.52868685870832e-06
+    },
+    {
+      "start_myr": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 687.5537471263153,
+      "iterations": 69,
+      "constraint_violation_pc": 44.379825300002835,
+      "half_step_max_position_difference_pc": 7.434523613769117e-06
+    },
+    {
+      "start_myr": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "optimizer_success": false,
+      "message": "Iteration limit reached",
+      "feasible": false,
+      "converged": false,
+      "chi2": 661.210435498376,
+      "iterations": 250,
+      "constraint_violation_pc": 48.46308590942754,
+      "half_step_max_position_difference_pc": 8.141435411066696e-06
+    },
+    {
+      "start_myr": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "optimizer_success": false,
+      "message": "Iteration limit reached",
+      "feasible": false,
+      "converged": false,
+      "chi2": 510.2629569671014,
+      "iterations": 250,
+      "constraint_violation_pc": 83.83210088949325,
+      "half_step_max_position_difference_pc": 7.420670325143215e-06
+    },
+    {
+      "start_myr": [
+        0.5,
+        2.0,
+        4.0
+      ],
+      "optimizer_success": false,
+      "message": "Iteration limit reached",
+      "feasible": false,
+      "converged": false,
+      "chi2": 481.4233913646754,
+      "iterations": 250,
+      "constraint_violation_pc": 66.18301510859243,
+      "half_step_max_position_difference_pc": 1.235132653904017e-05
+    }
+  ],
+  "settings": {
+    "starts_myr": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        2.0,
+        2.0,
+        2.0
+      ],
+      [
+        3.0,
+        3.0,
+        3.0
+      ],
+      [
+        4.0,
+        4.0,
+        4.0
+      ],
+      [
+        5.0,
+        5.0,
+        5.0
+      ],
+      [
+        0.5,
+        2.0,
+        4.0
+      ]
+    ],
+    "max_step_myr": 0.02,
+    "max_sigma": 8.0,
+    "min_parallax_mas": 0.1,
+    "max_iterations": 250,
+    "constraint_tolerance_pc": 0.001
+  },
+  "full_objective_complete": false,
+  "discovery_probability": null,
+  "interpretation": [
+    "Chi2 is squared Mahalanobis displacement of supplied measurements; no prior or p-value is applied.",
+    "Angular positions are fixed; covariance covers parallax, pmra, pmdec, radial velocity, independently between objects.",
+    "Shared objects have one fitted state across all encounters; separate encounter times allow repeated launches.",
+    "Multistart local optimization is not a global optimum or exclusion certificate; failed fits are inconclusive.",
+    "A feasible encounter is compatibility under the supplied model, not evidence of causal ejection.",
+    "Finite-radius events constrain every member relative to their arithmetic centroid, not a designated source surface.",
+    "Half-step checks estimate numerical error but do not rigorously bound integration error."
+  ],
+  "provenance": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "inputs": [
+      {
+        "path": "manifests/repeated_Collinder69_exact.json",
+        "sha256": "be3b33f0d365378abaef9d9b7ccae7f7ec7d7c9c3190110b00f10c3a15d0bb66"
+      }
+    ]
+  },
+  "manifest": "repeated_Collinder69_exact.json"
+}

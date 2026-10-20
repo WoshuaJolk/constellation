@@ -1,0 +1,18 @@
+{
+  "log_predictive_density_bounds": [
+    -366.2997946051993,
+    -147.96034985110293
+  ],
+  "definition": "log Z(training + held-out pixels) - log Z(training pixels)",
+  "heldout_used_to_choose_prior": false,
+  "shared_background_marginalized": true,
+  "raw_data_sha256": {
+    "frame-0.fits": "54f10a836f220013ff03ffaf2a2696f921cb7cea48d964c1e53dad900288956c",
+    "frame-1.fits": "f54ca55dd23a4a1ad0f2726131e3b6a2b8082e2ab0e53dd2c7f07688d8ba791b",
+    "frame-2.fits": "2b871d8a9b4281b74d7b43a3826c9777d5d4c07f9dd0b5d5316c4f5e9c12ca38"
+  },
+  "training_status": "unresolved",
+  "joint_status": "unresolved",
+  "full_objective_complete": false,
+  "scope": "Supplied Gaussian image/PSF model and declared source/background priors"
+}

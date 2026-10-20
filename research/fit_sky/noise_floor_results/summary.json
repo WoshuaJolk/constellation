@@ -1,0 +1,36 @@
+{
+  "moving": {
+    "status": "confidence_target_met",
+    "relative_evidence_gap": 0.007330801658542698,
+    "queries": {
+      "has:stationary": [
+        0.021158189709589954,
+        0.022034502996562195
+      ],
+      "has:moving": [
+        0.9779654970034377,
+        0.9788418102904098
+      ],
+      "any:moving:vx:0:0.6": [
+        0.9771708510581135,
+        0.9780559150444045
+      ]
+    },
+    "seconds": 115.90112354800021
+  },
+  "real": {
+    "status": "confidence_target_met",
+    "relative_evidence_gap": 0.008577824167098352,
+    "queries": {
+      "has:stationary": [
+        0.043135135807257995,
+        0.051023998326171965
+      ],
+      "has:moving": [
+        0.04367278339651148,
+        0.04864947209731427
+      ]
+    },
+    "seconds": 169.297864698
+  }
+}

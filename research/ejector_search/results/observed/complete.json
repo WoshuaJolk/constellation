@@ -1,0 +1,162 @@
+{
+  "tool": "ejector_search",
+  "schema_version": 1,
+  "provenance": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "inputs": [
+      {
+        "path": "counterparts.json",
+        "sha256": "3a488250259aec86b5190b85692aece031cf4fe84744d00bbc59df2c3d052aa1"
+      },
+      {
+        "path": "observed.json",
+        "sha256": "a39c97b097c7a578f9506e789fa0a102067b4539f72f18bd2ac3c62ce1c3172e"
+      }
+    ]
+  },
+  "source_code_sha256": {
+    "__init__.py": "d61b787b59629b8f2e371c95db04b83deed81fa7a23161c7e25bc27cc246ac79",
+    "__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "_ejector_accel.py": "fb048e811f0e532c3388c795833421da9a24b2479600b0253d92c99c40911078",
+    "cli.py": "e3ec8620d7b572f1e8407708acd31af32d26d23b99a6767a8efb86cfaf46ecc0",
+    "coverage.py": "bae86118a002d06b6991e949a968dc6a13f7decf562c2eb8e984f8a03f2efc8a",
+    "demo.py": "47fe05c9d300ca4ff2fd7e8049a9e167fa745216a2525a4a3c3afb72d17fe485",
+    "ejector.py": "ad20ee5e16923afe99e46226f4b9ec5dcd2aa619876ffa9131bbbfe53f245172",
+    "ejector_bounds.py": "37bbd01d771ce814a221fa737f775c41d3d67160b8e5e7dcce1de6b936ee33ad",
+    "ejector_continuous.py": "b0a04a9afe6926c35430e577e5263ffcc0b4a5c29368ade6021f42bb4811102e",
+    "ejector_fit.py": "12c80fbbf7a072494eda762a0edb20f334ae89b5a5355d2cd84113bf60b16405",
+    "ejector_gaia.py": "d4194824c9d5ffd738a858f4cbc4c6e405e34f6a402ae3de0a8568bed70fc8c0",
+    "ejector_search.py": "40276b36ba4a98a3573b51c4fd04bbf69874cb771b220ea8ea5a97c8bb6a87aa",
+    "fold_demo.py": "2a45796761fbab33230c6512f3de408206ad5625fe58a0bda3535c92f35035c5",
+    "fold_kepler.py": "3d7dee52f42fd90bc820055cfb04b28672f71bcbf0d3844dbcac67e230ae945b",
+    "folding.py": "279fb258e7a94f392e2da544fd1b6d1ad6e9c011df7f131e689f1b81f5fed6fd",
+    "galactic.py": "566ba3bb3a68995ee50c8d23102f9febd93c53c63de4a4ab0cb0fd393b8c82d6",
+    "image_bank.py": "8e4b57eb53affdb30f1c882b5f71af34a30a3dfebd9eb79c89fd5c81f50b4d8a",
+    "injections.py": "90d51f51a709625aa1194f3f12c755b6dc8b88ad2d2d67ab25fa2055ebe7648c",
+    "io.py": "e486cab86198f0de7a9a05680a9dfe8386ff2d6bb8e52313e9fed070d9492607",
+    "matching.py": "5961fd29b2c9bcbdd08791cca706adf0960c641c7eac0efdc3f9543613062039",
+    "nulls.py": "c4cd1b02e599725a6e483530eecafba3bfc97e2103a91389dba3522309e662f8",
+    "orbit_demo.py": "5f19eb6298c91420d97a6965d1b716fe5577786ae1fbf59aba64ec10b9776e5f",
+    "orbits.py": "fd3a90aaf2f2c6c90d83c8f29e64460c83c31c8e273131de6102ea4f3d9634a6",
+    "photometry.py": "00282455aa9a9dedad0720d0beeada1efed4c98ab257d8d003042ef23a5c87ff",
+    "prove_floor.py": "2b40df02f9b63b01f9561c07a5979f9da47457da3b567f0cf52e258a14338c53",
+    "research_demo.py": "539909cba3968293239d92f1fd9cd038b574cd09892866bbfdc31a760789db02",
+    "search.py": "4ec8dc9a856334340289c57b0070c2ec4b9e594ee65545c05ac81236af50fb48",
+    "selection.py": "0ad08c0aae6659943610ce3d60bac399f1250deeb0f35606d63f906baf9c70dc",
+    "stamps.py": "d6f99ead222eb2a6bb4e90cdfc81a0461ae26a723b2c0e3ba6bff82f962862cd",
+    "stellar_inputs.py": "4e079b4c3c138497cccf164c9d9341809e9bd158b25e04c685e6ca36e9033021",
+    "vetting.py": "eb4b7d8359955453a8b61365a9dc0fe2396566ad55e33c790aff2d5de3dce291",
+    "ztf.py": "ee5813d1632938b83d6e7069d5ff79c8b1f29476302f9d66471764694fd3dc6e"
+  },
+  "catalogue_description": "All 18 of the 23 Bhat et al. 2022 Table A.1 literature runaways passing the pre-existing Gaia DR3 crossmatch, RUWE<=1.4 and valid-likelihood cuts. Literature selection is not homogeneous; no all-sky or population-calibrated discovery claim.",
+  "catalogue_size": 18,
+  "epoch_label": "Gaia DR3 J2016.0",
+  "hypotheses_per_catalogue": 816,
+  "catalogues_searched": 20,
+  "minimum_chi2": 288.64500166646843,
+  "converged_groups": 1,
+  "reported_candidates": 0,
+  "candidates": [],
+  "search": {
+    "group_size": 3,
+    "radius_pc": 1.0,
+    "lookback_bounds_myr": [
+      0.1,
+      6.0
+    ],
+    "report_chi2_max": 25.0,
+    "max_hypotheses": 5000,
+    "workers": 3
+  },
+  "fit": {
+    "starts_myr": [
+      [
+        0.5
+      ],
+      [
+        2.5
+      ],
+      [
+        5.0
+      ]
+    ],
+    "max_step_myr": 0.02,
+    "max_sigma": 8.0,
+    "min_parallax_mas": 0.1,
+    "max_iterations": 120,
+    "constraint_tolerance_pc": 0.001
+  },
+  "potential": {
+    "components": [
+      {
+        "type": "plummer",
+        "mass_msun": 5000000000.0,
+        "scale_pc": 500.0
+      },
+      {
+        "type": "miyamoto_nagai",
+        "mass_msun": 68000000000.0,
+        "a_pc": 3000.0,
+        "b_pc": 280.0
+      },
+      {
+        "type": "log_halo",
+        "speed_kms": 180.0,
+        "core_pc": 12000.0
+      }
+    ]
+  },
+  "controls": {
+    "method": "proper_motion_rotation",
+    "n_controls": 19,
+    "seed": 20261020,
+    "minimum_chi2": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      333.9970709694593,
+      null,
+      null,
+      null,
+      208.05279414824432
+    ],
+    "minimum_rank_resolution": 0.05,
+    "assumption": "Proper-motion position angles are independently uniform at fixed sky position, parallax, RV and proper-motion magnitude; covariances rotate with the vector. This is NOT established for the real selected catalogue."
+  },
+  "archive": "observed",
+  "nominal_tracebacks": "nominal_tracebacks.npz",
+  "full_objective_complete": false,
+  "discovery_probability": null,
+  "completion": {
+    "all_declared_combinations_attempted": true,
+    "all_requested_controls_completed": true,
+    "all_reported_candidates_independently_validated": true,
+    "all_survey_input_available": false,
+    "globally_exhaustive_uncertainty_search": false,
+    "astrophysical_false_association_calibration": false,
+    "source_visibility_complete": false,
+    "causal_confirmation": false
+  },
+  "interpretation": [
+    "Each combination is fitted at every declared start; failed local fits are inconclusive, not excluded origins.",
+    "Low chi2 is measurement compatibility, not encounter posterior mass or evidence of an ejection mechanism.",
+    "Control ranks include every group and age fit in this run, not choices made across different runs or models.",
+    "Rotation controls are model diagnostics, not astrophysical false-alarm probabilities; literature-selected samples violate simple exchangeability.",
+    "Source matching uses supplied nominal present states propagated backward. No counterpart is never proof of a dark ejector.",
+    "The archived nominal paths do not marginalize over measurement, frame or Galactic-potential uncertainty."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "histories": [
+    {
+      "lookback_myr": 2.0,
+      "origin_pc": [
+        240.0,
+        -160.0,
+        60.0
+      ],
+      "radial_velocity_kms": [
+        398.1445765318178,
+        813.4392566316394,
+        567.9788097734533
+      ],
+      "transverse_velocity_kms": [
+        [
+          -18.38343169778747,
+          98.01370471524459,
+          -24.386184905228312
+        ],
+        [
+          -129.60616420446158,
+          41.41008492616251,
+          -26.879547129870293
+        ],
+        [
+          -72.07097723849408,
+          -12.3048009919381,
+          -63.28183367282412
+        ]
+      ],
+      "convergence_error_pc": 0.0
+    },
+    {
+      "lookback_myr": 5.0,
+      "origin_pc": [
+        600.0,
+        -400.0,
+        150.0
+      ],
+      "radial_velocity_kms": [
+        98.6383436747498,
+        348.70499241037646,
+        291.24460866120506
+      ],
+      "transverse_velocity_kms": [
+        [
+          -18.383431697787497,
+          98.01370471524457,
+          -24.386184905228316
+        ],
+        [
+          -129.60616420446158,
+          41.41008492616257,
+          -26.8795471298703
+        ],
+        [
+          -72.0709772384941,
+          -12.304800991938071,
+          -63.281833672824106
+        ]
+      ],
+      "convergence_error_pc": 0.0
+    }
+  ],
+  "max_transverse_velocity_difference_kms": 5.684341886080802e-14,
+  "conclusion": "Identical perfect 5D astrometry can admit distinct common ejection ages and sites; missing RV cannot be resolved by declaring a Gaussian prior to be a measurement."
+}

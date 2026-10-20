@@ -1,0 +1,162 @@
+{
+  "tool": "ejector_fit",
+  "schema_version": 1,
+  "epoch_label": "Gaia DR3 J2016.0",
+  "status": "no_converged_feasible_fit",
+  "best_fit": null,
+  "trials": [
+    {
+      "start_myr": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "optimizer_success": false,
+      "message": "More than 3*n iterations in LSQ subproblem",
+      "feasible": false,
+      "converged": false,
+      "chi2": 456.3352966690414,
+      "iterations": 57,
+      "constraint_violation_pc": 23.006798974483598,
+      "half_step_max_position_difference_pc": 7.857614750655623e-06
+    },
+    {
+      "start_myr": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "optimizer_success": false,
+      "message": "More than 3*n iterations in LSQ subproblem",
+      "feasible": false,
+      "converged": false,
+      "chi2": 497.52795350487895,
+      "iterations": 85,
+      "constraint_violation_pc": 39.96911905702993,
+      "half_step_max_position_difference_pc": 8.090685322925901e-06
+    },
+    {
+      "start_myr": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "optimizer_success": false,
+      "message": "More than 3*n iterations in LSQ subproblem",
+      "feasible": false,
+      "converged": false,
+      "chi2": 507.4333295308459,
+      "iterations": 79,
+      "constraint_violation_pc": 11.455256303307326,
+      "half_step_max_position_difference_pc": 7.613193801619091e-06
+    },
+    {
+      "start_myr": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "optimizer_success": false,
+      "message": "More than 3*n iterations in LSQ subproblem",
+      "feasible": false,
+      "converged": false,
+      "chi2": 482.73854166298815,
+      "iterations": 152,
+      "constraint_violation_pc": 40.189136714362405,
+      "half_step_max_position_difference_pc": 8.495724527617954e-06
+    },
+    {
+      "start_myr": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 453.7945930566382,
+      "iterations": 117,
+      "constraint_violation_pc": 54.45336135137612,
+      "half_step_max_position_difference_pc": 4.149843994187574e-06
+    },
+    {
+      "start_myr": [
+        0.5,
+        2.0,
+        4.0
+      ],
+      "optimizer_success": false,
+      "message": "More than 3*n iterations in LSQ subproblem",
+      "feasible": false,
+      "converged": false,
+      "chi2": 516.684872240465,
+      "iterations": 60,
+      "constraint_violation_pc": 0.29542861548884325,
+      "half_step_max_position_difference_pc": 7.300354652080932e-06
+    }
+  ],
+  "settings": {
+    "starts_myr": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        2.0,
+        2.0,
+        2.0
+      ],
+      [
+        3.0,
+        3.0,
+        3.0
+      ],
+      [
+        4.0,
+        4.0,
+        4.0
+      ],
+      [
+        5.0,
+        5.0,
+        5.0
+      ],
+      [
+        0.5,
+        2.0,
+        4.0
+      ]
+    ],
+    "max_step_myr": 0.02,
+    "max_sigma": 8.0,
+    "min_parallax_mas": 0.1,
+    "max_iterations": 250,
+    "constraint_tolerance_pc": 0.001
+  },
+  "full_objective_complete": false,
+  "discovery_probability": null,
+  "interpretation": [
+    "Chi2 is squared Mahalanobis displacement of supplied measurements; no prior or p-value is applied.",
+    "Angular positions are fixed; covariance covers parallax, pmra, pmdec, radial velocity, independently between objects.",
+    "Shared objects have one fitted state across all encounters; separate encounter times allow repeated launches.",
+    "Multistart local optimization is not a global optimum or exclusion certificate; failed fits are inconclusive.",
+    "A feasible encounter is compatibility under the supplied model, not evidence of causal ejection.",
+    "Finite-radius events constrain every member relative to their arithmetic centroid, not a designated source surface.",
+    "Half-step checks estimate numerical error but do not rigorously bound integration error."
+  ],
+  "provenance": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "inputs": [
+      {
+        "path": "manifests/repeated_Collinder69.json",
+        "sha256": "aedccbf5bff02d17463d4f6c99a2fdcdbe7be020945d0126f0eea3d31818bd99"
+      }
+    ]
+  },
+  "manifest": "repeated_Collinder69.json"
+}

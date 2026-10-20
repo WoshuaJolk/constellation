@@ -1,0 +1,18 @@
+{
+  "case": "bound",
+  "inner_width_factor": 30.0,
+  "queries": 4096,
+  "status": "resource_limit",
+  "reason": "NUFFT phase-volume budget exceeded: estimated 400445312 grid cells > 8000000; partition the domain",
+  "construction": {
+    "construction_seconds": 0.021466231999511365,
+    "geometry_state_time_pairs": 216,
+    "polynomial_terms": 7,
+    "correction_order": 1,
+    "physical_geometry_error_certified": false,
+    "continuous_6d_domain_covered": false,
+    "nufft_requested_epsilon": 1e-12
+  },
+  "quadratic_geometry_relative_score_error": 2.418700173446736e-07,
+  "full_objective_complete": false
+}

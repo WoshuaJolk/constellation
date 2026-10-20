@@ -1,0 +1,207 @@
+{
+  "case": "mixed_energy",
+  "inner_width_factor": 1.0,
+  "queries": 32768,
+  "construction_seconds": 0.003968828001234215,
+  "geometry_state_time_pairs": 216,
+  "polynomial_terms": 7,
+  "correction_order": 1,
+  "physical_geometry_error_certified": false,
+  "continuous_6d_domain_covered": false,
+  "nufft_requested_epsilon": 1e-12,
+  "application_seconds": 0.2612908779992722,
+  "direct_geometry_plus_nufft_seconds": 2.3420732930026134,
+  "one_shot_speedup_without_certificate": 8.82935945423291,
+  "one_shot_speedup_with_certificate": 1.3596626721170582,
+  "maximum_absolute_score_error": 1.5101649063995318e-09,
+  "relative_score_error": 9.422306042395845e-12,
+  "uniform_phase_tail_bound": 7.392400913697831e-09,
+  "uniform_geometry_score_bound": 4.236932430997277e-08,
+  "certificate": {
+    "method": "interval variational jets and tensor interpolation remainder",
+    "geometry_sha256": "63ef7928c90ce0e7991f4cb6d877f54710d8c16d2b51dd3e72356021310217cd",
+    "polynomial_sha256": "0bf2be7c685e9efdbd4e99309a05bd181bfb0b1740987ac3c0e08334e9958856",
+    "center": [
+      3.0,
+      0.0,
+      0.0,
+      0.0,
+      0.014045454977420503,
+      0.0
+    ],
+    "basis": [
+      [
+        0.0,
+        9.69627362219072e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        9.69627362219072e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.939254724438144e-05,
+        0.0
+      ]
+    ],
+    "domain": "entire normalized inner cube [-1,1]^3, fixed outer state",
+    "position_error_radians": [
+      [
+        8.564033015727584e-16,
+        1.2859592532040965e-17
+      ],
+      [
+        7.326976844536235e-16,
+        5.236042151673141e-18
+      ],
+      [
+        6.165591014129252e-16,
+        1.5580629022783928e-18
+      ],
+      [
+        5.131952845029809e-16,
+        2.821703403663461e-19
+      ],
+      [
+        4.620403233166165e-16,
+        1.6290642324341575e-19
+      ],
+      [
+        5.631041223281885e-16,
+        8.272606936073124e-19
+      ],
+      [
+        6.704457734254683e-16,
+        3.306712088653433e-18
+      ],
+      [
+        8.475191077640197e-16,
+        1.3550125417530228e-17
+      ]
+    ],
+    "interpolation_remainder_radians": [
+      [
+        5.2350522018147866e-17,
+        1.5832770349676663e-18
+      ],
+      [
+        2.789315778255543e-17,
+        8.511252017622228e-19
+      ],
+      [
+        1.1283816887395254e-17,
+        3.4331335066691983e-19
+      ],
+      [
+        2.1018743520490387e-18,
+        6.191426495760669e-20
+      ],
+      [
+        2.0923453854426397e-19,
+        8.078202876314202e-21
+      ],
+      [
+        5.582452380834087e-18,
+        1.820261219676963e-19
+      ],
+      [
+        1.8138247459450006e-17,
+        5.830381139416684e-19
+      ],
+      [
+        4.964657919314849e-17,
+        1.6064562393042701e-18
+      ]
+    ],
+    "coefficient_difference_radians": [
+      [
+        8.040527795546092e-16,
+        1.1276315497073121e-17
+      ],
+      [
+        7.048045266710672e-16,
+        4.384916949910888e-18
+      ],
+      [
+        6.052752845255296e-16,
+        1.214749551611454e-18
+      ],
+      [
+        5.110934101509313e-16,
+        2.202560754087344e-19
+      ],
+      [
+        4.618310887780719e-16,
+        1.5482822036709846e-19
+      ],
+      [
+        5.575216699473538e-16,
+        6.452345716395986e-19
+      ],
+      [
+        6.523075259660179e-16,
+        2.7236739747117174e-18
+      ],
+      [
+        7.9787252857087e-16,
+        1.194366917822578e-17
+      ]
+    ],
+    "construction_seconds": 1.4572802600014256,
+    "nodal_orbit_time_enclosures": 216,
+    "variational_orbit_time_enclosures": 24,
+    "precision_bits": 128,
+    "mu_au3_day2": "0.0002959122082855911025",
+    "c_au_day": "173.144632674240",
+    "includes_light_time_derivatives": true,
+    "physical_geometry_error_certified": true,
+    "full_6d_coverage_certified": false,
+    "nufft_or_coefficient_arithmetic_certified": false
+  },
+  "center": [
+    3.0,
+    0.0,
+    0.0,
+    0.0,
+    0.014045454977420503,
+    0.0
+  ],
+  "inner_basis": [
+    [
+      0.0,
+      9.69627362219072e-05,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      9.69627362219072e-05,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.939254724438144e-05,
+      0.0
+    ]
+  ],
+  "full_objective_complete": false
+}

@@ -1,0 +1,18 @@
+{
+  "checkpoint.npz": "4ea03945800ce7b066c58884b565b3e35f1e8b07b77c04b10392932d8fae2fb8",
+  "contract.json": "2de16e0eee49e963af0ec668001c5ad0bfe28ba9f445a50da9160ae356151c17",
+  "encoding.json": "0e0b750c0b9f036e5fc5c4076a0adaa94635ce5add2cf9cf076413a726ec4487",
+  "execution-inventory.json": "1db20c3c41bac761effb8faa43fe695a134bef34301524f480a0d8caaec88c62",
+  "input.json": "0aff81c4974a65ac9d3ef91e6c97a55e30e45f95c82c5774a1a4e975a544953b",
+  "prefix-10.json.gz": "e057c290e670c3e4614e10ea13e4a09b119b3470b9735602a2b18b39cff6d53c",
+  "prefix-3.json.gz": "4839114d41cac32c58d3394789b49019685ab3d352c6be2c06ade2be4d1873dd",
+  "prefix-30.json.gz": "16fff85ee6b6ed3ae4beffc2904711bb5a38c98bba2af312eddc3103304930b8",
+  "report.json": "b7fe5f2efe1107fd7508cf99bd20a7f28125f595066b0a03b3f14982fa8810d2",
+  "source_snapshot/arithmetic.py": "aac9c4d3ff0dc05dd8321f287cc47fd540d737444067995eb9d05960de942965",
+  "source_snapshot/experiments.py": "92f90e2d113c109d2545b9cbd2fb9bf23e9cf09c3c44b577c9e1a23ce5feeb25",
+  "source_snapshot/reference.py": "900aa9cbb7ba31bbab0a0e53372142f1a5d4d890bd7ef42a7d5e627e24cda6b8",
+  "source_snapshot/scene.py": "21ca897cfeab2614b65fd1e86fb0ad2697b69bb1647f0d41b7f30d562d484df7",
+  "source_snapshot/sequential.py": "dd52189e8fb1975142ddf9a277c1e797e27f87f0a60385d31b871969883f52ef",
+  "source_snapshot/sequential_experiments.py": "469debdb314111656d8f9024ba09f2387dbcae32f9e608f1d7e9ec71ec2928f7",
+  "stdout.jsonl": "774ae6f09791fdad95c996dd0d57744243df0b2a584f4ffff64ef93ba755eac8"
+}

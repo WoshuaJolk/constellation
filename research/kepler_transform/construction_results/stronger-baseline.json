@@ -1,0 +1,134 @@
+{
+  "results": [
+    {
+      "frames": 8,
+      "queries": 32768,
+      "modes_per_frame": 64,
+      "construction_seconds_common_to_both": 0.019255886996688787,
+      "local_seconds": [
+        0.2788133790018037,
+        0.25283238099655136,
+        0.2612074400021811
+      ],
+      "same_geometry_baseline_seconds": [
+        0.1580941049978719,
+        0.15721735400438774,
+        0.16137788900232408
+      ],
+      "median_time_accumulation_speedup": 0.6052434991765618,
+      "median_construction_inclusive_speedup": 0.6323464600249691,
+      "maximum_score_difference": 3.12798966084612e-09,
+      "analytic_phase_tail_bound": 4.18092637246756e-08,
+      "excludes_certificate_common_to_both": true,
+      "baseline": "same fitted polynomial geometry + separate 2D type-3 NUFFT per frame",
+      "full_objective_complete": false
+    },
+    {
+      "frames": 32,
+      "queries": 32768,
+      "modes_per_frame": 64,
+      "construction_seconds_common_to_both": 0.028522139000415336,
+      "local_seconds": [
+        0.2663339810023899,
+        0.26097422399470815,
+        0.26220413200644543
+      ],
+      "same_geometry_baseline_seconds": [
+        0.5118990589980967,
+        0.5097140779980691,
+        0.511299527999654
+      ],
+      "median_time_accumulation_speedup": 1.950005608558012,
+      "median_construction_inclusive_speedup": 1.8568038764798458,
+      "maximum_score_difference": 4.299428434680321e-09,
+      "analytic_phase_tail_bound": 1.1808862015897541e-07,
+      "excludes_certificate_common_to_both": true,
+      "baseline": "same fitted polynomial geometry + separate 2D type-3 NUFFT per frame",
+      "full_objective_complete": false
+    },
+    {
+      "frames": 64,
+      "queries": 32768,
+      "modes_per_frame": 64,
+      "construction_seconds_common_to_both": 0.044271124999795575,
+      "local_seconds": [
+        0.2776690810060245,
+        0.2718399289951776,
+        0.2731743659969652
+      ],
+      "same_geometry_baseline_seconds": [
+        1.000180246999662,
+        0.9848114990018075,
+        0.9989611849960056
+      ],
+      "median_time_accumulation_speedup": 3.6568628295346843,
+      "median_construction_inclusive_speedup": 3.2863352593861426,
+      "maximum_score_difference": 7.278318666163518e-09,
+      "analytic_phase_tail_bound": 2.503991855373757e-07,
+      "excludes_certificate_common_to_both": true,
+      "baseline": "same fitted polynomial geometry + separate 2D type-3 NUFFT per frame",
+      "full_objective_complete": false
+    },
+    {
+      "frames": 64,
+      "queries": 131072,
+      "modes_per_frame": 64,
+      "construction_seconds_common_to_both": 0.04583578399615362,
+      "local_seconds": [
+        1.124662490998162,
+        1.0333019269965007,
+        1.0362943569998606
+      ],
+      "same_geometry_baseline_seconds": [
+        3.9782515420010895,
+        3.9870975879966863,
+        4.110472745000152
+      ],
+      "median_time_accumulation_speedup": 3.8474566237527266,
+      "median_construction_inclusive_speedup": 3.7268469098188572,
+      "maximum_score_difference": 7.604061499153996e-09,
+      "analytic_phase_tail_bound": 2.441138268494442e-07,
+      "excludes_certificate_common_to_both": true,
+      "baseline": "same fitted polynomial geometry + separate 2D type-3 NUFFT per frame",
+      "full_objective_complete": false
+    },
+    {
+      "frames": 32,
+      "queries": 32768,
+      "modes_per_frame": 512,
+      "construction_seconds_common_to_both": 0.035221773003286216,
+      "local_seconds": [
+        0.3865807469992433,
+        0.3725357690054807,
+        0.3763831750038662
+      ],
+      "same_geometry_baseline_seconds": [
+        0.5320131810003659,
+        0.5335704099998111,
+        0.5298195060022408
+      ],
+      "median_time_accumulation_speedup": 1.4134882118333292,
+      "median_construction_inclusive_speedup": 1.3781052845695998,
+      "maximum_score_difference": 1.3118494331441758e-08,
+      "analytic_phase_tail_bound": 9.82642190963484e-07,
+      "excludes_certificate_common_to_both": true,
+      "baseline": "same fitted polynomial geometry + separate 2D type-3 NUFFT per frame",
+      "full_objective_complete": false
+    }
+  ],
+  "sources": {
+    "/workspace/magictools/research/kepler_transform/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+    "/workspace/magictools/research/kepler_transform/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+    "/workspace/magictools/research/kepler_transform/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+    "/workspace/magictools/research/kepler_transform/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+    "/workspace/magictools/research/kepler_transform/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+    "/workspace/magictools/research/kepler_transform/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+    "/workspace/magictools/research/kepler_transform/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "/workspace/magictools/research/kepler_transform/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+    "/workspace/magictools/research/kepler_transform/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+    "/workspace/magictools/research/kepler_transform/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+    "/workspace/magictools/research/kepler_transform/jet_geometry.py": "7dc962237989f6110c91f996f11c4ad2bf175e0669eba23c2d92de7cc7746c8f",
+    "/workspace/magictools/research/kepler_transform/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+    "/workspace/magictools/research/kepler_transform/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20"
+  }
+}

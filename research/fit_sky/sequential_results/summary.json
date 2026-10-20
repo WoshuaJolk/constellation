@@ -1,0 +1,631 @@
+{
+  "full_objective_complete": false,
+  "mixed_scene_accuracy_target_met": false,
+  "replicate_spread_is_not_a_confidence_interval": true,
+  "all_original_priors_and_first_three_images_preserved": true,
+  "all_campaign_inputs_identical": true,
+  "groups": {
+    "baseline": {
+      "prefixes": {
+        "3": {
+          "log_evidence_estimates": [
+            -35.56308715646176,
+            -35.43448879021112,
+            -35.5351402917146,
+            -35.48697242431028
+          ],
+          "max_min_evidence_ratio": 1.1372332811634809,
+          "query_estimate_ranges": {
+            "count=0": [
+              0.0,
+              0.0
+            ],
+            "count=1": [
+              0.009765625,
+              0.017578125
+            ],
+            "count=2": [
+              0.47900390625,
+              0.51904296875
+            ],
+            "count=3": [
+              0.37158203125,
+              0.38134765625
+            ],
+            "has:stationary": [
+              0.953125,
+              0.96484375
+            ],
+            "has:moving": [
+              0.5302734375,
+              0.56298828125
+            ],
+            "has:galaxy": [
+              0.44384765625,
+              0.48193359375
+            ],
+            "any:moving:vx:0:1": [
+              0.21923828125,
+              0.25
+            ]
+          },
+          "largest_query_estimate_range": 0.0400390625
+        },
+        "10": {
+          "log_evidence_estimates": [
+            -101.70379927054759,
+            -102.3663959719422,
+            -102.41023384780658,
+            -102.10246857298414
+          ],
+          "max_min_evidence_ratio": 2.0267521328987272,
+          "query_estimate_ranges": {
+            "count=0": [
+              0.0,
+              0.0
+            ],
+            "count=1": [
+              0.0,
+              0.00048828125
+            ],
+            "count=2": [
+              0.255859375,
+              0.34912109375
+            ],
+            "count=3": [
+              0.482421875,
+              0.5712890625
+            ],
+            "has:stationary": [
+              0.79443359375,
+              0.92724609375
+            ],
+            "has:moving": [
+              0.5302734375,
+              0.88037109375
+            ],
+            "has:galaxy": [
+              0.40087890625,
+              0.5439453125
+            ],
+            "any:moving:vx:0:1": [
+              0.373046875,
+              0.63671875
+            ]
+          },
+          "largest_query_estimate_range": 0.35009765625
+        },
+        "30": {
+          "log_evidence_estimates": [
+            -258.0404307266351,
+            -261.06821024711184,
+            -259.21832836345436,
+            -258.3561029217038
+          ],
+          "max_min_evidence_ratio": 20.651325794646976,
+          "query_estimate_ranges": {
+            "count=0": [
+              0.0,
+              0.0
+            ],
+            "count=1": [
+              0.0,
+              0.0
+            ],
+            "count=2": [
+              0.0,
+              0.0
+            ],
+            "count=3": [
+              0.69384765625,
+              0.70654296875
+            ],
+            "has:stationary": [
+              0.802734375,
+              0.9345703125
+            ],
+            "has:moving": [
+              1.0,
+              1.0
+            ],
+            "has:galaxy": [
+              0.9306640625,
+              0.97802734375
+            ],
+            "any:moving:vx:0:1": [
+              1.0,
+              1.0
+            ]
+          },
+          "largest_query_estimate_range": 0.1318359375
+        }
+      },
+      "work": [
+        {
+          "seed": 20261110,
+          "seconds": 1053.9827890320048,
+          "stages": 90,
+          "maximum_sampled_count": 10,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 7434240,
+          "catalogue_pixels": 851281920,
+          "pixel_block": 128
+        },
+        {
+          "seed": 20261111,
+          "seconds": 1083.727437805992,
+          "stages": 90,
+          "maximum_sampled_count": 9,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 7434240,
+          "catalogue_pixels": 851281920,
+          "pixel_block": 128
+        },
+        {
+          "seed": 20261112,
+          "seconds": 1603.269819584013,
+          "stages": 91,
+          "maximum_sampled_count": 8,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 7516160,
+          "catalogue_pixels": 856442880,
+          "pixel_block": 128
+        },
+        {
+          "seed": 20261113,
+          "seconds": 1372.216740093998,
+          "stages": 90,
+          "maximum_sampled_count": 8,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 7434240,
+          "catalogue_pixels": 851281920,
+          "pixel_block": 128
+        }
+      ]
+    },
+    "conditional_flux": {
+      "prefixes": {
+        "3": {
+          "log_evidence_estimates": [
+            -35.52309021690645,
+            -35.44707927048228,
+            -35.56704497627641,
+            -35.663689385885505
+          ],
+          "max_min_evidence_ratio": 1.241859825720542,
+          "query_estimate_ranges": {
+            "count=0": [
+              0.0,
+              0.0
+            ],
+            "count=1": [
+              0.01123046875,
+              0.01953125
+            ],
+            "count=2": [
+              0.470703125,
+              0.5244140625
+            ],
+            "count=3": [
+              0.359375,
+              0.39208984375
+            ],
+            "has:stationary": [
+              0.95703125,
+              0.96630859375
+            ],
+            "has:moving": [
+              0.51806640625,
+              0.564453125
+            ],
+            "has:galaxy": [
+              0.44189453125,
+              0.4765625
+            ],
+            "any:moving:vx:0:1": [
+              0.21826171875,
+              0.236328125
+            ]
+          },
+          "largest_query_estimate_range": 0.0537109375
+        },
+        "10": {
+          "log_evidence_estimates": [
+            -102.34541185309666,
+            -102.13375255046202,
+            -102.56246211224608,
+            -102.53213240666383
+          ],
+          "max_min_evidence_ratio": 1.5352750670860484,
+          "query_estimate_ranges": {
+            "count=0": [
+              0.0,
+              0.0
+            ],
+            "count=1": [
+              0.0,
+              0.00048828125
+            ],
+            "count=2": [
+              0.2998046875,
+              0.3408203125
+            ],
+            "count=3": [
+              0.44775390625,
+              0.51318359375
+            ],
+            "has:stationary": [
+              0.921875,
+              0.9443359375
+            ],
+            "has:moving": [
+              0.5908203125,
+              0.65185546875
+            ],
+            "has:galaxy": [
+              0.39306640625,
+              0.43017578125
+            ],
+            "any:moving:vx:0:1": [
+              0.35595703125,
+              0.39501953125
+            ]
+          },
+          "largest_query_estimate_range": 0.0654296875
+        },
+        "30": {
+          "log_evidence_estimates": [
+            -260.1508389517386,
+            -259.23178112490893,
+            -260.0392502368431,
+            -259.2987717123999
+          ],
+          "max_min_evidence_ratio": 2.5069273172409545,
+          "query_estimate_ranges": {
+            "count=0": [
+              0.0,
+              0.0
+            ],
+            "count=1": [
+              0.0,
+              0.0
+            ],
+            "count=2": [
+              0.0,
+              0.00048828125
+            ],
+            "count=3": [
+              0.65966796875,
+              0.70703125
+            ],
+            "has:stationary": [
+              0.9189453125,
+              0.9453125
+            ],
+            "has:moving": [
+              1.0,
+              1.0
+            ],
+            "has:galaxy": [
+              0.93701171875,
+              0.97119140625
+            ],
+            "any:moving:vx:0:1": [
+              1.0,
+              1.0
+            ]
+          },
+          "largest_query_estimate_range": 0.04736328125
+        }
+      },
+      "work": [
+        {
+          "seed": 20261120,
+          "seconds": 3347.660046582001,
+          "stages": 90,
+          "maximum_sampled_count": 8,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 11304960,
+          "catalogue_pixels": 1293705216,
+          "pixel_block": 128
+        },
+        {
+          "seed": 20261121,
+          "seconds": 3041.4519916149948,
+          "stages": 90,
+          "maximum_sampled_count": 9,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 11304960,
+          "catalogue_pixels": 1293705216,
+          "pixel_block": 128
+        },
+        {
+          "seed": 20261122,
+          "seconds": 3253.1240470419943,
+          "stages": 90,
+          "maximum_sampled_count": 10,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 11304960,
+          "catalogue_pixels": 1293705216,
+          "pixel_block": 128
+        },
+        {
+          "seed": 20261123,
+          "seconds": 3001.7163835280116,
+          "stages": 90,
+          "maximum_sampled_count": 8,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 11304960,
+          "catalogue_pixels": 1293705216,
+          "pixel_block": 128
+        }
+      ]
+    },
+    "split_merge_and_flux": {
+      "prefixes": {
+        "3": {
+          "log_evidence_estimates": [
+            -35.54112328433937,
+            -35.45146918330608,
+            -35.546495777211945,
+            -35.623157522543636
+          ],
+          "max_min_evidence_ratio": 1.1873077383098931,
+          "query_estimate_ranges": {
+            "count=0": [
+              0.0,
+              0.0
+            ],
+            "count=1": [
+              0.01171875,
+              0.01513671875
+            ],
+            "count=2": [
+              0.486328125,
+              0.501953125
+            ],
+            "count=3": [
+              0.373046875,
+              0.3837890625
+            ],
+            "has:stationary": [
+              0.9560546875,
+              0.9716796875
+            ],
+            "has:moving": [
+              0.505859375,
+              0.57958984375
+            ],
+            "has:galaxy": [
+              0.44091796875,
+              0.47900390625
+            ],
+            "any:moving:vx:0:1": [
+              0.2236328125,
+              0.26611328125
+            ]
+          },
+          "largest_query_estimate_range": 0.07373046875
+        },
+        "10": {
+          "log_evidence_estimates": [
+            -102.12884996000649,
+            -102.15953694692088,
+            -102.33955532348442,
+            -102.21383541370096
+          ],
+          "max_min_evidence_ratio": 1.2345485583765616,
+          "query_estimate_ranges": {
+            "count=0": [
+              0.0,
+              0.0
+            ],
+            "count=1": [
+              0.0,
+              0.0
+            ],
+            "count=2": [
+              0.31298828125,
+              0.34912109375
+            ],
+            "count=3": [
+              0.4931640625,
+              0.52392578125
+            ],
+            "has:stationary": [
+              0.88720703125,
+              0.935546875
+            ],
+            "has:moving": [
+              0.60205078125,
+              0.76904296875
+            ],
+            "has:galaxy": [
+              0.38427734375,
+              0.4296875
+            ],
+            "any:moving:vx:0:1": [
+              0.32861328125,
+              0.4453125
+            ]
+          },
+          "largest_query_estimate_range": 0.1669921875
+        },
+        "30": {
+          "log_evidence_estimates": [
+            -258.84306674503307,
+            -260.37239197201666,
+            -260.2622617735871,
+            -259.549449751241
+          ],
+          "max_min_evidence_ratio": 4.615061652329589,
+          "query_estimate_ranges": {
+            "count=0": [
+              0.0,
+              0.0
+            ],
+            "count=1": [
+              0.0,
+              0.0
+            ],
+            "count=2": [
+              0.0,
+              0.0009765625
+            ],
+            "count=3": [
+              0.64599609375,
+              0.7197265625
+            ],
+            "has:stationary": [
+              0.88134765625,
+              0.92333984375
+            ],
+            "has:moving": [
+              1.0,
+              1.0
+            ],
+            "has:galaxy": [
+              0.953125,
+              0.97607421875
+            ],
+            "any:moving:vx:0:1": [
+              1.0,
+              1.0
+            ]
+          },
+          "largest_query_estimate_range": 0.07373046875
+        }
+      },
+      "work": [
+        {
+          "seed": 20261140,
+          "seconds": 2992.975025766995,
+          "stages": 90,
+          "maximum_sampled_count": 9,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 12595200,
+          "catalogue_pixels": 1441179648,
+          "pixel_block": 128
+        },
+        {
+          "seed": 20261141,
+          "seconds": 3086.494326734999,
+          "stages": 90,
+          "maximum_sampled_count": 9,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 12595200,
+          "catalogue_pixels": 1441179648,
+          "pixel_block": 128
+        },
+        {
+          "seed": 20261142,
+          "seconds": 2915.1228573639964,
+          "stages": 90,
+          "maximum_sampled_count": 8,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 12595200,
+          "catalogue_pixels": 1441179648,
+          "pixel_block": 128
+        },
+        {
+          "seed": 20261143,
+          "seconds": 2968.5038807130113,
+          "stages": 90,
+          "maximum_sampled_count": 9,
+          "inventory_files_checked": 16,
+          "catalogue_evaluations": 12595200,
+          "catalogue_pixels": 1441179648,
+          "pixel_block": 128
+        }
+      ]
+    }
+  },
+  "audits": {
+    "10": {
+      "status": "unresolved",
+      "relative_evidence_gap": null,
+      "queries": {
+        "count=0": [
+          0.0,
+          1.0
+        ],
+        "count=1": [
+          0.0,
+          1.0
+        ],
+        "count=2": [
+          0.0,
+          1.0
+        ],
+        "count=3": [
+          0.0,
+          1.0
+        ],
+        "has:stationary": [
+          0.0,
+          1.0
+        ],
+        "has:moving": [
+          0.0,
+          1.0
+        ],
+        "has:galaxy": [
+          0.0,
+          1.0
+        ],
+        "any:moving:vx:0:1": [
+          0.0,
+          1.0
+        ]
+      },
+      "samples": 1000000,
+      "seed": 20261130,
+      "simultaneous_confidence": 0.99,
+      "seconds": 1059.7311240300005,
+      "maximum_sampled_source_count": 12
+    },
+    "30": {
+      "status": "unresolved",
+      "relative_evidence_gap": null,
+      "queries": {
+        "count=0": [
+          0.0,
+          1.0
+        ],
+        "count=1": [
+          0.0,
+          1.0
+        ],
+        "count=2": [
+          0.0,
+          1.0
+        ],
+        "count=3": [
+          0.0,
+          1.0
+        ],
+        "has:stationary": [
+          0.0,
+          1.0
+        ],
+        "has:moving": [
+          0.0,
+          1.0
+        ],
+        "has:galaxy": [
+          0.0,
+          1.0
+        ],
+        "any:moving:vx:0:1": [
+          0.0,
+          1.0
+        ]
+      },
+      "samples": 1000000,
+      "seed": 20261131,
+      "simultaneous_confidence": 0.99,
+      "seconds": 2328.502600097996,
+      "maximum_sampled_source_count": 11
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "source": "research/kepler_transform/detector_time/results/scaling/real-time/results.json",
+  "source_sha256": "5c3b1d1ef9344716d598da824957b40c35861bbd095470ea0dd604f2822a71f8",
+  "queries": [
+    256,
+    1024,
+    4096,
+    8192,
+    16384,
+    32768,
+    65536
+  ],
+  "first_direct_seconds": [
+    0.001842230005422607,
+    0.004731534994789399,
+    0.018915943015599623,
+    0.04716036899480969,
+    0.0743016469932627,
+    0.16832434300158639,
+    0.3161396180075826
+  ],
+  "first_pfkt_seconds": [
+    0.02965176101133693,
+    0.030824890010990202,
+    0.04018799401819706,
+    0.04626571200788021,
+    0.06286327601992525,
+    0.09283476301061455,
+    0.15786433102039155
+  ],
+  "pfkt_time_fields": 2,
+  "maximum_sampled_snr_error": 1.145267801339056e-05,
+  "scope": "First use including preparation; same three real ZTF exposures."
+}

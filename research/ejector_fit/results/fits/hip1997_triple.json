@@ -1,0 +1,208 @@
+{
+  "tool": "ejector_fit",
+  "schema_version": 1,
+  "epoch_label": "J1991.25",
+  "status": "feasible_local_fit",
+  "best_fit": {
+    "chi2": 5.6216628411735785,
+    "events": [
+      {
+        "id": "Orion_triple",
+        "members": [
+          "AE_Aur",
+          "iota_Ori",
+          "mu_Col"
+        ],
+        "origin_pc": [
+          -8422.027121881596,
+          -775.8062774142776,
+          -116.19744707323787
+        ],
+        "max_centroid_radius_pc": 4.570089856749488e-06,
+        "constraint_violation_pc": 8.541634061199822e-06,
+        "lookback_myr": 2.493252853217689
+      }
+    ],
+    "fitted_objects": [
+      {
+        "id": "AE_Aur",
+        "mean": [
+          2.432594295481362,
+          -4.129669985964072,
+          43.35492829427352,
+          57.78404151432157
+        ],
+        "marginal_sigma_shift": [
+          0.26026256146129967,
+          -0.12071209994556387,
+          0.3066552142580034,
+          0.23670126193464353
+        ]
+      },
+      {
+        "id": "iota_Ori",
+        "mean": [
+          2.410945793465469,
+          1.7244869907175948,
+          -1.0346077191427858,
+          28.700366910182943
+        ],
+        "marginal_sigma_shift": [
+          -0.06370676173315738,
+          -0.8392507835113926,
+          -0.882144083282523,
+          0.000333554711767063
+        ]
+      },
+      {
+        "id": "mu_Col",
+        "mean": [
+          1.725984312349783,
+          3.5596088187282238,
+          -22.239278907413613,
+          108.12812539848402
+        ],
+        "marginal_sigma_shift": [
+          -1.4436648866367583,
+          1.0569400360158152,
+          0.7614421851727755,
+          -0.34874984060639347
+        ]
+      }
+    ],
+    "active_bound_parameter_indices": [],
+    "constraint_violation_pc": 8.541634061199822e-06,
+    "half_step_max_position_difference_pc": 6.600990316377923e-06
+  },
+  "trials": [
+    {
+      "start_myr": [
+        1.0
+      ],
+      "optimizer_success": true,
+      "message": "Optimization terminated successfully",
+      "feasible": true,
+      "converged": true,
+      "chi2": 5.621662841176867,
+      "iterations": 12,
+      "constraint_violation_pc": 8.541635312232096e-06,
+      "half_step_max_position_difference_pc": 6.600993704920765e-06
+    },
+    {
+      "start_myr": [
+        2.0
+      ],
+      "optimizer_success": true,
+      "message": "Optimization terminated successfully",
+      "feasible": true,
+      "converged": true,
+      "chi2": 5.621662841177798,
+      "iterations": 11,
+      "constraint_violation_pc": 8.541640419967765e-06,
+      "half_step_max_position_difference_pc": 6.6009893326856815e-06
+    },
+    {
+      "start_myr": [
+        2.5
+      ],
+      "optimizer_success": true,
+      "message": "Optimization terminated successfully",
+      "feasible": true,
+      "converged": true,
+      "chi2": 5.621662841216877,
+      "iterations": 10,
+      "constraint_violation_pc": 8.541627537461084e-06,
+      "half_step_max_position_difference_pc": 6.600991660367267e-06
+    },
+    {
+      "start_myr": [
+        3.0
+      ],
+      "optimizer_success": true,
+      "message": "Optimization terminated successfully",
+      "feasible": true,
+      "converged": true,
+      "chi2": 5.621662841182119,
+      "iterations": 11,
+      "constraint_violation_pc": 8.541637152669643e-06,
+      "half_step_max_position_difference_pc": 6.600992227197867e-06
+    },
+    {
+      "start_myr": [
+        4.0
+      ],
+      "optimizer_success": true,
+      "message": "Optimization terminated successfully",
+      "feasible": true,
+      "converged": true,
+      "chi2": 5.621662841176623,
+      "iterations": 13,
+      "constraint_violation_pc": 8.541635492730194e-06,
+      "half_step_max_position_difference_pc": 6.600993617103367e-06
+    },
+    {
+      "start_myr": [
+        5.0
+      ],
+      "optimizer_success": true,
+      "message": "Optimization terminated successfully",
+      "feasible": true,
+      "converged": true,
+      "chi2": 5.6216628411735785,
+      "iterations": 15,
+      "constraint_violation_pc": 8.541634061199822e-06,
+      "half_step_max_position_difference_pc": 6.600990316377923e-06
+    }
+  ],
+  "settings": {
+    "starts_myr": [
+      [
+        1.0
+      ],
+      [
+        2.0
+      ],
+      [
+        2.5
+      ],
+      [
+        3.0
+      ],
+      [
+        4.0
+      ],
+      [
+        5.0
+      ]
+    ],
+    "max_step_myr": 0.02,
+    "max_sigma": 8.0,
+    "min_parallax_mas": 0.1,
+    "max_iterations": 250,
+    "constraint_tolerance_pc": 0.001
+  },
+  "full_objective_complete": false,
+  "discovery_probability": null,
+  "interpretation": [
+    "Chi2 is squared Mahalanobis displacement of supplied measurements; no prior or p-value is applied.",
+    "Angular positions are fixed; covariance covers parallax, pmra, pmdec, radial velocity, independently between objects.",
+    "Shared objects have one fitted state across all encounters; separate encounter times allow repeated launches.",
+    "Multistart local optimization is not a global optimum or exclusion certificate; failed fits are inconclusive.",
+    "A feasible encounter is compatibility under the supplied model, not evidence of causal ejection.",
+    "Finite-radius events constrain every member relative to their arithmetic centroid, not a designated source surface.",
+    "Half-step checks estimate numerical error but do not rigorously bound integration error."
+  ],
+  "provenance": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "inputs": [
+      {
+        "path": "manifests/hip1997_triple.json",
+        "sha256": "e09a325c8701aff0c2fe0ae2f78be934eed4add88dace2f6b3af5be1c69c3ed8"
+      }
+    ]
+  },
+  "manifest": "hip1997_triple.json"
+}

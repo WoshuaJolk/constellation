@@ -1,0 +1,20 @@
+{
+  "sources": [
+    {
+      "url": "https://arxiv.org/pdf/astro-ph/0010057",
+      "sha256": "058e3a7a6b4e40167e3cb9386739b5e50b4c8992af8f8b308713f994d89e97ba",
+      "table": "3",
+      "doi": "10.1051/0004-6361:20000014"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2204.01594",
+      "sha256": "aa7d67b1c7fb38e2ee82da2e46ab4663e635e538a4a9cc839d5986baed6e7303",
+      "tables": [
+        "A.1",
+        "A.2"
+      ],
+      "doi": "10.1051/0004-6361/202142993"
+    }
+  ],
+  "notes": "Numerical measurements transcribed from primary tables; papers not redistributed. Gaia/SIMBAD responses and exact queries retained. No claim of novel method or new Orion discovery."
+}

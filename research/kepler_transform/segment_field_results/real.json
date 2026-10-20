@@ -1,0 +1,533 @@
+{
+  "schema_version": 1,
+  "full_objective_complete": false,
+  "experiments": [
+    {
+      "name": "real-6",
+      "status": "ran",
+      "result": {
+        "real_survey_data": true,
+        "uses_full_recorded_TPV_WCS": true,
+        "exposures": 3,
+        "pixels_per_exposure": 81,
+        "queries": 128,
+        "backend": "cascade",
+        "angular_order": 6,
+        "hidden_order": 2,
+        "rate_order": 3,
+        "numerator_max_absolute_error": 0.0004199119001052007,
+        "information_max_absolute_error": 2.2871674887132987e-05,
+        "numerator_relative_sup_error": 0.0016679046942227908,
+        "information_relative_sup_error": 0.00043067275402833673,
+        "minimum_interpolated_information": 0.05274357398258707,
+        "observer_model": "quintic Hermite through recorded positions and velocities",
+        "observer_at_exposure_max_absolute_error_au": 0.0,
+        "between_exposure_ephemeris_accuracy_certified": false,
+        "uniform_detector_interpolation_error_certified": false,
+        "same_declared_Gaussian_PSF_and_variance_approximations_as_prior_real_experiment": true,
+        "construction_seconds": 0.5972964760003379,
+        "two_fields_apply_seconds": 0.002538353997806553,
+        "two_fields_query_seconds": 0.01598809599818196,
+        "graph": {
+          "exposures": 3,
+          "segments": 5,
+          "total_grid_nodes": 2700,
+          "root_grid_nodes": 1296,
+          "stored_entries": 675864,
+          "array_bytes": 10730904,
+          "rebased_states": 18157,
+          "cover_flow_steps": 4,
+          "construction_seconds": 0.597225981997326,
+          "parent_values_use_only_child_fields": true,
+          "geometric_covers_exact_arithmetic_certified": true,
+          "interpolation_accuracy_certified": false,
+          "floating_point_evaluation_certified": false,
+          "transfer_backend": "cascade",
+          "exact_leaf_model_evaluation": true,
+          "leaf_model": "custom",
+          "cascade_intermediate_domains_certified": false,
+          "cascade_reports": [
+            {
+              "stored_entries": 28512,
+              "array_bytes": 373272,
+              "geometry_points_including_iterations": 14269,
+              "maximum_mixed_inverse_scaled_residual": 8.354443528176732e-11,
+              "maximum_mixed_inverse_iterations": 2,
+              "intermediate_domains_certified": false,
+              "whole_box_error_certified": false
+            }
+          ],
+          "full_objective_complete": false,
+          "levels_by_node": [
+            {
+              "samples": 3,
+              "half_span": 0.008544259260816034,
+              "grid_shape": [
+                2,
+                2,
+                3,
+                6,
+                6,
+                3
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                6,
+                6
+              ]
+            },
+            {
+              "samples": 2,
+              "half_span": 0.0004839091416215524,
+              "grid_shape": [
+                2,
+                2,
+                3,
+                6,
+                6,
+                3
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                6,
+                6
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                6,
+                6
+              ]
+            }
+          ]
+        },
+        "input_sha256": {
+          "research/kepler_transform/chart_results/real_inputs/observations.json": "35880b032de387a96d9dd3863cc62e3a7a0620a88f28590534764a480a3244a7",
+          "research/kepler_transform/chart_results/real/result.json": "cac60c5f973b6a8b132fef212b8e7b4b0c8c898ae1709f268e6a5231975371b0",
+          "research/kepler_transform/chart_results/real_inputs/frame-0.fits": "54f10a836f220013ff03ffaf2a2696f921cb7cea48d964c1e53dad900288956c",
+          "research/kepler_transform/chart_results/real_inputs/frame-1.fits": "f54ca55dd23a4a1ad0f2726131e3b6a2b8082e2ab0e53dd2c7f07688d8ba791b",
+          "research/kepler_transform/chart_results/real_inputs/frame-2.fits": "2b871d8a9b4281b74d7b43a3826c9777d5d4c07f9dd0b5d5316c4f5e9c12ca38"
+        },
+        "full_objective_complete": false
+      }
+    },
+    {
+      "name": "real-10",
+      "status": "ran",
+      "result": {
+        "real_survey_data": true,
+        "uses_full_recorded_TPV_WCS": true,
+        "exposures": 3,
+        "pixels_per_exposure": 81,
+        "queries": 128,
+        "backend": "cascade",
+        "angular_order": 10,
+        "hidden_order": 2,
+        "rate_order": 3,
+        "numerator_max_absolute_error": 2.7603593463765286e-07,
+        "information_max_absolute_error": 7.101656068070339e-07,
+        "numerator_relative_sup_error": 1.096424347680959e-06,
+        "information_relative_sup_error": 1.3372390924980004e-05,
+        "minimum_interpolated_information": 0.05274596137912968,
+        "observer_model": "quintic Hermite through recorded positions and velocities",
+        "observer_at_exposure_max_absolute_error_au": 0.0,
+        "between_exposure_ephemeris_accuracy_certified": false,
+        "uniform_detector_interpolation_error_certified": false,
+        "same_declared_Gaussian_PSF_and_variance_approximations_as_prior_real_experiment": true,
+        "construction_seconds": 1.4231126590020722,
+        "two_fields_apply_seconds": 0.006122585000412073,
+        "two_fields_query_seconds": 0.044241052004508674,
+        "graph": {
+          "exposures": 3,
+          "segments": 5,
+          "total_grid_nodes": 7500,
+          "root_grid_nodes": 3600,
+          "stored_entries": 1906200,
+          "array_bytes": 30153624,
+          "rebased_states": 50413,
+          "cover_flow_steps": 4,
+          "construction_seconds": 1.4230475730000762,
+          "parent_values_use_only_child_fields": true,
+          "geometric_covers_exact_arithmetic_certified": true,
+          "interpolation_accuracy_certified": false,
+          "floating_point_evaluation_certified": false,
+          "transfer_backend": "cascade",
+          "exact_leaf_model_evaluation": true,
+          "leaf_model": "custom",
+          "cascade_intermediate_domains_certified": false,
+          "cascade_reports": [
+            {
+              "stored_entries": 108000,
+              "array_bytes": 1382424,
+              "geometry_points_including_iterations": 39613,
+              "maximum_mixed_inverse_scaled_residual": 7.983777180927634e-11,
+              "maximum_mixed_inverse_iterations": 2,
+              "intermediate_domains_certified": false,
+              "whole_box_error_certified": false
+            }
+          ],
+          "full_objective_complete": false,
+          "levels_by_node": [
+            {
+              "samples": 3,
+              "half_span": 0.008544259260816034,
+              "grid_shape": [
+                2,
+                2,
+                3,
+                10,
+                10,
+                3
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                10,
+                10
+              ]
+            },
+            {
+              "samples": 2,
+              "half_span": 0.0004839091416215524,
+              "grid_shape": [
+                2,
+                2,
+                3,
+                10,
+                10,
+                3
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                10,
+                10
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                10,
+                10
+              ]
+            }
+          ]
+        },
+        "input_sha256": {
+          "research/kepler_transform/chart_results/real_inputs/observations.json": "35880b032de387a96d9dd3863cc62e3a7a0620a88f28590534764a480a3244a7",
+          "research/kepler_transform/chart_results/real/result.json": "cac60c5f973b6a8b132fef212b8e7b4b0c8c898ae1709f268e6a5231975371b0",
+          "research/kepler_transform/chart_results/real_inputs/frame-0.fits": "54f10a836f220013ff03ffaf2a2696f921cb7cea48d964c1e53dad900288956c",
+          "research/kepler_transform/chart_results/real_inputs/frame-1.fits": "f54ca55dd23a4a1ad0f2726131e3b6a2b8082e2ab0e53dd2c7f07688d8ba791b",
+          "research/kepler_transform/chart_results/real_inputs/frame-2.fits": "2b871d8a9b4281b74d7b43a3826c9777d5d4c07f9dd0b5d5316c4f5e9c12ca38"
+        },
+        "full_objective_complete": false
+      }
+    },
+    {
+      "name": "real-14",
+      "status": "ran",
+      "result": {
+        "real_survey_data": true,
+        "uses_full_recorded_TPV_WCS": true,
+        "exposures": 3,
+        "pixels_per_exposure": 81,
+        "queries": 128,
+        "backend": "cascade",
+        "angular_order": 14,
+        "hidden_order": 2,
+        "rate_order": 3,
+        "numerator_max_absolute_error": 3.25484416641153e-08,
+        "information_max_absolute_error": 3.522955219215085e-09,
+        "numerator_relative_sup_error": 1.2928354406630023e-07,
+        "information_relative_sup_error": 6.633711059925148e-08,
+        "minimum_interpolated_information": 0.052745892209005475,
+        "observer_model": "quintic Hermite through recorded positions and velocities",
+        "observer_at_exposure_max_absolute_error_au": 0.0,
+        "between_exposure_ephemeris_accuracy_certified": false,
+        "uniform_detector_interpolation_error_certified": false,
+        "same_declared_Gaussian_PSF_and_variance_approximations_as_prior_real_experiment": true,
+        "construction_seconds": 2.7591640110040316,
+        "two_fields_apply_seconds": 0.012849914004618768,
+        "two_fields_query_seconds": 0.0700619849958457,
+        "graph": {
+          "exposures": 3,
+          "segments": 5,
+          "total_grid_nodes": 14700,
+          "root_grid_nodes": 7056,
+          "stored_entries": 3792600,
+          "array_bytes": 59778456,
+          "rebased_states": 98797,
+          "cover_flow_steps": 4,
+          "construction_seconds": 2.759118103000219,
+          "parent_values_use_only_child_fields": true,
+          "geometric_covers_exact_arithmetic_certified": true,
+          "interpolation_accuracy_certified": false,
+          "floating_point_evaluation_certified": false,
+          "transfer_backend": "cascade",
+          "exact_leaf_model_evaluation": true,
+          "leaf_model": "custom",
+          "cascade_intermediate_domains_certified": false,
+          "cascade_reports": [
+            {
+              "stored_entries": 268128,
+              "array_bytes": 3386904,
+              "geometry_points_including_iterations": 77629,
+              "maximum_mixed_inverse_scaled_residual": 8.284955732886335e-11,
+              "maximum_mixed_inverse_iterations": 2,
+              "intermediate_domains_certified": false,
+              "whole_box_error_certified": false
+            }
+          ],
+          "full_objective_complete": false,
+          "levels_by_node": [
+            {
+              "samples": 3,
+              "half_span": 0.008544259260816034,
+              "grid_shape": [
+                2,
+                2,
+                3,
+                14,
+                14,
+                3
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                14,
+                14
+              ]
+            },
+            {
+              "samples": 2,
+              "half_span": 0.0004839091416215524,
+              "grid_shape": [
+                2,
+                2,
+                3,
+                14,
+                14,
+                3
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                14,
+                14
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                14,
+                14
+              ]
+            }
+          ]
+        },
+        "input_sha256": {
+          "research/kepler_transform/chart_results/real_inputs/observations.json": "35880b032de387a96d9dd3863cc62e3a7a0620a88f28590534764a480a3244a7",
+          "research/kepler_transform/chart_results/real/result.json": "cac60c5f973b6a8b132fef212b8e7b4b0c8c898ae1709f268e6a5231975371b0",
+          "research/kepler_transform/chart_results/real_inputs/frame-0.fits": "54f10a836f220013ff03ffaf2a2696f921cb7cea48d964c1e53dad900288956c",
+          "research/kepler_transform/chart_results/real_inputs/frame-1.fits": "f54ca55dd23a4a1ad0f2726131e3b6a2b8082e2ab0e53dd2c7f07688d8ba791b",
+          "research/kepler_transform/chart_results/real_inputs/frame-2.fits": "2b871d8a9b4281b74d7b43a3826c9777d5d4c07f9dd0b5d5316c4f5e9c12ca38"
+        },
+        "full_objective_complete": false
+      }
+    },
+    {
+      "name": "real-18-refined",
+      "status": "ran",
+      "result": {
+        "real_survey_data": true,
+        "uses_full_recorded_TPV_WCS": true,
+        "exposures": 3,
+        "pixels_per_exposure": 81,
+        "queries": 128,
+        "backend": "cascade",
+        "angular_order": 18,
+        "hidden_order": 3,
+        "rate_order": 4,
+        "numerator_max_absolute_error": 7.492545472942425e-11,
+        "information_max_absolute_error": 5.8630322818942204e-12,
+        "numerator_relative_sup_error": 2.976065161017716e-10,
+        "information_relative_sup_error": 1.1040067123466129e-10,
+        "minimum_interpolated_information": 0.05274589206016865,
+        "observer_model": "quintic Hermite through recorded positions and velocities",
+        "observer_at_exposure_max_absolute_error_au": 0.0,
+        "between_exposure_ephemeris_accuracy_certified": false,
+        "uniform_detector_interpolation_error_certified": false,
+        "same_declared_Gaussian_PSF_and_variance_approximations_as_prior_real_experiment": true,
+        "construction_seconds": 15.633908131996577,
+        "two_fields_apply_seconds": 0.07072624700231245,
+        "two_fields_query_seconds": 0.8241394440046861,
+        "graph": {
+          "exposures": 3,
+          "segments": 5,
+          "total_grid_nodes": 94284,
+          "root_grid_nodes": 46656,
+          "stored_entries": 25165080,
+          "array_bytes": 394429848,
+          "rebased_states": 653197,
+          "cover_flow_steps": 4,
+          "construction_seconds": 15.633857587003149,
+          "parent_values_use_only_child_fields": true,
+          "geometric_covers_exact_arithmetic_certified": true,
+          "interpolation_accuracy_certified": false,
+          "floating_point_evaluation_certified": false,
+          "transfer_backend": "cascade",
+          "exact_leaf_model_evaluation": true,
+          "leaf_model": "custom",
+          "cascade_intermediate_domains_certified": false,
+          "cascade_reports": [
+            {
+              "stored_entries": 2332800,
+              "array_bytes": 29113368,
+              "geometry_points_including_iterations": 513229,
+              "maximum_mixed_inverse_scaled_residual": 9.176229979694132e-11,
+              "maximum_mixed_inverse_iterations": 2,
+              "intermediate_domains_certified": false,
+              "whole_box_error_certified": false
+            }
+          ],
+          "full_objective_complete": false,
+          "levels_by_node": [
+            {
+              "samples": 3,
+              "half_span": 0.008544259260816034,
+              "grid_shape": [
+                3,
+                3,
+                4,
+                18,
+                18,
+                4
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                18,
+                18
+              ]
+            },
+            {
+              "samples": 2,
+              "half_span": 0.0004839091416215524,
+              "grid_shape": [
+                3,
+                3,
+                4,
+                18,
+                18,
+                4
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                18,
+                18
+              ]
+            },
+            {
+              "samples": 1,
+              "half_span": 0.0,
+              "grid_shape": [
+                18,
+                18
+              ]
+            }
+          ]
+        },
+        "input_sha256": {
+          "research/kepler_transform/chart_results/real_inputs/observations.json": "35880b032de387a96d9dd3863cc62e3a7a0620a88f28590534764a480a3244a7",
+          "research/kepler_transform/chart_results/real/result.json": "cac60c5f973b6a8b132fef212b8e7b4b0c8c898ae1709f268e6a5231975371b0",
+          "research/kepler_transform/chart_results/real_inputs/frame-0.fits": "54f10a836f220013ff03ffaf2a2696f921cb7cea48d964c1e53dad900288956c",
+          "research/kepler_transform/chart_results/real_inputs/frame-1.fits": "f54ca55dd23a4a1ad0f2726131e3b6a2b8082e2ab0e53dd2c7f07688d8ba791b",
+          "research/kepler_transform/chart_results/real_inputs/frame-2.fits": "2b871d8a9b4281b74d7b43a3826c9777d5d4c07f9dd0b5d5316c4f5e9c12ca38"
+        },
+        "full_objective_complete": false
+      }
+    }
+  ],
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "arb_precision_bits": 100,
+  "source_sha256": {
+    "research/kepler_transform/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+    "research/kepler_transform/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+    "research/kepler_transform/cascade_transfer.py": "ed6b48a37df7ba98eb78a421308e8a418425f64956d5919bd1a0c69228e062ee",
+    "research/kepler_transform/certified_global_experiments.py": "292ad31777455686c3a217adbc057963a1fd630b57a1d762ffad29198d377bcc",
+    "research/kepler_transform/certify_global.py": "7c74ddfa6226a9f51933bd3ef3bd44e728798627814fca9eef2732d2c3f45df4",
+    "research/kepler_transform/chart_atlas.py": "a572e6d00138e5277351ebe5cce18e1baa8196a295c10088b931c121669abef4",
+    "research/kepler_transform/chart_cover.py": "8183b9a1af211beacd92199951bc446ffc7e98a9df8440b46f5d91fc7c8b0139",
+    "research/kepler_transform/chart_experiments.py": "d58d42e1acce8e63225f53b917659c15128286d30ac50783fc1b32e8a3526501",
+    "research/kepler_transform/chart_operator.py": "3244e0e81d86b4e382794ea1ad74792de38fd3122266fb2ca948bf13b1619550",
+    "research/kepler_transform/chart_search.py": "1edf590141d9513a39869ad22c86b8c06a117485addf8b2e6b231a69d7a92532",
+    "research/kepler_transform/chebyshev_moments.py": "1122880294b94fd715f3ca4aefb6bca1e0ae51ac10801aa385631d93b5cd9e59",
+    "research/kepler_transform/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20",
+    "research/kepler_transform/compiled_comparison.py": "9555d9d70007590f22a8fa498959ee68a7792349fa8ba8805ba93207a95b866a",
+    "research/kepler_transform/compiled_reference.py": "2698df3561ee09c5f3c548d51dd47345921420965b473ac30aac734bcd9ce6c0",
+    "research/kepler_transform/complex_source_certificate.py": "ab7b4d76e7dfb47726ddca11bebe1749975b54ffcc90070a35a54a3eee75ba47",
+    "research/kepler_transform/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+    "research/kepler_transform/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+    "research/kepler_transform/detector_fields.py": "31138bd7bdc7c17e196584f6481c7e4cacd8240b7a3c72d4e607b42f5a4b9274",
+    "research/kepler_transform/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+    "research/kepler_transform/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+    "research/kepler_transform/fifth_geometry.py": "793221157caf4657b4c7d8ce64977fc12a8c6243bba5c6b9b84109ea9aef21b1",
+    "research/kepler_transform/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+    "research/kepler_transform/global_experiments.py": "4ec0d4ae102b0efe192a69c85e5746366c12c8ebb9105a2e05035b3a1d76722d",
+    "research/kepler_transform/global_kepler.py": "ffe889a2051635aeeb09fac54fa6e82142bb3e8d893251085c098f9f155a64bf",
+    "research/kepler_transform/jet_geometry.py": "40f27e3b660f3c9d78c1ee59c8355778ec500942aa364aa3329a3b191ed11841",
+    "research/kepler_transform/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+    "research/kepler_transform/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+    "research/kepler_transform/observer_chart.py": "dba4b4a35656524ea889aca16e1db401c1ee9ae8f8cad6b6feb00c94e5cb6359",
+    "research/kepler_transform/phase_budget.py": "d1d707d2526cd14873295e7b81ef432c6853e8be499adedaedc36d0701e61342",
+    "research/kepler_transform/plot_construction.py": "65ce671e1296215b329f06d8d3cb59a5bacdf5cedb9b14cd3bcc5c36a1df0adf",
+    "research/kepler_transform/quartic_atlas.py": "de101ae8af7da9143934d35ef100ad7c3b2c820f21fc351ac6895697c7433c4f",
+    "research/kepler_transform/quartic_experiments.py": "b89e2cc973ca5d80aa9e74e78935694fab78109b5c7127dafbdd4bd42486201a",
+    "research/kepler_transform/real_exposure_experiment.py": "40b4d8a2342482bcb55169b7328b1e4952509bdc68b8dfdaa1db58d248c5d55f",
+    "research/kepler_transform/reception_flow.py": "4538f6d4a8f0258d83ce723ce27b24347ee5468e89eacacb47c6919305793ab0",
+    "research/kepler_transform/replay_chart.py": "c17b120f1f0bfb61917492febfcaecd9baa1554b736718174a7a0f5809b1dd5c",
+    "research/kepler_transform/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+    "research/kepler_transform/segment_composition.py": "db12d1cf1881cd8ba0d8d0a372a79373c52812076d24a30db157360c51e4dcd5",
+    "research/kepler_transform/segment_experiments.py": "7d998d597dd20f04d62d32f77c8272d58d789506a9b0de30511d848693938440",
+    "research/kepler_transform/segment_field.py": "7ec1bbf6d9cd0b7baba5096e2f23dd3b0c1b42d6fe9177c36fabf528105dc943",
+    "research/kepler_transform/segment_field_certificate.py": "a46cf5c23708e530fe6ef22544fe71c72ed09aaaca11dce2b3347ce71f261edf",
+    "research/kepler_transform/segment_field_experiments.py": "5002b5792d6f8bfbe6bdf9c22c05c733989e7d525c7aa5b48a0ece73358b5808",
+    "research/kepler_transform/source_butterfly.py": "52bb3d7137cbdb05a46102209cc3fb27a9931bc81d0a468d5152fd79de11bf91",
+    "research/kepler_transform/structured_comparison.py": "67bfce198f590f04b9d313d0eabc8f6b335d383b0e5dc0ec66a91c4bf7287c98",
+    "research/kepler_transform/sundman.py": "5396f244aac08b4b6db140d8ecdce05aff9fc90f5f81da6368127ecf69020e5b",
+    "research/kepler_transform/translated_experiment.py": "f8df5b420a6bf007927e391a58428a217a50e1c936e754b0cd615393e9b717c8",
+    "research/kepler_transform/translated_flow.py": "fcc04a07b5f5979d85ab000d10826420a004a132561af8c724bd01c898dfb27b",
+    "research/kepler_transform/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "research/kepler_transform/validated_universal.py": "8f41611a6e6354e466be1480ab2626f75165d9db4c3f98e8520bac3832e91622",
+    "research/kepler_transform/verify_chart_campaign.py": "0dfbe72dad426e21da5d710f5b79c7fc59b893a45db691668b629fc8303c0fe3",
+    "research/kepler_transform/verify_construction.py": "242bf118a71647785b5640ac64eea72cafadf6350906e700e58ab595a31fb467",
+    "research/kepler_transform/verify_global_campaign.py": "7b2172d65b319338e66ee6196c5be79940c70d9a41fcfcfe35675f59642ba21c",
+    "research/kepler_transform/verify_segment_campaign.py": "b9ab95456d36e37e3aa7ed6883beb59ce952a35cdf8a0c7d0660efc28fd0fcbd",
+    "research/kepler_transform/verify_segment_field_campaign.py": "cce72ed8221fb03f2f1afdcb6f4759ad824adb2c26e64c777b257e178eb3cf08",
+    "src/magictools/orbits.py": "fd3a90aaf2f2c6c90d83c8f29e64460c83c31c8e273131de6102ea4f3d9634a6"
+  }
+}

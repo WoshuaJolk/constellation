@@ -1,0 +1,193 @@
+{
+  "files": [
+    "frame-0.fits",
+    "frame-1.fits",
+    "frame-2.fits"
+  ],
+  "mjd_tdb": [
+    58511.38213189466,
+    58511.389708335635,
+    58511.39067615392
+  ],
+  "observers": [
+    [
+      -0.6047606835041603,
+      0.713134364976303,
+      0.30915710467276253
+    ],
+    [
+      -0.6048665925511845,
+      0.7130590456001882,
+      0.30912508867460414
+    ],
+    [
+      -0.604880115614713,
+      0.7130494203749108,
+      0.3091209985287123
+    ]
+  ],
+  "observer_velocities": [
+    [
+      -0.013984006815625165,
+      -0.009937613146895737,
+      -0.004225358109983594
+    ],
+    [
+      -0.013973415474877595,
+      -0.009944835495430543,
+      -0.004226103088985413
+    ],
+    [
+      -0.013972043780916463,
+      -0.00994572631514851,
+      -0.004226198281291459
+    ]
+  ],
+  "sigma_pixels": [
+    [
+      1.2523249945411434,
+      1.2523249945411434
+    ],
+    [
+      0.9117469526211714,
+      0.9117469526211714
+    ],
+    [
+      0.9062263609192268,
+      0.9062263609192268
+    ]
+  ],
+  "flux_scales": [
+    3.049992700796271,
+    3.2835981325367674,
+    3.454181867145999
+  ],
+  "provenance": [
+    {
+      "id": "ztf-757381141115",
+      "prepared_sha256": "c22e00d2b8d86ba11691ac04aca6130e14ee9a8932132507e01287cdaae0b0f6",
+      "crop_center_original_pixel": [
+        89,
+        89
+      ],
+      "exposure_seconds": 29.987999999999815
+    },
+    {
+      "id": "ztf-757388711115",
+      "prepared_sha256": "a24a7b53cacd80bdf66ebd0d1c03b449700e3359d66d7489a3cc42c9bc23e7bf",
+      "crop_center_original_pixel": [
+        89,
+        89
+      ],
+      "exposure_seconds": 29.97900000000815
+    },
+    {
+      "id": "ztf-757389683415",
+      "prepared_sha256": "54ee3724666b39d82debde79aaaf4c353bcd63cfb5ffd639566336677a334e5a",
+      "crop_center_original_pixel": [
+        89,
+        88
+      ],
+      "exposure_seconds": 29.979999999994966
+    }
+  ],
+  "public_products": [
+    {
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/ztf/products/sci/2019/0128/381134/ztf_20190128381134_000671_zr_c03_o_q4_sciimg.fits?center=180%2C30&size=180arcsec&gzip=false",
+      "path": "/workspace/scratch/ztf-live/download-final/757381141115-sciimg.fits",
+      "bytes": 152640,
+      "sha256": "82758999410712bd010780a9a7e52c16ceea031b726d6165fce4797a700d4c99"
+    },
+    {
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/ztf/products/sci/2019/0128/381134/ztf_20190128381134_000671_zr_c03_o_q4_mskimg.fits?center=180%2C30&size=180arcsec&gzip=false",
+      "path": "/workspace/scratch/ztf-live/download-final/757381141115-mskimg.fits",
+      "bytes": 83520,
+      "sha256": "38fa61d1e5978798005c47552b5b8f2899346a88542367368d6241e9ab9871e3"
+    },
+    {
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/ztf/products/sci/2019/0128/381134/ztf_20190128381134_000671_zr_c03_o_q4_sciimgdaopsfcent.fits",
+      "path": "/workspace/scratch/ztf-live/download-final/757381141115-sciimgdaopsfcent.fits",
+      "bytes": 5760,
+      "sha256": "9d361472ed6bc76cf7742472abbace11015fe55921ae60b7e4b1eb523c92c6aa"
+    },
+    {
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/ztf/products/sci/2019/0128/388646/ztf_20190128388646_000671_zr_c03_o_q4_sciimg.fits?center=180%2C30&size=180arcsec&gzip=false",
+      "path": "/workspace/scratch/ztf-live/download-final/757388711115-sciimg.fits",
+      "bytes": 152640,
+      "sha256": "3d3f20d2277639b9648391bf3df5b1fc7cfbef1f4e2ce8d64d49bff4493286f6"
+    },
+    {
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/ztf/products/sci/2019/0128/388646/ztf_20190128388646_000671_zr_c03_o_q4_mskimg.fits?center=180%2C30&size=180arcsec&gzip=false",
+      "path": "/workspace/scratch/ztf-live/download-final/757388711115-mskimg.fits",
+      "bytes": 83520,
+      "sha256": "5100b4f2dc0f9b4c4f6a6ebcd8bbfa96bfefb6ccb58b64d3da15d54ec107bd9e"
+    },
+    {
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/ztf/products/sci/2019/0128/388646/ztf_20190128388646_000671_zr_c03_o_q4_sciimgdaopsfcent.fits",
+      "path": "/workspace/scratch/ztf-live/download-final/757388711115-sciimgdaopsfcent.fits",
+      "bytes": 5760,
+      "sha256": "d4f0fdba5dc2ac3393a716ba3ca560315a7bfaa685c29ccab84702589e7d688f"
+    },
+    {
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/ztf/products/sci/2019/0128/389664/ztf_20190128389664_001668_zr_c09_o_q3_sciimg.fits?center=180%2C30&size=180arcsec&gzip=false",
+      "path": "/workspace/scratch/ztf-live/download-final/757389683415-sciimg.fits",
+      "bytes": 152640,
+      "sha256": "c7f7bc9a59aa2ab38e9505c5e92464e634c4bcd73c5d455ce883c92e986e0539"
+    },
+    {
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/ztf/products/sci/2019/0128/389664/ztf_20190128389664_001668_zr_c09_o_q3_mskimg.fits?center=180%2C30&size=180arcsec&gzip=false",
+      "path": "/workspace/scratch/ztf-live/download-final/757389683415-mskimg.fits",
+      "bytes": 83520,
+      "sha256": "c83a6d7abb26ec775d8f323c4a5fe157a34def864b8e3db8e7ca605183abaf09"
+    },
+    {
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/ztf/products/sci/2019/0128/389664/ztf_20190128389664_001668_zr_c09_o_q3_sciimgdaopsfcent.fits",
+      "path": "/workspace/scratch/ztf-live/download-final/757389683415-sciimgdaopsfcent.fits",
+      "bytes": 5760,
+      "sha256": "8dd941af0f18167981a4dc1949fd8ca20581a6cadbb68028555ad48d97f856d5"
+    }
+  ],
+  "original_calibration": [
+    {
+      "pid": "757381141115",
+      "filtercode": "zr",
+      "sky_median_adu": 163.4485092163086,
+      "sky_sigma_adu": 6.000754204786526,
+      "gain_e_per_adu": 6.2,
+      "magzp": 26.210747,
+      "catalog_maglimit": 20.343,
+      "masked_fraction": 0.00671015261695952,
+      "psf_negative_mass": 0.004158328558438125,
+      "noise_model": "Estimated local MAD sky variance plus nonnegative observed source excess/gain; not a survey uncertainty product",
+      "psf_model": "Survey empirical PSF at quadrant center; spatial variation and native-pixel interpolation error are not fitted"
+    },
+    {
+      "pid": "757388711115",
+      "filtercode": "zr",
+      "sky_median_adu": 162.64906311035156,
+      "sky_sigma_adu": 5.916609018145432,
+      "gain_e_per_adu": 6.2,
+      "magzp": 26.290875,
+      "catalog_maglimit": 20.8151,
+      "masked_fraction": 0.006470142658755207,
+      "psf_negative_mass": 0.01378680654513567,
+      "noise_model": "Estimated local MAD sky variance plus nonnegative observed source excess/gain; not a survey uncertainty product",
+      "psf_model": "Survey empirical PSF at quadrant center; spatial variation and native-pixel interpolation error are not fitted"
+    },
+    {
+      "pid": "757389683415",
+      "filtercode": "zr",
+      "sky_median_adu": 180.17047882080078,
+      "sky_sigma_adu": 6.518294044761875,
+      "gain_e_per_adu": 6.2,
+      "magzp": 26.345863,
+      "catalog_maglimit": 20.8375,
+      "masked_fraction": 0.007155859644717846,
+      "psf_negative_mass": 0.009276486739055711,
+      "noise_model": "Estimated local MAD sky variance plus nonnegative observed source excess/gain; not a survey uncertainty product",
+      "psf_model": "Survey empirical PSF at quadrant center; spatial variation and native-pixel interpolation error are not fitted"
+    }
+  ],
+  "ephemeris": "Astropy builtin Earth-Sun plus observatory GCRS displacement; recorded here",
+  "real_survey_data": true
+}

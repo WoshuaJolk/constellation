@@ -1,0 +1,96 @@
+{
+  "full_objective_complete": false,
+  "tested_commit": "f40a20187fe69fc9cbd04a2b82fbd33406d592cb",
+  "merged_main_commit": "14e07b3783d2bb31af82f0f02f57e4ab9c89e60e",
+  "suite": {
+    "passed": 467,
+    "skipped": 1,
+    "skip": "Optional local JPL SPK kernel not supplied",
+    "log_sha256": "4088f03a062b2c48ab6c001f018fd3654fef0d6fc66413f85a755497fa703b19",
+    "command": "OPENBLAS_NUM_THREADS=1 python -m pytest -q"
+  },
+  "wheel": {
+    "sha256": "d6b1a4469505e9bc2955dd470ab27560b536afc6f46bf81c79af9d84196a2a6c",
+    "all_root_fitsky_sources_identical": true,
+    "installed_module": "/tmp/fitsky-sequential-installed/research/fit_sky/sequential.py",
+    "outside_repository_cli_initial_exposures": 3,
+    "outside_repository_cli_resumed_exposures": 10
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "python-flint": "0.8.0",
+    "astropy": "8.0.2",
+    "pytest": "9.1.1"
+  },
+  "source_sha256": {
+    "research/fit_sky/__init__.py": "5ca2ddfd8a0392459e58a189686877fd3773c6bced114f19bb659305d6a2c929",
+    "research/fit_sky/arithmetic.py": "aac9c4d3ff0dc05dd8321f287cc47fd540d737444067995eb9d05960de942965",
+    "research/fit_sky/cli.py": "f1055f7cba257f9869275fa9c8bdf022f535ea242a608efc387a901fa1ea9e30",
+    "research/fit_sky/envelope.py": "261327f0ea6942ef4ce046d25558dc61edacc4a849fee30ec088ec4d2e19a0be",
+    "research/fit_sky/experiments.py": "92f90e2d113c109d2545b9cbd2fb9bf23e9cf09c3c44b577c9e1a23ce5feeb25",
+    "research/fit_sky/graph.py": "c6f2dfe7ca6c3872d39396fd693034899cd8f111c520b0f3bec8e8440a1aadad",
+    "research/fit_sky/integrate.py": "8e7e834e47940970bc4c58e66c28c0d6eb8561c1b07815cd8b6e695b7e4c08c2",
+    "research/fit_sky/noise_floor.py": "3c3ead797edf8c48daaca64126a390f45e8d682f1fd8d11aebef64139e846411",
+    "research/fit_sky/noise_floor_experiments.py": "21efe70e150199a56d2fd340545c1fb9eed8a4ab84ba768e8d58620f48a86562",
+    "research/fit_sky/noise_floor_predictive.py": "ddf2dda9a75caf4c434d38506295fb702ea09ec90b157ebbb41b9ea59e26bad1",
+    "research/fit_sky/predictive_experiment.py": "d441b894f967ff3231be0fd3d38054280a8a24a31a9cda93e09db8db66fd237d",
+    "research/fit_sky/reference.py": "900aa9cbb7ba31bbab0a0e53372142f1a5d4d890bd7ef42a7d5e627e24cda6b8",
+    "research/fit_sky/reference_quadrature.py": "52ba522363067720e20dee57ad82535233a331111cda75f9c3b881bf94991dd6",
+    "research/fit_sky/sampling.py": "a0cc7af5f6c8040ad3f801ff72759845958b0b7fd3d4977a7ba9289a847fad5d",
+    "research/fit_sky/scene.py": "21ca897cfeab2614b65fd1e86fb0ad2697b69bb1647f0d41b7f30d562d484df7",
+    "research/fit_sky/sequential.py": "41871968516aa33dced1ff95c7da8d45656d19596d0ed73840a70f05a2f257a5",
+    "research/fit_sky/sequential_audit.py": "af88676ae55627008453c363272a4f399b42eb981b3d9ad6509130b9c3563937",
+    "research/fit_sky/sequential_cli.py": "d65d7be456ac5ed65c780c5453245bb05811ba9bb913f961ec3036afcadd22b4",
+    "research/fit_sky/sequential_experiments.py": "041f4129abd698877ffc8a8897ac3ac93c7fe97952bd5b80f8a6541900b9c064",
+    "research/fit_sky/statistical.py": "11b8f1ddb9832ab9391666eb5b46e757b2e9bdb6927096bd88908076f9480cac",
+    "research/fit_sky/statistical_experiments.py": "e0cd7895283cefcaa1b030deb8dc8e33bd6abcde5adcb5dfca3a958d3043fafc"
+  },
+  "kepler_diff_against_merged_main": [],
+  "original_worktree_status": [],
+  "test_source_sha256": "66c84e75ec1d90e4665b514430c2c47351db380a0855c36710a530b1a817c480",
+  "artifact_inventories_checked": {
+    "runs/20261110": 16,
+    "runs/20261111": 16,
+    "runs/20261112": 16,
+    "runs/20261113": 16,
+    "runs/20261120": 16,
+    "runs/20261121": 16,
+    "runs/20261122": 16,
+    "runs/20261123": 16,
+    "runs/20261140": 16,
+    "runs/20261141": 16,
+    "runs/20261142": 16,
+    "runs/20261143": 16,
+    "audit-10": 24,
+    "audit-30": 24,
+    "pilot-256": 12,
+    "installed-first": 3,
+    "installed-resumed": 3
+  },
+  "all_twelve_runs_completed_thirty_exposures": true,
+  "all_twelve_process_exit_codes_zero": true,
+  "all_campaign_inputs_identical": true,
+  "original_broad_priors_and_first_three_images_preserved": true,
+  "mixed_scene_accuracy_target_met": false,
+  "global_audit_statuses": {
+    "10": "unresolved",
+    "30": "unresolved"
+  },
+  "photon_partition_control": {
+    "all_controls_passed": true,
+    "original_broad_scene_solved": false,
+    "driver_sha256": "9561de1f62b476e91aa100baff7874506869282582a38becc10a801e88ee6201",
+    "result_sha256": "d09af5d8417c614eb2e5909c772218a08f8ed904101407f4c96ba7dea24aedea",
+    "inventory_files_checked": 2
+  },
+  "source_snapshot_commits": {
+    "baseline": "bcc7c19",
+    "conditional_flux": "822b67d",
+    "split_merge_and_flux": "f40a201"
+  },
+  "sequential_results_inventory_sha256": "8b7aa2b576034c8e0dd963c483120a8181a340c051b7b4ec45deb34cf685a5f8",
+  "summary_sha256": "33283f2dd3c2eb7b6df8dd3f12ffcc87b402c568abad591ab1df3132c25e67a2",
+  "plot_sha256": "a677aa66fcb92589837e73c5a8a7d8554c2041c32479c65f281cae423ea1162b"
+}

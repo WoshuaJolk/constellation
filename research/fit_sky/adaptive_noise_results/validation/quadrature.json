@@ -1,0 +1,28 @@
+[
+  {
+    "method": "tensor_gauss_with_quadratic_flux_marginalization",
+    "order": 20,
+    "scaled_evidence": 2.2198290581759562e-60,
+    "queries": {
+      "has:stationary": 0.05133105495085474,
+      "has:moving": 0.051370309779514234
+    },
+    "likelihood_evaluations": 481201,
+    "seconds": 9.697592834999341,
+    "is_certificate": false,
+    "full_objective_complete": false
+  },
+  {
+    "method": "tensor_gauss_with_quadratic_flux_marginalization",
+    "order": 32,
+    "scaled_evidence": 2.2198290581756708e-60,
+    "queries": {
+      "has:stationary": 0.051331054950855874,
+      "has:moving": 0.051370309779397993
+    },
+    "likelihood_evaluations": 3148801,
+    "seconds": 83.1269745540003,
+    "is_certificate": false,
+    "full_objective_complete": false
+  }
+]

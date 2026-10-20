@@ -1,0 +1,157 @@
+[
+  {
+    "hip": 3881,
+    "included": true,
+    "source_id": "375010813139050368",
+    "ruwe": 1.141545295715332,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 14514,
+    "included": true,
+    "source_id": "58850711337487616",
+    "ruwe": 1.1509472131729126,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 18614,
+    "included": false,
+    "source_id": "219375904303684224",
+    "reason": "RUWE_missing_or_above_1.4"
+  },
+  {
+    "hip": 22061,
+    "included": true,
+    "source_id": "3230156087694893952",
+    "ruwe": 0.949552595615387,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 24575,
+    "included": true,
+    "source_id": "182071570715713024",
+    "ruwe": 0.9930747747421265,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 26241,
+    "included": false,
+    "source_id": "3017190546641718144",
+    "reason": "RUWE_missing_or_above_1.4"
+  },
+  {
+    "hip": 27204,
+    "included": true,
+    "source_id": "2901155648586891648",
+    "ruwe": 1.2452976703643799,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 29678,
+    "included": true,
+    "source_id": "3344576352924411136",
+    "ruwe": 1.17033851146698,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 38455,
+    "included": true,
+    "source_id": "5537733610870346880",
+    "ruwe": 1.0648199319839478,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 38518,
+    "included": true,
+    "source_id": "5518235833732209536",
+    "ruwe": 1.0480194091796875,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 39429,
+    "included": false,
+    "source_id": "5534788672055388032",
+    "reason": "RUWE_missing_or_above_1.4"
+  },
+  {
+    "hip": 42038,
+    "included": true,
+    "source_id": "5321174487856385664",
+    "ruwe": 0.9330682158470154,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 46950,
+    "included": true,
+    "source_id": "5312887640522116992",
+    "ruwe": 0.8449809551239014,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 48943,
+    "included": true,
+    "source_id": "5660602557795903616",
+    "ruwe": 1.2736402750015259,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 49934,
+    "included": true,
+    "source_id": "5258611382897321088",
+    "ruwe": 0.8362382650375366,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 57669,
+    "included": false,
+    "reason": "missing_or_ambiguous_Gaia_crossmatch"
+  },
+  {
+    "hip": 69491,
+    "included": true,
+    "source_id": "5895765142704352640",
+    "ruwe": 1.3511831760406494,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 76013,
+    "included": true,
+    "source_id": "5794330865689870592",
+    "ruwe": 1.060072422027588,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 81377,
+    "included": false,
+    "source_id": "4337352305320149760",
+    "reason": "RUWE_missing_or_above_1.4"
+  },
+  {
+    "hip": 82868,
+    "included": true,
+    "source_id": "5936759471698278272",
+    "ruwe": 0.8361420035362244,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 91599,
+    "included": true,
+    "source_id": "4155626054317058048",
+    "ruwe": 0.9120685458183289,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 102274,
+    "included": true,
+    "source_id": "2196984971452315392",
+    "ruwe": 0.8560816645622253,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  },
+  {
+    "hip": 109556,
+    "included": true,
+    "source_id": "2199904449710846720",
+    "ruwe": 0.9689051508903503,
+    "radial_velocity_source": "Bhat et al. 2022 Table A.1; not independently revalidated here"
+  }
+]

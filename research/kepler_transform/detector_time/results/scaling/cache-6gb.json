@@ -1,0 +1,30 @@
+{
+  "queries": 8192,
+  "cache_budget_bytes": 6000000000,
+  "persistent_cache_bytes": 4429250560,
+  "geometry_seconds": 6.057776279994869,
+  "cache_setup_seconds": 23.435124209994683,
+  "new_image_application": {
+    "samples_seconds": [
+      0.91030775901163,
+      0.8941086609993363,
+      0.9170529529947089
+    ],
+    "median_seconds": 0.91030775901163,
+    "min_seconds": 0.8941086609993363,
+    "max_seconds": 0.9170529529947089,
+    "loops_per_sample": 1
+  },
+  "max_score_error": 0.0,
+  "changed_image_max_score_error": 3.410605131648481e-13,
+  "input_sha256": {
+    "/workspace/magictools/research/kepler_transform/detector_time/results/dense-1024/inputs.npz": "8ea1db6ca8b437acb65ade5961d39ec76f53cd5967f846cbbd7456960e283a48",
+    "research/kepler_transform/detector_time/results/scaling/dense/queries.npz": "b4fd1ab22bcb167c66cd866fb71ee8c9084ce621e80693db21b321b1aeb65bdf",
+    "research/kepler_transform/detector_time/results/scaling/dense/scores.npz": "46ef5a64f2d16f34a3dee496f0230e73106a80ae4d856e3016e32958e7c3ef83"
+  },
+  "source_sha256": {
+    "cache_probe.py": "3229bf5cd6a50d1cd9dd5c165bd8d1ea669f6aa04a7b7d5ded5d723a570dd7cf"
+  },
+  "scope": "Memory sensitivity control, not a new compressed-pipeline timing.",
+  "cache_budget_excludes_shared_inputs_and_transient_arrays": true
+}

@@ -1,0 +1,44 @@
+{
+  "tool": "find_ejector_tighter_radius",
+  "parent_catalogue_size": 13317,
+  "searched_member_union": 25,
+  "parent_radius_pc": 10.0,
+  "radius_pc": 1.0,
+  "candidates": [],
+  "search_counts": {
+    "group_segment_evaluations": 0,
+    "broad_phase_pair_checks": 6556,
+    "segments": 100
+  },
+  "completeness": "Full parent catalogue, unchanged sampled piecewise-linear paths/support/group size/time range; tighter events are a subset of parent events",
+  "significance": null,
+  "parent_numerics": {
+    "half_step_max_position_difference_pc": 0.018643924140778464,
+    "max_midpoint_chord_error_pc": 0.06874067799113981
+  },
+  "numerical_diagnostics_within_tenth_of_new_radius": true,
+  "provenance": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "inputs": [
+      {
+        "path": "/workspace/scratch/ejector/measured-radial-control/tracebacks/complete.json",
+        "sha256": "cea8f4c00837ae30bf06494d4dc1e5f7f76403a4df10ac2b9ea97da74883ae7d"
+      },
+      {
+        "path": "/workspace/scratch/ejector/measured-radial-control/tracebacks/lookback_myr.npy",
+        "sha256": "5115f9e53ff303b4c2bbf8a7f1fcca7d3ea44c9a87c9be653f13c7eba13b3c67"
+      },
+      {
+        "path": "/workspace/scratch/ejector/measured-radial-control/tracebacks/source_ids.npy",
+        "sha256": "7fa60ef81048f3dc6a3aae3abf6893f48f69d75825781de6c838744505e44a40"
+      },
+      {
+        "path": "/workspace/scratch/ejector/measured-radial-control/tracebacks/states.npy",
+        "sha256": "d792a9a78fb132719c25df502958bedac912203a9664d8ee6f609b83010ad2ca"
+      }
+    ]
+  }
+}

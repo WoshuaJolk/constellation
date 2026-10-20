@@ -1,0 +1,29 @@
+[
+  {
+    "case": "observed",
+    "hypotheses": 816,
+    "excluded": 816,
+    "certified_witnesses": 0,
+    "unresolved": 0,
+    "all_claims_replayed": true,
+    "subdivision_coverage_checked_with_exact_rationals": true
+  },
+  {
+    "case": "injection",
+    "hypotheses": 1330,
+    "excluded": 1329,
+    "certified_witnesses": 1,
+    "unresolved": 0,
+    "all_claims_replayed": true,
+    "subdivision_coverage_checked_with_exact_rationals": true
+  },
+  {
+    "case": "historical",
+    "hypotheses": 1,
+    "excluded": 0,
+    "certified_witnesses": 1,
+    "unresolved": 0,
+    "all_claims_replayed": true,
+    "subdivision_coverage_checked_with_exact_rationals": true
+  }
+]

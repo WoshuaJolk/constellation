@@ -1,0 +1,19 @@
+{
+  "mode": "orbits",
+  "start": "2025-10-01",
+  "end": "2025-10-03",
+  "providers": ["ssois", "most"],
+  "orbits": [
+    {
+      "label": "synthetic-hyperbolic-example",
+      "kind": "cometary",
+      "epochMjd": 60900,
+      "q": 1.36,
+      "tpJd": 2460978.5,
+      "e": 6.1,
+      "i": 175,
+      "node": 322,
+      "peri": 128
+    }
+  ]
+}

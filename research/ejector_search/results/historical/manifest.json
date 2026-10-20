@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "epoch_label": "J1991.25",
+  "frame": {
+    "galcen_distance_pc": 8122.0,
+    "z_sun_pc": 20.8,
+    "galcen_v_sun_kms": [
+      12.9,
+      245.6,
+      7.78
+    ]
+  },
+  "potential": {
+    "components": [
+      {
+        "type": "plummer",
+        "mass_msun": 5000000000.0,
+        "scale_pc": 500.0
+      },
+      {
+        "type": "miyamoto_nagai",
+        "mass_msun": 68000000000.0,
+        "a_pc": 3000.0,
+        "b_pc": 280.0
+      },
+      {
+        "type": "log_halo",
+        "speed_kms": 180.0,
+        "core_pc": 12000.0
+      }
+    ]
+  },
+  "objects": [
+    {
+      "id": "AE_Aur",
+      "ra_deg": 79.075625,
+      "dec_deg": 34.31222222222222,
+      "mean": [
+        2.24,
+        -4.05,
+        43.22,
+        57.5
+      ],
+      "covariance": [
+        [
+          0.5476,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.43560000000000004,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.1936,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.44
+        ]
+      ],
+      "notes": "Hoogerwerf et al. 2001 Table 3; J1991.25. Printed marginal errors, diagonal covariance approximation. iota Ori uses systemic RV."
+    },
+    {
+      "id": "iota_Ori",
+      "ra_deg": 83.85824999999998,
+      "dec_deg": -5.909888888888889,
+      "mean": [
+        2.46,
+        2.27,
+        -0.62,
+        28.7
+      ],
+      "covariance": [
+        [
+          0.5929,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.42250000000000004,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.22089999999999999,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.2100000000000002
+        ]
+      ],
+      "notes": "Hoogerwerf et al. 2001 Table 3; J1991.25. Printed marginal errors, diagonal covariance approximation. iota Ori uses systemic RV."
+    },
+    {
+      "id": "mu_Col",
+      "ra_deg": 86.49954166666666,
+      "dec_deg": -32.30638888888888,
+      "mean": [
+        2.52,
+        3.01,
+        -22.62,
+        109.0
+      ],
+      "covariance": [
+        [
+          0.30250000000000005,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.27040000000000003,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          6.25
+        ]
+      ],
+      "notes": "Hoogerwerf et al. 2001 Table 3; J1991.25. Printed marginal errors, diagonal covariance approximation. iota Ori uses systemic RV."
+    }
+  ],
+  "fit": {
+    "starts_myr": [
+      [
+        0.5
+      ],
+      [
+        2.5
+      ],
+      [
+        5.0
+      ]
+    ],
+    "max_step_myr": 0.02,
+    "max_sigma": 8.0,
+    "min_parallax_mas": 0.1,
+    "max_iterations": 120,
+    "constraint_tolerance_pc": 0.001
+  },
+  "catalogue_description": "Previously known historical Orion triple, Hoogerwerf et al. 2001 Table 3; diagonal printed uncertainties, fixed angles. Positive benchmark, not a blinded discovery or updated astrometric claim.",
+  "search": {
+    "group_size": 3,
+    "radius_pc": 1.0,
+    "lookback_bounds_myr": [
+      0.1,
+      6.0
+    ],
+    "report_chi2_max": 25.0,
+    "max_hypotheses": 5000,
+    "workers": 1
+  },
+  "controls": {
+    "method": "proper_motion_rotation",
+    "n_controls": 99,
+    "seed": 20261020
+  },
+  "archive_output": "historical"
+}

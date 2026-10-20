@@ -1,0 +1,6 @@
+{
+  "samples": 1000000,
+  "confidence": 0.99,
+  "seed": 20261130,
+  "marginalize_flux": true
+}

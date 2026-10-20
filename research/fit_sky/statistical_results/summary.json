@@ -1,0 +1,95 @@
+{
+  "scalar": {
+    "status": "confidence_target_met",
+    "queries": {
+      "has:star": [
+        0.6059531941108366,
+        0.6096974472063965
+      ]
+    },
+    "relative_evidence_gap": 0.00045375255020734743,
+    "seconds": 5.001504861000285,
+    "maximum_sampled_source_count": 1,
+    "full_objective_complete": false
+  },
+  "confused": {
+    "status": "unresolved",
+    "queries": {
+      "count=0": [
+        0.006018896615272393,
+        0.008416797298364392
+      ],
+      "count=1": [
+        0.5289923916037345,
+        0.5381611532241045
+      ],
+      "count=2": [
+        0.45467620556482324,
+        0.46374777248968296
+      ]
+    },
+    "relative_evidence_gap": 0.012124541740277574,
+    "seconds": 64.61333491300002,
+    "maximum_sampled_source_count": 2,
+    "full_objective_complete": false
+  },
+  "moving": {
+    "status": "unresolved",
+    "queries": {
+      "has:stationary": [
+        0.0,
+        1.0
+      ],
+      "has:moving": [
+        0.0,
+        1.0
+      ],
+      "any:moving:vx:0:0.6": [
+        0.0,
+        1.0
+      ]
+    },
+    "relative_evidence_gap": null,
+    "seconds": 19.614850184999796,
+    "maximum_sampled_source_count": 1,
+    "full_objective_complete": false
+  },
+  "broad": {
+    "status": "unresolved",
+    "queries": {
+      "has:stationary": [
+        0.0,
+        1.0
+      ],
+      "has:moving": [
+        0.0,
+        1.0
+      ],
+      "has:galaxy": [
+        0.0,
+        1.0
+      ]
+    },
+    "relative_evidence_gap": null,
+    "seconds": 34.00288841700012,
+    "maximum_sampled_source_count": 11,
+    "full_objective_complete": false
+  },
+  "real": {
+    "status": "unresolved",
+    "queries": {
+      "has:stationary": [
+        0.0,
+        1.0
+      ],
+      "has:moving": [
+        0.0,
+        1.0
+      ]
+    },
+    "relative_evidence_gap": null,
+    "seconds": 24.432902150000245,
+    "maximum_sampled_source_count": 1,
+    "full_objective_complete": false
+  }
+}

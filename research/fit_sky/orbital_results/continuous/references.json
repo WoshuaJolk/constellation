@@ -1,0 +1,28 @@
+[
+  {
+    "order": 8,
+    "log_evidence": -184.40068017074594,
+    "queries": {
+      "count=0": 0.001071079253890227,
+      "count=1": 0.3802667482649009,
+      "count=2": 0.6186621724812218,
+      "has:star": 0.6301322878161665,
+      "has:orbit_a": 0.8486793148575678,
+      "any:orbit_a:vy:-0.002:0.006": 0.6622109532173621
+    },
+    "scope": "Continuous velocity and calibration quadrature with independent ODE rendering; numerical, not certified"
+  },
+  {
+    "order": 12,
+    "log_evidence": -184.40068017070368,
+    "queries": {
+      "count=0": 0.0010710792538449593,
+      "count=1": 0.3802667482461204,
+      "count=2": 0.6186621725000256,
+      "has:star": 0.6301322878321893,
+      "has:orbit_a": 0.8486793148639188,
+      "any:orbit_a:vy:-0.002:0.006": 0.6622109532296702
+    },
+    "scope": "Continuous velocity and calibration quadrature with independent ODE rendering; numerical, not certified"
+  }
+]

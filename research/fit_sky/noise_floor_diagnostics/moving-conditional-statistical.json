@@ -1,0 +1,48 @@
+{
+  "method": "bounded_weight_importance",
+  "status": "unresolved",
+  "scaled_evidence": [
+    1.8465606144821304e-10,
+    1.8869915158579909e-10
+  ],
+  "relative_evidence_gap": 0.02189524733646467,
+  "queries": {
+    "has:stationary": [
+      0.02004601920294043,
+      0.023546414314590775
+    ],
+    "has:moving": [
+      0.9764535856854091,
+      0.9799539807970594
+    ],
+    "any:moving:vx:0:0.6": [
+      0.9756555036151212,
+      0.9791784377312237
+    ]
+  },
+  "point_estimates_not_certificates": {
+    "has:stationary": 0.021779965996562456,
+    "has:moving": 0.97822003400344,
+    "any:moving:vx:0:0.6": 0.9774333205074976
+  },
+  "simultaneous_confidence": 0.99,
+  "samples": 1000000,
+  "seed": 20261024,
+  "proposal_envelope": 7.799898173051818e-09,
+  "maximum_observed_scaled_weight": 0.8746322754692126,
+  "dual_envelope_requested": true,
+  "noise_floor_applied": true,
+  "conditional_noise_floor_applied": true,
+  "analytically_integrated_cells": 1,
+  "deterministic_scaled_evidence": [
+    2.6557805479792415e-26,
+    2.6557805479792427e-26
+  ],
+  "represented_source_count_tail_upper": 0.0,
+  "maximum_sampled_source_count": 1,
+  "construction_seconds": 2.877355026999794,
+  "seconds": 16.29383026600044,
+  "arithmetic": "float64 sampling, rendering and concentration bounds; not formal arithmetic certification",
+  "confidence_scope": "fixed-budget draws conditional on exact stated sampling/evaluation/model assumptions",
+  "full_objective_complete": false
+}

@@ -1,0 +1,2317 @@
+{
+  "source_sha256": {
+    "research/kepler_transform/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+    "research/kepler_transform/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+    "research/kepler_transform/cascade_domain.py": "e6762bece7c6280fdd3466161ebee2eb5d74c5512db7681be68bb613bb77184b",
+    "research/kepler_transform/cascade_transfer.py": "ed6b48a37df7ba98eb78a421308e8a418425f64956d5919bd1a0c69228e062ee",
+    "research/kepler_transform/certified_cascade.py": "4eaeab7cf11981c87d3024544f1cab6392134daf9d0540b9fb9c7512ab06160c",
+    "research/kepler_transform/certified_global_experiments.py": "292ad31777455686c3a217adbc057963a1fd630b57a1d762ffad29198d377bcc",
+    "research/kepler_transform/certified_segment_field.py": "0f3a29d8f8173671ab3a73e63dc0eca6299ed7729f50247acbd28869fdd7a062",
+    "research/kepler_transform/certify_global.py": "7c74ddfa6226a9f51933bd3ef3bd44e728798627814fca9eef2732d2c3f45df4",
+    "research/kepler_transform/chart_atlas.py": "a572e6d00138e5277351ebe5cce18e1baa8196a295c10088b931c121669abef4",
+    "research/kepler_transform/chart_cover.py": "8183b9a1af211beacd92199951bc446ffc7e98a9df8440b46f5d91fc7c8b0139",
+    "research/kepler_transform/chart_experiments.py": "d58d42e1acce8e63225f53b917659c15128286d30ac50783fc1b32e8a3526501",
+    "research/kepler_transform/chart_operator.py": "3244e0e81d86b4e382794ea1ad74792de38fd3122266fb2ca948bf13b1619550",
+    "research/kepler_transform/chart_results/compiled_sources/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+    "research/kepler_transform/chart_results/compiled_sources/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+    "research/kepler_transform/chart_results/compiled_sources/chart_atlas.py": "a3d0706813b97ace3ac17c4060f96b681cedac39c11d8580ac6c2b14150fea4a",
+    "research/kepler_transform/chart_results/compiled_sources/chart_cover.py": "c482444970f7d2019f2dd0e32162d10034b9823378172727957bcbfcd8fcf7aa",
+    "research/kepler_transform/chart_results/compiled_sources/chart_experiments.py": "d58d42e1acce8e63225f53b917659c15128286d30ac50783fc1b32e8a3526501",
+    "research/kepler_transform/chart_results/compiled_sources/chart_operator.py": "3244e0e81d86b4e382794ea1ad74792de38fd3122266fb2ca948bf13b1619550",
+    "research/kepler_transform/chart_results/compiled_sources/chart_search.py": "e9b87fe2b082606ba2cc74a547408157f5216767e0ee93bea994efdefc083de8",
+    "research/kepler_transform/chart_results/compiled_sources/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20",
+    "research/kepler_transform/chart_results/compiled_sources/compiled_comparison.py": "9555d9d70007590f22a8fa498959ee68a7792349fa8ba8805ba93207a95b866a",
+    "research/kepler_transform/chart_results/compiled_sources/compiled_reference.py": "2698df3561ee09c5f3c548d51dd47345921420965b473ac30aac734bcd9ce6c0",
+    "research/kepler_transform/chart_results/compiled_sources/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+    "research/kepler_transform/chart_results/compiled_sources/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+    "research/kepler_transform/chart_results/compiled_sources/detector_fields.py": "31138bd7bdc7c17e196584f6481c7e4cacd8240b7a3c72d4e607b42f5a4b9274",
+    "research/kepler_transform/chart_results/compiled_sources/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+    "research/kepler_transform/chart_results/compiled_sources/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+    "research/kepler_transform/chart_results/compiled_sources/fifth_geometry.py": "81305674540c492a89770469c0587254a769d51dea46d67aa53db0a4b5f7e4f3",
+    "research/kepler_transform/chart_results/compiled_sources/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+    "research/kepler_transform/chart_results/compiled_sources/jet_geometry.py": "2fcc25edd90836531ff342170e738df587c38d9bd6140f4aba316a06a68a9b6b",
+    "research/kepler_transform/chart_results/compiled_sources/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+    "research/kepler_transform/chart_results/compiled_sources/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+    "research/kepler_transform/chart_results/compiled_sources/observer_chart.py": "c198a52e5c8b67179a232466bea55f50381d5ecf4e5b7caa437d0f32fff4647e",
+    "research/kepler_transform/chart_results/compiled_sources/phase_budget.py": "d1d707d2526cd14873295e7b81ef432c6853e8be499adedaedc36d0701e61342",
+    "research/kepler_transform/chart_results/compiled_sources/plot_construction.py": "65ce671e1296215b329f06d8d3cb59a5bacdf5cedb9b14cd3bcc5c36a1df0adf",
+    "research/kepler_transform/chart_results/compiled_sources/quartic_atlas.py": "ca4adf9f3c17cf4cbf949c767eb14740f468255d5967630152559fba99c3489a",
+    "research/kepler_transform/chart_results/compiled_sources/quartic_experiments.py": "b89e2cc973ca5d80aa9e74e78935694fab78109b5c7127dafbdd4bd42486201a",
+    "research/kepler_transform/chart_results/compiled_sources/real_exposure_experiment.py": "40b4d8a2342482bcb55169b7328b1e4952509bdc68b8dfdaa1db58d248c5d55f",
+    "research/kepler_transform/chart_results/compiled_sources/replay_chart.py": "72b62d779050020ad8ea46896d150d48093642f6eee33ee7fdc24e92588945f8",
+    "research/kepler_transform/chart_results/compiled_sources/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+    "research/kepler_transform/chart_results/compiled_sources/structured_comparison.py": "67bfce198f590f04b9d313d0eabc8f6b335d383b0e5dc0ec66a91c4bf7287c98",
+    "research/kepler_transform/chart_results/compiled_sources/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "research/kepler_transform/chart_results/compiled_sources/validated_universal.py": "8f41611a6e6354e466be1480ab2626f75165d9db4c3f98e8520bac3832e91622",
+    "research/kepler_transform/chart_results/compiled_sources/verify_construction.py": "242bf118a71647785b5640ac64eea72cafadf6350906e700e58ab595a31fb467",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/chart_atlas.py": "2fca9b477f060546b076593258ca820b412a779061ad63c3195b0a4a274bac1d",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/chart_cover.py": "c32fcad7fe74b6436d8b5c6ef09db906d2d1781b0c53e4eb603241ed7f0272f8",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/chart_experiments.py": "d58d42e1acce8e63225f53b917659c15128286d30ac50783fc1b32e8a3526501",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/chart_operator.py": "3244e0e81d86b4e382794ea1ad74792de38fd3122266fb2ca948bf13b1619550",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/chart_search.py": "e1cf55d82ca75450be227a3db5bc2c9904b4e060bd4b89663499fd3d65cebb67",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/detector_fields.py": "31138bd7bdc7c17e196584f6481c7e4cacd8240b7a3c72d4e607b42f5a4b9274",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/fifth_geometry.py": "81305674540c492a89770469c0587254a769d51dea46d67aa53db0a4b5f7e4f3",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/jet_geometry.py": "2fcc25edd90836531ff342170e738df587c38d9bd6140f4aba316a06a68a9b6b",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/observer_chart.py": "c198a52e5c8b67179a232466bea55f50381d5ecf4e5b7caa437d0f32fff4647e",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/plot_construction.py": "65ce671e1296215b329f06d8d3cb59a5bacdf5cedb9b14cd3bcc5c36a1df0adf",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/quartic_atlas.py": "17109a8f6220a1158cd63008477342012d5ac6f303faecb37d9c8e0b926d10d6",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/real_exposure_experiment.py": "40b4d8a2342482bcb55169b7328b1e4952509bdc68b8dfdaa1db58d248c5d55f",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/validated_universal.py": "81c83dcaa3edf79bc460ac8b1a2120625f62f54b037dfe53df73c1af9407a695",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/verify_construction.py": "242bf118a71647785b5640ac64eea72cafadf6350906e700e58ab595a31fb467",
+    "research/kepler_transform/chart_search.py": "1edf590141d9513a39869ad22c86b8c06a117485addf8b2e6b231a69d7a92532",
+    "research/kepler_transform/chebyshev_moments.py": "1122880294b94fd715f3ca4aefb6bca1e0ae51ac10801aa385631d93b5cd9e59",
+    "research/kepler_transform/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20",
+    "research/kepler_transform/compiled_comparison.py": "9555d9d70007590f22a8fa498959ee68a7792349fa8ba8805ba93207a95b866a",
+    "research/kepler_transform/compiled_reference.py": "2698df3561ee09c5f3c548d51dd47345921420965b473ac30aac734bcd9ce6c0",
+    "research/kepler_transform/complex_source_certificate.py": "ab7b4d76e7dfb47726ddca11bebe1749975b54ffcc90070a35a54a3eee75ba47",
+    "research/kepler_transform/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+    "research/kepler_transform/constructive_experiments.py": "32f1b292b4e9898ed663f61cb84ad6220de6a015ba5cc0dec9e77a80d5729527",
+    "research/kepler_transform/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+    "research/kepler_transform/detector_fields.py": "31138bd7bdc7c17e196584f6481c7e4cacd8240b7a3c72d4e607b42f5a4b9274",
+    "research/kepler_transform/detector_time/__init__.py": "f8fc5629aba4a83926e2c3c83c142c04f4f581cef48beac9848aa1e681acab89",
+    "research/kepler_transform/detector_time/benchmark.py": "5dbe0e35a6b89684ccfdd3eed9bd793eb97e185240eed6be120395a0d32f0c3f",
+    "research/kepler_transform/detector_time/fields.py": "13c67afe1a7183b43b91e57fef8fe6c9e65b95096c06590307f30c98f90b3a0c",
+    "research/kepler_transform/detector_time/pixel_cache.py": "237e6f77adb01b79373b6100a73bda45b60ad95aac714d2375dcf12b1348e7e4",
+    "research/kepler_transform/detector_time/plan.py": "3bd1eebf85a37a73ed69c595f3a396b90b072a29222233bd7029bce25a522cfb",
+    "research/kepler_transform/detector_time/real_experiment.py": "5eb77c2be57fc72a29a57d3a9de6e203536d2c253ebca3049290b4a4b814b220",
+    "research/kepler_transform/detector_time/verify.py": "4c81fe156f62879b4fd514862b7a4110c789e92f3dbd57f7e4fbeb2042568173",
+    "research/kepler_transform/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+    "research/kepler_transform/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+    "research/kepler_transform/fifth_geometry.py": "793221157caf4657b4c7d8ce64977fc12a8c6243bba5c6b9b84109ea9aef21b1",
+    "research/kepler_transform/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+    "research/kepler_transform/global_experiments.py": "4ec0d4ae102b0efe192a69c85e5746366c12c8ebb9105a2e05035b3a1d76722d",
+    "research/kepler_transform/global_kepler.py": "ffe889a2051635aeeb09fac54fa6e82142bb3e8d893251085c098f9f155a64bf",
+    "research/kepler_transform/jet_geometry.py": "40f27e3b660f3c9d78c1ee59c8355778ec500942aa364aa3329a3b191ed11841",
+    "research/kepler_transform/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+    "research/kepler_transform/local_hierarchy.py": "0a3b78bf2e0f9bffd33ed522200d85272017863a2e26535cec191269e429dff1",
+    "research/kepler_transform/local_resolution.py": "8f94da7738ff0fc231a2a6c37b79f4a122f0aef9c2da8b030fc50e32f9e55d7c",
+    "research/kepler_transform/local_resolution_experiments.py": "095e8eac602b7c2f5eb8e733a9d0f9ec9fd7973f14535b1ca5dceebcc26e3553",
+    "research/kepler_transform/local_resolution_results/plot_counts.py": "6b4bfbefc5b4c6c920e1e19b2db16939514ff60a6d90b58d38dcea421a77007d",
+    "research/kepler_transform/local_resolution_results/run_tiled_stress.py": "c38d3378d0dc9408e074e20a8f75c5fca7c886291c623612d49dc30916f4e6ac",
+    "research/kepler_transform/local_resolution_results/verify_tiled_stress.py": "1bcda0a02b2be676f2f86767d97822c3c73d2b4ed1eb769959a8b313fb0f32c8",
+    "research/kepler_transform/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+    "research/kepler_transform/observer_chart.py": "dba4b4a35656524ea889aca16e1db401c1ee9ae8f8cad6b6feb00c94e5cb6359",
+    "research/kepler_transform/ordered/__init__.py": "9aa5ff4b8ea1699fae1cc314d1fa2fdb6fd624f048cef037a3cb4adbc087b7d6",
+    "research/kepler_transform/ordered/experiments.py": "ff44bbe533ffcf4c99ddbcf98776c36325ee86e1f8147e3a7d86ea7b4d88728d",
+    "research/kepler_transform/ordered/hierarchy.py": "889ebbec461ee633d85c131d3e0412c3fed510d078e004f418ecb00240a179dd",
+    "research/kepler_transform/ordered/resolution.py": "d9b7ba23d706053a45c9e74e1de06b1d1258fa46bbeb3177c9e41136c8f2eeb7",
+    "research/kepler_transform/ordered/verify.py": "6bb0b7b90fa63a352fdb54e9a6d7d0cff3230be0f6191c1019417b35ebac0e43",
+    "research/kepler_transform/phase_budget.py": "d1d707d2526cd14873295e7b81ef432c6853e8be499adedaedc36d0701e61342",
+    "research/kepler_transform/plot_construction.py": "65ce671e1296215b329f06d8d3cb59a5bacdf5cedb9b14cd3bcc5c36a1df0adf",
+    "research/kepler_transform/quartic_atlas.py": "de101ae8af7da9143934d35ef100ad7c3b2c820f21fc351ac6895697c7433c4f",
+    "research/kepler_transform/quartic_experiments.py": "b89e2cc973ca5d80aa9e74e78935694fab78109b5c7127dafbdd4bd42486201a",
+    "research/kepler_transform/real_exposure_experiment.py": "40b4d8a2342482bcb55169b7328b1e4952509bdc68b8dfdaa1db58d248c5d55f",
+    "research/kepler_transform/reception_flow.py": "4538f6d4a8f0258d83ce723ce27b24347ee5468e89eacacb47c6919305793ab0",
+    "research/kepler_transform/replay_chart.py": "c17b120f1f0bfb61917492febfcaecd9baa1554b736718174a7a0f5809b1dd5c",
+    "research/kepler_transform/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+    "research/kepler_transform/segment_composition.py": "db12d1cf1881cd8ba0d8d0a372a79373c52812076d24a30db157360c51e4dcd5",
+    "research/kepler_transform/segment_experiments.py": "7d998d597dd20f04d62d32f77c8272d58d789506a9b0de30511d848693938440",
+    "research/kepler_transform/segment_field.py": "7ec1bbf6d9cd0b7baba5096e2f23dd3b0c1b42d6fe9177c36fabf528105dc943",
+    "research/kepler_transform/segment_field_certificate.py": "a46cf5c23708e530fe6ef22544fe71c72ed09aaaca11dce2b3347ce71f261edf",
+    "research/kepler_transform/segment_field_experiments.py": "5002b5792d6f8bfbe6bdf9c22c05c733989e7d525c7aa5b48a0ece73358b5808",
+    "research/kepler_transform/source_butterfly.py": "52bb3d7137cbdb05a46102209cc3fb27a9931bc81d0a468d5152fd79de11bf91",
+    "research/kepler_transform/structured_comparison.py": "67bfce198f590f04b9d313d0eabc8f6b335d383b0e5dc0ec66a91c4bf7287c98",
+    "research/kepler_transform/sundman.py": "5396f244aac08b4b6db140d8ecdce05aff9fc90f5f81da6368127ecf69020e5b",
+    "research/kepler_transform/temporal/__init__.py": "1ea8a8d5d816ac2a2384532c94c38543e5970fe01c92194df2b3c478f7a36938",
+    "research/kepler_transform/temporal/benchmark.py": "80fd270c173c1ae792c896169a6f68248c16334c1da3dd18f75b173dfc0f7c48",
+    "research/kepler_transform/temporal/plot.py": "ed6d8f49d1c2fbd194058ba2f2b2cfd36fdbb8270c3961256b70ca1e58b8a323",
+    "research/kepler_transform/temporal/transform.py": "1670817e2675e076afc1e3da2195be7f6e9169ba05b07b681dc05cf9d82eec40",
+    "research/kepler_transform/temporal/verify.py": "4e63d8ec2ef67cd24c6891442f2c21df2b5feabed5652153cb3b8199234ae281",
+    "research/kepler_transform/tensor_prolongation.py": "be763db7eea3bad1f2308b9e68e0c3517d9b122968940c5bbc0f430fefe55d32",
+    "research/kepler_transform/timing/__init__.py": "375f12c763d9462027c9980c7ec2e78825ec68630245fcfeb5371ce310c9e6f1",
+    "research/kepler_transform/timing/benchmark.py": "b4fa3b1b916ad1f2bd6c08650cb29b2540fa27c6e923957a42f7a6d65dc66f21",
+    "research/kepler_transform/timing/native_grid.py": "3992d2254d965faf3a430641b6bf2fca4d144109ccb4a48b2456ce198dbc6a40",
+    "research/kepler_transform/timing/overview.py": "fb82ff423d497e5a61466dc8e9aea7dd6a0b124d4a761abe9cc6a27cfb0e2a01",
+    "research/kepler_transform/timing/plot.py": "afedeba5c29a91e72045e983c73fbc6430c63bec36759077c6f77490d64ca748",
+    "research/kepler_transform/timing/plot_native.py": "e5660f4be6f8b3afc7a492c31f7f2bfa727590370ee1833f36f42d82a2b76c87",
+    "research/kepler_transform/translated_experiment.py": "f8df5b420a6bf007927e391a58428a217a50e1c936e754b0cd615393e9b717c8",
+    "research/kepler_transform/translated_flow.py": "fcc04a07b5f5979d85ab000d10826420a004a132561af8c724bd01c898dfb27b",
+    "research/kepler_transform/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "research/kepler_transform/validated_universal.py": "8f41611a6e6354e466be1480ab2626f75165d9db4c3f98e8520bac3832e91622",
+    "research/kepler_transform/variational_flow.py": "42c2f20a0832f83d4503a5b4da39274e6dc8a0c4c42501edc02105530860c32b",
+    "research/kepler_transform/verify_chart_campaign.py": "0dfbe72dad426e21da5d710f5b79c7fc59b893a45db691668b629fc8303c0fe3",
+    "research/kepler_transform/verify_construction.py": "242bf118a71647785b5640ac64eea72cafadf6350906e700e58ab595a31fb467",
+    "research/kepler_transform/verify_constructive_campaign.py": "ab655577eb35dab3b3d77a20d9441b86ffc372e7d08b0f4b99cb3b7471377402",
+    "research/kepler_transform/verify_global_campaign.py": "7b2172d65b319338e66ee6196c5be79940c70d9a41fcfcfe35675f59642ba21c",
+    "research/kepler_transform/verify_local_resolution.py": "012641f86c8c1f4ebda60cd6e05ad8e9fab3b9612413f6b524988aee847a5efb",
+    "research/kepler_transform/verify_segment_campaign.py": "b9ab95456d36e37e3aa7ed6883beb59ce952a35cdf8a0c7d0660efc28fd0fcbd",
+    "research/kepler_transform/verify_segment_field_campaign.py": "cce72ed8221fb03f2f1afdcb6f4759ad824adb2c26e64c777b257e178eb3cf08"
+  },
+  "environment": {
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "finufft": "2.5.1",
+      "python-flint": "0.8.0",
+      "numba": "0.68.0"
+    },
+    "thread_limits": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "NUMBA_NUM_THREADS": "1"
+    }
+  },
+  "workload": {
+    "frames": 128,
+    "pixels_per_image": 81,
+    "image_side": 9,
+    "span_days": 8.0,
+    "case": "original full near box",
+    "seed": 20261105,
+    "synthetic_independent_exposures": true,
+    "real_survey_stack": false,
+    "injected_flux": 10.0,
+    "injected_query_index": 0,
+    "pointing": "tracks the reference orbit in the certified circular-observer model",
+    "full_detector_side": 209,
+    "retained_fourier_side": 73,
+    "information_fourier_side": 99,
+    "information_time_order": 354,
+    "time_order": 267,
+    "compression_backend": "dense",
+    "cache_budget_bytes": 3000000000
+  },
+  "source_domain_proof": {
+    "case": "near",
+    "relative_reference_position_bound_arcsec": [
+      25.843983340929952,
+      18.272500983332954
+    ],
+    "time_half_span_days": 4.0,
+    "root_certificate": {
+      "certified": true,
+      "analysis_cells": [
+        {
+          "certified": true,
+          "ellipse_parameter": 1.0,
+          "time_center_days": 0.0,
+          "time_half_width_days": 4.0,
+          "anomaly_disk_center": 0.0,
+          "anomaly_disk_radius": 4.00143909942351,
+          "contraction_upper": 0.04000276554143057,
+          "image_radius_upper": 2.827694700654996,
+          "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+          "retarded_observer_cancellation_preserved": true,
+          "regularized_radius_real_part_positive": true,
+          "connected_to_known_reference_emission_root": true,
+          "positive_real_retarded_root_derivative": true,
+          "normalized_analysis_bounds": [
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ]
+          ],
+          "physical_center": [
+            0.5000000005483682,
+            1.8989404306735653e-07,
+            0.0,
+            -8.111978294259573e-05,
+            0.0,
+            -0.0015783219777299232
+          ],
+          "physical_widths": [
+            0.05000000000000001,
+            0.0010000000000000002,
+            9.696273622190721e-06,
+            4.8481368110953604e-05,
+            4.8481368110953604e-05,
+            9.696273622190721e-06
+          ]
+        }
+      ],
+      "failed_parent_enclosures": [],
+      "connected_to_known_reference_emission_root": true,
+      "positive_real_retarded_root_derivative": true
+    },
+    "pointing_model": "stamp origin tracks the mathematical center orbit"
+  },
+  "time_proof": {
+    "case": "near",
+    "chart": {
+      "observer": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "velocity": [
+        0.0,
+        0.017202098949957226,
+        0.0
+      ],
+      "normal": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "east": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "north": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "retarded_epoch": true
+    },
+    "center": [
+      0.5000000005483682,
+      1.8989404306735653e-07,
+      0.0,
+      -8.111978294259573e-05,
+      0.0,
+      -0.0015783219777299232
+    ],
+    "widths": [
+      0.05,
+      0.001,
+      9.69627362219072e-06,
+      4.84813681109536e-05,
+      4.84813681109536e-05,
+      9.69627362219072e-06
+    ],
+    "time_half_span_days": 4.0,
+    "frequency_bound_radian_inverse": 971999.9999999999,
+    "ellipse_parameter": 2.0,
+    "time_log_modulus_bound": 161.6228816509247,
+    "order": 267,
+    "exact_arithmetic_kernel_error_bound": 6.3205631975247635e-09,
+    "requested_tolerance": 9.520292680949158e-09,
+    "root_certificate": {
+      "certified": true,
+      "analysis_cells": [
+        {
+          "certified": true,
+          "ellipse_parameter": 2.0,
+          "time_center_days": 0.0,
+          "time_half_width_days": 4.0,
+          "anomaly_disk_center": 0.0,
+          "anomaly_disk_radius": 5.832236146554352,
+          "contraction_upper": 0.043494964076671756,
+          "image_radius_upper": 4.141830336372546,
+          "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+          "retarded_observer_cancellation_preserved": true,
+          "regularized_radius_real_part_positive": true,
+          "connected_to_known_reference_emission_root": true,
+          "positive_real_retarded_root_derivative": true,
+          "normalized_analysis_bounds": [
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ]
+          ],
+          "physical_center": [
+            0.5000000005483682,
+            1.8989404306735653e-07,
+            0.0,
+            -8.111978294259573e-05,
+            0.0,
+            -0.0015783219777299232
+          ],
+          "physical_widths": [
+            0.05000000000000001,
+            0.0010000000000000002,
+            9.696273622190721e-06,
+            4.8481368110953604e-05,
+            4.8481368110953604e-05,
+            9.696273622190721e-06
+          ]
+        }
+      ],
+      "failed_parent_enclosures": [],
+      "connected_to_known_reference_emission_root": true,
+      "positive_real_retarded_root_derivative": true
+    },
+    "floating_point_error_certified": false,
+    "construction_seconds": 0.008980320999398828
+  },
+  "information_time_proof": {
+    "case": "near",
+    "chart": {
+      "observer": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "velocity": [
+        0.0,
+        0.017202098949957226,
+        0.0
+      ],
+      "normal": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "east": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "north": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "retarded_epoch": true
+    },
+    "center": [
+      0.5000000005483682,
+      1.8989404306735653e-07,
+      0.0,
+      -8.111978294259573e-05,
+      0.0,
+      -0.0015783219777299232
+    ],
+    "widths": [
+      0.05,
+      0.001,
+      9.69627362219072e-06,
+      4.84813681109536e-05,
+      4.84813681109536e-05,
+      9.69627362219072e-06
+    ],
+    "time_half_span_days": 4.0,
+    "frequency_bound_radian_inverse": 1322999.9999999998,
+    "ellipse_parameter": 2.0,
+    "time_log_modulus_bound": 219.98670005798343,
+    "order": 354,
+    "exact_arithmetic_kernel_error_bound": 1.0403868160783759e-09,
+    "requested_tolerance": 1.1600202717738215e-09,
+    "root_certificate": {
+      "certified": true,
+      "analysis_cells": [
+        {
+          "certified": true,
+          "ellipse_parameter": 2.0,
+          "time_center_days": 0.0,
+          "time_half_width_days": 4.0,
+          "anomaly_disk_center": 0.0,
+          "anomaly_disk_radius": 5.832236146554352,
+          "contraction_upper": 0.043494964076671756,
+          "image_radius_upper": 4.141830336372546,
+          "method": "complex contraction disk; entire regularized dynamics; right-half-plane branches",
+          "retarded_observer_cancellation_preserved": true,
+          "regularized_radius_real_part_positive": true,
+          "connected_to_known_reference_emission_root": true,
+          "positive_real_retarded_root_derivative": true,
+          "normalized_analysis_bounds": [
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ]
+          ],
+          "physical_center": [
+            0.5000000005483682,
+            1.8989404306735653e-07,
+            0.0,
+            -8.111978294259573e-05,
+            0.0,
+            -0.0015783219777299232
+          ],
+          "physical_widths": [
+            0.05000000000000001,
+            0.0010000000000000002,
+            9.696273622190721e-06,
+            4.8481368110953604e-05,
+            4.8481368110953604e-05,
+            9.696273622190721e-06
+          ]
+        }
+      ],
+      "failed_parent_enclosures": [],
+      "connected_to_known_reference_emission_root": true,
+      "positive_real_retarded_root_derivative": true
+    },
+    "floating_point_error_certified": false,
+    "construction_seconds": 0.010972961012157612
+  },
+  "detector_report": {
+    "period_arcsec": 48.0,
+    "template_cutoff": 52,
+    "field_side": 209,
+    "fourier_spacing_inverse_arcsec": 0.1308996938995747,
+    "source_half_width_arcsec": 26.0,
+    "allocated_field_bytes": 178917376,
+    "information_computed": true,
+    "exposures": [
+      {
+        "fourier_template_error_bound": 2.384207373036694e-18,
+        "periodic_copy_template_error_bound": 3.1841928944346294e-28,
+        "template_error_bound": 2.3842073733551134e-18,
+        "numerator_model_error_bound": 1.6613327247032456e-16,
+        "information_model_error_bound": 8.529301213604341e-16
+      },
+      {
+        "fourier_template_error_bound": 4.289549978794884e-19,
+        "periodic_copy_template_error_bound": 9.27096789508199e-36,
+        "template_error_bound": 4.289549978794884e-19,
+        "numerator_model_error_bound": 2.610087990796401e-17,
+        "information_model_error_bound": 1.50553929300315e-16
+      },
+      {
+        "fourier_template_error_bound": 3.606853022025785e-18,
+        "periodic_copy_template_error_bound": 1.448587210737018e-32,
+        "template_error_bound": 3.6068530220257995e-18,
+        "numerator_model_error_bound": 2.3049235031183415e-16,
+        "information_model_error_bound": 1.235100142101583e-15
+      },
+      {
+        "fourier_template_error_bound": 2.612985871525818e-23,
+        "periodic_copy_template_error_bound": 3.549796524639537e-26,
+        "template_error_bound": 2.6165356680504577e-23,
+        "numerator_model_error_bound": 2.0934295905863244e-21,
+        "information_model_error_bound": 1.2135960063738968e-20
+      },
+      {
+        "fourier_template_error_bound": 7.581009639245657e-27,
+        "periodic_copy_template_error_bound": 9.67397032388691e-28,
+        "template_error_bound": 8.548406671634347e-27,
+        "numerator_model_error_bound": 5.165389745596677e-25,
+        "information_model_error_bound": 2.8963953899142013e-24
+      },
+      {
+        "fourier_template_error_bound": 2.864227782771007e-26,
+        "periodic_copy_template_error_bound": 1.2543883688358028e-28,
+        "template_error_bound": 2.876771666459365e-26,
+        "numerator_model_error_bound": 1.5973500031012157e-24,
+        "information_model_error_bound": 7.337824672139315e-24
+      },
+      {
+        "fourier_template_error_bound": 8.957396541356234e-24,
+        "periodic_copy_template_error_bound": 6.541297881865654e-31,
+        "template_error_bound": 8.957397195486021e-24,
+        "numerator_model_error_bound": 6.362428862741185e-22,
+        "information_model_error_bound": 3.0593360294260317e-21
+      },
+      {
+        "fourier_template_error_bound": 1.527955949320455e-19,
+        "periodic_copy_template_error_bound": 9.515036821616957e-31,
+        "template_error_bound": 1.52795594932997e-19,
+        "numerator_model_error_bound": 1.1363818977100512e-17,
+        "information_model_error_bound": 5.9887187672755e-17
+      },
+      {
+        "fourier_template_error_bound": 1.6073936107510258e-24,
+        "periodic_copy_template_error_bound": 1.4928735062857972e-25,
+        "template_error_bound": 1.7566809613796056e-24,
+        "numerator_model_error_bound": 1.2515262766762604e-22,
+        "information_model_error_bound": 7.320272112542791e-22
+      },
+      {
+        "fourier_template_error_bound": 1.1387394075433233e-20,
+        "periodic_copy_template_error_bound": 1.9271297848842668e-35,
+        "template_error_bound": 1.1387394075433253e-20,
+        "numerator_model_error_bound": 7.165464673206352e-19,
+        "information_model_error_bound": 2.9972790856555714e-18
+      },
+      {
+        "fourier_template_error_bound": 9.897367738688168e-18,
+        "periodic_copy_template_error_bound": 4.776551615829036e-27,
+        "template_error_bound": 9.89736774346472e-18,
+        "numerator_model_error_bound": 4.85307660901239e-16,
+        "information_model_error_bound": 2.0750364366202723e-15
+      },
+      {
+        "fourier_template_error_bound": 1.345126280515724e-22,
+        "periodic_copy_template_error_bound": 5.704206370633566e-29,
+        "template_error_bound": 1.345126850936361e-22,
+        "numerator_model_error_bound": 6.982925288730455e-21,
+        "information_model_error_bound": 3.859755922531483e-20
+      },
+      {
+        "fourier_template_error_bound": 6.056643911915428e-23,
+        "periodic_copy_template_error_bound": 2.7595202814131224e-31,
+        "template_error_bound": 6.05664393951063e-23,
+        "numerator_model_error_bound": 3.6541462646992554e-21,
+        "information_model_error_bound": 1.4075540942341426e-20
+      },
+      {
+        "fourier_template_error_bound": 2.473581267720783e-17,
+        "periodic_copy_template_error_bound": 3.961294793391091e-34,
+        "template_error_bound": 2.473581267720783e-17,
+        "numerator_model_error_bound": 1.351394913024968e-15,
+        "information_model_error_bound": 6.7585271848121244e-15
+      },
+      {
+        "fourier_template_error_bound": 6.3136482499026835e-18,
+        "periodic_copy_template_error_bound": 8.370737498739871e-26,
+        "template_error_bound": 6.3136483336100585e-18,
+        "numerator_model_error_bound": 4.946404782456942e-16,
+        "information_model_error_bound": 2.72786759321755e-15
+      },
+      {
+        "fourier_template_error_bound": 8.933192312010339e-21,
+        "periodic_copy_template_error_bound": 8.689025434409635e-36,
+        "template_error_bound": 8.933192312010348e-21,
+        "numerator_model_error_bound": 4.540251633100373e-19,
+        "information_model_error_bound": 2.7500244379262714e-18
+      },
+      {
+        "fourier_template_error_bound": 8.679436039293663e-23,
+        "periodic_copy_template_error_bound": 3.139326995945995e-31,
+        "template_error_bound": 8.679436070686934e-23,
+        "numerator_model_error_bound": 6.015722468623142e-21,
+        "information_model_error_bound": 3.2337410167994584e-20
+      },
+      {
+        "fourier_template_error_bound": 1.4825528934968518e-17,
+        "periodic_copy_template_error_bound": 7.211584046657411e-29,
+        "template_error_bound": 1.4825528935040634e-17,
+        "numerator_model_error_bound": 6.809091363497676e-16,
+        "information_model_error_bound": 3.90662071493493e-15
+      },
+      {
+        "fourier_template_error_bound": 1.2051608591533352e-18,
+        "periodic_copy_template_error_bound": 2.627955300047087e-34,
+        "template_error_bound": 1.2051608591533353e-18,
+        "numerator_model_error_bound": 8.304718247679928e-17,
+        "information_model_error_bound": 4.457068697178636e-16
+      },
+      {
+        "fourier_template_error_bound": 2.309030463615266e-20,
+        "periodic_copy_template_error_bound": 4.685505017823815e-27,
+        "template_error_bound": 2.3090309321657678e-20,
+        "numerator_model_error_bound": 1.2075448247121283e-18,
+        "information_model_error_bound": 6.416504326179324e-18
+      },
+      {
+        "fourier_template_error_bound": 5.443854810028656e-22,
+        "periodic_copy_template_error_bound": 5.483828595470194e-32,
+        "template_error_bound": 5.443854810577039e-22,
+        "numerator_model_error_bound": 3.254288509519996e-20,
+        "information_model_error_bound": 1.836067041991994e-19
+      },
+      {
+        "fourier_template_error_bound": 6.578422955592128e-26,
+        "periodic_copy_template_error_bound": 5.511240388192662e-27,
+        "template_error_bound": 7.129546994411394e-26,
+        "numerator_model_error_bound": 3.0935163789667906e-24,
+        "information_model_error_bound": 1.5402031519142402e-23
+      },
+      {
+        "fourier_template_error_bound": 2.2271780951111655e-17,
+        "periodic_copy_template_error_bound": 4.2047534930537425e-36,
+        "template_error_bound": 2.2271780951111655e-17,
+        "numerator_model_error_bound": 1.3863291848341857e-15,
+        "information_model_error_bound": 6.99406258623748e-15
+      },
+      {
+        "fourier_template_error_bound": 3.1853410587665913e-18,
+        "periodic_copy_template_error_bound": 7.290474448274998e-40,
+        "template_error_bound": 3.1853410587665913e-18,
+        "numerator_model_error_bound": 2.914652081193982e-16,
+        "information_model_error_bound": 1.3188143096532862e-15
+      },
+      {
+        "fourier_template_error_bound": 3.676638872530606e-18,
+        "periodic_copy_template_error_bound": 7.117772266021044e-42,
+        "template_error_bound": 3.676638872530606e-18,
+        "numerator_model_error_bound": 2.3851312602609237e-16,
+        "information_model_error_bound": 1.1583394792897231e-15
+      },
+      {
+        "fourier_template_error_bound": 1.6452342920857043e-20,
+        "periodic_copy_template_error_bound": 7.719691420181266e-33,
+        "template_error_bound": 1.6452342920864762e-20,
+        "numerator_model_error_bound": 9.699771757137264e-19,
+        "information_model_error_bound": 3.972225327520132e-18
+      },
+      {
+        "fourier_template_error_bound": 2.709428199536952e-17,
+        "periodic_copy_template_error_bound": 4.01344750537121e-40,
+        "template_error_bound": 2.709428199536952e-17,
+        "numerator_model_error_bound": 1.933588593275702e-15,
+        "information_model_error_bound": 1.0511074349794989e-14
+      },
+      {
+        "fourier_template_error_bound": 2.0438478255769185e-17,
+        "periodic_copy_template_error_bound": 3.089546659301931e-31,
+        "template_error_bound": 2.0438478255769493e-17,
+        "numerator_model_error_bound": 1.1092120506947186e-15,
+        "information_model_error_bound": 4.7153316457902885e-15
+      },
+      {
+        "fourier_template_error_bound": 5.877545968465819e-20,
+        "periodic_copy_template_error_bound": 1.9474770608390094e-29,
+        "template_error_bound": 5.877545970413296e-20,
+        "numerator_model_error_bound": 3.370373795901311e-18,
+        "information_model_error_bound": 1.7148265947528308e-17
+      },
+      {
+        "fourier_template_error_bound": 1.1213614119154626e-17,
+        "periodic_copy_template_error_bound": 7.313950556390136e-32,
+        "template_error_bound": 1.12136141191547e-17,
+        "numerator_model_error_bound": 6.977578785004918e-16,
+        "information_model_error_bound": 3.1318264094293216e-15
+      },
+      {
+        "fourier_template_error_bound": 4.8968503954146585e-18,
+        "periodic_copy_template_error_bound": 3.301006476998424e-35,
+        "template_error_bound": 4.8968503954146585e-18,
+        "numerator_model_error_bound": 2.5579817337983784e-16,
+        "information_model_error_bound": 1.0898298258877989e-15
+      },
+      {
+        "fourier_template_error_bound": 3.3086156624281625e-18,
+        "periodic_copy_template_error_bound": 1.0370674671505733e-32,
+        "template_error_bound": 3.308615662428173e-18,
+        "numerator_model_error_bound": 3.0357159368091016e-16,
+        "information_model_error_bound": 1.4191164673817976e-15
+      },
+      {
+        "fourier_template_error_bound": 6.89119950701891e-21,
+        "periodic_copy_template_error_bound": 4.458183504401684e-28,
+        "template_error_bound": 6.89119995283726e-21,
+        "numerator_model_error_bound": 3.535087195864712e-19,
+        "information_model_error_bound": 1.5157578118745166e-18
+      },
+      {
+        "fourier_template_error_bound": 1.634696020250046e-26,
+        "periodic_copy_template_error_bound": 7.032856753633865e-28,
+        "template_error_bound": 1.7050245877863848e-26,
+        "numerator_model_error_bound": 1.0379067506200457e-24,
+        "information_model_error_bound": 5.564592968673912e-24
+      },
+      {
+        "fourier_template_error_bound": 2.0242667817262474e-19,
+        "periodic_copy_template_error_bound": 2.804421012706848e-27,
+        "template_error_bound": 2.0242668097704577e-19,
+        "numerator_model_error_bound": 1.381648600160836e-17,
+        "information_model_error_bound": 6.955212271228883e-17
+      },
+      {
+        "fourier_template_error_bound": 2.568763350027353e-19,
+        "periodic_copy_template_error_bound": 5.079534871502098e-30,
+        "template_error_bound": 2.5687633500781485e-19,
+        "numerator_model_error_bound": 1.9315420128036135e-17,
+        "information_model_error_bound": 1.0901793692005462e-16
+      },
+      {
+        "fourier_template_error_bound": 3.1754012326348752e-18,
+        "periodic_copy_template_error_bound": 3.7859596946412806e-31,
+        "template_error_bound": 3.175401232635254e-18,
+        "numerator_model_error_bound": 2.5787588387436167e-16,
+        "information_model_error_bound": 1.3115491476880036e-15
+      },
+      {
+        "fourier_template_error_bound": 4.21974001738492e-23,
+        "periodic_copy_template_error_bound": 5.080090240897607e-29,
+        "template_error_bound": 4.219745097475161e-23,
+        "numerator_model_error_bound": 2.9779820833806322e-21,
+        "information_model_error_bound": 1.836235792417005e-20
+      },
+      {
+        "fourier_template_error_bound": 1.1067825937480258e-25,
+        "periodic_copy_template_error_bound": 1.3915072718291257e-26,
+        "template_error_bound": 1.2459333209309383e-25,
+        "numerator_model_error_bound": 8.441849378568301e-24,
+        "information_model_error_bound": 5.015362834147629e-23
+      },
+      {
+        "fourier_template_error_bound": 3.959309192942406e-20,
+        "periodic_copy_template_error_bound": 1.0391258570180238e-37,
+        "template_error_bound": 3.959309192942406e-20,
+        "numerator_model_error_bound": 1.804770294400226e-18,
+        "information_model_error_bound": 8.480937579687288e-18
+      },
+      {
+        "fourier_template_error_bound": 2.9839214438139695e-17,
+        "periodic_copy_template_error_bound": 3.2319139746653744e-38,
+        "template_error_bound": 2.9839214438139695e-17,
+        "numerator_model_error_bound": 2.0987265394587222e-15,
+        "information_model_error_bound": 1.2393995380100782e-14
+      },
+      {
+        "fourier_template_error_bound": 4.145007976508325e-18,
+        "periodic_copy_template_error_bound": 7.660601266943554e-35,
+        "template_error_bound": 4.145007976508325e-18,
+        "numerator_model_error_bound": 2.330607980473647e-16,
+        "information_model_error_bound": 8.268941437391536e-16
+      },
+      {
+        "fourier_template_error_bound": 5.720695071041814e-18,
+        "periodic_copy_template_error_bound": 7.36152637226116e-43,
+        "template_error_bound": 5.720695071041814e-18,
+        "numerator_model_error_bound": 3.418542166887551e-16,
+        "information_model_error_bound": 1.4758428094285273e-15
+      },
+      {
+        "fourier_template_error_bound": 7.714832028110486e-20,
+        "periodic_copy_template_error_bound": 2.0367556838622613e-27,
+        "template_error_bound": 7.714832231786054e-20,
+        "numerator_model_error_bound": 6.221807321583284e-18,
+        "information_model_error_bound": 3.3716851006445546e-17
+      },
+      {
+        "fourier_template_error_bound": 4.653646416491882e-21,
+        "periodic_copy_template_error_bound": 2.763408209622429e-34,
+        "template_error_bound": 4.653646416492159e-21,
+        "numerator_model_error_bound": 2.3790489698260794e-19,
+        "information_model_error_bound": 1.101836384281123e-18
+      },
+      {
+        "fourier_template_error_bound": 3.023957370820028e-21,
+        "periodic_copy_template_error_bound": 1.8945114233746382e-32,
+        "template_error_bound": 3.0239573708389732e-21,
+        "numerator_model_error_bound": 1.866617618878871e-19,
+        "information_model_error_bound": 1.1032123762018157e-18
+      },
+      {
+        "fourier_template_error_bound": 1.3965597968738024e-18,
+        "periodic_copy_template_error_bound": 4.56270387187065e-28,
+        "template_error_bound": 1.3965597973300729e-18,
+        "numerator_model_error_bound": 9.69221452274089e-17,
+        "information_model_error_bound": 6.385307034257455e-16
+      },
+      {
+        "fourier_template_error_bound": 1.0285001685969026e-18,
+        "periodic_copy_template_error_bound": 6.466233607115174e-37,
+        "template_error_bound": 1.0285001685969026e-18,
+        "numerator_model_error_bound": 6.681248678892414e-17,
+        "information_model_error_bound": 3.1247775702020164e-16
+      },
+      {
+        "fourier_template_error_bound": 1.852076783228154e-21,
+        "periodic_copy_template_error_bound": 7.349393429113787e-27,
+        "template_error_bound": 1.852084132621583e-21,
+        "numerator_model_error_bound": 1.2098724989965928e-19,
+        "information_model_error_bound": 7.899550875789333e-19
+      },
+      {
+        "fourier_template_error_bound": 8.649529620765113e-29,
+        "periodic_copy_template_error_bound": 9.354654977609402e-26,
+        "template_error_bound": 9.363304507230167e-26,
+        "numerator_model_error_bound": 5.996050801139984e-24,
+        "information_model_error_bound": 3.057759188851647e-23
+      },
+      {
+        "fourier_template_error_bound": 6.560476569085014e-17,
+        "periodic_copy_template_error_bound": 5.317489152634171e-34,
+        "template_error_bound": 6.560476569085014e-17,
+        "numerator_model_error_bound": 4.446679555704467e-15,
+        "information_model_error_bound": 2.8629971901513656e-14
+      },
+      {
+        "fourier_template_error_bound": 6.92667835454051e-21,
+        "periodic_copy_template_error_bound": 1.4788392935801514e-25,
+        "template_error_bound": 6.926826238469868e-21,
+        "numerator_model_error_bound": 4.599219954010279e-19,
+        "information_model_error_bound": 2.174852540032749e-18
+      },
+      {
+        "fourier_template_error_bound": 5.881534185395435e-23,
+        "periodic_copy_template_error_bound": 1.0327109547209223e-29,
+        "template_error_bound": 5.88153521810639e-23,
+        "numerator_model_error_bound": 2.817846359857351e-21,
+        "information_model_error_bound": 1.3648518412588315e-20
+      },
+      {
+        "fourier_template_error_bound": 2.1586748888622417e-21,
+        "periodic_copy_template_error_bound": 2.309799088709125e-27,
+        "template_error_bound": 2.15867719866133e-21,
+        "numerator_model_error_bound": 1.3501006770854178e-19,
+        "information_model_error_bound": 6.844444511199437e-19
+      },
+      {
+        "fourier_template_error_bound": 2.8237209882718066e-17,
+        "periodic_copy_template_error_bound": 1.6239691267263355e-36,
+        "template_error_bound": 2.8237209882718066e-17,
+        "numerator_model_error_bound": 1.6218480922931694e-15,
+        "information_model_error_bound": 7.787622776192567e-15
+      },
+      {
+        "fourier_template_error_bound": 7.489057441003807e-18,
+        "periodic_copy_template_error_bound": 6.837284484400601e-36,
+        "template_error_bound": 7.489057441003807e-18,
+        "numerator_model_error_bound": 5.821672322957287e-16,
+        "information_model_error_bound": 3.181779846229111e-15
+      },
+      {
+        "fourier_template_error_bound": 3.628928450888294e-17,
+        "periodic_copy_template_error_bound": 2.3045666253825935e-33,
+        "template_error_bound": 3.6289284508882946e-17,
+        "numerator_model_error_bound": 1.973064067358724e-15,
+        "information_model_error_bound": 8.07785197532987e-15
+      },
+      {
+        "fourier_template_error_bound": 1.4695706989726615e-20,
+        "periodic_copy_template_error_bound": 3.059962648354266e-36,
+        "template_error_bound": 1.4695706989726618e-20,
+        "numerator_model_error_bound": 7.914523103715598e-19,
+        "information_model_error_bound": 3.3660461255378684e-18
+      },
+      {
+        "fourier_template_error_bound": 1.6114962745247967e-17,
+        "periodic_copy_template_error_bound": 3.385453944649304e-27,
+        "template_error_bound": 1.6114962748633422e-17,
+        "numerator_model_error_bound": 1.1561998683802362e-15,
+        "information_model_error_bound": 6.549058751087261e-15
+      },
+      {
+        "fourier_template_error_bound": 7.298931038660693e-18,
+        "periodic_copy_template_error_bound": 2.3754577394510638e-26,
+        "template_error_bound": 7.29893106241527e-18,
+        "numerator_model_error_bound": 4.745859440667117e-16,
+        "information_model_error_bound": 2.7859111521596745e-15
+      },
+      {
+        "fourier_template_error_bound": 4.486235541939946e-21,
+        "periodic_copy_template_error_bound": 1.515351138193435e-35,
+        "template_error_bound": 4.486235541939961e-21,
+        "numerator_model_error_bound": 2.7217586899951326e-19,
+        "information_model_error_bound": 1.461110199069592e-18
+      },
+      {
+        "fourier_template_error_bound": 2.573707721005351e-19,
+        "periodic_copy_template_error_bound": 1.4084159215299943e-27,
+        "template_error_bound": 2.57370773508951e-19,
+        "numerator_model_error_bound": 1.42172406628939e-17,
+        "information_model_error_bound": 6.346453695550586e-17
+      },
+      {
+        "fourier_template_error_bound": 7.9723381842558e-19,
+        "periodic_copy_template_error_bound": 7.056517895153234e-29,
+        "template_error_bound": 7.972338184961452e-19,
+        "numerator_model_error_bound": 5.599841293182509e-17,
+        "information_model_error_bound": 3.480900223437036e-16
+      },
+      {
+        "fourier_template_error_bound": 5.996659684700078e-18,
+        "periodic_copy_template_error_bound": 3.0099021252098634e-39,
+        "template_error_bound": 5.996659684700078e-18,
+        "numerator_model_error_bound": 4.822970852297074e-16,
+        "information_model_error_bound": 2.647170607135939e-15
+      },
+      {
+        "fourier_template_error_bound": 4.718561616670534e-22,
+        "periodic_copy_template_error_bound": 2.6566342921627345e-31,
+        "template_error_bound": 4.718561619327168e-22,
+        "numerator_model_error_bound": 3.56976289319076e-20,
+        "information_model_error_bound": 1.8444120025025513e-19
+      },
+      {
+        "fourier_template_error_bound": 3.107676819419449e-22,
+        "periodic_copy_template_error_bound": 1.0438280702154034e-29,
+        "template_error_bound": 3.107676923802256e-22,
+        "numerator_model_error_bound": 2.5521068674418125e-20,
+        "information_model_error_bound": 1.4353622541905654e-19
+      },
+      {
+        "fourier_template_error_bound": 1.0403868475368915e-22,
+        "periodic_copy_template_error_bound": 7.580608160256176e-30,
+        "template_error_bound": 1.0403869233429731e-22,
+        "numerator_model_error_bound": 5.334299049342768e-21,
+        "information_model_error_bound": 2.262107365483753e-20
+      },
+      {
+        "fourier_template_error_bound": 8.983825644287962e-18,
+        "periodic_copy_template_error_bound": 1.8538765561492968e-31,
+        "template_error_bound": 8.983825644288148e-18,
+        "numerator_model_error_bound": 6.106942731883913e-16,
+        "information_model_error_bound": 2.83395966045003e-15
+      },
+      {
+        "fourier_template_error_bound": 1.3504274047063376e-22,
+        "periodic_copy_template_error_bound": 7.952619690532691e-27,
+        "template_error_bound": 1.3505069309032428e-22,
+        "numerator_model_error_bound": 1.0188093735510791e-20,
+        "information_model_error_bound": 5.465525431060321e-20
+      },
+      {
+        "fourier_template_error_bound": 4.3327793084864966e-27,
+        "periodic_copy_template_error_bound": 4.866090502577095e-28,
+        "template_error_bound": 4.819388358744206e-27,
+        "numerator_model_error_bound": 2.5585755984521945e-25,
+        "information_model_error_bound": 1.0483655740312308e-24
+      },
+      {
+        "fourier_template_error_bound": 8.08942057056544e-20,
+        "periodic_copy_template_error_bound": 2.8556917624423152e-30,
+        "template_error_bound": 8.089420570851009e-20,
+        "numerator_model_error_bound": 5.921463774452814e-18,
+        "information_model_error_bound": 3.3345785675980496e-17
+      },
+      {
+        "fourier_template_error_bound": 7.14012457917835e-19,
+        "periodic_copy_template_error_bound": 2.9851683128867445e-30,
+        "template_error_bound": 7.140124579208202e-19,
+        "numerator_model_error_bound": 3.179749932456391e-17,
+        "information_model_error_bound": 1.6389625162277506e-16
+      },
+      {
+        "fourier_template_error_bound": 4.457000742224615e-17,
+        "periodic_copy_template_error_bound": 6.8774294917444045e-31,
+        "template_error_bound": 4.457000742224684e-17,
+        "numerator_model_error_bound": 3.3031850370361408e-15,
+        "information_model_error_bound": 1.908732087069452e-14
+      },
+      {
+        "fourier_template_error_bound": 1.880016910220653e-24,
+        "periodic_copy_template_error_bound": 2.4651338007850343e-30,
+        "template_error_bound": 1.8800193753544537e-24,
+        "numerator_model_error_bound": 1.2476383139768606e-22,
+        "information_model_error_bound": 6.281241893889773e-22
+      },
+      {
+        "fourier_template_error_bound": 1.0072011409009081e-19,
+        "periodic_copy_template_error_bound": 1.3158539502423921e-28,
+        "template_error_bound": 1.007201142216762e-19,
+        "numerator_model_error_bound": 6.7318824196363465e-18,
+        "information_model_error_bound": 3.874594895171748e-17
+      },
+      {
+        "fourier_template_error_bound": 1.3818346054272518e-21,
+        "periodic_copy_template_error_bound": 2.4350459268654233e-27,
+        "template_error_bound": 1.3818370404731787e-21,
+        "numerator_model_error_bound": 8.052719005457795e-20,
+        "information_model_error_bound": 3.6956699227487416e-19
+      },
+      {
+        "fourier_template_error_bound": 1.0302663279720846e-17,
+        "periodic_copy_template_error_bound": 2.366250724034328e-40,
+        "template_error_bound": 1.0302663279720846e-17,
+        "numerator_model_error_bound": 6.406068682825482e-16,
+        "information_model_error_bound": 3.685113846810225e-15
+      },
+      {
+        "fourier_template_error_bound": 3.9676939746759405e-17,
+        "periodic_copy_template_error_bound": 9.783963992793304e-39,
+        "template_error_bound": 3.9676939746759405e-17,
+        "numerator_model_error_bound": 3.2876870563532472e-15,
+        "information_model_error_bound": 1.6949378770805748e-14
+      },
+      {
+        "fourier_template_error_bound": 4.447385474604635e-22,
+        "periodic_copy_template_error_bound": 2.82744279023596e-29,
+        "template_error_bound": 4.447385757348914e-22,
+        "numerator_model_error_bound": 1.9676127317488696e-20,
+        "information_model_error_bound": 8.984594292354844e-20
+      },
+      {
+        "fourier_template_error_bound": 7.213920293915654e-19,
+        "periodic_copy_template_error_bound": 1.4693020442571517e-36,
+        "template_error_bound": 7.213920293915654e-19,
+        "numerator_model_error_bound": 4.1232238568053106e-17,
+        "information_model_error_bound": 1.7266041406645143e-16
+      },
+      {
+        "fourier_template_error_bound": 3.584179976690675e-17,
+        "periodic_copy_template_error_bound": 1.7803461128717526e-36,
+        "template_error_bound": 3.584179976690675e-17,
+        "numerator_model_error_bound": 2.2049755637353303e-15,
+        "information_model_error_bound": 1.0225112801271718e-14
+      },
+      {
+        "fourier_template_error_bound": 5.2698003758979493e-17,
+        "periodic_copy_template_error_bound": 2.642202810384442e-30,
+        "template_error_bound": 5.269800375898214e-17,
+        "numerator_model_error_bound": 2.992476164673206e-15,
+        "information_model_error_bound": 1.8387153825154744e-14
+      },
+      {
+        "fourier_template_error_bound": 5.442658742560459e-19,
+        "periodic_copy_template_error_bound": 2.7423053502801978e-40,
+        "template_error_bound": 5.442658742560459e-19,
+        "numerator_model_error_bound": 3.931203098567245e-17,
+        "information_model_error_bound": 2.0165722699874655e-16
+      },
+      {
+        "fourier_template_error_bound": 1.228497624882276e-24,
+        "periodic_copy_template_error_bound": 3.337826556075046e-26,
+        "template_error_bound": 1.2618758904430265e-24,
+        "numerator_model_error_bound": 8.192491430171877e-23,
+        "information_model_error_bound": 5.108352993601501e-22
+      },
+      {
+        "fourier_template_error_bound": 1.1338529812094722e-16,
+        "periodic_copy_template_error_bound": 4.4167177251333487e-44,
+        "template_error_bound": 1.1338529812094722e-16,
+        "numerator_model_error_bound": 9.576014634438299e-15,
+        "information_model_error_bound": 5.3250444146686637e-14
+      },
+      {
+        "fourier_template_error_bound": 5.644748118231003e-23,
+        "periodic_copy_template_error_bound": 1.1527955892696643e-30,
+        "template_error_bound": 5.644748233510561e-23,
+        "numerator_model_error_bound": 3.2751371065380623e-21,
+        "information_model_error_bound": 1.2182524193708764e-20
+      },
+      {
+        "fourier_template_error_bound": 3.327370815516637e-24,
+        "periodic_copy_template_error_bound": 8.149163949973301e-31,
+        "template_error_bound": 3.327371630433032e-24,
+        "numerator_model_error_bound": 2.1219341486688893e-22,
+        "information_model_error_bound": 1.0859349035685364e-21
+      },
+      {
+        "fourier_template_error_bound": 3.8374718403746955e-19,
+        "periodic_copy_template_error_bound": 9.808254622440209e-40,
+        "template_error_bound": 3.8374718403746955e-19,
+        "numerator_model_error_bound": 2.994999392412182e-17,
+        "information_model_error_bound": 1.657251464973775e-16
+      },
+      {
+        "fourier_template_error_bound": 1.0015707137837429e-22,
+        "periodic_copy_template_error_bound": 5.478495525248774e-29,
+        "template_error_bound": 1.0015712616332954e-22,
+        "numerator_model_error_bound": 6.804266839000606e-21,
+        "information_model_error_bound": 2.9668967599294227e-20
+      },
+      {
+        "fourier_template_error_bound": 4.648606159411553e-18,
+        "periodic_copy_template_error_bound": 5.2747643988664084e-36,
+        "template_error_bound": 4.648606159411553e-18,
+        "numerator_model_error_bound": 3.6248758093731047e-16,
+        "information_model_error_bound": 1.7081736230569088e-15
+      },
+      {
+        "fourier_template_error_bound": 4.5055776160333575e-19,
+        "periodic_copy_template_error_bound": 3.5527142573828396e-27,
+        "template_error_bound": 4.5055776515605e-19,
+        "numerator_model_error_bound": 2.8945114807150625e-17,
+        "information_model_error_bound": 1.2203703755864932e-16
+      },
+      {
+        "fourier_template_error_bound": 1.4208833333689445e-23,
+        "periodic_copy_template_error_bound": 7.76239945073967e-29,
+        "template_error_bound": 1.4208910957683953e-23,
+        "numerator_model_error_bound": 1.0912888113424024e-21,
+        "information_model_error_bound": 5.7518371365508125e-21
+      },
+      {
+        "fourier_template_error_bound": 1.0485530316777584e-20,
+        "periodic_copy_template_error_bound": 9.8668344202963e-37,
+        "template_error_bound": 1.0485530316777585e-20,
+        "numerator_model_error_bound": 8.217948048640951e-19,
+        "information_model_error_bound": 4.3567076216466875e-18
+      },
+      {
+        "fourier_template_error_bound": 7.768598616599084e-24,
+        "periodic_copy_template_error_bound": 2.277934639035988e-25,
+        "template_error_bound": 7.996392080502683e-24,
+        "numerator_model_error_bound": 4.508296410614699e-22,
+        "information_model_error_bound": 1.941913624158226e-21
+      },
+      {
+        "fourier_template_error_bound": 4.265228493850348e-20,
+        "periodic_copy_template_error_bound": 7.862396751269185e-32,
+        "template_error_bound": 4.265228493858211e-20,
+        "numerator_model_error_bound": 3.199436336524081e-18,
+        "information_model_error_bound": 1.887976256749985e-17
+      },
+      {
+        "fourier_template_error_bound": 2.780721185988758e-17,
+        "periodic_copy_template_error_bound": 3.930230959041792e-28,
+        "template_error_bound": 2.78072118602806e-17,
+        "numerator_model_error_bound": 1.5531340049529383e-15,
+        "information_model_error_bound": 7.651856281982358e-15
+      },
+      {
+        "fourier_template_error_bound": 2.560609346536875e-17,
+        "periodic_copy_template_error_bound": 3.419817335343985e-32,
+        "template_error_bound": 2.5606093465368785e-17,
+        "numerator_model_error_bound": 1.261247914219982e-15,
+        "information_model_error_bound": 5.9949953678551825e-15
+      },
+      {
+        "fourier_template_error_bound": 9.318664996400508e-21,
+        "periodic_copy_template_error_bound": 7.45840535095308e-29,
+        "template_error_bound": 9.318665070984562e-21,
+        "numerator_model_error_bound": 7.035592777941928e-19,
+        "information_model_error_bound": 3.691187791480154e-18
+      },
+      {
+        "fourier_template_error_bound": 2.7063578764565604e-17,
+        "periodic_copy_template_error_bound": 1.1540316356890728e-34,
+        "template_error_bound": 2.7063578764565604e-17,
+        "numerator_model_error_bound": 1.853425878785314e-15,
+        "information_model_error_bound": 7.765876434101198e-15
+      },
+      {
+        "fourier_template_error_bound": 1.1480381521047809e-21,
+        "periodic_copy_template_error_bound": 3.4340166525456066e-30,
+        "template_error_bound": 1.1480381555387974e-21,
+        "numerator_model_error_bound": 7.444575663797042e-20,
+        "information_model_error_bound": 4.349560863281815e-19
+      },
+      {
+        "fourier_template_error_bound": 1.2312983656838742e-20,
+        "periodic_copy_template_error_bound": 2.990612092650416e-29,
+        "template_error_bound": 1.2312983686744864e-20,
+        "numerator_model_error_bound": 9.094665469893494e-19,
+        "information_model_error_bound": 4.82590227216529e-18
+      },
+      {
+        "fourier_template_error_bound": 9.965566910335382e-18,
+        "periodic_copy_template_error_bound": 3.2901786591311648e-31,
+        "template_error_bound": 9.96556691033571e-18,
+        "numerator_model_error_bound": 5.557577663551896e-16,
+        "information_model_error_bound": 2.103578671200418e-15
+      },
+      {
+        "fourier_template_error_bound": 6.90579667706436e-19,
+        "periodic_copy_template_error_bound": 2.860998324034933e-30,
+        "template_error_bound": 6.90579667709297e-19,
+        "numerator_model_error_bound": 4.524056391078741e-17,
+        "information_model_error_bound": 2.1311235341246525e-16
+      },
+      {
+        "fourier_template_error_bound": 3.065145435790317e-26,
+        "periodic_copy_template_error_bound": 1.6360984622240632e-29,
+        "template_error_bound": 3.0667815342525406e-26,
+        "numerator_model_error_bound": 1.9597876798617924e-24,
+        "information_model_error_bound": 1.1940426895513775e-23
+      },
+      {
+        "fourier_template_error_bound": 8.631566252324357e-19,
+        "periodic_copy_template_error_bound": 1.3529132430648848e-35,
+        "template_error_bound": 8.631566252324358e-19,
+        "numerator_model_error_bound": 5.330348996899719e-17,
+        "information_model_error_bound": 3.085742000916104e-16
+      },
+      {
+        "fourier_template_error_bound": 1.0835198092930462e-17,
+        "periodic_copy_template_error_bound": 1.352200939618397e-42,
+        "template_error_bound": 1.0835198092930462e-17,
+        "numerator_model_error_bound": 6.081680743303766e-16,
+        "information_model_error_bound": 2.4851050828598093e-15
+      },
+      {
+        "fourier_template_error_bound": 2.4662719523894513e-18,
+        "periodic_copy_template_error_bound": 6.229267449971444e-28,
+        "template_error_bound": 2.4662719530123783e-18,
+        "numerator_model_error_bound": 1.79860252184728e-16,
+        "information_model_error_bound": 9.446203367263522e-16
+      },
+      {
+        "fourier_template_error_bound": 7.015290970253177e-18,
+        "periodic_copy_template_error_bound": 6.909234225808407e-30,
+        "template_error_bound": 7.015290970260087e-18,
+        "numerator_model_error_bound": 5.731123522665338e-16,
+        "information_model_error_bound": 2.800997372312908e-15
+      },
+      {
+        "fourier_template_error_bound": 1.403412082338906e-18,
+        "periodic_copy_template_error_bound": 1.758891187036426e-27,
+        "template_error_bound": 1.4034120840977973e-18,
+        "numerator_model_error_bound": 7.644014282866488e-17,
+        "information_model_error_bound": 4.085155544958332e-16
+      },
+      {
+        "fourier_template_error_bound": 4.2422234874855584e-21,
+        "periodic_copy_template_error_bound": 2.9264233886998924e-28,
+        "template_error_bound": 4.242223780127898e-21,
+        "numerator_model_error_bound": 3.0357207994222367e-19,
+        "information_model_error_bound": 1.770124897996096e-18
+      },
+      {
+        "fourier_template_error_bound": 1.1613067410519964e-26,
+        "periodic_copy_template_error_bound": 1.028754548546281e-27,
+        "template_error_bound": 1.2641821959066245e-26,
+        "numerator_model_error_bound": 7.379674077403449e-25,
+        "information_model_error_bound": 4.0679398543199414e-24
+      },
+      {
+        "fourier_template_error_bound": 6.700405086910891e-24,
+        "periodic_copy_template_error_bound": 8.915324784829499e-30,
+        "template_error_bound": 6.700414002235676e-24,
+        "numerator_model_error_bound": 4.477332481498914e-22,
+        "information_model_error_bound": 2.929540031567946e-21
+      },
+      {
+        "fourier_template_error_bound": 2.0802875709941228e-19,
+        "periodic_copy_template_error_bound": 1.532055099005296e-29,
+        "template_error_bound": 2.0802875711473284e-19,
+        "numerator_model_error_bound": 1.6205907772004176e-17,
+        "information_model_error_bound": 8.759564358427336e-17
+      },
+      {
+        "fourier_template_error_bound": 2.0246346913529376e-23,
+        "periodic_copy_template_error_bound": 8.210916389622148e-29,
+        "template_error_bound": 2.024642902269327e-23,
+        "numerator_model_error_bound": 1.0869326664904688e-21,
+        "information_model_error_bound": 5.640356706730169e-21
+      },
+      {
+        "fourier_template_error_bound": 2.178968245561208e-18,
+        "periodic_copy_template_error_bound": 7.81272865758319e-40,
+        "template_error_bound": 2.178968245561208e-18,
+        "numerator_model_error_bound": 1.4279331665351936e-16,
+        "information_model_error_bound": 6.118789552820883e-16
+      },
+      {
+        "fourier_template_error_bound": 8.106558407224543e-18,
+        "periodic_copy_template_error_bound": 9.297598898062755e-34,
+        "template_error_bound": 8.106558407224544e-18,
+        "numerator_model_error_bound": 5.003265357668812e-16,
+        "information_model_error_bound": 2.239964861393603e-15
+      },
+      {
+        "fourier_template_error_bound": 3.1846736380666005e-27,
+        "periodic_copy_template_error_bound": 6.992725722568522e-28,
+        "template_error_bound": 3.883946210323453e-27,
+        "numerator_model_error_bound": 1.9713561856230009e-25,
+        "information_model_error_bound": 8.793637502683888e-25
+      },
+      {
+        "fourier_template_error_bound": 1.6379750033063047e-18,
+        "periodic_copy_template_error_bound": 1.4324271723151357e-28,
+        "template_error_bound": 1.6379750034495473e-18,
+        "numerator_model_error_bound": 1.0806456463004687e-16,
+        "information_model_error_bound": 6.369723702425571e-16
+      },
+      {
+        "fourier_template_error_bound": 6.089553466151166e-19,
+        "periodic_copy_template_error_bound": 2.49622735737398e-33,
+        "template_error_bound": 6.089553466151191e-19,
+        "numerator_model_error_bound": 3.525873638299014e-17,
+        "information_model_error_bound": 1.5854565131872258e-16
+      },
+      {
+        "fourier_template_error_bound": 2.8894618894058096e-19,
+        "periodic_copy_template_error_bound": 6.038774664088349e-31,
+        "template_error_bound": 2.8894618894118483e-19,
+        "numerator_model_error_bound": 1.9955013740940826e-17,
+        "information_model_error_bound": 1.1942605930891196e-16
+      },
+      {
+        "fourier_template_error_bound": 1.6825822995517335e-18,
+        "periodic_copy_template_error_bound": 8.74067060236053e-34,
+        "template_error_bound": 1.6825822995517344e-18,
+        "numerator_model_error_bound": 1.1443843677722806e-16,
+        "information_model_error_bound": 6.090422720056017e-16
+      },
+      {
+        "fourier_template_error_bound": 1.0913894860755698e-20,
+        "periodic_copy_template_error_bound": 1.7887397442847774e-32,
+        "template_error_bound": 1.0913894860773585e-20,
+        "numerator_model_error_bound": 7.442086186077222e-19,
+        "information_model_error_bound": 3.0817426909983217e-18
+      },
+      {
+        "fourier_template_error_bound": 1.4111838080854255e-19,
+        "periodic_copy_template_error_bound": 6.476343108754319e-35,
+        "template_error_bound": 1.4111838080854262e-19,
+        "numerator_model_error_bound": 8.534905476976676e-18,
+        "information_model_error_bound": 4.6162757121631905e-17
+      },
+      {
+        "fourier_template_error_bound": 1.1294578598505619e-20,
+        "periodic_copy_template_error_bound": 3.8141435325742364e-30,
+        "template_error_bound": 1.1294578602319762e-20,
+        "numerator_model_error_bound": 8.105063900741657e-19,
+        "information_model_error_bound": 5.2044039757435196e-18
+      },
+      {
+        "fourier_template_error_bound": 9.573383366790066e-18,
+        "periodic_copy_template_error_bound": 8.009642068203333e-31,
+        "template_error_bound": 9.573383366790867e-18,
+        "numerator_model_error_bound": 5.648726755113091e-16,
+        "information_model_error_bound": 2.161231279563821e-15
+      },
+      {
+        "fourier_template_error_bound": 1.7681818221262564e-20,
+        "periodic_copy_template_error_bound": 1.255943106156276e-33,
+        "template_error_bound": 1.7681818221263822e-20,
+        "numerator_model_error_bound": 9.914725934991266e-19,
+        "information_model_error_bound": 4.061335368748084e-18
+      },
+      {
+        "fourier_template_error_bound": 1.0713110137554214e-18,
+        "periodic_copy_template_error_bound": 6.301915414944385e-28,
+        "template_error_bound": 1.0713110143856128e-18,
+        "numerator_model_error_bound": 8.445801735808545e-17,
+        "information_model_error_bound": 3.893385617521867e-16
+      },
+      {
+        "fourier_template_error_bound": 9.615578083644296e-25,
+        "periodic_copy_template_error_bound": 1.7752742643786374e-29,
+        "template_error_bound": 9.615755611070732e-25,
+        "numerator_model_error_bound": 5.394095153311276e-23,
+        "information_model_error_bound": 2.1982058075675217e-22
+      }
+    ],
+    "periodic_camera_assumed": false,
+    "image_resampling_performed": false,
+    "wcs_model": "declared affine maps into one tangent plane",
+    "floating_point_and_wcs_errors_certified": false
+  },
+  "trim": {
+    "original_side": 209,
+    "retained_side": 99,
+    "discarded_numerator_l1_bound": 3.746246557682549e-15,
+    "discarded_information_l1_bound": 7.079866350791442e-08
+  },
+  "numerator_report": {
+    "cutoff": 36,
+    "template_reports": [
+      {
+        "fourier_template_error_bound": 6.492711341617698e-10,
+        "periodic_copy_template_error_bound": 3.1841928944346294e-28,
+        "template_error_bound": 6.492711341617698e-10
+      },
+      {
+        "fourier_template_error_bound": 2.77410964076817e-10,
+        "periodic_copy_template_error_bound": 9.27096789508199e-36,
+        "template_error_bound": 2.77410964076817e-10
+      },
+      {
+        "fourier_template_error_bound": 8.113406734759652e-10,
+        "periodic_copy_template_error_bound": 1.448587210737018e-32,
+        "template_error_bound": 8.113406734759652e-10
+      },
+      {
+        "fourier_template_error_bound": 2.3416612740142785e-12,
+        "periodic_copy_template_error_bound": 3.549796524639537e-26,
+        "template_error_bound": 2.341661274014314e-12
+      },
+      {
+        "fourier_template_error_bound": 4.055907779490212e-14,
+        "periodic_copy_template_error_bound": 9.67397032388691e-28,
+        "template_error_bound": 4.055907779490308e-14
+      },
+      {
+        "fourier_template_error_bound": 7.750154955260828e-14,
+        "periodic_copy_template_error_bound": 1.2543883688358028e-28,
+        "template_error_bound": 7.75015495526084e-14
+      },
+      {
+        "fourier_template_error_bound": 1.3349704212243446e-12,
+        "periodic_copy_template_error_bound": 6.541297881865654e-31,
+        "template_error_bound": 1.3349704212243446e-12
+      },
+      {
+        "fourier_template_error_bound": 1.6563316192865865e-10,
+        "periodic_copy_template_error_bound": 9.515036821616957e-31,
+        "template_error_bound": 1.6563316192865865e-10
+      },
+      {
+        "fourier_template_error_bound": 5.888590118852077e-13,
+        "periodic_copy_template_error_bound": 1.4928735062857972e-25,
+        "template_error_bound": 5.88859011885357e-13
+      },
+      {
+        "fourier_template_error_bound": 4.540662558599639e-11,
+        "periodic_copy_template_error_bound": 1.9271297848842668e-35,
+        "template_error_bound": 4.540662558599639e-11
+      },
+      {
+        "fourier_template_error_bound": 1.359045801341544e-09,
+        "periodic_copy_template_error_bound": 4.776551615829036e-27,
+        "template_error_bound": 1.359045801341544e-09
+      },
+      {
+        "fourier_template_error_bound": 5.158766774919309e-12,
+        "periodic_copy_template_error_bound": 5.704206370633566e-29,
+        "template_error_bound": 5.15876677491931e-12
+      },
+      {
+        "fourier_template_error_bound": 3.395495132315754e-12,
+        "periodic_copy_template_error_bound": 2.7595202814131224e-31,
+        "template_error_bound": 3.395495132315754e-12
+      },
+      {
+        "fourier_template_error_bound": 2.1169350119462317e-09,
+        "periodic_copy_template_error_bound": 3.961294793391091e-34,
+        "template_error_bound": 2.1169350119462317e-09
+      },
+      {
+        "fourier_template_error_bound": 1.097565756123001e-09,
+        "periodic_copy_template_error_bound": 8.370737498739871e-26,
+        "template_error_bound": 1.097565756123001e-09
+      },
+      {
+        "fourier_template_error_bound": 3.9868917270808647e-11,
+        "periodic_copy_template_error_bound": 8.689025434409635e-36,
+        "template_error_bound": 3.9868917270808647e-11
+      },
+      {
+        "fourier_template_error_bound": 4.038618678291299e-12,
+        "periodic_copy_template_error_bound": 3.139326995945995e-31,
+        "template_error_bound": 4.038618678291299e-12
+      },
+      {
+        "fourier_template_error_bound": 1.6659556141152835e-09,
+        "periodic_copy_template_error_bound": 7.211584046657411e-29,
+        "template_error_bound": 1.6659556141152835e-09
+      },
+      {
+        "fourier_template_error_bound": 4.694119666182791e-10,
+        "periodic_copy_template_error_bound": 2.627955300047087e-34,
+        "template_error_bound": 4.694119666182791e-10
+      },
+      {
+        "fourier_template_error_bound": 6.604768498162859e-11,
+        "periodic_copy_template_error_bound": 4.685505017823815e-27,
+        "template_error_bound": 6.604768498162859e-11
+      },
+      {
+        "fourier_template_error_bound": 9.932301543532739e-12,
+        "periodic_copy_template_error_bound": 5.483828595470194e-32,
+        "template_error_bound": 9.932301543532739e-12
+      },
+      {
+        "fourier_template_error_bound": 1.209282025185281e-13,
+        "periodic_copy_template_error_bound": 5.511240388192662e-27,
+        "template_error_bound": 1.209282025185336e-13
+      },
+      {
+        "fourier_template_error_bound": 1.9965868071414637e-09,
+        "periodic_copy_template_error_bound": 4.2047534930537425e-36,
+        "template_error_bound": 1.9965868071414637e-09
+      },
+      {
+        "fourier_template_error_bound": 7.790771624347185e-10,
+        "periodic_copy_template_error_bound": 7.290474448274998e-40,
+        "template_error_bound": 7.790771624347185e-10
+      },
+      {
+        "fourier_template_error_bound": 8.422815328737081e-10,
+        "periodic_copy_template_error_bound": 7.117772266021044e-42,
+        "template_error_bound": 8.422815328737081e-10
+      },
+      {
+        "fourier_template_error_bound": 5.701275635968374e-11,
+        "periodic_copy_template_error_bound": 7.719691420181266e-33,
+        "template_error_bound": 5.701275635968374e-11
+      },
+      {
+        "fourier_template_error_bound": 2.2092714406961353e-09,
+        "periodic_copy_template_error_bound": 4.01344750537121e-40,
+        "template_error_bound": 2.2092714406961353e-09
+      },
+      {
+        "fourier_template_error_bound": 1.93600965808803e-09,
+        "periodic_copy_template_error_bound": 3.089546659301931e-31,
+        "template_error_bound": 1.93600965808803e-09
+      },
+      {
+        "fourier_template_error_bound": 1.0580261615252523e-10,
+        "periodic_copy_template_error_bound": 1.9474770608390094e-29,
+        "template_error_bound": 1.0580261615252523e-10
+      },
+      {
+        "fourier_template_error_bound": 1.4152079466347876e-09,
+        "periodic_copy_template_error_bound": 7.313950556390136e-32,
+        "template_error_bound": 1.4152079466347876e-09
+      },
+      {
+        "fourier_template_error_bound": 9.43469461025419e-10,
+        "periodic_copy_template_error_bound": 3.301006476998424e-35,
+        "template_error_bound": 9.43469461025419e-10
+      },
+      {
+        "fourier_template_error_bound": 7.664646036693671e-10,
+        "periodic_copy_template_error_bound": 1.0370674671505733e-32,
+        "template_error_bound": 7.664646036693671e-10
+      },
+      {
+        "fourier_template_error_bound": 3.588951908256869e-11,
+        "periodic_copy_template_error_bound": 4.458183504401684e-28,
+        "template_error_bound": 3.588951908256869e-11
+      },
+      {
+        "fourier_template_error_bound": 6.042378937754797e-14,
+        "periodic_copy_template_error_bound": 7.032856753633865e-28,
+        "template_error_bound": 6.042378937754868e-14
+      },
+      {
+        "fourier_template_error_bound": 1.9439579205144626e-10,
+        "periodic_copy_template_error_bound": 2.804421012706848e-27,
+        "template_error_bound": 1.9439579205144626e-10
+      },
+      {
+        "fourier_template_error_bound": 2.13154634338159e-10,
+        "periodic_copy_template_error_bound": 5.079534871502098e-30,
+        "template_error_bound": 2.13154634338159e-10
+      },
+      {
+        "fourier_template_error_bound": 7.796416153224987e-10,
+        "periodic_copy_template_error_bound": 3.7859596946412806e-31,
+        "template_error_bound": 7.796416153224987e-10
+      },
+      {
+        "fourier_template_error_bound": 2.9312964103639125e-12,
+        "periodic_copy_template_error_bound": 5.080090240897607e-29,
+        "template_error_bound": 2.9312964103639125e-12
+      },
+      {
+        "fourier_template_error_bound": 1.5447202329644233e-13,
+        "periodic_copy_template_error_bound": 1.3915072718291257e-26,
+        "template_error_bound": 1.5447202329645624e-13
+      },
+      {
+        "fourier_template_error_bound": 8.690046731472139e-11,
+        "periodic_copy_template_error_bound": 1.0391258570180238e-37,
+        "template_error_bound": 8.690046731472139e-11
+      },
+      {
+        "fourier_template_error_bound": 2.3625098017138557e-09,
+        "periodic_copy_template_error_bound": 3.2319139746653744e-38,
+        "template_error_bound": 2.3625098017138557e-09
+      },
+      {
+        "fourier_template_error_bound": 8.575371100955384e-10,
+        "periodic_copy_template_error_bound": 7.660601266943554e-35,
+        "template_error_bound": 8.575371100955384e-10
+      },
+      {
+        "fourier_template_error_bound": 9.943761485302072e-10,
+        "periodic_copy_template_error_bound": 7.36152637226116e-43,
+        "template_error_bound": 9.943761485302072e-10
+      },
+      {
+        "fourier_template_error_bound": 1.190741692432368e-10,
+        "periodic_copy_template_error_bound": 2.0367556838622613e-27,
+        "template_error_bound": 1.190741692432368e-10
+      },
+      {
+        "fourier_template_error_bound": 3.03640585876368e-11,
+        "periodic_copy_template_error_bound": 2.763408209622429e-34,
+        "template_error_bound": 3.03640585876368e-11
+      },
+      {
+        "fourier_template_error_bound": 2.3516134089161738e-11,
+        "periodic_copy_template_error_bound": 1.8945114233746382e-32,
+        "template_error_bound": 2.3516134089161738e-11
+      },
+      {
+        "fourier_template_error_bound": 5.134076584179305e-10,
+        "periodic_copy_template_error_bound": 4.56270387187065e-28,
+        "template_error_bound": 5.134076584179305e-10
+      },
+      {
+        "fourier_template_error_bound": 4.462912330134977e-10,
+        "periodic_copy_template_error_bound": 6.466233607115174e-37,
+        "template_error_bound": 4.462912330134977e-10
+      },
+      {
+        "fourier_template_error_bound": 1.879089228041306e-11,
+        "periodic_copy_template_error_bound": 7.349393429113787e-27,
+        "template_error_bound": 1.8790892280413066e-11
+      },
+      {
+        "fourier_template_error_bound": 4.615468881041847e-15,
+        "periodic_copy_template_error_bound": 9.354654977609402e-26,
+        "template_error_bound": 4.615468881135394e-15
+      },
+      {
+        "fourier_template_error_bound": 3.4098193720336285e-09,
+        "periodic_copy_template_error_bound": 5.317489152634171e-34,
+        "template_error_bound": 3.4098193720336285e-09
+      },
+      {
+        "fourier_template_error_bound": 3.686275302075572e-11,
+        "periodic_copy_template_error_bound": 1.4788392935801514e-25,
+        "template_error_bound": 3.686275302075587e-11
+      },
+      {
+        "fourier_template_error_bound": 3.3912626416530397e-12,
+        "periodic_copy_template_error_bound": 1.0327109547209223e-29,
+        "template_error_bound": 3.3912626416530397e-12
+      },
+      {
+        "fourier_template_error_bound": 1.9995300723525175e-11,
+        "periodic_copy_template_error_bound": 2.309799088709125e-27,
+        "template_error_bound": 1.999530072352518e-11
+      },
+      {
+        "fourier_template_error_bound": 2.209137740027584e-09,
+        "periodic_copy_template_error_bound": 1.6239691267263355e-36,
+        "template_error_bound": 2.209137740027584e-09
+      },
+      {
+        "fourier_template_error_bound": 1.1658746004734669e-09,
+        "periodic_copy_template_error_bound": 6.837284484400601e-36,
+        "template_error_bound": 1.1658746004734669e-09
+      },
+      {
+        "fourier_template_error_bound": 2.507217223380407e-09,
+        "periodic_copy_template_error_bound": 2.3045666253825935e-33,
+        "template_error_bound": 2.507217223380407e-09
+      },
+      {
+        "fourier_template_error_bound": 5.255425239664215e-11,
+        "periodic_copy_template_error_bound": 3.059962648354266e-36,
+        "template_error_bound": 5.255425239664215e-11
+      },
+      {
+        "fourier_template_error_bound": 1.6990702097477032e-09,
+        "periodic_copy_template_error_bound": 3.385453944649304e-27,
+        "template_error_bound": 1.6990702097477032e-09
+      },
+      {
+        "fourier_template_error_bound": 1.1721061705161749e-09,
+        "periodic_copy_template_error_bound": 2.3754577394510638e-26,
+        "template_error_bound": 1.1721061705161749e-09
+      },
+      {
+        "fourier_template_error_bound": 2.92975430750156e-11,
+        "periodic_copy_template_error_bound": 1.515351138193435e-35,
+        "template_error_bound": 2.92975430750156e-11
+      },
+      {
+        "fourier_template_error_bound": 2.1497178724726337e-10,
+        "periodic_copy_template_error_bound": 1.4084159215299943e-27,
+        "template_error_bound": 2.1497178724726337e-10
+      },
+      {
+        "fourier_template_error_bound": 3.758336886846328e-10,
+        "periodic_copy_template_error_bound": 7.056517895153234e-29,
+        "template_error_bound": 3.758336886846328e-10
+      },
+      {
+        "fourier_template_error_bound": 1.0398171980940435e-09,
+        "periodic_copy_template_error_bound": 3.0099021252098634e-39,
+        "template_error_bound": 1.0398171980940435e-09
+      },
+      {
+        "fourier_template_error_bound": 9.56064542692913e-12,
+        "periodic_copy_template_error_bound": 2.6566342921627345e-31,
+        "template_error_bound": 9.56064542692913e-12
+      },
+      {
+        "fourier_template_error_bound": 7.931546248922007e-12,
+        "periodic_copy_template_error_bound": 1.0438280702154034e-29,
+        "template_error_bound": 7.931546248922007e-12
+      },
+      {
+        "fourier_template_error_bound": 4.389324094050079e-12,
+        "periodic_copy_template_error_bound": 7.580608160256176e-30,
+        "template_error_bound": 4.389324094050079e-12
+      },
+      {
+        "fourier_template_error_bound": 1.2613573873106121e-09,
+        "periodic_copy_template_error_bound": 1.8538765561492968e-31,
+        "template_error_bound": 1.2613573873106121e-09
+      },
+      {
+        "fourier_template_error_bound": 5.1453687471681666e-12,
+        "periodic_copy_template_error_bound": 7.952619690532691e-27,
+        "template_error_bound": 5.145368747168175e-12
+      },
+      {
+        "fourier_template_error_bound": 3.0587647918949754e-14,
+        "periodic_copy_template_error_bound": 4.866090502577095e-28,
+        "template_error_bound": 3.058764791895024e-14
+      },
+      {
+        "fourier_template_error_bound": 1.2056468067783042e-10,
+        "periodic_copy_template_error_bound": 2.8556917624423152e-30,
+        "template_error_bound": 1.2056468067783042e-10
+      },
+      {
+        "fourier_template_error_bound": 3.520485879368472e-10,
+        "periodic_copy_template_error_bound": 2.9851683128867445e-30,
+        "template_error_bound": 3.520485879368472e-10
+      },
+      {
+        "fourier_template_error_bound": 2.8041487602795096e-09,
+        "periodic_copy_template_error_bound": 6.8774294917444045e-31,
+        "template_error_bound": 2.8041487602795096e-09
+      },
+      {
+        "fourier_template_error_bound": 6.231705666566851e-13,
+        "periodic_copy_template_error_bound": 2.4651338007850343e-30,
+        "template_error_bound": 6.231705666566851e-13
+      },
+      {
+        "fourier_template_error_bound": 1.3644250416078e-10,
+        "periodic_copy_template_error_bound": 1.3158539502423921e-28,
+        "template_error_bound": 1.3644250416078e-10
+      },
+      {
+        "fourier_template_error_bound": 1.606721270459827e-11,
+        "periodic_copy_template_error_bound": 2.4350459268654233e-27,
+        "template_error_bound": 1.606721270459827e-11
+      },
+      {
+        "fourier_template_error_bound": 1.3638269864736592e-09,
+        "periodic_copy_template_error_bound": 2.366250724034328e-40,
+        "template_error_bound": 1.3638269864736592e-09
+      },
+      {
+        "fourier_template_error_bound": 2.7129644986437562e-09,
+        "periodic_copy_template_error_bound": 9.783963992793304e-39,
+        "template_error_bound": 2.7129644986437562e-09
+      },
+      {
+        "fourier_template_error_bound": 9.214661186161106e-12,
+        "periodic_copy_template_error_bound": 2.82744279023596e-29,
+        "template_error_bound": 9.214661186161106e-12
+      },
+      {
+        "fourier_template_error_bound": 3.574681315391918e-10,
+        "periodic_copy_template_error_bound": 1.4693020442571517e-36,
+        "template_error_bound": 3.574681315391918e-10
+      },
+      {
+        "fourier_template_error_bound": 2.498267787144153e-09,
+        "periodic_copy_template_error_bound": 1.7803461128717526e-36,
+        "template_error_bound": 2.498267787144153e-09
+      },
+      {
+        "fourier_template_error_bound": 3.042126411323684e-09,
+        "periodic_copy_template_error_bound": 2.642202810384442e-30,
+        "template_error_bound": 3.042126411323684e-09
+      },
+      {
+        "fourier_template_error_bound": 3.0854583660687143e-10,
+        "periodic_copy_template_error_bound": 2.7423053502801978e-40,
+        "template_error_bound": 3.0854583660687143e-10
+      },
+      {
+        "fourier_template_error_bound": 5.126681057012397e-13,
+        "periodic_copy_template_error_bound": 3.337826556075046e-26,
+        "template_error_bound": 5.12668105701273e-13
+      },
+      {
+        "fourier_template_error_bound": 4.5178922535191405e-09,
+        "periodic_copy_template_error_bound": 4.4167177251333487e-44,
+        "template_error_bound": 4.5178922535191405e-09
+      },
+      {
+        "fourier_template_error_bound": 3.393702990366098e-12,
+        "periodic_copy_template_error_bound": 1.1527955892696643e-30,
+        "template_error_bound": 3.393702990366098e-12
+      },
+      {
+        "fourier_template_error_bound": 8.094160344567114e-13,
+        "periodic_copy_template_error_bound": 8.149163949973301e-31,
+        "template_error_bound": 8.094160344567114e-13
+      },
+      {
+        "fourier_template_error_bound": 2.608253877973734e-10,
+        "periodic_copy_template_error_bound": 9.808254622440209e-40,
+        "template_error_bound": 2.608253877973734e-10
+      },
+      {
+        "fourier_template_error_bound": 4.536420962993764e-12,
+        "periodic_copy_template_error_bound": 5.478495525248774e-29,
+        "template_error_bound": 4.536420962993764e-12
+      },
+      {
+        "fourier_template_error_bound": 9.031307838817859e-10,
+        "periodic_copy_template_error_bound": 5.2747643988664084e-36,
+        "template_error_bound": 9.031307838817859e-10
+      },
+      {
+        "fourier_template_error_bound": 2.95842757783826e-10,
+        "periodic_copy_template_error_bound": 3.5527142573828396e-27,
+        "template_error_bound": 2.95842757783826e-10
+      },
+      {
+        "fourier_template_error_bound": 1.7283704072643182e-12,
+        "periodic_copy_template_error_bound": 7.76239945073967e-29,
+        "template_error_bound": 1.7283704072643182e-12
+      },
+      {
+        "fourier_template_error_bound": 4.395016184219166e-11,
+        "periodic_copy_template_error_bound": 9.8668344202963e-37,
+        "template_error_bound": 4.395016184219166e-11
+      },
+      {
+        "fourier_template_error_bound": 1.2757070484190853e-12,
+        "periodic_copy_template_error_bound": 2.277934639035988e-25,
+        "template_error_bound": 1.2757070484193131e-12
+      },
+      {
+        "fourier_template_error_bound": 8.862373665965862e-11,
+        "periodic_copy_template_error_bound": 7.862396751269185e-32,
+        "template_error_bound": 8.862373665965862e-11
+      },
+      {
+        "fourier_template_error_bound": 2.2702099539715275e-09,
+        "periodic_copy_template_error_bound": 3.930230959041792e-28,
+        "template_error_bound": 2.2702099539715275e-09
+      },
+      {
+        "fourier_template_error_bound": 2.1258813964574705e-09,
+        "periodic_copy_template_error_bound": 3.419817335343985e-32,
+        "template_error_bound": 2.1258813964574705e-09
+      },
+      {
+        "fourier_template_error_bound": 4.0737961869185496e-11,
+        "periodic_copy_template_error_bound": 7.45840535095308e-29,
+        "template_error_bound": 4.0737961869185496e-11
+      },
+      {
+        "fourier_template_error_bound": 2.188143075353959e-09,
+        "periodic_copy_template_error_bound": 1.1540316356890728e-34,
+        "template_error_bound": 2.188143075353959e-09
+      },
+      {
+        "fourier_template_error_bound": 1.507092651988009e-11,
+        "periodic_copy_template_error_bound": 3.4340166525456066e-30,
+        "template_error_bound": 1.507092651988009e-11
+      },
+      {
+        "fourier_template_error_bound": 4.874248063677268e-11,
+        "periodic_copy_template_error_bound": 2.990612092650416e-29,
+        "template_error_bound": 4.874248063677268e-11
+      },
+      {
+        "fourier_template_error_bound": 1.336468969926174e-09,
+        "periodic_copy_template_error_bound": 3.2901786591311648e-31,
+        "template_error_bound": 1.336468969926174e-09
+      },
+      {
+        "fourier_template_error_bound": 3.5424623892044973e-10,
+        "periodic_copy_template_error_bound": 2.860998324034933e-30,
+        "template_error_bound": 3.5424623892044973e-10
+      },
+      {
+        "fourier_template_error_bound": 7.946807833781068e-14,
+        "periodic_copy_template_error_bound": 1.6360984622240632e-29,
+        "template_error_bound": 7.94680783378107e-14
+      },
+      {
+        "fourier_template_error_bound": 3.8962805373169725e-10,
+        "periodic_copy_template_error_bound": 1.3529132430648848e-35,
+        "template_error_bound": 3.8962805373169725e-10
+      },
+      {
+        "fourier_template_error_bound": 1.4285007449825096e-09,
+        "periodic_copy_template_error_bound": 1.352200939618397e-42,
+        "template_error_bound": 1.4285007449825096e-09
+      },
+      {
+        "fourier_template_error_bound": 6.590881104038716e-10,
+        "periodic_copy_template_error_bound": 6.229267449971444e-28,
+        "template_error_bound": 6.590881104038716e-10
+      },
+      {
+        "fourier_template_error_bound": 1.1396852681186137e-09,
+        "periodic_copy_template_error_bound": 6.909234225808407e-30,
+        "template_error_bound": 1.1396852681186137e-09
+      },
+      {
+        "fourier_template_error_bound": 5.077926452110093e-10,
+        "periodic_copy_template_error_bound": 1.758891187036426e-27,
+        "template_error_bound": 5.077926452110093e-10
+      },
+      {
+        "fourier_template_error_bound": 2.7444645752020323e-11,
+        "periodic_copy_template_error_bound": 2.9264233886998924e-28,
+        "template_error_bound": 2.7444645752020323e-11
+      },
+      {
+        "fourier_template_error_bound": 4.994632298452424e-14,
+        "periodic_copy_template_error_bound": 1.028754548546281e-27,
+        "template_error_bound": 4.9946322984525266e-14
+      },
+      {
+        "fourier_template_error_bound": 1.1421232583879675e-12,
+        "periodic_copy_template_error_bound": 8.915324784829499e-30,
+        "template_error_bound": 1.1421232583879675e-12
+      },
+      {
+        "fourier_template_error_bound": 1.979134404329489e-10,
+        "periodic_copy_template_error_bound": 1.532055099005296e-29,
+        "template_error_bound": 1.979134404329489e-10
+      },
+      {
+        "fourier_template_error_bound": 1.988088791466579e-12,
+        "periodic_copy_template_error_bound": 8.210916389622148e-29,
+        "template_error_bound": 1.988088791466579e-12
+      },
+      {
+        "fourier_template_error_bound": 6.369748184857548e-10,
+        "periodic_copy_template_error_bound": 7.81272865758319e-40,
+        "template_error_bound": 6.369748184857548e-10
+      },
+      {
+        "fourier_template_error_bound": 1.1960040058052082e-09,
+        "periodic_copy_template_error_bound": 9.297598898062755e-34,
+        "template_error_bound": 1.1960040058052082e-09
+      },
+      {
+        "fourier_template_error_bound": 2.6379256121718586e-14,
+        "periodic_copy_template_error_bound": 6.992725722568522e-28,
+        "template_error_bound": 2.6379256121719283e-14
+      },
+      {
+        "fourier_template_error_bound": 5.384951020464196e-10,
+        "periodic_copy_template_error_bound": 1.4324271723151357e-28,
+        "template_error_bound": 5.384951020464196e-10
+      },
+      {
+        "fourier_template_error_bound": 3.422287447426739e-10,
+        "periodic_copy_template_error_bound": 2.49622735737398e-33,
+        "template_error_bound": 3.422287447426739e-10
+      },
+      {
+        "fourier_template_error_bound": 2.313300394394107e-10,
+        "periodic_copy_template_error_bound": 6.038774664088349e-31,
+        "template_error_bound": 2.313300394394107e-10
+      },
+      {
+        "fourier_template_error_bound": 5.407692857121964e-10,
+        "periodic_copy_template_error_bound": 8.74067060236053e-34,
+        "template_error_bound": 5.407692857121964e-10
+      },
+      {
+        "fourier_template_error_bound": 4.4260920930430284e-11,
+        "periodic_copy_template_error_bound": 1.7887397442847774e-32,
+        "template_error_bound": 4.4260920930430284e-11
+      },
+      {
+        "fourier_template_error_bound": 1.6068427705789826e-10,
+        "periodic_copy_template_error_bound": 6.476343108754319e-35,
+        "template_error_bound": 1.6068427705789826e-10
+      },
+      {
+        "fourier_template_error_bound": 4.706217793328102e-11,
+        "periodic_copy_template_error_bound": 3.8141435325742364e-30,
+        "template_error_bound": 4.706217793328102e-11
+      },
+      {
+        "fourier_template_error_bound": 1.295079180004986e-09,
+        "periodic_copy_template_error_bound": 8.009642068203333e-31,
+        "template_error_bound": 1.295079180004986e-09
+      },
+      {
+        "fourier_template_error_bound": 5.7193699155880016e-11,
+        "periodic_copy_template_error_bound": 1.255943106156276e-33,
+        "template_error_bound": 5.7193699155880016e-11
+      },
+      {
+        "fourier_template_error_bound": 4.366324841695141e-10,
+        "periodic_copy_template_error_bound": 6.301915414944385e-28,
+        "template_error_bound": 4.366324841695141e-10
+      },
+      {
+        "fourier_template_error_bound": 4.4631695506539307e-13,
+        "periodic_copy_template_error_bound": 1.7752742643786374e-29,
+        "template_error_bound": 4.4631695506539307e-13
+      }
+    ],
+    "numerator_model_error_bound": 5.250623953261985e-06,
+    "per_exposure_error_bounds": [
+      4.524167630897936e-08,
+      1.6879789941404834e-08,
+      5.184791772524961e-08,
+      1.8735089538466415e-10,
+      2.450789399477598e-12,
+      4.303334250040548e-12,
+      9.482279454107281e-11,
+      1.2318583330805022e-08,
+      4.1952553869164883e-11,
+      2.857190762089139e-09,
+      6.663946980672939e-08,
+      2.678058425952185e-10,
+      2.048599187681262e-10,
+      1.1565478942135632e-07,
+      8.598838925264548e-08,
+      2.026318368914601e-09,
+      2.7991690851033854e-10,
+      7.651426153998299e-08,
+      3.234700243744101e-08,
+      3.454069803602649e-09,
+      5.937442476130289e-10,
+      5.247084779205968e-12,
+      1.2427953412755522e-07,
+      7.128715044976427e-08,
+      5.4640993680590166e-08,
+      3.36128858117152e-09,
+      1.5766507700443543e-07,
+      1.0506874416672442e-07,
+      6.067062117647731e-09,
+      8.806014581812307e-08,
+      4.928428383189887e-08,
+      7.032454203676132e-08,
+      1.8410810924488493e-09,
+      3.678202610228797e-12,
+      1.3268343514237344e-08,
+      1.60278342275251e-08,
+      6.331507608872252e-08,
+      2.068690878120767e-10,
+      1.0466286854717318e-11,
+      3.961180456900688e-09,
+      1.6616597031625312e-07,
+      4.821662210707101e-08,
+      5.942139462571795e-08,
+      9.603015538777345e-09,
+      1.552279134200048e-09,
+      1.4515955364334e-09,
+      3.563082062449335e-08,
+      2.899156268530803e-08,
+      1.2275135562820709e-09,
+      2.955643048989676e-13,
+      2.3111696125425942e-07,
+      2.4475842675427696e-09,
+      1.624755567336192e-10,
+      1.2505653490989217e-09,
+      1.2688526395341217e-07,
+      9.063009527011338e-08,
+      1.3631848297543265e-07,
+      2.8303629426096965e-09,
+      1.2190315196637144e-07,
+      7.621186016473551e-08,
+      1.7774555462919028e-09,
+      1.1875107625304916e-08,
+      2.63988927769687e-08,
+      8.363002574450095e-08,
+      7.232974798975311e-10,
+      6.513596537744291e-10,
+      2.2505057317439982e-10,
+      8.574339745386933e-08,
+      3.8816164434533237e-10,
+      1.6238743125458692e-12,
+      8.825346424498478e-09,
+      1.5677968378497056e-08,
+      2.0782186861282282e-07,
+      4.1355503315329685e-11,
+      9.119478290399299e-09,
+      9.363242214635279e-10,
+      8.480107628129614e-08,
+      2.2480005573679456e-07,
+      4.07675107532173e-10,
+      2.0431624802579887e-08,
+      1.5369260076627577e-07,
+      1.7274830404287016e-07,
+      2.2286099612196696e-08,
+      3.328401068829011e-11,
+      3.8156095237643573e-07,
+      1.9690590496725642e-10,
+      5.161814533383898e-11,
+      2.0356419811605197e-08,
+      3.081859465087865e-10,
+      7.042405441392918e-08,
+      1.9005781835656624e-08,
+      1.3274425414587181e-10,
+      3.444557746121618e-09,
+      7.192325550678994e-11,
+      6.647850255988631e-09,
+      1.2679948984501478e-07,
+      1.0471193041560004e-07,
+      3.0757164049961158e-09,
+      1.498530936217447e-07,
+      9.772902778489677e-10,
+      3.600236683830134e-09,
+      7.453193744139643e-08,
+      2.320702499857413e-08,
+      5.078306332853653e-12,
+      2.4061143072538838e-08,
+      8.018021819299809e-08,
+      4.806597001778466e-08,
+      9.31062884809692e-08,
+      2.765812177841431e-08,
+      1.9639294450344014e-09,
+      2.915620756121975e-12,
+      7.631865077216998e-11,
+      1.5417901865978428e-08,
+      1.0673085356961024e-10,
+      4.1742575708315624e-08,
+      7.381585512966226e-08,
+      1.3389194111252626e-12,
+      3.552693944382982e-08,
+      1.981516897853931e-08,
+      1.5975964703398293e-08,
+      3.677965216353995e-08,
+      3.0181121629026187e-09,
+      9.718260006016693e-09,
+      3.377212845984119e-09,
+      7.64154963172269e-08,
+      3.2070222939909885e-09,
+      3.442241648961435e-08,
+      2.5036785683146186e-11
+    ]
+  },
+  "error_budgets": {
+    "numerator": 5.914528247945352e-06,
+    "information": 7.976764929347836e-08,
+    "all_error_components_exact_arithmetic_model_only": true,
+    "coefficient_or_orbit_roundoff_certified": false
+  },
+  "setup_seconds": {
+    "source_domain_proof": 0.009098960988922045,
+    "detector_plan": 0.13544411900511477,
+    "full_field_preparation": 1.0630392169987317,
+    "trim": 0.7247122480039252,
+    "time_plan": 0.02000378600496333,
+    "compression_both_fields": 0.12732645899814088
+  },
+  "changed_image_preparation_and_compression": {
+    "samples_seconds": [
+      0.1218503790005343,
+      0.11575243099650834,
+      0.1170520790037699
+    ],
+    "median_seconds": 0.1170520790037699,
+    "min_seconds": 0.11575243099650834,
+    "max_seconds": 0.1218503790005343,
+    "loops_per_sample": 1
+  },
+  "measurements": [
+    {
+      "queries": 128,
+      "direct_geometry_seconds": 0.01050112399389036,
+      "direct_stream_setup_seconds": 0.00148122500104364,
+      "direct_pixels": {
+        "samples_seconds": [
+          0.018897453002864495,
+          0.022443855996243656,
+          0.017222572001628578
+        ],
+        "median_seconds": 0.018897453002864495,
+        "min_seconds": 0.017222572001628578,
+        "max_seconds": 0.022443855996243656,
+        "loops_per_sample": 1
+      },
+      "compressed_query_setup_seconds": 0.2736948039964773,
+      "compressed_both_statistics": {
+        "samples_seconds": [
+          0.17896142700919881,
+          0.17485325700545218,
+          0.17761997401248664
+        ],
+        "median_seconds": 0.17761997401248664,
+        "min_seconds": 0.17485325700545218,
+        "max_seconds": 0.17896142700919881,
+        "loops_per_sample": 1
+      },
+      "compressed_numerator_only": {
+        "samples_seconds": [
+          0.055002023989800364,
+          0.05970002300455235,
+          0.06908069900237024
+        ],
+        "median_seconds": 0.05970002300455235,
+        "min_seconds": 0.055002023989800364,
+        "max_seconds": 0.06908069900237024,
+        "loops_per_sample": 1
+      },
+      "maximum_numerator_error": 4.701202982460027e-09,
+      "maximum_information_error": 1.363819324140536e-08,
+      "unresolved_information_queries": 34,
+      "maximum_snr_error_resolved": 1.7499806599818868e-05,
+      "injected_flux_estimate": 9.590732198118578,
+      "injected_snr": 18.08222683830952,
+      "best_resolved_query_is_injected": true,
+      "cached_pixels": {
+        "dense": {
+          "setup_seconds": 0.023409489003825,
+          "bytes": 10617856,
+          "application": {
+            "samples_seconds": [
+              0.00020901871435593681,
+              0.0002069714646495413,
+              0.00018313407157880386
+            ],
+            "median_seconds": 0.0002069714646495413,
+            "min_seconds": 0.00018313407157880386,
+            "max_seconds": 0.00020901871435593681,
+            "loops_per_sample": 28
+          }
+        },
+        "factor": {
+          "setup_seconds": 0.017479620000813156,
+          "bytes": 2360320,
+          "application": {
+            "samples_seconds": [
+              0.0024835484982759226,
+              0.002354555246711243,
+              0.002357657500397181
+            ],
+            "median_seconds": 0.002357657500397181,
+            "min_seconds": 0.002354555246711243,
+            "max_seconds": 0.0024835484982759226,
+            "loops_per_sample": 4
+          }
+        }
+      },
+      "comparison": {
+        "first_direct_seconds": 0.030338401495100698,
+        "first_compressed_seconds": 2.530939568008762,
+        "first_direct_method": "factor",
+        "new_image_direct_seconds": 0.0002069714646495413,
+        "new_image_compressed_seconds": 0.17675210200832225,
+        "new_image_direct_method": "dense",
+        "first_direct_over_compressed": 0.011987011416068576,
+        "new_image_direct_over_compressed": 0.0011709703154749254,
+        "information_is_reused_for_both_on_changed_images": true
+      }
+    }
+  ],
+  "full_objective_complete": false,
+  "changed_input_maximum_numerator_error": 3.1106814901704688e-09,
+  "artifact_sha256": {
+    "scores.npz": "2456eeb313a92d50511a3dc6e09a178b27c512c8d8575a7a750a3336bfcdfd5e",
+    "inputs.npz": "56f73e79376b0fc23f60e7da058b5cfb2b422f88af89650f755bcf3b2cc00d5c"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "exposures": [
+    {"id": "e0", "observation_id": "image-0", "surveys": ["A", "B"], "mjd_utc": 60000.8},
+    {"id": "e1", "observation_id": "image-1", "surveys": ["A"], "mjd_utc": 60000.9},
+    {"id": "e2", "observation_id": "image-2", "surveys": ["B"], "mjd_utc": 60001.8},
+    {"id": "e3", "observation_id": "image-3", "surveys": ["B"], "mjd_utc": 60001.9}
+  ],
+  "objects": [
+    {"id": "bright", "weight": 1, "detection_probability": [0.8, 0.8, 0.8, 0.8]},
+    {"id": "faint", "weight": 3, "detection_probability": [0.2, 0.2, 0.2, 0.2]}
+  ],
+  "discovery_rules": [
+    {"id": "A-cadence", "surveys": ["A"], "min_visits_per_night": 2, "min_nights": 1},
+    {"id": "B-cadence", "surveys": ["B"], "min_visits_per_night": 2, "min_nights": 1},
+    {"id": "combined-cadence", "surveys": ["A", "B"], "min_visits_per_night": 2, "min_nights": 2, "max_night_span": 2}
+  ],
+  "population_size": 100,
+  "observed_count": 25
+}

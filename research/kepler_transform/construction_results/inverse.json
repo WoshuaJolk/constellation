@@ -1,0 +1,12 @@
+{
+  "method": "LSQR on the local phase-corrected Fourier operator",
+  "stop_code": 2,
+  "iterations": 17,
+  "residual_norm": 9.403344772714757,
+  "condition_estimate": 21.958381447173842,
+  "iteration_limit_reached": false,
+  "damping": 0.3,
+  "unique_image_reconstruction_claimed": false,
+  "maximum_difference_from_dense_solution": 8.991825513373201e-13,
+  "adjoint_relative_error": 1.564927243203757e-12
+}

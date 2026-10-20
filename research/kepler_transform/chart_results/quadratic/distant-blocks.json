@@ -1,0 +1,242 @@
+[
+  {
+    "leaf": "0L",
+    "outer": [
+      -0.7,
+      -0.7,
+      -0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "slices": 1.3216391099995235,
+      "polynomial": 3.322670403002121,
+      "physical": 72.61934800400195
+    },
+    "maximum_score_difference": 2.5599597690175662e-05
+  },
+  {
+    "leaf": "0L",
+    "outer": [
+      -0.7,
+      -0.7,
+      0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "polynomial": 3.1439724860028946,
+      "slices": 1.1627043159969617,
+      "physical": 73.63722895200044
+    },
+    "maximum_score_difference": 2.536606024362502e-05
+  },
+  {
+    "leaf": "0L",
+    "outer": [
+      -0.7,
+      0.7,
+      -0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "slices": 1.211642470996594,
+      "polynomial": 3.146202951997111,
+      "physical": 73.39466645799985
+    },
+    "maximum_score_difference": 2.3814059471937543e-05
+  },
+  {
+    "leaf": "0L",
+    "outer": [
+      -0.7,
+      0.7,
+      0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "polynomial": 2.846603943995433,
+      "slices": 1.1802873439955874,
+      "physical": 75.49765918299818
+    },
+    "maximum_score_difference": 2.4065341117019723e-05
+  },
+  {
+    "leaf": "0L",
+    "outer": [
+      0.7,
+      -0.7,
+      -0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "slices": 1.1803386339961435,
+      "polynomial": 3.00899493900215,
+      "physical": 73.50959872399835
+    },
+    "maximum_score_difference": 1.973797038968179e-05
+  },
+  {
+    "leaf": "0L",
+    "outer": [
+      0.7,
+      -0.7,
+      0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "polynomial": 2.923228500003461,
+      "slices": 1.1100311370028066,
+      "physical": 72.8470123320003
+    },
+    "maximum_score_difference": 1.8755608172295608e-05
+  },
+  {
+    "leaf": "0L",
+    "outer": [
+      0.7,
+      0.7,
+      -0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "slices": 1.1412671979996958,
+      "polynomial": 2.7768132259952836,
+      "physical": 73.37363894900045
+    },
+    "maximum_score_difference": 1.9602247245179377e-05
+  },
+  {
+    "leaf": "0L",
+    "outer": [
+      0.7,
+      0.7,
+      0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "polynomial": 2.523343296998064,
+      "slices": 1.1161838839980192,
+      "physical": 73.50065355499828
+    },
+    "maximum_score_difference": 1.9513556095549628e-05
+  },
+  {
+    "leaf": "0R",
+    "outer": [
+      -0.7,
+      -0.7,
+      -0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "slices": 1.1253673279934446,
+      "polynomial": 3.3189274600008503,
+      "physical": 73.7456650420063
+    },
+    "maximum_score_difference": 8.4319975369195e-06
+  },
+  {
+    "leaf": "0R",
+    "outer": [
+      -0.7,
+      -0.7,
+      0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "polynomial": 2.983276038998156,
+      "slices": 1.123486516000412,
+      "physical": 73.86192356799438
+    },
+    "maximum_score_difference": 8.033149895415972e-06
+  },
+  {
+    "leaf": "0R",
+    "outer": [
+      -0.7,
+      0.7,
+      -0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "slices": 1.2299826279995614,
+      "polynomial": 3.247260880001704,
+      "physical": 74.10252376600693
+    },
+    "maximum_score_difference": 9.571881217750745e-06
+  },
+  {
+    "leaf": "0R",
+    "outer": [
+      -0.7,
+      0.7,
+      0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "polynomial": 2.8439495299971895,
+      "slices": 1.1840730240000994,
+      "physical": 72.91101202199934
+    },
+    "maximum_score_difference": 8.806496634241144e-06
+  },
+  {
+    "leaf": "0R",
+    "outer": [
+      0.7,
+      -0.7,
+      -0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "slices": 1.1612624569970649,
+      "polynomial": 3.1187826309978846,
+      "physical": 73.87728825800878
+    },
+    "maximum_score_difference": 7.899618142819896e-06
+  },
+  {
+    "leaf": "0R",
+    "outer": [
+      0.7,
+      -0.7,
+      0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "polynomial": 2.8335026720014866,
+      "slices": 1.1945403490026365,
+      "physical": 72.71209177199489
+    },
+    "maximum_score_difference": 6.441111311908842e-06
+  },
+  {
+    "leaf": "0R",
+    "outer": [
+      0.7,
+      0.7,
+      -0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "slices": 1.2240015560018946,
+      "polynomial": 2.902844598997035,
+      "physical": 74.62450761300715
+    },
+    "maximum_score_difference": 8.381458948535444e-06
+  },
+  {
+    "leaf": "0R",
+    "outer": [
+      0.7,
+      0.7,
+      0.7
+    ],
+    "queries": 131072,
+    "seconds": {
+      "polynomial": 2.452247040004295,
+      "slices": 1.1802264939979068,
+      "physical": 76.13006982100342
+    },
+    "maximum_score_difference": 7.979548826726496e-06
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "samples_per_evidence": 2000000,
+  "seeds": [
+    20261026,
+    20261027
+  ],
+  "confidence_per_evidence": 0.995,
+  "joint_predictive_confidence_lower": 0.99,
+  "optional_stopping": false,
+  "full_objective_complete": false
+}

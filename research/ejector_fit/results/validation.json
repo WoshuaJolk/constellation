@@ -1,0 +1,217 @@
+{
+  "independent_integrator": "scipy DOP853, rtol=atol=1e-12",
+  "fits": {
+    "HIP_24575_Collinder_69": [
+      {
+        "id": "cluster_passage",
+        "lookback_myr": 1.5661209425893963,
+        "max_centroid_radius_pc": 3.4999993521216863,
+        "radius_limit_pc": 3.5,
+        "constraint_excess_pc": 0.0,
+        "rms_relative_speed_kms": 53.33548510233053,
+        "max_pairwise_relative_speed_kms": 106.67097020466106
+      }
+    ],
+    "HIP_24575_ONC": [
+      {
+        "id": "cluster_passage",
+        "lookback_myr": 2.518843643251897,
+        "max_centroid_radius_pc": 2.5000022522450007,
+        "radius_limit_pc": 2.5,
+        "constraint_excess_pc": 2.252245000722297e-06,
+        "rms_relative_speed_kms": 52.666087649771946,
+        "max_pairwise_relative_speed_kms": 105.33217529954389
+      }
+    ],
+    "HIP_27204_Collinder_69": [
+      {
+        "id": "cluster_passage",
+        "lookback_myr": 3.34711504438203,
+        "max_centroid_radius_pc": 3.5000038319265956,
+        "radius_limit_pc": 3.5,
+        "constraint_excess_pc": 3.831926595587731e-06,
+        "rms_relative_speed_kms": 58.24376507165607,
+        "max_pairwise_relative_speed_kms": 116.48753014331214
+      }
+    ],
+    "HIP_27204_ONC": [
+      {
+        "id": "cluster_passage",
+        "lookback_myr": 2.5,
+        "max_centroid_radius_pc": 2.4762689736429784,
+        "radius_limit_pc": 2.5,
+        "constraint_excess_pc": 0.0,
+        "rms_relative_speed_kms": 58.063627282654544,
+        "max_pairwise_relative_speed_kms": 116.12725456530909
+      }
+    ],
+    "HIP_29678_Collinder_69": [
+      {
+        "id": "cluster_passage",
+        "lookback_myr": 1.1923265936341036,
+        "max_centroid_radius_pc": 3.4999999899554055,
+        "radius_limit_pc": 3.5,
+        "constraint_excess_pc": 0.0,
+        "rms_relative_speed_kms": 30.6254039996153,
+        "max_pairwise_relative_speed_kms": 61.2508079992306
+      }
+    ],
+    "HIP_38455_ONC": [
+      {
+        "id": "cluster_passage",
+        "lookback_myr": 6.0,
+        "max_centroid_radius_pc": 2.5000141453640436,
+        "radius_limit_pc": 2.5,
+        "constraint_excess_pc": 1.4145364043649522e-05,
+        "rms_relative_speed_kms": 22.34037478047188,
+        "max_pairwise_relative_speed_kms": 44.68074956094376
+      }
+    ],
+    "HIP_38518_ONC": [
+      {
+        "id": "cluster_passage",
+        "lookback_myr": 5.999999999999974,
+        "max_centroid_radius_pc": 2.499999069715661,
+        "radius_limit_pc": 2.5,
+        "constraint_excess_pc": 0.0,
+        "rms_relative_speed_kms": 25.84349754100198,
+        "max_pairwise_relative_speed_kms": 51.68699508200396
+      }
+    ],
+    "Orion_network": [
+      {
+        "id": "AE_Aur_ONC",
+        "lookback_myr": 2.530315211290291,
+        "max_centroid_radius_pc": 2.500002283807684,
+        "radius_limit_pc": 2.5,
+        "constraint_excess_pc": 2.283807683856054e-06,
+        "rms_relative_speed_kms": 52.73273427167137,
+        "max_pairwise_relative_speed_kms": 105.46546854334274
+      },
+      {
+        "id": "mu_Col_ONC",
+        "lookback_myr": 2.4489482328484544,
+        "max_centroid_radius_pc": 2.499999916704722,
+        "radius_limit_pc": 2.5,
+        "constraint_excess_pc": 0.0,
+        "rms_relative_speed_kms": 56.47990890772184,
+        "max_pairwise_relative_speed_kms": 112.95981781544369
+      },
+      {
+        "id": "mu_Col_Collinder69",
+        "lookback_myr": 3.292625469276165,
+        "max_centroid_radius_pc": 3.500003165844606,
+        "radius_limit_pc": 3.5,
+        "constraint_excess_pc": 3.165844606023427e-06,
+        "rms_relative_speed_kms": 57.455134512013096,
+        "max_pairwise_relative_speed_kms": 114.91026902402619
+      }
+    ],
+    "gaia_pair": [
+      {
+        "id": "AE_Aur_mu_Col",
+        "lookback_myr": 2.4498885145128897,
+        "max_centroid_radius_pc": 5.36187543014892e-06,
+        "radius_limit_pc": 0.0,
+        "constraint_excess_pc": 5.36187543014892e-06,
+        "rms_relative_speed_kms": 108.34154490908344,
+        "max_pairwise_relative_speed_kms": 216.68308981816688
+      }
+    ],
+    "gaia_triple": [
+      {
+        "id": "Orion_triple",
+        "lookback_myr": 2.457305684315178,
+        "max_centroid_radius_pc": 5.734065292006122e-06,
+        "radius_limit_pc": 0.0,
+        "constraint_excess_pc": 5.734065292006122e-06,
+        "rms_relative_speed_kms": 88.15297561146605,
+        "max_pairwise_relative_speed_kms": 215.91696579478915
+      }
+    ],
+    "hip1997_pair": [
+      {
+        "id": "AE_Aur_mu_Col",
+        "lookback_myr": 2.3261590879590943,
+        "max_centroid_radius_pc": 4.527274089326635e-06,
+        "radius_limit_pc": 0.0,
+        "constraint_excess_pc": 4.527274089326635e-06,
+        "rms_relative_speed_kms": 102.49874760298158,
+        "max_pairwise_relative_speed_kms": 204.99749520596316
+      }
+    ],
+    "hip1997_triple": [
+      {
+        "id": "Orion_triple",
+        "lookback_myr": 2.493252853217689,
+        "max_centroid_radius_pc": 6.093462254135349e-06,
+        "radius_limit_pc": 0.0,
+        "constraint_excess_pc": 6.093462254135349e-06,
+        "rms_relative_speed_kms": 90.46588457743222,
+        "max_pairwise_relative_speed_kms": 221.58433443859712
+      }
+    ],
+    "hip2007_pair": [
+      {
+        "id": "AE_Aur_mu_Col",
+        "lookback_myr": 2.191498130221176,
+        "max_centroid_radius_pc": 3.7091747558198745e-06,
+        "radius_limit_pc": 0.0,
+        "constraint_excess_pc": 3.7091747558198745e-06,
+        "rms_relative_speed_kms": 95.57669937643747,
+        "max_pairwise_relative_speed_kms": 191.15339875287495
+      }
+    ],
+    "hip2007_triple": [
+      {
+        "id": "Orion_triple",
+        "lookback_myr": 2.6556461667510756,
+        "max_centroid_radius_pc": 7.786226931932348e-06,
+        "radius_limit_pc": 0.0,
+        "constraint_excess_pc": 7.786226931932348e-06,
+        "rms_relative_speed_kms": 99.41270262404522,
+        "max_pairwise_relative_speed_kms": 243.334696049302
+      }
+    ],
+    "mu_Col_Collinder69_exact": [
+      {
+        "id": "mu_Col_Collinder69_exact",
+        "lookback_myr": 3.328724404219884,
+        "max_centroid_radius_pc": 6.026204897594244e-06,
+        "radius_limit_pc": 0.0,
+        "constraint_excess_pc": 6.026204897594244e-06,
+        "rms_relative_speed_kms": 57.22304870265359,
+        "max_pairwise_relative_speed_kms": 114.44609740530719
+      }
+    ]
+  },
+  "monte_carlo_counterexample": {
+    "objects": [
+      "AE_Aur",
+      "iota_Ori",
+      "mu_Col"
+    ],
+    "samples": 16,
+    "seed": 20261019,
+    "sampling": "Independent Gaussian parallax/PM/RV measurements with parallax truncated above 0.1 mas; fixed angles; not the original paper sampling or previous Gaia distance prior.",
+    "radius_pc": 1.0,
+    "min_support": 0.25,
+    "lookback_myr": [
+      0.0,
+      6.0
+    ],
+    "recovered_groups": 0,
+    "known_feasible_fit": "hip1997_triple",
+    "numerics": {
+      "half_step_max_position_difference_pc": 0.000141760373190279,
+      "max_midpoint_chord_error_pc": 0.006730756929499282
+    },
+    "search": {
+      "group_segment_evaluations": 0,
+      "broad_phase_pair_checks": 28,
+      "segments": 60
+    },
+    "conclusion": "A sampled-support nondetection does not exclude a compatible common-origin solution."
+  },
+  "full_objective_complete": false
+}

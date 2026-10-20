@@ -1,0 +1,138 @@
+{
+  "tool": "ejector_fit",
+  "schema_version": 1,
+  "epoch_label": "Gaia DR3 J2016.0",
+  "status": "no_converged_feasible_fit",
+  "best_fit": null,
+  "trials": [
+    {
+      "start_myr": [
+        1.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 363.6407159105143,
+      "iterations": 66,
+      "constraint_violation_pc": 30.01148332373988,
+      "half_step_max_position_difference_pc": 9.115834562976121e-08
+    },
+    {
+      "start_myr": [
+        2.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 346.0861828276868,
+      "iterations": 45,
+      "constraint_violation_pc": 30.038046045643398,
+      "half_step_max_position_difference_pc": 9.105450762202226e-08
+    },
+    {
+      "start_myr": [
+        2.5
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 375.20133547993,
+      "iterations": 58,
+      "constraint_violation_pc": 29.995284419054244,
+      "half_step_max_position_difference_pc": 9.120743595375839e-08
+    },
+    {
+      "start_myr": [
+        3.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 352.1963592324597,
+      "iterations": 54,
+      "constraint_violation_pc": 30.028497669061416,
+      "half_step_max_position_difference_pc": 9.109581624530226e-08
+    },
+    {
+      "start_myr": [
+        4.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 352.8951321146248,
+      "iterations": 53,
+      "constraint_violation_pc": 30.02742753663552,
+      "half_step_max_position_difference_pc": 9.109942123649409e-08
+    },
+    {
+      "start_myr": [
+        5.0
+      ],
+      "optimizer_success": false,
+      "message": "Positive directional derivative for linesearch",
+      "feasible": false,
+      "converged": false,
+      "chi2": 352.39777627870257,
+      "iterations": 50,
+      "constraint_violation_pc": 30.02818876659837,
+      "half_step_max_position_difference_pc": 9.109530411072309e-08
+    }
+  ],
+  "settings": {
+    "starts_myr": [
+      [
+        1.0
+      ],
+      [
+        2.0
+      ],
+      [
+        2.5
+      ],
+      [
+        3.0
+      ],
+      [
+        4.0
+      ],
+      [
+        5.0
+      ]
+    ],
+    "max_step_myr": 0.02,
+    "max_sigma": 8.0,
+    "min_parallax_mas": 0.1,
+    "max_iterations": 250,
+    "constraint_tolerance_pc": 0.001
+  },
+  "full_objective_complete": false,
+  "discovery_probability": null,
+  "interpretation": [
+    "Chi2 is squared Mahalanobis displacement of supplied measurements; no prior or p-value is applied.",
+    "Angular positions are fixed; covariance covers parallax, pmra, pmdec, radial velocity, independently between objects.",
+    "Shared objects have one fitted state across all encounters; separate encounter times allow repeated launches.",
+    "Multistart local optimization is not a global optimum or exclusion certificate; failed fits are inconclusive.",
+    "A feasible encounter is compatibility under the supplied model, not evidence of causal ejection.",
+    "Finite-radius events constrain every member relative to their arithmetic centroid, not a designated source surface.",
+    "Half-step checks estimate numerical error but do not rigorously bound integration error."
+  ],
+  "provenance": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "inputs": [
+      {
+        "path": "manifests/HIP_22061_ONC.json",
+        "sha256": "6373dc10f877cee13b808933b58168351a045457a07fcde93eb9939b7386115c"
+      }
+    ]
+  },
+  "manifest": "HIP_22061_ONC.json"
+}

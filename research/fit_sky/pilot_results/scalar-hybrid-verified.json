@@ -1,0 +1,26 @@
+{
+  "valid": true,
+  "replayed": true,
+  "leaves": 2,
+  "roots": 2,
+  "recomputed_outward_summary": {
+    "scaled_evidence": [
+      0.7734901095500536,
+      0.773490109550054
+    ],
+    "log_evidence": [
+      -1.1757809288746324,
+      -1.1757809288746317
+    ],
+    "relative_evidence_gap": 2.870684475257179e-16,
+    "queries": {
+      "has:star": [
+        0.6079260405375719,
+        0.6079260405375723
+      ]
+    },
+    "source_count_tail_prior_upper": 0.0,
+    "source_count_tail_posterior_upper": 0.0
+  },
+  "full_objective_complete": false
+}

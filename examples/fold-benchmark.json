@@ -1,0 +1,68 @@
+{
+  "seed": 2026,
+  "experiment": "synthetic elliptic orbit bank, illustrative circular Earth, model-matched pixel injection",
+  "n_orbits": 64000,
+  "n_exposures": 48,
+  "injected_id": "orbit-32820",
+  "injected_reference_flux": 55.0,
+  "top": {
+    "id": "orbit-32820",
+    "index": 32820,
+    "snr": 24.40866243269199,
+    "flux": 63.074109540344864,
+    "flux_error": 2.5840870926161816,
+    "log_p_family_upper_bound": -290.9403106129984,
+    "p_family_upper_bound": 4.428213356802729e-127,
+    "passes_gaussian_threshold": true
+  },
+  "injected_orbit_detected": true,
+  "n_detections": 719,
+  "work": {
+    "direct_track_frame_pairs": 3072000,
+    "distinct_cell_leaves": 178354,
+    "shared_subpath_additions": 672710,
+    "refined_tracks": 5184,
+    "screened_tracks": 58816,
+    "fold_evaluation_seconds": 0.2077225940001881,
+    "fft_and_input_seconds": 0.2606087589992967,
+    "orbit_projection_seconds": 3.0081743840000854,
+    "plan_compilation_seconds": 4.593674058000033,
+    "cell_subdivisions": 1
+  },
+  "validation": {
+    "all_bounds_contain_direct_snr": true,
+    "identical_top_and_detections": true,
+    "max_refined_snr_difference": 0.0,
+    "direct_evaluation_seconds": 0.7469765570003801,
+    "evaluation_speedup": 3.5960294092981706,
+    "single_use_total_speedup": 0.4976047376897332
+  },
+  "benchmark": {
+    "repeats": 3,
+    "fold_seconds": [
+      0.20477756799937197,
+      0.2388317630002348,
+      0.19527967399972113
+    ],
+    "direct_seconds": [
+      0.776002741999946,
+      0.7372653809998155,
+      0.7069710450005005
+    ],
+    "median_evaluation_speedup": 3.6003229660490774,
+    "single_use_total_speedup": 0.49658261333782683,
+    "plan_amortization_evaluations": 9,
+    "interpretation": "same FFT maps for both methods; compilation and orbit projection excluded from evaluation speedup; includes exact refinement"
+  },
+  "interpretation": "Nearby orbit hypotheses are correlated and can be indistinguishable; these are not separate source discoveries.",
+  "software": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "python": "3.12.14",
+    "architecture": "x86_64"
+  },
+  "reproduce": "magictools fold_demo new-output --grid-size 40 --frames 48 --seed 2026",
+  "input_manifest_sha256": "be49838c934ac76946dcc1971fd21cd34c37351240bf58f7e19334f67c1b8d78"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "score_units": "Illustrative integer utility; not calibrated orbital likelihoods",
+  "detections": [
+    {"id": "detection-a", "unassigned_score": 0},
+    {"id": "detection-b", "unassigned_score": 0}
+  ],
+  "candidates": [
+    {"id": "greedy-combination", "detection_ids": ["detection-a", "detection-b"], "score": 10},
+    {"id": "orbit-a", "detection_ids": ["detection-a"], "score": 6},
+    {"id": "orbit-b", "detection_ids": ["detection-b"], "score": 6}
+  ]
+}

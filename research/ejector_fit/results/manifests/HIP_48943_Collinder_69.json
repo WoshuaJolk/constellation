@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "epoch_label": "Gaia DR3 J2016.0",
+  "frame": {
+    "galcen_distance_pc": 8122.0,
+    "z_sun_pc": 20.8,
+    "galcen_v_sun_kms": [
+      12.9,
+      245.6,
+      7.78
+    ]
+  },
+  "potential": {
+    "components": [
+      {
+        "type": "plummer",
+        "mass_msun": 5000000000.0,
+        "scale_pc": 500.0
+      },
+      {
+        "type": "miyamoto_nagai",
+        "mass_msun": 68000000000.0,
+        "a_pc": 3000.0,
+        "b_pc": 280.0
+      },
+      {
+        "type": "log_halo",
+        "speed_kms": 180.0,
+        "core_pc": 12000.0
+      }
+    ]
+  },
+  "objects": [
+    {
+      "id": "HIP_48943",
+      "ra_deg": 149.7761482426488,
+      "dec_deg": -23.950745025001694,
+      "mean": [
+        3.219575396733857,
+        -24.71152648494887,
+        5.310842504787267,
+        19.4
+      ],
+      "covariance": [
+        [
+          0.011794788144739388,
+          0.0013053877197133064,
+          -5.4159117840229085e-05,
+          0.0
+        ],
+        [
+          0.0013053877197133064,
+          0.011430330697164648,
+          0.00041945655946931074,
+          0.0
+        ],
+        [
+          -5.4159117840229085e-05,
+          0.00041945655946931074,
+          0.00886166358630286,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.6400000000000001
+        ]
+      ],
+      "notes": "Gaia DR3 5660602557795903616; RUWE 1.2736402750015259; fixed angles. Bhat et al. 2022 RV. Binary/systemic RV validity requires individual follow-up."
+    },
+    {
+      "id": "Collinder_69",
+      "ra_deg": 83.79208333333334,
+      "dec_deg": 9.813055555555556,
+      "mean": [
+        2.46,
+        1.19,
+        -2.12,
+        29.1
+      ],
+      "covariance": [
+        [
+          2.5e-05,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0004,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0004,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          10.497600000000002
+        ]
+      ],
+      "notes": "Bhat et al. 2022 Table A.2 diagonal covariance; fixed SIMBAD J2000 angular centroid used at J2016.0 (sub-milliparsec epoch displacement). No centroid/cluster-structure uncertainty fitted."
+    }
+  ],
+  "encounters": [
+    {
+      "id": "cluster_passage",
+      "members": [
+        "HIP_48943",
+        "Collinder_69"
+      ],
+      "lookback_bounds_myr": [
+        0.1,
+        6.0
+      ],
+      "radius_pc": 3.5
+    }
+  ],
+  "fit": {
+    "starts_myr": [
+      [
+        1.0
+      ],
+      [
+        2.0
+      ],
+      [
+        2.5
+      ],
+      [
+        3.0
+      ],
+      [
+        4.0
+      ],
+      [
+        5.0
+      ]
+    ],
+    "max_step_myr": 0.02,
+    "max_sigma": 8.0,
+    "min_parallax_mas": 0.1,
+    "max_iterations": 250,
+    "constraint_tolerance_pc": 0.001
+  },
+  "notes": "All retained literature runaways tested against both supplied clusters. Targeted two-cluster experiment, no all-sky discovery calibration. Lookback 0.1--6 Myr. No stellar-age likelihood."
+}

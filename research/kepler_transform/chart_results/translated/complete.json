@@ -1,0 +1,970 @@
+{
+  "cover": {
+    "method": "adaptive observer-chart geometry cover",
+    "chart": {
+      "observer": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "velocity": [
+        0.0,
+        0.017202098949957226,
+        0.0
+      ],
+      "normal": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "east": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "north": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "retarded_epoch": true
+    },
+    "center": [
+      0.5000000005483682,
+      1.8989404306735653e-07,
+      0.0,
+      -8.111978294259573e-05,
+      0.0,
+      -0.0015783219777299232
+    ],
+    "widths": [
+      0.25,
+      0.01,
+      9.69627362219072e-06,
+      4.84813681109536e-05,
+      4.84813681109536e-05,
+      9.69627362219072e-06
+    ],
+    "position_tolerance_radians": 2.42406840554768e-09,
+    "outer_degree": 4,
+    "max_leaves": 16,
+    "max_seconds": 600.0,
+    "phase_tolerance": 0.0001,
+    "translated_certificate": true,
+    "construction_seconds": 48.28512811999826,
+    "leaves": [
+      {
+        "path": "0L0L0L",
+        "normalized_bounds": [
+          [
+            -1.0,
+            -0.75
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.28125000054836824,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.03125000000000001,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "resolved",
+        "split_axis": 1,
+        "screen_directional_max_radians": [
+          3.637223230268023e-11,
+          5.421109488964256e-10,
+          9.030230782132775e-26,
+          1.472546679236173e-16,
+          1.360275387031556e-16,
+          3.142954285506493e-15
+        ],
+        "position_error_bound_radians": 5.785250318962637e-10,
+        "atlas_sha256": "06dd59a603bdabaf2b8c560a9a9dd0b68fcbe511c27a49b82548b1cff74a1342",
+        "nodal_orbit_time_enclosures": 27000,
+        "variational_orbit_time_enclosures": 48,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 8.656970468997315
+      },
+      {
+        "path": "0L0L0R",
+        "normalized_bounds": [
+          [
+            -0.75,
+            -0.5
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.34375000054836824,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.03125000000000001,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "resolved",
+        "split_axis": 1,
+        "screen_directional_max_radians": [
+          1.5443430616832185e-11,
+          5.382796062712658e-10,
+          7.205672379361791e-26,
+          1.4976401602139246e-16,
+          1.572551586561529e-16,
+          2.523057249964796e-15
+        ],
+        "position_error_bound_radians": 5.537554483220064e-10,
+        "atlas_sha256": "73a57799a06fd35541e20941650fcb98bcbe9bac0dac5a3af57699faa320b546",
+        "nodal_orbit_time_enclosures": 27000,
+        "variational_orbit_time_enclosures": 48,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 9.084289842001454
+      },
+      {
+        "path": "0L0R",
+        "normalized_bounds": [
+          [
+            -0.5,
+            0.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.43750000054836824,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.06250000000000001,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "resolved",
+        "split_axis": 1,
+        "screen_directional_max_radians": [
+          6.87757445837741e-10,
+          7.559969752829e-10,
+          6.070921626326565e-26,
+          2.6366055013962584e-16,
+          3.4107831194583164e-16,
+          2.1225289630677045e-15
+        ],
+        "position_error_bound_radians": 1.4437995507444059e-09,
+        "atlas_sha256": "3bb65ee00d528ed7d7913f6617922d75e412511bc6ff1cbcb0d8a1a9ee2ae3ea",
+        "nodal_orbit_time_enclosures": 27000,
+        "variational_orbit_time_enclosures": 48,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 9.557039364000957
+      },
+      {
+        "path": "0R0L",
+        "normalized_bounds": [
+          [
+            0.0,
+            0.5
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.5625000005483682,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.06250000000000001,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "resolved",
+        "split_axis": 1,
+        "screen_directional_max_radians": [
+          4.810227277676655e-10,
+          7.512137702621354e-10,
+          4.5712007023983627e-26,
+          2.9368014856704693e-16,
+          4.1711535839591097e-16,
+          1.606104497030366e-15
+        ],
+        "position_error_bound_radians": 1.2322870206571868e-09,
+        "atlas_sha256": "a6bf88b9860673482e1f211fce09a3fbf925792dc132ae15d6f72a11c2c4af21",
+        "nodal_orbit_time_enclosures": 27000,
+        "variational_orbit_time_enclosures": 48,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 8.993853836000198
+      },
+      {
+        "path": "0R0R",
+        "normalized_bounds": [
+          [
+            0.5,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.6875000005483682,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.06250000000000001,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "resolved",
+        "split_axis": 1,
+        "screen_directional_max_radians": [
+          3.7298187767640725e-10,
+          7.479813604804721e-10,
+          3.671962350986791e-26,
+          3.463760513982008e-16,
+          4.827942552908804e-16,
+          1.2948274068795083e-15
+        ],
+        "position_error_bound_radians": 1.1210442224310818e-09,
+        "atlas_sha256": "49f5aa40b1ca844fde8622f0dc8dd9153abb2a754f2f0ee84e963fbf487c6725",
+        "nodal_orbit_time_enclosures": 27000,
+        "variational_orbit_time_enclosures": 48,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 8.682440512995527
+      }
+    ],
+    "history": [
+      {
+        "path": "",
+        "normalized_bounds": [
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.5000000005483682,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.25000000000000006,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "unresolved",
+        "split_axis": 0,
+        "screen_directional_max_radians": [
+          0.0017698981580697,
+          4.229922718786404e-08,
+          1.9330991815838224e-25,
+          7.501817057993664e-15,
+          9.305224531188126e-15,
+          3.91511622148887e-15
+        ],
+        "reason": "Variational screen cannot meet requested tolerance",
+        "nodal_orbit_time_enclosures": 0,
+        "variational_orbit_time_enclosures": 6,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 0.8325639690010576
+      },
+      {
+        "path": "0L",
+        "normalized_bounds": [
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.37500000054836824,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.12500000000000003,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "unresolved",
+        "split_axis": 0,
+        "screen_directional_max_radians": [
+          2.5792051803837646e-07,
+          1.250975750991822e-09,
+          9.138886097233523e-26,
+          6.617735834315644e-16,
+          8.534651606021944e-16,
+          3.2039609244330397e-15
+        ],
+        "reason": "Variational screen cannot meet requested tolerance",
+        "nodal_orbit_time_enclosures": 0,
+        "variational_orbit_time_enclosures": 6,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 0.8865408560013748
+      },
+      {
+        "path": "0R",
+        "normalized_bounds": [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.6250000005483682,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.12500000000000003,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "unresolved",
+        "split_axis": 0,
+        "screen_directional_max_radians": [
+          1.0140645321700144e-07,
+          1.2154314644099386e-09,
+          4.6653057601298933e-26,
+          8.081897958767385e-16,
+          1.0561685801733459e-15,
+          1.654660729416893e-15
+        ],
+        "reason": "Variational screen cannot meet requested tolerance",
+        "nodal_orbit_time_enclosures": 0,
+        "variational_orbit_time_enclosures": 6,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 0.7700016730013886
+      },
+      {
+        "path": "0L0L",
+        "normalized_bounds": [
+          [
+            -1.0,
+            -0.5
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.31250000054836824,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.06250000000000001,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "unresolved",
+        "split_axis": 0,
+        "screen_directional_max_radians": [
+          1.7686673243058894e-09,
+          7.4585191075821e-10,
+          8.760868454642383e-26,
+          2.334935685441951e-16,
+          2.6049146442327503e-16,
+          3.154068526539295e-15
+        ],
+        "reason": "Variational screen cannot meet requested tolerance",
+        "nodal_orbit_time_enclosures": 0,
+        "variational_orbit_time_enclosures": 6,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 0.8164517519981018
+      },
+      {
+        "path": "0L0R",
+        "normalized_bounds": [
+          [
+            -0.5,
+            0.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.43750000054836824,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.06250000000000001,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "resolved",
+        "split_axis": 1,
+        "screen_directional_max_radians": [
+          6.87757445837741e-10,
+          7.559969752829e-10,
+          6.070921626326565e-26,
+          2.6366055013962584e-16,
+          3.4107831194583164e-16,
+          2.1225289630677045e-15
+        ],
+        "position_error_bound_radians": 1.4437995507444059e-09,
+        "atlas_sha256": "3bb65ee00d528ed7d7913f6617922d75e412511bc6ff1cbcb0d8a1a9ee2ae3ea",
+        "nodal_orbit_time_enclosures": 27000,
+        "variational_orbit_time_enclosures": 48,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 9.557039364000957
+      },
+      {
+        "path": "0R0L",
+        "normalized_bounds": [
+          [
+            0.0,
+            0.5
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.5625000005483682,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.06250000000000001,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "resolved",
+        "split_axis": 1,
+        "screen_directional_max_radians": [
+          4.810227277676655e-10,
+          7.512137702621354e-10,
+          4.5712007023983627e-26,
+          2.9368014856704693e-16,
+          4.1711535839591097e-16,
+          1.606104497030366e-15
+        ],
+        "position_error_bound_radians": 1.2322870206571868e-09,
+        "atlas_sha256": "a6bf88b9860673482e1f211fce09a3fbf925792dc132ae15d6f72a11c2c4af21",
+        "nodal_orbit_time_enclosures": 27000,
+        "variational_orbit_time_enclosures": 48,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 8.993853836000198
+      },
+      {
+        "path": "0R0R",
+        "normalized_bounds": [
+          [
+            0.5,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.6875000005483682,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.06250000000000001,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "resolved",
+        "split_axis": 1,
+        "screen_directional_max_radians": [
+          3.7298187767640725e-10,
+          7.479813604804721e-10,
+          3.671962350986791e-26,
+          3.463760513982008e-16,
+          4.827942552908804e-16,
+          1.2948274068795083e-15
+        ],
+        "position_error_bound_radians": 1.1210442224310818e-09,
+        "atlas_sha256": "49f5aa40b1ca844fde8622f0dc8dd9153abb2a754f2f0ee84e963fbf487c6725",
+        "nodal_orbit_time_enclosures": 27000,
+        "variational_orbit_time_enclosures": 48,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 8.682440512995527
+      },
+      {
+        "path": "0L0L0L",
+        "normalized_bounds": [
+          [
+            -1.0,
+            -0.75
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.28125000054836824,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.03125000000000001,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "resolved",
+        "split_axis": 1,
+        "screen_directional_max_radians": [
+          3.637223230268023e-11,
+          5.421109488964256e-10,
+          9.030230782132775e-26,
+          1.472546679236173e-16,
+          1.360275387031556e-16,
+          3.142954285506493e-15
+        ],
+        "position_error_bound_radians": 5.785250318962637e-10,
+        "atlas_sha256": "06dd59a603bdabaf2b8c560a9a9dd0b68fcbe511c27a49b82548b1cff74a1342",
+        "nodal_orbit_time_enclosures": 27000,
+        "variational_orbit_time_enclosures": 48,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 8.656970468997315
+      },
+      {
+        "path": "0L0L0R",
+        "normalized_bounds": [
+          [
+            -0.75,
+            -0.5
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "center": [
+          0.34375000054836824,
+          1.8989404306735653e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783219777299232
+        ],
+        "widths": [
+          0.03125000000000001,
+          0.010000000000000002,
+          9.696273622190721e-06,
+          4.8481368110953604e-05,
+          4.8481368110953604e-05,
+          9.696273622190721e-06
+        ],
+        "status": "resolved",
+        "split_axis": 1,
+        "screen_directional_max_radians": [
+          1.5443430616832185e-11,
+          5.382796062712658e-10,
+          7.205672379361791e-26,
+          1.4976401602139246e-16,
+          1.572551586561529e-16,
+          2.523057249964796e-15
+        ],
+        "position_error_bound_radians": 5.537554483220064e-10,
+        "atlas_sha256": "73a57799a06fd35541e20941650fcb98bcbe9bac0dac5a3af57699faa320b546",
+        "nodal_orbit_time_enclosures": 27000,
+        "variational_orbit_time_enclosures": 48,
+        "ordinary_geometry_state_time_pairs": 27000,
+        "construction_seconds": 9.084289842001454
+      }
+    ],
+    "cell_evaluations": 9,
+    "all_cells_resolved": true,
+    "continuous_geometry_cover": true,
+    "all_arithmetic_certified": false,
+    "full_objective_complete": false
+  },
+  "sampled_unsplit_quartic_position_error_arcsec": 0.00147293478427062,
+  "sampled_error_is_not_a_certificate": true,
+  "full_objective_complete": false,
+  "query_seconds": 0.10224912999547087,
+  "queries": 2048,
+  "application": {
+    "slice_queries": 0,
+    "polynomial_queries": 2048,
+    "direct_queries": 0,
+    "slice_transforms": 0,
+    "resource_fallbacks": 0,
+    "phase_budget_fallbacks": 0,
+    "phase_orders_used": {},
+    "application_seconds": 0.10223664200020721,
+    "queries": 2048,
+    "all_queries_evaluated": true,
+    "full_score_error_certified": false
+  },
+  "maximum_score_difference": 1.0367723227766845e-05,
+  "source_sha256": {
+    "/workspace/magictools/research/kepler_transform/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+    "/workspace/magictools/research/kepler_transform/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+    "/workspace/magictools/research/kepler_transform/chart_atlas.py": "a572e6d00138e5277351ebe5cce18e1baa8196a295c10088b931c121669abef4",
+    "/workspace/magictools/research/kepler_transform/chart_cover.py": "8183b9a1af211beacd92199951bc446ffc7e98a9df8440b46f5d91fc7c8b0139",
+    "/workspace/magictools/research/kepler_transform/chart_experiments.py": "d58d42e1acce8e63225f53b917659c15128286d30ac50783fc1b32e8a3526501",
+    "/workspace/magictools/research/kepler_transform/chart_operator.py": "3244e0e81d86b4e382794ea1ad74792de38fd3122266fb2ca948bf13b1619550",
+    "/workspace/magictools/research/kepler_transform/chart_search.py": "5931cd509bf54f9ad7938c1027885140ab27fcdb7b24f8a3dc63abbae48b37f5",
+    "/workspace/magictools/research/kepler_transform/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20",
+    "/workspace/magictools/research/kepler_transform/compiled_comparison.py": "9555d9d70007590f22a8fa498959ee68a7792349fa8ba8805ba93207a95b866a",
+    "/workspace/magictools/research/kepler_transform/compiled_reference.py": "2698df3561ee09c5f3c548d51dd47345921420965b473ac30aac734bcd9ce6c0",
+    "/workspace/magictools/research/kepler_transform/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+    "/workspace/magictools/research/kepler_transform/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+    "/workspace/magictools/research/kepler_transform/detector_fields.py": "31138bd7bdc7c17e196584f6481c7e4cacd8240b7a3c72d4e607b42f5a4b9274",
+    "/workspace/magictools/research/kepler_transform/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+    "/workspace/magictools/research/kepler_transform/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+    "/workspace/magictools/research/kepler_transform/fifth_geometry.py": "793221157caf4657b4c7d8ce64977fc12a8c6243bba5c6b9b84109ea9aef21b1",
+    "/workspace/magictools/research/kepler_transform/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+    "/workspace/magictools/research/kepler_transform/jet_geometry.py": "40f27e3b660f3c9d78c1ee59c8355778ec500942aa364aa3329a3b191ed11841",
+    "/workspace/magictools/research/kepler_transform/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+    "/workspace/magictools/research/kepler_transform/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+    "/workspace/magictools/research/kepler_transform/observer_chart.py": "dba4b4a35656524ea889aca16e1db401c1ee9ae8f8cad6b6feb00c94e5cb6359",
+    "/workspace/magictools/research/kepler_transform/phase_budget.py": "d1d707d2526cd14873295e7b81ef432c6853e8be499adedaedc36d0701e61342",
+    "/workspace/magictools/research/kepler_transform/plot_construction.py": "65ce671e1296215b329f06d8d3cb59a5bacdf5cedb9b14cd3bcc5c36a1df0adf",
+    "/workspace/magictools/research/kepler_transform/quartic_atlas.py": "de101ae8af7da9143934d35ef100ad7c3b2c820f21fc351ac6895697c7433c4f",
+    "/workspace/magictools/research/kepler_transform/quartic_experiments.py": "b89e2cc973ca5d80aa9e74e78935694fab78109b5c7127dafbdd4bd42486201a",
+    "/workspace/magictools/research/kepler_transform/real_exposure_experiment.py": "40b4d8a2342482bcb55169b7328b1e4952509bdc68b8dfdaa1db58d248c5d55f",
+    "/workspace/magictools/research/kepler_transform/replay_chart.py": "e1e2954f99d27b3e14b92ab5199c697187c4a151681ae52d62568a1cfaae01d5",
+    "/workspace/magictools/research/kepler_transform/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+    "/workspace/magictools/research/kepler_transform/structured_comparison.py": "67bfce198f590f04b9d313d0eabc8f6b335d383b0e5dc0ec66a91c4bf7287c98",
+    "/workspace/magictools/research/kepler_transform/translated_experiment.py": "f8df5b420a6bf007927e391a58428a217a50e1c936e754b0cd615393e9b717c8",
+    "/workspace/magictools/research/kepler_transform/translated_flow.py": "fcc04a07b5f5979d85ab000d10826420a004a132561af8c724bd01c898dfb27b",
+    "/workspace/magictools/research/kepler_transform/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "/workspace/magictools/research/kepler_transform/validated_universal.py": "8f41611a6e6354e466be1480ab2626f75165d9db4c3f98e8520bac3832e91622",
+    "/workspace/magictools/research/kepler_transform/verify_construction.py": "242bf118a71647785b5640ac64eea72cafadf6350906e700e58ab595a31fb467"
+  }
+}

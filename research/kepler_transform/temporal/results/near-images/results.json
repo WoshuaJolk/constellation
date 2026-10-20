@@ -1,0 +1,529 @@
+{
+  "source_sha256": {
+    "research/kepler_transform/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+    "research/kepler_transform/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+    "research/kepler_transform/cascade_domain.py": "e6762bece7c6280fdd3466161ebee2eb5d74c5512db7681be68bb613bb77184b",
+    "research/kepler_transform/cascade_transfer.py": "ed6b48a37df7ba98eb78a421308e8a418425f64956d5919bd1a0c69228e062ee",
+    "research/kepler_transform/certified_cascade.py": "4eaeab7cf11981c87d3024544f1cab6392134daf9d0540b9fb9c7512ab06160c",
+    "research/kepler_transform/certified_global_experiments.py": "292ad31777455686c3a217adbc057963a1fd630b57a1d762ffad29198d377bcc",
+    "research/kepler_transform/certified_segment_field.py": "0f3a29d8f8173671ab3a73e63dc0eca6299ed7729f50247acbd28869fdd7a062",
+    "research/kepler_transform/certify_global.py": "7c74ddfa6226a9f51933bd3ef3bd44e728798627814fca9eef2732d2c3f45df4",
+    "research/kepler_transform/chart_atlas.py": "a572e6d00138e5277351ebe5cce18e1baa8196a295c10088b931c121669abef4",
+    "research/kepler_transform/chart_cover.py": "8183b9a1af211beacd92199951bc446ffc7e98a9df8440b46f5d91fc7c8b0139",
+    "research/kepler_transform/chart_experiments.py": "d58d42e1acce8e63225f53b917659c15128286d30ac50783fc1b32e8a3526501",
+    "research/kepler_transform/chart_operator.py": "3244e0e81d86b4e382794ea1ad74792de38fd3122266fb2ca948bf13b1619550",
+    "research/kepler_transform/chart_results/compiled_sources/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+    "research/kepler_transform/chart_results/compiled_sources/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+    "research/kepler_transform/chart_results/compiled_sources/chart_atlas.py": "a3d0706813b97ace3ac17c4060f96b681cedac39c11d8580ac6c2b14150fea4a",
+    "research/kepler_transform/chart_results/compiled_sources/chart_cover.py": "c482444970f7d2019f2dd0e32162d10034b9823378172727957bcbfcd8fcf7aa",
+    "research/kepler_transform/chart_results/compiled_sources/chart_experiments.py": "d58d42e1acce8e63225f53b917659c15128286d30ac50783fc1b32e8a3526501",
+    "research/kepler_transform/chart_results/compiled_sources/chart_operator.py": "3244e0e81d86b4e382794ea1ad74792de38fd3122266fb2ca948bf13b1619550",
+    "research/kepler_transform/chart_results/compiled_sources/chart_search.py": "e9b87fe2b082606ba2cc74a547408157f5216767e0ee93bea994efdefc083de8",
+    "research/kepler_transform/chart_results/compiled_sources/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20",
+    "research/kepler_transform/chart_results/compiled_sources/compiled_comparison.py": "9555d9d70007590f22a8fa498959ee68a7792349fa8ba8805ba93207a95b866a",
+    "research/kepler_transform/chart_results/compiled_sources/compiled_reference.py": "2698df3561ee09c5f3c548d51dd47345921420965b473ac30aac734bcd9ce6c0",
+    "research/kepler_transform/chart_results/compiled_sources/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+    "research/kepler_transform/chart_results/compiled_sources/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+    "research/kepler_transform/chart_results/compiled_sources/detector_fields.py": "31138bd7bdc7c17e196584f6481c7e4cacd8240b7a3c72d4e607b42f5a4b9274",
+    "research/kepler_transform/chart_results/compiled_sources/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+    "research/kepler_transform/chart_results/compiled_sources/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+    "research/kepler_transform/chart_results/compiled_sources/fifth_geometry.py": "81305674540c492a89770469c0587254a769d51dea46d67aa53db0a4b5f7e4f3",
+    "research/kepler_transform/chart_results/compiled_sources/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+    "research/kepler_transform/chart_results/compiled_sources/jet_geometry.py": "2fcc25edd90836531ff342170e738df587c38d9bd6140f4aba316a06a68a9b6b",
+    "research/kepler_transform/chart_results/compiled_sources/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+    "research/kepler_transform/chart_results/compiled_sources/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+    "research/kepler_transform/chart_results/compiled_sources/observer_chart.py": "c198a52e5c8b67179a232466bea55f50381d5ecf4e5b7caa437d0f32fff4647e",
+    "research/kepler_transform/chart_results/compiled_sources/phase_budget.py": "d1d707d2526cd14873295e7b81ef432c6853e8be499adedaedc36d0701e61342",
+    "research/kepler_transform/chart_results/compiled_sources/plot_construction.py": "65ce671e1296215b329f06d8d3cb59a5bacdf5cedb9b14cd3bcc5c36a1df0adf",
+    "research/kepler_transform/chart_results/compiled_sources/quartic_atlas.py": "ca4adf9f3c17cf4cbf949c767eb14740f468255d5967630152559fba99c3489a",
+    "research/kepler_transform/chart_results/compiled_sources/quartic_experiments.py": "b89e2cc973ca5d80aa9e74e78935694fab78109b5c7127dafbdd4bd42486201a",
+    "research/kepler_transform/chart_results/compiled_sources/real_exposure_experiment.py": "40b4d8a2342482bcb55169b7328b1e4952509bdc68b8dfdaa1db58d248c5d55f",
+    "research/kepler_transform/chart_results/compiled_sources/replay_chart.py": "72b62d779050020ad8ea46896d150d48093642f6eee33ee7fdc24e92588945f8",
+    "research/kepler_transform/chart_results/compiled_sources/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+    "research/kepler_transform/chart_results/compiled_sources/structured_comparison.py": "67bfce198f590f04b9d313d0eabc8f6b335d383b0e5dc0ec66a91c4bf7287c98",
+    "research/kepler_transform/chart_results/compiled_sources/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "research/kepler_transform/chart_results/compiled_sources/validated_universal.py": "8f41611a6e6354e466be1480ab2626f75165d9db4c3f98e8520bac3832e91622",
+    "research/kepler_transform/chart_results/compiled_sources/verify_construction.py": "242bf118a71647785b5640ac64eea72cafadf6350906e700e58ab595a31fb467",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/chart_atlas.py": "2fca9b477f060546b076593258ca820b412a779061ad63c3195b0a4a274bac1d",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/chart_cover.py": "c32fcad7fe74b6436d8b5c6ef09db906d2d1781b0c53e4eb603241ed7f0272f8",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/chart_experiments.py": "d58d42e1acce8e63225f53b917659c15128286d30ac50783fc1b32e8a3526501",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/chart_operator.py": "3244e0e81d86b4e382794ea1ad74792de38fd3122266fb2ca948bf13b1619550",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/chart_search.py": "e1cf55d82ca75450be227a3db5bc2c9904b4e060bd4b89663499fd3d65cebb67",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/detector_fields.py": "31138bd7bdc7c17e196584f6481c7e4cacd8240b7a3c72d4e607b42f5a4b9274",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/fifth_geometry.py": "81305674540c492a89770469c0587254a769d51dea46d67aa53db0a4b5f7e4f3",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/jet_geometry.py": "2fcc25edd90836531ff342170e738df587c38d9bd6140f4aba316a06a68a9b6b",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/observer_chart.py": "c198a52e5c8b67179a232466bea55f50381d5ecf4e5b7caa437d0f32fff4647e",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/plot_construction.py": "65ce671e1296215b329f06d8d3cb59a5bacdf5cedb9b14cd3bcc5c36a1df0adf",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/quartic_atlas.py": "17109a8f6220a1158cd63008477342012d5ac6f303faecb37d9c8e0b926d10d6",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/real_exposure_experiment.py": "40b4d8a2342482bcb55169b7328b1e4952509bdc68b8dfdaa1db58d248c5d55f",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/validated_universal.py": "81c83dcaa3edf79bc460ac8b1a2120625f62f54b037dfe53df73c1af9407a695",
+    "research/kepler_transform/chart_results/quadratic/source_snapshot/verify_construction.py": "242bf118a71647785b5640ac64eea72cafadf6350906e700e58ab595a31fb467",
+    "research/kepler_transform/chart_search.py": "1edf590141d9513a39869ad22c86b8c06a117485addf8b2e6b231a69d7a92532",
+    "research/kepler_transform/chebyshev_moments.py": "1122880294b94fd715f3ca4aefb6bca1e0ae51ac10801aa385631d93b5cd9e59",
+    "research/kepler_transform/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20",
+    "research/kepler_transform/compiled_comparison.py": "9555d9d70007590f22a8fa498959ee68a7792349fa8ba8805ba93207a95b866a",
+    "research/kepler_transform/compiled_reference.py": "2698df3561ee09c5f3c548d51dd47345921420965b473ac30aac734bcd9ce6c0",
+    "research/kepler_transform/complex_source_certificate.py": "ab7b4d76e7dfb47726ddca11bebe1749975b54ffcc90070a35a54a3eee75ba47",
+    "research/kepler_transform/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+    "research/kepler_transform/constructive_experiments.py": "32f1b292b4e9898ed663f61cb84ad6220de6a015ba5cc0dec9e77a80d5729527",
+    "research/kepler_transform/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+    "research/kepler_transform/detector_fields.py": "31138bd7bdc7c17e196584f6481c7e4cacd8240b7a3c72d4e607b42f5a4b9274",
+    "research/kepler_transform/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+    "research/kepler_transform/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+    "research/kepler_transform/fifth_geometry.py": "793221157caf4657b4c7d8ce64977fc12a8c6243bba5c6b9b84109ea9aef21b1",
+    "research/kepler_transform/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+    "research/kepler_transform/global_experiments.py": "4ec0d4ae102b0efe192a69c85e5746366c12c8ebb9105a2e05035b3a1d76722d",
+    "research/kepler_transform/global_kepler.py": "ffe889a2051635aeeb09fac54fa6e82142bb3e8d893251085c098f9f155a64bf",
+    "research/kepler_transform/jet_geometry.py": "40f27e3b660f3c9d78c1ee59c8355778ec500942aa364aa3329a3b191ed11841",
+    "research/kepler_transform/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+    "research/kepler_transform/local_hierarchy.py": "0a3b78bf2e0f9bffd33ed522200d85272017863a2e26535cec191269e429dff1",
+    "research/kepler_transform/local_resolution.py": "8f94da7738ff0fc231a2a6c37b79f4a122f0aef9c2da8b030fc50e32f9e55d7c",
+    "research/kepler_transform/local_resolution_experiments.py": "095e8eac602b7c2f5eb8e733a9d0f9ec9fd7973f14535b1ca5dceebcc26e3553",
+    "research/kepler_transform/local_resolution_results/plot_counts.py": "6b4bfbefc5b4c6c920e1e19b2db16939514ff60a6d90b58d38dcea421a77007d",
+    "research/kepler_transform/local_resolution_results/run_tiled_stress.py": "c38d3378d0dc9408e074e20a8f75c5fca7c886291c623612d49dc30916f4e6ac",
+    "research/kepler_transform/local_resolution_results/verify_tiled_stress.py": "1bcda0a02b2be676f2f86767d97822c3c73d2b4ed1eb769959a8b313fb0f32c8",
+    "research/kepler_transform/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+    "research/kepler_transform/observer_chart.py": "dba4b4a35656524ea889aca16e1db401c1ee9ae8f8cad6b6feb00c94e5cb6359",
+    "research/kepler_transform/ordered/__init__.py": "9aa5ff4b8ea1699fae1cc314d1fa2fdb6fd624f048cef037a3cb4adbc087b7d6",
+    "research/kepler_transform/ordered/experiments.py": "ff44bbe533ffcf4c99ddbcf98776c36325ee86e1f8147e3a7d86ea7b4d88728d",
+    "research/kepler_transform/ordered/hierarchy.py": "889ebbec461ee633d85c131d3e0412c3fed510d078e004f418ecb00240a179dd",
+    "research/kepler_transform/ordered/resolution.py": "d9b7ba23d706053a45c9e74e1de06b1d1258fa46bbeb3177c9e41136c8f2eeb7",
+    "research/kepler_transform/ordered/verify.py": "6bb0b7b90fa63a352fdb54e9a6d7d0cff3230be0f6191c1019417b35ebac0e43",
+    "research/kepler_transform/phase_budget.py": "d1d707d2526cd14873295e7b81ef432c6853e8be499adedaedc36d0701e61342",
+    "research/kepler_transform/plot_construction.py": "65ce671e1296215b329f06d8d3cb59a5bacdf5cedb9b14cd3bcc5c36a1df0adf",
+    "research/kepler_transform/quartic_atlas.py": "de101ae8af7da9143934d35ef100ad7c3b2c820f21fc351ac6895697c7433c4f",
+    "research/kepler_transform/quartic_experiments.py": "b89e2cc973ca5d80aa9e74e78935694fab78109b5c7127dafbdd4bd42486201a",
+    "research/kepler_transform/real_exposure_experiment.py": "40b4d8a2342482bcb55169b7328b1e4952509bdc68b8dfdaa1db58d248c5d55f",
+    "research/kepler_transform/reception_flow.py": "4538f6d4a8f0258d83ce723ce27b24347ee5468e89eacacb47c6919305793ab0",
+    "research/kepler_transform/replay_chart.py": "c17b120f1f0bfb61917492febfcaecd9baa1554b736718174a7a0f5809b1dd5c",
+    "research/kepler_transform/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+    "research/kepler_transform/segment_composition.py": "db12d1cf1881cd8ba0d8d0a372a79373c52812076d24a30db157360c51e4dcd5",
+    "research/kepler_transform/segment_experiments.py": "7d998d597dd20f04d62d32f77c8272d58d789506a9b0de30511d848693938440",
+    "research/kepler_transform/segment_field.py": "7ec1bbf6d9cd0b7baba5096e2f23dd3b0c1b42d6fe9177c36fabf528105dc943",
+    "research/kepler_transform/segment_field_certificate.py": "a46cf5c23708e530fe6ef22544fe71c72ed09aaaca11dce2b3347ce71f261edf",
+    "research/kepler_transform/segment_field_experiments.py": "5002b5792d6f8bfbe6bdf9c22c05c733989e7d525c7aa5b48a0ece73358b5808",
+    "research/kepler_transform/source_butterfly.py": "52bb3d7137cbdb05a46102209cc3fb27a9931bc81d0a468d5152fd79de11bf91",
+    "research/kepler_transform/structured_comparison.py": "67bfce198f590f04b9d313d0eabc8f6b335d383b0e5dc0ec66a91c4bf7287c98",
+    "research/kepler_transform/sundman.py": "5396f244aac08b4b6db140d8ecdce05aff9fc90f5f81da6368127ecf69020e5b",
+    "research/kepler_transform/temporal/__init__.py": "1ea8a8d5d816ac2a2384532c94c38543e5970fe01c92194df2b3c478f7a36938",
+    "research/kepler_transform/temporal/benchmark.py": "80fd270c173c1ae792c896169a6f68248c16334c1da3dd18f75b173dfc0f7c48",
+    "research/kepler_transform/temporal/plot.py": "ed6d8f49d1c2fbd194058ba2f2b2cfd36fdbb8270c3961256b70ca1e58b8a323",
+    "research/kepler_transform/temporal/transform.py": "1670817e2675e076afc1e3da2195be7f6e9169ba05b07b681dc05cf9d82eec40",
+    "research/kepler_transform/temporal/verify.py": "4e63d8ec2ef67cd24c6891442f2c21df2b5feabed5652153cb3b8199234ae281",
+    "research/kepler_transform/tensor_prolongation.py": "be763db7eea3bad1f2308b9e68e0c3517d9b122968940c5bbc0f430fefe55d32",
+    "research/kepler_transform/timing/__init__.py": "375f12c763d9462027c9980c7ec2e78825ec68630245fcfeb5371ce310c9e6f1",
+    "research/kepler_transform/timing/benchmark.py": "b4fa3b1b916ad1f2bd6c08650cb29b2540fa27c6e923957a42f7a6d65dc66f21",
+    "research/kepler_transform/timing/native_grid.py": "3992d2254d965faf3a430641b6bf2fca4d144109ccb4a48b2456ce198dbc6a40",
+    "research/kepler_transform/timing/overview.py": "fb82ff423d497e5a61466dc8e9aea7dd6a0b124d4a761abe9cc6a27cfb0e2a01",
+    "research/kepler_transform/timing/plot.py": "afedeba5c29a91e72045e983c73fbc6430c63bec36759077c6f77490d64ca748",
+    "research/kepler_transform/timing/plot_native.py": "e5660f4be6f8b3afc7a492c31f7f2bfa727590370ee1833f36f42d82a2b76c87",
+    "research/kepler_transform/translated_experiment.py": "f8df5b420a6bf007927e391a58428a217a50e1c936e754b0cd615393e9b717c8",
+    "research/kepler_transform/translated_flow.py": "fcc04a07b5f5979d85ab000d10826420a004a132561af8c724bd01c898dfb27b",
+    "research/kepler_transform/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "research/kepler_transform/validated_universal.py": "8f41611a6e6354e466be1480ab2626f75165d9db4c3f98e8520bac3832e91622",
+    "research/kepler_transform/variational_flow.py": "42c2f20a0832f83d4503a5b4da39274e6dc8a0c4c42501edc02105530860c32b",
+    "research/kepler_transform/verify_chart_campaign.py": "0dfbe72dad426e21da5d710f5b79c7fc59b893a45db691668b629fc8303c0fe3",
+    "research/kepler_transform/verify_construction.py": "242bf118a71647785b5640ac64eea72cafadf6350906e700e58ab595a31fb467",
+    "research/kepler_transform/verify_constructive_campaign.py": "ab655577eb35dab3b3d77a20d9441b86ffc372e7d08b0f4b99cb3b7471377402",
+    "research/kepler_transform/verify_global_campaign.py": "7b2172d65b319338e66ee6196c5be79940c70d9a41fcfcfe35675f59642ba21c",
+    "research/kepler_transform/verify_local_resolution.py": "012641f86c8c1f4ebda60cd6e05ad8e9fab3b9612413f6b524988aee847a5efb",
+    "research/kepler_transform/verify_segment_campaign.py": "b9ab95456d36e37e3aa7ed6883beb59ce952a35cdf8a0c7d0660efc28fd0fcbd",
+    "research/kepler_transform/verify_segment_field_campaign.py": "cce72ed8221fb03f2f1afdcb6f4759ad824adb2c26e64c777b257e178eb3cf08"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "numba": "0.68.0",
+      "finufft": "2.5.1",
+      "python-flint": "0.8.0"
+    },
+    "threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMBA_NUM_THREADS": "1"
+    },
+    "cpu_quota": "400000 100000"
+  },
+  "workload": {
+    "case": "near",
+    "span_days": 8.0,
+    "exposures": 512,
+    "image_side": 32,
+    "fourier_modes_per_image": 1024,
+    "time_order": 82,
+    "frequency_bound": 206264.80624709636,
+    "exact_arithmetic_kernel_error_bound": 8.946094663126057e-09,
+    "input": "synthetic real periodic common-grid images; all Fourier modes retained",
+    "cadence": "irregular, including both endpoints",
+    "seed": 20261103,
+    "query_counts": [
+      256,
+      1024
+    ],
+    "dense_cache_budget_bytes": 600000000,
+    "whole_original_six_dimensional_box": true,
+    "real_survey_data": false,
+    "floating_point_error_certified": false,
+    "full_fkt_objective_complete": false
+  },
+  "setup": {
+    "direct_model_seconds": 0.00421347699011676,
+    "jit_startup_seconds_excluded_for_both": 7.448899850714952e-05,
+    "time_plan_seconds_including_proof": {
+      "dense": 0.02415918599581346,
+      "nufft": 0.02379893499892205
+    }
+  },
+  "pixel_fft": {
+    "samples_seconds": [
+      0.008293860664707609,
+      0.008399065671255812,
+      0.0087573113317679,
+      0.008734748000279069,
+      0.010035787335558174
+    ],
+    "median_seconds": 0.008734748000279069,
+    "min_seconds": 0.008293860664707609,
+    "max_seconds": 0.010035787335558174,
+    "loops_per_sample": 3
+  },
+  "compression": {
+    "dense": {
+      "samples_seconds": [
+        0.00998826400124623,
+        0.009853228334880745,
+        0.009946348999316493,
+        0.011109969001457406,
+        0.010217776003022058
+      ],
+      "median_seconds": 0.00998826400124623,
+      "min_seconds": 0.009853228334880745,
+      "max_seconds": 0.011109969001457406,
+      "loops_per_sample": 3
+    },
+    "nufft": {
+      "samples_seconds": [
+        0.054837251009303145,
+        0.058004164005978964,
+        0.058390664009493776,
+        0.05459464300656691,
+        0.05503260900150053
+      ],
+      "median_seconds": 0.05503260900150053,
+      "min_seconds": 0.05459464300656691,
+      "max_seconds": 0.058390664009493776,
+      "loops_per_sample": 1
+    }
+  },
+  "dense_vs_fast_compression_l1_error": 7.619400974421511e-18,
+  "measurements": [
+    {
+      "queries": 256,
+      "counts": {
+        "exposures": 512,
+        "time_order": 82,
+        "fourier_modes": 1024,
+        "queries": 256,
+        "input_values": 524288,
+        "compressed_field_values": 83968,
+        "compression_complex_multiply_adds": 42991616,
+        "compression_backend": "dense",
+        "dense_compression_count_is_executed": true,
+        "plan_center_orbit_pairs": 594,
+        "fresh_query_orbit_pairs": 20992,
+        "fresh_direct_orbit_pairs": 131072,
+        "dense_compressed_query_entries": 21495808,
+        "dense_direct_cache_entries": 134217728,
+        "interpolation_real_entries": 41984,
+        "modulation_complex_entries": 524288,
+        "orbit_grid_entries": 0
+      },
+      "direct": {
+        "stream": {
+          "setup_seconds": 0.07814238699211273,
+          "apply": {
+            "samples_seconds": [
+              3.5292759779986227,
+              3.56850312599272,
+              3.720702799007995,
+              3.813298822991783,
+              3.7284502620022977
+            ],
+            "median_seconds": 3.720702799007995,
+            "min_seconds": 3.5292759779986227,
+            "max_seconds": 3.813298822991783,
+            "loops_per_sample": 1
+          },
+          "sampled_score_error_per_coefficient_l1": 0.0,
+          "persistent_numpy_array_bytes_excluding_native_workspaces": 2097152
+        },
+        "dense": {
+          "skipped": "Dense response cache exceeds byte budget: 2147483648"
+        },
+        "nufft": {
+          "setup_seconds": 0.2630160929984413,
+          "apply": {
+            "samples_seconds": [
+              0.03417664500011597,
+              0.034449247003067285,
+              0.03471736199571751,
+              0.03523876100371126,
+              0.03658019000431523
+            ],
+            "median_seconds": 0.03471736199571751,
+            "min_seconds": 0.03417664500011597,
+            "max_seconds": 0.03658019000431523,
+            "loops_per_sample": 1
+          },
+          "sampled_score_error_per_coefficient_l1": 3.0633228981114454e-15,
+          "persistent_numpy_array_bytes_excluding_native_workspaces": 2097152
+        }
+      },
+      "compressed": {
+        "stream": {
+          "setup_seconds": 0.013959711999632418,
+          "apply": {
+            "samples_seconds": [
+              0.6201835270039737,
+              0.617838086996926,
+              0.6583216750004794,
+              0.6081988930091029,
+              0.6337619940022705
+            ],
+            "median_seconds": 0.6201835270039737,
+            "min_seconds": 0.6081988930091029,
+            "max_seconds": 0.6583216750004794,
+            "loops_per_sample": 1
+          },
+          "sampled_score_error_per_coefficient_l1": 1.6725397659383506e-15,
+          "persistent_numpy_array_bytes_excluding_native_workspaces": 335872
+        },
+        "dense": {
+          "setup_seconds": 0.7187751379969995,
+          "apply": {
+            "samples_seconds": [
+              0.013461537499097176,
+              0.014314199499494862,
+              0.014758179495402146,
+              0.01635679299943149,
+              0.014142051004455425
+            ],
+            "median_seconds": 0.014314199499494862,
+            "min_seconds": 0.013461537499097176,
+            "max_seconds": 0.01635679299943149,
+            "loops_per_sample": 2
+          },
+          "sampled_score_error_per_coefficient_l1": 1.6725397659383506e-15,
+          "persistent_numpy_array_bytes_excluding_native_workspaces": 343932928
+        },
+        "nufft": {
+          "setup_seconds": 0.03575811701011844,
+          "apply": {
+            "samples_seconds": [
+              0.0048269277504005,
+              0.004728702999273082,
+              0.00468702124999254,
+              0.004820082751393784,
+              0.004809647249203408
+            ],
+            "median_seconds": 0.004809647249203408,
+            "min_seconds": 0.00468702124999254,
+            "max_seconds": 0.0048269277504005,
+            "loops_per_sample": 4
+          },
+          "sampled_score_error_per_coefficient_l1": 3.936416655502011e-15,
+          "persistent_numpy_array_bytes_excluding_native_workspaces": 335872
+        }
+      },
+      "fast_compression_and_nufft_error_per_l1": 3.979417759135241e-15,
+      "comparison": {
+        "first_use_direct": {
+          "method": "nufft",
+          "seconds": 0.31068167998455465
+        },
+        "first_use_compressed": {
+          "method": "dense_compression+nufft_output",
+          "seconds": 0.0834499622566606
+        },
+        "changed_input_fixed_queries_direct": {
+          "method": "nufft",
+          "seconds": 0.04345210999599658
+        },
+        "changed_input_fixed_queries_compressed": {
+          "method": "dense_compression+nufft_output",
+          "seconds": 0.023532659250728706
+        },
+        "new_queries_existing_compressed_field": {
+          "method": "dense_compression+nufft_output",
+          "seconds": 0.04056776425932185
+        },
+        "new_queries_existing_input_fields_direct": {
+          "method": "nufft",
+          "seconds": 0.2977334549941588
+        },
+        "first_use_direct_over_compressed": 3.7229696884585164,
+        "changed_input_fixed_queries_direct_over_compressed": 1.8464598298490662,
+        "new_queries_direct_over_compressed": 7.339163506545576
+      }
+    },
+    {
+      "queries": 1024,
+      "counts": {
+        "exposures": 512,
+        "time_order": 82,
+        "fourier_modes": 1024,
+        "queries": 1024,
+        "input_values": 524288,
+        "compressed_field_values": 83968,
+        "compression_complex_multiply_adds": 42991616,
+        "compression_backend": "dense",
+        "dense_compression_count_is_executed": true,
+        "plan_center_orbit_pairs": 594,
+        "fresh_query_orbit_pairs": 83968,
+        "fresh_direct_orbit_pairs": 524288,
+        "dense_compressed_query_entries": 85983232,
+        "dense_direct_cache_entries": 536870912,
+        "interpolation_real_entries": 41984,
+        "modulation_complex_entries": 524288,
+        "orbit_grid_entries": 0
+      },
+      "direct": {
+        "stream": {
+          "setup_seconds": 0.3398090099944966,
+          "apply": {
+            "samples_seconds": [
+              17.354967467996175,
+              16.361556566000218,
+              16.371117949995096,
+              15.810578639997402,
+              15.919733000991982
+            ],
+            "median_seconds": 16.361556566000218,
+            "min_seconds": 15.810578639997402,
+            "max_seconds": 17.354967467996175,
+            "loops_per_sample": 1
+          },
+          "sampled_score_error_per_coefficient_l1": 0.0,
+          "persistent_numpy_array_bytes_excluding_native_workspaces": 8388608
+        },
+        "dense": {
+          "skipped": "Dense response cache exceeds byte budget: 8589934592"
+        },
+        "nufft": {
+          "setup_seconds": 0.5678693859954365,
+          "apply": {
+            "samples_seconds": [
+              0.0975642900011735,
+              0.09552944800816476,
+              0.1007103529991582,
+              0.10224459299934097,
+              0.12026100800721906
+            ],
+            "median_seconds": 0.1007103529991582,
+            "min_seconds": 0.09552944800816476,
+            "max_seconds": 0.12026100800721906,
+            "loops_per_sample": 1
+          },
+          "sampled_score_error_per_coefficient_l1": 4.424949967218645e-15,
+          "persistent_numpy_array_bytes_excluding_native_workspaces": 8388608
+        }
+      },
+      "compressed": {
+        "stream": {
+          "setup_seconds": 0.05943022000428755,
+          "apply": {
+            "samples_seconds": [
+              2.24900397399324,
+              2.6061415699950885,
+              2.460570273004123,
+              2.5281896679953206,
+              2.4917969800007995
+            ],
+            "median_seconds": 2.4917969800007995,
+            "min_seconds": 2.24900397399324,
+            "max_seconds": 2.6061415699950885,
+            "loops_per_sample": 1
+          },
+          "sampled_score_error_per_coefficient_l1": 1.928904793635435e-15,
+          "persistent_numpy_array_bytes_excluding_native_workspaces": 1343488
+        },
+        "dense": {
+          "skipped": "Dense response cache exceeds byte budget: 1375731712"
+        },
+        "nufft": {
+          "setup_seconds": 0.08577514201169834,
+          "apply": {
+            "samples_seconds": [
+              0.013421527997707017,
+              0.01676182400115067,
+              0.014974740995967295,
+              0.014033511499292217,
+              0.014777719996345695
+            ],
+            "median_seconds": 0.014777719996345695,
+            "min_seconds": 0.013421527997707017,
+            "max_seconds": 0.01676182400115067,
+            "loops_per_sample": 2
+          },
+          "sampled_score_error_per_coefficient_l1": 4.029935943393002e-15,
+          "persistent_numpy_array_bytes_excluding_native_workspaces": 1343488
+        }
+      },
+      "fast_compression_and_nufft_error_per_l1": 4.176210588676743e-15,
+      "comparison": {
+        "first_use_direct": {
+          "method": "nufft",
+          "seconds": 0.6815279639849905
+        },
+        "first_use_compressed": {
+          "method": "dense_compression+nufft_output",
+          "seconds": 0.14343506000538278
+        },
+        "changed_input_fixed_queries_direct": {
+          "method": "nufft",
+          "seconds": 0.10944510099943727
+        },
+        "changed_input_fixed_queries_compressed": {
+          "method": "dense_compression+nufft_output",
+          "seconds": 0.03350073199787099
+        },
+        "new_queries_existing_compressed_field": {
+          "method": "dense_compression+nufft_output",
+          "seconds": 0.10055286200804403
+        },
+        "new_queries_existing_input_fields_direct": {
+          "method": "nufft",
+          "seconds": 0.6685797389945947
+        },
+        "first_use_direct_over_compressed": 4.751474039606595,
+        "changed_input_fixed_queries_direct_over_compressed": 3.2669465552690795,
+        "new_queries_direct_over_compressed": 6.649037388325254
+      }
+    }
+  ],
+  "timing_convention": "Setup once; application median of independent batches. No output cache.",
+  "native_nufft_workspace_bytes_in_array_counts": false,
+  "independent_sparse_score_error_per_l1": 1.0069117546672056e-14,
+  "peak_process_rss_bytes": 851836928,
+  "artifact_sha256": {
+    "certificate.json": "ce531e4a5e55814ea46809dcc011d73a009f00882fb9b47553109ac8d348a61f",
+    "scores.npz": "b3b1893aab8dd48ad400c50ea20e5b809a9ba582200182c3783284c5b735da81",
+    "inputs.npz": "991480313adfde978f8c1f3d9a291547c22c1ead2ceff5972d2620b6f2de6e92"
+  }
+}

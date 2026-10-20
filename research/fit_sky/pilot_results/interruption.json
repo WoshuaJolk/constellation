@@ -1,0 +1,11 @@
+{
+  "completed": false,
+  "last_case": "moving",
+  "error": "AttributeError: constant likelihood has no derivative coefficients",
+  "repair": "Cast parameter-independent likelihoods to constant jets; subsequent campaign retains the same domains.",
+  "additional_repairs": [
+    "Analytic flux interval dependency",
+    "Zero derivative split priority",
+    "Outward serialized certificate aggregation"
+  ]
+}

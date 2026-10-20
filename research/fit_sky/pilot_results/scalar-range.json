@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "tool": "fit_sky",
+  "manifest": {
+    "source_types": [
+      {
+        "name": "star",
+        "kind": "star",
+        "parameters": {
+          "x": [
+            0,
+            0
+          ],
+          "y": [
+            0,
+            0
+          ],
+          "flux": [
+            1,
+            3
+          ]
+        }
+      }
+    ],
+    "exposures": [
+      {
+        "id": "one",
+        "time": 0,
+        "data": [
+          [
+            1.0
+          ]
+        ],
+        "psf_sigma": 0.6
+      }
+    ],
+    "count_prior": {
+      "probabilities": [
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "manifest_sha256": "853d7f3ef8764a2a044e3a20818faf5d89933e26fffd66987a5fa0c229b75401",
+  "settings": {
+    "method": "range",
+    "max_gauss_dimension": 6,
+    "precision": 100,
+    "tolerance": 0.01,
+    "max_leaves": 4096,
+    "max_seconds": 120.0
+  },
+  "status": "bounded_target_met",
+  "full_objective_complete": false,
+  "scaled_evidence": [
+    0.7697538622240647,
+    0.776933087446509
+  ],
+  "log_evidence": [
+    -1.180623007890319,
+    -1.171339582069864
+  ],
+  "relative_evidence_gap": 0.009326650472010626,
+  "queries": {
+    "has:star": [
+      0.6060229837884978,
+      0.6096635157436306
+    ]
+  },
+  "source_count_tail_prior_upper": 0.0,
+  "source_count_tail_posterior_upper": 0.0,
+  "work": {
+    "leaves": 13,
+    "roots": 2,
+    "forward_calls": 24,
+    "seconds": 0.006307351000032213,
+    "max_dimension": 1
+  },
+  "certificate": [
+    {
+      "root": 0,
+      "path": [],
+      "likelihood": [
+        0.6065306597126333,
+        0.6065306597126335
+      ],
+      "mode": "point"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.993532565418718,
+        1.0
+      ],
+      "mode": "range"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.9797007795277749,
+        0.9954846520122375
+      ],
+      "mode": "range"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "likelihood": [
+        0.8119000727165256,
+        0.8350468734424795
+      ],
+      "mode": "range"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.8346372004452859,
+        0.8567488929402317
+      ],
+      "mode": "range"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "likelihood": [
+        0.8563285730633651,
+        0.877291233293363
+      ],
+      "mode": "range"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.8768608355749165,
+        0.8965645572316135
+      ],
+      "mode": "range"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "likelihood": [
+        0.8961247047263895,
+        0.914464570596465
+      ],
+      "mode": "range"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.9140159357193623,
+        0.930892949938425
+      ],
+      "mode": "range"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "likelihood": [
+        0.9304362554030375,
+        0.9457582496179385
+      ],
+      "mode": "range"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.9452942628340678,
+        0.9589767446814222
+      ],
+      "mode": "range"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "likelihood": [
+        0.9585062730984645,
+        0.970473213128571
+      ],
+      "mode": "range"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.9699971014561014,
+        0.9801816539911671
+      ],
+      "mode": "range"
+    }
+  ],
+  "progress": [
+    {
+      "leaves": 4,
+      "scaled_evidence": [
+        0.7458669151149881,
+        0.8005369826845203
+      ],
+      "log_evidence": [
+        -1.2121466258670444,
+        -1.1414110813362286
+      ],
+      "relative_evidence_gap": 0.07329734897961473,
+      "queries": {
+        "has:star": [
+          0.5934055744923835,
+          0.6211726173607285
+        ]
+      },
+      "source_count_tail_prior_upper": 0.0,
+      "source_count_tail_posterior_upper": 0.0
+    },
+    {
+      "leaves": 8,
+      "scaled_evidence": [
+        0.7656945346269315,
+        0.7812997295453392
+      ],
+      "log_evidence": [
+        -1.185910501840455,
+        -1.1657349593439825
+      ],
+      "relative_evidence_gap": 0.020380444436645755,
+      "queries": {
+        "has:star": [
+          0.6039343156549023,
+          0.6118450853262224
+        ]
+      },
+      "source_count_tail_prior_upper": 0.0,
+      "source_count_tail_posterior_upper": 0.0
+    }
+  ],
+  "scope": "Declared compact source/instrument priors and Gaussian/Poisson image model",
+  "arithmetic": "Arb prior, forward likelihood and quadrature enclosures; outward float report bounds"
+}

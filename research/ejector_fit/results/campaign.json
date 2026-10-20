@@ -1,0 +1,639 @@
+{
+  "results": [
+    {
+      "name": "HIP_102274_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_102274_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_109556_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_109556_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_14514_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_14514_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_22061_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_22061_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_24575_Collinder_69",
+      "status": "feasible_local_fit",
+      "chi2": 180.85559968707548,
+      "events": [
+        {
+          "id": "cluster_passage",
+          "members": [
+            "HIP_24575",
+            "Collinder_69"
+          ],
+          "origin_pc": [
+            -8437.390782614613,
+            -465.3731208197632,
+            -60.028246770201704
+          ],
+          "max_centroid_radius_pc": 3.4999995140952045,
+          "constraint_violation_pc": 0.0,
+          "lookback_myr": 1.5661209425893963
+        }
+      ],
+      "active_bounds": [
+        1,
+        7
+      ]
+    },
+    {
+      "name": "HIP_24575_ONC",
+      "status": "feasible_local_fit",
+      "chi2": 1.516633475459644,
+      "events": [
+        {
+          "id": "cluster_passage",
+          "members": [
+            "HIP_24575",
+            "ONC"
+          ],
+          "origin_pc": [
+            -8404.421863691547,
+            -779.3557246210173,
+            -111.17923637801104
+          ],
+          "max_centroid_radius_pc": 2.500001689171317,
+          "constraint_violation_pc": 1.6891713170430478e-06,
+          "lookback_myr": 2.518843643251897
+        }
+      ],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_27204_Collinder_69",
+      "status": "feasible_local_fit",
+      "chi2": 0.44333379249692734,
+      "events": [
+        {
+          "id": "cluster_passage",
+          "members": [
+            "HIP_27204",
+            "Collinder_69"
+          ],
+          "origin_pc": [
+            -8429.17408027047,
+            -900.1960269534472,
+            -69.58082669909138
+          ],
+          "max_centroid_radius_pc": 3.500002873963549,
+          "constraint_violation_pc": 2.8739635489216653e-06,
+          "lookback_myr": 3.34711504438203
+        }
+      ],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_27204_ONC",
+      "status": "feasible_local_fit",
+      "chi2": 0.0,
+      "events": [
+        {
+          "id": "cluster_passage",
+          "members": [
+            "HIP_27204",
+            "ONC"
+          ],
+          "origin_pc": [
+            -8425.165859873689,
+            -782.6759157546317,
+            -118.20738587847853
+          ],
+          "max_centroid_radius_pc": 2.4762694919863386,
+          "constraint_violation_pc": 0.0,
+          "lookback_myr": 2.5
+        }
+      ],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_29678_Collinder_69",
+      "status": "feasible_local_fit",
+      "chi2": 114.26403071357862,
+      "events": [
+        {
+          "id": "cluster_passage",
+          "members": [
+            "HIP_29678",
+            "Collinder_69"
+          ],
+          "origin_pc": [
+            -8481.816716736475,
+            -391.4171185238964,
+            -64.3078269106543
+          ],
+          "max_centroid_radius_pc": 3.4999999924694376,
+          "constraint_violation_pc": 0.0,
+          "lookback_myr": 1.1923265936341036
+        }
+      ],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_29678_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_38455_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_38455_ONC",
+      "status": "feasible_local_fit",
+      "chi2": 246.84729628454394,
+      "events": [
+        {
+          "id": "cluster_passage",
+          "members": [
+            "HIP_38455",
+            "ONC"
+          ],
+          "origin_pc": [
+            -8041.660542614296,
+            -1458.2114275653607,
+            2.8176658140925728
+          ],
+          "max_centroid_radius_pc": 2.500010609037707,
+          "constraint_violation_pc": 1.0609037706998947e-05,
+          "lookback_myr": 6.0
+        }
+      ],
+      "active_bounds": [
+        7,
+        8
+      ]
+    },
+    {
+      "name": "HIP_38518_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_38518_ONC",
+      "status": "feasible_local_fit",
+      "chi2": 289.0536539207891,
+      "events": [
+        {
+          "id": "cluster_passage",
+          "members": [
+            "HIP_38518",
+            "ONC"
+          ],
+          "origin_pc": [
+            -8018.279526430771,
+            -1453.1955887576405,
+            -0.40459009918929173
+          ],
+          "max_centroid_radius_pc": 2.499999302281222,
+          "constraint_violation_pc": 0.0,
+          "lookback_myr": 5.999999999999974
+        }
+      ],
+      "active_bounds": [
+        0,
+        4,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "HIP_3881_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_3881_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_42038_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_42038_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_46950_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_46950_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_48943_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_48943_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_49934_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_49934_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_69491_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_69491_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_76013_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_76013_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_82868_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_82868_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_91599_Collinder_69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "HIP_91599_ONC",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "Orion_network",
+      "status": "feasible_local_fit",
+      "chi2": 4.866583210987578,
+      "events": [
+        {
+          "id": "AE_Aur_ONC",
+          "members": [
+            "HIP_24575",
+            "ONC"
+          ],
+          "origin_pc": [
+            -8408.517370097094,
+            -784.4737322221802,
+            -112.91944969721862
+          ],
+          "max_centroid_radius_pc": 2.5000017128477054,
+          "constraint_violation_pc": 1.7128477054484392e-06,
+          "lookback_myr": 2.530315211290291
+        },
+        {
+          "id": "mu_Col_ONC",
+          "members": [
+            "HIP_27204",
+            "ONC"
+          ],
+          "origin_pc": [
+            -8414.553470853305,
+            -765.6644173348207,
+            -114.138547875427
+          ],
+          "max_centroid_radius_pc": 2.499999937545511,
+          "constraint_violation_pc": 0.0,
+          "lookback_myr": 2.4489482328484544
+        },
+        {
+          "id": "mu_Col_Collinder69",
+          "members": [
+            "HIP_27204",
+            "Collinder_69"
+          ],
+          "origin_pc": [
+            -8417.064790749595,
+            -883.5945193306471,
+            -66.48840906829015
+          ],
+          "max_centroid_radius_pc": 3.5000023743981257,
+          "constraint_violation_pc": 2.3743981256707514e-06,
+          "lookback_myr": 3.292625469276165
+        }
+      ],
+      "active_bounds": []
+    },
+    {
+      "name": "gaia_pair",
+      "status": "feasible_local_fit",
+      "chi2": 3.865298176154081,
+      "events": [
+        {
+          "id": "AE_Aur_mu_Col",
+          "members": [
+            "AE_Aur",
+            "mu_Col"
+          ],
+          "origin_pc": [
+            -8405.52933389322,
+            -756.7479735185398,
+            -106.31959369404714
+          ],
+          "max_centroid_radius_pc": 4.021403995466314e-06,
+          "constraint_violation_pc": 8.042807893982441e-06,
+          "lookback_myr": 2.4498885145128897
+        }
+      ],
+      "active_bounds": []
+    },
+    {
+      "name": "gaia_triple",
+      "status": "feasible_local_fit",
+      "chi2": 27.28396588003575,
+      "events": [
+        {
+          "id": "Orion_triple",
+          "members": [
+            "AE_Aur",
+            "iota_Ori",
+            "mu_Col"
+          ],
+          "origin_pc": [
+            -8406.105287686392,
+            -759.6916146847702,
+            -106.97207974790179
+          ],
+          "max_centroid_radius_pc": 4.300546141116005e-06,
+          "constraint_violation_pc": 8.09052051104118e-06,
+          "lookback_myr": 2.457305684315178
+        }
+      ],
+      "active_bounds": []
+    },
+    {
+      "name": "hip1997_pair",
+      "status": "feasible_local_fit",
+      "chi2": 2.421577559070819,
+      "events": [
+        {
+          "id": "AE_Aur_mu_Col",
+          "members": [
+            "AE_Aur",
+            "mu_Col"
+          ],
+          "origin_pc": [
+            -8367.954962097929,
+            -702.9636590850889,
+            -89.8131425128459
+          ],
+          "max_centroid_radius_pc": 3.395458246935314e-06,
+          "constraint_violation_pc": 6.7909164802612336e-06,
+          "lookback_myr": 2.3261590879590943
+        }
+      ],
+      "active_bounds": []
+    },
+    {
+      "name": "hip1997_triple",
+      "status": "feasible_local_fit",
+      "chi2": 5.6216628411735785,
+      "events": [
+        {
+          "id": "Orion_triple",
+          "members": [
+            "AE_Aur",
+            "iota_Ori",
+            "mu_Col"
+          ],
+          "origin_pc": [
+            -8422.027121881596,
+            -775.8062774142776,
+            -116.19744707323787
+          ],
+          "max_centroid_radius_pc": 4.570089856749488e-06,
+          "constraint_violation_pc": 8.541634061199822e-06,
+          "lookback_myr": 2.493252853217689
+        }
+      ],
+      "active_bounds": []
+    },
+    {
+      "name": "hip2007_pair",
+      "status": "feasible_local_fit",
+      "chi2": 9.134342992604816,
+      "events": [
+        {
+          "id": "AE_Aur_mu_Col",
+          "members": [
+            "AE_Aur",
+            "mu_Col"
+          ],
+          "origin_pc": [
+            -8326.396765612788,
+            -648.6275080212993,
+            -71.40317885546094
+          ],
+          "max_centroid_radius_pc": 2.781891812551101e-06,
+          "constraint_violation_pc": 5.5637835941293085e-06,
+          "lookback_myr": 2.191498130221176
+        }
+      ],
+      "active_bounds": []
+    },
+    {
+      "name": "hip2007_triple",
+      "status": "feasible_local_fit",
+      "chi2": 36.96358768879273,
+      "events": [
+        {
+          "id": "Orion_triple",
+          "members": [
+            "AE_Aur",
+            "iota_Ori",
+            "mu_Col"
+          ],
+          "origin_pc": [
+            -8492.888524254833,
+            -858.7026584472966,
+            -146.0755922787632
+          ],
+          "max_centroid_radius_pc": 5.839679983394544e-06,
+          "constraint_violation_pc": 1.0610142558289351e-05,
+          "lookback_myr": 2.6556461667510756
+        }
+      ],
+      "active_bounds": []
+    },
+    {
+      "name": "mu_Col_Collinder69_exact",
+      "status": "feasible_local_fit",
+      "chi2": 75.62913784958876,
+      "events": [
+        {
+          "id": "mu_Col_Collinder69_exact",
+          "members": [
+            "HIP_27204",
+            "Collinder_69"
+          ],
+          "origin_pc": [
+            -8421.624969652821,
+            -895.0603835268764,
+            -65.00121808253618
+          ],
+          "max_centroid_radius_pc": 4.519672337487089e-06,
+          "constraint_violation_pc": 9.039344674974178e-06,
+          "lookback_myr": 3.328724404219884
+        }
+      ],
+      "active_bounds": [
+        1
+      ]
+    },
+    {
+      "name": "repeated_Collinder69",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "repeated_Collinder69_exact",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    },
+    {
+      "name": "repeated_Collinder69_zpt",
+      "status": "no_converged_feasible_fit",
+      "chi2": null,
+      "events": [],
+      "active_bounds": []
+    }
+  ],
+  "full_objective_complete": false,
+  "breakthrough": false,
+  "core_sha256": "d53bfeed0f4897c9bee6aeb6822aa78940fdce15a79aa8ffcc8ae9e9ceb2afad",
+  "data_sha256": {
+    "README.md": "f5dbce10b4c4a8799d50c1c40552a7ffafe10b3e62e08d818bd331da17601079",
+    "cluster_positions.adql": "8e5d04ed8940a52bb21bc2ccc5731a5d9ee6d18d9d66c9b4b53c021cf5c4eb59",
+    "cluster_positions.csv": "3fea11a663950173371b41443b26037368c62d787f7aa2cd1f22362a7bc7c8db",
+    "gaia_orion.adql": "7d8259820f80a816647f82aaefc7e11394e77ba2a56d6b87813dd827d799e68b",
+    "gaia_orion.vot": "4e4592bcf76e91b148f82723632d144f52a8bef00c387e78eadea1602189f938",
+    "gaia_pair.json": "a7209bab3c844ea153dcb89c9f6cd2c86942660fe4535901ff9ae06675859662",
+    "gaia_runaways.adql": "728706a8b8b4f0569608bbb90670c4c65e06a79ea708344ed1102e927d578f67",
+    "gaia_runaways.vot": "c148f8b99b72d58837a07d4e14e2ac88b2128dc6f9f3f07e17287d1692e110b4",
+    "gaia_triple.json": "e8cac281e9a687c12887a523279fafa79bd1d5b828b7af695aa6ee0bd54dac68",
+    "hip1997_pair.json": "8c53d2a96873d9efb7b0804eae2673fa68837bffde18f7ea00054cf3cd3442b1",
+    "hip1997_triple.json": "e09a325c8701aff0c2fe0ae2f78be934eed4add88dace2f6b3af5be1c69c3ed8",
+    "hip2007_pair.json": "d9aae56782868cd4783e6c3dda733b11eeb4e016a2dd82df73bd2a7319ba3b64",
+    "hip2007_triple.json": "56a6a2aa6e004a8749b300763caeb704a90100598d6688765a5ac9b19a3f9996",
+    "literature_rvs.json": "d7c0fd1b44288246464659276fcf0a5f1379868c9ed934c434a5a7ba9250b063",
+    "provenance.json": "f344c6076ff43395a4017483faf085b5454fca756f40aa7bf54c3b38cfae0d1e"
+  }
+}

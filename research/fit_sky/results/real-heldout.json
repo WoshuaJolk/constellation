@@ -1,0 +1,6 @@
+{
+  "status": "not_certified",
+  "heldout_observation_retained": true,
+  "reason": "A calibrated predictive image also requires conditioning the shared background posterior.",
+  "full_objective_complete": false
+}

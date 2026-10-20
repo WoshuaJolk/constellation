@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "scope": "supplied finite Fourier fields over a bounded observer-chart domain",
+  "manifest_sha256": "cebcc57b49f3c96298148888521a20278e6cda87f0961f941f6cc67c8e0686b1",
+  "arrays_sha256": "10261a59cfbb1ddf4a421d5f9ea72ad759e1d0da5399ec8476a8a1b294acdf86",
+  "all_geometry_cells_resolved": true,
+  "full_objective_complete": false,
+  "full_score_error_certified": false,
+  "status": "evaluated_all_queries",
+  "application": {
+    "slice_queries": 0,
+    "polynomial_queries": 256,
+    "direct_queries": 0,
+    "slice_transforms": 0,
+    "resource_fallbacks": 0,
+    "phase_budget_fallbacks": 0,
+    "phase_orders_used": {},
+    "application_seconds": 0.02244621600402752,
+    "queries": 256,
+    "all_queries_evaluated": true,
+    "full_score_error_certified": false
+  },
+  "selected_score_audits": [
+    {
+      "index": 0,
+      "real_interval": [
+        -0.05290908358325209,
+        -0.052909083583252074
+      ],
+      "imaginary_interval": [
+        0.14279122255161789,
+        0.14279122255161794
+      ],
+      "absolute_error_upper": 1.1334650899614225e-05
+    },
+    {
+      "index": 255,
+      "real_interval": [
+        0.1287429114506754,
+        0.12874291145067546
+      ],
+      "imaginary_interval": [
+        1.0641944397690393,
+        1.0641944397690397
+      ],
+      "absolute_error_upper": 2.152716528295726e-06
+    }
+  ],
+  "total_seconds": 5.494208411000727
+}

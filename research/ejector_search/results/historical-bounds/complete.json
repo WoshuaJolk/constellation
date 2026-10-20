@@ -1,0 +1,272 @@
+{
+  "tool": "ejector_bound",
+  "schema_version": 1,
+  "hypotheses": 1,
+  "excluded_groups": [],
+  "unresolved_groups": [],
+  "excluded_count": 0,
+  "unresolved_count": 0,
+  "lookback_bounds_myr": [
+    0.1,
+    6.0
+  ],
+  "radius_pc": 1.0,
+  "total_mahalanobis_cost_at_most": 25.0,
+  "steps": 300,
+  "arb_precision_bits": 128,
+  "unbounded_tube_fallbacks": [
+    {
+      "id": "AE_Aur",
+      "segment": 0,
+      "reason": "Force enclosure became nonfinite; shorten integration steps or tighten domain"
+    },
+    {
+      "id": "iota_Ori",
+      "segment": 0,
+      "reason": "Force enclosure became nonfinite; shorten integration steps or tighten domain"
+    },
+    {
+      "id": "mu_Col",
+      "segment": 0,
+      "reason": "Force enclosure became nonfinite; shorten integration steps or tighten domain"
+    }
+  ],
+  "galactic_gravity_constant_pc3_msun_myr2": 0.004498502151469553,
+  "kms_to_pc_myr": 1.022712165045695,
+  "fixed_frame_coefficients": [
+    {
+      "id": "AE_Aur",
+      "observer_pc": [
+        -8121.9733661223,
+        0.0,
+        20.8
+      ],
+      "solar_velocity_kms": [
+        12.9,
+        245.6,
+        7.78
+      ],
+      "radial": [
+        -0.9897923867616103,
+        0.1376600329390582,
+        -0.03688829674363832
+      ],
+      "east": [
+        -0.10956230432551385,
+        -0.5694574590080078,
+        0.8146866292331274
+      ],
+      "north": [
+        0.09114347248467472,
+        0.8104121900066412,
+        0.5787270079338895
+      ]
+    },
+    {
+      "id": "iota_Ori",
+      "observer_pc": [
+        -8121.9733661223,
+        0.0,
+        20.8
+      ],
+      "solar_velocity_kms": [
+        12.9,
+        245.6,
+        7.78
+      ],
+      "radial": [
+        -0.8206859328715795,
+        -0.4642539115823234,
+        -0.33308092885282853
+      ],
+      "east": [
+        -0.03673367543805056,
+        -0.5388662771602768,
+        0.8415900263360467
+      ],
+      "north": [
+        -0.5701975417979661,
+        0.7029163825946411,
+        0.425186220856489
+      ]
+    },
+    {
+      "id": "mu_Col",
+      "observer_pc": [
+        -8121.9733661223,
+        0.0,
+        20.8
+      ],
+      "solar_velocity_kms": [
+        12.9,
+        245.6,
+        7.78
+      ],
+      "radial": [
+        -0.48226668109779475,
+        -0.7489920315361154,
+        -0.45434544676706756
+      ],
+      "east": [
+        0.0036294618032154816,
+        -0.5203485944089521,
+        0.8539462320917113
+      ],
+      "north": [
+        -0.8760169377967889,
+        0.4101807857421293,
+        0.25366522760992866
+      ]
+    }
+  ],
+  "potential": {
+    "components": [
+      {
+        "type": "plummer",
+        "mass_msun": 5000000000.0,
+        "scale_pc": 500.0
+      },
+      {
+        "type": "miyamoto_nagai",
+        "mass_msun": 68000000000.0,
+        "a_pc": 3000.0,
+        "b_pc": 280.0
+      },
+      {
+        "type": "log_halo",
+        "speed_kms": 180.0,
+        "core_pc": 12000.0
+      }
+    ]
+  },
+  "statement": "For excluded groups, no continuous-time centroid-radius encounter exists in the stated age interval and bounded measurement domain under this fixed smooth ODE model.",
+  "domain": [
+    "Fixed observed RA/Dec; exact supplied symmetric Gaussian covariance; total group Mahalanobis cost <= the declared bound.",
+    "Parallax >= min_parallax_mas; per-coordinate max_sigma fit bounds are relaxed, enlarging the domain.",
+    "Fixed supplied Galactic potential, unit constants and float64 frame coefficients recorded here; no frame/potential uncertainty.",
+    "Outer marginal observation boxes enlarge the correlated cost ellipsoid. Empty common-center box intersection excludes; overlap never proves an encounter."
+  ],
+  "method": "128-bit Arb arithmetic, Picard self-inclusion over every full time segment, integral endpoint bounds, checked outward binary64 conversion, and necessary common-center box intersections.",
+  "limitations": [
+    "This is a model-conditional exclusion, not a proof about all physical histories or a new mathematical theorem.",
+    "Unresolved groups may be impossible; interval wrapping and ignored covariance/total-cost coupling can be conservative.",
+    "The implementation and Arb library are trusted numerical software; no separate formal proof assistant verifies this program."
+  ],
+  "full_objective_complete": false,
+  "refinements": [],
+  "certified_witnesses": [
+    {
+      "star_ids": [
+        "AE_Aur",
+        "iota_Ori",
+        "mu_Col"
+      ],
+      "certified": true,
+      "lookback_myr": 2.493252853217689,
+      "total_mahalanobis_cost_upper": 5.621662841173574,
+      "centroid_radius_upper_pc": 0.0020041155437328173,
+      "integration_steps": 1247,
+      "fitted_objects": [
+        {
+          "id": "AE_Aur",
+          "mean": [
+            2.432594295481362,
+            -4.129669985964072,
+            43.35492829427352,
+            57.78404151432157
+          ],
+          "marginal_sigma_shift": [
+            0.26026256146129967,
+            -0.12071209994556387,
+            0.3066552142580034,
+            0.23670126193464353
+          ]
+        },
+        {
+          "id": "iota_Ori",
+          "mean": [
+            2.410945793465469,
+            1.7244869907175948,
+            -1.0346077191427858,
+            28.700366910182943
+          ],
+          "marginal_sigma_shift": [
+            -0.06370676173315738,
+            -0.8392507835113926,
+            -0.882144083282523,
+            0.000333554711767063
+          ]
+        },
+        {
+          "id": "mu_Col",
+          "mean": [
+            1.725984312349783,
+            3.5596088187282238,
+            -22.239278907413613,
+            108.12812539848402
+          ],
+          "marginal_sigma_shift": [
+            -1.4436648866367583,
+            1.0569400360158152,
+            0.7614421851727755,
+            -0.34874984060639347
+          ]
+        }
+      ],
+      "origin_enclosure_pc": [
+        [
+          -8422.027324519355,
+          -8422.02691914943
+        ],
+        [
+          -775.8067777289549,
+          -775.8057748415216
+        ],
+        [
+          -116.19808444929426,
+          -116.19680914259753
+        ]
+      ],
+      "interpretation": "Existence witness under the fixed recorded model, verified by Arb continuous-time enclosures. Not a causal ejection certificate."
+    }
+  ],
+  "certified_compatible_count": 1,
+  "all_groups_decided_under_model": true,
+  "refinement_node_limit_per_group": 2000,
+  "witness_search_requested": true,
+  "decision_scope": "Existence of at least one encounter per fixed-size group in the bounded model. A witness does not enumerate every possible origin of that group.",
+  "python_flint_version": "0.8.0",
+  "provenance": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "inputs": [
+      {
+        "path": "../../../src/magictools/ejector_bounds.py",
+        "sha256": "37bbd01d771ce814a221fa737f775c41d3d67160b8e5e7dcce1de6b936ee33ad"
+      },
+      {
+        "path": "../../../src/magictools/ejector_fit.py",
+        "sha256": "12c80fbbf7a072494eda762a0edb20f334ae89b5a5355d2cd84113bf60b16405"
+      },
+      {
+        "path": "../../../src/magictools/ejector_search.py",
+        "sha256": "40276b36ba4a98a3573b51c4fd04bbf69874cb771b220ea8ea5a97c8bb6a87aa"
+      },
+      {
+        "path": "../../../src/magictools/galactic.py",
+        "sha256": "566ba3bb3a68995ee50c8d23102f9febd93c53c63de4a4ab0cb0fd393b8c82d6"
+      },
+      {
+        "path": "../../../src/magictools/stellar_inputs.py",
+        "sha256": "4e079b4c3c138497cccf164c9d9341809e9bd158b25e04c685e6ca36e9033021"
+      },
+      {
+        "path": "historical.json",
+        "sha256": "06e577a1b7fb60c50ee953f1b38b3a4a953a711ff586c246651b4d3f87665132"
+      }
+    ]
+  },
+  "enclosures": "historical-bounds/enclosures.npz"
+}

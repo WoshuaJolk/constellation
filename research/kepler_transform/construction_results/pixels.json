@@ -1,0 +1,30 @@
+{
+  "model": "synthetic periodic detector; finite pixel-integrated Gaussian PSF; known independent Gaussian variances and masks",
+  "real_survey_data": false,
+  "queries": 32768,
+  "frames": 8,
+  "pixels_per_frame": 289,
+  "fourier_modes": 8712,
+  "psf_sigma_arcsec": 1.5,
+  "fft_preparation_seconds": 0.0019029449977097102,
+  "construction": {
+    "construction_seconds": 0.007050774998788256,
+    "geometry_state_time_pairs": 216,
+    "polynomial_terms": 7,
+    "correction_order": 1,
+    "physical_geometry_error_certified": false,
+    "continuous_6d_domain_covered": false,
+    "nufft_requested_epsilon": 1e-12
+  },
+  "application_seconds_both_statistics": 0.6799847160000354,
+  "direct_seconds_both_statistics": 2.2749993429970345,
+  "one_shot_speedup": 3.3049430384897285,
+  "maximum_snr_difference": 1.9097612380392093e-10,
+  "same_top_candidate": true,
+  "top_snr": 51.92698840110815,
+  "injected_reference_flux": 100.0,
+  "injected_query_snr": 51.92698840110815,
+  "independent_pixel_numerator_max_error": 1.1269207789155189e-11,
+  "independent_pixel_information_max_error": 4.590772206825022e-13,
+  "full_objective_complete": false
+}

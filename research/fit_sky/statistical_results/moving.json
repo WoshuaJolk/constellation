@@ -1,0 +1,178 @@
+{
+  "method": "bounded_weight_importance",
+  "status": "unresolved",
+  "scaled_evidence": [
+    0.0,
+    5.187357259973458e-08
+  ],
+  "relative_evidence_gap": null,
+  "queries": {
+    "has:stationary": [
+      0.0,
+      1.0
+    ],
+    "has:moving": [
+      0.0,
+      1.0
+    ],
+    "any:moving:vx:0:0.6": [
+      0.0,
+      1.0
+    ]
+  },
+  "point_estimates_not_certificates": {
+    "has:stationary": 0.02114702191867329,
+    "has:moving": 0.9788529780813277,
+    "any:moving:vx:0:0.6": 0.978056349090374
+  },
+  "simultaneous_confidence": 0.99,
+  "samples": 1000000,
+  "seed": 20261021,
+  "proposal_envelope": 0.002790454458145817,
+  "maximum_observed_scaled_weight": 1.0151086203214471e-05,
+  "dual_envelope_requested": true,
+  "represented_source_count_tail_upper": 0.0,
+  "maximum_sampled_source_count": 1,
+  "construction_seconds": 0.8365077909998035,
+  "seconds": 19.614850184999796,
+  "arithmetic": "float64 sampling, rendering and concentration bounds; not formal arithmetic certification",
+  "confidence_scope": "fixed-budget draws conditional on exact stated sampling/evaluation/model assumptions",
+  "full_objective_complete": false,
+  "manifest": {
+    "exposures": [
+      {
+        "id": "e0",
+        "time": -1.0,
+        "instrument": "a",
+        "data": [
+          [
+            -0.6457719773107179,
+            0.8262263127464495,
+            -1.0326042339876542
+          ],
+          [
+            2.2533875008851822,
+            3.2328035388091174,
+            0.3520923719820976
+          ],
+          [
+            0.8296289760689319,
+            0.6894776157470955,
+            1.2546920373968784
+          ]
+        ],
+        "psf_sigma": 0.65,
+        "noise_sigma": 0.6,
+        "parallax_x": -0.8414709848078965,
+        "parallax_y": 0.5403023058681398
+      },
+      {
+        "id": "e1",
+        "time": 0.0,
+        "instrument": "a",
+        "data": [
+          [
+            -0.5034631912433964,
+            -0.3228341059362342,
+            0.3805411048229277
+          ],
+          [
+            0.47052680659540347,
+            2.5450051033243244,
+            1.469715533887286
+          ],
+          [
+            0.8292130723526527,
+            1.016483147729655,
+            0.2429435536188526
+          ]
+        ],
+        "psf_sigma": 0.65,
+        "noise_sigma": 0.6,
+        "parallax_x": 0.0,
+        "parallax_y": 1.0
+      },
+      {
+        "id": "e2",
+        "time": 1.0,
+        "instrument": "b",
+        "data": [
+          [
+            0.3568831506197735,
+            1.1922904193159127,
+            -0.4687025549505833
+          ],
+          [
+            -0.8319003558023439,
+            1.283408271726507,
+            2.2666993943784335
+          ],
+          [
+            0.22940792184837244,
+            0.4423340674826899,
+            0.8429639715516731
+          ]
+        ],
+        "psf_sigma": 0.65,
+        "noise_sigma": 0.6,
+        "parallax_x": 0.8414709848078965,
+        "parallax_y": 0.5403023058681398
+      }
+    ],
+    "source_types": [
+      {
+        "name": "stationary",
+        "kind": "star",
+        "parameters": {
+          "x": [
+            -1,
+            1
+          ],
+          "y": [
+            0,
+            0
+          ],
+          "flux": [
+            2,
+            12
+          ]
+        }
+      },
+      {
+        "name": "moving",
+        "kind": "star",
+        "parameters": {
+          "x": [
+            -1,
+            1
+          ],
+          "y": [
+            0,
+            0
+          ],
+          "flux": [
+            2,
+            12
+          ],
+          "vx": [
+            -0.6,
+            0.6
+          ]
+        }
+      }
+    ],
+    "nuisance": {
+      "b_dx": [
+        -0.3,
+        0.3
+      ]
+    },
+    "count_prior": {
+      "probabilities": [
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "proposal_report_sha256": "29cb9f76d4a72463ee54258eaa24bd2bdf7fb0bbcfd9441d823141373a1b2660"
+}

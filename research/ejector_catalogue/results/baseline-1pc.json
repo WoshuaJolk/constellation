@@ -1,0 +1,44 @@
+{
+  "tool": "find_ejector_tighter_radius",
+  "parent_catalogue_size": 38889,
+  "searched_member_union": 69,
+  "parent_radius_pc": 10.0,
+  "radius_pc": 1.0,
+  "candidates": [],
+  "search_counts": {
+    "group_segment_evaluations": 0,
+    "broad_phase_pair_checks": 16749,
+    "segments": 100
+  },
+  "completeness": "Full parent catalogue, unchanged sampled piecewise-linear paths/support/group size/time range; tighter events are a subset of parent events",
+  "significance": null,
+  "parent_numerics": {
+    "half_step_max_position_difference_pc": 0.018643924140778464,
+    "max_midpoint_chord_error_pc": 0.06874067799113981
+  },
+  "numerical_diagnostics_within_tenth_of_new_radius": true,
+  "provenance": {
+    "magictools": "0.6.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "inputs": [
+      {
+        "path": "/workspace/scratch/ejector/final-baseline/tracebacks/complete.json",
+        "sha256": "f2ba0b3fde9b4f79971dd7332ff674219ba9f7779ebcefcf09949acfa921ad7c"
+      },
+      {
+        "path": "/workspace/scratch/ejector/final-baseline/tracebacks/lookback_myr.npy",
+        "sha256": "5115f9e53ff303b4c2bbf8a7f1fcca7d3ea44c9a87c9be653f13c7eba13b3c67"
+      },
+      {
+        "path": "/workspace/scratch/ejector/final-baseline/tracebacks/source_ids.npy",
+        "sha256": "7314c797cbe3b0a8d7dd30b7c5e4a35c2b396e8d597ea9fcd8c73ab6bef8e847"
+      },
+      {
+        "path": "/workspace/scratch/ejector/final-baseline/tracebacks/states.npy",
+        "sha256": "4a17742e2fed223652a14bedd279046b1d2f9b3d76c9629aed17264425ae9364"
+      }
+    ]
+  }
+}

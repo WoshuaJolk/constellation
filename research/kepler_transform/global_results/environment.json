@@ -1,0 +1,40 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux",
+  "architecture": "x86_64",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "astropy": "8.0.2",
+    "python-flint": "0.8.0",
+    "finufft": "2.5.1",
+    "numba": "0.68.0",
+    "mpmath": "1.3.0",
+    "pytest": "9.1.1"
+  },
+  "blas_threads_for_runs": 1,
+  "finufft_threads": 1,
+  "arb_work_precision_bits": 128,
+  "full_suite": {
+    "passed": 320,
+    "skipped": 1,
+    "seconds": 42.32
+  },
+  "parent_commit": "1f8449742ec7be58a871229ff8581f1605bf5377",
+  "interval_proof_replay": {
+    "proofs": 9,
+    "analysis_root_cells": 1200,
+    "executions_checked": 4
+  },
+  "wheel_build": {
+    "modules_present": [
+      "source_butterfly",
+      "global_kepler",
+      "complex_source_certificate",
+      "certify_global",
+      "chebyshev_moments",
+      "sundman"
+    ],
+    "sha256": "6508454f75ec77fec7184918eefde153eb818a0787320b3507f01fbe300e88cc"
+  }
+}

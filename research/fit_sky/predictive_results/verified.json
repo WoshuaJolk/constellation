@@ -1,0 +1,34 @@
+{
+  "valid": true,
+  "replayed": true,
+  "leaves": 38,
+  "roots": 3,
+  "recomputed_outward_summary": {
+    "scaled_evidence": [
+      1.9918495844330995e-60,
+      0.5000000000000001
+    ],
+    "log_evidence": [
+      -812.8215039371438,
+      -676.0486091845494
+    ],
+    "relative_evidence_gap": 2.5102297076428342e+59,
+    "queries": {
+      "count=0": [
+        3.983699168866199e-60,
+        1.0
+      ],
+      "has:stationary": [
+        0.0,
+        1.0
+      ],
+      "has:moving": [
+        0.0,
+        1.0
+      ]
+    },
+    "source_count_tail_prior_upper": 0.0,
+    "source_count_tail_posterior_upper": 0.0
+  },
+  "full_objective_complete": false
+}

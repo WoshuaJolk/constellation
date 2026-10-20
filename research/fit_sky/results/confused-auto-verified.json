@@ -1,0 +1,35 @@
+{
+  "valid": true,
+  "replayed": true,
+  "leaves": 749,
+  "roots": 3,
+  "recomputed_outward_summary": {
+    "scaled_evidence": [
+      0.004346636744989561,
+      0.038345098988102705
+    ],
+    "log_evidence": [
+      -8.249670841326557,
+      -6.072446502585693
+    ],
+    "relative_evidence_gap": 7.82178595492336,
+    "queries": {
+      "count=0": [
+        0.0014041961957220375,
+        0.012387518277377491
+      ],
+      "count=1": [
+        0.09483438912679117,
+        0.8470550952823452
+      ],
+      "count=2": [
+        0.14244494379077585,
+        0.9037322051115999
+      ]
+    },
+    "source_count_tail_prior_upper": 0.0,
+    "source_count_tail_posterior_upper": 0.0
+  },
+  "full_objective_complete": false,
+  "replay_seconds": 25.111465207000037
+}

@@ -1,0 +1,1 @@
+https://vizier.cds.unistra.fr/viz-bin/votable?-source=J%2FA%2BA%2F673%2FA114%2Fclusters&-out.all=1&-out.max=unlimited

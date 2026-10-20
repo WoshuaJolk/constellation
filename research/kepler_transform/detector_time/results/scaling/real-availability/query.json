@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "regions": [
+    {
+      "ra_deg": 180.0,
+      "dec_deg": 30.0,
+      "width_deg": 0.01
+    }
+  ],
+  "start_mjd_utc": 58511.38,
+  "end_mjd_utc": 58519.38,
+  "filtercode": "zr",
+  "max_exposures": 1000
+}
