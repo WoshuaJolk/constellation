@@ -5,12 +5,34 @@ from contextlib import redirect_stdout
 from copy import deepcopy
 import hashlib
 import importlib.util
+from importlib import import_module
 import json
 import math
 from pathlib import Path
 import sys
 
 from .agent_contract import TOOLS, schema
+from .cli import MANIFEST_COMMANDS, DEMO_COMMANDS
+from . import __version__
+
+
+ARCHIVE_COMMANDS = {
+    "capabilities": "Describe archive providers, query modes and credentials",
+    "coverage": "Map imaging datasets to archive adapters and gaps",
+    "search": "Search archives using a JSON manifest",
+    "status": "Inspect an archive search run",
+    "audit": "Assess archive coverage evidence and receipt integrity",
+    "discover": "Discover candidate archive services in the VO registry",
+    "links": "Resolve public archive DataLink product references",
+    "credentials": "Manage private archive credential profiles",
+    "merge": "Deduplicate archive frame manifests",
+    "serve": "Run the optional local archive search API",
+}
+RESEARCH_COMMANDS = {
+    "fold-chart": "research.kepler_transform.chart_search",
+    "fit-sky": "research.fit_sky.cli",
+    "fit-sky-stream": "research.fit_sky.sequential_cli",
+}
 
 
 class InputError(ValueError):
@@ -237,8 +259,18 @@ FIT_OPTIONS = ("particles", "sweeps", "seed", "pixel_block", "max_stages", "gibb
 
 
 def parser():
-    p = Parser(description="JSON contracts for Kepler and FitSky. Help is text; operational output is one JSON object.")
+    p = Parser(prog="constellation", description="Archive discovery, Kepler and FitSky for agents. See each command's help for its output contract.")
+    p.add_argument("--version", action="version", version=__version__)
     subs = p.add_subparsers(dest="command", required=True)
+    subs.add_parser("frames", help="All archive commands, including archive schema inspection")
+    for name, help_text in ARCHIVE_COMMANDS.items():
+        subs.add_parser(name, help=help_text)
+    for name in MANIFEST_COMMANDS:
+        subs.add_parser(name, help="Run the " + name + " manifest tool")
+    for name in DEMO_COMMANDS:
+        subs.add_parser(name, help="Generate and run the " + name + " experiment")
+    for name in RESEARCH_COMMANDS:
+        subs.add_parser(name, help="Run the " + name + " research interface")
     subs.add_parser("list", help="Discover tools and scientific limitations")
     subs.add_parser("doctor", help="Check optional dependencies without running science")
     s = subs.add_parser("schema", help="Return a tool's JSON Schema in result")
@@ -273,16 +305,35 @@ def artifacts(directory):
 
 
 def main(argv=None):
+    argv = list(sys.argv[1:] if argv is None else argv)
     envelope = {"schema_version": 1, "ok": False}
     owned = None
     executing = False
     try:
+        if argv and (argv[0] == "frames" or argv[0] in ARCHIVE_COMMANDS):
+            from .frames.cli import main as frames_main
+            if argv[0] == "frames":
+                return frames_main(argv[1:], prog="constellation frames")
+            return frames_main(argv)
+        if argv and argv[0] in (*MANIFEST_COMMANDS, *DEMO_COMMANDS):
+            from .cli import main as manifest_main
+            return manifest_main(argv, prog="constellation") or 0
+        if argv and argv[0] in RESEARCH_COMMANDS:
+            envelope.update(command=argv[0])
+            entry = import_module(RESEARCH_COMMANDS[argv[0]]).main
+            return entry(argv[1:], prog="constellation " + argv[0]) or 0
         args = parser().parse_args(argv)
         envelope.update(command=args.command)
         if hasattr(args, "tool"):
             envelope.update(tool=args.tool, scientific_scope=TOOLS[args.tool]["accuracy"], full_objective_complete=False)
         if args.command == "list":
-            result = {"tools": TOOLS, "exit_codes": {"0": "execution completed; inspect scientific status", "2": "input or usage error",
+            result = {"tools": TOOLS, "commands": {
+                "archive": dict(ARCHIVE_COMMANDS, **{"frames inspect": "Inspect an archive service schema"}),
+                "manifests": list(MANIFEST_COMMANDS), "demos": list(DEMO_COMMANDS),
+                "research": list(RESEARCH_COMMANDS),
+                "science": ["list", "doctor", "schema", "example", "validate", "run", "inspect"],
+                "help": "constellation <command> --help; each tool retains its output and exit-code contract",
+            }, "exit_codes": {"0": "execution completed; inspect scientific status", "2": "input or usage error",
                        "3": "missing dependency", "4": "execution failed/refused", "130": "interrupted"}}
         elif args.command == "doctor":
             result = {"tools": {name: dependencies(name) for name in TOOLS}, "install": "pip install '.[research,agent]'"}

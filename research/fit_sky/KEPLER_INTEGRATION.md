@@ -158,5 +158,5 @@ pip install '.[research,test]'
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m research.fit_sky.orbital_experiments /tmp/orbital-fixed-new
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m research.fit_sky.orbital_continuous_control /tmp/orbital-continuous-new
 pytest -q tests/test_fit_sky.py tests/test_fit_sky_noise_floor.py tests/test_fit_sky_sequential.py tests/test_fit_sky_orbital.py
-magictools-fit-sky-stream research/fit_sky/orbital_results/continuous/input.json /tmp/orbital-stream-new --particles 2048 --sweeps 16
+constellation fit-sky-stream research/fit_sky/orbital_results/continuous/input.json /tmp/orbital-stream-new --particles 2048 --sweeps 16
 ```

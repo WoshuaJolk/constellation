@@ -236,7 +236,7 @@ Install research dependencies and run the focused checks:
 ```sh
 pip install '.[test,research]'
 OPENBLAS_NUM_THREADS=1 python -m pytest -q tests/test_fit_sky.py
-magictools-fit-sky examples/fit-sky.json /tmp/new-fit-sky --verify
+constellation fit-sky examples/fit-sky.json /tmp/new-fit-sky --verify
 ```
 
 The [interface guide](../../docs/fit-sky.md) documents model inputs, outputs,

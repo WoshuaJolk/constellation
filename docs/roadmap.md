@@ -45,7 +45,7 @@ complete numerical certification still prevent full completion.
 The [observer-chart campaign](../research/kepler_transform/chart_results/README.md)
 subsequently resolves the declared broad geometry domains, including the widest
 stress case with quartic outer interpolation and fifth-derivative bounds.
-It ships `magictools-fold-chart`, a finite-query adjoint/inverse, and a
+It ships `constellation fold-chart`, a finite-query adjoint/inverse, and a
 nonperiodic Gaussian detector adapter checked on three real ZTF exposures.
 Assess performance against its **compiled direct** and optimized polynomial
 baselines, not only the earlier Python propagation baseline. General outer

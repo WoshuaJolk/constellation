@@ -88,11 +88,11 @@ def run(manifest_path, output_path):
     return report
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+def main(argv=None, *, prog=None):
+    parser = argparse.ArgumentParser(prog=prog, description=__doc__)
     parser.add_argument("manifest", type=Path)
     parser.add_argument("output", type=Path)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     try:
         report = run(args.manifest, args.output)
     except (ValueError, KeyError, OSError) as failure:

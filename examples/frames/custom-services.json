@@ -1,0 +1,20 @@
+{
+  "mode": "field",
+  "ra": 286.4842,
+  "dec": -0.0352,
+  "radius": 0.01,
+  "start": "2023-05-20",
+  "end": "2023-05-22",
+  "providers": ["alma", "vo:public-images"],
+  "services": {
+    "vo:public-images": {
+      "name": "User-supplied ObsCore endpoint",
+      "protocol": "obscore",
+      "endpoint": "https://dc.g-vo.org/tap/sync",
+      "table": "ivoa.obscore",
+      "productTypes": ["image", "cube"],
+      "includeUnknownAxes": true
+    }
+  },
+  "timeoutSeconds": 600
+}

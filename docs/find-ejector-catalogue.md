@@ -19,7 +19,7 @@ raw data, provenance, and reproducible searches. Schema 1 remains supported.
 
 ## Prepare Gaia observations
 
-`magictools ejector_prepare prepare.json` writes a joint-draw NPZ and an audit
+`constellation ejector_prepare prepare.json` writes a joint-draw NPZ and an audit
 JSON. No network request is made by this command.
 
 ```json
@@ -99,7 +99,7 @@ VOTable archive results must have successful QUERY_STATUS and no OVERFLOW.
 }
 ```
 
-Run `magictools find_ejector search.json -o result.json`. Paths resolve relative
+Run `constellation find_ejector search.json -o result.json`. Paths resolve relative
 to the manifest. Output destinations must be new. The NPZ contains:
 
 - `states_pc_kms`: shape `(samples, stars, 6)`, positions in pc and velocities

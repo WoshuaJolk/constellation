@@ -210,7 +210,7 @@ def test_combined_products_do_not_make_false_ephemeris_exclusions():
 
 def test_inventory_maps_every_entry_without_claiming_full_coverage():
     report=coverage([{'provider':'euclid','status':'ok'}])
-    assert report['datasetCount']==51 and report['providerCount']==39
+    assert report['datasetCount']==51 and report['providerCount']==len(PROVIDERS)
     assert not report['allAstronomicalObservationsCovered']
     assert all(set(r['providers'])<=set(PROVIDERS) for r in report['datasets'])
     assert next(r for r in report['datasets'] if r['dataset']=='INT WFC')['providerQueryStates']['iphas']==['not queried']

@@ -1,13 +1,30 @@
 # Constellation astronomy
 
+All installed tools are available under **`constellation`**. Run
+`constellation list` for the machine-readable command catalogue or
+`constellation --help` for help, including archive, manifest and research tools.
+
+Install the full Python toolset directly from this public repository (Python 3.11+):
+
+```sh
+pipx install 'const-ellation[research,agent] @ git+https://github.com/WoshuaJolk/constellation.git@main'
+constellation list
+```
+
+The distribution is named `const-ellation`; the Python import namespace remains
+`magictools` for compatibility. See the [installation guide](docs/agent-cli.md)
+when upgrading from the former distribution.
+
 **For agents:** [`constellation`](docs/agent-cli.md) offers JSON discovery,
 schemas, runnable examples, input validation, execution and checkpoint inspection
 for Kepler and FitSky. Install with `pip install '.[research,agent]'`, then run
 `constellation list`. Scientific limitations remain explicit in every run.
 
-**Archive frame discovery for agents:** [`magictools frames`](docs/frames.md)
-accepts fields, orbit families, MPC80 arcs and ephemerides, searches 17 archive
-connections, and saves resumable query receipts plus CSV/JSON request lists.
+**Archive frame discovery for agents:** [`constellation`](docs/frames.md)
+accepts fields, orbit families, MPC80 arcs and ephemerides, supports 49 built-in
+providers plus configurable VO services, and saves resumable query receipts
+plus CSV/JSON request lists. Start with `constellation capabilities` and
+`constellation search --help`.
 It runs locally as a CLI and supports private credential profiles for archives
 such as HSC-SSP.
 
@@ -32,7 +49,7 @@ The subsequent [observer-chart campaign](research/kepler_transform/chart_results
 adds adaptive continuous coverage, a higher-order construction that resolves
 the widest declared stress domain, a finite-detector likelihood adapter tested
 on real ZTF pixels, and an installed experimental command:
-`magictools-fold-chart`. Its benchmarks include a compiled direct-orbit solver
+`constellation fold-chart`. Its benchmarks include a compiled direct-orbit solver
 and an optimized same-geometry comparison. See the
 [library, derivation and manifest guide](research/kepler_transform/chart_construction.md).
 Full fast numerical certification and economical general outer-coordinate
@@ -125,11 +142,11 @@ cd constellation
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[test]'
-magictools demo demo-output
-magictools orbit_demo orbit-demo-output
-magictools floor_demo floor-demo-output
-magictools ejector_demo ejector-demo-output
-magictools fold_demo fold-demo-output
+constellation demo demo-output
+constellation orbit_demo orbit-demo-output
+constellation floor_demo floor-demo-output
+constellation ejector_demo ejector-demo-output
+constellation fold_demo fold-demo-output
 python -m pytest -q
 # Optional live archive experiment; downloads real ZTF images:
 python examples/ztf_workflow.py new-ztf-output
@@ -148,23 +165,23 @@ The new `orbit_demo` starts from a JPL Horizons Ceres state, creates four orbit 
 Run the tools separately:
 
 ```bash
-magictools force_track demo-output/images.json -o forced.json
-magictools dig_floor demo-output/images.json --alpha 0.01 -o joint.json
-magictools learn_null demo-output/nulls.json -o posterior.json
+constellation force_track demo-output/images.json -o forced.json
+constellation dig_floor demo-output/images.json --alpha 0.01 -o joint.json
+constellation learn_null demo-output/nulls.json -o posterior.json
 
-magictools map_cover orbit-demo-output/orbits.json -o coverage.json \
+constellation map_cover orbit-demo-output/orbits.json -o coverage.json \
   --photometry-output tracks.json --planning-output plan.json
-magictools dig_floor tracks.json -o orbit-search.json
-magictools learn_null plan.json -o next-exposure.json
-magictools weigh_stamp orbit-demo-output/moving-source-input.json -o stamp-evidence.json
-magictools prove_floor floor-demo-output/faint-input.json -o detection-bound.json
-magictools find_ejector ejector-demo-output/input.json -o origins.json
-magictools learn_null examples/null-calibration.json -o calibrated-nulls.json
-magictools map_complete examples/selection.json -o exact-selection.json
-magictools inject_all examples/selection.json -o simulated-selection.json
-magictools match_all examples/matching.json -o assignments.json
-magictools verify_match assignments.json -o verified.json
-magictools fold_kepler fold-demo-output/input.json -o folded-search.json
+constellation dig_floor tracks.json -o orbit-search.json
+constellation learn_null plan.json -o next-exposure.json
+constellation weigh_stamp orbit-demo-output/moving-source-input.json -o stamp-evidence.json
+constellation prove_floor floor-demo-output/faint-input.json -o detection-bound.json
+constellation find_ejector ejector-demo-output/input.json -o origins.json
+constellation learn_null examples/null-calibration.json -o calibrated-nulls.json
+constellation map_complete examples/selection.json -o exact-selection.json
+constellation inject_all examples/selection.json -o simulated-selection.json
+constellation match_all examples/matching.json -o assignments.json
+constellation verify_match assignments.json -o verified.json
+constellation fold_kepler fold-demo-output/input.json -o folded-search.json
 ```
 
 Omit `-o` for JSON on stdout. Output files must be new. Errors return exit code 2. `python -m magictools` is equivalent to `magictools`. Reports contain the software versions and SHA-256 hashes of every input file, including the manifest.
@@ -226,11 +243,11 @@ predictive calculation. Broad mixed scenes remain unresolved: **the full FitSky 
 not achieved**. The original rubric,
 failed attempts, source snapshots, and independent controls are retained.
 
-The optional research command is `magictools-fit-sky`; see its
+The optional research command is `constellation fit-sky`; see its
 [model and interface guide](docs/fit-sky.md). This work adds no modifications to
 the existing Kepler implementation.
 
-`magictools-fit-sky-stream` adds resumable, approximate inference across
+`constellation fit-sky-stream` adds resumable, approximate inference across
 exposure sequences, with unknown source counts, shared calibration, conditional
 flux updates and split/merge moves. The
 [30-exposure mixed-scene follow-up](research/fit_sky/sequential_results/README.md)

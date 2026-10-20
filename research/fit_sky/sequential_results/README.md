@@ -16,7 +16,7 @@ stars, parallax, variability, extended sources, unknown source count, a shared
 astrometric offset and gain uncertainty. The Poisson source-count prior is
 unbounded; the old enumeration `max_count=3` is not used as a cap.
 
-The executable `magictools-fit-sky-stream` starts from that complete prior and
+The executable `constellation fit-sky-stream` starts from that complete prior and
 revises catalogues as exposures arrive. It evaluates Gaussian or Poisson
 likelihoods in pixel blocks and marginalizes shared Gaussian linear nuisance
 jointly. Checkpoints retain the catalogue population, weights, RNG, inputs

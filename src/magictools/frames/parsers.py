@@ -70,6 +70,9 @@ def votable(text, stats):
     root = ET.fromstring(text)
     local = lambda e: e.tag.rsplit("}", 1)[-1]
     infos = [e for e in root.iter() if local(e) == "INFO" and e.get("name", "").upper() == "QUERY_STATUS"]
+    stats.setdefault("queryStatuses", []).extend(info.get("value", "").upper() for info in infos)
+    if not infos:
+        stats["missingQueryStatusResponses"] = stats.get("missingQueryStatusResponses", 0) + 1
     for info in infos:
         if info.get("value", "").upper() == "ERROR":
             raise ValueError("VO query error: " + "".join(info.itertext()).strip()[:500])
@@ -87,7 +90,15 @@ def votable(text, stats):
         t = parse_single_table(io.BytesIO(text.encode())).to_table()
         for record in t:
             stats["received"] += 1
-            yield {k: str(record[k]) if not getattr(record[k], "mask", False) else "" for k in t.colnames}
+            def cell(value):
+                import numpy as np
+                mask = np.asarray(getattr(value, "mask", False))
+                if mask.all():
+                    return ""
+                if np.ndim(value):
+                    return " ".join("" if m else str(v) for v, m in zip(np.asarray(value).flat, np.broadcast_to(mask, np.shape(value)).flat))
+                return value.decode() if isinstance(value, bytes) else str(value)
+            yield {k: cell(record[k]) for k in t.colnames}
         return
     for row in table.iter():
         if local(row) != "TR":

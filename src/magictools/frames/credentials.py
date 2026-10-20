@@ -61,10 +61,13 @@ class Credentials:
 
     def status(self):
         output = {}
-        for name, fields in ENV.items():
+        for name in sorted(set(ENV) | set(self.profiles)):
+            fields = ENV.get(name, {})
             values = self.get(name)
             output[name] = {"configured": bool(values.get("token") or values.get("cookie") or (values.get("username") and values.get("password"))),
                             "environmentVariables": fields, "validatedWithArchive": False}
+            if self.profiles.get(name, {}).get("allowedOrigins"):
+                output[name]["allowedOrigins"] = self.profiles[name]["allowedOrigins"]
         return output
 
 

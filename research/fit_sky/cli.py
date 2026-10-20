@@ -9,8 +9,8 @@ from .integrate import infer, verify
 from .sampling import sample
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+def main(argv=None, *, prog=None):
+    parser = argparse.ArgumentParser(prog=prog, description=__doc__)
     parser.add_argument("manifest", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--max-leaves", type=int, default=4096)
@@ -30,7 +30,7 @@ def main():
     parser.add_argument("--marginalize-flux", action="store_true",
                         help="Analytically integrate one continuous flux in each Gaussian statistical draw")
     parser.add_argument("--verify", action="store_true")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     if args.output.exists():
         parser.error("Output must be a new directory")
     if args.noise_floor and (not (args.statistical_samples or args.samples) or args.statistical_prior):

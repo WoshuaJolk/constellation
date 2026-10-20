@@ -1,6 +1,6 @@
 # Fit common origins and repeated stellar launches
 
-`magictools ejector_fit manifest.json -o fit.json` finds **compatible fitted
+`constellation ejector_fit manifest.json -o fit.json` finds **compatible fitted
 encounters** in observed parallax, proper motion and radial velocity. It addresses
 a weakness of a small Monte Carlo search: a physically compatible compact
 encounter may occupy too little uncertainty volume to be sampled. A low sampled

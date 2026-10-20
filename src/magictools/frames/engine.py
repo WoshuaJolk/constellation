@@ -11,6 +11,7 @@ import time
 import uuid
 
 from .adapters import Job, execute, stats
+from .assessment import evidence, observe, query_assessment, summarize
 from .credentials import Credentials
 from .geometry import windows
 from .inventory import coverage
@@ -37,7 +38,7 @@ def plan(x):
             unavailable.append({"name": "Supplied ephemeris", "hypothesis": label,
                                 "reason": f"Track covers only {iso(min(times))} through {iso(max(times))}; requested dates outside this interval are unqueried."})
     for provider in x["providers"]:
-        meta = PROVIDERS[provider]
+        meta = PROVIDERS.get(provider) or {"name": x["services"][provider].get("name", provider), "modes": ["field", "ephemeris"]}
         can_field = "ephemeris" in meta["modes"] and provider != "ssois"
         if can_field and field_windows:
             jobs.extend(Job(provider, w["label"], window=w) for w in field_windows)
@@ -55,6 +56,10 @@ def plan(x):
             for j in jobs for instrument in (NOIRLAB_INSTRUMENTS.get(j.provider, [None]) if j.provider != "noirlab" else [None])]
     jobs = [Job(j.provider, j.hypothesis, j.window, j.orbit, {"instrument": inst}) if inst else j
             for j in jobs for inst in (KOA_INSTRUMENTS if j.provider == "koa" else [None])]
+    # A custom endpoint is part of the persisted scientific job identity.
+    for job in jobs:
+        if job.provider in x.get("services", {}):
+            job.params["service"] = x["services"][job.provider]
     for job in jobs:
         job.id = job_id(job)
     return jobs, unavailable
@@ -73,6 +78,7 @@ def connect(directory):
 
 def _query(job, x, directory, credentials, transport_factory):
     s = stats()
+    counts = evidence()
     attempt = uuid.uuid4().hex
     folder = Path(directory) / "queries" / job.id / attempt
     folder.mkdir(parents=True, exist_ok=True, mode=0o700)
@@ -86,6 +92,7 @@ def _query(job, x, directory, credentials, transport_factory):
             for f in execute(job, x, transport, s):
                 stream.write(stable(f) + "\n")
                 receipt["count"] += 1
+                observe(counts, f)
         if s.get("incomplete"):
             receipt.update(status="limited", message=s["incomplete"])
         elif s.get("partial"):
@@ -103,6 +110,10 @@ def _query(job, x, directory, credentials, transport_factory):
         output.replace(folder / "frames.ndjson")
     receipt.update(receivedRows=s["received"], rejectedRows=s["rejected"], excludedRows=s["excluded"],
                    warnings=s["warnings"], requests=transport.calls, finishedAt=time.time())
+    receipt["canSplitTime"] = s.get("canSplitTime", True)
+    receipt["coverageAssessment"] = query_assessment(receipt, counts, s)
+    if s.get("service"):
+        receipt["service"] = s["service"]
     if s.get("remoteJob"):
         receipt["remoteJob"] = s["remoteJob"]
     if transport.calls:
@@ -172,7 +183,7 @@ def _run_locked(x, directory, resume, credentials, emit, transport_factory, retr
                                     f = merge_frames(json.loads(previous[0]), f)
                                 db.execute("INSERT OR REPLACE INTO records VALUES (?,?,?)", (job.id, f["key"], stable(f)))
                     # Split actual service overflow, never arbitrary first-N client rows.
-                    if receipt["status"] == "limited" and job.window and job.window["end"]-job.window["start"] > 1:
+                    if receipt["status"] == "limited" and receipt.get("canSplitTime", True) and job.window and job.window["end"]-job.window["start"] > 1:
                         midpoint = (job.window["start"]+job.window["end"])/2
                         for begin, end in [(job.window["start"], midpoint), (midpoint, job.window["end"])]:
                             child = Job(job.provider, job.hypothesis, {**job.window, "start": begin, "end": end}, job.orbit, job.params)
@@ -214,7 +225,8 @@ def result_from_db(db):
     frames = sorted(merged.values(), key=lambda f: (f["startMjd"] if f["startMjd"] is not None else math_inf(), f["key"]))
     return {"version": 2, "queriedAt": time.time(), "input": json.loads(meta["input"]),
             "status": "complete" if all(c["status"] in {"ok", "split"} for c in checks) and checks and not json.loads(meta["unqueried"]) else "incomplete",
-            "frames": frames, "checks": checks, "datasetCoverage": coverage(checks), "unqueried": json.loads(meta["unqueried"]), "limitations": LIMITATIONS}
+            "frames": frames, "checks": checks, "datasetCoverage": coverage(checks), "coverageAssessment": summarize(checks, json.loads(meta["unqueried"])),
+            "unqueried": json.loads(meta["unqueried"]), "limitations": LIMITATIONS}
 
 
 def math_inf():
@@ -260,4 +272,5 @@ def merge_manifests(results):
             frames[frame["key"]] = merge_frames(frames[frame["key"]], frame) if frame["key"] in frames else frame
     return {"version": 2, "input": [r["input"] for r in results], "status": "complete" if all(r.get("status") == "complete" for r in results) else "incomplete",
             "frames": list(frames.values()), "checks": checks, "limitations": LIMITATIONS,
+            "datasetCoverage": coverage(checks), "coverageAssessment": summarize(checks, [u for r in results for u in r.get("unqueried", [])]),
             "unqueried": [u for r in results for u in r.get("unqueried", [])]}

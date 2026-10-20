@@ -1,6 +1,7 @@
 """Spherical geometry for exposure-time matching; no orbital propagation."""
 import bisect
 import math
+import re
 from .model import mjd
 
 RAD = math.pi / 180
@@ -108,8 +109,10 @@ def polygon_intersects(ra, dec, radius, corners):
 
 
 def region_intersects(region, ra, dec, radius):
-    if not region:
+    if not isinstance(region, str) or not region:
         return None
+    if re.match(r"^(CIRCLE|POLYGON)\s*\(", region.strip(), re.I):
+        region = re.sub(r"[(),'\"]", " ", region)
     tokens = region.strip().split()
     if not tokens or tokens[0].upper() not in {"POLYGON", "CIRCLE"}:
         return None
@@ -120,8 +123,12 @@ def region_intersects(region, ra, dec, radius):
     if not all(math.isfinite(v) for v in values):
         return None
     if tokens[0].upper() == "CIRCLE" and len(values) == 3:
+        if not -90 <= values[1] <= 90 or not 0 <= values[2] <= 180:
+            return None
         return distance(ra, dec, *values[:2]) <= radius + values[2]
     if len(values) >= 6 and len(values) % 2 == 0:
+        if any(not -90 <= v <= 90 for v in values[1::2]):
+            return None
         return polygon_intersects(ra, dec, radius, list(zip(values[::2], values[1::2])))
     return None
 
@@ -146,7 +153,14 @@ def select(frame, window, x):
         if frame.get("endMjd") and frame["endMjd"] - when > 1:
             frame["match"] = "candidate: combined product spans multiple dates"
             return True
-        when += (frame.get("exposureSeconds") or 0) / 172800
+        begin = when
+        end = frame.get("endMjd")
+        if end is None:
+            end = begin + (frame.get("exposureSeconds") or 0)/86400
+        if end < begin:
+            frame["match"] = "candidate: inconsistent observation interval"
+            return True
+        when = (begin+end)/2
         predicted = interpolate(window["points"], when)
         if predicted is None:
             frame["match"] = "candidate: exposure midpoint outside ephemeris"
@@ -154,11 +168,27 @@ def select(frame, window, x):
         ra, dec = predicted["ra"], predicted["dec"]
         radius = x["radius"] + (predicted["sigmaArcsec"] * x["sigmaMultiplier"] + x["eellipse"]) / 3600
         frame["predictions"] = [{"hypothesis": window["label"], "mjdUtc": when, **predicted, "radiusDegrees": radius, "observer": x["observer"]}]
+        if begin < window["points"][0]["mjd"] or end > window["points"][-1]["mjd"]:
+            frame["match"] = "candidate: exposure extends beyond supplied ephemeris window"
+            return True
+        # A fast object can enter a detector during an exposure even when its
+        # midpoint is outside. Enclose the entire piecewise great-circle trail.
+        samples = [interpolate(window["points"], begin),
+                   *[p for p in window["points"] if begin < p["mjd"] < end],
+                   interpolate(window["points"], end)]
+        motion = max(distance(ra, dec, p["ra"], p["dec"]) for p in samples)
+        motion += max(distance(a["ra"], a["dec"], b["ra"], b["dec"]) for a, b in zip(samples, samples[1:]))/2
+        radius = min(180, motion + x["radius"] + (max(p["sigmaArcsec"] for p in samples)*x["sigmaMultiplier"]+x["eellipse"])/3600)
+        frame["predictions"][0]["exposureEnvelopeRadiusDegrees"] = radius
+        frame["predictions"][0]["exposureStartMjd"] = begin
+        frame["predictions"][0]["exposureEndMjd"] = end
     else:
         ra, dec, radius = window["ra"], window["dec"], window["radius"]
     hit = region_intersects(frame.get("footprint"), ra, dec, radius)
     if hit is not None:
         frame["match"] = "exposure-time footprint intersection" if "points" in window else "footprint intersection"
+        if "points" in window and motion > 1e-10:
+            frame["match"] = "candidate: exposure-track envelope intersects footprint; verify trail"
         return hit
     if frame.get("fovRadius") is not None and frame.get("ra") is not None and frame.get("dec") is not None:
         frame["match"] = "pointing-envelope candidate; detector footprint unverified"

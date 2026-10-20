@@ -4,9 +4,10 @@
 execution and inspection through one noninteractive command. Existing science
 commands and research engines are unchanged. Use Python 3.11 or later for the complete research installation below.
 
-The executable is now `constellation` (formerly `magictools-agent`). Reinstall
-or upgrade this checkout to refresh the console script. The Python distribution
-`magictools-astro` and import package `magictools` retain their existing names.
+The Python distribution is named `const-ellation`; the executable is `constellation`. The
+Python import package remains `magictools` for compatibility. If you installed
+the former `magictools-astro` distribution, uninstall it before installing the
+renamed package so that both distributions do not own the same files.
 
 From this checkout:
 
@@ -19,12 +20,41 @@ constellation list
 Install directly from GitHub:
 
 ```sh
-python -m pip install 'magictools-astro[research,agent] @ git+https://github.com/WoshuaJolk/constellation.git@main'
+python -m pip install 'const-ellation[research,agent] @ git+https://github.com/WoshuaJolk/constellation.git@main'
 ```
+
+Use the GitHub URL above until a registry release is published. The distribution
+name `const-ellation` is currently unregistered on PyPI and npm; this repository
+has not published a package to either registry. `pip install constellation`
+refers to an unrelated project.
 
 The equivalent module invocation is `python -m magictools.agent_cli`. No server,
 login, detector catalogue or interactive prompts are required. Science inputs
 are local files. The generated examples are synthetic, not discoveries.
+
+The same executable provides [archive discovery](frames.md) through
+`constellation search`, `constellation capabilities`, and `constellation frames`.
+Archive schema inspection uses `constellation frames inspect`; the scientific
+`constellation inspect` command and its JSON contract remain unchanged.
+
+## One command for every tool
+
+Run `constellation list` for a JSON catalogue of scientific tools and all
+command families, or `constellation --help` for command help.
+
+| Family | Examples |
+|---|---|
+| Archive discovery | `constellation search query.json --run-dir runs/search`, `constellation capabilities` |
+| Scientific agent contracts | `constellation run fitsky input.json --output runs/fit`, `constellation schema kepler-propagate` |
+| Manifest tools | `constellation force_track input.json`, `constellation fold_kepler input.json`, `constellation ztf_search query.json` |
+| Synthetic demonstrations | `constellation demo demo-output`, `constellation orbit_demo orbit-output` |
+| Research interfaces | `constellation fold-chart --help`, `constellation fit-sky --help`, `constellation fit-sky-stream --help` |
+
+The former `magictools` and `magictools-*` executables remain compatibility
+aliases. Use `constellation` for new integrations. Each delegated tool keeps
+its documented JSON, streaming and exit-code contract; the single-envelope
+contract below applies to the scientific agent operations. Research commands
+require the optional research dependencies.
 
 ## Choose the scientific operation
 

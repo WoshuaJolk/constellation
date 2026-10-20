@@ -7,8 +7,8 @@ from pathlib import Path
 from .sequential import SequentialFit
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+def main(argv=None, *, prog=None):
+    parser = argparse.ArgumentParser(prog=prog, description=__doc__)
     parser.add_argument("manifest", type=Path, help="JSON with scene and optional queries")
     parser.add_argument("output", type=Path, help="New output directory")
     parser.add_argument("--resume", type=Path, help="Completed checkpoint; existing data and priors must match")
@@ -24,7 +24,7 @@ def main():
     parser.add_argument("--exposure-batch", type=int, default=1)
     parser.add_argument("--stop-after", type=int, help="Stop at this exposure prefix and save a checkpoint")
     parser.add_argument("--catalogues", action="store_true", help="Include weighted approximate catalogues")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     if args.output.exists():
         parser.error("Output must be a new directory")
     if args.exposure_batch < 1:

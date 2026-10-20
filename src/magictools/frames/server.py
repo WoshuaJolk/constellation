@@ -76,7 +76,7 @@ def serve(directory, port, credentials):
                 (folder / "input.json").write_text(json.dumps(x, allow_nan=False))
                 active[job_id] = pool.submit(run, x, folder, credentials=credentials)
                 self.send_json({"id": job_id, "status": "queued", "pollUrl": f"/api/frames/jobs/{job_id}",
-                                "resumeCommand": f"magictools frames search {shlex.quote(str(folder / 'input.json'))} --run-dir {shlex.quote(str(folder))} --resume"}, 202)
+                                "resumeCommand": f"constellation search {shlex.quote(str(folder / 'input.json'))} --run-dir {shlex.quote(str(folder))} --resume"}, 202)
             except (ValueError, TypeError, KeyError) as error:
                 self.send_json({"error": str(error)}, 400)
 

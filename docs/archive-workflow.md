@@ -34,7 +34,7 @@ placements on the same images.
 
 ## Search the public exposure index
 
-`magictools ztf_search query.json -o index.json` accepts:
+`constellation ztf_search query.json -o index.json` accepts:
 
 ```json
 {
@@ -61,7 +61,7 @@ depth, are retained. Catalogue depth is not a measured efficiency for your searc
 
 ## Fetch selected products
 
-`magictools ztf_fetch fetch.json -o inventory.json` accepts:
+`constellation ztf_fetch fetch.json -o inventory.json` accepts:
 
 ```json
 {
@@ -139,7 +139,7 @@ The supplied `psf_sigma_pixels` remains required for the Gaussian fallback.
 }
 ```
 
-Run `magictools judge_line input.json -o dossier.json`. Supply a midpoint for
+Run `constellation judge_line input.json -o dossier.json`. Supply a midpoint for
 every exposure. Celestial WCS is required to compare the same sky position
 across images. The dossier includes the original finite-bank trial correction,
 signed per-frame fits, Gaussian residual probabilities, constant-flux test,
@@ -169,7 +169,7 @@ residual tests and held-out real artifact calibration remain future work.
 }
 ```
 
-Run `magictools inject_tracks input.json -o recovery.json`. Each east/north offset
+Run `constellation inject_tracks input.json -o recovery.json`. Each east/north offset
 shifts the whole supplied bank on the sky; exactly one source is added to the
 unchanged background at a time. All candidates are fitted, preserving masks,
 scales, PSFs, negative measurements and the full trial count. Correct recovery

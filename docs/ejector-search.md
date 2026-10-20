@@ -15,8 +15,8 @@ a new ejection, or introduce a new mathematical theorem.
 
 ```bash
 python -m pip install -e '.[accelerate,research]'
-magictools ejector_search survey.json -o survey-result.json
-magictools ejector_bound survey.json --refine-nodes 2000 --verify-witnesses -o certificate.json
+constellation ejector_search survey.json -o survey-result.json
+constellation ejector_bound survey.json --refine-nodes 2000 --verify-witnesses -o certificate.json
 ```
 
 The optional `accelerate` extra compiles the same kick–drift–kick equations with

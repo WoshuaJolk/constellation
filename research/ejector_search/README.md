@@ -118,13 +118,13 @@ profile search takes several minutes. Wall time varies by machine.
 ```bash
 python -m pip install -e '.[test,accelerate,research]'
 OPENBLAS_NUM_THREADS=1 python research/ejector_search/run.py --output /tmp/ejector-observed --case observed
-magictools ejector_bound /tmp/ejector-observed/observed.json --refine-nodes 2000 --verify-witnesses -o /tmp/observed-certificate.json
+constellation ejector_bound /tmp/ejector-observed/observed.json --refine-nodes 2000 --verify-witnesses -o /tmp/observed-certificate.json
 
 OPENBLAS_NUM_THREADS=1 python research/ejector_search/run.py --output /tmp/ejector-injection --case injection
-magictools ejector_bound /tmp/ejector-injection/injection.json --refine-nodes 2000 --verify-witnesses -o /tmp/injection-certificate.json
+constellation ejector_bound /tmp/ejector-injection/injection.json --refine-nodes 2000 --verify-witnesses -o /tmp/injection-certificate.json
 
 OPENBLAS_NUM_THREADS=1 python research/ejector_search/run.py --output /tmp/ejector-history --case historical --controls 99
-magictools ejector_bound /tmp/ejector-history/historical.json --refine-nodes 2000 --verify-witnesses -o /tmp/historical-certificate.json
+constellation ejector_bound /tmp/ejector-history/historical.json --refine-nodes 2000 --verify-witnesses -o /tmp/historical-certificate.json
 
 OPENBLAS_NUM_THREADS=1 python research/ejector_search/verify.py research/ejector_search/results
 python research/ejector_search/plot.py

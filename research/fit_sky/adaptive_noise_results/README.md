@@ -26,7 +26,7 @@ OPENBLAS_NUM_THREADS=1 PYTHONPATH=. python \
   --output /tmp/new-adaptive-fit-sky-validation
 ```
 
-To construct a new partition, use `magictools-fit-sky` with
+To construct a new partition, use `constellation fit-sky` with
 `--method noise-floor`. Soft construction budgets may produce different leaf
 counts on another machine. Version-two support bounds additionally retain
 signed responses and positive flux lower bounds; the retained version-one

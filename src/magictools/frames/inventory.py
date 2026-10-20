@@ -62,6 +62,7 @@ DATASETS = [
 
 def coverage(checks=None):
     from .model import PROVIDERS
+    from .profiles import VO_PROFILES
     states = {}
     for check in checks or []:
         states.setdefault(check["provider"], set()).add(check["status"])
@@ -74,4 +75,9 @@ def coverage(checks=None):
     return {"inventoryDate": "2026-10-20", "datasetCount": len(rows), "providerCount": len(PROVIDERS),
             "allAstronomicalObservationsCovered": False,
             "interpretation": "A provider query state describes its index, not proof of complete dataset coverage. Read each scope and each query receipt.",
+            "additionalArchives": [{"provider": p, "name": c["name"], "scope": c.get("scopeWarning", "Published image products"),
+                                    "queryStates": sorted(states.get(p, {"not queried"}))}
+                                   for p, c in VO_PROFILES.items()] +
+                                  [{"provider": p, "name": PROVIDERS[p]["name"], "scope": "Public KASI metadata and FITS references; index exhaustion and exact detector footprints remain unverified",
+                                    "queryStates": sorted(states.get(p, {"not queried"}))} for p in ("kmtnet", "miris")],
             "datasets": rows}

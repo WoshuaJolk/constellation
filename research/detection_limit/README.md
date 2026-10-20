@@ -28,7 +28,7 @@ Monte Carlo confidence, physical assumptions and unresolved requirements.
   counterexample showing why convexifying orbit alternatives can fail.
 
 These are research APIs, not a replacement for the existing production
-`magictools prove_floor` command. No real-survey discovery/exclusion is claimed.
+`constellation prove_floor` command. No real-survey discovery/exclusion is claimed.
 
 ## Reproduce
 

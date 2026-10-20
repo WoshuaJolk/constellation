@@ -15,15 +15,15 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install '.[test,research,agent,accelerate]'
       - run: python -m pytest -q
-      - run: magictools demo demo-output
-      - run: magictools orbit_demo orbit-demo-output
-      - run: magictools floor_demo floor-demo-output
-      - run: magictools ejector_demo ejector-demo-output
-      - run: magictools fold_demo fold-demo-output --grid-size 10 --frames 8
-      - run: magictools learn_null examples/null-calibration.json -o null-calibration-output.json
-      - run: magictools map_complete examples/selection.json -o exact-selection-output.json
-      - run: magictools inject_all examples/selection.json -o simulated-selection-output.json
-      - run: magictools match_all examples/matching.json -o assignment-output.json
-      - run: magictools verify_match assignment-output.json -o certificate-check-output.json
+      - run: constellation demo demo-output
+      - run: constellation orbit_demo orbit-demo-output
+      - run: constellation floor_demo floor-demo-output
+      - run: constellation ejector_demo ejector-demo-output
+      - run: constellation fold_demo fold-demo-output --grid-size 10 --frames 8
+      - run: constellation learn_null examples/null-calibration.json -o null-calibration-output.json
+      - run: constellation map_complete examples/selection.json -o exact-selection-output.json
+      - run: constellation inject_all examples/selection.json -o simulated-selection-output.json
+      - run: constellation match_all examples/matching.json -o assignment-output.json
+      - run: constellation verify_match assignment-output.json -o certificate-check-output.json
       - run: OPENBLAS_NUM_THREADS=1 python -m research.kepler_transform.experiments kepler-research-output.json
       - run: OPENBLAS_NUM_THREADS=1 python -m research.detection_limit.experiments detection-research-output.json
