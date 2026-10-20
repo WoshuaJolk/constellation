@@ -40,7 +40,12 @@ def mjd(value):
         return finite(value, "MJD")
     if re.fullmatch(r"[+-]?\d+(?:\.\d+)?", str(value).strip()):
         return finite(value, "MJD")
-    dt = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    stamp = str(value).strip().replace("Z", "+00:00")
+    # Python 3.10 accepts only 3/6 fractional digits; archives also emit
+    # tenths, hundredths, and nanoseconds. Normalize to datetime precision.
+    stamp = re.sub(r"(\d{2}:\d{2}:\d{2})[.,](\d+)",
+                   lambda m: m[1] + "." + m[2].ljust(6, "0")[:6], stamp)
+    dt = datetime.fromisoformat(stamp)
     if dt.tzinfo is None:
         dt = dt.replace(tzinfo=timezone.utc)
     return dt.timestamp() / 86400 + 40587

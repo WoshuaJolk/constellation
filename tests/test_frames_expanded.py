@@ -295,3 +295,10 @@ def test_metadata_cache_retains_artifacts_without_requery(tmp_path,monkeypatch):
         assert t.cached_request('http://example.invalid/index')=='public metadata'
         assert (t.directory/t.calls[-1]['responseFile']).read_bytes()==b'public metadata'
     assert len(calls)==1 and t.calls[-1]['cacheHit']
+
+
+def test_fractional_archive_timestamps_keep_utc_epoch():
+    expected=mjd('2003-08-08')+(22*3600+7*60+10.4)/86400
+    for fraction in ['4','40','400','4000','40000','400000','400000000']:
+        assert mjd('2003-08-08T22:07:10.'+fraction+'Z') == pytest.approx(expected,abs=1e-10,rel=0)
+        assert mjd('2003-08-08T23:07:10.'+fraction+'+01:00') == pytest.approx(expected,abs=1e-10,rel=0)
