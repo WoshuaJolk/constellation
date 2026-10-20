@@ -194,6 +194,12 @@ def execute(job, x, transport, s):
         yield from query_kasi(job, x, transport, s)
         return
     if provider == "ssois":
+        # Also guard jobs persisted by older versions when a failed run resumes.
+        if x["mode"] == "ephemeris" and not x.get("experimentalSsoisEphemeris", False):
+            from .model import SSOIS_EPHEMERIS_UNAVAILABLE
+            raise Blocked(SSOIS_EPHEMERIS_UNAVAILABLE)
+        if x["mode"] == "ephemeris":
+            s["warnings"].append("Experimental SSOIS uploaded-ephemeris endpoint; live checks returned HTTP 500.")
         p = ssois_params(job, x)
         # Native CGI GET remains the proven path for pinned element/name runs.
         text = transport.request(SSOIS, data=urlencode(p), headers={"Content-Type": "application/x-www-form-urlencoded"}) if p["search"] in {"userephem", "bern", "mpc"} else transport.request(url(SSOIS, p))
