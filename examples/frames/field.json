@@ -1,0 +1,10 @@
+{
+  "mode": "field",
+  "ra": 150,
+  "dec": 2,
+  "radius": 0.05,
+  "start": "2019-01-01",
+  "end": "2019-02-03",
+  "providers": "all",
+  "timeoutSeconds": 600
+}

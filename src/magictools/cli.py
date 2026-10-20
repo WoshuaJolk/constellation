@@ -6,13 +6,23 @@ from pathlib import Path
 import sys
 
 from . import __version__
-from .io import run_nulls, run_photometry
 
 
 def main(argv=None):
+    # Keep the existing manifest commands stable; the archive CLI has its own
+    # resumable execution and streaming/output contract.
+    actual = list(sys.argv[1:] if argv is None else argv)
+    if actual and actual[0] == "frames":
+        from .frames.cli import main as frames_main
+        return_code = frames_main(actual[1:])
+        if return_code:
+            raise SystemExit(return_code)
+        return
+    from .io import run_nulls, run_photometry
     parser = argparse.ArgumentParser(description="Moving-source astronomy tools for local FITS data")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
+    commands.add_parser("frames", help="Resumable multi-archive image discovery; run `magictools frames --help`")
     for name in ["force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp", "find_ejector", "ejector_prepare", "ejector_fit", "ejector_search", "ejector_bound", "prove_floor", "ztf_search", "ztf_fetch", "judge_line", "inject_tracks", "map_complete", "inject_all", "match_all", "verify_match", "fold_kepler"]:
         command = commands.add_parser(name)
         command.add_argument("manifest", type=Path)

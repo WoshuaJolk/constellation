@@ -1,0 +1,3 @@
+date,ra,dec,sigmaArcsec,label
+2025-01-01,359.8,2,60,synthetic-example
+2025-01-02,0.1,2.1,90,synthetic-example
