@@ -36,6 +36,15 @@ why a shared regularized-clock FFT shortcut and an unrestricted inverse fail.
 The representation still has a six-dimensional resolution cost: **this is not
 a sublinear-in-trajectories breakthrough or completion of the catalogue goal**.
 
+The latest [time-compression research phase](research/kepler_transform/temporal/README.md)
+removes that orbit tensor for common-grid Fourier image inputs. It represents
+the continuous response with 82 Fourier fields over the original eight-day
+near domain, or 127 over the 30-day distant domain, with a uniform
+exact-arithmetic interpolation bound. Its comparisons charge image FFTs,
+construction and output access, and include cached direct methods.
+The useful regime is dense cadence; arbitrary archive inputs, a numerical
+certificate and a stable inverse remain open.
+
 The [full-objective `prove_floor` research](research/detection_limit/README.md)
 adds continuous-family detection certificates, least-favorable-prior searches,
 and interval orbital image models. It closes the power gap below one percentage

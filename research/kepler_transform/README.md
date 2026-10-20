@@ -1,11 +1,19 @@
 # Full-objective Kepler transform attempts
 
-**Measured timing:** [PFKT versus direct evaluation](timing/README.md) now plots
+**Latest research phase:** [certified time compression](temporal/README.md)
+replaces the six-dimensional field with a sum of two-dimensional Fourier
+fields at certified time nodes. It includes pixel FFTs, fast time moments,
+arbitrary query access, and direct baselines with geometry, NUFFT-plan and
+dense-response caching. The original near and distant boxes require 82 nodes
+over eight days and 127 over 30 days. This is a bounded common-grid forward
+construction, not a general archive transform or stable inverse.
+
+**Earlier measured timing:** [PFKT versus direct evaluation](timing/README.md) plots
 runtime against queried-orbit count for the small executable construction.
 It separates arbitrary queries, native output-grid queries, cached direct
 responses, and setup costs. These measurements are not archive-scale forecasts.
 
-**Latest:** the [stage-aware construction](ordered/README.md) changes hidden
+The preceding [stage-aware construction](ordered/README.md) changes hidden
 coordinates first and preserves exact coordinate identities. Instantaneous
 exposure grids are therefore two-dimensional, and internal sensitivities are
 bounded using each child segment’s own time span. Its independent replay checks

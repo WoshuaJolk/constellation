@@ -27,7 +27,14 @@ magictools-fold-chart = "research.kepler_transform.chart_search:main"
 
 [tool.setuptools.packages.find]
 where = ["src", "."]
-include = ["magictools*", "research.kepler_transform", "research.detection_limit"]
+include = [
+    "magictools*",
+    "research.kepler_transform",
+    "research.kepler_transform.temporal",
+    "research.kepler_transform.timing",
+    "research.kepler_transform.ordered",
+    "research.detection_limit",
+]
 namespaces = true
 
 [tool.pytest.ini_options]
