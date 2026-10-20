@@ -6,6 +6,7 @@ import sys
 
 from .credentials import Credentials, initialize
 from .engine import export_csv, merge_manifests, plan, run, status
+from .inventory import coverage
 from .model import LIMITATIONS, MOST_CATALOGS, PROVIDERS, validate
 
 
@@ -14,7 +15,7 @@ def capabilities():
             "modes": ["field", "object", "orbits", "arc", "ephemeris"],
             "defaultTimeoutSeconds": 600, "clientRowLimit": None, "dateSpanLimit": None,
             "orbitCountLimit": None, "credentials": {"init": "magictools frames credentials init", "status": "magictools frames credentials status"},
-            "limitations": LIMITATIONS,
+            "limitations": LIMITATIONS, "datasetCoverage": coverage(),
             "example": {"mode": "field", "ra": 180, "dec": 30, "radius": 0.05, "start": "2019-01-28", "end": "2019-01-29", "providers": ["ztf"]}}
 
 
@@ -22,6 +23,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(prog="magictools frames", description="Resumable archive image discovery for agents")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("capabilities", help="Print adapters, schemas, limits, and credential instructions as JSON")
+    commands.add_parser("coverage", help="Map every constellation imaging dataset to adapters and explicit gaps")
     search = commands.add_parser("search", help="Execute a JSON manifest and save complete local query receipts")
     search.add_argument("manifest", type=Path)
     search.add_argument("--run-dir", type=Path, required=True)
@@ -47,6 +49,8 @@ def main(argv=None):
     try:
         if args.command == "capabilities":
             result = capabilities()
+        elif args.command == "coverage":
+            result = coverage()
         elif args.command == "credentials":
             result = initialize(args.config) if args.action == "init" else Credentials(args.config).status()
         elif args.command == "status":

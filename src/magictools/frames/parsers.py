@@ -41,10 +41,10 @@ def delimited(text, stats, delimiter=","):
         yield dict(zip(header, (s.strip() for s in row)))
 
 
-def ipac(text, stats, ibe=False):
+def ipac(text, stats, ibe=False, *, generic=False):
     if ibe and not re.search(r"QUERY_STATUS\s*=\s*['\"]OK['\"]", text):
         raise ValueError("IRSA did not report QUERY_STATUS=OK")
-    if not ibe and "MOST ODBC query result" not in text:
+    if not ibe and not generic and "MOST ODBC query result" not in text:
         raise ValueError("MOST did not return its result table")
     lines = text.splitlines()
     index = next((i for i, l in enumerate(lines) if l.startswith("|")), None)
@@ -80,6 +80,7 @@ def votable(text, stats):
         raise ValueError("No VOTable table")
     fields = [e.get("name") or e.get("ID") for e in table if local(e) == "FIELD"]
     stats["columns"] = fields
+    stats["fields"] = {e.get("name") or e.get("ID"): dict(e.attrib) for e in table if local(e) == "FIELD"}
     if any(local(e) in {"BINARY", "BINARY2", "FITS"} for e in table.iter()):
         # Astropy supports binary serializations, including services ignoring FORMAT.
         from astropy.io.votable import parse_single_table

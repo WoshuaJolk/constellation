@@ -129,13 +129,16 @@ def region_intersects(region, ra, dec, radius):
 def select(frame, window, x):
     """False: definitely outside. Unknown geometry remains visibly a candidate."""
     when = frame.get("startMjd")
-    if when is not None:
+    if when is not None and not frame.get("timeSpanUnknown"):
         stop = frame.get("endMjd")
         if stop is None:
             stop = when + (frame.get("exposureSeconds") or 0)/86400
         if stop < window["start"] or when >= window["end"]:
             return False
     if "points" in window:
+        if frame.get("timeSpanUnknown") or frame.get("productKind") in {"stack", "observation bundle", "target-pixel time cube"}:
+            frame["match"] = "candidate: combined product; inspect member times and footprints"
+            return True
         if when is None or frame["timeScale"] != "UTC":
             frame["match"] = "candidate: observation time unavailable in UTC"
             return True

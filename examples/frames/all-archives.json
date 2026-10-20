@@ -1,0 +1,11 @@
+{
+  "mode": "field",
+  "ra": 180,
+  "dec": 30,
+  "radius": 0.05,
+  "start": "2019-01-28",
+  "end": "2019-01-29",
+  "providers": "all",
+  "timeoutSeconds": 600,
+  "concurrency": 4
+}

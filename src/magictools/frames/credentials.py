@@ -9,7 +9,12 @@ DEFAULT_PATH = Path.home() / ".config" / "magictools" / "credentials.json"
 ENV = {"hsc": {"username": "HSC_SSP_CAS_USER", "password": "HSC_SSP_CAS_PASSWORD"},
        "mast": {"token": "MAST_API_TOKEN"},
        "noirlab": {"token": "NOIRLAB_API_TOKEN"},
-       "irsa": {"username": "IRSA_USER", "password": "IRSA_PASSWORD"}}
+       "irsa": {"username": "IRSA_USER", "password": "IRSA_PASSWORD"},
+       "lco": {"token": "LCO_API_TOKEN"},
+       "gemini": {"cookie": "GEMINI_ARCHIVE_SESSION"},
+       "rubin": {"token": "RSP_API_TOKEN"},
+       "dasch": {"token": "DASCHLAB_API_KEY"},
+       "splus": {"username": "SPLUS_USERNAME", "password": "SPLUS_PASSWORD", "token": "SPLUS_API_TOKEN"}}
 
 
 class Credentials:
@@ -30,7 +35,7 @@ class Credentials:
     def get(self, provider):
         result = {}
         profile = self.profiles.get(provider, {})
-        for key in {"username", "password", "token"}:
+        for key in {"username", "password", "token", "cookie"}:
             entry = profile.get(key)
             env = ENV.get(provider, {}).get(key)
             if isinstance(entry, dict):
@@ -45,7 +50,7 @@ class Credentials:
                 result[key] = entry
             elif env:
                 result[key] = os.environ.get(env, "")
-        self.secrets.extend(v for k, v in result.items() if k in {"password", "token"} and v and v not in self.secrets)
+        self.secrets.extend(v for k, v in result.items() if k in {"password", "token", "cookie"} and v and v not in self.secrets)
         return result
 
     def redact(self, text):
@@ -58,7 +63,7 @@ class Credentials:
         output = {}
         for name, fields in ENV.items():
             values = self.get(name)
-            output[name] = {"configured": bool(values.get("token") or (values.get("username") and values.get("password"))),
+            output[name] = {"configured": bool(values.get("token") or values.get("cookie") or (values.get("username") and values.get("password"))),
                             "environmentVariables": fields, "validatedWithArchive": False}
         return output
 

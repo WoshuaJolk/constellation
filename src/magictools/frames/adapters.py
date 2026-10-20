@@ -122,7 +122,7 @@ def convert_rows(rows, convert, job, x, s):
                 s["excluded"] += 1
                 continue
             yield f
-        except (ValueError, TypeError, KeyError, OverflowError):
+        except (ValueError, TypeError, KeyError, IndexError, OverflowError):
             s["rejected"] += 1
             if len(s["warnings"]) < 5:
                 s["warnings"].append("Dropped a row with invalid native ID, time, coordinates, or product path")
@@ -210,14 +210,19 @@ def execute(job, x, transport, s):
         return
     if provider == "smoka":
         yield from query_smoka(job, x, transport, s)
-    elif provider == "noirlab":
+    elif provider == "noirlab" or provider.startswith("noirlab:"):
         yield from query_noirlab(job, x, transport, s)
     elif provider == "hsc":
         yield from query_hsc(job, x, transport, s)
     elif provider == "catch":
         yield from query_catch(job, x, transport, s)
+    elif provider == "mast:targetpixels":
+        yield from query_mast_targetpixels(job, x, transport, s)
     elif provider == "mast":
         yield from query_mast(job, x, transport, s)
+    else:
+        from .extended import execute_extended
+        yield from execute_extended(job, x, transport, s)
 
 
 def query_smoka(job, x, transport, s):
@@ -255,7 +260,8 @@ def accumulate(target, source):
 
 def query_noirlab(job, x, transport, s):
     w = job.window
-    # Conservative DECam pointing envelope, then exposure-time filtering.
+    instrument = job.params.get("instrument", "decam")
+    # Conservative camera pointing envelope, then exposure-time filtering.
     padding = min(180, w["radius"]+1.3)
     dec0, dec1 = max(-90, w["dec"]-padding), min(90, w["dec"]+padding)
     if dec0 <= -90 or dec1 >= 90:
@@ -266,8 +272,10 @@ def query_noirlab(job, x, transport, s):
         ranges = [(lo+360, 360), (0, hi)] if lo < 0 else [(lo, 360), (0, hi-360)] if hi > 360 else [(lo, hi)]
     for lo, hi in ranges:
         body = dict(outfields=["md5sum", "archive_filename", "ra_center", "dec_center", "dateobs_center", "exposure", "ifilter", "instrument", "proc_type", "prod_type"],
-                    search=[["instrument", "decam"], ["proc_type", "instcal"], ["prod_type", "image"],
+                    search=[["instrument", instrument], ["prod_type", "image"],
                             ["dateobs_center", iso(w["start"]), iso(w["end"])], ["ra_center", lo, hi], ["dec_center", dec0, dec1]])
+        if job.provider == "noirlab":
+            body["search"].append(["proc_type", "instcal"])
         offset = 0
         while True:
             data = json.loads(transport.request(url(NOIRLAB+"/adv_search/find/", dict(limit=1000, offset=offset)), data=body))
@@ -276,7 +284,7 @@ def query_noirlab(job, x, transport, s):
             rows = data[1:]
             s["received"] += len(rows)
             def convert(r):
-                return frame(job, r, id=r["archive_filename"].split("/")[-1], survey="DECam", instrument="DECam",
+                return frame(job, r, id=r["archive_filename"].split("/")[-1], survey="DECam" if instrument == "decam" else "NOIRLab/"+instrument, instrument=instrument,
                              startMjd=mjd(r["dateobs_center"])-(numeric(r.get("exposure")) or 0)/172800,
                              exposureSeconds=numeric(r.get("exposure")),
                              filter=r.get("ifilter"), ra=numeric(r.get("ra_center")), dec=numeric(r.get("dec_center")),
@@ -377,7 +385,8 @@ def query_mast(job, x, transport, s):
     page = 1
     while True:
         request = {"service": "Mast.Caom.Filtered.Position", "params": {
-            "columns": "*", "filters": [{"paramName": "dataproduct_type", "values": ["image"]},
+            "columns": "*", "filters": [{"paramName": "dataproduct_type", "values": ["timeseries"] if job.provider == "mast:targetpixels" else ["image"]},
+                                       *([{"paramName": "obs_collection", "values": ["Kepler", "K2"]}] if job.provider == "mast:targetpixels" else []),
                                        {"paramName": "t_min", "values": [{"min": -1000000, "max": w["end"]}]},
                                        {"paramName": "t_max", "values": [{"min": w["start"], "max": 1000000}]}],
             "position": f"{w['ra']}, {w['dec']}, {w['radius']}"},
@@ -404,3 +413,44 @@ def query_mast(job, x, transport, s):
         if page >= paging.get("pagesFiltered", paging.get("pages", 1)):
             break
         page += 1
+
+
+def query_mast_targetpixels(job, x, transport, s):
+    parents = stats()
+    for observation in query_mast(job, x, transport, parents):
+        obsid = observation["raw"].get("obsid")
+        if not obsid:
+            s["rejected"] += 1
+            continue
+        page = 1
+        while True:
+            request = {"service": "Mast.Caom.Products", "params": {"obsid": str(obsid)},
+                       "format": "json", "pagesize": 1000, "page": page}
+            data = json.loads(transport.request("https://mast.stsci.edu/api/v0/invoke", data=urlencode({"request": json.dumps(request)}), headers={"Content-Type": "application/x-www-form-urlencoded"}))
+            if data.get("status") != "COMPLETE" or not isinstance(data.get("data"), list):
+                raise ArchiveError("MAST target-pixel product query did not complete")
+            rows = data["data"]
+            s["received"] += len(rows)
+            def convert(r):
+                uri = r.get("dataURI")
+                if not uri:
+                    raise ValueError("Target-pixel product lacks dataURI")
+                return frame(job, r, id=r.get("productFilename") or uri, survey=observation["survey"], instrument=observation["instrument"],
+                             startMjd=observation["startMjd"], endMjd=observation["endMjd"],
+                             ra=observation["ra"], dec=observation["dec"], footprint=observation["footprint"],
+                             productKind="target-pixel time cube", url=url("https://mast.stsci.edu/api/v0.1/Download/file", {"uri": uri}), linkKind="FITS")
+            targets = []
+            for row in rows:
+                if "targ.fits" in str(row.get("productFilename", "")).lower():
+                    targets.append(row)
+                else:
+                    s["excluded"] += 1
+            yield from convert_rows(targets, convert, job, x, s)
+            paging = data.get("paging", {})
+            if page >= paging.get("pagesFiltered", paging.get("pages", 1)):
+                break
+            page += 1
+    s["rejected"] += parents["rejected"]
+    if parents.get("incomplete"):
+        s["incomplete"] = parents["incomplete"]
+    s["warnings"].append("Target-pixel cubes cover selected postage stamps and many epochs; inspect cadence times and downloaded pixel masks before claiming a moving-object intersection.")

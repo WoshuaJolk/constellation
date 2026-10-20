@@ -7,6 +7,8 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+from .profiles import EXTRA_PROVIDERS
+
 MOST_CATALOGS = ["ztf", "ptf", "wise_merge", "spitzer_bcd", "2mass", "sofia", "spherex"]
 FIELD = ["field", "ephemeris"]
 PROVIDERS = {
@@ -22,6 +24,8 @@ PROVIDERS = {
     "ztf": {"name": "ZTF IBE", "modes": FIELD, "collections": ["ZTF"]},
     **{f"most:{c}": {"name": f"IRSA MOST / {c}", "modes": ["object", "orbits"], "collections": [c]} for c in MOST_CATALOGS},
 }
+PROVIDERS.update(EXTRA_PROVIDERS)
+
 LIMITATIONS = [
     "Completeness is relative to each queried index and its published releases, not all astronomical observations.",
     "Footprint and pointing-envelope matches are candidates, not detections; depth, masks, chip gaps, and access rights need inspection.",

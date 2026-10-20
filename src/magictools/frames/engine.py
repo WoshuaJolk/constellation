@@ -13,8 +13,10 @@ import uuid
 from .adapters import Job, execute, stats
 from .credentials import Credentials
 from .geometry import windows
+from .inventory import coverage
 from .model import PROVIDERS, LIMITATIONS, iso, mjd
 from .parsers import merge_frames
+from .profiles import NOIRLAB_INSTRUMENTS, KOA_INSTRUMENTS
 from .transport import Transport, Blocked
 
 
@@ -48,6 +50,11 @@ def plan(x):
                 jobs.append(Job(provider, x.get("object", "MPC80 arc")))
         else:
             unavailable.append({"provider": provider, "name": meta["name"], "reason": "Supply an observer-specific ephemeris to cross-check this archive along a moving path." if can_field else f"Input mode {x['mode']} is not supported by this service."})
+    jobs = [Job(j.provider, j.hypothesis, j.window, j.orbit, {"instrument": instrument})
+            if instrument else j
+            for j in jobs for instrument in (NOIRLAB_INSTRUMENTS.get(j.provider, [None]) if j.provider != "noirlab" else [None])]
+    jobs = [Job(j.provider, j.hypothesis, j.window, j.orbit, {"instrument": inst}) if inst else j
+            for j in jobs for inst in (KOA_INSTRUMENTS if j.provider == "koa" else [None])]
     for job in jobs:
         job.id = job_id(job)
     return jobs, unavailable
@@ -70,6 +77,7 @@ def _query(job, x, directory, credentials, transport_factory):
     folder = Path(directory) / "queries" / job.id / attempt
     folder.mkdir(parents=True, exist_ok=True, mode=0o700)
     transport = transport_factory(folder, timeout=x["timeoutSeconds"], credentials=credentials)
+    transport.shared_cache = Path(directory) / "metadata-cache"
     output = folder / "frames.ndjson.partial"
     receipt = {"jobId": job.id, "attemptId": attempt, "artifactDirectory": str(folder.relative_to(directory)), "provider": job.provider, "hypothesis": job.hypothesis,
                "startedAt": time.time(), "status": "ok", "count": 0, "queryUrl": None}
@@ -80,6 +88,8 @@ def _query(job, x, directory, credentials, transport_factory):
                 receipt["count"] += 1
         if s.get("incomplete"):
             receipt.update(status="limited", message=s["incomplete"])
+        elif s.get("partial"):
+            receipt.update(status="partial", message=s["partial"])
         elif s["rejected"]:
             receipt.update(status="partial", message="Valid rows retained; malformed rows counted separately")
         else:
@@ -203,8 +213,8 @@ def result_from_db(db):
                            "status": state, "count": 0, "message": "Query has not completed"})
     frames = sorted(merged.values(), key=lambda f: (f["startMjd"] if f["startMjd"] is not None else math_inf(), f["key"]))
     return {"version": 2, "queriedAt": time.time(), "input": json.loads(meta["input"]),
-            "status": "complete" if all(c["status"] in {"ok", "split"} for c in checks) and checks else "incomplete",
-            "frames": frames, "checks": checks, "unqueried": json.loads(meta["unqueried"]), "limitations": LIMITATIONS}
+            "status": "complete" if all(c["status"] in {"ok", "split"} for c in checks) and checks and not json.loads(meta["unqueried"]) else "incomplete",
+            "frames": frames, "checks": checks, "datasetCoverage": coverage(checks), "unqueried": json.loads(meta["unqueried"]), "limitations": LIMITATIONS}
 
 
 def math_inf():
@@ -225,7 +235,7 @@ def status(directory):
 
 def export_csv(result, path):
     columns = ["key", "survey", "instrument", "id", "startMjd", "endMjd", "timeScale",
-               "filter", "exposureSeconds", "match", "hypotheses", "url", "linkKind", "providers"]
+               "filter", "exposureSeconds", "productKind", "match", "hypotheses", "url", "linkKind", "providers"]
     path = Path(path)
     temp = path.with_suffix(path.suffix+".partial")
     with temp.open("w", newline="") as stream:

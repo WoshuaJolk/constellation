@@ -123,9 +123,17 @@ unqueried; the tool does not silently propagate orbits itself.
 
 ## Connections
 
-The registry currently contains **17 provider IDs**, covering multiple surveys
-through each archive. The constellation inventory is larger than the connected
-set; listing a survey in that inventory does not make it queryable here.
+The registry contains **39 provider IDs**. All **51 imaging entries** in the
+constellation inventory are mapped to adapters and explicit coverage limits:
+
+```sh
+magictools frames coverage
+```
+
+The report is also included in `capabilities` and each run manifest, where it
+shows which providers were queried. This is not a claim that all exposures are
+available: HSC and Rubin need accounts,
+and several services supply only points, stacks, cutouts, or released subsets.
 
 | Provider ID | Search coverage | Inputs |
 | --- | --- | --- |
@@ -143,6 +151,25 @@ set; listing a survey in that inventory does not make it queryable here.
 | `most:wise_merge` | WISE/NEOWISE merged exposure index | object, orbit family |
 | `most:spitzer_bcd`, `most:2mass` | Spitzer BCD and 2MASS | object, orbit family |
 | `most:sofia`, `most:spherex` | SOFIA and SPHEREx | object, orbit family |
+| `noirlab:mosaic`, `noirlab:90prime`, `noirlab:newfirm`, `noirlab:odi` | Nine instrument names covering Mosaic generations, 90Prime, NEWFIRM, ODI/pODI | field, ephemeris |
+| `gemini` | Canonical Gemini imaging OBJECT records, including GMOS | field, ephemeris |
+| `koa` | Nine Keck imaging instruments, separate resumable queries | field, ephemeris |
+| `lco` | LCO EXPOSE records, full cursor pagination, polygon intersections | field, ephemeris |
+| `wfcam` | UKIDSS DR11PLUS and UHS DR3, full SQL result files | field, ephemeris |
+| `euclid` | ESA ObsCore, including individual Q1 calibrated frames | field, ephemeris |
+| `herschel` | Public PACS/SPIRE observation bundles with epoch ranges | field, ephemeris |
+| `jplus` | J-PLUS DR4 individual reduced images and observation MJD | field, ephemeris |
+| `splus` | Public ADSS image collections; stack constituent epochs unavailable | field, ephemeris candidates |
+| `sdss`, `dss` | SDSS FITS images / DSS cutout descriptors; SIA1 omits epochs | field, ephemeris candidates |
+| `applause` | DR4 plate solutions and exposure dates; ambiguous associations retained | field, ephemeris candidates |
+| `dasch` | DR7 exposure table, point-only API | point; region/track queries explicitly partial |
+| `scanpi` | IRAS detector scans and UTC times, not image frames | point; region/track queries explicitly partial |
+| `akari` | JAXA phase 1/2 IRC pointed observation bundles | field, ephemeris candidates |
+| `lasco` | VSO native LASCO frame IDs/times, conservative solar envelope | field, ephemeris candidates |
+| `mast:targetpixels` | Kepler/K2 target-pixel FITS cubes; light curves excluded | field, ephemeris candidates |
+| `rubin` | RSP SIA2 authorized image collections | field, ephemeris; token/data rights required |
+| `iphas` | IGAPS IPHAS/UVEX FITS metadata index | field, ephemeris; public HTTP index |
+
 
 SMOKA's encoder coordinates and NOIRLab's pointing metadata give conservative
 camera envelopes, **not exact CCD footprints**. SMOKA returns per-detector
@@ -181,6 +208,11 @@ through your environment/secret manager; do not put them in search manifests.
 | MAST | `MAST_API_TOKEN` |
 | NOIRLab | `NOIRLAB_API_TOKEN` |
 | IRSA | `IRSA_USER`, `IRSA_PASSWORD` |
+| LCO | `LCO_API_TOKEN` (optional for public metadata) |
+| Gemini | `GEMINI_ARCHIVE_SESSION` (optional archive session cookie) |
+| Rubin | `RSP_API_TOKEN` (`read:image` scope and data rights required) |
+| DASCH | `DASCHLAB_API_KEY` (optional; selects the full API tier) |
+| S-PLUS | `SPLUS_API_TOKEN`, or `SPLUS_USERNAME` / `SPLUS_PASSWORD` |
 
 Custom environment names or mounted secret files are supported:
 
@@ -203,10 +235,11 @@ and explicitly does not claim the archive has validated them.
 
 Authentication headers and HSC credential bodies are omitted from receipts.
 Known secret values are redacted from errors and recorded text responses;
-redacted response hashes describe the saved bytes. Authorization is removed
-on cross-origin redirects. No HSC account was available during development,
-so HSC execution remains unverified against authenticated service responses;
-the public schema/client protocol and missing-account behavior are tested.
+redacted response hashes describe the saved bytes. Authorization, cookies, and API keys are removed on cross-origin redirects.
+S-PLUS login responses stay in memory and are never written to receipt artifacts.
+Credentials are never transmitted over HTTP; WFCAM's legacy HTTP service is
+queried anonymously, as is the IGAPS metadata host. No HSC or Rubin account was available during development,
+so authenticated execution remains unverified; missing-account behavior is tested.
 
 ## Durable results and provenance
 
@@ -281,3 +314,47 @@ Adapter references: [NOIRLab API](https://astroarchive.noirlab.edu/api/docs/),
 [MAST API](https://mast.stsci.edu/api/v0/),
 [IRSA SIA](https://irsa.ipac.caltech.edu/SIA),
 [CATCH API](https://catch-api.astro.umd.edu/).
+
+
+### Expanded adapter validation (2026-10-20)
+
+Live public queries returned KOA frames (5), Euclid calibrated images (32),
+Gemini science images (3), LCO exposures (4), J-PLUS individual images (72),
+WFCAM records (305), APPLAUSE candidates (2,312 after local footprint filtering),
+DASCH exposures (15,717 retained), S-PLUS stacks (205), LASCO frames (4),
+Kepler target-pixel products (49), IGAPS CCD frames (129 from its 527,736-row
+index), and IRAS detector scans (20). Counts describe
+specific validation queries, not archive volumes or independent exposures.
+AKARI returned 730 candidates in the chosen region and preserved a receipt
+count for 64 index rows lacking a bundle link. Herschel's public observation
+query also returned native records; the adapter restricts instruments to PACS
+and SPIRE, but bundles can contain spectroscopy as well as images.
+
+SDSS and DSS image discovery works, but their SIA1 responses omit epochs.
+S-PLUS constituent exposure dates are also unavailable. Such queries remain
+`partial`, even when spatial discovery succeeds. Missing dates do not trigger
+pointless recursive date subdivision. Combined bundles and pixel cubes are
+never rejected on the assumption that one timestamp represents every member.
+
+IGAPS/IPHAS serves its 527,736-row metadata index through documented HTTP;
+HTTPS returns HTTP 503. The live FITS schema and UTC `utstart` epochs were
+validated. Immutable metadata is shared within a run with per-query receipts,
+and the parsed table is reused to avoid repeatedly loading the 40 MB download.
+HSC and Rubin await account-backed validation. `magictools frames coverage` retains these limitations alongside
+NGTS cadence, PS1 release, AKARI phase 3, and other collection-level gaps.
+
+Protocol references:
+[Gemini](https://archive.gemini.edu/help/api.html),
+[KOA](https://koa.ipac.caltech.edu/UserGuide/program_interface.html),
+[LCO](https://developers.lco.global/),
+[WFCAM SQL](http://wsa.roe.ac.uk:8080/wsa/SQL_form.jsp),
+[DASCH DR7](https://dasch.cfa.harvard.edu/dr7/web-apis/),
+[APPLAUSE TAP](https://www.plate-archive.org/tap/tables),
+[Euclid TAP](https://eas.esac.esa.int/tap-server/tap/tables),
+[Herschel TAP](https://archives.esac.esa.int/hsa/whsa-tap-server/tap/tables),
+[Rubin SIA](https://rsp.lsst.io/guides/api/sia.html),
+[J-PLUS reduced images](https://archive.cefca.es/catalogues/vo/siap/jplus-dr4/reduced),
+[S-PLUS ADSS client](https://github.com/schwarzam/adss/blob/main/adss/endpoints/images.py),
+[SCANPI](https://irsa.ipac.caltech.edu/applications/Scanpi/docs/ScanpiProgramInterface.html),
+[AKARI native index](https://data.darts.isas.jaxa.jp/pub/akari/AKARI-IRC_Image_Pointed_POIphase1-2_1.0.1/browse/dataList.html),
+[VSO schema](https://sdac.virtualsolar.org/API/VSOi_rpc_literal.wsdl).
