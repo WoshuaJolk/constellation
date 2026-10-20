@@ -7,7 +7,7 @@ import numpy as np
 import pytest
 pytest.importorskip("flint")
 from scipy.special import logsumexp, ndtr
-from scipy.stats import multivariate_normal, poisson
+from scipy.stats import multivariate_normal, poisson, truncnorm
 from scipy.integrate import quad
 
 from research.fit_sky.experiments import scalar, synthetic
@@ -15,6 +15,7 @@ from research.fit_sky.reference import render
 from research.fit_sky.sequential import (
     BlockModel, SequentialFit, Population, PARAMETERS, propose_counts,
     propose_parameters, reflect, _accept,
+    PARAMETER_INDEX,
 )
 
 
@@ -177,6 +178,65 @@ def test_poisson_log_likelihood_matches_independent_count_probability():
     for row, catalogue in enumerate(model.catalogues(p)):
         intensity = render(m["exposures"], catalogue["sources"], catalogue["nuisance"])[0][0, 0]
         assert model.evaluate(p, [1])[row, 0] == pytest.approx(poisson.logpmf(3, intensity))
+
+
+def test_zero_poisson_likelihood_support_is_counted_in_evidence():
+    m = scalar()
+    m["noise"] = "poisson"
+    m["source_types"][0]["parameters"]["flux"] = [3., 3.]
+    m["exposures"][0]["data"] = [[2.]]
+    m["exposures"].append(dict(m["exposures"][0], id="second", data=[[1.]]))
+    response = (ndtr(.5/.6)-ndtr(-.5/.6))**2
+    fit = SequentialFit(m, particles=4000, sweeps=2, seed=243)
+    fit.assimilate(1)
+    summary = fit.assimilate(2)
+    expected = .5*poisson.pmf(2, 3*response)*poisson.pmf(1, 3*response)
+    assert np.exp(summary["log_evidence_estimate"]) == pytest.approx(expected, rel=.04)
+    assert summary["queries"]["has:star"]["estimate"] == pytest.approx(1.)
+    assert fit.stages[0]["kind"] == "zero_likelihood_support_restriction"
+
+
+def test_thousand_exposure_log_likelihood_does_not_underflow():
+    m = scalar()
+    m["exposures"] = [dict(m["exposures"][0], id=f"e{i}", data=[[float(i % 3)]])
+                      for i in range(1000)]
+    model = BlockModel(m, pixel_block=17)
+    population = model.prior(20, np.random.default_rng(256))
+    actual = model.evaluate(population, [1000])[:, 0]
+    for row, cat in enumerate(model.catalogues(population)):
+        flux = sum(s["parameters"]["flux"] for s in cat["sources"])
+        response = (ndtr(.5/.6)-ndtr(-.5/.6))**2
+        expected = -.5*np.sum((np.arange(1000) % 3-flux*response)**2)-500*np.log(2*np.pi)
+        assert actual[row] == pytest.approx(expected, abs=1e-9)
+    assert np.all(np.isfinite(actual))
+    assert np.all(np.exp(actual) == 0)  # Ordinary likelihood products would fail.
+
+
+def test_tempered_conditional_flux_matches_independent_dense_quadratic():
+    m = scalar()
+    m["count_prior"] = {"probabilities": [0., 0., 1.]}
+    m["exposures"] = [dict(m["exposures"][0], id=f"e{i}", data=[[y]])
+                      for i, y in enumerate([.2, .9, 1.3])]
+    m["linear_nuisance"] = {"design": [[1.]]*3, "mean": [.1], "covariance": [[.5]]}
+    model, rng = BlockModel(m), np.random.default_rng(291)
+    population = model.prior(6000, rng)
+    population.unit[..., PARAMETER_INDEX["flux"]] = .5  # both initially flux=2
+    proposal = model.sample_conditional_flux(population, [1, 3], .37, rng)
+    changed = np.abs(proposal.unit[..., PARAMETER_INDEX["flux"]]-.5) > 1e-12
+    assert np.all(changed.sum(axis=1) == 1)
+    actual = model.physical(proposal)[0][..., PARAMETER_INDEX["flux"]][changed]
+    response = (ndtr(.5/.6)-ndtr(-.5/.6))**2
+    h, g = 0., 0.
+    for count, beta in [(1, .63), (3, .37)]:
+        covariance = np.eye(count)+.5*np.ones((count, count))
+        a = np.full(count, response)
+        residual = np.array([.2, .9, 1.3])[:count]-.1-2*response
+        h += beta*(a@np.linalg.solve(covariance, a))
+        g += beta*(a@np.linalg.solve(covariance, residual))
+    center, scale = g/h, 1/np.sqrt(h)
+    expected = truncnorm((1-center)/scale, (3-center)/scale, loc=center, scale=scale)
+    assert actual.mean() == pytest.approx(expected.mean(), abs=.025)
+    assert actual.var() == pytest.approx(expected.var(), abs=.025)
 
 
 def test_checkpoint_resume_reproduces_uninterrupted_assimilation(tmp_path):

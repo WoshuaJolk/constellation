@@ -15,6 +15,7 @@ from time import perf_counter
 import numpy as np
 from scipy.linalg import solve_triangular
 from scipy.special import logsumexp, ndtr, xlogy, gammaln
+from scipy.stats import truncnorm
 
 from .scene import Scene
 
@@ -92,6 +93,7 @@ class BlockModel:
             raise ValueError("Positive integer pixel block required")
         if "covariance" in manifest:
             raise ValueError("Sequential blocks require diagonal noise; use linear_nuisance for shared covariance")
+        manifest = deepcopy(manifest)
         self.scene = scene = Scene(manifest)
         if any(t["kind"] == "kepler" for t in scene.types):
             raise ValueError("Sequential renderer does not yet implement Kepler propagation")
@@ -293,6 +295,80 @@ class BlockModel:
                 raise ValueError(f"Unsupported sequential query: {query}")
         return result
 
+    def sample_conditional_flux(self, population, endpoints, beta, rng):
+        """One exact Gaussian conditional per catalogue (float64 arithmetic).
+
+        All other sources and shared covariance remain in the residual. Two
+        rendering passes obtain the affine response; blockwise quadratic
+        statistics avoid subtracting nearly equal log likelihoods.
+        """
+        if self.scene.noise != "gaussian":
+            raise ValueError("Conditional Gaussian flux updates require Gaussian noise")
+        n = len(population.counts)
+        rows = np.flatnonzero(population.counts > 0)
+        proposal = population.copy()
+        if not len(rows):
+            return proposal
+        slots = np.array([rng.integers(population.counts[row]) for row in rows])
+        classes = population.classes[rows, slots]
+        bounds = self.bounds[classes, PARAMETER_INDEX["flux"]]
+        free = bounds[:, 1] > bounds[:, 0]
+        rows, slots, bounds = rows[free], slots[free], bounds[free]
+        if not len(rows):
+            return proposal
+        sources, nuisance = self.physical(population)
+        sources[rows, slots, PARAMETER_INDEX["flux"]] = 0.
+        rank = 0 if self.linear is None else self.linear.shape[1]
+        info, score = np.zeros(n), np.zeros(n)
+        pa, pr = np.zeros((n, rank)), np.zeros((n, rank))
+        statistics, last = {}, 0
+        for endpoint in sorted(set(endpoints)):
+            end = self.ends[endpoint]
+            for lo in range(last, end, self.pixel_block):
+                hi = min(end, lo+self.pixel_block)
+                base = self._means(population, sources, nuisance, lo, hi)
+                sources[rows, slots, PARAMETER_INDEX["flux"]] = 1.
+                response = self._means(population, sources, nuisance, lo, hi)-base
+                sources[rows, slots, PARAMETER_INDEX["flux"]] = 0.
+                a = response/self.sigma[lo:hi]
+                r = (self.data[lo:hi]-base)/self.sigma[lo:hi]
+                info += np.sum(a*a, axis=1)
+                score += np.sum(a*r, axis=1)
+                if rank:
+                    pa += a@self.linear[lo:hi]
+                    pr += r@self.linear[lo:hi]
+            h, g = info.copy(), score.copy()
+            if rank and endpoint:
+                ap = solve_triangular(self.factors[endpoint], pa.T, lower=True).T
+                rp = solve_triangular(self.factors[endpoint], pr.T, lower=True).T
+                h -= np.sum(ap*ap, axis=1)
+                g -= np.sum(ap*rp, axis=1)
+            statistics[endpoint] = h, g
+            last = end
+        old, new = endpoints
+        h = ((1-beta)*statistics[old][0]+beta*statistics[new][0])[rows]
+        g = ((1-beta)*statistics[old][1]+beta*statistics[new][1])[rows]
+        if np.any(h < 0) or not np.all(np.isfinite(h)) or not np.all(np.isfinite(g)):
+            raise ArithmeticError("Invalid conditional flux precision")
+        positive = h > 0
+        # Exactly zero response leaves the conditional prior unchanged.
+        values = bounds[:, 0]+rng.random(len(rows))*(bounds[:, 1]-bounds[:, 0])
+        if np.any(~positive & (g != 0)):
+            raise ArithmeticError("Zero flux precision with nonzero score")
+        if np.any(positive):
+            center, scale = g[positive]/h[positive], 1/np.sqrt(h[positive])
+            left = (bounds[positive, 0]-center)/scale
+            right = (bounds[positive, 1]-center)/scale
+            values[positive] = truncnorm.rvs(left, right, loc=center, scale=scale,
+                                            random_state=rng)
+        unit = (values-bounds[:, 0])/(bounds[:, 1]-bounds[:, 0])
+        if not np.all(np.isfinite(unit)) or np.any(unit < -1e-12) or np.any(unit > 1+1e-12):
+            raise ArithmeticError("Invalid conditional flux sample")
+        proposal.unit[rows, slots, PARAMETER_INDEX["flux"]] = np.clip(unit, 0., 1.)
+        self.evaluated_catalogues += 2*n
+        self.evaluated_catalogue_pixels += 2*n*last
+        return proposal
+
     def catalogues(self, population):
         sources, nuisance = self.physical(population)
         result = []
@@ -422,8 +498,13 @@ def systematic_resample(log_weights, rng):
 
 
 def _accept(population, proposal, likelihood, proposed_likelihood, ratio, beta, rng):
-    delta = ((1-beta)*(proposed_likelihood[:, 0]-likelihood[:, 0])
-             +beta*(proposed_likelihood[:, 1]-likelihood[:, 1])+ratio)
+    def target(values):
+        if beta == 0:
+            return values[:, 0]
+        if beta == 1:
+            return values[:, 1]
+        return (1-beta)*values[:, 0]+beta*values[:, 1]
+    delta = target(proposed_likelihood)-target(likelihood)+ratio
     if np.any(np.isnan(delta)):
         raise ArithmeticError("Undefined Metropolis ratio")
     accept = np.log(rng.random(len(delta))) < np.minimum(0., delta)
@@ -440,14 +521,18 @@ class SequentialFit:
     """Resumable approximate posterior population for a fixed generative model."""
 
     def __init__(self, manifest, *, particles=2048, seed=20261110, sweeps=20,
-                 ess_fraction=.8, pixel_block=128, max_stages=1000, queries=None):
+                 ess_fraction=.8, pixel_block=128, max_stages=1000, queries=None,
+                 gibbs_flux=False):
         if (not isinstance(particles, int) or particles < 2 or not isinstance(sweeps, int)
                 or sweeps < 1 or not 0 < ess_fraction < 1 or not isinstance(max_stages, int)
                 or max_stages < 1):
             raise ValueError("Valid particle, sweep, ESS and stage settings required")
         self.model = BlockModel(manifest, pixel_block)
+        if gibbs_flux and self.model.scene.noise != "gaussian":
+            raise ValueError("Conditional Gaussian flux updates require Gaussian noise")
         self.settings = dict(particles=particles, seed=seed, sweeps=sweeps,
-                             ess_fraction=ess_fraction, pixel_block=pixel_block, max_stages=max_stages)
+                             ess_fraction=ess_fraction, pixel_block=pixel_block,
+                             max_stages=max_stages, gibbs_flux=bool(gibbs_flux))
         self.rng = np.random.default_rng(seed)
         self.population = self.model.prior(particles, self.rng)
         self.queries = queries or ["has:"+t["name"] for t in self.model.scene.types]
@@ -470,6 +555,28 @@ class SequentialFit:
         self.in_progress = True
         old = self.assimilated
         likelihood = self.model.evaluate(self.population, [old, endpoint])
+        # Poisson likelihoods can be exactly zero (e.g. positive counts with
+        # no sources or background). The beta=0+ bridge restricts support.
+        # Include its mass in the evidence estimate before taking finite steps.
+        finite = np.isfinite(likelihood[:, 1])
+        if not np.all(finite):
+            if (not np.any(finite) or np.any(np.isnan(likelihood))
+                    or np.any(np.isposinf(likelihood))):
+                raise ArithmeticError("No finite new-data likelihood in the particle support")
+            restricted = np.where(finite, self.log_weights, -np.inf)
+            mass = float(logsumexp(restricted))
+            self.log_evidence += mass
+            indices = systematic_resample(restricted-mass, self.rng)
+            self.population = self.population.take(indices)
+            likelihood = likelihood[indices].copy()
+            self.log_weights.fill(-np.log(len(indices)))
+            self.stages.append({
+                "kind": "zero_likelihood_support_restriction", "beta": 0.,
+                "from_exposures": old, "to_exposures": endpoint,
+                "log_evidence_increment_estimate": mass,
+                "distinct_resampled_parents": int(len(np.unique(indices))),
+                "maximum_sampled_count": int(self.population.counts.max()),
+            })
         beta = 0.
         while beta < 1:
             if len(self.stages) >= self.settings["max_stages"]:
@@ -501,6 +608,10 @@ class SequentialFit:
                 proposed = self.model.evaluate(proposal, [old, endpoint])
                 accepted = _accept(self.population, proposal, likelihood, proposed, ratio, beta, self.rng)
                 continuous_accepted += int(accepted.sum())
+                if self.settings["gibbs_flux"] and sweep % 3 == 0:
+                    self.population = self.model.sample_conditional_flux(
+                        self.population, [old, endpoint], beta, self.rng)
+                    likelihood = self.model.evaluate(self.population, [old, endpoint])
             stage = {
                 "from_exposures": old, "to_exposures": endpoint, "beta": beta,
                 "ess_before_resampling": ess, "distinct_resampled_parents": int(len(np.unique(indices))),
