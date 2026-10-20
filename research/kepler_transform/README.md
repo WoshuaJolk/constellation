@@ -1,6 +1,16 @@
 # Full-objective Kepler transform attempts
 
-**Latest:** the [observer-chart campaign](chart_results/README.md) resolves
+**Latest:** the [global mathematical campaign](global_results/README.md) derives
+a source-interpolating hierarchy over the entire six-coordinate output box,
+certifies its exact-arithmetic kernel error using complex-time interval
+enclosures, and executes the sufficient orders on all three declared domains.
+Its [theory](global_theory.md) explicitly charges the six-dimensional leaf
+count, construction and interpolation instability. It also records an exact
+regularization identity and the obstruction to a common exposure clock.
+**It does not establish sublinear cost in resolved trajectories, a general
+inverse, or a mathematical breakthrough.**
+
+The preceding [observer-chart campaign](chart_results/README.md) resolves
 the declared broad geometry domains with adaptive quadratic/quartic atlases,
 tests actual ZTF pixels, and ships an experimental installed command and
 library. Its [derivation and usage](chart_construction.md) separate continuous

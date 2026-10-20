@@ -27,6 +27,15 @@ and an optimized same-geometry comparison. See the
 Full fast numerical certification and economical general outer-coordinate
 synthesis remain open; no new mathematical breakthrough is claimed.
 
+The [mathematics-first global campaign](research/kepler_transform/global_results/README.md)
+constructs a continuous six-coordinate response field before choosing query
+orbits. It derives the hierarchy's error and full construction cost, and
+certifies its exact-arithmetic kernel error below `1e-8` across all three
+declared physical domains using complex-time interval bounds. It also proves
+why a shared regularized-clock FFT shortcut and an unrestricted inverse fail.
+The representation still has a six-dimensional resolution cost: **this is not
+a sublinear-in-trajectories breakthrough or completion of the catalogue goal**.
+
 The [full-objective `prove_floor` research](research/detection_limit/README.md)
 adds continuous-family detection certificates, least-favorable-prior searches,
 and interval orbital image models. It closes the power gap below one percentage
