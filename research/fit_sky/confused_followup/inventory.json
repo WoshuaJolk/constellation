@@ -1,0 +1,18 @@
+{
+  "confused.json": "0621c729c9f424c1bb124834ccb016d5348e5d9a567548effe10461698fe2880",
+  "contract.json": "29c58f3368a1cd130b72d6aacbfc6196cc7e1444da8e90b808a6f36094e9ccb9",
+  "source_snapshot/__init__.py": "5ca2ddfd8a0392459e58a189686877fd3773c6bced114f19bb659305d6a2c929",
+  "source_snapshot/arithmetic.py": "aac9c4d3ff0dc05dd8321f287cc47fd540d737444067995eb9d05960de942965",
+  "source_snapshot/cli.py": "0f41e27067ec179c0a71f752581905044fd16d1d9804e485b07dd154f0c42aa6",
+  "source_snapshot/envelope.py": "261327f0ea6942ef4ce046d25558dc61edacc4a849fee30ec088ec4d2e19a0be",
+  "source_snapshot/experiments.py": "92f90e2d113c109d2545b9cbd2fb9bf23e9cf09c3c44b577c9e1a23ce5feeb25",
+  "source_snapshot/graph.py": "c6f2dfe7ca6c3872d39396fd693034899cd8f111c520b0f3bec8e8440a1aadad",
+  "source_snapshot/integrate.py": "2ad2d6fcc42ea3e42ee3808cfd62ea03dc39be5fca9d50ba696a2018ebdbfd12",
+  "source_snapshot/predictive_experiment.py": "d441b894f967ff3231be0fd3d38054280a8a24a31a9cda93e09db8db66fd237d",
+  "source_snapshot/reference.py": "900aa9cbb7ba31bbab0a0e53372142f1a5d4d890bd7ef42a7d5e627e24cda6b8",
+  "source_snapshot/sampling.py": "5cd9262e6d3253f5963665edd41226a48f64647f2e27ef2074f7049d83da5605",
+  "source_snapshot/scene.py": "21ca897cfeab2614b65fd1e86fb0ad2697b69bb1647f0d41b7f30d562d484df7",
+  "source_snapshot/statistical.py": "9334ca28a0040696068215827f97510ef0116012b559c28d366e956fb69de26c",
+  "source_snapshot/statistical_experiments.py": "e0cd7895283cefcaa1b030deb8dc8e33bd6abcde5adcb5dfca3a958d3043fafc",
+  "summary.json": "629979684772ec7a1feb66cd1bbbe49883f19bb722a7dbde8614b62014f6244a"
+}

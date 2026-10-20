@@ -13,7 +13,7 @@ import numpy as np
 from scipy.special import ndtr, xlogy
 from flint import ctx
 
-from .arithmetic import upper
+from .arithmetic import lower, upper
 from .integrate import _box, enclose, verify
 from .scene import Scene
 
@@ -136,6 +136,8 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
         model = BatchModel(scene)
         queries = queries or ["has:"+t["name"] for t in scene.types]
         cells = None
+        deterministic = np.zeros((1+2*len(queries), 2))
+        deterministic_cells = 0
         envelope, tail = 1., 0.
         if cover_report is not None:
             if cover_report["manifest"] != manifest:
@@ -145,7 +147,19 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
             cells, masses = [], []
             for record in cover_report["certificate"]:
                 root = roots[record["root"]]
-                _, hi, _, _, _ = enclose(scene, root, record["path"], "range", 0)
+                lo, hi, _, _, _ = enclose(scene, root, record["path"], "range", 0)
+                membership = [scene.query(root, query, _box(root, record["path"])) for query in queries]
+                if hi > 0 and (hi-lo)/hi < .000000000001 and all(m is not None for m in membership):
+                    # Integrate effectively constant cells with outward bounds.
+                    # Rare proposal probability is never a reason to lose a
+                    # known contribution such as the empty-catalogue evidence.
+                    mass = root["mass"]/2**len(record["path"])
+                    interval = [max(0., lower(mass*lo)), max(0., upper(mass*hi))]
+                    deterministic[0] += interval
+                    for j, member in enumerate(membership):
+                        deterministic[1+2*j+int(not member)] += interval
+                    deterministic_cells += 1
+                    continue
                 if use_dual_envelope:
                     from .envelope import bound
                     try:
@@ -162,10 +176,10 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
                 cell_upper = min(1., upper(hi))
                 cells.append((root, bounds, mass, cell_upper))
                 masses.append(mass*cell_upper)
-            proposal = np.asarray(masses)/sum(masses)
+            proposal = np.asarray(masses)/sum(masses) if masses else np.empty(0)
             if np.any(proposal <= 0):
                 raise ArithmeticError("Nonpositive proposal probability")
-            envelope = float(np.max(np.asarray(masses)/proposal))
+            envelope = float(np.max(np.asarray(masses)/proposal)) if masses else 0.
             tail = max(0., upper(scene.tail))
         construction_seconds = perf_counter()-started
         rng = np.random.default_rng(seed)
@@ -174,6 +188,8 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
         max_weight = 0.
         max_count_seen = 0
         for start in range(0, samples, batch_size):
+            if cells == []:
+                break
             n = min(batch_size, samples-start)
             groups = defaultdict(list)
             if cells is not None:
@@ -217,8 +233,8 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
                     squares[j] += column@column
         # Two one-sided events per expectation, allocated before validation.
         failure = (1-confidence)/(2*len(totals))
-        intervals = [tuple(envelope*x for x in _interval(a, b, samples, failure))
-                     for a, b in zip(totals, squares)]
+        intervals = [tuple(envelope*x+d for x, d in zip(_interval(a, b, samples, failure), det))
+                     for a, b, det in zip(totals, squares, deterministic)]
         zlo, zhi = intervals[0][0], intervals[0][1]+tail
         posterior, estimates = {}, {}
         for j, query in enumerate(queries):
@@ -226,7 +242,8 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
             cl, cu = intervals[2+2*j]
             posterior[query] = [nl/(nl+cu+tail) if nl+cu+tail > 0 else 0.,
                                 (nu+tail)/(nu+tail+cl) if nu+tail+cl > 0 else 1.]
-            estimates[query] = float(totals[1+2*j]/totals[0]) if totals[0] > 0 else None
+            denominator = deterministic[0].mean()+envelope*totals[0]/samples
+            estimates[query] = float((deterministic[1+2*j].mean()+envelope*totals[1+2*j]/samples)/denominator) if denominator > 0 else None
         gap = (zhi-zlo)/zlo if zlo > 0 else None
         met = gap is not None and gap <= tolerance and all(b-a <= tolerance for a, b in posterior.values())
         return {"method": "bounded_weight_importance" if cells is not None else "complete_prior_monte_carlo",
@@ -236,6 +253,8 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
                 "simultaneous_confidence": confidence, "samples": samples, "seed": seed,
                 "proposal_envelope": envelope, "maximum_observed_scaled_weight": max_weight,
                 "dual_envelope_requested": use_dual_envelope,
+                "analytically_integrated_cells": deterministic_cells,
+                "deterministic_scaled_evidence": deterministic[0].tolist(),
                 "represented_source_count_tail_upper": tail, "maximum_sampled_source_count": max_count_seen,
                 "construction_seconds": construction_seconds, "seconds": perf_counter()-started,
                 "arithmetic": "float64 sampling, rendering and concentration bounds; not formal arithmetic certification",

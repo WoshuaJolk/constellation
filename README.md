@@ -170,3 +170,18 @@ ranked = rank_exposures(posterior['posterior_weights'], [[0.5, 0.95, 0.05]])
 Runtime dependencies: NumPy, SciPy, Astropy. Tests use pytest. The repository includes GitHub Actions checks on Python 3.10 and 3.12.
 
 Independent validation includes analytic bound/unbound two-body trajectories, light-time/parallax cases, and frozen JPL Horizons Ceres vectors. In the ten-day Ceres check, the propagated position differs by about **0.18 km** and the geocentric direction by **0.034–0.038 arcseconds**. These results validate that particular case, not arbitrary close encounters, long arcs, or astrometric precision across the sky. All tests run offline.
+
+## FitSky full-objective research
+
+The [FitSky campaign](research/fit_sky/README.md) implements joint catalogue
+inference with source interactions, continuous source/count uncertainty, shared
+instrument nuisance, replayable posterior bounds, and global statistical
+integration. A confused-source experiment meets its declared evidence and
+posterior accuracy targets while retaining ambiguity between one and two
+sources. Broad mixed scenes and real ZTF inference still fail the requested
+guarantees: **the full FitSky objective is not achieved**. The original rubric,
+failed attempts, source snapshots, and independent controls are retained.
+
+The optional research command is `magictools-fit-sky`; see its
+[model and interface guide](docs/fit-sky.md). This work adds no modifications to
+the existing Kepler implementation.

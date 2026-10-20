@@ -1,0 +1,72 @@
+{
+  "method": "bounded_weight_importance",
+  "status": "confidence_target_met",
+  "scaled_evidence": [
+    0.7734276131387309,
+    0.7737785578905934
+  ],
+  "relative_evidence_gap": 0.00045375255020734743,
+  "queries": {
+    "has:star": [
+      0.6059531941108366,
+      0.6096974472063965
+    ]
+  },
+  "point_estimates_not_certificates": {
+    "has:star": 0.6078251264631594
+  },
+  "simultaneous_confidence": 0.99,
+  "samples": 1000000,
+  "seed": 20261021,
+  "proposal_envelope": 0.8032653298563168,
+  "maximum_observed_scaled_weight": 0.9999999999999998,
+  "dual_envelope_requested": true,
+  "represented_source_count_tail_upper": 0.0,
+  "maximum_sampled_source_count": 1,
+  "construction_seconds": 0.00908162900032039,
+  "seconds": 5.001504861000285,
+  "arithmetic": "float64 sampling, rendering and concentration bounds; not formal arithmetic certification",
+  "confidence_scope": "fixed-budget draws conditional on exact stated sampling/evaluation/model assumptions",
+  "full_objective_complete": false,
+  "manifest": {
+    "source_types": [
+      {
+        "name": "star",
+        "kind": "star",
+        "parameters": {
+          "x": [
+            0,
+            0
+          ],
+          "y": [
+            0,
+            0
+          ],
+          "flux": [
+            1,
+            3
+          ]
+        }
+      }
+    ],
+    "exposures": [
+      {
+        "id": "one",
+        "time": 0,
+        "data": [
+          [
+            1.0
+          ]
+        ],
+        "psf_sigma": 0.6
+      }
+    ],
+    "count_prior": {
+      "probabilities": [
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "proposal_report_sha256": "471678fe4c38fd47675392e68a7ba961ee90fd76f444ed67c932ead75a8282bd"
+}

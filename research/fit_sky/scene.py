@@ -51,6 +51,8 @@ class Scene:
         self.noise = manifest.get("noise", "gaussian")
         if self.noise not in ("gaussian", "poisson"):
             raise ValueError("Only Gaussian and Poisson experiments are implemented")
+        if self.noise == "poisson" and any(k in manifest for k in ("covariance", "linear_nuisance")):
+            raise ValueError("Gaussian covariance/nuisance cannot be used as a Poisson model")
         allowed = {"star", "galaxy", "kepler"}
         names = [t["name"] for t in self.types]
         if len(set(names)) != len(names) or any(not isinstance(n, str) or ":" in n for n in names):
@@ -101,6 +103,11 @@ class Scene:
                 raise ValueError("Positive PSF/noise and finite time required")
             if self.noise == "poisson" and (np.any(data < 0) or np.any(data != np.floor(data))):
                 raise ValueError("Poisson data must be nonnegative integer counts")
+            if self.noise == "poisson":
+                key = exposure.get("instrument", "default")+"_background"
+                minimum = self.nuisance[key][0] if key in self.nuisance else exposure.get("background", 0)
+                if not _finite(minimum) or minimum < 0:
+                    raise ValueError("Poisson background must be nonnegative throughout its prior")
             self.active.append([(j, i) for j, i in np.ndindex(data.shape) if not mask[j, i]])
             self.data.extend(float(data[j, i]) for j, i in self.active[-1])
             self.sigmas.extend(float(sigma[j, i]) for j, i in self.active[-1])

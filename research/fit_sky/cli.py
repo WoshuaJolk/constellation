@@ -18,6 +18,11 @@ def main():
     parser.add_argument("--tolerance", type=float, default=.01)
     parser.add_argument("--method", choices=["range", "gauss", "hybrid", "auto"], default="auto")
     parser.add_argument("--samples", type=int, default=0)
+    parser.add_argument("--statistical-samples", type=int, default=0,
+                        help="Fixed number of importance-sampling draws, with confidence bounds")
+    parser.add_argument("--statistical-prior", action="store_true",
+                        help="Sample the complete prior, including unbounded Poisson counts")
+    parser.add_argument("--seed", type=int, default=20261021)
     parser.add_argument("--verify", action="store_true")
     args = parser.parse_args()
     if args.output.exists():
@@ -33,6 +38,12 @@ def main():
         (args.output/"verification.json").write_text(json.dumps(verify(report), indent=2, allow_nan=False)+"\n")
     if args.samples:
         (args.output/"samples.json").write_text(json.dumps(sample(report, args.samples), indent=2, allow_nan=False)+"\n")
+    if args.statistical_samples:
+        from .statistical import infer as integrate_statistically
+        statistical = integrate_statistically(value["scene"], samples=args.statistical_samples,
+                                              queries=value.get("queries"), seed=args.seed,
+                                              cover_report=None if args.statistical_prior else report)
+        (args.output/"statistical.json").write_text(json.dumps(statistical, indent=2, allow_nan=False)+"\n")
     print(json.dumps({k: report[k] for k in ["status", "full_objective_complete", "queries", "work"]}, indent=2))
 
 

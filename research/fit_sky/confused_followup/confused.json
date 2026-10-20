@@ -1,0 +1,94 @@
+{
+  "method": "bounded_weight_importance",
+  "status": "confidence_target_met",
+  "scaled_evidence": [
+    0.007272582297823979,
+    0.007315327752504782
+  ],
+  "relative_evidence_gap": 0.005877617183320638,
+  "queries": {
+    "count=0": [
+      0.007360441520237076,
+      0.0074440239706060765
+    ],
+    "count=1": [
+      0.5307852631511871,
+      0.5352097689531803
+    ],
+    "count=2": [
+      0.45741600430574714,
+      0.4618249290142645
+    ]
+  },
+  "point_estimates_not_certificates": {
+    "count=0": 0.007382009066126004,
+    "count=1": 0.5329998507337563,
+    "count=2": 0.45961814020014546
+  },
+  "simultaneous_confidence": 0.99,
+  "samples": 4000000,
+  "seed": 20261022,
+  "proposal_envelope": 0.06380676989443518,
+  "maximum_observed_scaled_weight": 0.9181053591111554,
+  "dual_envelope_requested": true,
+  "analytically_integrated_cells": 1,
+  "deterministic_scaled_evidence": [
+    5.3844042123678773e-05,
+    5.384404212367879e-05
+  ],
+  "represented_source_count_tail_upper": 0.0,
+  "maximum_sampled_source_count": 2,
+  "construction_seconds": 1.432970030999968,
+  "seconds": 173.3509766750003,
+  "arithmetic": "float64 sampling, rendering and concentration bounds; not formal arithmetic certification",
+  "confidence_scope": "fixed-budget draws conditional on exact stated sampling/evaluation/model assumptions",
+  "full_objective_complete": false,
+  "manifest": {
+    "exposures": [
+      {
+        "id": "one",
+        "time": 0,
+        "data": [
+          [
+            -1.2153903458113895,
+            0.919718969912003,
+            0.4491033223114247,
+            2.0789385976240657,
+            1.0994749226709253
+          ]
+        ],
+        "psf_sigma": 0.7,
+        "noise_sigma": 0.7
+      }
+    ],
+    "source_types": [
+      {
+        "name": "star",
+        "kind": "star",
+        "parameters": {
+          "x": [
+            -1.2,
+            1.2
+          ],
+          "y": [
+            0,
+            0
+          ],
+          "flux": [
+            1,
+            8
+          ]
+        }
+      }
+    ],
+    "nuisance": {},
+    "count_prior": {
+      "probabilities": [
+        0.2,
+        0.4,
+        0.4
+      ]
+    }
+  },
+  "proposal_report_sha256": "3c17d6fe0eebc11f0ba5aa2cf7d8e4c4c64f69c164d54854102c242a5d53e2f6"
+}

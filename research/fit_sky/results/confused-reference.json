@@ -1,0 +1,32 @@
+[
+  {
+    "order": 12,
+    "scaled_evidence": 0.007290856028892326,
+    "count_posterior": [
+      0.00738514680722053,
+      0.5330720746798141,
+      0.4595427785129652
+    ],
+    "scope": "independent numerical quadrature; no rigorous error bound"
+  },
+  {
+    "order": 24,
+    "scaled_evidence": 0.007290855399560492,
+    "count_posterior": [
+      0.007385147444691408,
+      0.5330720586408088,
+      0.4595427939144998
+    ],
+    "scope": "independent numerical quadrature; no rigorous error bound"
+  },
+  {
+    "order": 40,
+    "scaled_evidence": 0.007290855399560531,
+    "count_posterior": [
+      0.007385147444691368,
+      0.5330720586408092,
+      0.45954279391449954
+    ],
+    "scope": "independent numerical quadrature; no rigorous error bound"
+  }
+]

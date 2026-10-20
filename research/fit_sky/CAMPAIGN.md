@@ -59,3 +59,12 @@ For the broad scene, draw directly from the unbounded Poisson prior instead;
 its source count is not truncated at the deterministic campaign's cutoff.
 Record envelope construction, sampling work, failures and numerical assumptions.
 Do not stop sampling when favorable confidence intervals first appear.
+
+The one-million-draw confused-source run missed the 1% relative evidence target
+(gap 0.01212). A follow-up uses a fresh seed, 20261022, and a fixed four million
+draws on the unchanged confused-source domain. Constant-likelihood cells,
+including the empty catalogue, are now integrated analytically rather than
+relying on their possibly tiny proposal probabilities. Repeat the real-data
+statistical calculation at one million draws with this accounting improvement.
+These follow-ups have separate per-run confidence budgets; the first results
+remain retained.

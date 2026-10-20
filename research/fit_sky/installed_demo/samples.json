@@ -1,0 +1,240 @@
+{
+  "catalogues": [
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.2834958199010793
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.2726435057936043
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.0434565274204823
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.5454987944457115
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.8302780435618393
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.358903075988187
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.047229918180947
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.3874531978529743
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.8083683603955456
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.774243671783501
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.7252553829431165
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.295633343311647
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 1.6799634171164675
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.294547095428432
+          }
+        }
+      ],
+      "nuisance": {}
+    },
+    {
+      "sources": [
+        {
+          "class": "star",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0,
+            "y": 0.0,
+            "flux": 2.2772383910411325
+          }
+        }
+      ],
+      "nuisance": {}
+    }
+  ],
+  "proposals": 20,
+  "seed": 20261020,
+  "complete": true,
+  "conditional_on_represented_source_counts": true,
+  "excluded_posterior_mass_upper": 0.0,
+  "sampling_arithmetic": "float64 RNG/proposal weights, Arb acceptance comparisons"
+}

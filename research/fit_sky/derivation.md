@@ -259,6 +259,12 @@ implementation, but do not turn those assumptions into formal enclosures.
 A fixed-budget unresolved result is retained; favorable intermediate estimates
 do not trigger early stopping.
 
+Cells whose range bound is constant to 1e-12 relative accuracy, and whose queried
+events are constant, contribute their enclosed integrals directly. Their tiny
+remaining interval width is retained. This prevents a known empty-catalogue
+evidence from disappearing from a point estimate merely because the proposal
+rarely selects it. Only the remaining uncertain integrals are sampled.
+
 ## Held-out observations
 
 Under the same source prior and a consistent proper shared-background model,

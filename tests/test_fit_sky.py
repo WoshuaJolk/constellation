@@ -391,3 +391,48 @@ def test_dual_envelope_for_fixed_templates_is_exact_at_interior_optimum():
         upper, info = bound(scene, scene.roots()[0], [])
         assert float(upper) == pytest.approx(1.)
         assert info["physical_distance_lower"] == pytest.approx(0.)
+
+
+def test_dual_envelope_with_shared_covariance_matches_optimized_pixels():
+    from research.fit_sky.envelope import bound
+    from scipy.optimize import minimize_scalar
+    m = scalar_scene(flux=(0, 3), count=(0, 1))
+    m["exposures"][0]["data"] = [[3., -3., 3.]]
+    m["linear_nuisance"] = {"design": [[1.], [1.], [1.]], "mean": [0.], "covariance": [[.1]]}
+    with ctx.workprec(100):
+        scene = Scene(m)
+        root = scene.roots()[0]
+        ceiling, _ = bound(scene, root, [])
+        response = render(m["exposures"], [{"kind": "star", "parameters": {"x": 0, "y": 0, "flux": 1}}])[0].ravel()
+        precision = np.linalg.inv(np.eye(3)+.1*np.ones((3, 3)))
+        def energy(f):
+            r = np.array([3., -3., 3.])-f*response
+            return r@precision@r
+        fit = minimize_scalar(energy, bounds=(0, 3), method="bounded")
+        optimum = min(energy(0), energy(3), fit.fun)
+        assert float(ceiling) == pytest.approx(np.exp(-optimum/2), rel=1e-10)
+        assert float(ceiling) < .01
+
+
+@pytest.mark.parametrize("invalid", ["negative_background", "covariance"])
+def test_poisson_cannot_silently_accept_an_invalid_noise_model(invalid):
+    m = scalar_scene(data=1.)
+    m["noise"] = "poisson"
+    if invalid == "negative_background":
+        m["nuisance"] = {"default_background": [-1, 1]}
+    else:
+        m["covariance"] = [[1.]]
+    with pytest.raises(ValueError):
+        infer(m)
+
+
+def test_constant_catalogue_evidence_is_integrated_not_sampled():
+    from research.fit_sky.statistical import infer as statistical_infer
+    m = scalar_scene()
+    cover = infer(m, method="auto")
+    r = statistical_infer(m, cover_report=cover, samples=10000, seed=22)
+    assert r["analytically_integrated_cells"] == 1
+    a, b = r["deterministic_scaled_evidence"]
+    assert a <= .5*np.exp(-.5) <= b
+    p = r["point_estimates_not_certificates"]["has:star"]
+    assert .58 < p < .64
