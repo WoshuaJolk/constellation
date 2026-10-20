@@ -4,7 +4,7 @@
 execution and inspection through one noninteractive command. Existing science
 commands and research engines are unchanged. Use Python 3.11 or later for the complete research installation below.
 
-Both the Python distribution and executable are named `constellation`. The
+The Python distribution is named `const-ellation`; the executable is `constellation`. The
 Python import package remains `magictools` for compatibility. If you installed
 the former `magictools-astro` distribution, uninstall it before installing the
 renamed package so that both distributions do not own the same files.
@@ -20,11 +20,13 @@ constellation list
 Install directly from GitHub:
 
 ```sh
-python -m pip install 'constellation[research,agent] @ git+https://github.com/WoshuaJolk/constellation.git@main'
+python -m pip install 'const-ellation[research,agent] @ git+https://github.com/WoshuaJolk/constellation.git@main'
 ```
 
-Use the GitHub URL above: the `constellation` name on PyPI currently belongs to
-an unrelated project. This repository is not published to PyPI or npm.
+Use the GitHub URL above until a registry release is published. The distribution
+name `const-ellation` is currently unregistered on PyPI and npm; this repository
+has not published a package to either registry. `pip install constellation`
+refers to an unrelated project.
 
 The equivalent module invocation is `python -m magictools.agent_cli`. No server,
 login, detector catalogue or interactive prompts are required. Science inputs

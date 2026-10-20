@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "constellation"
+name = "const-ellation"
 version = "0.6.0"
 description = "Astronomical inference, orbit searches, stellar tracebacks, and Gaussian detection bounds"
 readme = "README.md"

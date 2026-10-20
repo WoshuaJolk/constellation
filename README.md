@@ -7,11 +7,11 @@ All installed tools are available under **`constellation`**. Run
 Install the full Python toolset directly from this public repository (Python 3.11+):
 
 ```sh
-pipx install 'constellation[research,agent] @ git+https://github.com/WoshuaJolk/constellation.git@main'
+pipx install 'const-ellation[research,agent] @ git+https://github.com/WoshuaJolk/constellation.git@main'
 constellation list
 ```
 
-The distribution is named `constellation`; the Python import namespace remains
+The distribution is named `const-ellation`; the Python import namespace remains
 `magictools` for compatibility. See the [installation guide](docs/agent-cli.md)
 when upgrading from the former distribution.
 
