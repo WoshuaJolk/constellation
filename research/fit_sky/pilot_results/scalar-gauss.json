@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "tool": "fit_sky",
+  "manifest": {
+    "source_types": [
+      {
+        "name": "star",
+        "kind": "star",
+        "parameters": {
+          "x": [
+            0,
+            0
+          ],
+          "y": [
+            0,
+            0
+          ],
+          "flux": [
+            1,
+            3
+          ]
+        }
+      }
+    ],
+    "exposures": [
+      {
+        "id": "one",
+        "time": 0,
+        "data": [
+          [
+            1.0
+          ]
+        ],
+        "psf_sigma": 0.6
+      }
+    ],
+    "count_prior": {
+      "probabilities": [
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "manifest_sha256": "853d7f3ef8764a2a044e3a20818faf5d89933e26fffd66987a5fa0c229b75401",
+  "settings": {
+    "method": "gauss",
+    "max_gauss_dimension": 6,
+    "precision": 100,
+    "tolerance": 0.01,
+    "max_leaves": 4096,
+    "max_seconds": 120.0
+  },
+  "status": "bounded_target_met",
+  "full_objective_complete": false,
+  "scaled_evidence": [
+    0.7732842676965948,
+    0.77355908193445
+  ],
+  "log_evidence": [
+    -1.1760470851514648,
+    -1.1756917624992878
+  ],
+  "relative_evidence_gap": 0.00035538578674776747,
+  "queries": {
+    "has:star": [
+      0.6078216737039506,
+      0.6079609987928306
+    ]
+  },
+  "source_count_tail_prior_upper": 0.0,
+  "source_count_tail_posterior_upper": 0.0,
+  "work": {
+    "leaves": 2,
+    "roots": 2,
+    "forward_calls": 5,
+    "seconds": 0.0005435989999114099,
+    "max_dimension": 1
+  },
+  "certificate": [
+    {
+      "root": 0,
+      "path": [],
+      "likelihood": [
+        0.6065306597126333,
+        0.6065306597126335
+      ],
+      "mode": "point"
+    },
+    {
+      "root": 1,
+      "path": [],
+      "likelihood": [
+        0.9400378756805562,
+        0.9405875041562665
+      ],
+      "mode": "gauss2_directional_fourth_derivatives"
+    }
+  ],
+  "progress": [],
+  "scope": "Declared compact source/instrument priors and Gaussian/Poisson image model",
+  "arithmetic": "Arb prior, forward likelihood and quadrature enclosures; outward float report bounds"
+}

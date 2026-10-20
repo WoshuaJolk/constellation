@@ -11,20 +11,24 @@ requires-python = ">=3.10"
 dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "astropy>=6,<9"]
 
 [project.optional-dependencies]
+agent = ["jsonschema>=4.21,<5"]
 test = ["pytest>=8,<10"]
 ephemeris = ["jplephem>=2.22,<3"]
 research = ["finufft>=2.4,<3", "python-flint>=0.8,<0.9", "mpmath>=1.3,<2"]
 accelerate = ["numba>=0.60,<1"]
 
 [project.scripts]
-constellation = "magictools.frames.cli:main"
 magictools = "magictools.cli:main"
+constellation = "magictools.agent_cli:main"
 magictools-fold-chart = "research.kepler_transform.chart_search:main"
+magictools-fit-sky = "research.fit_sky.cli:main"
+magictools-fit-sky-stream = "research.fit_sky.sequential_cli:main"
 
 [tool.setuptools.package-dir]
 "" = "src"
 "research.kepler_transform" = "research/kepler_transform"
 "research.detection_limit" = "research/detection_limit"
+"research.fit_sky" = "research/fit_sky"
 
 [tool.setuptools.packages.find]
 where = ["src", "."]
@@ -36,6 +40,7 @@ include = [
     "research.kepler_transform.ordered",
     "research.kepler_transform.detector_time",
     "research.detection_limit",
+    "research.fit_sky",
 ]
 namespaces = true
 

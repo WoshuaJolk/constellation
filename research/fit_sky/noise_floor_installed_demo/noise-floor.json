@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "method": "continuous_template_dual_noise_floor",
+  "manifest_sha256": "53b4df3d231c37f3d432e032391f6dda1399b07d72ed713c58d5f0e70a3b6b79",
+  "precision": 100,
+  "dual": [
+    0.0
+  ],
+  "supports": [
+    [
+      {
+        "upper": 0.0,
+        "signed_upper": 0.0,
+        "sample_lower": 0.0,
+        "leaves": [
+          {
+            "path": [],
+            "upper": 0.0
+          }
+        ]
+      }
+    ]
+  ],
+  "baseline_energy_lower": 0.0,
+  "class_support_upper": [
+    0.0
+  ],
+  "settings": {
+    "max_leaves": 128,
+    "tolerance": 0.0001,
+    "grid": 9,
+    "iterations": 1000
+  },
+  "seconds": 0.009053431000211276,
+  "full_objective_complete": false
+}

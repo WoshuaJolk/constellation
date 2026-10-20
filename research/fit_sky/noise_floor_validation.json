@@ -1,0 +1,88 @@
+{
+  "full_objective_complete": false,
+  "suite": {
+    "passed": 406,
+    "skipped": 1,
+    "skip": "Optional local JPL SPK kernel not supplied",
+    "command": "OPENBLAS_NUM_THREADS=1 python -m pytest -q",
+    "log_sha256": "b1a7a38a38dee01ddc583bac40f26be99112baf58994a7c5bbfc7f9657b84040"
+  },
+  "tested_commit": "b084e185f7f874bbd585165e0248e70963e67ccd",
+  "merged_main_commit": "b37ff322313245eeb15b8a88e8e4bbfa2d0fadfc",
+  "wheel": {
+    "sha256": "876fd05a8f10a1b6ed40bc6c11c8d89fc2ed0816525fd08d4e9f9428525e5500",
+    "installed_outside_repository": true,
+    "all_fitsky_sources_identical_to_installed_wheel": true,
+    "smoke_tests": [
+      "conditional and global noise floors, analytic flux queries, fast catalogue draws",
+      "adaptive embedded proofs, replay, analytic flux queries, fast catalogue draws"
+    ]
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "astropy": "8.0.2",
+    "python-flint": "0.8.0",
+    "pytest": "9.1.1"
+  },
+  "artifact_inventories_checked": {
+    "noise_floor_results": 23,
+    "noise_floor_diagnostics": 15,
+    "noise_floor_predictive_results": 25,
+    "noise_floor_catalogues": 19,
+    "adaptive_noise_results": 44,
+    "noise_floor_installed_demo": 6,
+    "adaptive_installed_demo": 4
+  },
+  "independent_quadrature_inside_confidence_intervals": {
+    "moving": true,
+    "real": true,
+    "three_exposure_joint": true
+  },
+  "source_sha256": {
+    "research/fit_sky/__init__.py": "5ca2ddfd8a0392459e58a189686877fd3773c6bced114f19bb659305d6a2c929",
+    "research/fit_sky/arithmetic.py": "aac9c4d3ff0dc05dd8321f287cc47fd540d737444067995eb9d05960de942965",
+    "research/fit_sky/cli.py": "f1055f7cba257f9869275fa9c8bdf022f535ea242a608efc387a901fa1ea9e30",
+    "research/fit_sky/envelope.py": "261327f0ea6942ef4ce046d25558dc61edacc4a849fee30ec088ec4d2e19a0be",
+    "research/fit_sky/experiments.py": "92f90e2d113c109d2545b9cbd2fb9bf23e9cf09c3c44b577c9e1a23ce5feeb25",
+    "research/fit_sky/graph.py": "c6f2dfe7ca6c3872d39396fd693034899cd8f111c520b0f3bec8e8440a1aadad",
+    "research/fit_sky/integrate.py": "8e7e834e47940970bc4c58e66c28c0d6eb8561c1b07815cd8b6e695b7e4c08c2",
+    "research/fit_sky/noise_floor.py": "3c3ead797edf8c48daaca64126a390f45e8d682f1fd8d11aebef64139e846411",
+    "research/fit_sky/noise_floor_experiments.py": "21efe70e150199a56d2fd340545c1fb9eed8a4ab84ba768e8d58620f48a86562",
+    "research/fit_sky/noise_floor_predictive.py": "ddf2dda9a75caf4c434d38506295fb702ea09ec90b157ebbb41b9ea59e26bad1",
+    "research/fit_sky/predictive_experiment.py": "d441b894f967ff3231be0fd3d38054280a8a24a31a9cda93e09db8db66fd237d",
+    "research/fit_sky/reference.py": "900aa9cbb7ba31bbab0a0e53372142f1a5d4d890bd7ef42a7d5e627e24cda6b8",
+    "research/fit_sky/reference_quadrature.py": "52ba522363067720e20dee57ad82535233a331111cda75f9c3b881bf94991dd6",
+    "research/fit_sky/sampling.py": "a0cc7af5f6c8040ad3f801ff72759845958b0b7fd3d4977a7ba9289a847fad5d",
+    "research/fit_sky/scene.py": "21ca897cfeab2614b65fd1e86fb0ad2697b69bb1647f0d41b7f30d562d484df7",
+    "research/fit_sky/statistical.py": "11b8f1ddb9832ab9391666eb5b46e757b2e9bdb6927096bd88908076f9480cac",
+    "research/fit_sky/statistical_experiments.py": "e0cd7895283cefcaa1b030deb8dc8e33bd6abcde5adcb5dfca3a958d3043fafc"
+  },
+  "test_source_sha256": "34fc92d5005a5001143bc68e249e6dde3afa83aea3c23733493cd4e34f6e9c9b",
+  "kepler_diff_against_merged_main": [],
+  "original_worktree_modified": false,
+  "derived_empty_catalogue_queries": {
+    "moving": {
+      "count=0": [
+        1.415254894125318e-16,
+        1.4256298470504333e-16
+      ],
+      "method": "empty-catalogue range integral divided by existing simultaneous evidence interval; no extra sampling or confidence allocation"
+    },
+    "real": {
+      "count=0": [
+        0.9029010415195181,
+        0.9106459678939628
+      ],
+      "method": "empty-catalogue range integral divided by existing simultaneous evidence interval; no extra sampling or confidence allocation"
+    },
+    "three_exposure_joint": {
+      "count=0": [
+        0.8956800735319477,
+        0.8992004787691067
+      ],
+      "method": "empty-catalogue range integral divided by existing simultaneous evidence interval; no extra sampling or confidence allocation"
+    }
+  }
+}

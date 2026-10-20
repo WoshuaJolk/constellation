@@ -1,0 +1,12 @@
+{
+  "samples_per_case": 8000000,
+  "seed": 20261025,
+  "confidence_per_case": 0.99,
+  "tolerance": 0.01,
+  "case_order": [
+    "moving",
+    "real"
+  ],
+  "optional_stopping": false,
+  "full_objective_complete": false
+}

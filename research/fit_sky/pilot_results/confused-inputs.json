@@ -1,0 +1,70 @@
+{
+  "scene": {
+    "exposures": [
+      {
+        "id": "one",
+        "time": 0,
+        "data": [
+          [
+            -1.2153903458113895,
+            0.919718969912003,
+            0.4491033223114247,
+            2.0789385976240657,
+            1.0994749226709253
+          ]
+        ],
+        "psf_sigma": 0.7,
+        "noise_sigma": 0.7
+      }
+    ],
+    "source_types": [
+      {
+        "name": "star",
+        "kind": "star",
+        "parameters": {
+          "x": [
+            -1.2,
+            1.2
+          ],
+          "y": [
+            0,
+            0
+          ],
+          "flux": [
+            1,
+            8
+          ]
+        }
+      }
+    ],
+    "nuisance": {},
+    "count_prior": {
+      "probabilities": [
+        0.2,
+        0.4,
+        0.4
+      ]
+    }
+  },
+  "truth": {
+    "sources": [
+      {
+        "kind": "star",
+        "parameters": {
+          "x": -0.4,
+          "y": 0,
+          "flux": 4.0
+        }
+      },
+      {
+        "kind": "star",
+        "parameters": {
+          "x": 0.4,
+          "y": 0,
+          "flux": 4.0
+        }
+      }
+    ],
+    "nuisance": {}
+  }
+}

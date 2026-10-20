@@ -181,10 +181,10 @@ Direct pixels are the appropriate strong baseline for this small stack.
 
 ```
 pip install -e '.[research,accelerate]'
-magictools-fold-chart manifest.json NEW_OUTPUT_DIRECTORY
+constellation fold-chart manifest.json NEW_OUTPUT_DIRECTORY
 ```
 
-The production `magictools fold_kepler` interface remains unchanged. The new
+The production `constellation fold_kepler` interface remains unchanged. The new
 experimental library is also included in wheels under
 `research.kepler_transform`; the optional research dependencies are required.
 

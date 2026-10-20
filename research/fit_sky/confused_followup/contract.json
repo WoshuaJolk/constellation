@@ -1,0 +1,9 @@
+{
+  "samples_per_case": 4000000,
+  "seed": 20261022,
+  "confidence_per_case": 0.99,
+  "joint_confidence_across_cases_claimed": false,
+  "tolerance": 0.01,
+  "selection": "fixed budget, no stopping on favorable bounds",
+  "full_objective_complete": false
+}

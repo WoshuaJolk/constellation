@@ -1,0 +1,5539 @@
+{
+  "schema": "fit-sky-sequential-v1",
+  "status": "approximate_uncertified",
+  "full_objective_complete": false,
+  "accuracy_target_met": false,
+  "manifest_sha256": "a74edda5b779ba9c56bcb489f61440418278dd647adf05e4f53ab756ede2d781",
+  "settings": {
+    "particles": 128,
+    "seed": 20261150,
+    "sweeps": 4,
+    "ess_fraction": 0.8,
+    "pixel_block": 128,
+    "max_stages": 1000,
+    "gibbs_flux": true,
+    "split_merge": true
+  },
+  "scope": "Float64 sequential Monte Carlo estimates; no finite-sample mode-coverage or evidence-error certificate.",
+  "source_count_scope": "Complete Poisson prior, no enumeration cutoff",
+  "linear_nuisance_scope": "Shared Gaussian linear nuisance integrated jointly, not sampled",
+  "summary": {
+    "assimilated_exposures": 3,
+    "log_evidence_estimate": -37.081837439261776,
+    "queries": {
+      "has:stationary": {
+        "estimate": 0.9921875,
+        "certified_interval": [
+          0.0,
+          1.0
+        ]
+      },
+      "has:moving": {
+        "estimate": 0.4921875,
+        "certified_interval": [
+          0.0,
+          1.0
+        ]
+      },
+      "has:galaxy": {
+        "estimate": 0.4140625,
+        "certified_interval": [
+          0.0,
+          1.0
+        ]
+      }
+    },
+    "count_distribution_estimate": {
+      "2": 0.4375,
+      "3": 0.453125,
+      "4": 0.09375,
+      "5": 0.015625
+    },
+    "nuisance_mean_estimate": {
+      "b_dx": 0.0813143000657835,
+      "b_log_gain": -0.021659874420779327
+    },
+    "maximum_sampled_count": 5,
+    "stages": 20,
+    "seconds": 5.564603676997649
+  },
+  "history": [
+    {
+      "assimilated_exposures": 1,
+      "log_evidence_estimate": -17.01171510020712,
+      "queries": {
+        "has:stationary": {
+          "estimate": 0.6015625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.796875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.4609375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "1": 0.0546875,
+        "2": 0.40625,
+        "3": 0.3359375,
+        "4": 0.1796875,
+        "5": 0.0234375
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": -0.013588632009411508,
+        "b_log_gain": -0.03173340347264286
+      },
+      "maximum_sampled_count": 5,
+      "stages": 10,
+      "seconds": 2.250223418999667
+    },
+    {
+      "assimilated_exposures": 2,
+      "log_evidence_estimate": -27.55187017182507,
+      "queries": {
+        "has:stationary": {
+          "estimate": 0.984375,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.5625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.2578125,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "1": 0.0078125,
+        "2": 0.5,
+        "3": 0.3828125,
+        "4": 0.09375,
+        "5": 0.015625
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.045869274912890175,
+        "b_log_gain": -0.017072109698605294
+      },
+      "maximum_sampled_count": 5,
+      "stages": 16,
+      "seconds": 4.2737891859978845
+    },
+    {
+      "assimilated_exposures": 3,
+      "log_evidence_estimate": -37.081837439261776,
+      "queries": {
+        "has:stationary": {
+          "estimate": 0.9921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:moving": {
+          "estimate": 0.4921875,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        },
+        "has:galaxy": {
+          "estimate": 0.4140625,
+          "certified_interval": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "count_distribution_estimate": {
+        "2": 0.4375,
+        "3": 0.453125,
+        "4": 0.09375,
+        "5": 0.015625
+      },
+      "nuisance_mean_estimate": {
+        "b_dx": 0.0813143000657835,
+        "b_log_gain": -0.021659874420779327
+      },
+      "maximum_sampled_count": 5,
+      "stages": 20,
+      "seconds": 5.564603676997649
+    }
+  ],
+  "stages": [
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.0373607318935818,
+      "ess_before_resampling": 102.4000000000018,
+      "distinct_resampled_parents": 106,
+      "log_evidence_increment_estimate": -1.5233084938785217,
+      "count_acceptance": 0.7341513292433538,
+      "parameter_acceptance": 0.966796875,
+      "split_merge_acceptance": 0.030303030303030304,
+      "split_merge_viable_proposals": 33,
+      "maximum_sampled_count": 8
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.07615018384349195,
+      "ess_before_resampling": 102.40000000000198,
+      "distinct_resampled_parents": 105,
+      "log_evidence_increment_estimate": -1.380412712440111,
+      "count_acceptance": 0.6767676767676768,
+      "parameter_acceptance": 0.953125,
+      "split_merge_acceptance": 0.05,
+      "split_merge_viable_proposals": 40,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.12466350550608443,
+      "ess_before_resampling": 102.40000000000198,
+      "distinct_resampled_parents": 101,
+      "log_evidence_increment_estimate": -1.478789736985859,
+      "count_acceptance": 0.5680473372781065,
+      "parameter_acceptance": 0.916015625,
+      "split_merge_acceptance": 0.022222222222222223,
+      "split_merge_viable_proposals": 45,
+      "maximum_sampled_count": 7
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.1869451684367444,
+      "ess_before_resampling": 102.40000000000052,
+      "distinct_resampled_parents": 101,
+      "log_evidence_increment_estimate": -1.4609297841899238,
+      "count_acceptance": 0.49609375,
+      "parameter_acceptance": 0.86328125,
+      "split_merge_acceptance": 0.0,
+      "split_merge_viable_proposals": 47,
+      "maximum_sampled_count": 8
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.2684502876964497,
+      "ess_before_resampling": 102.40000000000052,
+      "distinct_resampled_parents": 100,
+      "log_evidence_increment_estimate": -1.6581637677989511,
+      "count_acceptance": 0.41796875,
+      "parameter_acceptance": 0.828125,
+      "split_merge_acceptance": 0.025,
+      "split_merge_viable_proposals": 40,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.37697305746153326,
+      "ess_before_resampling": 102.40000000000033,
+      "distinct_resampled_parents": 100,
+      "log_evidence_increment_estimate": -1.7865630230324054,
+      "count_acceptance": 0.35546875,
+      "parameter_acceptance": 0.80078125,
+      "split_merge_acceptance": 0.0,
+      "split_merge_viable_proposals": 46,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.5182475102173085,
+      "ess_before_resampling": 102.40000000000033,
+      "distinct_resampled_parents": 100,
+      "log_evidence_increment_estimate": -1.9989127788912233,
+      "count_acceptance": 0.298828125,
+      "parameter_acceptance": 0.7734375,
+      "split_merge_acceptance": 0.0,
+      "split_merge_viable_proposals": 38,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.7133004152847232,
+      "ess_before_resampling": 102.40000000000016,
+      "distinct_resampled_parents": 100,
+      "log_evidence_increment_estimate": -2.506869466067056,
+      "count_acceptance": 0.30078125,
+      "parameter_acceptance": 0.783203125,
+      "split_merge_acceptance": 0.022727272727272728,
+      "split_merge_viable_proposals": 44,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 0.9679619554032551,
+      "ess_before_resampling": 102.39999999999998,
+      "distinct_resampled_parents": 98,
+      "log_evidence_increment_estimate": -2.879027608623974,
+      "count_acceptance": 0.216796875,
+      "parameter_acceptance": 0.796875,
+      "split_merge_acceptance": 0.044444444444444446,
+      "split_merge_viable_proposals": 45,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 0,
+      "to_exposures": 1,
+      "beta": 1.0,
+      "ess_before_resampling": 127.70219139162225,
+      "distinct_resampled_parents": 126,
+      "log_evidence_increment_estimate": -0.338737728299094,
+      "count_acceptance": 0.2734375,
+      "parameter_acceptance": 0.783203125,
+      "split_merge_acceptance": 0.023255813953488372,
+      "split_merge_viable_proposals": 43,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 1,
+      "to_exposures": 2,
+      "beta": 0.078533705437966,
+      "ess_before_resampling": 102.40000000000033,
+      "distinct_resampled_parents": 100,
+      "log_evidence_increment_estimate": -1.2876151072469275,
+      "count_acceptance": 0.2265625,
+      "parameter_acceptance": 0.71875,
+      "split_merge_acceptance": 0.05084745762711865,
+      "split_merge_viable_proposals": 59,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 1,
+      "to_exposures": 2,
+      "beta": 0.19361608688317022,
+      "ess_before_resampling": 102.4000000000007,
+      "distinct_resampled_parents": 99,
+      "log_evidence_increment_estimate": -1.5811002550743485,
+      "count_acceptance": 0.19921875,
+      "parameter_acceptance": 0.712890625,
+      "split_merge_acceptance": 0.0,
+      "split_merge_viable_proposals": 58,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 1,
+      "to_exposures": 2,
+      "beta": 0.3537274916101077,
+      "ess_before_resampling": 102.40000000000016,
+      "distinct_resampled_parents": 99,
+      "log_evidence_increment_estimate": -1.829463422678817,
+      "count_acceptance": 0.22265625,
+      "parameter_acceptance": 0.74609375,
+      "split_merge_acceptance": 0.015873015873015872,
+      "split_merge_viable_proposals": 63,
+      "maximum_sampled_count": 6
+    },
+    {
+      "from_exposures": 1,
+      "to_exposures": 2,
+      "beta": 0.5951818650246952,
+      "ess_before_resampling": 102.40000000000025,
+      "distinct_resampled_parents": 106,
+      "log_evidence_increment_estimate": -2.3380907230421455,
+      "count_acceptance": 0.1640625,
+      "parameter_acceptance": 0.71484375,
+      "split_merge_acceptance": 0.043478260869565216,
+      "split_merge_viable_proposals": 46,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 1,
+      "to_exposures": 2,
+      "beta": 0.9131149167028983,
+      "ess_before_resampling": 102.39999999999998,
+      "distinct_resampled_parents": 103,
+      "log_evidence_increment_estimate": -2.7824023630933556,
+      "count_acceptance": 0.158203125,
+      "parameter_acceptance": 0.716796875,
+      "split_merge_acceptance": 0.03508771929824561,
+      "split_merge_viable_proposals": 57,
+      "maximum_sampled_count": 4
+    },
+    {
+      "from_exposures": 1,
+      "to_exposures": 2,
+      "beta": 1.0,
+      "ess_before_resampling": 125.8701739069617,
+      "distinct_resampled_parents": 120,
+      "log_evidence_increment_estimate": -0.721483200482357,
+      "count_acceptance": 0.140625,
+      "parameter_acceptance": 0.6875,
+      "split_merge_acceptance": 0.0,
+      "split_merge_viable_proposals": 64,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 2,
+      "to_exposures": 3,
+      "beta": 0.1903944992174722,
+      "ess_before_resampling": 102.39999999999998,
+      "distinct_resampled_parents": 102,
+      "log_evidence_increment_estimate": -2.1506271201651654,
+      "count_acceptance": 0.146484375,
+      "parameter_acceptance": 0.66796875,
+      "split_merge_acceptance": 0.03278688524590164,
+      "split_merge_viable_proposals": 61,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 2,
+      "to_exposures": 3,
+      "beta": 0.4803522243742401,
+      "ess_before_resampling": 102.39999999999988,
+      "distinct_resampled_parents": 106,
+      "log_evidence_increment_estimate": -2.8442177675004934,
+      "count_acceptance": 0.115234375,
+      "parameter_acceptance": 0.640625,
+      "split_merge_acceptance": 0.03076923076923077,
+      "split_merge_viable_proposals": 65,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 2,
+      "to_exposures": 3,
+      "beta": 0.8437343635656112,
+      "ess_before_resampling": 102.39999999999998,
+      "distinct_resampled_parents": 104,
+      "log_evidence_increment_estimate": -3.2232495399953307,
+      "count_acceptance": 0.09765625,
+      "parameter_acceptance": 0.681640625,
+      "split_merge_acceptance": 0.04,
+      "split_merge_viable_proposals": 50,
+      "maximum_sampled_count": 5
+    },
+    {
+      "from_exposures": 2,
+      "to_exposures": 3,
+      "beta": 1.0,
+      "ess_before_resampling": 122.68331296332177,
+      "distinct_resampled_parents": 116,
+      "log_evidence_increment_estimate": -1.3118728397757131,
+      "count_acceptance": 0.09375,
+      "parameter_acceptance": 0.654296875,
+      "split_merge_acceptance": 0.023809523809523808,
+      "split_merge_viable_proposals": 42,
+      "maximum_sampled_count": 5
+    }
+  ],
+  "work": {
+    "catalogue_evaluations": 41344,
+    "catalogue_pixels": 633600,
+    "pixel_block": 128
+  },
+  "catalogues": [
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2024732433844294,
+            "y": -0.18702704106811385,
+            "flux": 10.822807486487728,
+            "parallax": 0.2552992374378382,
+            "variability": 0.1839703574213254
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.5603519121868423,
+            "y": 0.5666406875331051,
+            "flux": 5.896658597772335,
+            "vx": -0.6948619345032974,
+            "parallax": 0.30890248134025683,
+            "variability": 0.17312643119602866,
+            "vy": 0.23326608819489358
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.11025428283858985,
+        "b_log_gain": 0.06325172612262256
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.17897377935315006,
+            "y": -0.20383793492547708,
+            "flux": 9.61194817939662,
+            "parallax": 0.2581791326167451,
+            "variability": 0.05540514982881006
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.5603519121868423,
+            "y": 0.5666406875331051,
+            "flux": 7.906377959326861,
+            "vx": -0.6948619345032974,
+            "parallax": 0.30890248134025683,
+            "variability": 0.17312643119602866,
+            "vy": 0.23326608819489358
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.08462144867770649,
+        "b_log_gain": 0.05252402771590525
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2416685271915724,
+            "y": -0.2225918265129625,
+            "flux": 10.660987875639865,
+            "parallax": 0.26055901263963266,
+            "variability": 0.17778940352014988
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.5603519121868423,
+            "y": 0.5666406875331051,
+            "flux": 9.027270492330144,
+            "vx": -0.6948619345032974,
+            "parallax": 0.30890248134025683,
+            "variability": 0.17647408073921061,
+            "vy": 0.23326608819489358
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.19756960850051353,
+        "b_log_gain": 0.027459219746639618
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.5117886558088691,
+            "y": 0.09437841524524604,
+            "flux": 10.118630581238858,
+            "parallax": 0.20166796737862375,
+            "variability": 0.12746621287164733
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.370587071229548,
+            "y": 0.18187257978350324,
+            "flux": 8.357972296214008,
+            "vx": -0.571620632807317,
+            "parallax": 0.26813735124213195,
+            "variability": 0.19205668073060156,
+            "vy": 0.15577669142847705
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.2531893164753192,
+        "b_log_gain": -0.0966024610580564
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.274625984706204,
+            "y": 0.6506353875058486,
+            "flux": 4.800646256086275,
+            "parallax": 0.2093721676971162,
+            "variability": -0.00273936508972622
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.1350503340817304,
+            "y": -0.2272407028696941,
+            "flux": 11.774823756845324,
+            "parallax": 0.42899838048943584,
+            "variability": -0.1643274450705437
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.13545067326085714,
+        "b_log_gain": 0.08912410475692656
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.4126466921825864,
+            "y": 0.5579440102622271,
+            "flux": 3.097265233486075,
+            "parallax": 0.2394160630586859,
+            "variability": -0.037887179630801404
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.254220268502491,
+            "y": -0.2165149107714548,
+            "flux": 10.666669982363953,
+            "parallax": 0.4423994694703256,
+            "variability": -0.14603243563235618
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.11891541683222392,
+        "b_log_gain": 0.09935821750485438
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.2681521818486052,
+            "y": 0.6361480038338683,
+            "flux": 3.6291544657782455,
+            "parallax": 0.2434751662691364,
+            "variability": 0.00015316573077844842
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.3586401537516606,
+            "y": -0.2165149107714548,
+            "flux": 11.851266075390049,
+            "parallax": 0.44529328161319015,
+            "variability": -0.14603243563235618
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.10032232475692737,
+        "b_log_gain": 0.09483451411800989
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9319889359001916,
+            "y": 0.5793740940498111,
+            "flux": 5.430269003285408,
+            "parallax": 0.17885139508829284,
+            "variability": -0.002393399458396589
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.35724650161924254,
+            "y": -0.27820538605715806,
+            "flux": 10.0718241050963,
+            "parallax": 0.4299304365067791,
+            "variability": -0.18145563569287512
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.06921838251129439,
+        "b_log_gain": 0.07590294795440952
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.8973654589830025,
+            "y": 0.44962887300109156,
+            "flux": 4.7287868192716696,
+            "parallax": 0.1953409927153395,
+            "variability": -0.01581997920165143
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.34109937819965186,
+            "y": -0.20113064005957515,
+            "flux": 10.057959612918337,
+            "parallax": 0.46218749345029986,
+            "variability": -0.12693923592176481
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.20049671558323462,
+        "b_log_gain": 0.03348984063195698
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9332470937406754,
+            "y": 0.46370977719049034,
+            "flux": 4.138233512472398,
+            "parallax": 0.21049483697723237,
+            "variability": -0.012476121571956489
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.08004951178041653,
+            "y": -0.2432367057450071,
+            "flux": 10.162624804081542,
+            "parallax": 0.4388900566078137,
+            "variability": -0.17483921147420342
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.02947412418088058,
+        "b_log_gain": 0.062066630485900776
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.08004951178041653,
+            "y": -0.2432367057450071,
+            "flux": 10.162624804081542,
+            "parallax": 0.4388900566078137,
+            "variability": -0.17483921147420342
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.4706102753111145,
+            "y": -1.7352774556720996,
+            "flux": 9.076501618943565,
+            "sigma_x": 0.9970610664203139,
+            "sigma_y": 1.3975992743571237
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.6071093017120264,
+            "y": 1.7157560608605036,
+            "flux": 11.40604147624158,
+            "sigma_x": 0.4104084353332004,
+            "sigma_y": 1.3585038997552117
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.14498091162492777,
+        "b_log_gain": 0.026880972310248857
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9269007467335242,
+            "y": 0.6055006867221864,
+            "flux": 5.188494105519987,
+            "parallax": 0.21046268802953494,
+            "variability": 0.005209700621180563
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.22911720467371754,
+            "y": -0.18260769015396283,
+            "flux": 9.97192752777046,
+            "parallax": 0.437797085417911,
+            "variability": -0.1414918038282471
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.27718089643895444,
+        "b_log_gain": -0.012947905538574861
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9914606612700516,
+            "y": 0.4358235718946042,
+            "flux": 3.328897772164109,
+            "parallax": 0.2237015081777377,
+            "variability": 0.0022667242581299596
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.20396242913096874,
+            "y": -0.2527647826144537,
+            "flux": 10.37536862602346,
+            "parallax": 0.43271993336103315,
+            "variability": -0.14966350749993218
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.28923859164184956,
+        "b_log_gain": -0.011042210608592035
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9713171448658264,
+            "y": 0.3233300818821889,
+            "flux": 3.187970299897855,
+            "parallax": 0.15170404035260576,
+            "variability": -0.010207729118156955
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.35633902022988595,
+            "y": -0.2278947914907974,
+            "flux": 10.942720727183959,
+            "parallax": 0.43168952026075424,
+            "variability": -0.12363565379698774
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.13110700325844338,
+        "b_log_gain": 0.012709935566170547
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.7725488686773745,
+            "y": 1.4204818575376343,
+            "flux": 7.378603813779762,
+            "vx": 0.4315005747142362,
+            "parallax": 0.18957947914634304,
+            "variability": -0.012755874169686793,
+            "vy": 0.5956435283791739
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2134023656131374,
+            "y": -0.26953485650121056,
+            "flux": 10.05378181417493,
+            "parallax": 0.4534303602499717,
+            "variability": -0.055963064776635596
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.2880410470901239,
+        "b_log_gain": 0.029445636142449855
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.456455318435065,
+            "y": 0.3806275188105612,
+            "flux": 5.618931493579611,
+            "parallax": 0.26534647662347516,
+            "variability": -0.07502692727685441
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.23349120949332658,
+            "y": -0.22384814402133069,
+            "flux": 10.911989549534544,
+            "parallax": 0.4583811317722876,
+            "variability": -0.13341820440845026
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.0014209162728787694,
+        "b_log_gain": -0.0891742330311653
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.328384065249764,
+            "y": 0.517368905432043,
+            "flux": 5.001371584660461,
+            "parallax": 0.35145278726955914,
+            "variability": -0.07830451575877478
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.23349120949332658,
+            "y": -0.22384814402133069,
+            "flux": 10.891144363735533,
+            "parallax": 0.4498772195942529,
+            "variability": -0.13341820440845026
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.026467069470643978,
+        "b_log_gain": -0.061221087857521256
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.8527774263547365,
+            "y": 0.4829736901281678,
+            "flux": 5.188405577888057,
+            "parallax": 0.23411033154704997,
+            "variability": 0.02929616303014701
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.19905561521949267,
+            "y": -0.137681400943646,
+            "flux": 9.560968189419,
+            "parallax": 0.45406375916327946,
+            "variability": -0.14552766988783594
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.021631611325976685,
+        "b_log_gain": 0.08412903341004135
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.7497513888256715,
+            "y": 1.3432295274961707,
+            "flux": 2.449636813125302,
+            "sigma_x": 1.3147572975382815,
+            "sigma_y": 0.6929320492713484
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.16900962481316917,
+            "y": -0.16935208320076445,
+            "flux": 8.983767906670058,
+            "parallax": 0.4339798398266388,
+            "variability": -0.15565454593715936
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.480259336865016,
+            "y": 1.2629105013837574,
+            "flux": 3.6895493804879065,
+            "vx": 0.48154354565155844,
+            "parallax": 0.37556307763294045,
+            "variability": -0.001546347150137406,
+            "vy": 0.6254660798014462
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.6233711315976627,
+            "y": 1.0997629893602028,
+            "flux": 3.5496747395481565,
+            "sigma_x": 1.3706474126642247,
+            "sigma_y": 1.051131660129965
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.1957746953924957,
+        "b_log_gain": -0.08100049806651062
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.16900962481316917,
+            "y": -0.16935208320076445,
+            "flux": 11.359850296773185,
+            "parallax": 0.4339798398266388,
+            "variability": -0.15565454593715936
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.6233711315976627,
+            "y": 1.0997629893602028,
+            "flux": 10.209452761767983,
+            "sigma_x": 1.3706474126642247,
+            "sigma_y": 1.051131660129965
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.22449097733762788,
+        "b_log_gain": -0.04314483144021195
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.16900962481316917,
+            "y": -0.16935208320076445,
+            "flux": 10.53075775667837,
+            "parallax": 0.4339798398266388,
+            "variability": -0.15565454593715936
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.701962120731853,
+            "y": 0.4902186521946752,
+            "flux": 8.508314493515051,
+            "sigma_x": 1.4173553515824548,
+            "sigma_y": 0.6199136772155679
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.26523462445956764,
+        "b_log_gain": -0.07050447745773364
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.11861415569726486,
+            "y": -0.18034144131836793,
+            "flux": 9.280464789681327,
+            "parallax": 0.45333066109413234,
+            "variability": -0.14561447107192788
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.2956770445728898,
+            "y": 1.4734671200939742,
+            "flux": 5.727884625145994,
+            "sigma_x": 1.4249132906609245,
+            "sigma_y": 1.0835060835242896
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.0892366286911748,
+            "y": 0.857301083782466,
+            "flux": 5.813351569009802,
+            "sigma_x": 0.8780387563615668,
+            "sigma_y": 1.3863906778766388
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.24871879112471967,
+        "b_log_gain": -0.07284586628159373
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 1.3126007872233614,
+            "y": 0.6558873431260279,
+            "flux": 1.3150205242183297,
+            "parallax": 0.24632139533740965,
+            "variability": -0.12091525430977851
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.5997930792630215,
+            "y": 0.2515692462074286,
+            "flux": 5.482477839719312,
+            "parallax": 0.17026712492845741,
+            "variability": -0.17761519498194966
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.3598408158275088,
+            "y": -0.40090514866364657,
+            "flux": 7.00533869348002,
+            "parallax": 0.40021893857715807,
+            "variability": -0.1931542909078095
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.28023762809463587,
+        "b_log_gain": -0.06605650153293513
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.09866434843365735,
+            "y": -0.043180314703443745,
+            "flux": 10.735484682966327,
+            "parallax": 0.39544334987192464,
+            "variability": 0.06995650161606087
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.9403429223591138,
+            "y": 1.7412812200143275,
+            "flux": 3.5649972908024967,
+            "sigma_x": 0.3758816197992942,
+            "sigma_y": 0.987186234966779
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 1.992048964805191,
+            "y": 1.6548720694812098,
+            "flux": 2.1552300839633904,
+            "parallax": 0.056929317182532135,
+            "variability": -0.10656255428804783
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.0741928024398017,
+        "b_log_gain": 0.09218138578559998
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9890601401639514,
+            "y": 0.4429840202170885,
+            "flux": 6.619451545452557,
+            "parallax": 0.18348689203872903,
+            "variability": -0.17159180330692286
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.3636248715909183,
+            "y": -0.12096061349920761,
+            "flux": 7.920787808053071,
+            "parallax": 0.2123096438064605,
+            "variability": -0.13804233793708712
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.29060428155107826,
+        "b_log_gain": -0.05829309307158162
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.7250191584667336,
+            "y": 0.1703134921543339,
+            "flux": 5.32519109817045,
+            "parallax": 0.18263947464133395,
+            "variability": -0.15779324220260493
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.3541450351487816,
+            "y": -0.16783278756335562,
+            "flux": 8.194281031074595,
+            "parallax": 0.15444988335428678,
+            "variability": -0.17237227800886137
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.1525032040725796,
+        "b_log_gain": -0.08274262982142187
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.1109461150653086,
+            "y": 0.2835489474752171,
+            "flux": 3.3477262095747347,
+            "parallax": 0.27583144284044653,
+            "variability": 0.13721592385562936
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.084695192564106,
+            "y": 0.4041798127469236,
+            "flux": 3.662042453304032,
+            "parallax": 0.11306680368035743,
+            "variability": -0.12923257359759246
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.4650412472530614,
+            "y": -0.23115757633548384,
+            "flux": 7.7416497477820565,
+            "parallax": 0.2151071902886711,
+            "variability": -0.16359483536575825
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.18115422084314176,
+        "b_log_gain": -0.026628810859319035
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.8673615258194367,
+            "y": 0.06891453622383237,
+            "flux": 6.674554711666898,
+            "parallax": 0.18348689203872903,
+            "variability": -0.1629378650141894
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.4402847453748904,
+            "y": -0.20260520697910467,
+            "flux": 7.620981856619748,
+            "parallax": 0.225729591028069,
+            "variability": -0.18436115528594363
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.17028303046518362,
+        "b_log_gain": -0.013298633002312113
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9586342241712811,
+            "y": 0.5486254586946542,
+            "flux": 6.929847662861285,
+            "parallax": 0.10778544428301134,
+            "variability": -0.0775440001699299
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.4303183195415201,
+            "y": -0.4465772813717672,
+            "flux": 8.761911235379337,
+            "parallax": 0.38872634965036434,
+            "variability": -0.1620439662487725
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.25839810185145534,
+        "b_log_gain": 0.0738492784984871
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.1121518738213103,
+            "y": 0.35890341417305605,
+            "flux": 4.878213334230472,
+            "parallax": 0.12291643665793917,
+            "variability": -0.11567991283341811
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.10253443568471132,
+            "y": -0.18249776811199014,
+            "flux": 10.859293939180265,
+            "parallax": 0.34241555132801255,
+            "variability": -0.17394732004914895
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.15621159801574608,
+        "b_log_gain": 0.0706839366033773
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.5619052616871252,
+            "y": -1.9358095991590973,
+            "flux": 1.044545856275043,
+            "vx": 0.565907560640637,
+            "parallax": 0.4208049609308905,
+            "variability": 0.17240715898238973,
+            "vy": 0.20535453442875484
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.149258304865468,
+            "y": 0.5315061109849895,
+            "flux": 7.272661895909318,
+            "sigma_x": 0.7385458014701265,
+            "sigma_y": 1.1080355009754417
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2748291135326899,
+            "y": -0.12462711262227621,
+            "flux": 9.616424072087968,
+            "parallax": 0.37019226130648664,
+            "variability": -0.16869621658400136
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.95463196950754,
+            "y": 0.4547587709076151,
+            "flux": 3.083382665050231,
+            "parallax": 0.2161076428200307,
+            "variability": -0.08256054610928443
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.06272064955432194,
+        "b_log_gain": 0.06321536735238545
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9852499078415233,
+            "y": 0.48461318004446596,
+            "flux": 5.825757848940913,
+            "parallax": 0.10076262896949795,
+            "variability": -0.14241056111302838
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.29967571276424243,
+            "y": -0.3067481017340623,
+            "flux": 9.20784119566179,
+            "parallax": 0.3722947595192592,
+            "variability": -0.1639468005788266
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.10108483022257103,
+        "b_log_gain": 0.07072362057087297
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9313936589471705,
+            "y": 0.47958697780798154,
+            "flux": 5.09731226326001,
+            "parallax": 0.1323811110531704,
+            "variability": -0.10294364644503454
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.10984736871644385,
+            "y": -0.3621269907953599,
+            "flux": 9.595482742419701,
+            "parallax": 0.3867551453894526,
+            "variability": -0.18029089799405648
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.25379989657652674,
+        "b_log_gain": 0.02141216660528611
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.7790912610058656,
+            "y": 0.15494544045412795,
+            "flux": 6.173472209696804,
+            "parallax": 0.20509205039136863,
+            "variability": -0.06351793601591044
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.5231905046308776,
+            "y": -0.2916156657345943,
+            "flux": 8.021730301724478,
+            "parallax": 0.34182054461278666,
+            "variability": -0.15988405147539073
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.05561252685072521,
+        "b_log_gain": 0.0154600329783567
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.9565642165123718,
+            "y": -1.143099888509996,
+            "flux": 1.3391841166630556,
+            "sigma_x": 1.2160460061290124,
+            "sigma_y": 1.2080838136767833
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.6626214966568025,
+            "y": 0.5514797573891532,
+            "flux": 5.184951929212524,
+            "vx": 0.3568103613349076,
+            "parallax": 0.10476381321062789,
+            "variability": -0.09378118728510501,
+            "vy": 0.26802230120390513
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.15357753072883673,
+            "y": -0.2320244239850786,
+            "flux": 8.474953984078592,
+            "parallax": 0.41171510113544313,
+            "variability": -0.08023560599812365
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.17991546776236578,
+        "b_log_gain": 0.054108582251856385
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.6940451958939122,
+            "y": 0.5152831032377838,
+            "flux": 3.995045687318737,
+            "sigma_x": 0.41305921780030785,
+            "sigma_y": 1.48402518276428
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.6626214966568025,
+            "y": 0.5424039119330097,
+            "flux": 3.2072253077751918,
+            "vx": 0.3568103613349076,
+            "parallax": 0.11971406559371023,
+            "variability": -0.006841355450008857,
+            "vy": 0.26802230120390513
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.22391452072259588,
+            "y": -0.1251620639223061,
+            "flux": 8.782198279840518,
+            "parallax": 0.379945780040734,
+            "variability": -0.16194626795333233
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.25844571544194267,
+        "b_log_gain": 0.02522418423557443
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.0349589310681164,
+            "y": 0.37751140021155827,
+            "flux": 4.722652980016522,
+            "vx": 0.46901534378314236,
+            "parallax": 0.08286979433153824,
+            "variability": -0.12052162393854707,
+            "vy": 0.4041507435293892
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2832639910973018,
+            "y": -0.1379198195212168,
+            "flux": 10.442417725903738,
+            "parallax": 0.4018167098475306,
+            "variability": -0.12534938680496524
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.21842380861969696,
+        "b_log_gain": -0.009047274424333757
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9638136374824624,
+            "y": 0.4323922410631016,
+            "flux": 2.6764424657687176,
+            "vx": 0.3069157777099194,
+            "parallax": 0.0814636598749452,
+            "variability": -0.11541480226861706,
+            "vy": 0.398524345476001
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.365950581093816,
+            "y": -0.8750518226980946,
+            "flux": 1.7375568782529436,
+            "parallax": 0.4274144990371295,
+            "variability": -0.1831271912931668
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.433726050198259,
+            "y": -1.803841388811752,
+            "flux": 2.96863339822656,
+            "sigma_x": 0.41475654960001784,
+            "sigma_y": 1.3587791875962996
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2832639910973018,
+            "y": -0.1158649921284991,
+            "flux": 8.62108824595073,
+            "parallax": 0.4018167098475306,
+            "variability": -0.1621650011154313
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.6000285345272496,
+            "y": -0.9382816520989632,
+            "flux": 1.6494866730676803,
+            "sigma_x": 0.6710100894845088,
+            "sigma_y": 0.9346281808792885
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.202949033092026,
+        "b_log_gain": -0.005459767992104764
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.1481480847750558,
+            "y": 0.6789004423688798,
+            "flux": 6.254903697496968,
+            "vx": 0.22570662383678064,
+            "parallax": 0.05525524408757776,
+            "variability": -0.09936219830659772,
+            "vy": 0.32363194577222254
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2922927116370557,
+            "y": -0.21025325217918667,
+            "flux": 9.492878522004755,
+            "parallax": 0.3944361350212529,
+            "variability": -0.16626569846882516
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.24243959029168466,
+        "b_log_gain": -0.00294851861909233
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.0431310773732863,
+            "y": 0.5436563935378094,
+            "flux": 3.6134378443209534,
+            "vx": 0.41548527581660655,
+            "parallax": 0.061868159177127124,
+            "variability": -0.01409757681059931,
+            "vy": 0.6703789358349486
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 0.7409163536958148,
+            "y": -0.08405596002425542,
+            "flux": 5.2414135724253965,
+            "sigma_x": 1.2158517381597103,
+            "sigma_y": 0.5773027835729174
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 0.6817576422839107,
+            "y": -1.6030856964506297,
+            "flux": 5.3463199665849075,
+            "sigma_x": 1.3920489352315852,
+            "sigma_y": 0.7120390827792145
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2463032845508213,
+            "y": 0.027267935739143656,
+            "flux": 9.615081890726156,
+            "parallax": 0.3490833157201754,
+            "variability": -0.14411179761253878
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.202070105379913,
+        "b_log_gain": -0.09213559924546127
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.4052051108351393,
+            "y": -0.011091625569745744,
+            "flux": 8.573101306618863,
+            "vx": 0.7726951548880432,
+            "parallax": 0.3614609105155484,
+            "variability": 0.12838962453931918,
+            "vy": 0.12786060964893697
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.6857738784389418,
+            "y": 0.8662430701080495,
+            "flux": 6.974550084304658,
+            "vx": 0.7053399699407883,
+            "parallax": 0.1669241422461864,
+            "variability": -0.00692490986566674,
+            "vy": 0.9079776257393024
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.11638025547929587,
+            "y": -0.35132169039139516,
+            "flux": 5.209068483683786,
+            "parallax": 0.2845465171398782,
+            "variability": -0.0815468904266254
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.17227821902062462,
+        "b_log_gain": 0.05036947114087467
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.044223684181563,
+            "y": 1.7692133396967806,
+            "flux": 5.63947253504627,
+            "sigma_x": 1.134612479075313,
+            "sigma_y": 0.7429501074954457
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.4071487852648632,
+            "y": -0.10058258893642869,
+            "flux": 7.537164570750591,
+            "vx": 0.6425246900248518,
+            "parallax": 0.31746915117928326,
+            "variability": 0.12591817153157964,
+            "vy": 0.013146586858728826
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.6857738784389418,
+            "y": 0.8682065518161983,
+            "flux": 4.943286876249863,
+            "vx": 0.7053399699407883,
+            "parallax": 0.14374351912803118,
+            "variability": -0.00692490986566674,
+            "vy": 0.9079776257393024
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.052250699509785115,
+            "y": -0.05003792110153604,
+            "flux": 6.074759689709428,
+            "sigma_x": 0.6773307152322279,
+            "sigma_y": 1.1687373659537548
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.12012655027616331,
+        "b_log_gain": -0.008955684568519251
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.1280757456680481,
+            "y": -0.2865556833217977,
+            "flux": 2.8492573900050253,
+            "vx": 0.7372467565356589,
+            "parallax": 0.31193785992814066,
+            "variability": 0.12596382276399026,
+            "vy": -0.014760484193096168
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.20393819361697885,
+            "y": -0.16156973268865116,
+            "flux": 6.927129942949019,
+            "parallax": 0.25386728712538004,
+            "variability": -0.04970563527043709
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.3019244731146191,
+            "y": 0.08143369564010294,
+            "flux": 5.452350382258354,
+            "sigma_x": 0.41230423453584303,
+            "sigma_y": 0.865684060467045
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.23381572643706366,
+        "b_log_gain": -0.08099043568251596
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.0475645423206674,
+            "y": -0.30020425802188466,
+            "flux": 3.0371981070927943,
+            "vx": 0.8909912071220571,
+            "parallax": 0.32313481903476,
+            "variability": 0.12978111470817538,
+            "vy": -0.2900688701833094
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.2625644863940817,
+            "y": -0.061755897266218884,
+            "flux": 8.737001675143315,
+            "parallax": 0.25992262559941665,
+            "variability": -0.03946420354607372
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 1.2591220694298784,
+            "y": 0.11177381544957932,
+            "flux": 3.4781000117431713,
+            "parallax": 0.33274291866896544,
+            "variability": -0.15212338318428043
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.27512423341976383,
+        "b_log_gain": -0.09894095982595896
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.49865421246374897,
+            "y": 0.8487821507786681,
+            "flux": 1.7972490213753805,
+            "vx": 0.6238675330470731,
+            "parallax": 0.30509623139095254,
+            "variability": -0.17423211270872851,
+            "vy": 0.37592956291217017
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.23694668122545037,
+            "y": -0.12802613076111813,
+            "flux": 7.949587098242402,
+            "parallax": 0.2817664956892889,
+            "variability": -0.006389094193477524
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.9356853313906166,
+            "y": -0.39538260206086573,
+            "flux": 6.10714003458152,
+            "vx": 0.6641373909257369,
+            "parallax": 0.31617720191576143,
+            "variability": 0.1379795202043274,
+            "vy": -0.3092300756531545
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.2855940076575921,
+        "b_log_gain": -0.015677341440318224
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.2332077368012162,
+            "y": -0.15085788152625312,
+            "flux": 8.575691009254331,
+            "parallax": 0.2765819840806722,
+            "variability": -0.05590680941259807
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.611849057270244,
+            "y": -0.3533441818646246,
+            "flux": 4.875124083662903,
+            "vx": 0.5361249717183212,
+            "parallax": 0.21680631908058867,
+            "variability": 0.17969286217106334,
+            "vy": -0.20034143746401467
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.29354509464930506,
+        "b_log_gain": -0.06383990692766234
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.7894626986875579,
+            "y": 1.421413055404471,
+            "flux": 5.479874282872546,
+            "parallax": 0.13406063227400383,
+            "variability": 0.1828415859972985
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.5533142536801838,
+            "y": 0.0433553469483674,
+            "flux": 4.995799607667001,
+            "parallax": 0.29066609537505367,
+            "variability": 0.07925192916975854
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.38437969001759287,
+            "y": -0.10908490050560449,
+            "flux": 6.756342637456127,
+            "parallax": 0.3076929389918668,
+            "variability": -0.04600687631400238
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.22193771522244193,
+        "b_log_gain": -0.09861768900827772
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.5060316764537145,
+            "y": -0.034354020396348606,
+            "flux": 10.301835882909685,
+            "parallax": 0.3038799380109959,
+            "variability": -0.05641464355803147
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.8543486515437899,
+            "y": -0.39473046304893167,
+            "flux": 5.933761395811305,
+            "parallax": 0.3065132043798654,
+            "variability": 0.10308409180991468
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.08502333392781847,
+        "b_log_gain": -0.09433935895568178
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.461867555335885,
+            "y": -0.29040052065362687,
+            "flux": 7.541561558754826,
+            "vx": 0.720161546717589,
+            "parallax": 0.3302380130849537,
+            "variability": 0.12347583622001324,
+            "vy": 0.027136037323276074
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.32476843867077143,
+            "y": -0.10020273898894372,
+            "flux": 11.144563715343958,
+            "parallax": 0.309431070257744,
+            "variability": 0.000553523834712133
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.2728529418288235,
+        "b_log_gain": -0.07449222493444135
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.8379091398922465,
+            "y": -0.1635863193130369,
+            "flux": 6.738475585516714,
+            "vx": 0.3857275956394868,
+            "parallax": 0.2850075885128011,
+            "variability": 0.0848389295567481,
+            "vy": 0.07762850530667453
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.47972943822676406,
+            "y": -0.1641418485041961,
+            "flux": 4.259506827709329,
+            "parallax": 0.2781109211605717,
+            "variability": -0.09569579506418245
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.8854762671119296,
+            "y": 1.3025350904566046,
+            "flux": 10.098229739459292,
+            "sigma_x": 0.4469508279594651,
+            "sigma_y": 1.0656868781287303
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.29027727706849477,
+        "b_log_gain": -0.09004682228001303
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.7969424318381502,
+            "y": -0.16275671608639364,
+            "flux": 6.531561464695534,
+            "vx": 0.5011194775863141,
+            "parallax": 0.2971585281635855,
+            "variability": 0.17395552200552927,
+            "vy": 0.15468220697473312
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9290992050407212,
+            "y": 1.9933919466572951,
+            "flux": 8.881129459138208,
+            "vx": -0.830983443106875,
+            "parallax": 0.10989038520907912,
+            "variability": -0.1921879492825641,
+            "vy": -0.22911560375192286
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.5371692169256894,
+            "y": -0.3068205218326501,
+            "flux": 7.594836213804918,
+            "parallax": 0.28734445695837485,
+            "variability": -0.027935834908758117
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.13500414366538466,
+        "b_log_gain": 0.02609870602570194
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.8965659703419488,
+            "y": -0.09871633606872443,
+            "flux": 7.029102632505981,
+            "vx": 0.5023629521927191,
+            "parallax": 0.30072115618121004,
+            "variability": 0.17384709914076008,
+            "vy": 0.15970524273976072
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.8741838948922083,
+            "y": 1.943328945830693,
+            "flux": 10.421633516183098,
+            "vx": -0.8561172725714081,
+            "parallax": 0.1710653502582168,
+            "variability": -0.14381464632180335,
+            "vy": -0.12527041920672222
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.35250597667818706,
+            "y": -0.28691918774458847,
+            "flux": 8.126020554183453,
+            "parallax": 0.296646557941101,
+            "variability": -0.022369810893390685
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.08399471264734376,
+        "b_log_gain": 0.02691883021591704
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.8965659703419488,
+            "y": -0.09871633606872443,
+            "flux": 8.01300469508019,
+            "vx": 0.5023629521927191,
+            "parallax": 0.30072115618121004,
+            "variability": 0.17384709914076008,
+            "vy": 0.15970524273976072
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.8741838948922083,
+            "y": 1.943328945830693,
+            "flux": 4.015168757464965,
+            "vx": -0.8561172725714081,
+            "parallax": 0.15980091763483628,
+            "variability": -0.18717380470925102,
+            "vy": -0.12527041920672222
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 0.8220349048479871,
+            "y": 1.4840109486880384,
+            "flux": 4.308306977108991,
+            "sigma_x": 1.0081604123042578,
+            "sigma_y": 1.157386247740342
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.3589118288988855,
+            "y": -0.28691918774458847,
+            "flux": 7.89262179340302,
+            "parallax": 0.296646557941101,
+            "variability": -0.022369810893390685
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.13665608155111758,
+        "b_log_gain": 0.009849793024203565
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.8965659703419488,
+            "y": -0.09871633606872443,
+            "flux": 8.01300469508019,
+            "vx": 0.5023629521927191,
+            "parallax": 0.30072115618121004,
+            "variability": 0.17384709914076008,
+            "vy": 0.15970524273976072
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.3589118288988855,
+            "y": -0.28691918774458847,
+            "flux": 7.95922407389202,
+            "parallax": 0.296646557941101,
+            "variability": -0.022369810893390685
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.23917289201656128,
+        "b_log_gain": 0.08998179593867336
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.17864544847317365,
+            "y": 0.0841837748987202,
+            "flux": 9.158210873248299,
+            "parallax": 0.3354207935553975,
+            "variability": -0.10539698480318643
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 0.9428758417664449,
+            "y": -0.1817888148277289,
+            "flux": 6.59507677461639,
+            "sigma_x": 1.1008641263332049,
+            "sigma_y": 0.37663997048231324
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.8358776893104354,
+            "y": 1.305843104816177,
+            "flux": 1.829827611519384,
+            "parallax": 0.04768126614817453,
+            "variability": 0.05786881452870635
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.08723854176751761,
+        "b_log_gain": -0.05787350235216271
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.048355328888082,
+            "y": 0.39034076999512735,
+            "flux": 5.420087187432568,
+            "vx": -0.7715868953102587,
+            "parallax": 0.1484597720781965,
+            "variability": -0.09814471812199539,
+            "vy": 0.19988810829097292
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.3518333751054934,
+            "y": 0.12254189661457682,
+            "flux": 9.369555898793612,
+            "parallax": 0.14678834176368027,
+            "variability": 0.05912643272828694
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.013931492514932586,
+        "b_log_gain": 0.09143438330363982
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.2396295653969656,
+            "y": 0.509467634189781,
+            "flux": 8.529952827548957,
+            "vx": -0.6806386616607234,
+            "parallax": 0.2516668100952017,
+            "variability": -0.14681439400429763,
+            "vy": 0.17094243586329938
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.5297485114746263,
+            "y": 0.0720322362429977,
+            "flux": 9.008877138765978,
+            "parallax": 0.11293981829758326,
+            "variability": 0.057105244877278805
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.11516849134034976,
+        "b_log_gain": 0.07484844136171451
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.2396295653969656,
+            "y": 0.509467634189781,
+            "flux": 8.687530661894641,
+            "vx": -0.6806386616607234,
+            "parallax": 0.2516668100952017,
+            "variability": -0.09077391204770535,
+            "vy": 0.17094243586329938
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.5297485114746263,
+            "y": 0.0720322362429977,
+            "flux": 8.710544377282407,
+            "parallax": 0.11293981829758326,
+            "variability": 0.057105244877278805
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.09627083244606141,
+        "b_log_gain": 0.08746470595906405
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.182466515026852,
+            "y": 0.698401913022499,
+            "flux": 6.711854889387418,
+            "vx": -0.7447854054613818,
+            "parallax": 0.29453343003314997,
+            "variability": -0.09990889733860175,
+            "vy": 0.13869070619664026
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.5212157079381825,
+            "y": -0.034335208491447666,
+            "flux": 9.089926183615674,
+            "parallax": 0.11041929553544277,
+            "variability": 0.05224340020704421
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.06169932513801496,
+        "b_log_gain": 0.08755088712704723
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.241910262212465,
+            "y": 0.13545671649442337,
+            "flux": 8.852855090686663,
+            "vx": -0.7373636665274994,
+            "parallax": 0.24204582891728066,
+            "variability": -0.03473496783064248,
+            "vy": 0.15829761329402325
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.09932113648481877,
+            "y": -1.0790020030031817,
+            "flux": 3.1489100105293533,
+            "sigma_x": 1.4936247577678954,
+            "sigma_y": 0.47804847738329015
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.41676582540248175,
+            "y": 0.07831456100357892,
+            "flux": 8.667835184956319,
+            "parallax": 0.1170158820021347,
+            "variability": 0.18186431223717342
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.13279978066164394,
+        "b_log_gain": -0.092906969798063
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.559961111380447,
+            "y": -0.11266662319368104,
+            "flux": 4.638141809770113,
+            "parallax": 0.44994651048650913,
+            "variability": 0.06361081426160142
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.45064271786750076,
+            "y": -0.32053979518619746,
+            "flux": 9.240184597805595,
+            "parallax": 0.41436017616908194,
+            "variability": -0.17777382777958237
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.24027506843385676,
+        "b_log_gain": -0.026737960997661722
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.5479516263376905,
+            "y": -0.09016128408038693,
+            "flux": 5.84536759129343,
+            "parallax": 0.45556166446724294,
+            "variability": 0.056436138420616344
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.2770988598032904,
+            "y": -0.3665950861063392,
+            "flux": 7.328113574589776,
+            "parallax": 0.42825556652097396,
+            "variability": -0.19967921722332538
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.15659249710037992,
+        "b_log_gain": -0.025591964383612095
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.5617641399857396,
+            "y": -0.26554174843473,
+            "flux": 4.34638873503229,
+            "parallax": 0.4835034347963407,
+            "variability": 0.07363257720984656
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.991629820010362,
+            "y": -0.318799444955558,
+            "flux": 8.520540498015738,
+            "sigma_x": 0.896823377621512,
+            "sigma_y": 1.3300014541699687
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.3295120400678937,
+            "y": -0.3963621772459138,
+            "flux": 7.233882139364297,
+            "parallax": 0.4439398234425793,
+            "variability": -0.18650107656155224
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.753414816535753,
+            "y": 1.4875528911495217,
+            "flux": 9.417352798487064,
+            "sigma_x": 0.6254590500706056,
+            "sigma_y": 0.3831906808622769
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.10316885201610959,
+        "b_log_gain": -0.07459800728190764
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.568031547099304,
+            "y": -0.04353166956122756,
+            "flux": 4.110194511446437,
+            "parallax": 0.45115249336018115,
+            "variability": 0.10125206658098057
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.0751076947273539,
+            "y": -0.20101697411966368,
+            "flux": 7.618892957782314,
+            "parallax": 0.42788640106854187,
+            "variability": -0.1654579035381527
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.76832745889421,
+            "y": 0.9558256623951658,
+            "flux": 1.838052397838937,
+            "vx": 0.1250934509932189,
+            "parallax": 0.3707364739693914,
+            "variability": 0.14977856249497912,
+            "vy": 0.3976915185765675
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.709247388356442,
+            "y": 1.4045124748399984,
+            "flux": 8.02495206759346,
+            "sigma_x": 0.6180084965908499,
+            "sigma_y": 0.4016997626058769
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.07614216512668887,
+        "b_log_gain": -0.07138525889934862
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.6340695886348433,
+            "y": -0.1293577566125821,
+            "flux": 8.532308977899067,
+            "parallax": 0.4512436586776056,
+            "variability": 0.10159184567538299
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.3295120400678937,
+            "y": -0.3963621772459138,
+            "flux": 6.349559986082981,
+            "parallax": 0.4439398234425793,
+            "variability": -0.18650107656155224
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.8993478604466492,
+            "y": 1.0853806713874858,
+            "flux": 9.881057924434497,
+            "sigma_x": 0.5468700080754513,
+            "sigma_y": 0.369370457717115
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.12395986380194218,
+        "b_log_gain": -0.07521641406700702
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.595598310775332,
+            "y": -0.16243942620488871,
+            "flux": 4.2887240873971635,
+            "parallax": 0.4429169753297946,
+            "variability": 0.07205298332429155
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.3295120400678937,
+            "y": -0.3963621772459138,
+            "flux": 6.569936101854505,
+            "parallax": 0.4439398234425793,
+            "variability": -0.18650107656155224
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.8993478604466492,
+            "y": 1.0853806713874858,
+            "flux": 7.7013546201462795,
+            "sigma_x": 0.5468700080754513,
+            "sigma_y": 0.369370457717115
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.031124248773520713,
+        "b_log_gain": -0.07846730484838836
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.5763318632292913,
+            "y": -0.06151043114381993,
+            "flux": 6.468004010864021,
+            "parallax": 0.4233470648893331,
+            "variability": 0.08724042022168815
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.2770988598032904,
+            "y": -0.3952357242642388,
+            "flux": 4.594592249623002,
+            "parallax": 0.44727108968001933,
+            "variability": -0.18812847615859712
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.5963613725852688,
+            "y": 1.1668240476417386,
+            "flux": 6.460422809765305,
+            "sigma_x": 0.6703486142565842,
+            "sigma_y": 0.3810449227060068
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.09208068195067692,
+        "b_log_gain": -0.020654940702406588
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.45633327960228653,
+            "y": -0.10757118710818103,
+            "flux": 6.163268586244029,
+            "parallax": 0.4454684310069194,
+            "variability": 0.11618154366330885
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.2770988598032904,
+            "y": -0.3952357242642388,
+            "flux": 7.445984031815977,
+            "parallax": 0.44727108968001933,
+            "variability": -0.18812847615859712
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.6903090469123039,
+            "y": 1.4250995883270097,
+            "flux": 8.949328295910492,
+            "parallax": 0.20314498306376993,
+            "variability": -0.04996249614245535
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.12395986380194218,
+        "b_log_gain": -0.07521641406700702
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.49058740911129073,
+            "y": -0.12927213231502366,
+            "flux": 4.619565461855358,
+            "parallax": 0.4418740989426977,
+            "variability": 0.10881430363385086
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.2770988598032904,
+            "y": -0.3952357242642388,
+            "flux": 7.816628651969446,
+            "parallax": 0.44727108968001933,
+            "variability": -0.18308502108868563
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.709247388356442,
+            "y": 1.4045124748399984,
+            "flux": 9.04257813008657,
+            "sigma_x": 0.6180084965908499,
+            "sigma_y": 0.4016997626058769
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.15228142577944406,
+        "b_log_gain": -0.04168422998420332
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.5128966697804485,
+            "y": -0.09574468246075529,
+            "flux": 4.5706480894006125,
+            "parallax": 0.4396273089235001,
+            "variability": 0.09662371212377935
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.2770988598032904,
+            "y": -0.3952357242642388,
+            "flux": 7.048575508974387,
+            "parallax": 0.44727108968001933,
+            "variability": -0.18308502108868563
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.709247388356442,
+            "y": 1.4045124748399984,
+            "flux": 5.727570084273802,
+            "sigma_x": 0.6180084965908499,
+            "sigma_y": 0.39603011272182415
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.15228142577944406,
+        "b_log_gain": -0.04168422998420332
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.12940277357581076,
+            "y": -0.21196455909038647,
+            "flux": 10.871518462423674,
+            "parallax": 0.43790454813262214,
+            "variability": -0.014420173853275736
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.7045382275947665,
+            "y": 1.4203307966346643,
+            "flux": 6.464817632415984,
+            "sigma_x": 0.634262471091534,
+            "sigma_y": 0.3333234391085027
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.14139998909289164,
+        "b_log_gain": -0.08102217563569461
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.7897379659971202,
+            "y": 0.03393447361457458,
+            "flux": 4.633798051454358,
+            "parallax": 0.46203178940034373,
+            "variability": 0.032809115130790406
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.16712815302776374,
+            "y": -0.3952357242642388,
+            "flux": 10.141943794058019,
+            "parallax": 0.42825556652097396,
+            "variability": -0.18812847615859712
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.6441102115318116,
+            "y": 1.3605958197884833,
+            "flux": 7.485503077658755,
+            "sigma_x": 0.6065798731236387,
+            "sigma_y": 0.34374702633498716
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.13031471172474773,
+        "b_log_gain": -0.0725572597068259
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.588228346993863,
+            "y": -0.03458374438559275,
+            "flux": 8.758683966055269,
+            "parallax": 0.4523022252297957,
+            "variability": 0.04169380677963011
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.2770988598032904,
+            "y": -0.3952357242642388,
+            "flux": 6.167443519400618,
+            "parallax": 0.42825556652097396,
+            "variability": -0.1180422093270913
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.709247388356442,
+            "y": 1.4045124748399984,
+            "flux": 7.971695733541019,
+            "vx": 0.29472663352795037,
+            "parallax": 0.1973970427579551,
+            "variability": -0.059234443854524615,
+            "vy": 0.9372635306209489
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.1891429473633635,
+        "b_log_gain": -0.07679056725912992
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.6458066153594908,
+            "y": -0.004444929533773845,
+            "flux": 5.6502001511993845,
+            "parallax": 0.4488301789472042,
+            "variability": 0.05225858833282998
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.25635701569667546,
+            "y": -0.46311469195860866,
+            "flux": 6.890739540542288,
+            "parallax": 0.42017402552364475,
+            "variability": -0.11674608202643136
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.709247388356442,
+            "y": 1.4045124748399984,
+            "flux": 8.898880678085902,
+            "sigma_x": 0.6837925077890098,
+            "sigma_y": 0.4016997626058769
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.2185990239827827,
+        "b_log_gain": -0.038663011160685296
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.6429945652489533,
+            "y": -0.09713538591903381,
+            "flux": 5.629272896338892,
+            "parallax": 0.4542745709516124,
+            "variability": 0.04987515358210376
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.2770988598032904,
+            "y": -0.3952357242642388,
+            "flux": 4.7963700322377765,
+            "parallax": 0.42825556652097396,
+            "variability": -0.18812847615859712
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.6460731733752958,
+            "y": 1.1326476732687087,
+            "flux": 6.197856300212432,
+            "sigma_x": 0.5664878497053598,
+            "sigma_y": 0.3634292166773579
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.10820486854177619,
+        "b_log_gain": -0.08176466382265951
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.6458066153594908,
+            "y": -0.004444929533773845,
+            "flux": 5.6949986857038155,
+            "parallax": 0.4488301789472042,
+            "variability": 0.05225858833282998
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.35153895927369083,
+            "y": -0.30482382729609103,
+            "flux": 6.906480604336034,
+            "parallax": 0.4117291385320465,
+            "variability": -0.17433849304645258
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.6893409567355788,
+            "y": 1.3372105561866032,
+            "flux": 5.846901675986139,
+            "sigma_x": 0.6160179018810754,
+            "sigma_y": 0.397495851467154
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.01658439946966006,
+        "b_log_gain": -0.07804547423091351
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.6458066153594908,
+            "y": -0.004444929533773845,
+            "flux": 7.150974342403156,
+            "parallax": 0.4488301789472042,
+            "variability": 0.05225858833282998
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.3277793210317421,
+            "y": -0.3553015202135015,
+            "flux": 6.68128851304898,
+            "parallax": 0.41510906362454164,
+            "variability": -0.18877333454424594
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.5954847764598754,
+            "y": 1.3394689551797083,
+            "flux": 10.898131789240782,
+            "vx": 0.3583529381083337,
+            "parallax": 0.23144304988842218,
+            "variability": -0.06039723200805178,
+            "vy": 0.8783702503681188
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.1978948300267635,
+        "b_log_gain": -0.05290619477773931
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.5103122937118258,
+            "y": -0.5147503493572776,
+            "flux": 7.25224744093355,
+            "parallax": 0.3960973971796347,
+            "variability": 0.0773667684653595
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.3763190474163651,
+            "y": 1.1856936904138462,
+            "flux": 2.9294636852605973,
+            "vx": 0.3613851254160352,
+            "parallax": 0.39339147939861124,
+            "variability": -0.055382203040923644,
+            "vy": 0.0273127332490406
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.9921079503753543,
+            "y": 1.7032445775027125,
+            "flux": 4.363272494944924,
+            "vx": -0.205795109501276,
+            "parallax": 0.38630193470966373,
+            "variability": -0.04019332966119302,
+            "vy": 0.8180270623684633
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.5728492429023038,
+            "y": 0.11493219297254598,
+            "flux": 7.730285417897207,
+            "parallax": 0.30321129657031626,
+            "variability": 0.025618568017905685
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.09743714653794602,
+        "b_log_gain": -0.06619100056055083
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 1.0703561268718298,
+            "y": -0.44053576367698444,
+            "flux": 5.682610975725334,
+            "parallax": 0.4661046777551497,
+            "variability": 0.07345886556280506
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.42244336118131764,
+            "y": 0.11994350550785304,
+            "flux": 8.726647104491745,
+            "parallax": 0.4733314270022171,
+            "variability": 0.07978242391992796
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.08116809253602655,
+        "b_log_gain": -0.08355925374559675
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.3366715783467402,
+            "y": -0.22218078351314619,
+            "flux": 8.66616710604387,
+            "parallax": 0.4326647419926696,
+            "variability": 0.08304707625582208
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.20185399251668334,
+            "y": 0.20367185475502758,
+            "flux": 2.797343098699374,
+            "sigma_x": 0.7210077943414595,
+            "sigma_y": 0.5612885707564594
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.3976971918056171,
+            "y": 1.242402099988047,
+            "flux": 5.317575183951092,
+            "parallax": 0.28728643881315197,
+            "variability": -0.01794131700715157
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.10824627673695941,
+        "b_log_gain": -0.04677884618982207
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.3366715783467402,
+            "y": -0.22218078351314619,
+            "flux": 9.19782137637477,
+            "parallax": 0.4326647419926696,
+            "variability": 0.08304707625582208
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.1891449382455801,
+            "y": 0.23579381521761178,
+            "flux": 4.742850128984225,
+            "sigma_x": 0.7047772987536771,
+            "sigma_y": 0.5640530779168673
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.3976971918056171,
+            "y": 1.242402099988047,
+            "flux": 4.942698091292959,
+            "parallax": 0.21798872123790958,
+            "variability": -0.01794131700715157
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.11435000334776274,
+        "b_log_gain": -0.04396031782164181
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.3366715783467402,
+            "y": -0.22218078351314619,
+            "flux": 9.194428738275798,
+            "parallax": 0.4326647419926696,
+            "variability": 0.08304707625582208
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.2923746446262445,
+            "y": 0.22623949947930466,
+            "flux": 5.002780223940231,
+            "sigma_x": 0.7534771012930971,
+            "sigma_y": 0.6295011382443472
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.3196811323672435,
+            "y": 1.2816720390395502,
+            "flux": 4.617969861560187,
+            "vx": -0.07912065122554601,
+            "parallax": 0.20580103663351912,
+            "variability": -0.013313254470173008,
+            "vy": 0.127679666344785
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.18865251891924367,
+        "b_log_gain": -0.06734366129609098
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.42891907662012096,
+            "y": -0.22218078351314619,
+            "flux": 9.308597009643853,
+            "parallax": 0.4326647419926696,
+            "variability": 0.08304707625582208
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.27671273789752826,
+            "y": 0.18212016857302826,
+            "flux": 3.5891959060339005,
+            "sigma_x": 0.6978415804191703,
+            "sigma_y": 0.6033716587957487
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.3002728021675938,
+            "y": 1.2271030988680578,
+            "flux": 5.571966731898728,
+            "parallax": 0.19773110351635814,
+            "variability": -0.014305081265831465
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.22182927643872724,
+        "b_log_gain": -0.00888466939093338
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 0.43924151121118715,
+            "y": -0.7299162427768948,
+            "flux": 2.9371059028954565,
+            "sigma_x": 0.5816292487619248,
+            "sigma_y": 0.9936010661094477
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.2510941888987177,
+            "y": 0.9163521612838315,
+            "flux": 2.958724814938811,
+            "vx": -0.1569335880267353,
+            "parallax": 0.18703683227160767,
+            "variability": -0.16883172156553036,
+            "vy": 0.6987045527493183
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.09106895098868639,
+            "y": 0.007596123406873101,
+            "flux": 11.296117105316794,
+            "parallax": 0.3949801668625131,
+            "variability": -0.1416371052541394
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.03029012232262568,
+        "b_log_gain": -0.04214056895810323
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 0.46084946680243855,
+            "y": -0.7113986108250114,
+            "flux": 3.1991312182526914,
+            "sigma_x": 0.5906211373540637,
+            "sigma_y": 1.0197772038925272
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.399052181648174,
+            "y": 0.9163521612838315,
+            "flux": 2.958724814938811,
+            "vx": -0.1569335880267353,
+            "parallax": 0.18703683227160767,
+            "variability": -0.16883172156553036,
+            "vy": 0.6987045527493183
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.09106895098868639,
+            "y": 0.007596123406873101,
+            "flux": 11.296117105316794,
+            "parallax": 0.38514872825718455,
+            "variability": -0.1416371052541394
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.08102236860494325,
+        "b_log_gain": -0.08055598500644551
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.083838455014007,
+            "y": -0.04143824418333342,
+            "flux": 1.0130375325911332,
+            "vx": -0.7426517365159082,
+            "parallax": 0.25404100229161164,
+            "variability": -0.12122772453389051,
+            "vy": -0.5446557761436055
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.399052181648174,
+            "y": 0.9163521612838315,
+            "flux": 2.958724814938811,
+            "vx": -0.1569335880267353,
+            "parallax": 0.18703683227160767,
+            "variability": -0.16883172156553036,
+            "vy": 0.6987045527493183
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.08990037986439736,
+            "y": 0.01917150745722429,
+            "flux": 10.59808515807512,
+            "parallax": 0.3777716200538478,
+            "variability": -0.1318199092584953
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.2448186938244645,
+            "y": 0.0482296229549708,
+            "flux": 1.583094522613777,
+            "sigma_x": 1.2964967961313592,
+            "sigma_y": 1.1154426846656442
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.02345787217713069,
+        "b_log_gain": -0.04047906834265274
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.514712183934575,
+            "y": -0.40888795304585646,
+            "flux": 1.7237190910555693,
+            "vx": -0.5166281552563101,
+            "parallax": 0.26841198690301904,
+            "variability": -0.0487732353948353,
+            "vy": -0.33869156393408417
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.4379687964501455,
+            "y": 0.8972401076953354,
+            "flux": 4.8176790361383315,
+            "vx": -0.13251352019917673,
+            "parallax": 0.17817847813576498,
+            "variability": -0.051303853558248985,
+            "vy": 0.6606426974328314
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.08990037986439736,
+            "y": 0.01917150745722429,
+            "flux": 9.618791732955811,
+            "parallax": 0.3777716200538478,
+            "variability": -0.1318199092584953
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.1065530492947604,
+        "b_log_gain": 0.04776771695808782
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.28026530402205374,
+            "y": 0.027025485991150067,
+            "flux": 3.1065326317161577,
+            "parallax": 0.2006413820985974,
+            "variability": 0.025498498155953092
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.13878459520605624,
+            "y": 0.01917150745722429,
+            "flux": 11.281151612982034,
+            "parallax": 0.3777716200538478,
+            "variability": -0.1318199092584953
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.8664469175589589,
+            "y": 0.1279704941250568,
+            "flux": 1.1213146690088405,
+            "sigma_x": 0.8293616061318776,
+            "sigma_y": 0.8389752591705852
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.11121085961723279,
+        "b_log_gain": -0.052889873478364983
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.2762508174778637,
+            "y": 1.4858161301837285,
+            "flux": 8.105681275884766,
+            "vx": 0.3066320919173229,
+            "parallax": 0.2140381596274279,
+            "variability": 0.1885283658332591,
+            "vy": 0.1448388470411106
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.13333067461600523,
+            "y": -0.21047414591679914,
+            "flux": 11.890472964262624,
+            "parallax": 0.3244749448683403,
+            "variability": -0.14088567416116554
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.3079912285296742,
+            "y": -1.3439606979012342,
+            "flux": 1.2720816182668058,
+            "vx": -0.597430065480905,
+            "parallax": 0.4898754980351934,
+            "variability": 0.15821582169590492,
+            "vy": -0.9780565225139752
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.002823142312467275,
+        "b_log_gain": -0.065117214797524
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.5977300407457187,
+            "y": 1.4637870107525681,
+            "flux": 4.596069269126774,
+            "vx": 0.45180927679242355,
+            "parallax": 0.18216749431978285,
+            "variability": 0.18858059642076175,
+            "vy": 0.08660225440551672
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.057982524811623026,
+            "y": -0.07399849861967933,
+            "flux": 11.625666263317921,
+            "parallax": 0.3180887813175953,
+            "variability": -0.026586895822743928
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 1.602802072170891,
+            "y": 1.717706134442523,
+            "flux": 5.501096619185509,
+            "parallax": 0.45035660964290164,
+            "variability": -0.1325103150647468
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.0648229163364562,
+        "b_log_gain": -0.023153470293917122
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.5461106818370696,
+            "y": 1.4306601330045727,
+            "flux": 5.410993406522374,
+            "vx": 0.40772873007890453,
+            "parallax": 0.19550483410418068,
+            "variability": 0.15201546836946161,
+            "vy": 0.17520430063251546
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.1906629038986014,
+            "y": -0.21107618147268292,
+            "flux": 10.488594110257058,
+            "parallax": 0.3180887813175953,
+            "variability": -0.038822385376659
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.01497266962235988,
+        "b_log_gain": 0.08911963355042538
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.4271615985785218,
+            "y": 1.3585375397217847,
+            "flux": 11.98450326217477,
+            "vx": 0.4067390647254263,
+            "parallax": 0.1900199922470911,
+            "variability": 0.15883110979598836,
+            "vy": 0.41146416428717925
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.1906629038986014,
+            "y": -0.21107618147268292,
+            "flux": 11.705013993480296,
+            "parallax": 0.3180887813175953,
+            "variability": -0.026586895822743928
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.07495846297671377,
+        "b_log_gain": 0.0024559752336292817
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.421706959461794,
+            "y": 1.3064368857278272,
+            "flux": 7.038713301058717,
+            "vx": 0.39528080741329297,
+            "parallax": 0.18265319855065199,
+            "variability": 0.14871342303950968,
+            "vy": 0.16554986308157105
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.1701365394040546,
+            "y": -0.29738743634583686,
+            "flux": 11.707750118571642,
+            "parallax": 0.31826491536846524,
+            "variability": -0.0450803483878372
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.24506867350104583,
+        "b_log_gain": -0.06629967542841382
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.17156200873588023,
+            "y": 0.040729136709598546,
+            "flux": 11.864777278808672,
+            "parallax": 0.278575370163423,
+            "variability": -0.12100774907437738
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.5958139154199191,
+            "y": 0.08954409190065471,
+            "flux": 2.7112906352729964,
+            "vx": 0.10653104869691488,
+            "parallax": 0.10531335890516402,
+            "variability": -0.1647588085260976,
+            "vy": -0.7446628887951121
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.6929867865735071,
+            "y": -1.8810772842869192,
+            "flux": 1.8234359861762033,
+            "parallax": 0.3619286760595958,
+            "variability": -0.12053591325648415
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.09333827750145579,
+        "b_log_gain": -0.06565770423309902
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.6762595740771542,
+            "y": 0.9265754251018548,
+            "flux": 2.7193816381243536,
+            "parallax": 0.17156627500603372,
+            "variability": 0.18626280509046594
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.5633736467319106,
+            "y": -0.480334682323591,
+            "flux": 2.8547791083926244,
+            "vx": -0.3673869445838245,
+            "parallax": 0.2298262565023088,
+            "variability": 0.03387036848933955,
+            "vy": 0.970971700893023
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.04386102035946582,
+            "y": -0.0785574601987209,
+            "flux": 11.232152218318692,
+            "parallax": 0.2849030112993472,
+            "variability": -0.13382707497241125
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.21555655066984686,
+        "b_log_gain": -0.0962834286458393
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.7080702093920208,
+            "y": 0.9265754251018548,
+            "flux": 3.3801272563330524,
+            "parallax": 0.17156627500603372,
+            "variability": 0.16971302717883135
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.13856336495474242,
+            "y": -0.0785574601987209,
+            "flux": 10.538860772409977,
+            "parallax": 0.2849030112993472,
+            "variability": -0.13382707497241125
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.23034987434017568,
+        "b_log_gain": -0.04794217670081596
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.29509599853981605,
+            "y": -0.05538616123509521,
+            "flux": 11.618352516876424,
+            "parallax": 0.2940811147359183,
+            "variability": -0.11609806232220403
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.2753393279038532,
+            "y": -0.14568025465521872,
+            "flux": 5.221373721854617,
+            "vx": 0.4194905190100062,
+            "parallax": 0.48409065411441965,
+            "variability": -0.03251651932588878,
+            "vy": -0.6993130674744079
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.026339951477621526,
+        "b_log_gain": -0.08484884026776743
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 0.6451411004557088,
+            "y": -0.6719432754462069,
+            "flux": 3.339389441200785,
+            "sigma_x": 1.4347678911573707,
+            "sigma_y": 1.0451981104257868
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.2651991030529324,
+            "y": 0.31850805974745855,
+            "flux": 5.5188860907879365,
+            "sigma_x": 0.9139329572325345,
+            "sigma_y": 0.5084888720296756
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 1.9152105109359816,
+            "y": 1.754838081671712,
+            "flux": 4.814370443661069,
+            "parallax": 0.24353741202753748,
+            "variability": -0.1310911988734777
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.1323956725327231,
+            "y": -0.061909869837588616,
+            "flux": 7.709396982141886,
+            "parallax": 0.2856563935338756,
+            "variability": -0.1274606227262888
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.292985465069152,
+            "y": 1.789433887645647,
+            "flux": 4.96240540678319,
+            "vx": -0.4101860099152177,
+            "parallax": 0.250371458498593,
+            "variability": 0.001801825490584219,
+            "vy": 0.1539320735703429
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.03177875829226029,
+        "b_log_gain": -0.07607067566247944
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.7055930995621962,
+            "y": 1.3611261454034405,
+            "flux": 2.3874204680148967,
+            "vx": -0.3591234274248265,
+            "parallax": 0.4140684552082974,
+            "variability": -0.0567584870837273,
+            "vy": 0.760265005477792
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2777512479591988,
+            "y": -0.07518362537832868,
+            "flux": 10.472956036978038,
+            "parallax": 0.22972164555598318,
+            "variability": -0.08776936589707458
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.5792339762362557,
+            "y": 1.5267377868990155,
+            "flux": 3.8738342248219326,
+            "vx": 0.09718383918190843,
+            "parallax": 0.3792002966066586,
+            "variability": 0.18835678152436847,
+            "vy": 0.6067776014611492
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.19791346813017624,
+        "b_log_gain": 0.0703819673937984
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 1.8043096853554577,
+            "y": 0.46621322075193605,
+            "flux": 1.277697550654295,
+            "parallax": 0.20666861376148193,
+            "variability": -0.03918999718326774
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9939236442084098,
+            "y": 0.4338789091849957,
+            "flux": 4.063689876935735,
+            "vx": -0.1677622675949415,
+            "parallax": 0.27466427997189635,
+            "variability": -0.12775248432721747,
+            "vy": 0.4930763587936813
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.003918961056650794,
+            "y": -0.02218476017787374,
+            "flux": 9.430265839104196,
+            "parallax": 0.08605307300356707,
+            "variability": -0.008674446757872462
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.034145590126165914,
+        "b_log_gain": -0.05185633958987393
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.26274265652886974,
+            "y": 0.044377363802528436,
+            "flux": 11.104194948934948,
+            "parallax": 0.12638987685517067,
+            "variability": -0.009502444396415566
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 1.780148828375852,
+            "y": -1.8800939651961857,
+            "flux": 4.37164779935767,
+            "parallax": 0.4073639433799262,
+            "variability": 0.18677869837796912
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.7927695378048076,
+            "y": 0.46773926454114445,
+            "flux": 2.1155244451581803,
+            "parallax": 0.4869740816322411,
+            "variability": 0.052369571643339774
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.27278378512804674,
+        "b_log_gain": -0.09839667209645049
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.6138531814611352,
+            "y": 1.4531739292919834,
+            "flux": 5.335748866668264,
+            "vx": 0.49061438149096803,
+            "parallax": 0.16470108877316353,
+            "variability": 0.1299004388495854,
+            "vy": 0.985528262604942
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.11923448110486579,
+            "y": -0.09022942791748623,
+            "flux": 10.499432915104723,
+            "parallax": 0.0674113767954006,
+            "variability": -0.0017388088482095942
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 1.1201517414356892,
+            "y": 0.150267074533057,
+            "flux": 2.1517136431364143,
+            "parallax": 0.0926688800678892,
+            "variability": -0.08180728849959912
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.2858274487670747,
+        "b_log_gain": -0.08642041000918983
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.0939105228646877,
+            "y": -0.06981624422844135,
+            "flux": 10.474844481544215,
+            "parallax": 0.2182740459440099,
+            "variability": -0.03634408895264302
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.0818955701267225,
+            "y": 1.2864306417464557,
+            "flux": 2.1085087172224233,
+            "sigma_x": 0.31573960337012547,
+            "sigma_y": 0.8756819576862191
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.02851062935059029,
+        "b_log_gain": -0.06520533061526065
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.8906471009924295,
+            "y": 1.6816046274654357,
+            "flux": 4.789757795241656,
+            "parallax": 0.0671067541197996,
+            "variability": -0.12738866659522208
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.14713322235121362,
+            "y": -0.10353122937155312,
+            "flux": 11.078976767325614,
+            "vx": 0.3644354101365763,
+            "parallax": 0.2296189533026215,
+            "variability": -0.04936792712950516,
+            "vy": 0.11859328500075517
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.512763420271166,
+            "y": 1.8606520089995384,
+            "flux": 5.328851675359188,
+            "sigma_x": 1.247361061028477,
+            "sigma_y": 1.3253114692716526
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.06844308378161384,
+        "b_log_gain": -0.05018767855709388
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.09099245589944438,
+            "y": -0.037143402311799356,
+            "flux": 10.394348721231495,
+            "parallax": 0.24571280847846783,
+            "variability": -0.0371331936766833
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.4085153617606978,
+            "y": 1.954166571315386,
+            "flux": 2.388759446308855,
+            "vx": 0.5489114109350528,
+            "parallax": 0.2761116427622573,
+            "variability": -0.05189489462177885,
+            "vy": -0.2392766053185058
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.512763420271166,
+            "y": 1.8606520089995384,
+            "flux": 9.283285505530486,
+            "sigma_x": 1.247361061028477,
+            "sigma_y": 1.3253114692716526
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.0281056411913547,
+            "y": 1.9388340605684893,
+            "flux": 8.365649473064243,
+            "parallax": 0.17053376257824931,
+            "variability": -0.18234575759469027
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.02893435994847937,
+        "b_log_gain": -0.04256553656793338
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.0423517032760774,
+            "y": -0.17559208438107454,
+            "flux": 10.698548875186612,
+            "parallax": 0.2221831280709204,
+            "variability": -0.00867297998677391
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.4125903456831308,
+            "y": 0.6521548979758189,
+            "flux": 1.0286879532045687,
+            "vx": -0.6412102133027586,
+            "parallax": 0.3364158272105698,
+            "variability": -0.07974832264651358,
+            "vy": 0.5987855846717818
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.20571803503589875,
+        "b_log_gain": -0.06025504197178353
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.0423517032760774,
+            "y": -0.17559208438107454,
+            "flux": 10.255974953884518,
+            "parallax": 0.21383785337458083,
+            "variability": -0.00867297998677391
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.1340881092437778,
+            "y": 0.5743699735608612,
+            "flux": 8.616661930247751,
+            "sigma_x": 1.2818837710356163,
+            "sigma_y": 0.6232647563154146
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.29201091363372517,
+        "b_log_gain": -0.08927967137909941
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.4708336486118645,
+            "y": -1.2581466858621435,
+            "flux": 5.858543808012115,
+            "sigma_x": 1.0980875592815893,
+            "sigma_y": 1.0868191263776454
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.7164288445329916,
+            "y": 1.7059052887894062,
+            "flux": 5.906375822634132,
+            "parallax": 0.41051233912277446,
+            "variability": 0.18096324193558927
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.11870515547570015,
+            "y": -0.15958570291063845,
+            "flux": 11.002777030308863,
+            "parallax": 0.44650898737154804,
+            "variability": -0.11143568957585243
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.4750456011849424,
+            "y": -0.798729861054948,
+            "flux": 1.3150832920671536,
+            "sigma_x": 1.1683820279233026,
+            "sigma_y": 0.47422167935896764
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.19422896342158685,
+        "b_log_gain": 0.035503477197182554
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.4708336486118645,
+            "y": -1.2581466858621435,
+            "flux": 8.405724626517953,
+            "sigma_x": 1.0980875592815893,
+            "sigma_y": 1.0868191263776454
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.7164288445329916,
+            "y": 1.7059052887894062,
+            "flux": 5.906375822634132,
+            "sigma_x": 0.3002564091406939,
+            "sigma_y": 0.31048656003469455
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.11870515547570015,
+            "y": -0.15958570291063845,
+            "flux": 10.790408549038958,
+            "parallax": 0.44650898737154804,
+            "variability": -0.11143568957585243
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.20334098206552959,
+        "b_log_gain": 0.046178952964100795
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -1.653500919895527,
+            "y": 1.8755987808694439,
+            "flux": 11.666777701852231,
+            "parallax": 0.39368973849788275,
+            "variability": 0.1802543724564244
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.11870515547570015,
+            "y": -0.15958570291063845,
+            "flux": 11.742520078694543,
+            "parallax": 0.4548448637254543,
+            "variability": -0.09406944576656878
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.8473066099376951,
+            "y": -1.6859845226964745,
+            "flux": 1.7764852288429926,
+            "parallax": 0.053665154075922594,
+            "variability": -0.027646872845666193
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.19422896342158685,
+        "b_log_gain": 0.035503477197182554
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.4971681735966489,
+            "y": -0.5639887158745833,
+            "flux": 2.701873463974775,
+            "parallax": 0.1436188392934814,
+            "variability": 0.03325164083515081
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.1249873975405702,
+            "y": -0.11650889894183702,
+            "flux": 11.122854040540114,
+            "parallax": 0.44808079080197594,
+            "variability": -0.09684711017108834
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.21933319983009963,
+        "b_log_gain": 0.027347870755485088
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.0289606155352589,
+            "y": 1.5624424108234432,
+            "flux": 9.573425347580462,
+            "sigma_x": 1.0902204137079012,
+            "sigma_y": 0.9707765123345831
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.4897027706931669,
+            "y": -0.41701077428398703,
+            "flux": 5.493996963735112,
+            "parallax": 0.47775857708480196,
+            "variability": -0.16635442895667477
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.5610072802014856,
+            "y": 0.07223262371288053,
+            "flux": 5.909527850423643,
+            "parallax": 0.4009008434106239,
+            "variability": -0.06259216549710331
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.26102415536987905,
+        "b_log_gain": -0.00619015957698979
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.1535628606192816,
+            "y": -0.22788493789946696,
+            "flux": 11.002772368803841,
+            "parallax": 0.48097310192145193,
+            "variability": -0.07138756284992831
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.8335510924985665,
+            "y": 0.362156633862333,
+            "flux": 5.3182284095564984,
+            "vx": -0.7238194132529272,
+            "parallax": 0.4244942011634037,
+            "variability": -0.11963853555461022,
+            "vy": -0.8564357748883773
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.029717289299155958,
+        "b_log_gain": 0.032780157120137876
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.16298031033411586,
+            "y": -0.22788493789946696,
+            "flux": 10.949417306664406,
+            "parallax": 0.48097310192145193,
+            "variability": -0.07138756284992831
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 0.5624121508979614,
+            "y": 0.2914419941838218,
+            "flux": 1.338235065173431,
+            "sigma_x": 1.496092022826196,
+            "sigma_y": 0.6243339800906855
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.744576760886157,
+            "y": 0.7841059350299293,
+            "flux": 3.9683235623343034,
+            "vx": -0.9794390846998307,
+            "parallax": 0.4193949780785158,
+            "variability": -0.1550754607307679,
+            "vy": -0.8611408651536254
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.05145069936059937,
+        "b_log_gain": -0.03909528053850156
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.07334395902120994,
+            "y": -0.34068538917565094,
+            "flux": 11.990700025998771,
+            "parallax": 0.4930712524941159,
+            "variability": -0.061091761300363256
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.6269538264809853,
+            "y": 1.2673653267127731,
+            "flux": 7.218204086094839,
+            "sigma_x": 1.2524514932062594,
+            "sigma_y": 0.6177699775417289
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.08582859028882434,
+        "b_log_gain": -0.02237053964616273
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2461882478215971,
+            "y": -0.273291312853142,
+            "flux": 11.415184279939973,
+            "parallax": 0.4815778134268934,
+            "variability": -0.06854313806931658
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.7381848488736948,
+            "y": 0.6806794686343198,
+            "flux": 5.732355230411579,
+            "sigma_x": 1.4844469212415978,
+            "sigma_y": 0.36262824952982164
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.16024443401532323,
+        "b_log_gain": -0.05591409475211054
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2461882478215971,
+            "y": -0.273291312853142,
+            "flux": 11.238465851001639,
+            "parallax": 0.4815778134268934,
+            "variability": -0.07031138225359151
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.7638994641241958,
+            "y": 0.7163429627864191,
+            "flux": 10.139270806607673,
+            "sigma_x": 1.4812356295452718,
+            "sigma_y": 0.36417613402301674
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.022194169371637096,
+        "b_log_gain": -0.03597781950792789
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2461882478215971,
+            "y": -0.273291312853142,
+            "flux": 11.46788012112107,
+            "parallax": 0.4815778134268934,
+            "variability": -0.07031138225359151
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -1.809090326640293,
+            "y": 0.671427236883333,
+            "flux": 9.705191003457529,
+            "sigma_x": 1.4984956093262112,
+            "sigma_y": 0.36126956821931355
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.024768996822526923,
+        "b_log_gain": -0.02877945877993264
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.06076779557947454,
+            "y": 0.44616762205305527,
+            "flux": 3.0032478591914273,
+            "sigma_x": 0.6622179554698847,
+            "sigma_y": 0.38616650334697833
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.014875716308321074,
+            "y": -0.12429416502271273,
+            "flux": 9.442565283609255,
+            "parallax": 0.4996292329738633,
+            "variability": -0.09442452142355262
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.03411023520003875,
+        "b_log_gain": -0.09036794527340129
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.260696206966295,
+            "y": -0.028828432438471108,
+            "flux": 1.836914139267294,
+            "vx": 0.05004878648655353,
+            "parallax": 0.3664171632831898,
+            "variability": 0.0981969645631654,
+            "vy": -0.11384107877680538
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": 1.215966460667738,
+            "y": -0.48755559958131656,
+            "flux": 2.0401923110571385,
+            "sigma_x": 0.5427587904471521,
+            "sigma_y": 0.6656852645180265
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.13956547968540622,
+            "y": 0.39631592741069044,
+            "flux": 6.9479737974922,
+            "sigma_x": 0.7693396747772332,
+            "sigma_y": 0.44106097570575786
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.0167134775558635,
+            "y": -0.10275092945061015,
+            "flux": 7.267874849828007,
+            "parallax": 0.4281452050227139,
+            "variability": -0.09651355700085001
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.01994769205703234,
+        "b_log_gain": -0.026777878540047526
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 1.260696206966295,
+            "y": -0.028828432438471108,
+            "flux": 2.481177462598585,
+            "vx": 0.05004878648655353,
+            "parallax": 0.3664171632831898,
+            "variability": 0.0981969645631654,
+            "vy": -0.11384107877680538
+          }
+        },
+        {
+          "class": "galaxy",
+          "kind": "galaxy",
+          "parameters": {
+            "x": -0.16745595195110452,
+            "y": 0.470719635958023,
+            "flux": 3.480409228551591,
+            "sigma_x": 0.8279536690367069,
+            "sigma_y": 0.4068403702462985
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.0167134775558635,
+            "y": -0.10275092945061015,
+            "flux": 7.267874849828007,
+            "parallax": 0.4281452050227139,
+            "variability": -0.09651355700085001
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.19374175139394811,
+        "b_log_gain": -0.02040917280841352
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.6496970641308204,
+            "y": -0.42496843888014,
+            "flux": 1.4298177125272495,
+            "vx": -0.09183042927943097,
+            "parallax": 0.0461832839759847,
+            "variability": 0.14182734320820628,
+            "vy": -0.3528959647782821
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.3259613027803385,
+            "y": -0.27109878839060286,
+            "flux": 8.737861153643554,
+            "parallax": 0.3498751646619536,
+            "variability": 0.19815533214076247
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.8307532712986374,
+            "y": 0.75256275292737,
+            "flux": 6.186888737386729,
+            "parallax": 0.3465802149320908,
+            "variability": -0.0741052501806653
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.1670081842091226,
+        "b_log_gain": 0.045158265977380485
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -0.3865409155751349,
+            "y": -0.49062369624807545,
+            "flux": 3.0006338423902896,
+            "vx": -0.2872635746189258,
+            "parallax": 0.015520732959633188,
+            "variability": 0.1731742076368869,
+            "vy": -0.33674956081394813
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.25332937537972633,
+            "y": -0.27109878839060286,
+            "flux": 9.016467743300062,
+            "parallax": 0.3520367909930035,
+            "variability": 0.19815533214076247
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.8407845663231073,
+            "y": 0.7138480149369268,
+            "flux": 4.773382921496759,
+            "parallax": 0.3319118390412248,
+            "variability": -0.0917041723706225
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.1827091458008645,
+        "b_log_gain": -0.0406290710100675
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.25332937537972633,
+            "y": -0.27109878839060286,
+            "flux": 8.839401518852082,
+            "parallax": 0.3520367909930035,
+            "variability": 0.19815533214076247
+          }
+        },
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": -1.715486027882188,
+            "y": 1.8838447703146892,
+            "flux": 3.0601984110658544,
+            "vx": 0.42461720743918496,
+            "parallax": 0.27742686909522746,
+            "variability": -0.10053901045526557,
+            "vy": 0.7125916246043835
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.7590487404233275,
+            "y": 0.7283506127579669,
+            "flux": 5.620022055116669,
+            "parallax": 0.3332904151301014,
+            "variability": -0.18134134156272985
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.17659161547859586,
+        "b_log_gain": -0.02701601250379304
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.059131954838612444,
+            "y": -0.3390908673134012,
+            "flux": 1.0643950644876623,
+            "parallax": 0.04297174084497185,
+            "variability": 0.17187939887106818
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.3108196291662524,
+            "y": -0.28615364182830305,
+            "flux": 10.679843042446555,
+            "parallax": 0.3696932876592545,
+            "variability": 0.1180410432878653
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.8157043329730351,
+            "y": 0.8683397876492802,
+            "flux": 3.3863660533843607,
+            "parallax": 0.31666114564897196,
+            "variability": -0.092976823271805
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.22740710269564984,
+        "b_log_gain": -0.08464102189912442
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.059131954838612444,
+            "y": -0.3390908673134012,
+            "flux": 2.545818769629502,
+            "parallax": 0.04297174084497185,
+            "variability": 0.17187939887106818
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2771111240082633,
+            "y": -0.27841894393255373,
+            "flux": 8.427925566289499,
+            "parallax": 0.36358624562128156,
+            "variability": 0.10416509190001028
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.7373870437880461,
+            "y": 0.7895591735618872,
+            "flux": 4.436499077315782,
+            "parallax": 0.3185264961544346,
+            "variability": -0.09454819295306618
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": 0.13561045166849112,
+        "b_log_gain": -0.06091291638261631
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.1968181620903846,
+            "y": -0.42080285736529177,
+            "flux": 3.287315897400455,
+            "vx": -0.1442843395188389,
+            "parallax": 0.0780782018332633,
+            "variability": 0.15946273373871112,
+            "vy": -0.4580066770597493
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.3223844504687543,
+            "y": -0.12925585059655242,
+            "flux": 8.513917314796622,
+            "parallax": 0.3028653447029869,
+            "variability": 0.1803952111586144
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.8121884063892169,
+            "y": 0.8602063487369627,
+            "flux": 7.005435755046014,
+            "parallax": 0.28042800068617446,
+            "variability": -0.019791883130059418
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.12477044027739478,
+        "b_log_gain": -0.06666049602115307
+      }
+    },
+    {
+      "sources": [
+        {
+          "class": "moving",
+          "kind": "star",
+          "parameters": {
+            "x": 0.1968181620903846,
+            "y": -0.42080285736529177,
+            "flux": 2.7888396125592654,
+            "vx": -0.2604129090274534,
+            "parallax": 0.0780782018332633,
+            "variability": 0.15946273373871112,
+            "vy": -0.4580066770597493
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": 0.2824102457313602,
+            "y": -0.12925585059655242,
+            "flux": 8.593888136170241,
+            "parallax": 0.3028653447029869,
+            "variability": 0.1803952111586144
+          }
+        },
+        {
+          "class": "stationary",
+          "kind": "star",
+          "parameters": {
+            "x": -0.9234383219856506,
+            "y": 0.9143995108560401,
+            "flux": 3.3762324562647934,
+            "parallax": 0.27895802885930254,
+            "variability": -0.028200398665744475
+          }
+        }
+      ],
+      "nuisance": {
+        "b_dx": -0.17468842202112497,
+        "b_log_gain": -0.09438744931341742
+      }
+    }
+  ],
+  "weights": [
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002,
+    0.007812500000000002
+  ]
+}

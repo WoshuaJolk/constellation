@@ -1,0 +1,16 @@
+{
+  "pilot": true,
+  "particles": 2048,
+  "sweeps": 20,
+  "seed": 20261120,
+  "exposures": 30,
+  "fixed_validation": false,
+  "gibbs_flux": true,
+  "accuracy_target": {
+    "posterior_interval_width": 0.01,
+    "relative_evidence_gap": 0.01
+  },
+  "particle_agreement_is_not_a_certificate": true,
+  "python": "3.12.14",
+  "numpy": "2.5.4"
+}

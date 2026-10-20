@@ -1,0 +1,10 @@
+{
+  "samples": 4000000,
+  "seed": 20261031,
+  "confidence": 0.995,
+  "tolerance": 0.01,
+  "cover": "joint-cover.json",
+  "optional_stopping": false,
+  "original_prior_and_data_unchanged": true,
+  "full_objective_complete": false
+}

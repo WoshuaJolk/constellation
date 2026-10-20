@@ -1,0 +1,89 @@
+{
+  "method": "bounded_weight_importance",
+  "status": "unresolved",
+  "scaled_evidence": [
+    0.007234664771851618,
+    0.007322381766854849
+  ],
+  "relative_evidence_gap": 0.012124541740277574,
+  "queries": {
+    "count=0": [
+      0.006018896615272393,
+      0.008416797298364392
+    ],
+    "count=1": [
+      0.5289923916037345,
+      0.5381611532241045
+    ],
+    "count=2": [
+      0.45467620556482324,
+      0.46374777248968296
+    ]
+  },
+  "point_estimates_not_certificates": {
+    "count=0": 0.007212098211855536,
+    "count=1": 0.5335858993340482,
+    "count=2": 0.4592020024541079
+  },
+  "simultaneous_confidence": 0.99,
+  "samples": 1000000,
+  "seed": 20261021,
+  "proposal_envelope": 0.06386061393655885,
+  "maximum_observed_scaled_weight": 0.9999999999999984,
+  "dual_envelope_requested": true,
+  "represented_source_count_tail_upper": 0.0,
+  "maximum_sampled_source_count": 2,
+  "construction_seconds": 16.32702127099992,
+  "seconds": 64.61333491300002,
+  "arithmetic": "float64 sampling, rendering and concentration bounds; not formal arithmetic certification",
+  "confidence_scope": "fixed-budget draws conditional on exact stated sampling/evaluation/model assumptions",
+  "full_objective_complete": false,
+  "manifest": {
+    "exposures": [
+      {
+        "id": "one",
+        "time": 0,
+        "data": [
+          [
+            -1.2153903458113895,
+            0.919718969912003,
+            0.4491033223114247,
+            2.0789385976240657,
+            1.0994749226709253
+          ]
+        ],
+        "psf_sigma": 0.7,
+        "noise_sigma": 0.7
+      }
+    ],
+    "source_types": [
+      {
+        "name": "star",
+        "kind": "star",
+        "parameters": {
+          "x": [
+            -1.2,
+            1.2
+          ],
+          "y": [
+            0,
+            0
+          ],
+          "flux": [
+            1,
+            8
+          ]
+        }
+      }
+    ],
+    "nuisance": {},
+    "count_prior": {
+      "probabilities": [
+        0.2,
+        0.4,
+        0.4
+      ]
+    }
+  },
+  "proposal_report_sha256": "3c17d6fe0eebc11f0ba5aa2cf7d8e4c4c64f69c164d54854102c242a5d53e2f6"
+}

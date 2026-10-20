@@ -1,0 +1,15 @@
+{
+  "pilot": true,
+  "particles": 256,
+  "sweeps": 4,
+  "seed": 20261104,
+  "exposures": 10,
+  "fixed_validation": false,
+  "accuracy_target": {
+    "posterior_interval_width": 0.01,
+    "relative_evidence_gap": 0.01
+  },
+  "particle_agreement_is_not_a_certificate": true,
+  "python": "3.12.14",
+  "numpy": "2.5.4"
+}

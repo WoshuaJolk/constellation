@@ -8,7 +8,16 @@ import sys
 from . import __version__
 
 
-def main(argv=None):
+MANIFEST_COMMANDS = (
+    "force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp",
+    "find_ejector", "ejector_prepare", "ejector_fit", "ejector_search", "ejector_bound",
+    "prove_floor", "ztf_search", "ztf_fetch", "judge_line", "inject_tracks",
+    "map_complete", "inject_all", "match_all", "verify_match", "fold_kepler",
+)
+DEMO_COMMANDS = ("demo", "orbit_demo", "fold_demo", "floor_demo", "ejector_demo")
+
+
+def main(argv=None, *, prog=None):
     # Keep the existing manifest commands stable; the archive CLI has its own
     # resumable execution and streaming/output contract.
     actual = list(sys.argv[1:] if argv is None else argv)
@@ -19,11 +28,11 @@ def main(argv=None):
             raise SystemExit(return_code)
         return
     from .io import run_nulls, run_photometry
-    parser = argparse.ArgumentParser(description="Moving-source astronomy tools for local FITS data")
+    parser = argparse.ArgumentParser(prog=prog, description="Moving-source astronomy tools for local FITS data")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("frames", help="Resumable multi-archive image discovery; run `constellation --help`")
-    for name in ["force_track", "dig_floor", "learn_null", "map_cover", "weigh_stamp", "find_ejector", "ejector_prepare", "ejector_fit", "ejector_search", "ejector_bound", "prove_floor", "ztf_search", "ztf_fetch", "judge_line", "inject_tracks", "map_complete", "inject_all", "match_all", "verify_match", "fold_kepler"]:
+    for name in MANIFEST_COMMANDS:
         command = commands.add_parser(name)
         command.add_argument("manifest", type=Path)
         command.add_argument("-o", "--output", type=Path, help="Write new JSON file (default: stdout)")
@@ -127,7 +136,7 @@ def main(argv=None):
         else:
             sys.stdout.write(text)
     except (ValueError, OSError, KeyError, TypeError, IndexError, ImportError) as error:
-        parser.exit(2, f"magictools: {error}\n")
+        parser.exit(2, f"{parser.prog}: {error}\n")
 
 
 if __name__ == "__main__":

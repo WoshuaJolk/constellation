@@ -1,0 +1,34 @@
+{
+  "valid": true,
+  "replayed": true,
+  "leaves": 8,
+  "roots": 2,
+  "recomputed_outward_summary": {
+    "scaled_evidence": [
+      0.7734901095500535,
+      0.7734901095500539
+    ],
+    "log_evidence": [
+      -1.1757809288746324,
+      -1.1757809288746317
+    ],
+    "relative_evidence_gap": 2.870684475257179e-16,
+    "queries": {
+      "count=0": [
+        0.3920739594624278,
+        0.39207395946242807
+      ],
+      "has:star": [
+        0.6079260405375719,
+        0.6079260405375723
+      ],
+      "any:star:flux:1:2": [
+        0.2884573839032116,
+        0.29815403435541665
+      ]
+    },
+    "source_count_tail_prior_upper": 0.0,
+    "source_count_tail_posterior_upper": 0.0
+  },
+  "full_objective_complete": false
+}

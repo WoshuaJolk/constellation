@@ -16,6 +16,11 @@ constellation credentials status
 constellation search examples/frames/field.json --run-dir runs/field
 ```
 
+Every archive command is also available under `constellation frames`, for
+example `constellation frames search ...`. Use `constellation frames inspect`
+for archive schema inspection; `constellation inspect` inspects scientific run
+artifacts. The shared executable also offers [Kepler and FitSky](agent-cli.md).
+
 ## Agent workflow
 
 1. Inspect `capabilities`; choose `providers: "all"` or named providers.
@@ -248,8 +253,8 @@ Find services and inspect their schema before querying:
 ```sh
 constellation discover --text Chandra --output-dir runs/discovery
 constellation discover --protocol sia2 --text infrared --output-dir runs/infrared-services
-constellation inspect alma --output-dir runs/alma-schema
-constellation inspect my-service.json --output-dir runs/custom-schema
+constellation frames inspect alma --output-dir runs/alma-schema
+constellation frames inspect my-service.json --output-dir runs/custom-schema
 constellation search examples/frames/custom-services.json --run-dir runs/custom --plan
 constellation search examples/frames/multiwavelength.json --run-dir runs/crab
 ```

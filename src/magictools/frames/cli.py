@@ -19,12 +19,12 @@ def capabilities():
             "limitations": LIMITATIONS, "datasetCoverage": coverage(),
             "customServices": {"protocols": ["obscore", "sia1", "sia2"], "idPrefix": "vo:",
                                "configuration": "services object in the search manifest", "credentials": "Private credential profile with explicit HTTPS allowedOrigins"},
-            "discoveryCommands": ["discover", "inspect", "links", "audit"],
+            "discoveryCommands": ["discover", "frames inspect", "links", "audit"],
             "example": {"mode": "field", "ra": 180, "dec": 30, "radius": 0.05, "start": "2019-01-28", "end": "2019-01-29", "providers": ["ztf"]}}
 
 
-def main(argv=None):
-    parser = argparse.ArgumentParser(prog="constellation", description="Resumable archive image discovery for agents")
+def main(argv=None, *, prog="constellation"):
+    parser = argparse.ArgumentParser(prog=prog, description="Resumable archive image discovery for agents")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("capabilities", help="Print adapters, schemas, limits, and credential instructions as JSON")
     commands.add_parser("coverage", help="Map every constellation imaging dataset to adapters and explicit gaps")

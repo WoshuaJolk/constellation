@@ -103,8 +103,8 @@ The template bank is capped at 128 hypotheses; the dense pixel path is capped at
 `target_power` defaults to 0.9 and must exceed alpha. Calibration and evaluation sample counts default to 4,096 and support 100–1,000,000 draws. `calibration_failure_probability` defaults to 0.05. The simulator uses the Gram matrix directly, so it does not need to generate full pixel arrays on every draw.
 
 ```bash
-magictools prove_floor input.json -o bounds.json
-magictools floor_demo floor-demo-output
+constellation prove_floor input.json -o bounds.json
+constellation floor_demo floor-demo-output
 ```
 
 The report contains the effective Gram matrix, prior weights, nuisance rank, all power bounds, necessary-flux lower bound, conservative detector threshold, calibration confidence/tolerance bound, holdout power/false-alarm estimates and intervals, and an observation decision when pixels were supplied. `necessary_flux_lower_bound: null` with `target_unreachable_at_any_flux: true` means the requested target is incompatible with the information available in this model. It does not mean the source is absent.

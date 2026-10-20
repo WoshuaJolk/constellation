@@ -1,0 +1,46 @@
+{
+  "method": "bounded_weight_importance",
+  "status": "confidence_target_met",
+  "scaled_evidence": [
+    0.7731624046388053,
+    0.7738998433745528
+  ],
+  "relative_evidence_gap": 0.0009537953880362348,
+  "queries": {
+    "count=0": [
+      0.39186637967768917,
+      0.3923111108551985
+    ],
+    "has:star": [
+      0.6076888891448015,
+      0.6081336203223108
+    ],
+    "any:star:flux:1:2": [
+      0.2835664637708814,
+      0.29135399781970617
+    ]
+  },
+  "point_estimates_not_certificates": {
+    "count=0": 0.39205317077027935,
+    "has:star": 0.6079468292297205,
+    "any:star:flux:1:2": 0.2874592483628604
+  },
+  "simultaneous_confidence": 0.99,
+  "samples": 100000,
+  "seed": 20261021,
+  "proposal_envelope": 0.4875411947355496,
+  "maximum_observed_scaled_weight": 0.9999999999735447,
+  "dual_envelope_requested": true,
+  "analytically_integrated_cells": 1,
+  "deterministic_scaled_evidence": [
+    0.30326532985631666,
+    0.30326532985631677
+  ],
+  "represented_source_count_tail_upper": 0.0,
+  "maximum_sampled_source_count": 1,
+  "construction_seconds": 0.11058396100042955,
+  "seconds": 0.16411008400018545,
+  "arithmetic": "float64 sampling, rendering and concentration bounds; not formal arithmetic certification",
+  "confidence_scope": "fixed-budget draws conditional on exact stated sampling/evaluation/model assumptions",
+  "full_objective_complete": false
+}

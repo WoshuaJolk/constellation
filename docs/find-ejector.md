@@ -8,7 +8,7 @@ A convergence is kinematic evidence to investigate. It can reflect a common birt
 
 ## Input example
 
-Generate a complete example with `magictools ejector_demo ejector-demo-output`. A minimal schema is:
+Generate a complete example with `constellation ejector_demo ejector-demo-output`. A minimal schema is:
 
 ```json
 {

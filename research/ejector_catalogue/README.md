@@ -194,8 +194,8 @@ python research/ejector_catalogue/summarize.py /tmp/ejector NEW_RESULTS_DIRECTOR
 python -m pytest -q
 ```
 
-The posterior generator also has a production CLI, `magictools ejector_prepare`;
-the search is `magictools find_ejector` with a schema-2 manifest. See the guide
+The posterior generator also has a production CLI, `constellation ejector_prepare`;
+the search is `constellation find_ejector` with a schema-2 manifest. See the guide
 for complete examples. `fetch.py --output NEW_DIRECTORY` explicitly repeats the
 live archive download with cached partition retries. It is not called by tests.
 

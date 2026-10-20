@@ -100,7 +100,7 @@ We did not enlarge the encounter radii after seeing the failures.
 From the repository root, with the package installed:
 
 ```sh
-magictools ejector_fit research/ejector_fit/data/hip1997_triple.json -o historical-fit.json
+constellation ejector_fit research/ejector_fit/data/hip1997_triple.json -o historical-fit.json
 OPENBLAS_NUM_THREADS=1 python research/ejector_fit/run.py --output /tmp/ejector-fits --workers 3
 OPENBLAS_NUM_THREADS=1 python research/ejector_fit/validate.py /tmp/ejector-fits
 python research/ejector_fit/plot.py /tmp/ejector-fits

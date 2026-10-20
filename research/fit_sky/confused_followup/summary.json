@@ -1,0 +1,23 @@
+{
+  "confused": {
+    "status": "confidence_target_met",
+    "queries": {
+      "count=0": [
+        0.007360441520237076,
+        0.0074440239706060765
+      ],
+      "count=1": [
+        0.5307852631511871,
+        0.5352097689531803
+      ],
+      "count=2": [
+        0.45741600430574714,
+        0.4618249290142645
+      ]
+    },
+    "relative_evidence_gap": 0.005877617183320638,
+    "seconds": 173.3509766750003,
+    "maximum_sampled_source_count": 2,
+    "full_objective_complete": false
+  }
+}

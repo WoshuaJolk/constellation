@@ -11,10 +11,10 @@ no new general Kepler transform or mathematical novelty is asserted.
 ## Run it
 
 ```bash
-magictools fold_demo fold-demo-output
+constellation fold_demo fold-demo-output
 # Larger, 64,000-orbit benchmark (48 images):
-magictools fold_demo fold-large-output --grid-size 40 --frames 48
-magictools fold_kepler fold-large-output/input.json -o checked-search.json
+constellation fold_demo fold-large-output --grid-size 40 --frames 48
+constellation fold_kepler fold-large-output/input.json -o checked-search.json
 ```
 
 The demo saves synthetic FITS images, an explicit elliptic orbit bank, the input

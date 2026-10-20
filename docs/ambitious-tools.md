@@ -42,7 +42,7 @@ The new path is `orbit samples → map_cover → force_track / dig_floor`, with 
 }
 ```
 
-The example state is a real JPL Horizons Ceres state; the flux, exposure, and file names are illustrative. Generate complete runnable inputs with `magictools orbit_demo orbit-demo-output`.
+The example state is a real JPL Horizons Ceres state; the flux, exposure, and file names are illustrative. Generate complete runnable inputs with `constellation orbit_demo orbit-demo-output`.
 
 ### Coordinates, observers, and epochs
 
@@ -90,11 +90,11 @@ The trail is the difference between projected exposure-end and exposure-start co
 ### Outputs and chaining
 
 ```bash
-magictools map_cover orbits.json -o coverage.json \
+constellation map_cover orbits.json -o coverage.json \
   --photometry-output photometry.json --planning-output planning.json
-magictools force_track photometry.json -o measured.json
-magictools dig_floor photometry.json -o candidates.json
-magictools learn_null planning.json -o ranked-exposures.json
+constellation force_track photometry.json -o measured.json
+constellation dig_floor photometry.json -o candidates.json
+constellation learn_null planning.json -o ranked-exposures.json
 ```
 
 The main report contains provenance, actual dynamics settings, per-exposure family fractions, and per-member sky/pixel positions, light times, trails, expected S/N, fit uncertainty, and unavailable reasons. All supplied exposures appear, including those covering none of the family. It also embeds the two export manifests.
@@ -169,4 +169,4 @@ MAGICTOOLS_JPL_KERNEL=/absolute/path/de440s.bsp python -m pytest tests/test_orbi
 
 Without that variable, the optional kernel test is skipped; all default tests use bundled Astropy ephemerides and the frozen Horizons fixture.
 
-Run `magictools orbit_demo new-directory` for the complete synthetic workflow. The original `magictools demo` remains supported.
+Run `constellation orbit_demo new-directory` for the complete synthetic workflow. The original `constellation demo` remains supported.

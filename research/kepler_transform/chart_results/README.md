@@ -135,13 +135,13 @@ Install from the repository:
 
 ```sh
 pip install '.[research,accelerate]'
-magictools-fold-chart research/kepler_transform/chart_results/demo/manifest.json /tmp/new-chart-output
+constellation fold-chart research/kepler_transform/chart_results/demo/manifest.json /tmp/new-chart-output
 ```
 
 The [demo](demo/manifest.json) contains prepared Fourier inputs and 256 queries.
 The command preserves coverage reports, certificates, all scores and selected
 independent audits. Unresolved queries are refused unless explicit direct
-fallback is enabled. `magictools fold_kepler` retains its existing production
+fallback is enabled. `constellation fold_kepler` retains its existing production
 interface; this experimental command is separate.
 
 From a research checkout:

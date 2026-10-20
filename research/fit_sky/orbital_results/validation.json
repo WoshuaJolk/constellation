@@ -1,0 +1,80 @@
+{
+  "scope": "Numerical integration validation, not a global posterior or transform certificate",
+  "fit_sky_base_commit": "b650423397e0b860eedcf7b074ce23bf03827896",
+  "kepler_main_commit": "92e359bda44a400aacdfe84f5cf6701cde42b368",
+  "kepler_files_modified": false,
+  "tests": {
+    "command": "PYTHONPATH=src:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 pytest -q tests/test_fit_sky.py tests/test_fit_sky_noise_floor.py tests/test_fit_sky_sequential.py tests/test_fit_sky_orbital.py",
+    "passed": 103,
+    "full_repository_suite_run": false
+  },
+  "cli_smoke": {
+    "particles": 64,
+    "sweeps": 2,
+    "checkpoint_after_exposures": 2,
+    "resumed_through_exposures": 4,
+    "status": "approximate_uncertified"
+  },
+  "legacy_archive_check": {
+    "path": "research/fit_sky/sequential_results/pilot-256/checkpoint.npz",
+    "sha256": "33dafe1668ffaf6e88473997435ac504bdbac0a80d9b66d046acfbe37cbbb483",
+    "physical_particles_weights_evidence_preserved": true,
+    "archive_not_modified": true,
+    "subsequent_rng_trajectory_preserved": false
+  },
+  "original_campaign_source_hashes_replayed": true,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "python-flint": "0.8.0",
+    "astropy": "8.0.2",
+    "pytest": "9.1.1"
+  },
+  "source_sha256": {
+    "research/fit_sky/orbital.py": "a59bdbdd9a31e7a8809298a13a38df51463d7509de53dc6ebd77f450160bdae8",
+    "research/fit_sky/orbital_experiments.py": "e70ce5fd4aad90ac0d9085be1860308cc229011ffef4a1c3b4802fbed8f28b14",
+    "research/fit_sky/orbital_continuous_control.py": "ea41d9b49daaea9c4576dd63c65399b43d43b6ff3e18a7bda1b40a4ac2dc1716",
+    "research/fit_sky/sequential.py": "8451f480920c0f7fbe1f4821a380f2860ed198fb738b6ff729ebb85c5b5bbb41",
+    "research/fit_sky/reference.py": "900aa9cbb7ba31bbab0a0e53372142f1a5d4d890bd7ef42a7d5e627e24cda6b8",
+    "research/fit_sky/scene.py": "21ca897cfeab2614b65fd1e86fb0ad2697b69bb1647f0d41b7f30d562d484df7",
+    "research/fit_sky/arithmetic.py": "aac9c4d3ff0dc05dd8321f287cc47fd540d737444067995eb9d05960de942965",
+    "research/kepler_transform/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "research/detection_limit/interval_orbits.py": "7cebff4f060921b497d1c41c70d16b50e99334e023a56f9b977f47f9a14099fd",
+    "src/magictools/orbits.py": "fd3a90aaf2f2c6c90d83c8f29e64460c83c31c8e273131de6102ea4f3d9634a6",
+    "tests/test_fit_sky_orbital.py": "30564cd87b60ed808c8ad9d0abeba68b40e60c7777ce703512f64c493e41f5b7"
+  },
+  "artifact_sha256": {
+    "checkpoint-20261021.npz": "f075af793ed0b19e599cff66b136bfa8440dd556e12db9898416f406dcd0b427",
+    "checkpoint-20261022.npz": "823975d5333838908989a00c374a1fcd87839f923ac6b252a4fab639904015db",
+    "checkpoint-20261023.npz": "e99b3571a2ef1f7d27b7060103b95e4d1cbcd2c32eea49b9e0b6600299c405d8",
+    "continuous/checkpoint-20261024.npz": "562dd35f4a4f61ce4a7829a4b3a70c830df60e4e6aa5ef7eea861d5acbcbacaa",
+    "continuous/checkpoint-20261025.npz": "cad3b463b25e3d3aadbf03b009381e91629e73e080b99b207961b5088f86c7b3",
+    "continuous/checkpoint-20261026.npz": "f1d1aabf15ac3e5bfa872db2fc873039c2c971e3d951e73e5c29de16e1a56de0",
+    "continuous/input.json": "d4f745260f19e843d7784d0e3298eb5565d6ca8cf02d489bd6e50c709b16f8a5",
+    "continuous/references.json": "cc3bb25248547433b4a6a03db55a0c5fa643cb396f1538506d187a273cbe4cca",
+    "continuous/report-20261024.json": "4e5e3df3ab85aa67d27fefa024a67665895391f05f829a3dea4b4c8a5a58cb10",
+    "continuous/report-20261025.json": "80f25bb14cd93f97ca5206508caf2613bbd73acf5d3b3ad9e1f0a94602fc55c0",
+    "continuous/report-20261026.json": "bfd58f6c5d38bd246bdab9ae8c2ae057ebab735acdef1ee06f197efc782ff45a",
+    "continuous/summary.json": "38d167bf774623dddf1cf39688eb609319f33527d8fcfb49fe7964eb7063a0b3",
+    "input.json": "4cf5b1125e648e148d40cc65d39db11d585418f91003da84a8db818c56ce45bd",
+    "references.json": "5618995f3fecbc400edf954d7aa6871d11b30ce2eae9cac370c41b139a158449",
+    "report-20261021.json": "de86acaf12877aa0114c115950884e1739d542fe0bcaed1d3597b873460bbffc",
+    "report-20261022.json": "f056f983ad578e64203019fed03b645d8d3e3cad45c16528c816e7dcef167d5f",
+    "report-20261023.json": "09410cc4d12e82d9d18e7d01695305483b5d8d2b55fa70ec74372baaa0e90546",
+    "source_hashes.json": "dd2ba189deb1470fcf9491946dfe8ee433d1ae76be8c683804eedeae18b57d45",
+    "source_snapshot/research/detection_limit/interval_orbits.py": "7cebff4f060921b497d1c41c70d16b50e99334e023a56f9b977f47f9a14099fd",
+    "source_snapshot/research/fit_sky/arithmetic.py": "aac9c4d3ff0dc05dd8321f287cc47fd540d737444067995eb9d05960de942965",
+    "source_snapshot/research/fit_sky/orbital.py": "a59bdbdd9a31e7a8809298a13a38df51463d7509de53dc6ebd77f450160bdae8",
+    "source_snapshot/research/fit_sky/orbital_continuous_control.py": "ea41d9b49daaea9c4576dd63c65399b43d43b6ff3e18a7bda1b40a4ac2dc1716",
+    "source_snapshot/research/fit_sky/orbital_experiments.py": "e70ce5fd4aad90ac0d9085be1860308cc229011ffef4a1c3b4802fbed8f28b14",
+    "source_snapshot/research/fit_sky/reference.py": "900aa9cbb7ba31bbab0a0e53372142f1a5d4d890bd7ef42a7d5e627e24cda6b8",
+    "source_snapshot/research/fit_sky/scene.py": "21ca897cfeab2614b65fd1e86fb0ad2697b69bb1647f0d41b7f30d562d484df7",
+    "source_snapshot/research/fit_sky/sequential.py": "8451f480920c0f7fbe1f4821a380f2860ed198fb738b6ff729ebb85c5b5bbb41",
+    "source_snapshot/research/kepler_transform/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "source_snapshot/src/magictools/orbits.py": "fd3a90aaf2f2c6c90d83c8f29e64460c83c31c8e273131de6102ea4f3d9634a6",
+    "source_snapshot/tests/test_fit_sky_orbital.py": "30564cd87b60ed808c8ad9d0abeba68b40e60c7777ce703512f64c493e41f5b7",
+    "summary.json": "da2f7a286ce78602a6114c67f3d020c22b3118d32aea271b96df516b3881aea7",
+    "test-output.txt": "b4e4b1a073d5e056a66bfe08fe16574265b6ab1b2b97d49c7593d718e47112bd"
+  }
+}

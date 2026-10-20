@@ -57,7 +57,7 @@ Known off-chip probability zero should use an exact probability vector, not an
 uncertain calibration. Calibration images must be independent of evaluated data.
 
 ```bash
-magictools learn_null examples/null-calibration.json -o calibrated-posterior.json
+constellation learn_null examples/null-calibration.json -o calibrated-posterior.json
 ```
 
 ## Empirical models in weigh_stamp
@@ -86,7 +86,7 @@ validated real-artifact corpus or a calibrated real/bogus probability.
 ## map_complete: exact selection for a finite experiment
 
 ```bash
-magictools map_complete examples/selection.json -o exact-selection.json
+constellation map_complete examples/selection.json -o exact-selection.json
 ```
 
 The example supplies exposures, a weighted population, and explicit cadence
@@ -125,7 +125,7 @@ budget. The reserved rule name `union` denotes selection by any supplied rule.
 ## inject_all: population selection Monte Carlo
 
 ```bash
-magictools inject_all examples/selection.json -o simulated-selection.json
+constellation inject_all examples/selection.json -o simulated-selection.json
 ```
 
 The same manifest can add `draws_per_object` (default 10,000; range 100–1,000,000),
@@ -157,8 +157,8 @@ likelihoods, not fits to orbital-property distributions.
 ## match_all: finite assignment with an integer proof certificate
 
 ```bash
-magictools match_all examples/matching.json -o assignment.json
-magictools verify_match assignment.json -o certificate-check.json
+constellation match_all examples/matching.json -o assignment.json
+constellation verify_match assignment.json -o certificate-check.json
 ```
 
 Supply `detections` with `id` and integer `unassigned_score`, and `candidates`

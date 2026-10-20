@@ -1,0 +1,17 @@
+{
+  "README.md": "069b5171c152c2ffb14f847bd5fcdf707d3f475cc677bf81fa5e1f2ca8539a55",
+  "broad-global.json": "e689678b90155d7293d0d367659590a668ebe6fcd3de154cd98c8e6f7b8763c9",
+  "broad-marginal.json": "5e6a4f85c31636a34fb44da280beecdc52254b306673aabab48c1ca22d4323f9",
+  "moving-conditional-statistical.json": "a2e9daf0ae55e0eaab7be72bbf7eccea2e4cd2483af38aaa535f4c6f90315fbc",
+  "moving-conditional.json": "97625a79b1a03b0d037c0541613e80edc5f1f4d78b3b00b85f45de7303e6ae69",
+  "moving-global-statistical.json": "3d8cdea16f9ad7733a4e472454c33067ab5a00b69429716cee9ca8f27a37d944",
+  "moving-global.json": "6fab43b89a2b72e6323c3c8ec3acaa577738cc2366864a3b14093732bd2ca6e3",
+  "moving-quadrature.json": "57a4fdd7f5b34c52b16855e64dcb48edb367371eac376a63b5eaea2b1551c16e",
+  "poisson-tilt-pilot.json": "ab220e34a3d974b994a420c782f9a8d161bb24b634fd5cbef9520ab0209b7254",
+  "poisson-tilt-pilot.py": "e5f94235e5fe929e9afa9945b0e150388e608ecc364ff6895356e4e80d30f8b3",
+  "real-conditional-statistical.json": "81ddf913f3973b8895746a3af33a012e3dff9756b048b924de85900502e877ce",
+  "real-conditional.json": "157e21e7677125e68f63eef19e0645e71c2106f05507a8edd4fc0afb421d7eae",
+  "real-global-statistical.json": "0016c1f7c384d9522e79fb246e1215e56d02a408091fd3bf14c57979a74ae241",
+  "real-global.json": "a1d94418f04c859cc67f361e41b3641ae5fa245a9e9ad753f0bc2aa1dd37ecfe",
+  "real-quadrature.json": "bf918ce344f4039495f149a8392826de72eb8621c8996e6a71abe04de045c4f4"
+}

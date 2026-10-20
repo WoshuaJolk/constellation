@@ -1,0 +1,339 @@
+{
+  "schema_version": 2,
+  "tool": "fit_sky",
+  "manifest": {
+    "source_types": [
+      {
+        "name": "star",
+        "kind": "star",
+        "parameters": {
+          "x": [
+            0,
+            0
+          ],
+          "y": [
+            0,
+            0
+          ],
+          "flux": [
+            1,
+            3
+          ]
+        }
+      }
+    ],
+    "exposures": [
+      {
+        "id": "synthetic-control",
+        "instrument": "default",
+        "time": 0,
+        "data": [
+          [
+            1
+          ]
+        ],
+        "psf_sigma": 0.6,
+        "noise_sigma": 1
+      }
+    ],
+    "count_prior": {
+      "probabilities": [
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "manifest_sha256": "53b4df3d231c37f3d432e032391f6dda1399b07d72ed713c58d5f0e70a3b6b79",
+  "settings": {
+    "method": "auto",
+    "max_gauss_dimension": 6,
+    "precision": 100,
+    "tolerance": 0.01,
+    "max_leaves": 4096,
+    "max_seconds": 120
+  },
+  "status": "bounded_target_met",
+  "full_objective_complete": false,
+  "scaled_evidence": [
+    0.7734901095500535,
+    0.7734901095500539
+  ],
+  "log_evidence": [
+    -1.1757809288746324,
+    -1.1757809288746317
+  ],
+  "relative_evidence_gap": 2.870684475257179e-16,
+  "queries": {
+    "count=0": [
+      0.3920739594624278,
+      0.39207395946242807
+    ],
+    "has:star": [
+      0.6079260405375719,
+      0.6079260405375723
+    ],
+    "any:star:flux:1:2": [
+      0.2884573839032116,
+      0.29815403435541665
+    ]
+  },
+  "source_count_tail_prior_upper": 0.0,
+  "source_count_tail_posterior_upper": 0.0,
+  "work": {
+    "leaves": 8,
+    "roots": 2,
+    "forward_calls": 67,
+    "seconds": 0.00940055899991421,
+    "max_dimension": 1
+  },
+  "certificate": [
+    {
+      "root": 0,
+      "path": [],
+      "likelihood": [
+        0.6065306597126333,
+        0.6065306597126335
+      ],
+      "mode": "intersection_point"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          0
+        ]
+      ],
+      "likelihood": [
+        0.8924757339032684,
+        0.8924757339032686
+      ],
+      "mode": "intersection_analytic_flux"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.998374031470407,
+        0.9983740314704073
+      ],
+      "mode": "intersection_analytic_flux"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.9872462866958425,
+        0.9872462866958427
+      ],
+      "mode": "intersection_analytic_flux"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.9750003646239032,
+        0.9750003646239034
+      ],
+      "mode": "intersection_analytic_flux"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.9672710661816462,
+        0.9672710661816464
+      ],
+      "mode": "intersection_analytic_flux"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "likelihood": [
+        0.9600336922296943,
+        0.9600336922296945
+      ],
+      "mode": "intersection_analytic_flux"
+    },
+    {
+      "root": 1,
+      "path": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "likelihood": [
+        0.9630162357118934,
+        0.9630162357118937
+      ],
+      "mode": "intersection_analytic_flux"
+    }
+  ],
+  "progress": [
+    {
+      "leaves": 4,
+      "scaled_evidence": [
+        0.7734901095500536,
+        0.7734901095500538
+      ],
+      "log_evidence": [
+        -1.1757809288746324,
+        -1.175780928874632
+      ],
+      "relative_evidence_gap": 2.1111350405726484e-28,
+      "queries": {
+        "count=0": [
+          0.39207395946242785,
+          0.39207395946242796
+        ],
+        "has:star": [
+          0.6079260405375719,
+          0.6079260405375722
+        ],
+        "any:star:flux:1:2": [
+          0.28845738390321163,
+          0.6079260405375722
+        ]
+      },
+      "source_count_tail_prior_upper": 0.0,
+      "source_count_tail_posterior_upper": 0.0
+    },
+    {
+      "leaves": 8,
+      "scaled_evidence": [
+        0.7734901095500536,
+        0.7734901095500538
+      ],
+      "log_evidence": [
+        -1.1757809288746324,
+        -1.175780928874632
+      ],
+      "relative_evidence_gap": 6.211020481684747e-28,
+      "queries": {
+        "count=0": [
+          0.39207395946242785,
+          0.39207395946242796
+        ],
+        "has:star": [
+          0.6079260405375719,
+          0.6079260405375722
+        ],
+        "any:star:flux:1:2": [
+          0.28845738390321163,
+          0.30788080946037
+        ]
+      },
+      "source_count_tail_prior_upper": 0.0,
+      "source_count_tail_posterior_upper": 0.0
+    }
+  ],
+  "scope": "Declared compact source/instrument priors and Gaussian/Poisson image model",
+  "arithmetic": "Arb prior, forward likelihood and quadrature enclosures; outward float report bounds",
+  "input_sha256": "094e6e07187938ae4bcef84eba99248e7f57089222135dc1c6fe03cb07c957ef"
+}
