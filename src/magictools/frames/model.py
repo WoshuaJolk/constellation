@@ -11,8 +11,18 @@ from .profiles import EXTRA_PROVIDERS
 
 MOST_CATALOGS = ["ztf", "ptf", "wise_merge", "spitzer_bcd", "2mass", "sofia", "spherex"]
 FIELD = ["field", "ephemeris"]
+SSOIS_EPHEMERIS_UNAVAILABLE = (
+    "SSOIS uploaded-ephemeris search is disabled by default: its legacy userephem "
+    "endpoint returned HTTP 500 even for two-row requests in live checks. "
+    "This SSOIS coverage is unqueried, not an empty search. Direct archives can "
+    "search the supplied track; SSOIS object/orbit modes remain available. "
+    "Set experimentalSsoisEphemeris=true only to test the legacy endpoint."
+)
 PROVIDERS = {
-    "ssois": {"name": "CADC SSOIS", "modes": ["object", "orbits", "arc", "ephemeris"], "collections": ["SSOIS indexed instruments"]},
+    "ssois": {"name": "CADC SSOIS", "modes": ["object", "orbits", "arc"],
+              "experimentalModes": {"ephemeris": {"optIn": "experimentalSsoisEphemeris", "defaultEnabled": False,
+                                                   "reason": SSOIS_EPHEMERIS_UNAVAILABLE}},
+              "collections": ["SSOIS indexed instruments"]},
     "smoka": {"name": "SMOKA direct Subaru search", "modes": FIELD, "collections": ["HSC", "Suprime-Cam"]},
     "noirlab": {"name": "NOIRLab direct DECam search", "modes": FIELD, "collections": ["DECam", "DES", "DECaLS", "DEEP"]},
     "hsc": {"name": "HSC-SSP CAS", "modes": FIELD, "collections": ["HSC-SSP PDR3"], "credentials": ["HSC_SSP_CAS_USER", "HSC_SSP_CAS_PASSWORD"]},
@@ -132,6 +142,9 @@ def validate(value, base=Path(".")):
     x["sigmaMultiplier"] = finite(x.get("sigmaMultiplier", 1), "sigmaMultiplier", 0, 100)
     x["radius"] = finite(x.get("radius", 0), "radius", 0, 180)
     x["ephemStepDays"] = finite(x.get("ephemStepDays", 0.25), "ephemStepDays", 1e-6, 365)
+    if "experimentalSsoisEphemeris" in x and not isinstance(x["experimentalSsoisEphemeris"], bool):
+        raise ValueError("experimentalSsoisEphemeris must be a JSON boolean")
+    # Leave absent switches absent: existing run signatures must remain resumable.
     if mode == "field":
         x["ra"] = finite(x.get("ra"), "ra", 0, 360) % 360
         x["dec"] = finite(x.get("dec"), "dec", -90, 90)

@@ -120,14 +120,37 @@ envelopes retain possible crossings; they do not integrate flux along a trail.
 
 `sigmaMultiplier` (default 1) scales the supplied angular envelope. Direct
 matching adds `radius + (sigmaMultiplier * sigmaArcsec + eellipse)/3600`.
-The legacy SSOIS uploaded-ephemeris endpoint receives a conservative maximum
-sigma per window; live requests returned HTTP 500 during validation. Direct
-field adapters provide the working per-date uncertainty path.
+SSOIS's legacy uploaded-ephemeris endpoint is **disabled by default**. Live
+checks returned HTTP 500 even for two-row tracks over a single day, with GET
+and POST; splitting a long track into monthly windows did not resolve it.
+Plans and results record SSOIS as `unqueried` in this mode. Direct field
+adapters still receive the supplied track and its per-date uncertainty.
+This does not affect SSOIS object, orbit or arc queries.
+
+For deliberate endpoint testing, set `"experimentalSsoisEphemeris": true` in
+a separate manifest/run. It sends a conservative maximum sigma per window;
+successful operation is not currently verified. `capabilities` lists this
+under `experimentalModes`, not the provider's supported `modes`.
+
+Existing runs remain resumable with their original input. After the active
+process finishes and the tool is upgraded, `--resume` skips successful direct
+queries and blocks old pending/failed SSOIS ephemeris jobs without contacting
+the legacy endpoint. Prior attempt receipts and returned frames are preserved.
+An incomplete result with SSOIS unqueried does not establish absence of images.
 
 You can attach `ephemeris`/`ephemerisFile` and `observer` to an orbit or object
 manifest to cross-check direct archives alongside native moving-object
 services. Without a supplied track, direct field services are explicitly
 unqueried; the tool does not silently propagate orbits itself.
+
+For an SSOIS orbital-element query, CADC generates the ephemeris using OrbFit
+and matches it against its own image index. Constellation validates and
+translates the input, preserves request receipts and results, and normalizes
+and deduplicates candidate frames. It does not independently recompute that
+orbit. Direct-archive ephemeris queries use Constellation's local interpolation
+and footprint matching against the supplied track. Neither route establishes
+that the target was detected in the returned images. See
+[CADC's method documentation](https://www.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/ssois/documentation.html).
 
 ## Connections
 
@@ -146,7 +169,7 @@ and several services supply only points, stacks, cutouts, or released subsets.
 
 | Provider ID | Search coverage | Inputs |
 | --- | --- | --- |
-| `ssois` | CADC SSOIS indexed instruments | object, orbit family, arc, ephemeris |
+| `ssois` | CADC SSOIS indexed instruments | object, orbit family, arc; uploaded ephemeris disabled unless explicitly opted in |
 | `smoka` | direct HSC and Suprime-Cam CCD records | field, ephemeris |
 | `noirlab` | direct DECam instcal image products, including public survey programs | field, ephemeris |
 | `hsc` | HSC-SSP PDR3 wide and revised deep/ultradeep frame tables | field, ephemeris; account required |

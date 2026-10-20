@@ -43,7 +43,12 @@ def plan(x):
         if can_field and field_windows:
             jobs.extend(Job(provider, w["label"], window=w) for w in field_windows)
         elif provider == "ssois" and x["mode"] == "ephemeris":
-            jobs.extend(Job(provider, w["label"], window=w) for w in field_windows)
+            if x.get("experimentalSsoisEphemeris", False):
+                jobs.extend(Job(provider, w["label"], window=w) for w in field_windows)
+            else:
+                from .model import SSOIS_EPHEMERIS_UNAVAILABLE
+                unavailable.append({"provider": provider, "name": meta["name"], "mode": "ephemeris",
+                                    "reason": SSOIS_EPHEMERIS_UNAVAILABLE})
         elif x["mode"] in meta["modes"] and x["mode"] in {"object", "orbits", "arc"}:
             if x["mode"] == "orbits":
                 jobs.extend(Job(provider, o["label"], orbit=o) for o in x["orbits"])

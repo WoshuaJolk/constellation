@@ -18,6 +18,106 @@ FIELD = {"mode": "field", "ra": 180, "dec": 30, "radius": .05, "start": "2019-01
 ORBIT = {"label": "nominal", "epochMjd": 55200, "a": 2.7413806, "e": .0855139, "i": 6.98707, "node": 43.05408, "peri": 120.67443, "meanAnomaly": 206.88213}
 
 
+def ephemeris_input(rows=2):
+    from magictools.frames.model import iso
+    first = mjd("2010-01-01")
+    return {"mode": "ephemeris", "start": "2010-01-01", "end": iso(first + rows - 1)[:10],
+            "observer": "geocenter", "providers": ["ssois", "ztf"],
+            "ephemeris": [{"mjd": first + i, "ra": 150 + i / 1000, "dec": 2,
+                           "sigmaArcsec": i / 100} for i in range(rows)]}
+
+
+def test_long_track_skips_unavailable_ssois_but_preserves_direct_windows():
+    from magictools.frames.model import PROVIDERS
+    x = validate(ephemeris_input(3069))
+    jobs, unavailable = plan(x)
+    assert jobs and all(j.provider == "ztf" for j in jobs)
+    assert len(unavailable) == 1 and unavailable[0]["provider"] == "ssois"
+    assert "HTTP 500" in unavailable[0]["reason"]
+    actual = {p["mjd"]: p for j in jobs for p in j.window["points"]}
+    for p in x["ephemeris"]:
+        assert actual[p["mjd"]]["ra"] == pytest.approx(p["ra"])
+        assert actual[p["mjd"]]["sigmaArcsec"] == pytest.approx(p["sigmaArcsec"])
+    assert "ephemeris" not in PROVIDERS["ssois"]["modes"]
+    assert not PROVIDERS["ssois"]["experimentalModes"]["ephemeris"]["defaultEnabled"]
+    assert "experimentalSsoisEphemeris" not in x  # Preserve existing run signatures.
+
+
+def test_disabled_ssois_is_unqueried_not_a_successful_empty_search(tmp_path):
+    x = validate({**ephemeris_input(), "providers": ["ssois"]})
+    result = run(x, tmp_path, transport_factory=transport("", AssertionError("must not contact archive")))
+    assert result["status"] == "incomplete"
+    assert result["checks"] == [] and result["frames"] == []
+    assert result["unqueried"][0]["provider"] == "ssois"
+
+
+@pytest.mark.parametrize("native,wire_mode", [
+    ({"mode": "object", "object": "2016 FV238", "resolver": "bynameMPC"}, "bynameMPC"),
+    ({"mode": "orbits", "orbits": [ORBIT]}, "orbel"),
+    ({"mode": "arc", "arc": "x" * 80 + "\n" + "y" * 80}, "bern"),
+])
+def test_native_ssois_modes_remain_available_with_attached_track(native, wire_mode):
+    x = validate({**ephemeris_input(), **native})
+    jobs, unavailable = plan(x)
+    assert not unavailable
+    native_jobs = [j for j in jobs if j.provider == "ssois"]
+    assert len(native_jobs) == 1 and native_jobs[0].window is None
+    assert ssois_params(native_jobs[0], x)["search"] == wire_mode
+    assert any(j.provider == "ztf" and j.window for j in jobs)
+
+
+def test_explicit_ssois_ephemeris_opt_in_retains_wire_format_and_uncertainty(tmp_path):
+    x = validate({**ephemeris_input(), "providers": ["ssois"], "experimentalSsoisEphemeris": True,
+                  "radius": .1, "eellipse": 2, "sigmaMultiplier": 3})
+    jobs, unavailable = plan(x)
+    assert len(jobs) == 1 and not unavailable
+    wire = ssois_params(jobs[0], x)
+    assert wire["search"] == "userephem" and len(wire["ephem"].splitlines()) == 2
+    assert wire["eellipse"] == pytest.approx(360 + 2 + .01 * 3)
+    fake = transport("Image\tMJD\tTelescope/Instrument\n")(tmp_path, 600, Credentials())
+    s = stats()
+    assert list(execute(jobs[0], x, fake, s)) == []
+    assert parse_qs(fake.calls[0]["body"])["search"] == ["userephem"]
+    assert any("Experimental" in warning for warning in s["warnings"])
+
+
+@pytest.mark.parametrize("value", ["true", "false", 1, None])
+def test_ephemeris_opt_in_requires_boolean(value):
+    with pytest.raises(ValueError, match="JSON boolean"):
+        validate({**ephemeris_input(), "experimentalSsoisEphemeris": value})
+
+
+def test_old_failed_ephemeris_run_resumes_without_retrying_legacy_endpoint(tmp_path, monkeypatch):
+    from magictools.frames import engine
+    from magictools.frames.adapters import frame
+    from magictools.frames.transport import ArchiveError
+    x = validate(ephemeris_input())
+    original_plan, original_execute = engine.plan, engine.execute
+
+    def old_plan(value):
+        return original_plan({**value, "experimentalSsoisEphemeris": True})
+
+    def old_execute(job, value, client, counters):
+        if job.provider == "ssois":
+            raise ArchiveError("Archive returned HTTP 500")
+        yield frame(job, {}, id="retained-direct-product")
+
+    monkeypatch.setattr(engine, "plan", old_plan)
+    monkeypatch.setattr(engine, "execute", old_execute)
+    initial = run(x, tmp_path, transport_factory=transport(""))
+    old_receipts = {p: p.read_bytes() for p in (tmp_path / "queries").glob("*/*/receipt.json")}
+    monkeypatch.setattr(engine, "plan", original_plan)
+    monkeypatch.setattr(engine, "execute", original_execute)
+    resumed = run(x, tmp_path, resume=True,
+                  transport_factory=transport("", AssertionError("must not contact archive")))
+    assert resumed["frames"] == initial["frames"]
+    checks = {c["provider"]: c for c in resumed["checks"]}
+    assert checks["ssois"]["status"] == "blocked" and checks["ssois"]["requests"] == []
+    assert checks["ztf"]["attemptId"] == next(c["attemptId"] for c in initial["checks"] if c["provider"] == "ztf")
+    assert all(path.read_bytes() == data for path, data in old_receipts.items())
+    assert resumed["status"] == "incomplete" and resumed["unqueried"][0]["provider"] == "ssois"
+
+
 def transport(body, error=None):
     class Fake:
         def __init__(self, directory, timeout, credentials):
