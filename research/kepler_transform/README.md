@@ -1,5 +1,13 @@
 # Full-objective Kepler transform attempts
 
+**Update:** the [second construction campaign](construction_results/README.md)
+implements a sampled butterfly and a stronger localized NUFFT construction
+with a six-dimensional geometry atlas. It achieves useful one-shot gains and
+validated continuous geometry bounds on bounded cells, while preserving broad
+domain failures. See its [derivation](construction.md). The first campaign and
+its negative results are preserved below; its rotation method is no longer the
+strongest implementation in this repository.
+
 **Result: the full objective was not achieved. No breakthrough claim or new
 production tool is made.** This directory preserves three approaches and a
 further attempt to repair the strongest one, including the negative results.

@@ -35,6 +35,13 @@ tested three routes plus a directional light-time repair. Conditional harmonic
 identities work, but construction cost, physical bandwidth and continuous radial
 coverage remain unresolved. The full transform is **not** marked complete.
 
+The [second construction campaign](../research/kepler_transform/construction_results/README.md)
+avoids per-query orbit integration using a continuous six-dimensional geometry
+atlas and phase-corrected NUFFTs. It reports a 2.10× million-query gain including
+geometry certification and longer-cadence gains against the same approximate
+geometry. Broad-domain approximation, NUFFT volume, real instrument models and
+complete numerical certification still prevent full completion.
+
 The [full-objective detection-limit research](../research/detection_limit/README.md)
 now pairs detector power with universal dual upper bounds and validated
 continuous orbit-cell errors. It meets a one-percentage-point gap in solvable

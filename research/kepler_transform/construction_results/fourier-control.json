@@ -1,0 +1,22 @@
+{
+  "size": 4096,
+  "construction_seconds": 5.78573999999935,
+  "depth": 12,
+  "rank_cap": 16,
+  "requested_tolerance": 1e-10,
+  "kernel_entries": 15094528,
+  "dense_kernel_entries": 16777216,
+  "kernel_entry_ratio": 0.8997039794921875,
+  "stored_complex_numbers": 4705604,
+  "storage_ratio": 0.2804758548736572,
+  "rank_limited_blocks": 0,
+  "maximum_rank": 11,
+  "maximum_withheld_block_relative_residual": 1.2244933878937121e-08,
+  "continuous_error_certified": false,
+  "finite_operator_error_certified": false,
+  "accuracy_status": "sampled diagnostics only; external validation required",
+  "application_seconds": 0.10006003900343785,
+  "fft_seconds": 0.00020860299991909415,
+  "relative_score_error": 4.242941241852277e-10,
+  "interpretation": "positive complementary-rank control, not a replacement for the FFT"
+}

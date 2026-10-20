@@ -8,6 +8,15 @@ harmonics with a directional light-time extension. **The full objective was
 not achieved.** Derivations, failures and reproducible experiments are preserved
 separately from the production tools; no breakthrough is claimed.
 
+The [second Kepler construction campaign](research/kepler_transform/construction_results/README.md)
+adds a localized phase-corrected NUFFT and a six-dimensional apparent-position
+atlas with validated continuous geometry bounds. A million-query bounded test
+runs **2.10× faster including geometry certification** than exact propagation
+plus per-frame NUFFTs. A stronger comparison using the same approximate geometry
+finds accumulation gains at longer cadences, but a loss at eight exposures.
+Broad-domain accuracy and resource tests still fail; this is a research backend,
+**not completion of the general all-orbit transform**.
+
 The [full-objective `prove_floor` research](research/detection_limit/README.md)
 adds continuous-family detection certificates, least-favorable-prior searches,
 and interval orbital image models. It closes the power gap below one percentage

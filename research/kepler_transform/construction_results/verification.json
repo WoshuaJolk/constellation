@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "checks": {
+    "local-bound": "interval geometry and response-bound replay passed",
+    "local-mixed_energy": "interval geometry and response-bound replay passed",
+    "local-close_observer": "interval geometry and response-bound replay passed",
+    "atlas-narrow": "6D interval geometry and uniform phase-bound replay passed",
+    "atlas-broad": "6D interval geometry and uniform phase-bound replay passed",
+    "constant-atlas-budget": "exact disjoint covering volume passed; unresolved leaves retained"
+  },
+  "scope": "replays interval certificates with the recorded implementation; independent mathematical checks are in the tests, not a second proof assistant",
+  "full_objective_complete": false
+}

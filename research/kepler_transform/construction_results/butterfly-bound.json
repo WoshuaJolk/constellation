@@ -1,0 +1,41 @@
+{
+  "case": "bound",
+  "size": 1024,
+  "adapted": true,
+  "construction_seconds": 2.1342724979986087,
+  "depth": 10,
+  "rank_cap": 16,
+  "requested_tolerance": 1e-10,
+  "kernel_entries": 1904640,
+  "dense_kernel_entries": 1048576,
+  "kernel_entry_ratio": 1.81640625,
+  "stored_complex_numbers": 1380352,
+  "storage_ratio": 1.31640625,
+  "rank_limited_blocks": 1024,
+  "maximum_rank": 16,
+  "maximum_withheld_block_relative_residual": 0.0,
+  "continuous_error_certified": false,
+  "finite_operator_error_certified": false,
+  "accuracy_status": "sampled diagnostics only; external validation required",
+  "partition": {
+    "seconds": 0.016792039001302328,
+    "additional_geometry_pairs": 192,
+    "phase_gradient_singular_values": [
+      870.9245686758186,
+      187.12787445317156,
+      180.93954539780088,
+      89.86715547936308,
+      7.542547209445154,
+      0.06808666496350199
+    ],
+    "role": "partition heuristic only; kernel retains exact retarded geometry"
+  },
+  "construction_geometry_pairs": 16384,
+  "all_orbit_time_pairs": 16384,
+  "application_seconds": 0.022293130001344252,
+  "fresh_geometry_plus_nufft_seconds": 0.12780147599551128,
+  "one_shot_speedup": 0.0588037017265771,
+  "relative_score_error": 0.1139339977751598,
+  "adjoint_absolute_error": 2.30829078921567e-12,
+  "full_objective_complete": false
+}
