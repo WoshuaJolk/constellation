@@ -20,6 +20,7 @@ accelerate = ["numba>=0.60,<1"]
 magictools = "magictools.cli:main"
 magictools-fold-chart = "research.kepler_transform.chart_search:main"
 magictools-fit-sky = "research.fit_sky.cli:main"
+magictools-fit-sky-stream = "research.fit_sky.sequential_cli:main"
 
 [tool.setuptools.package-dir]
 "" = "src"
