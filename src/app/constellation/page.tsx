@@ -92,7 +92,7 @@ export default function Page() {
     <main className="mx-auto w-full max-w-6xl px-4 py-10 font-mono sm:px-6">
       <h1 className="text-2xl font-semibold tracking-tight">const ellation;</h1>
       <p className="mt-2 text-sm text-[var(--text-secondary)]">mission: leverage the entire corpus of astronomical data all at once.</p>
-      <a href="https://github.com/WoshuaJolk/magictools/blob/codex/archive-frame-cli/docs/frames.md" className="mt-5 inline-block text-xs underline underline-offset-4">Find survey frames with the magictools CLI →</a>
+      <a href="https://github.com/WoshuaJolk/constellation/blob/main/README.md" className="mt-5 inline-block text-xs underline underline-offset-4">Search surveys with constelllation search</a>
       <Explorer />
       <section className="mt-12">
         <h2 className="mb-3 text-sm font-semibold">Part 1: Compile every public image.</h2>
