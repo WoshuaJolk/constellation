@@ -188,8 +188,9 @@ instrument nuisance, replayable posterior bounds, and global statistical
 integration. A confused-source experiment meets its declared evidence and
 posterior accuracy targets while retaining ambiguity between one and two
 sources. A subsequent continuous-template bound also brings the original
-moving-source and two-image ZTF experiments within their declared accuracy
-targets. Broad mixed scenes remain unresolved: **the full FitSky objective is
+moving-source, two-image, and three-image ZTF experiments within their declared
+accuracy targets, with posterior catalogue draws and a bounded held-out
+predictive calculation. Broad mixed scenes remain unresolved: **the full FitSky objective is
 not achieved**. The original rubric,
 failed attempts, source snapshots, and independent controls are retained.
 

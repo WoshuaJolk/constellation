@@ -1,0 +1,9 @@
+{
+  "status": "interrupted_before_statistical_result",
+  "cover_construction_complete": true,
+  "full_cover_replay_passed": true,
+  "requested_samples": 1000000,
+  "seed": 20261029,
+  "reason": "Per-cell vectorized evaluation became dominated by many small batches. Interrupted based on runtime, without observing an intermediate statistical result. Replaced with grouping by catalogue root.",
+  "full_objective_complete": false
+}

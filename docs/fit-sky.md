@@ -40,18 +40,32 @@ not permission to interpret unbounded confidence intervals as convergence.
 
 For Gaussian star/galaxy models, `--noise-floor both` constructs and replays
 global and conditional continuous-template support bounds before statistical
-integration. It needs `--statistical-samples` and a partition proposal.
+integration or catalogue sampling. It needs samples and a partition proposal.
 `noise-floor.json` and `conditional-noise-floor.json` contain the additional
 pointwise certificates. These preserve the original priors and covariance;
 they bound the residual that no allowed catalogue can remove.
 Use `global` or `conditional` instead of `both` to select one construction.
 This route does not implement continuous orbital support bounds.
 
+`--method noise-floor` instead constructs the original partition adaptively
+using those pointwise bounds. Its certificates contain the proposed dual
+vectors, so replay never needs to rerun an optimizer. Statistical integration
+and catalogue sampling replay these embedded proofs before using them.
+An unresolved deterministic integration report can still be a useful proposal
+for a separately bounded statistical calculation.
+
 `--marginalize-flux` analytically integrates one uniform flux per Gaussian
 statistical draw. Other sources and shared covariance remain in the integral.
 Queries involving that flux use a truncated integral and correctly include
 other sources that already satisfy an `any:` event. This also works with the
 complete-prior sampling route; Poisson likelihoods retain ordinary sampling.
+
+`--fast-samples` selects vectorized float64 rejection sampling with
+`--samples`; the default uses Arb acceptance comparisons. Both preserve the
+full represented prior partition. `--sample-proposals` controls the proposal
+budget, and the output reports whether all requested catalogues were obtained.
+The float route explicitly assumes numerically accurate forward evaluation.
+It does not claim an arithmetic certificate of the random draws.
 
 ## Manifest
 

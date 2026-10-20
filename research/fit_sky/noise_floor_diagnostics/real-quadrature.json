@@ -1,0 +1,41 @@
+[
+  {
+    "method": "tensor_gauss_with_quadratic_flux_marginalization",
+    "order": 12,
+    "scaled_evidence": 2.0765179856917978e-36,
+    "queries": {
+      "has:stationary": 0.046070081900395424,
+      "has:moving": 0.04666998091793622
+    },
+    "likelihood_evaluations": 62641,
+    "seconds": 1.0383403509995333,
+    "is_certificate": false,
+    "full_objective_complete": false
+  },
+  {
+    "method": "tensor_gauss_with_quadratic_flux_marginalization",
+    "order": 20,
+    "scaled_evidence": 2.0765179445266712e-36,
+    "queries": {
+      "has:stationary": 0.04607007644364952,
+      "has:moving": 0.0466699683890582
+    },
+    "likelihood_evaluations": 481201,
+    "seconds": 8.092804294000416,
+    "is_certificate": false,
+    "full_objective_complete": false
+  },
+  {
+    "method": "tensor_gauss_with_quadratic_flux_marginalization",
+    "order": 32,
+    "scaled_evidence": 2.0765179445262786e-36,
+    "queries": {
+      "has:stationary": 0.04607007644335473,
+      "has:moving": 0.04666996838918189
+    },
+    "likelihood_evaluations": 3148801,
+    "seconds": 43.83059001299989,
+    "is_certificate": false,
+    "full_objective_complete": false
+  }
+]

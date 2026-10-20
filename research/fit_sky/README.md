@@ -78,7 +78,7 @@ This is a completed bounded continuous inference problem with unknown source
 count. Its numerical/confidence assumptions and finite 0/1/2 count prior remain
 explicit; it does not complete the all-sky objective.
 
-## Follow-up: two earlier inference failures resolved
+## Follow-up: earlier inference failures resolved
 
 The [fixed follow-up](NOISE_FLOOR_CAMPAIGN.md) introduced a stronger pointwise
 likelihood ceiling. A convex template-mixture fit proposes a dual vector;
@@ -112,6 +112,39 @@ statistical route.
 These results resolve two concrete numerical failures, not the full objective.
 They do not supply general instrument responses, all-survey ingestion,
 astronomical-scale catalogue inference, or a successful broad mixed-scene fit.
+
+An adaptive version then rebuilt the three-exposure partition on the same
+original domain. It retained 664 leaves after a 120-second construction budget.
+A fresh four-million-draw validation achieved a **0.003930 relative evidence
+gap**, at 99.5% simultaneous within-report confidence. Independent quadrature
+at orders 20 and 32 agrees: posterior stationary/moving probabilities are
+approximately **0.051331055 / 0.051370310**.
+
+Combining that joint evidence interval with the separate fixed-budget 99.5%
+training interval gives a **99% simultaneous** log predictive density interval
+for the held-out image of **[-284.732435, -284.708911]**. The union bound supplies
+the joint confidence statement; independence of the two interval events is not
+required. This resolves the previously uninformative predictive calculation
+under the declared model. It does not establish model adequacy or astronomical
+completeness.
+
+The first attempt to sample the adaptive partition was interrupted for runtime
+before producing a statistical result. Batching by catalogue structure fixed
+the small-batch overhead; all per-cell proposal weights and coordinate bounds
+are preserved. `adaptive_noise_results/` retains the original partition,
+executed sources, interruption record, fresh validation contract, results, and
+independent quadrature. Its replay does not rerun the optimizer.
+
+The tool now also produces **1,000 posterior catalogue draws** for each of the
+moving and two-image real cases. `noise_floor_catalogues/` retains those draws,
+input hashes, proposal counts, and source snapshots. The optional fast sampler
+uses explicit float64 assumptions; the existing Arb acceptance path remains
+available. These are draws conditional on the represented source counts.
+
+Follow-up validation after incorporating the next concurrent Kepler update
+(`b37ff32`) passed **406 tests**, with one optional test skipped. See
+`noise_floor_validation.json` for the final source hashes, installed-wheel
+checks, and artifact inventory verification. Kepler files match upstream.
 
 ## Original failures against the full objective
 
@@ -229,3 +262,9 @@ ceiling is too conservative. These experiments do not establish a method that
 closes all those gaps at once.
 
 The full completion contract remains unmet.
+
+The follow-up substantially improves the likelihood ceilings and closes the
+moving/two-image/three-image failures above. The broad variable-count mixed
+scene still returns vacuous bounds even after analytic flux averaging with
+an unbounded Poisson prior. Neither the sparse-graph control nor these small
+continuous fits demonstrates the required astronomical scaling.

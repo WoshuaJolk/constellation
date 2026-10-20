@@ -316,6 +316,14 @@ The conditional construction repeats this argument inside each cell of the
 original catalogue partition. It changes only the proposal ceiling, not the
 source prior, likelihood, or posterior being integrated.
 
+The adaptive construction subdivides the cell with the largest prior-weighted
+pointwise ceiling. Its axis-selection heuristic uses approximate physical
+influence scales, with no role in the validity of the bounds. Every final leaf
+stores its dual vector and complete detector support covers. Replay validates
+these supplied proofs without rerunning floating optimization. Deterministic
+evidence bounds remain explicit, and a useful proposal does not imply that
+those deterministic integral bounds have converged.
+
 For a Poisson count prior with mean lambda and class probabilities pi_c,
 exponential tilting also bounds the unrepresented count mass. Set
 M = sum_c pi_c exp(H_c). The bound for K > Kmax is
@@ -338,6 +346,16 @@ with the event interval while retaining the full prior-width denominator.
 For an `any:` event, other sources that already satisfy it contribute the full
 conditional likelihood. This avoids treating an exchangeable source label as
 the scientific query.
+
+For throughput, samples from different cells with the same catalogue structure
+are evaluated in one batch. Each draw retains its own cell endpoints, mass,
+proposal probability, and flux integration interval. This changes computation
+order and the seeded random stream, not the target probability measure.
+
+The same pointwise ceilings support posterior rejection sampling. The optional
+vectorized sampler assumes float64 forward evaluation; the original route
+retains Arb acceptance comparisons. Both report budget exhaustion and any
+posterior mass excluded by the represented source-count cutoff.
 
 ## Held-out observations
 

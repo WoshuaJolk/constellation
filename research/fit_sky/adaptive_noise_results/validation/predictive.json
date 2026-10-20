@@ -1,0 +1,10 @@
+{
+  "log_predictive_density_bounds": [
+    -284.732434665671,
+    -284.7089106355432
+  ],
+  "simultaneous_confidence_lower": 0.99,
+  "conditional_on_stated_model_and_float_sampling_assumptions": true,
+  "heldout_used_to_choose_prior": false,
+  "full_objective_complete": false
+}
