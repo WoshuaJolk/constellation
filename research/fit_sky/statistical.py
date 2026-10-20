@@ -10,8 +10,8 @@ from collections import defaultdict
 from time import perf_counter
 
 import numpy as np
-from scipy.special import ndtr, xlogy
-from flint import ctx
+from scipy.special import ndtr, log_ndtr, xlogy
+from flint import arb, ctx
 
 from .arithmetic import lower, upper
 from .integrate import _box, enclose, verify
@@ -46,7 +46,7 @@ class BatchModel:
         if scene.low_rank is not None:
             self.low_rank = tuple(np.array([[float(x) for x in r] for r in a]) for a in scene.low_rank)
 
-    def likelihood(self, root, coordinates):
+    def means(self, root, coordinates):
         scene = self.scene
         n = len(coordinates)
         values = {**root["fixed"], **{name: coordinates[:, i] for i, name in enumerate(root["names"])}}
@@ -77,7 +77,11 @@ class BatchModel:
                 means += flux*(ndtr((xx+.5-x)/sx)-ndtr((xx-.5-x)/sx))*(
                     ndtr((yy+.5-y)/sy)-ndtr((yy-.5-y)/sy))
             pieces.append(means)
-        means = np.concatenate(pieces, axis=1)
+        return np.concatenate(pieces, axis=1)
+
+    def likelihood(self, root, coordinates):
+        scene = self.scene
+        means = self.means(root, coordinates)
         if scene.noise == "gaussian":
             r = (self.data-means)/self.sigma if self.chol is None else np.linalg.solve(self.chol, (self.data-means).T).T
             energy = np.sum(r*r, axis=1)
@@ -97,10 +101,63 @@ class BatchModel:
             raise ArithmeticError("Invalid scaled likelihood")
         return np.minimum(result, 1)
 
+    def marginal_flux(self, root, coordinates, axis, endpoints, query_interval=None):
+        """Average one uniform flux analytically, optionally restricted by an event.
+
+        The denominator remains the original prior width for a restricted event.
+        Cross-source terms and shared covariance are retained in the residual.
+        """
+        if self.scene.noise != "gaussian":
+            raise ValueError("Analytic flux marginalization requires Gaussian noise")
+        p = coordinates.copy()
+        p[:, axis] = 0
+        base = self.means(root, p)
+        p[:, axis] = 1
+        response = self.means(root, p)-base
+        r = (self.data-base)/self.sigma if self.chol is None else np.linalg.solve(self.chol, (self.data-base).T).T
+        a = response/self.sigma if self.chol is None else np.linalg.solve(self.chol, response.T).T
+        information, score, energy = np.sum(a*a, axis=1), np.sum(a*r, axis=1), np.sum(r*r, axis=1)
+        if self.low_rank is not None:
+            t, chol = self.low_rank
+            pa, pr = np.linalg.solve(chol, (a@t).T).T, np.linalg.solve(chol, (r@t).T).T
+            information -= np.sum(pa*pa, axis=1)
+            score -= np.sum(pa*pr, axis=1)
+            energy -= np.sum(pr*pr, axis=1)
+        if np.any(information <= 0):
+            raise ArithmeticError("Analytic flux information not numerically positive")
+        lo, hi = endpoints
+        width = hi-lo
+        if query_interval is not None:
+            lo, hi = np.maximum(lo, query_interval[0]), np.minimum(hi, query_interval[1])
+        if np.all(hi <= lo):
+            return np.zeros(len(p))
+        hi = np.maximum(hi, lo)
+        center = score/information
+        # Direct perpendicular residual avoids subtracting nearly equal energies.
+        perp = r-center[:, None]*a
+        remainder = np.sum(perp*perp, axis=1)
+        if self.low_rank is not None:
+            pp = np.linalg.solve(chol, (perp@t).T).T
+            remainder -= np.sum(pp*pp, axis=1)
+        if np.min(remainder) < -1e-8:
+            raise ArithmeticError("Negative marginalized residual beyond rounding tolerance")
+        left, right = np.sqrt(information)*(lo-center), np.sqrt(information)*(hi-center)
+        big = np.where(left > 0, log_ndtr(-left), log_ndtr(right))
+        small = np.where(left > 0, log_ndtr(-right), log_ndtr(left))
+        with np.errstate(divide="ignore"):
+            log_difference = big+np.log(-np.expm1(small-big))
+        result = np.exp(-np.maximum(0, remainder)/2+.5*np.log(2*np.pi/information)
+                        +log_difference-np.log(width))
+        if not np.all(np.isfinite(result)) or np.any(result > 1+1e-9):
+            raise ArithmeticError("Invalid marginalized scaled likelihood")
+        return np.minimum(1., result)
+
     def event(self, root, coordinates, query):
         if not query.startswith("any:"):
             return np.full(len(coordinates), self.scene.query(root, query), bool)
         _, classname, parameter, lo, hi = query.split(":")
+        if not np.isfinite(float(lo)) or not np.isfinite(float(hi)) or float(lo) > float(hi):
+            raise ValueError("Finite ordered event bounds required")
         result = np.zeros(len(coordinates), bool)
         for i, cls in enumerate(root["classes"]):
             if self.scene.types[cls]["name"] != classname:
@@ -120,7 +177,8 @@ def _interval(total, squares, count, failure):
 
 def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
           queries=None, seed=20261021, batch_size=4096, tolerance=.01,
-          use_dual_envelope=True):
+          use_dual_envelope=True, noise_floor_certificate=None, conditional_noise_certificate=None,
+          marginalize_flux=False):
     """Fixed-budget simultaneous confidence bounds on evidence and events.
 
     With no cover, draw the complete prior, including *unbounded* Poisson counts.
@@ -134,6 +192,17 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
     with ctx.workprec(100):
         scene = Scene(manifest)
         model = BatchModel(scene)
+        if noise_floor_certificate is not None:
+            if cover_report is None:
+                raise ValueError("Noise-floor proposal requires a complete prior partition")
+            from .noise_floor import verify as verify_floor, ceiling, tail_ceiling
+            verify_floor(scene, noise_floor_certificate)
+        conditional_ceilings = None
+        if conditional_noise_certificate is not None:
+            if cover_report is None:
+                raise ValueError("Conditional noise ceilings require a complete prior partition")
+            from .noise_floor import verify_cover
+            conditional_ceilings = verify_cover(scene, cover_report, conditional_noise_certificate)
         queries = queries or ["has:"+t["name"] for t in scene.types]
         cells = None
         deterministic = np.zeros((1+2*len(queries), 2))
@@ -142,12 +211,15 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
         if cover_report is not None:
             if cover_report["manifest"] != manifest:
                 raise ValueError("Proposal cover belongs to another experiment")
-            verify(cover_report, replay=False)
+            embedded = cover_report["settings"]["method"] == "noise-floor"
+            verify(cover_report, replay=embedded)
             roots = scene.roots()
             cells, masses = [], []
-            for record in cover_report["certificate"]:
+            for index, record in enumerate(cover_report["certificate"]):
                 root = roots[record["root"]]
                 lo, hi, _, _, _ = enclose(scene, root, record["path"], "range", 0)
+                if embedded:
+                    hi = min(hi, arb(record["likelihood"][1]))
                 membership = [scene.query(root, query, _box(root, record["path"])) for query in queries]
                 if hi > 0 and (hi-lo)/hi < .000000000001 and all(m is not None for m in membership):
                     # Integrate effectively constant cells with outward bounds.
@@ -167,6 +239,10 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
                         hi = min(hi, tighter)
                     except (ValueError, ZeroDivisionError):
                         pass  # retain the valid original pointwise range
+                if noise_floor_certificate is not None:
+                    hi = min(hi, ceiling(noise_floor_certificate, root))
+                if conditional_ceilings is not None:
+                    hi = min(hi, conditional_ceilings[index])
                 if hi == 0:
                     continue
                 mass = float(root["mass"])/2**len(record["path"])
@@ -181,6 +257,11 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
                 raise ArithmeticError("Nonpositive proposal probability")
             envelope = float(np.max(np.asarray(masses)/proposal)) if masses else 0.
             tail = max(0., upper(scene.tail))
+            if noise_floor_certificate is not None:
+                tail = min(tail, max(0., upper(tail_ceiling(scene, noise_floor_certificate))))
+            root_ids = {id(root): i for i, root in enumerate(roots)}
+            cell_roots = np.array([root_ids[id(cell[0])] for cell in cells])
+            cell_masses = np.array([cell[2] for cell in cells])
         construction_seconds = perf_counter()-started
         rng = np.random.default_rng(seed)
         totals = np.zeros(1+2*len(queries))
@@ -194,8 +275,8 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
             groups = defaultdict(list)
             if cells is not None:
                 choices = rng.choice(len(cells), size=n, p=proposal)
-                for row, choice in enumerate(choices):
-                    groups[int(choice)].append(row)
+                for row, root_id in enumerate(cell_roots[choices]):
+                    groups[int(root_id)].append(row)
             else:
                 prior = manifest["count_prior"]
                 if "poisson_mean" in prior:
@@ -211,15 +292,20 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
             for key, rows in groups.items():
                 if cells is None:
                     root = root_for_classes(scene, key)
-                    domain = root["ranges"]
+                    bounds = np.broadcast_to(np.asarray(root["ranges"], float).reshape(-1, 2),
+                                             (len(rows), len(root["ranges"]), 2))
                     factor = 1.
                 else:
-                    root, domain, mass, _ = cells[key]
-                    factor = mass/proposal[key]/envelope
+                    selected = choices[rows]
+                    root = roots[key]
+                    bounds = np.array([cells[i][1] for i in selected], float).reshape(len(rows), len(root["ranges"]), 2)
+                    factor = cell_masses[selected]/proposal[selected]/envelope
                 max_count_seen = max(max_count_seen, len(root["classes"]))
-                bounds = np.asarray(domain, float).reshape(-1, 2)
-                coordinates = bounds[:, 0]+rng.random((len(rows), len(bounds)))*(bounds[:, 1]-bounds[:, 0])
-                weight = factor*model.likelihood(root, coordinates)
+                coordinates = bounds[:, :, 0]+rng.random((len(rows), bounds.shape[1]))*(bounds[:, :, 1]-bounds[:, :, 0])
+                flux_axes = [i for i, name in enumerate(root["names"]) if name.endswith(".flux")]
+                eliminated = flux_axes[0] if marginalize_flux and scene.noise == "gaussian" and flux_axes else None
+                weight = factor*(model.likelihood(root, coordinates) if eliminated is None else
+                                 model.marginal_flux(root, coordinates, eliminated, bounds[:, eliminated, :].T))
                 if np.max(weight) > 1+1e-9:
                     raise ArithmeticError("Importance envelope violated")
                 weight = np.minimum(weight, 1.)
@@ -227,7 +313,22 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
                 columns = [weight]
                 for query in queries:
                     event = model.event(root, coordinates, query)
-                    columns.extend([weight*event, weight*~event])
+                    numerator = weight*event
+                    if eliminated is not None and query.startswith("any:"):
+                        _, classname, parameter, lo, hi = query.split(":")
+                        source = int(root["names"][eliminated].split(".")[0][1:])
+                        if parameter == "flux" and scene.types[root["classes"][source]]["name"] == classname:
+                            # Other matching sources can already make the union event true.
+                            probe = coordinates.copy()
+                            probe[:, eliminated] = np.inf
+                            other = model.event(root, probe, query)
+                            restricted = factor*model.marginal_flux(
+                                root, coordinates, eliminated, bounds[:, eliminated, :].T, (float(lo), float(hi)))
+                            numerator = np.where(other, weight, restricted)
+                    if np.any(numerator > weight*(1+1e-8)):
+                        raise ArithmeticError("Event integral exceeds total likelihood")
+                    numerator = np.minimum(numerator, weight)
+                    columns.extend([numerator, np.maximum(0., weight-numerator)])
                 for j, column in enumerate(columns):
                     totals[j] += column.sum()
                     squares[j] += column@column
@@ -253,6 +354,9 @@ def infer(manifest, *, cover_report=None, samples=1_000_000, confidence=.99,
                 "simultaneous_confidence": confidence, "samples": samples, "seed": seed,
                 "proposal_envelope": envelope, "maximum_observed_scaled_weight": max_weight,
                 "dual_envelope_requested": use_dual_envelope,
+                "noise_floor_applied": noise_floor_certificate is not None,
+                "conditional_noise_floor_applied": conditional_ceilings is not None,
+                "one_flux_analytically_marginalized": bool(marginalize_flux and scene.noise == "gaussian"),
                 "analytically_integrated_cells": deterministic_cells,
                 "deterministic_scaled_evidence": deterministic[0].tolist(),
                 "represented_source_count_tail_upper": tail, "maximum_sampled_source_count": max_count_seen,

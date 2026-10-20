@@ -78,7 +78,42 @@ This is a completed bounded continuous inference problem with unknown source
 count. Its numerical/confidence assumptions and finite 0/1/2 count prior remain
 explicit; it does not complete the all-sky objective.
 
-## Failures against the full objective
+## Follow-up: two earlier inference failures resolved
+
+The [fixed follow-up](NOISE_FLOOR_CAMPAIGN.md) introduced a stronger pointwise
+likelihood ceiling. A convex template-mixture fit proposes a dual vector;
+Arb independently bounds its response over the full continuous source domain.
+This captures unavoidable correlated image residuals that the old bounds lost.
+Each original parameter cell is retained. The optimizer and its grid do not
+define a candidate shortlist or exclude unvisited source positions.
+
+Fresh, fixed eight-million-draw validations met the original 1% evidence and
+posterior targets on **both previously failed cases**:
+
+| Original scene | Relative evidence gap | Selected 99% posterior interval |
+|---|---:|---|
+| Moving vs stationary with shared astrometric offset | 0.007331 | Moving: [0.977965, 0.978842] |
+| Two real ZTF exposures | 0.008578 | Moving: [0.043673, 0.048649] |
+
+Confidence is simultaneous within each report, conditional on the stated
+numerical and physical model assumptions. Independent tensor quadrature with
+analytic flux integration agrees: moving-class probabilities are approximately
+0.978426587 and 0.046669968, respectively. The real-data posterior mostly favors
+the empty catalogue under this particular source/background prior. It is not a
+validated claim that the astronomical region contains no objects.
+
+`noise_floor_results/` preserves the executed sources, every support
+certificate, complete original-cover hashes, and fixed-budget results.
+`noise_floor_diagnostics/` retains exploratory runs, independent quadrature,
+and the broad-scene failure. The new methods are exposed in the CLI through
+`--noise-floor both`; `--marginalize-flux` adds analytic flux averaging to the
+statistical route.
+
+These results resolve two concrete numerical failures, not the full objective.
+They do not supply general instrument responses, all-survey ingestion,
+astronomical-scale catalogue inference, or a successful broad mixed-scene fit.
+
+## Original failures against the full objective
 
 | Fixed experiment | Deterministic evidence relative gap | Outcome |
 |---|---:|---|

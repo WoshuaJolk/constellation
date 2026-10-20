@@ -38,6 +38,21 @@ deterministic cover, including unbounded Poisson source counts. This can avoid
 a count-truncation error while still failing badly from high variance. It is
 not permission to interpret unbounded confidence intervals as convergence.
 
+For Gaussian star/galaxy models, `--noise-floor both` constructs and replays
+global and conditional continuous-template support bounds before statistical
+integration. It needs `--statistical-samples` and a partition proposal.
+`noise-floor.json` and `conditional-noise-floor.json` contain the additional
+pointwise certificates. These preserve the original priors and covariance;
+they bound the residual that no allowed catalogue can remove.
+Use `global` or `conditional` instead of `both` to select one construction.
+This route does not implement continuous orbital support bounds.
+
+`--marginalize-flux` analytically integrates one uniform flux per Gaussian
+statistical draw. Other sources and shared covariance remain in the integral.
+Queries involving that flux use a truncated integral and correctly include
+other sources that already satisfy an `any:` event. This also works with the
+complete-prior sampling route; Poisson likelihoods retain ordinary sampling.
+
 ## Manifest
 
 The outer JSON has `scene` and optional `queries`. The scene contains:

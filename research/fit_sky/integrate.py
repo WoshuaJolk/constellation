@@ -142,12 +142,16 @@ def infer(manifest, *, queries=None, tolerance=.01, max_leaves=4096,
     Limits are soft boundaries between cell evaluations. No claim of globally
     efficient inference is made. precision applies to all model/prior arithmetic.
     """
-    if (method not in ("range", "gauss", "hybrid", "auto") or not 0 < tolerance < 1
+    if (method not in ("range", "gauss", "hybrid", "auto", "noise-floor") or not 0 < tolerance < 1
             or not isinstance(max_leaves, int) or max_leaves < 1
             or not isfinite(max_seconds) or max_seconds <= 0
             or not isinstance(max_gauss_dimension, int) or not 0 <= max_gauss_dimension <= 12
             or not isinstance(precision, int) or precision < 64):
         raise ValueError("Valid tolerances, budgets, quadrature dimension and precision required")
+    if method == "noise-floor":
+        from .noise_floor import adaptive_cover
+        return adaptive_cover(manifest, queries=queries, tolerance=tolerance, max_leaves=max_leaves,
+                              max_seconds=max_seconds, precision=precision)
     started = perf_counter()
     with ctx.workprec(precision):
         scene = Scene(manifest)
@@ -275,7 +279,12 @@ def verify(report, *, replay=True):
             if not all(isfinite(x) for x in [lo, hi]) or not 0 <= lo <= hi <= 1:
                 raise ValueError("Invalid likelihood bound")
             if replay:
-                a, b, _, _, _ = enclose(scene, roots[r], path, settings["method"], settings["max_gauss_dimension"])
+                method = settings["method"]
+                a, b, _, _, _ = enclose(scene, roots[r], path, "range" if method == "noise-floor" else method,
+                                        settings["max_gauss_dimension"])
+                if method == "noise-floor" and roots[r]["classes"]:
+                    from .noise_floor import replay_embedded
+                    b = min(b, replay_embedded(scene, roots[r], path, record["mode"]))
                 if not arb(lo) <= a or not arb(hi) >= b:
                     raise ValueError("Saved likelihood bound fails replay")
             leaves[index] = {"root": r, "path": path, "lo": arb(lo), "hi": arb(hi)}

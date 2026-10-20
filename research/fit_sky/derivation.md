@@ -265,6 +265,80 @@ remaining interval width is retained. This prevents a known empty-catalogue
 evidence from disappearing from a point estimate merely because the proposal
 rarely selects it. Only the remaining uncertain integrals are sampled.
 
+## Continuous-template dual noise floors
+
+Let the marginalized Gaussian covariance be C, data (after removing the linear
+nuisance prior mean) be y, and a possible image mean be m. For **any** finite
+vector z, completing a square gives
+
+    (y-m)^T C^-1 (y-m) >= 2 z^T y - z^T C z - 2 z^T m.
+
+The new route bounds the support of the whole continuous template family in
+this linear statistic. For source class c and exposure e, let U_ce bound the
+supremum of z_e^T P_e(x,y,sigma_x,sigma_y), and let A_ce be the allowed
+flux/gain/color/variability amplitude interval. Nonnegative source flux implies
+
+    z^T m <= background_support + sum_sources sum_exposures sup(A_ce U_ce).
+
+Independent detector-coordinate boxes enlarge the physical model's allowed
+mean set, so loss of cross-exposure constraints only weakens the bound.
+The background support includes the allowed shared offsets. Write
+
+    B = 2 z^T y - z^T C z - 2 background_support,
+    H_c = sum_e sup(A_ce U_ce).
+
+Then every catalogue with classes c_1,...,c_K has scaled likelihood at most
+
+    min(1, exp(-B/2 + sum_i H_c_i)).
+
+A capped nonnegative template-mixture fit proposes z using ordinary floating
+optimization. Its convergence is not required: the data/covariance quadratic,
+background support, and continuous template support are independently replayed
+with Arb. The proposal grid is not a support restriction.
+
+To bound a signed pixel-integrated Gaussian response over a detector-coordinate
+box, combine its natural interval enclosure with multilinear interpolation:
+
+    sup_cell h <= max_corner h + sum_j width_j^2 sup_cell |d_jj h| / 8.
+
+Successive one-dimensional linear interpolation operators preserve positivity
+and have supremum norm one, giving the displayed sum of directional errors.
+Position and width second derivatives are evaluated analytically in Arb.
+Adaptive subdivisions retain a complete binary cover. Replay checks every
+leaf, the complete partition, and each final support aggregation.
+
+Version-one certificates conservatively clip U below at zero and use only the
+maximum amplitude. Version two retains signed support and positive flux lower
+bounds; a cell cannot fit a dark image by silently setting a strictly positive
+flux to zero. Both versions remain replayable.
+
+The conditional construction repeats this argument inside each cell of the
+original catalogue partition. It changes only the proposal ceiling, not the
+source prior, likelihood, or posterior being integrated.
+
+For a Poisson count prior with mean lambda and class probabilities pi_c,
+exponential tilting also bounds the unrepresented count mass. Set
+M = sum_c pi_c exp(H_c). The bound for K > Kmax is
+
+    exp(-B/2 + lambda*(M-1)) * Pr[Poisson(lambda*M) > Kmax],
+
+intersected with the original prior-tail bound. This accounts for all omitted
+counts, but can be vacuous. It is not assumed useful in the broad-scene case.
+
+## Analytic flux averaging in statistical integration
+
+Conditional on all remaining parameters, one uniform flux has likelihood
+exp(-A f^2/2 + B f - D/2). Its interval integral is a Gaussian CDF difference.
+The vectorized route evaluates it with stable log-tail differences and a
+perpendicular residual, retaining all source cross terms and shared covariance.
+This is conditional expectation (Rao–Blackwellization); the original pointwise
+cell ceiling also bounds its average. The empirical Bernstein procedure is
+otherwise unchanged. For an event on that flux, integrate over the intersection
+with the event interval while retaining the full prior-width denominator.
+For an `any:` event, other sources that already satisfy it contribute the full
+conditional likelihood. This avoids treating an exchangeable source label as
+the scientific query.
+
 ## Held-out observations
 
 Under the same source prior and a consistent proper shared-background model,

@@ -187,8 +187,10 @@ inference with source interactions, continuous source/count uncertainty, shared
 instrument nuisance, replayable posterior bounds, and global statistical
 integration. A confused-source experiment meets its declared evidence and
 posterior accuracy targets while retaining ambiguity between one and two
-sources. Broad mixed scenes and real ZTF inference still fail the requested
-guarantees: **the full FitSky objective is not achieved**. The original rubric,
+sources. A subsequent continuous-template bound also brings the original
+moving-source and two-image ZTF experiments within their declared accuracy
+targets. Broad mixed scenes remain unresolved: **the full FitSky objective is
+not achieved**. The original rubric,
 failed attempts, source snapshots, and independent controls are retained.
 
 The optional research command is `magictools-fit-sky`; see its
