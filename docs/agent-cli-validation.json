@@ -1,0 +1,42 @@
+{
+  "base_commit": "40826656e4fcfd0694c5b83982fded3713c24694",
+  "python": "3.12.14",
+  "regression": {
+    "command": "PYTHONPATH=src:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 pytest -q tests/test_agent_cli.py tests/test_cli.py tests/test_fold_cli.py tests/test_folding.py tests/test_fit_sky.py tests/test_fit_sky_noise_floor.py tests/test_fit_sky_sequential.py tests/test_fit_sky_orbital.py",
+    "passed": 141,
+    "full_repository_suite_run": false,
+    "output": "........................................................................ [ 51%]\n.....................................................................    [100%]\n141 passed in 23.27s\n"
+  },
+  "installed_wheel": {
+    "sha256": "c671f4c409e46bf378c07c6a98b8ca952f6b7df15d433c6b8d33ffbd96b4a201",
+    "environment": "venv with existing scientific dependencies; wheel-installed code; working directory outside checkout",
+    "all_four_tools_executed": true,
+    "workflow_commands": 18,
+    "fitsky_resume_completed_exposures": 4
+  },
+  "scientific_engine_files_modified": false,
+  "existing_fitsky_source_and_artifact_hashes_verified": true,
+  "source_sha256": {
+    "src/magictools/agent_cli.py": "b85debc909ccf92b7908d5c3be535a1b55a9f4e381a9ba348e22807e2ce5ae85",
+    "src/magictools/agent_contract.py": "e213f8e4bafffaf2004954be5031d7e1e957414b576f3a7d9ff12c14629b2c10",
+    "src/magictools/agent_examples.py": "77e425bccb38cf5aa5fcc34513688c2ddf22e8cd43bb7de82443ab7cfa8213d3",
+    "tests/test_agent_cli.py": "8d6f1edf2fd1311b9d4d2a82a662f2edeee091ba27704b2467f3b668658d6e30",
+    "pyproject.toml": "66c31ec9a7c23ee7ec80b0f95f174fcf0b05ca27a2a7c2b6aadcbd5cc064bf82"
+  },
+  "validated_source_commit": "e025540d3c11fcab74dc8302564fefe3d21a078a",
+  "console_rename": {
+    "command": "constellation",
+    "previous_command": "magictools-agent",
+    "old_console_entry_removed": true,
+    "agent_protocol_tests_passed": 14,
+    "installed_workflows_passed": [
+      "kepler-propagate",
+      "kepler-fold",
+      "kepler-chart",
+      "fitsky"
+    ],
+    "pyproject_sha256": "ece0108adf301bada79b89e941300c21e9f7638c0cd080e88b06c3a4c4a57f8b",
+    "wheel_sha256": "2d03a490bfea3e63571130239928561fef2961431c73a558d82890d07fe21836",
+    "note": "Original source_sha256 and 141-test campaign above describe validated_source_commit; only the console entry and documentation changed."
+  }
+}

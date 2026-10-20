@@ -1,0 +1,51 @@
+{
+  "test_suite": {
+    "command": "python -m pytest -q",
+    "passed": 414,
+    "skipped": 1,
+    "elapsed_seconds": 98.2
+  },
+  "replay": [
+    {
+      "directory": "research/kepler_transform/detector_time/results/dense-1024",
+      "source_and_two_time_proofs_replayed": true,
+      "detector_template_bounds_replayed": 1024,
+      "whole_score_vectors_checked": 6,
+      "recomputed_queries": 80
+    },
+    {
+      "directory": "research/kepler_transform/detector_time/results/real-ztf",
+      "real_pixel_vectors_checked": 256,
+      "input_hashes_checked": 5
+    },
+    {
+      "directory": "research/kepler_transform/detector_time/results/small-control",
+      "source_and_two_time_proofs_replayed": true,
+      "detector_template_bounds_replayed": 128,
+      "whole_score_vectors_checked": 2,
+      "recomputed_queries": 73
+    }
+  ],
+  "wheel": {
+    "filename": "magictools_astro-0.6.0-py3-none-any.whl",
+    "sha256": "79e968321ac99e33aceb03aa4430ef40c417ced1842538a6a605956813eadee1",
+    "installed_smoke": {
+      "installed_module": "/workspace/scratch/detector-time-installed/research/kepler_transform/detector_time/__init__.py",
+      "max_numerator_error": 3.086795124368491e-08,
+      "approximation_bound": 4.166110324605403e-06,
+      "passed": true
+    }
+  },
+  "artifact_sha256": {
+    "compression-probe.json": "6143d52a670c6c26d92133f321109bbdfcdeb151615a5438e40927ade510dd98",
+    "dense-1024/inputs.npz": "8ea1db6ca8b437acb65ade5961d39ec76f53cd5967f846cbbd7456960e283a48",
+    "dense-1024/results.json": "c30f708389df34de4fec7e4f11a62edef9a83feafc9a8d89d01ef12b12fd1669",
+    "dense-1024/scores.npz": "5b8b1e59be259616499c4455a1ff4bd127158ca45a779c6e8c8aaf15c82dec26",
+    "real-ztf/results.json": "a9738db0c8e7d786424281b282403d3c9dd3a701f5dd467a14374fb963539a89",
+    "real-ztf/scores.npz": "daea6505fcdfc773779a0912ae42cd1793b93bf3f0d8e2e7d25665cff8fcd789",
+    "small-control/inputs.npz": "56f73e79376b0fc23f60e7da058b5cfb2b422f88af89650f755bcf3b2cc00d5c",
+    "small-control/results.json": "d3a7e1b768ca39e0d1e857a0bd25a5fa89ffe45c69d78dd9b0f6a9c494c6afb9",
+    "small-control/scores.npz": "2456eeb313a92d50511a3dc6e09a178b27c512c8d8575a7a750a3336bfcdfd5e"
+  },
+  "limitations": "Model approximation bounds are in exact arithmetic; numerical coefficient construction and orbit propagation are not certified. Real ZTF replay validates the detector adapter and does not apply time compression."
+}

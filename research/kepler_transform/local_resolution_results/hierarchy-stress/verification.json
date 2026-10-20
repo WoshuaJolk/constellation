@@ -1,0 +1,14 @@
+{
+  "input_sha256": "bb89d37b5290afe315eb671513679c6693284f854efe62aed264a0c9c489639f",
+  "verifier_source_sha256": "012641f86c8c1f4ebda60cd6e05ad8e9fab3b9612413f6b524988aee847a5efb",
+  "aggregation_verifier_sha256": "1bcda0a02b2be676f2f86767d97822c3c73d2b4ed1eb769959a8b313fb0f32c8",
+  "grids": 240,
+  "atlas_covers": 17,
+  "retained_final_patches": 16,
+  "entries": 1789282782113087028,
+  "source_files_hashed": 67,
+  "tile_replay_seconds": 229.5373615269782,
+  "wall_seconds_including_waits": 970.6195972290006,
+  "full_objective_complete": false,
+  "floating_point_evaluation_certified": false
+}

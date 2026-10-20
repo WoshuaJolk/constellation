@@ -1,0 +1,60 @@
+{
+  "certificate_and_output_replay": [
+    {
+      "directory": "research/kepler_transform/temporal/results/distant-dense",
+      "certificate_replayed": true,
+      "source_files_verified": 141,
+      "whole_saved_vectors_checked": 3,
+      "recomputed_queries": 219,
+      "maximum_saved_error_per_l1": 6.4851862468140754e-15
+    },
+    {
+      "directory": "research/kepler_transform/temporal/results/near-dense",
+      "certificate_replayed": true,
+      "source_files_verified": 141,
+      "whole_saved_vectors_checked": 3,
+      "recomputed_queries": 219,
+      "maximum_saved_error_per_l1": 1.0099409338380326e-14
+    },
+    {
+      "directory": "research/kepler_transform/temporal/results/near-images",
+      "certificate_replayed": true,
+      "source_files_verified": 141,
+      "whole_saved_vectors_checked": 2,
+      "recomputed_queries": 155,
+      "maximum_saved_error_per_l1": 4.176210588676743e-15
+    },
+    {
+      "directory": "research/kepler_transform/temporal/results/near-sparse",
+      "certificate_replayed": true,
+      "source_files_verified": 141,
+      "whole_saved_vectors_checked": 3,
+      "recomputed_queries": 219,
+      "maximum_saved_error_per_l1": 9.08584699769894e-14
+    },
+    {
+      "directory": "research/kepler_transform/temporal/results/stress-dense",
+      "certificate_replayed": true,
+      "source_files_verified": 141,
+      "whole_saved_vectors_checked": 2,
+      "recomputed_queries": 140,
+      "maximum_saved_error_per_l1": 5.449292875157761e-15
+    }
+  ],
+  "full_test_suite": "406 passed, 1 skipped in 87.71s",
+  "installed_wheel_smoke_test": "Passed outside checkout: imports, interval plan, image FFT, fast moments, NUFFT queries, direct comparison",
+  "wheel_sha256": "ebdebd49a1958a03a8dfb9fb50ac16d845cda775d9d76a6c6b837d4e38360b80",
+  "figure_inputs_sha256": {
+    "distant-dense/results.json": "55f86eae36b5b3a4db93171740168c6a0fffe950c8d127575fdfecc700e227f2",
+    "near-dense/results.json": "d7e130aa00c843e8262cee1592dc40d8de64c573756097a7bca2bf5d3d740f4c",
+    "near-images/results.json": "50bf07401621fbffe4f2f6ae55cf642cadd3f36671aac0247cdb52c070b84b4a",
+    "near-sparse/results.json": "ee102dd30a3de791fb82e61dbc86d7369ec116c1056deaba86b18a04e4e6b7ee",
+    "stress-dense/results.json": "ffd0d63214c56c4db8454aee0a7bb2684492d3448b4d2fdd777cd535e2ff6585"
+  },
+  "figure_source_sha256": "ed6d8f49d1c2fbd194058ba2f2b2cfd36fdbb8270c3961256b70ca1e58b8a323",
+  "svg_postprocessing": "Strip trailing whitespace from generated SVG lines; geometry and text unchanged.",
+  "figure_outputs_sha256": {
+    "comparison.svg": "1f6dcbb78122f33a04ce58e4d2c94658da3b0dd0acb8009a005a6585a53852d8",
+    "comparison.png": "14adabc23aa542e8e6ede422e6838e22c34f276cc4ef1c2286f0d9a2c627f0f5"
+  }
+}

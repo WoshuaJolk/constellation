@@ -1,0 +1,12 @@
+{
+  "grids": 15,
+  "nodes": 42694546242,
+  "entries": 18789305900400,
+  "geometry_state_evaluations_bound": 19071490007930,
+  "sum_intermediate_nodes": 560041367700,
+  "source_files_hashed": 72,
+  "input_sha256": "6fc3acd67dd3c6377262de1d38831156b1c4ec02eb0ea7a61d4aca9665be97c1",
+  "seconds": 36.611764777000644,
+  "full_objective_complete": false,
+  "floating_point_evaluation_certified": false
+}

@@ -1,4 +1,9 @@
-# Magictools astronomy
+# Constellation astronomy
+
+**For agents:** [`constellation`](docs/agent-cli.md) offers JSON discovery,
+schemas, runnable examples, input validation, execution and checkpoint inspection
+for Kepler and FitSky. Install with `pip install '.[research,agent]'`, then run
+`constellation list`. Scientific limitations remain explicit in every run.
 
 Working implementations of twelve ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Version 0.6 adds **`fold_kepler`: shared orbit sums with bounded screening and precise candidate refinement**. A synthetic 64,000-orbit benchmark gives about 3.6× faster evaluation after compilation, with identical detections/top candidates to direct evaluation. Compilation makes a single-use run slower; the benefit is repeated searches with a reusable bank. See the [derivation, benchmark and limits](docs/fold-kepler.md). Earlier versions provide real ZTF inputs, measured PSFs, vetting, injections, null inference, finite survey selection, and verifiable finite assignments. Each has an explicit scope; all-survey completeness and validated discovery probabilities remain future work.
 
@@ -35,6 +40,27 @@ declared physical domains using complex-time interval bounds. It also proves
 why a shared regularized-clock FFT shortcut and an unrestricted inverse fail.
 The representation still has a six-dimensional resolution cost: **this is not
 a sublinear-in-trajectories breakthrough or completion of the catalogue goal**.
+
+The latest [time-compression research phase](research/kepler_transform/temporal/README.md)
+removes that orbit tensor for common-grid Fourier image inputs. It represents
+the continuous response with 82 Fourier fields over the original eight-day
+near domain, or 127 over the 30-day distant domain, with a uniform
+exact-arithmetic interpolation bound. Its comparisons charge image FFTs,
+construction and output access, and include cached direct methods.
+The useful regime is dense cadence; arbitrary archive inputs, a numerical
+certificate and a stable inverse remain open.
+
+The [finite-detector follow-up](research/kepler_transform/detector_time/README.md)
+connects masked pixels, varying Gaussian PSFs and affine astrometry to both
+likelihood statistics on a common Fourier grid. Real ZTF pixel checks and a
+1,024-exposure controlled experiment preserve likelihood accuracy. The initial
+comparison loses through 4,096 queries, but the
+[larger-query follow-up](research/kepler_transform/detector_time/SCALING.md)
+finds a first-use crossover at 16,384 queries. Reuse performance depends on
+cache memory. An empirical PFKT run now also uses actual ZTF pixels and recorded
+observer positions: two time fields replace three exposures at a sampled
+maximum S/N error of 1.15e-5. This short-stack result has no whole-domain
+time-error certificate; long-span real-survey compression remains open.
 
 The [full-objective `prove_floor` research](research/detection_limit/README.md)
 adds continuous-family detection certificates, least-favorable-prior searches,
@@ -85,11 +111,11 @@ These are Python library functions and command-line tools. Inference runs offlin
 
 ## Install and try
 
-Python 3.10 or newer:
+Python 3.10 or newer for the core tools; Python 3.11 or newer for the research and Constellation agent installation:
 
 ```bash
-git clone https://github.com/WoshuaJolk/magictools.git
-cd magictools
+git clone https://github.com/WoshuaJolk/constellation.git
+cd constellation
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[test]'
@@ -176,7 +202,7 @@ posterior = update_nulls([1, 1, 1], log_null)
 ranked = rank_exposures(posterior['posterior_weights'], [[0.5, 0.95, 0.05]])
 ```
 
-Runtime dependencies: NumPy, SciPy, Astropy. Tests use pytest. The repository includes GitHub Actions checks on Python 3.10 and 3.12.
+Runtime dependencies: NumPy, SciPy, Astropy. Tests use pytest. The repository includes GitHub Actions research checks on Python 3.11 and 3.12; archive checks also cover Python 3.10.
 
 Independent validation includes analytic bound/unbound two-body trajectories, light-time/parallax cases, and frozen JPL Horizons Ceres vectors. In the ten-day Ceres check, the propagated position differs by about **0.18 km** and the geocentric direction by **0.034–0.038 arcseconds**. These results validate that particular case, not arbitrary close encounters, long arcs, or astrometric precision across the sky. All tests run offline.
 
