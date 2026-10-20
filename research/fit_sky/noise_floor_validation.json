@@ -61,5 +61,28 @@
   },
   "test_source_sha256": "34fc92d5005a5001143bc68e249e6dde3afa83aea3c23733493cd4e34f6e9c9b",
   "kepler_diff_against_merged_main": [],
-  "original_worktree_modified": false
+  "original_worktree_modified": false,
+  "derived_empty_catalogue_queries": {
+    "moving": {
+      "count=0": [
+        1.415254894125318e-16,
+        1.4256298470504333e-16
+      ],
+      "method": "empty-catalogue range integral divided by existing simultaneous evidence interval; no extra sampling or confidence allocation"
+    },
+    "real": {
+      "count=0": [
+        0.9029010415195181,
+        0.9106459678939628
+      ],
+      "method": "empty-catalogue range integral divided by existing simultaneous evidence interval; no extra sampling or confidence allocation"
+    },
+    "three_exposure_joint": {
+      "count=0": [
+        0.8956800735319477,
+        0.8992004787691067
+      ],
+      "method": "empty-catalogue range integral divided by existing simultaneous evidence interval; no extra sampling or confidence allocation"
+    }
+  }
 }
