@@ -1,5 +1,10 @@
 # Full-objective Kepler transform attempts
 
+**Measured timing:** [PFKT versus direct evaluation](timing/README.md) now plots
+runtime against queried-orbit count for the small executable construction.
+It separates arbitrary queries, native output-grid queries, cached direct
+responses, and setup costs. These measurements are not archive-scale forecasts.
+
 **Latest:** the [stage-aware construction](ordered/README.md) changes hidden
 coordinates first and preserves exact coordinate identities. Instantaneous
 exposure grids are therefore two-dimensional, and internal sensitivities are
