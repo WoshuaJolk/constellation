@@ -1,9 +1,9 @@
-# Magictools astronomy
+# Constellation astronomy
 
-**For agents:** [`magictools-agent`](docs/agent-cli.md) offers JSON discovery,
+**For agents:** [`constellation`](docs/agent-cli.md) offers JSON discovery,
 schemas, runnable examples, input validation, execution and checkpoint inspection
 for Kepler and FitSky. Install with `pip install '.[research,agent]'`, then run
-`magictools-agent list`. Scientific limitations remain explicit in every run.
+`constellation list`. Scientific limitations remain explicit in every run.
 
 Working implementations of twelve ideas in the [Magic tools catalogue](https://magictools-theta.vercel.app/). Version 0.6 adds **`fold_kepler`: shared orbit sums with bounded screening and precise candidate refinement**. A synthetic 64,000-orbit benchmark gives about 3.6× faster evaluation after compilation, with identical detections/top candidates to direct evaluation. Compilation makes a single-use run slower; the benefit is repeated searches with a reusable bank. See the [derivation, benchmark and limits](docs/fold-kepler.md). Earlier versions provide real ZTF inputs, measured PSFs, vetting, injections, null inference, finite survey selection, and verifiable finite assignments. Each has an explicit scope; all-survey completeness and validated discovery probabilities remain future work.
 

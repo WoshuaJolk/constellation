@@ -1,15 +1,19 @@
 # Kepler and FitSky for agents
 
-`magictools-agent` provides discovery, JSON Schemas, runnable examples, validation,
+`constellation` provides discovery, JSON Schemas, runnable examples, validation,
 execution and inspection through one noninteractive command. Existing science
 commands and research engines are unchanged. Use Python 3.10 or later.
+
+The executable is now `constellation` (formerly `magictools-agent`). Reinstall
+or upgrade this checkout to refresh the console script. The Python distribution
+`magictools-astro` and import package `magictools` retain their existing names.
 
 From this checkout:
 
 ```sh
 python -m pip install '.[research,agent]'
-magictools-agent doctor
-magictools-agent list
+constellation doctor
+constellation list
 ```
 
 Until the CLI branch is merged, installation directly from GitHub is:
@@ -38,14 +42,14 @@ not relabel the finite-bank or chart engine as that construction.
 ## Runnable FitSky workflow
 
 ```sh
-magictools-agent example fitsky --output fit-example
-magictools-agent schema fitsky
-magictools-agent validate fitsky fit-example/input.json
-magictools-agent run fitsky fit-example/input.json --output fit-first \
+constellation example fitsky --output fit-example
+constellation schema fitsky
+constellation validate fitsky fit-example/input.json
+constellation run fitsky fit-example/input.json --output fit-first \
   --particles 256 --sweeps 8 --seed 42 --stop-after 2
-magictools-agent inspect fit-first
-magictools-agent inspect fit-first/checkpoint.npz
-magictools-agent run fitsky fit-example/input.json --output fit-rest \
+constellation inspect fit-first
+constellation inspect fit-first/checkpoint.npz
+constellation run fitsky fit-example/input.json --output fit-rest \
   --resume fit-first/checkpoint.npz --catalogues
 ```
 
@@ -70,16 +74,16 @@ load under the integration's documented migration rules.
 ## Runnable Kepler workflows
 
 ```sh
-magictools-agent example kepler-propagate --output orbit-example
-magictools-agent run kepler-propagate orbit-example/input.json --output orbit-result
+constellation example kepler-propagate --output orbit-example
+constellation run kepler-propagate orbit-example/input.json --output orbit-result
 
-magictools-agent example kepler-fold --output fold-example
-magictools-agent validate kepler-fold fold-example/input.json
-magictools-agent run kepler-fold fold-example/input.json --output fold-result
+constellation example kepler-fold --output fold-example
+constellation validate kepler-fold fold-example/input.json
+constellation run kepler-fold fold-example/input.json --output fold-result
 
-magictools-agent example kepler-chart --output chart-example
-magictools-agent validate kepler-chart chart-example/input.json
-magictools-agent run kepler-chart chart-example/input.json --output chart-result
+constellation example kepler-chart --output chart-example
+constellation validate kepler-chart chart-example/input.json
+constellation run kepler-chart chart-example/input.json --output chart-result
 ```
 
 The fold example creates actual small FITS images with celestial WCS and an
@@ -121,7 +125,7 @@ For example, a completed FitSky run returns an envelope shaped like:
 This illustration omits other summary/artifact fields. The complete result is
 in `report.json`; stdout stays compact, even with `--catalogues`. A schema is
 returned in the `result` member; extract it with
-`magictools-agent schema fitsky | jq '.result'` when a validator needs the raw
+`constellation schema fitsky | jq '.result'` when a validator needs the raw
 JSON Schema. Unknown keys, duplicate JSON keys and nonfinite numeric literals
 are rejected. JSON Schemas use draft 2020-12 and contain no remote references.
 
