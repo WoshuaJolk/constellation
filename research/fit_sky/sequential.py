@@ -463,6 +463,94 @@ def propose_parameters(model, population, rng, scale):
     return proposal, np.zeros(n), np.ones(n, bool)
 
 
+def propose_split_merge(model, population, rng, scale=.3):
+    """Flux-conserving same-class RJ proposals, with the full Jacobian.
+
+    Split attempts select a parent and insertion slot uniformly. Merge attempts
+    select an ordered pair uniformly. Their discrete proposal factors cancel.
+    Fixed attempt probabilities include invalid proposals as self-transitions.
+    """
+    if not 0 < scale <= .5:
+        raise ValueError("Split displacement scale must lie in (0,.5]")
+    proposal = population.copy()
+    n = len(population.counts)
+    split = rng.random(n) < .5
+    proposal.capacity(int(population.counts.max())+1, rng)
+    ratios, viable = np.zeros(n), np.zeros(n, bool)
+    flux_axis = PARAMETER_INDEX["flux"]
+    for row, count in enumerate(population.counts):
+        k = int(count)
+        if split[row]:
+            if not k or not np.isfinite(model.log_count_prior(np.array([k+1]))[0]):
+                continue
+            parent = int(rng.integers(k))
+            cls = population.classes[row, parent]
+            bounds = model.bounds[cls]
+            lo, hi = bounds[flux_axis]
+            if hi <= lo:
+                continue
+            axes = np.flatnonzero(bounds[:, 1] > bounds[:, 0])
+            axes = axes[axes != flux_axis]
+            old = population.unit[row, parent]
+            flux = lo+(hi-lo)*old[flux_axis]
+            fraction = rng.random()
+            f1, f2 = fraction*flux, (1-fraction)*flux
+            delta = rng.uniform(-scale, scale, len(axes))
+            first, second = old.copy(), rng.random(len(PARAMETERS))
+            first[axes], second[axes] = old[axes]+(1-fraction)*delta, old[axes]-fraction*delta
+            if (flux <= 0 or f1 < lo or f1 > hi or f2 < lo or f2 > hi
+                    or np.any(first[axes] < 0) or np.any(first[axes] > 1)
+                    or np.any(second[axes] < 0) or np.any(second[axes] > 1)):
+                continue
+            first[flux_axis], second[flux_axis] = (f1-lo)/(hi-lo), (f2-lo)/(hi-lo)
+            proposal.unit[row, parent] = first
+            insertion = int(rng.integers(k+1))
+            proposal.classes[row, insertion+1:k+1] = proposal.classes[row, insertion:k].copy()
+            proposal.unit[row, insertion+1:k+1] = proposal.unit[row, insertion:k].copy()
+            proposal.classes[row, insertion] = cls
+            proposal.unit[row, insertion] = second
+            proposal.counts[row] = k+1
+            ratios[row] = (model.log_count_prior(np.array([k+1]))[0]
+                           -model.log_count_prior(np.array([k]))[0]
+                           +np.log(model.type_weights[cls])+np.log(flux/(hi-lo))
+                           +len(axes)*np.log(2*scale))
+            viable[row] = True
+        else:
+            if k < 2 or not np.isfinite(model.log_count_prior(np.array([k-1]))[0]):
+                continue
+            kept, removed = rng.choice(k, 2, replace=False)
+            cls = population.classes[row, kept]
+            if cls != population.classes[row, removed]:
+                continue
+            bounds = model.bounds[cls]
+            lo, hi = bounds[flux_axis]
+            if hi <= lo:
+                continue
+            axes = np.flatnonzero(bounds[:, 1] > bounds[:, 0])
+            axes = axes[axes != flux_axis]
+            first, second = population.unit[row, kept], population.unit[row, removed]
+            flux = 2*lo+(hi-lo)*(first[flux_axis]+second[flux_axis])
+            delta = first[axes]-second[axes]
+            if flux <= 0 or flux < lo or flux > hi or np.any(np.abs(delta) > scale):
+                continue
+            parent = first.copy()  # The other auxiliary coordinates integrate out.
+            fraction = (lo+(hi-lo)*first[flux_axis])/flux
+            parent[axes] = fraction*first[axes]+(1-fraction)*second[axes]
+            parent[flux_axis] = (flux-lo)/(hi-lo)
+            proposal.unit[row, kept] = parent
+            proposal.classes[row, removed:k-1] = proposal.classes[row, removed+1:k].copy()
+            proposal.unit[row, removed:k-1] = proposal.unit[row, removed+1:k].copy()
+            proposal.classes[row, k-1] = -1
+            proposal.unit[row, k-1] = rng.random(len(PARAMETERS))
+            proposal.counts[row] = k-1
+            ratios[row] = -(model.log_count_prior(np.array([k]))[0]
+                            -model.log_count_prior(np.array([k-1]))[0]
+                            +np.log(model.type_weights[cls])+np.log(flux/(hi-lo))
+                            +len(axes)*np.log(2*scale))
+            viable[row] = True
+    return proposal, ratios, viable
+
+
 def conditional_ess(log_weights, increment, delta):
     if delta == 0:
         return float(len(log_weights))
@@ -522,7 +610,7 @@ class SequentialFit:
 
     def __init__(self, manifest, *, particles=2048, seed=20261110, sweeps=20,
                  ess_fraction=.8, pixel_block=128, max_stages=1000, queries=None,
-                 gibbs_flux=False):
+                 gibbs_flux=False, split_merge=False):
         if (not isinstance(particles, int) or particles < 2 or not isinstance(sweeps, int)
                 or sweeps < 1 or not 0 < ess_fraction < 1 or not isinstance(max_stages, int)
                 or max_stages < 1):
@@ -532,7 +620,8 @@ class SequentialFit:
             raise ValueError("Conditional Gaussian flux updates require Gaussian noise")
         self.settings = dict(particles=particles, seed=seed, sweeps=sweeps,
                              ess_fraction=ess_fraction, pixel_block=pixel_block,
-                             max_stages=max_stages, gibbs_flux=bool(gibbs_flux))
+                             max_stages=max_stages, gibbs_flux=bool(gibbs_flux),
+                             split_merge=bool(split_merge))
         self.rng = np.random.default_rng(seed)
         self.population = self.model.prior(particles, self.rng)
         self.queries = queries or ["has:"+t["name"] for t in self.model.scene.types]
@@ -594,6 +683,7 @@ class SequentialFit:
             likelihood = likelihood[indices].copy()
             self.log_weights.fill(-np.log(len(indices)))
             counts_accepted = counts_proposed = continuous_accepted = 0
+            split_accepted = split_proposed = 0
             # A fixed mixture of proposal scales avoids fitting kernels to the
             # same finite population and pretending that adaptation is exact.
             scales = (.025, .08, .25)
@@ -612,12 +702,20 @@ class SequentialFit:
                     self.population = self.model.sample_conditional_flux(
                         self.population, [old, endpoint], beta, self.rng)
                     likelihood = self.model.evaluate(self.population, [old, endpoint])
+                if self.settings["split_merge"] and sweep % 3 == 0:
+                    proposal, ratio, viable = propose_split_merge(self.model, self.population, self.rng)
+                    proposed = self.model.evaluate(proposal, [old, endpoint])
+                    accepted = _accept(self.population, proposal, likelihood, proposed, ratio, beta, self.rng)
+                    split_accepted += int(np.sum(accepted & viable))
+                    split_proposed += int(viable.sum())
             stage = {
                 "from_exposures": old, "to_exposures": endpoint, "beta": beta,
                 "ess_before_resampling": ess, "distinct_resampled_parents": int(len(np.unique(indices))),
                 "log_evidence_increment_estimate": log_increment,
                 "count_acceptance": counts_accepted/max(1, counts_proposed),
                 "parameter_acceptance": continuous_accepted/(len(indices)*self.settings["sweeps"]),
+                "split_merge_acceptance": split_accepted/max(1, split_proposed),
+                "split_merge_viable_proposals": split_proposed,
                 "maximum_sampled_count": int(self.population.counts.max()),
             }
             self.stages.append(stage)
@@ -669,6 +767,30 @@ class SequentialFit:
             result["catalogues"] = self.model.catalogues(self.population)
             result["weights"] = np.exp(self.log_weights).tolist()
         return result
+
+    def predict(self, endpoint):
+        """Score unassimilated observations against the current population.
+
+        This is an approximate predictive density, not a posterior update or a
+        coverage certificate. The joint likelihood ratio conditions shared
+        Gaussian nuisance on the existing observations.
+        """
+        if self.in_progress:
+            raise RuntimeError("Cannot predict from an interrupted assimilation")
+        if not isinstance(endpoint, int) or not self.assimilated < endpoint <= len(self.model.scene.exposures):
+            raise ValueError("Prediction requires an unassimilated exposure prefix")
+        likelihood = self.model.evaluate(self.population, [self.assimilated, endpoint])
+        log_values = self.log_weights+likelihood[:, 1]-likelihood[:, 0]
+        log_density = float(logsumexp(log_values))
+        ess = 0. if not np.isfinite(log_density) else float(np.exp(
+            2*log_density-logsumexp(2*log_values)))
+        return {
+            "status": "approximate_uncertified",
+            "from_exposures": self.assimilated, "to_exposures": endpoint,
+            "log_predictive_density_estimate": log_density if np.isfinite(log_density) else None,
+            "importance_ess": ess,
+            "scope": "Particle likelihood-ratio estimate, with no finite-sample error guarantee.",
+        }
 
     def save(self, path):
         """Save a non-pickle checkpoint atomically; completed assimilation only."""

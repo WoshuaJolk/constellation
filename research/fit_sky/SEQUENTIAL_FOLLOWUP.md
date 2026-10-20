@@ -23,3 +23,17 @@ Additionally, run the original complete-prior bounded estimator on the
 one-flux averaging, seeds 20261130 and 20261131 respectively. These separate
 reports provide the existing global error accounting, including unbounded
 Poisson counts. Their confidence is per report, not joint across the campaign.
+
+## Split/merge follow-up
+
+The first completed original runs differ by approximately three log-evidence
+units at 30 exposures. This motivates a separate flux/centroid-conserving
+same-class split/merge kernel, tested against its Jacobian, prior invariance
+and an independently integrated variable-count posterior.
+
+Before running it, fix four more seeds 20261140–20261143, 2,048 particles,
+20 sweeps, conditional ESS 0.8, the original inputs and queries, and both
+`--gibbs-flux` and `--split-merge`. Retain all outcomes and snapshots.
+These runs are a distinct follow-up, not replacements for the earlier eight.
+All accuracy gates and the prohibition on treating run agreement as a
+certificate remain unchanged.

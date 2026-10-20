@@ -19,6 +19,8 @@ def main():
     parser.add_argument("--max-stages", type=int)
     parser.add_argument("--gibbs-flux", action="store_true", default=None,
                         help="Add conditional Gaussian flux draws during rejuvenation")
+    parser.add_argument("--split-merge", action="store_true", default=None,
+                        help="Add flux-conserving same-class split/merge proposals")
     parser.add_argument("--exposure-batch", type=int, default=1)
     parser.add_argument("--stop-after", type=int, help="Stop at this exposure prefix and save a checkpoint")
     parser.add_argument("--catalogues", action="store_true", help="Include weighted approximate catalogues")
@@ -28,7 +30,8 @@ def main():
     if args.exposure_batch < 1:
         parser.error("--exposure-batch must be positive")
     value = json.loads(args.manifest.read_text())
-    settings = {k: getattr(args, k) for k in ("particles", "sweeps", "seed", "pixel_block", "max_stages", "gibbs_flux")
+    settings = {k: getattr(args, k) for k in ("particles", "sweeps", "seed", "pixel_block",
+                                           "max_stages", "gibbs_flux", "split_merge")
                 if getattr(args, k) is not None}
     if args.resume:
         fit = SequentialFit.load(args.resume, value["scene"])

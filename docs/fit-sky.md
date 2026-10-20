@@ -19,7 +19,8 @@ For an **approximate, resumable** variable-count posterior across exposures:
 
 ```sh
 magictools-fit-sky-stream input.json /tmp/fit-sky-first \
-  --particles 2048 --sweeps 20 --stop-after 10 --catalogues
+  --particles 2048 --sweeps 20 --gibbs-flux --split-merge \
+  --stop-after 10 --catalogues
 magictools-fit-sky-stream input-with-more-exposures.json /tmp/fit-sky-next \
   --resume /tmp/fit-sky-first/checkpoint.npz --catalogues
 ```
@@ -37,6 +38,12 @@ workspace, not the size of the retained input dataset. Shared Gaussian linear
 nuisance is integrated jointly. Arbitrary dense pixel covariance is rejected.
 The algorithm currently reevaluates old images during catalogue changes, so
 bounded memory is not a claim of linear total runtime.
+
+`--gibbs-flux` adds conditional Gaussian brightness updates retaining other
+sources and shared covariance. `--split-merge` adds joint changes between a
+source and two nearby sources of the same class, conserving flux and centroid.
+These are optional mixing improvements with independent mathematical controls;
+they provide no guarantee that a finite population finds every mode.
 
 `checkpoint.npz` saves completed assimilation and the RNG state; `report.json`
 contains approximate evidence/query estimates, count and calibration summaries,

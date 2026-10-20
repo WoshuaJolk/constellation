@@ -7,7 +7,7 @@ import numpy as np
 import pytest
 pytest.importorskip("flint")
 from scipy.special import logsumexp, ndtr
-from scipy.stats import multivariate_normal, poisson, truncnorm
+from scipy.stats import multivariate_normal, poisson, truncnorm, irwinhall
 from scipy.integrate import quad
 
 from research.fit_sky.experiments import scalar, synthetic
@@ -16,6 +16,7 @@ from research.fit_sky.sequential import (
     BlockModel, SequentialFit, Population, PARAMETERS, propose_counts,
     propose_parameters, reflect, _accept,
     PARAMETER_INDEX,
+    propose_split_merge,
 )
 
 
@@ -127,6 +128,75 @@ def test_birth_death_prior_ratio_has_only_one_poisson_factor():
     assert np.any(q.counts > 0)
 
 
+def test_split_merge_preserves_prior_flux_and_centroid():
+    m = scalar()
+    m["source_types"][0]["parameters"]["x"] = [-1., 1.]
+    m["count_prior"] = {"poisson_mean": 3., "max_count": 0}
+    second = deepcopy(m["source_types"][0])
+    second.update(name="second", weight=2.)
+    m["source_types"].append(second)
+    model, rng = BlockModel(m), np.random.default_rng(331)
+    population = model.prior(7000, rng)
+    likelihood = np.zeros((len(population.counts), 2))
+    accepted_total = 0
+    for _ in range(16):
+        before, _ = model.physical(population)
+        proposal, ratio, viable = propose_split_merge(model, population, rng)
+        after, _ = model.physical(proposal)
+        for values, p in [(before, population), (after, proposal)]:
+            values[np.arange(p.classes.shape[1])[None, :] >= p.counts[:, None]] = 0.
+        assert before[..., 2].sum(axis=1) == pytest.approx(after[..., 2].sum(axis=1), abs=1e-12)
+        assert (before[..., 0]*before[..., 2]).sum(axis=1) == pytest.approx(
+            (after[..., 0]*after[..., 2]).sum(axis=1), abs=1e-12)
+        accepted_total += np.sum(_accept(
+            population, proposal, likelihood, likelihood.copy(), ratio, 0., rng) & viable)
+    population.validate(model)
+    physical, _ = model.physical(population)
+    active = population.classes >= 0
+    assert accepted_total > 1000
+    assert population.counts.mean() == pytest.approx(3., abs=.1)
+    assert np.mean(population.classes[active] == 1) == pytest.approx(2/3, abs=.02)
+    assert physical[..., 2][active].mean() == pytest.approx(2., abs=.04)
+    assert population.unit[active].mean() == pytest.approx(.5, abs=.015)
+    for k in range(7):
+        assert np.mean(population.counts == k) == pytest.approx(poisson.pmf(k, 3.), abs=.018)
+
+
+def test_split_transform_jacobian_by_independent_finite_differences():
+    # Physical parent flux, fraction, unit position, unit displacement.
+    def transform(v):
+        f, fraction, u, delta = v
+        return np.array([f*fraction, f*(1-fraction),
+                         u+(1-fraction)*delta, u-fraction*delta])
+    point = np.array([2.3, .37, .6, .2])
+    epsilon = 1e-5
+    jacobian = np.column_stack([(transform(point+epsilon*axis)-transform(point-epsilon*axis))/(2*epsilon)
+                                for axis in np.eye(4)])
+    assert abs(np.linalg.det(jacobian)) == pytest.approx(point[0], rel=1e-9)
+
+
+def test_split_merge_posterior_against_sum_of_uniform_flux_integral():
+    m = scalar()
+    weights = np.array([.05, .2, .35, .25, .15])
+    m["count_prior"] = {"probabilities": weights.tolist()}
+    m["exposures"][0]["data"] = [[2.]]
+    response = (ndtr(.5/.6)-ndtr(-.5/.6))**2
+    evidence = [weights[0]*np.exp(-2)/np.sqrt(2*np.pi)]
+    for k in range(1, 5):
+        total = quad(lambda v: irwinhall.pdf(v, k)*np.exp(-.5*(2-response*(k+2*v))**2)
+                     /np.sqrt(2*np.pi), 0, k, points=list(range(1, k)), epsabs=1e-11)[0]
+        evidence.append(weights[k]*total)
+    evidence = np.array(evidence)
+    fit = SequentialFit(m, particles=4000, sweeps=10, seed=353,
+                        gibbs_flux=True, split_merge=True,
+                        queries=[f"count={k}" for k in range(5)])
+    result = fit.assimilate()
+    assert np.exp(result["log_evidence_estimate"]) == pytest.approx(evidence.sum(), rel=.03)
+    for k in range(5):
+        assert result["queries"][f"count={k}"]["estimate"] == pytest.approx(
+            evidence[k]/evidence.sum(), abs=.025)
+
+
 def test_scalar_posterior_and_evidence_against_analytic_integral():
     m = scalar()
     response = (ndtr(.5/.6)-ndtr(-.5/.6))**2
@@ -159,8 +229,20 @@ def test_shared_calibration_posterior_matches_independent_quadrature():
     evidence = [quad(lambda b: likelihood(b, k)/2, -1, 1)[0] for k in [0, 1]]
     numerator = sum(quad(lambda b: b*likelihood(b, k)/2, -1, 1)[0] for k in [0, 1])
     fit = SequentialFit(m, particles=4000, sweeps=10, seed=205)
-    for i in [1, 2, 3]:
-        summary = fit.assimilate(i)
+    fit.assimilate(1)
+    saved_unit = fit.population.unit.copy()
+    saved_rng = deepcopy(fit.rng.bit_generator.state)
+    prediction = fit.predict(3)
+    first_evidence = sum(quad(
+        lambda b: np.exp(-.5*(.2-b-k*3*response)**2)/(2*np.sqrt(2*np.pi)), -1, 1
+    )[0] for k in [0, 1])/2
+    assert np.exp(prediction["log_predictive_density_estimate"]) == pytest.approx(
+        (sum(evidence)/2)/first_evidence, rel=.04)
+    assert np.array_equal(fit.population.unit, saved_unit)
+    assert fit.rng.bit_generator.state == saved_rng
+    assert fit.assimilated == 1
+    fit.assimilate(2)
+    summary = fit.assimilate(3)
     assert np.exp(summary["log_evidence_estimate"]) == pytest.approx(sum(evidence)/2, rel=.035)
     assert summary["queries"]["has:star"]["estimate"] == pytest.approx(
         evidence[1]/sum(evidence), abs=.03)
@@ -253,6 +335,18 @@ def test_checkpoint_resume_reproduces_uninterrupted_assimilation(tmp_path):
     assert fit.stages == resumed.stages
     with pytest.raises(ValueError, match="append"):
         resumed.assimilate(3)
+
+
+def test_new_exposures_can_reverse_source_presence_inference():
+    m = scalar()
+    m["source_types"][0]["parameters"]["flux"] = [3., 3.]
+    m["exposures"] = [dict(m["exposures"][0], id=str(i), data=[[value]])
+                      for i, value in enumerate([-1., 2., 2., 2., 2., 2.])]
+    fit = SequentialFit(m, particles=1000, sweeps=8, seed=311)
+    first = fit.assimilate(1)
+    last = fit.assimilate(6)
+    assert first["queries"]["has:star"]["estimate"] < .3
+    assert last["queries"]["has:star"]["estimate"] > .95
 
 
 def test_checkpoint_can_append_new_data_but_cannot_change_old_data(tmp_path):

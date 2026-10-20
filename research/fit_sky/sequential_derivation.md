@@ -138,6 +138,41 @@ Zero Poisson likelihoods are handled separately: an initial beta=0+ support
 restriction includes the estimated surviving prior mass in the evidence.
 If all particles have zero likelihood, the run fails explicitly.
 
+## Split/merge follow-up
+
+Prior-drawn births can fail to move between a bright blended source and two
+fainter sources: adding flux before reducing the old source incurs a large
+likelihood penalty. An optional same-class RJ split changes those parameters
+together. Let F be the parent's physical flux, v a uniform fraction, u a free
+non-flux unit coordinate, and delta uniform on [-s,s]. Use
+
+    F1 = v F,                 F2 = (1-v) F,
+    u1 = u + (1-v) delta,     u2 = u - v delta.
+
+The total flux and flux-weighted position are preserved. The inverse is
+`F=F1+F2`, `v=F1/F`, `u=v*u1+(1-v)*u2`, `delta=u1-u2`.
+The joint absolute Jacobian is F in physical flux coordinates, and F/W in
+unit flux coordinates for a prior interval of width W. Each non-flux
+coordinate contributes a unit determinant, including its dependence on v.
+
+The parent is selected uniformly among K sources and the insertion position
+uniformly among K+1 positions. The reverse merge selects an ordered pair
+uniformly among (K+1)K possibilities. Thus these discrete proposal factors
+cancel. With d free non-flux coordinates, the split prior/proposal ratio is
+
+    p(K+1)/p(K) * pi(class) * F/W * (2s)^d.
+
+The reverse merge ratio is its reciprocal. Both use the full tempered
+likelihood ratio. Reject out-of-domain children/parents, unlike classes,
+out-of-range displacements and invalid count support as self-transitions.
+Fixed-flux classes retain the original birth/death moves. Auxiliary coordinates
+absent from the class are independently drawn for the extra source and cancel
+their uniform prior factors.
+
+The implementation performs one such attempt every third sweep when
+`--split-merge` is enabled. It does not restrict ordinary births, count support,
+source classes or the physical prior.
+
 ## Controls and provenance
 
 Tests compare normalized likelihoods against an independently rendered dense

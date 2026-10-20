@@ -35,7 +35,8 @@ def mixed_sequence():
     return manifest, truth
 
 
-def run(output, *, seed, particles, sweeps, exposures=30, pilot=False, gibbs_flux=False):
+def run(output, *, seed, particles, sweeps, exposures=30, pilot=False, gibbs_flux=False,
+        split_merge=False):
     output.mkdir(parents=True, exist_ok=False)
     source = output/"source_snapshot"
     source.mkdir()
@@ -50,12 +51,13 @@ def run(output, *, seed, particles, sweeps, exposures=30, pilot=False, gibbs_flu
     save(output/"contract.json", {
         "pilot": pilot, "particles": particles, "sweeps": sweeps, "seed": seed,
         "exposures": exposures, "fixed_validation": not pilot, "gibbs_flux": gibbs_flux,
+        "split_merge": split_merge,
         "accuracy_target": {"posterior_interval_width": .01, "relative_evidence_gap": .01},
         "particle_agreement_is_not_a_certificate": True,
         "python": platform.python_version(), "numpy": np.__version__,
     })
     fit = SequentialFit(manifest, particles=particles, sweeps=sweeps, seed=seed,
-                        queries=queries, gibbs_flux=gibbs_flux)
+                        queries=queries, gibbs_flux=gibbs_flux, split_merge=split_merge)
     started = perf_counter()
     try:
         for endpoint in range(1, exposures+1):
@@ -86,13 +88,15 @@ def main():
     parser.add_argument("--exposures", type=int, choices=range(1, 31), default=30)
     parser.add_argument("--pilot", action="store_true")
     parser.add_argument("--gibbs-flux", action="store_true")
+    parser.add_argument("--split-merge", action="store_true")
     args = parser.parse_args()
     if not args.pilot and (args.seed not in range(20261110, 20261114)
                            or args.particles != 2048 or args.sweeps != 20 or args.exposures != 30
-                           or args.gibbs_flux):
+                           or args.gibbs_flux or args.split_merge):
         parser.error("Changed budgets belong to a separate --pilot, not the fixed validation")
     run(args.output, seed=args.seed, particles=args.particles, sweeps=args.sweeps,
-        exposures=args.exposures, pilot=args.pilot, gibbs_flux=args.gibbs_flux)
+        exposures=args.exposures, pilot=args.pilot, gibbs_flux=args.gibbs_flux,
+        split_merge=args.split_merge)
 
 
 if __name__ == "__main__":
