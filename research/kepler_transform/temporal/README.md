@@ -2,9 +2,13 @@
 
 **Follow-up:** the [finite-detector likelihood campaign](../detector_time/README.md)
 validates a real-pixel adapter and an eight-day, 1,024-exposure controlled stack.
-Its complete likelihood pipeline is slower than optimized direct pixels and
-their caches. The speedups below remain specific to their declared Fourier
-inputs and Fourier evaluation baselines.
+Its initial complete likelihood pipeline is slower than optimized direct
+pixels through 4,096 queries. The [larger-query follow-up](../detector_time/SCALING.md)
+finds a first-use crossover at 16,384 and examines cache-memory sensitivity.
+The speedups below remain specific to their declared Fourier inputs and
+Fourier evaluation baselines. The follow-up now empirically checks time
+compression on three actual ZTF exposures with recorded observer positions;
+a certified, long-span real-survey time transform remains open.
 
 The objective of this phase is to make both transform application and result
 access cheaper, with a justified total cost and accuracy across the full orbit

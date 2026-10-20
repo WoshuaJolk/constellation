@@ -4,9 +4,14 @@
 adds a common Fourier grid for masked, heteroscedastic Gaussian pixel
 likelihoods with affine astrometry and explicit model-error bounds. It checks
 the adapter on real ZTF pixels and the complete pipeline on 1,024 simulated
-exposures over eight days. Likelihood accuracy holds, but optimized direct
-pixel methods and their factor caches are faster in the measured workloads.
-The earlier Fourier-input wins do not yet establish pixel-to-detection speedups.
+exposures over eight days. The initial comparison loses through 4,096 queries.
+The [larger-query follow-up](detector_time/SCALING.md) finds a first-use
+crossover at 16,384 queries and tests memory sensitivity and real-pixel
+performance separately. It also applies the time representation to actual ZTF
+pixels and recorded observer positions: two fields replace three exposures at
+sampled maximum S/N error 1.15e-5, while four fields reach 1.6e-10.
+These empirical short-stack checks have no whole-domain time certificate and
+are not a whole-archive benchmark.
 
 The preceding [certified time compression](temporal/README.md)
 replaces the six-dimensional field with a sum of two-dimensional Fourier

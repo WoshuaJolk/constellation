@@ -1,5 +1,11 @@
 # Finite-detector likelihoods on the time-compression route
 
+**Follow-up:** [larger orbit counts and real pixels](SCALING.md) extend this
+experiment and find a first-use crossover at 16,384 queries. That report also
+tests cache-memory sensitivity and an empirical time representation on actual
+ZTF pixels and recorded observer positions. The initial measurements below
+stop at 4,096 queries and remain unchanged.
+
 This phase connects original detector pixels to the time-compressed Fourier
 representation. It adds a usable likelihood adapter and validates the complete
 composition on a larger controlled stack. **It does not produce an end-to-end

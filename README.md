@@ -48,10 +48,14 @@ certificate and a stable inverse remain open.
 The [finite-detector follow-up](research/kepler_transform/detector_time/README.md)
 connects masked pixels, varying Gaussian PSFs and affine astrometry to both
 likelihood statistics on a common Fourier grid. Real ZTF pixel checks and a
-1,024-exposure controlled experiment preserve likelihood accuracy. The complete
-pipeline is slower than the tested optimized direct pixel methods, including
-their caches; the earlier Fourier-input speedups are not yet end-to-end
-astronomical detection speedups.
+1,024-exposure controlled experiment preserve likelihood accuracy. The initial
+comparison loses through 4,096 queries, but the
+[larger-query follow-up](research/kepler_transform/detector_time/SCALING.md)
+finds a first-use crossover at 16,384 queries. Reuse performance depends on
+cache memory. An empirical PFKT run now also uses actual ZTF pixels and recorded
+observer positions: two time fields replace three exposures at a sampled
+maximum S/N error of 1.15e-5. This short-stack result has no whole-domain
+time-error certificate; long-span real-survey compression remains open.
 
 The [full-objective `prove_floor` research](research/detection_limit/README.md)
 adds continuous-family detection certificates, least-favorable-prior searches,
