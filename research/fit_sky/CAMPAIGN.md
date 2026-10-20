@@ -43,3 +43,19 @@ certificates. Time limits are checked between completed cells.
 Tests separately cover Poisson counts, correlated noise, shared nuisance,
 multinomial source classes, source-label symmetry, fixed Kepler physics against
 an independent ODE, source-count tails and tampered/unfinished certificates.
+
+## Follow-up routes after the first campaign
+
+The first campaign is retained in `pilot_results`, including the constant-jet
+failure that interrupted it. The same domains are rerun with a portfolio of
+range/Gauss/analytic-flux enclosures, improved cancellation handling, and a fixed
+split-priority bug. Its accuracy target and domain widths are unchanged.
+
+A separate fixed-budget statistical campaign uses 1,000,000 draws per case,
+seed 20261021, and 99% simultaneous confidence *within each case*. It does not
+claim 99% joint confidence across the campaign. Every deterministic cell gets
+positive proposal mass using a recomputed pointwise likelihood envelope.
+For the broad scene, draw directly from the unbounded Poisson prior instead;
+its source count is not truncated at the deterministic campaign's cutoff.
+Record envelope construction, sampling work, failures and numerical assumptions.
+Do not stop sampling when favorable confidence intervals first appear.
