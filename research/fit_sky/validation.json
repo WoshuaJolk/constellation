@@ -61,5 +61,14 @@
   "readonly_dependency_sha256": {
     "research/detection_limit/interval_orbits.py": "7cebff4f060921b497d1c41c70d16b50e99334e023a56f9b977f47f9a14099fd"
   },
-  "full_objective_complete": false
+  "full_objective_complete": false,
+  "postmerge_validation": {
+    "merged_main_commit": "f102865d996973dfefc551f344a5a758e6ee6f54",
+    "integration_commit": "a282c3840437b2f2b7767556c30accc7843f0c8d",
+    "passed": 367,
+    "skipped": 1,
+    "log_sha256": "f7f5b3119f43959d057935400378a97d3a9b40f90c134344058bac5ce963ac22",
+    "all_previously_validated_source_hashes_unchanged": true,
+    "kepler_diff_against_merged_main": []
+  }
 }

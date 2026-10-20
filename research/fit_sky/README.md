@@ -164,7 +164,11 @@ the executed code; `validation.json` records final tests and wheel execution.
 The original Kepler FITS files are referenced by content hashes without edits
 or redundant copies.
 
-The final repository suite passed **340 tests**, with one skipped. The wheel
+The initial repository suite passed **340 tests**, with one skipped. After
+incorporating the concurrent Kepler update from main (`f102865`), the combined
+suite passed **367 tests**, with the same optional test skipped. Every Kepler
+file matches that upstream commit; validated FitSky source hashes are unchanged.
+The wheel
 was installed outside the repository, and its actual command produced a replayed
 certificate, posterior catalogue draws, and a statistical report. Every
 installed FitSky source file was checked against the workspace source.
