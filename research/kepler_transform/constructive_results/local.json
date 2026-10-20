@@ -1,0 +1,1300 @@
+{
+  "source_sha256": {
+    "research/kepler_transform/atlas.py": "7d4ef766276d323c9774bb392444dd099d75598bfe89883cbf1aedf56ad27905",
+    "research/kepler_transform/butterfly.py": "dabfc67f4ff622496a719d0028f29aa2682ab1e6ed67abbbe9f1c5467a30a05c",
+    "research/kepler_transform/cascade_domain.py": "e6762bece7c6280fdd3466161ebee2eb5d74c5512db7681be68bb613bb77184b",
+    "research/kepler_transform/cascade_transfer.py": "ed6b48a37df7ba98eb78a421308e8a418425f64956d5919bd1a0c69228e062ee",
+    "research/kepler_transform/certified_cascade.py": "4eaeab7cf11981c87d3024544f1cab6392134daf9d0540b9fb9c7512ab06160c",
+    "research/kepler_transform/certified_global_experiments.py": "292ad31777455686c3a217adbc057963a1fd630b57a1d762ffad29198d377bcc",
+    "research/kepler_transform/certified_segment_field.py": "0f3a29d8f8173671ab3a73e63dc0eca6299ed7729f50247acbd28869fdd7a062",
+    "research/kepler_transform/certify_global.py": "7c74ddfa6226a9f51933bd3ef3bd44e728798627814fca9eef2732d2c3f45df4",
+    "research/kepler_transform/chart_atlas.py": "a572e6d00138e5277351ebe5cce18e1baa8196a295c10088b931c121669abef4",
+    "research/kepler_transform/chart_cover.py": "8183b9a1af211beacd92199951bc446ffc7e98a9df8440b46f5d91fc7c8b0139",
+    "research/kepler_transform/chart_experiments.py": "d58d42e1acce8e63225f53b917659c15128286d30ac50783fc1b32e8a3526501",
+    "research/kepler_transform/chart_operator.py": "3244e0e81d86b4e382794ea1ad74792de38fd3122266fb2ca948bf13b1619550",
+    "research/kepler_transform/chart_search.py": "1edf590141d9513a39869ad22c86b8c06a117485addf8b2e6b231a69d7a92532",
+    "research/kepler_transform/chebyshev_moments.py": "1122880294b94fd715f3ca4aefb6bca1e0ae51ac10801aa385631d93b5cd9e59",
+    "research/kepler_transform/comparison_experiments.py": "4fa94646b8aa05954542b56d12cabbdc5abd3b8ea4b36458075825f947b2cd20",
+    "research/kepler_transform/compiled_comparison.py": "9555d9d70007590f22a8fa498959ee68a7792349fa8ba8805ba93207a95b866a",
+    "research/kepler_transform/compiled_reference.py": "2698df3561ee09c5f3c548d51dd47345921420965b473ac30aac734bcd9ce6c0",
+    "research/kepler_transform/complex_source_certificate.py": "ab7b4d76e7dfb47726ddca11bebe1749975b54ffcc90070a35a54a3eee75ba47",
+    "research/kepler_transform/construction_experiments.py": "9d144b37f103609a8574f0c5b6507e743a4ad2b56d7a2622b93dc55dbfaf10de",
+    "research/kepler_transform/constructive_experiments.py": "32f1b292b4e9898ed663f61cb84ad6220de6a015ba5cc0dec9e77a80d5729527",
+    "research/kepler_transform/continuous.py": "cbf8c79b7397307f87931d09a145ffb3a24b748afbdc5def36aa9a9a772aaa34",
+    "research/kepler_transform/detector_fields.py": "31138bd7bdc7c17e196584f6481c7e4cacd8240b7a3c72d4e607b42f5a4b9274",
+    "research/kepler_transform/experiments.py": "2f362c249e79629e31cc9c1169f8a87e276470da98bbe3e7ed92151ea22e7d16",
+    "research/kepler_transform/factorization.py": "a4e8d268c0276435ec9e3d4cc84dab94bee1bea75620a707966d028bc800680e",
+    "research/kepler_transform/fifth_geometry.py": "793221157caf4657b4c7d8ce64977fc12a8c6243bba5c6b9b84109ea9aef21b1",
+    "research/kepler_transform/geometry_certificate.py": "81973b2e0528ed42b3dccd10c8f3152b41c9f67ecd6ca34943af54ce29c3fe7d",
+    "research/kepler_transform/global_experiments.py": "4ec0d4ae102b0efe192a69c85e5746366c12c8ebb9105a2e05035b3a1d76722d",
+    "research/kepler_transform/global_kepler.py": "ffe889a2051635aeeb09fac54fa6e82142bb3e8d893251085c098f9f155a64bf",
+    "research/kepler_transform/jet_geometry.py": "40f27e3b660f3c9d78c1ee59c8355778ec500942aa364aa3329a3b191ed11841",
+    "research/kepler_transform/kernel.py": "076c54314eef42687c3cc5980954837906e636a9109fde1777585f3352cf34c7",
+    "research/kepler_transform/local_transform.py": "6bcbd30b1532d13e33569bebf635ceed163f1f78e43fab376c735cfa2bd1640c",
+    "research/kepler_transform/observer_chart.py": "dba4b4a35656524ea889aca16e1db401c1ee9ae8f8cad6b6feb00c94e5cb6359",
+    "research/kepler_transform/phase_budget.py": "d1d707d2526cd14873295e7b81ef432c6853e8be499adedaedc36d0701e61342",
+    "research/kepler_transform/plot_construction.py": "65ce671e1296215b329f06d8d3cb59a5bacdf5cedb9b14cd3bcc5c36a1df0adf",
+    "research/kepler_transform/quartic_atlas.py": "de101ae8af7da9143934d35ef100ad7c3b2c820f21fc351ac6895697c7433c4f",
+    "research/kepler_transform/quartic_experiments.py": "b89e2cc973ca5d80aa9e74e78935694fab78109b5c7127dafbdd4bd42486201a",
+    "research/kepler_transform/real_exposure_experiment.py": "40b4d8a2342482bcb55169b7328b1e4952509bdc68b8dfdaa1db58d248c5d55f",
+    "research/kepler_transform/reception_flow.py": "4538f6d4a8f0258d83ce723ce27b24347ee5468e89eacacb47c6919305793ab0",
+    "research/kepler_transform/replay_chart.py": "c17b120f1f0bfb61917492febfcaecd9baa1554b736718174a7a0f5809b1dd5c",
+    "research/kepler_transform/rotation.py": "806ffe067a398e71613da534a608390b00caf21fe64ca961d501a2ca2724a742",
+    "research/kepler_transform/segment_composition.py": "db12d1cf1881cd8ba0d8d0a372a79373c52812076d24a30db157360c51e4dcd5",
+    "research/kepler_transform/segment_experiments.py": "7d998d597dd20f04d62d32f77c8272d58d789506a9b0de30511d848693938440",
+    "research/kepler_transform/segment_field.py": "7ec1bbf6d9cd0b7baba5096e2f23dd3b0c1b42d6fe9177c36fabf528105dc943",
+    "research/kepler_transform/segment_field_certificate.py": "a46cf5c23708e530fe6ef22544fe71c72ed09aaaca11dce2b3347ce71f261edf",
+    "research/kepler_transform/segment_field_experiments.py": "5002b5792d6f8bfbe6bdf9c22c05c733989e7d525c7aa5b48a0ece73358b5808",
+    "research/kepler_transform/source_butterfly.py": "52bb3d7137cbdb05a46102209cc3fb27a9931bc81d0a468d5152fd79de11bf91",
+    "research/kepler_transform/structured_comparison.py": "67bfce198f590f04b9d313d0eabc8f6b335d383b0e5dc0ec66a91c4bf7287c98",
+    "research/kepler_transform/sundman.py": "5396f244aac08b4b6db140d8ecdce05aff9fc90f5f81da6368127ecf69020e5b",
+    "research/kepler_transform/tensor_prolongation.py": "be763db7eea3bad1f2308b9e68e0c3517d9b122968940c5bbc0f430fefe55d32",
+    "research/kepler_transform/translated_experiment.py": "f8df5b420a6bf007927e391a58428a217a50e1c936e754b0cd615393e9b717c8",
+    "research/kepler_transform/translated_flow.py": "fcc04a07b5f5979d85ab000d10826420a004a132561af8c724bd01c898dfb27b",
+    "research/kepler_transform/universal.py": "db974f71630c589442def2d6a6d7c21718011d214f803bb20c7df0eed95d7b8e",
+    "research/kepler_transform/validated_universal.py": "8f41611a6e6354e466be1480ab2626f75165d9db4c3f98e8520bac3832e91622",
+    "research/kepler_transform/variational_flow.py": "42c2f20a0832f83d4503a5b4da39274e6dc8a0c4c42501edc02105530860c32b",
+    "research/kepler_transform/verify_chart_campaign.py": "0dfbe72dad426e21da5d710f5b79c7fc59b893a45db691668b629fc8303c0fe3",
+    "research/kepler_transform/verify_construction.py": "242bf118a71647785b5640ac64eea72cafadf6350906e700e58ab595a31fb467",
+    "research/kepler_transform/verify_constructive_campaign.py": "ab655577eb35dab3b3d77a20d9441b86ffc372e7d08b0f4b99cb3b7471377402",
+    "research/kepler_transform/verify_global_campaign.py": "7b2172d65b319338e66ee6196c5be79940c70d9a41fcfcfe35675f59642ba21c",
+    "research/kepler_transform/verify_segment_campaign.py": "b9ab95456d36e37e3aa7ed6883beb59ce952a35cdf8a0c7d0660efc28fd0fcbd",
+    "research/kepler_transform/verify_segment_field_campaign.py": "cce72ed8221fb03f2f1afdcb6f4759ad824adb2c26e64c777b257e178eb3cf08",
+    "src/magictools/orbits.py": "fd3a90aaf2f2c6c90d83c8f29e64460c83c31c8e273131de6102ea4f3d9634a6",
+    "tests/test_kepler_cascade_domain.py": "85664aac24a590beb901cce7512e145e5f284e03dc6f4bd70653177e1991265a"
+  },
+  "arb_precision_bits": 100,
+  "full_objective_complete": false,
+  "certificates": [
+    {
+      "case": "near",
+      "original_stack_endpoints": [
+        -4.0,
+        4.0
+      ],
+      "transfer_certificate": {
+        "parent_center": [
+          0.5000000005483682,
+          1.8989404229249836e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.001578322006385997
+        ],
+        "parent_widths": [
+          0.050000000046566136,
+          0.0010000128440879055,
+          9.696398123537621e-06,
+          4.8481368139619014e-05,
+          4.8481368139619014e-05,
+          9.797582961823577e-06
+        ],
+        "child_center": [
+          0.49999947494427416,
+          1.6629430133714843e-05,
+          0.0,
+          -0.00027840901394697115,
+          0.0,
+          -0.0015782976978664521
+        ],
+        "child_widths": [
+          0.05007756616787355,
+          0.0010023721680394542,
+          9.703339442728796e-06,
+          4.9844345982515335e-05,
+          4.9695763668469123e-05,
+          1.0208355907469586e-05
+        ],
+        "start": 0.0,
+        "stop": 0.125,
+        "normalized_enclosing_radii": [
+          1.0034106384513009,
+          1.0052244252347204,
+          1.0015805696948288,
+          1.0568237036135324,
+          1.0551002920734804,
+          1.0917816238039555
+        ],
+        "normalized_displacement_bounds": [
+          0.00155132242470343,
+          0.002359293648573485,
+          0.0007158657372291908,
+          0.028113436051786785,
+          0.025048705831750184,
+          0.04192594716947945
+        ],
+        "normalized_center_error_bounds": [
+          1.4769969799879673e-06,
+          1.0046505738517432e-08,
+          2.219476240611302e-28,
+          9.668130715763867e-06,
+          2.578336752451729e-25,
+          0.0003364474478169395
+        ],
+        "derivative_increment_absolute_bounds": [
+          [
+            0.00014737060133610458,
+            0.0013946857668763256,
+            5.953139078702254e-16,
+            6.687001222675357e-14,
+            1.2237175859736251e-14,
+            6.626981898280387e-14
+          ],
+          [
+            0.0020571571930876483,
+            0.00029357615758183396,
+            9.291184459986597e-13,
+            1.3320308831543128e-10,
+            1.7632926748497455e-11,
+            9.615649327167472e-11
+          ],
+          [
+            1.9942980571840966e-05,
+            0.0002881454620364821,
+            0.0002934845115470225,
+            2.5625569815255788e-12,
+            0.00010639310078900825,
+            9.452827182034747e-11
+          ],
+          [
+            3.0773478200485896e-06,
+            0.0005129086121753885,
+            4.674665670290242e-12,
+            1.329812615019911e-06,
+            7.730482996697932e-14,
+            0.025264838525396103
+          ],
+          [
+            2.4692067457365857e-07,
+            3.6011753330456035e-06,
+            0.025003914571127505,
+            2.7078132799277235e-14,
+            1.3298048121163845e-06,
+            1.1807594205631496e-12
+          ],
+          [
+            0.0003301026509509454,
+            0.040614409484969,
+            3.7029490324719255e-10,
+            0.00010529494634970612,
+            6.481241365536954e-12,
+            0.00029346180524075067
+          ]
+        ],
+        "weighted_contraction_bound": 0.03809324027341431,
+        "all_coordinate_hybrids_certified": true,
+        "all_real_intermediate_images_in_child_box": true,
+        "uniqueness_scope": "enclosing normalized box; not arbitrary distant roots",
+        "no_energy_sign_restriction": true,
+        "complex_inverse_certified": true,
+        "floating_point_evaluation_certified": false,
+        "full_objective_complete": false,
+        "complex_ellipse": 1.2,
+        "complex_normalized_enclosing_radii": [
+          1.0219273439925203,
+          1.0247076711295482,
+          1.0191014887699317,
+          1.1066182698885985,
+          1.1016411763683054,
+          1.1584155433305763
+        ],
+        "complex_normalized_imaginary_radii": [
+          0.1983071718400913,
+          0.1984671501424176,
+          0.1981417514159714,
+          0.2035664703382538,
+          0.20295965375468655,
+          0.20630134753955695
+        ],
+        "complex_weighted_contraction_bound": 0.040085752321090656,
+        "complex_contraction_weights": [
+          1.0016106091996853,
+          1.0033885624360313,
+          1.0008656236525042,
+          1.0268420689425812,
+          1.0250327003706279,
+          1.0417597222022894,
+          1.0016106091996853,
+          1.003388562436031,
+          1.0008656236525042,
+          1.0268420689425812,
+          1.0250327003706274,
+          1.0417597222022892
+        ],
+        "point_flow_steps": 8,
+        "derivative_flow_steps": 32,
+        "derivative_evaluations": 32,
+        "domain_trials": 4,
+        "derivative_flow_calls": 4,
+        "refused_derivative_flow_calls": 0,
+        "largest_range_partition": 1,
+        "certificate_seconds": 0.04604114200628828
+      },
+      "physical_frequency_modulus": {
+        "log_modulus_per_source_l1": 4.183683633804322,
+        "flow_calls_including_refusals": 1,
+        "range_pieces": 1,
+        "seconds": 0.0025525770033709705,
+        "exact_arithmetic_uniform_bound": true
+      },
+      "sufficient_single_cell_order_not_allocated": {
+        "order": 240,
+        "tolerance": 1e-08,
+        "log_uniform_error_per_source_l1": -18.4882094155962,
+        "input_error_amplification": 109215352.00000001,
+        "exact_arithmetic_only": true,
+        "floating_point_evaluation_certified": false,
+        "uniform_single_cell_grid_nodes": 191102976000000,
+        "cascade_weights_on_equal_uniform_grids": 275188285440000000,
+        "grid_constructed": false
+      },
+      "is_complete_original_stack_transform": false
+    },
+    {
+      "case": "distant",
+      "original_stack_endpoints": [
+        -15.0,
+        15.0
+      ],
+      "transfer_certificate": {
+        "parent_center": [
+          0.02500000000293594,
+          1.016684342188001e-09,
+          0.0,
+          -2.1942973452641135e-05,
+          0.0,
+          -0.0003350697720850038
+        ],
+        "parent_widths": [
+          0.006250000005820767,
+          0.00010000308134294757,
+          9.696572391248994e-06,
+          4.8481368139619014e-05,
+          4.8481368139619014e-05,
+          9.70281138279461e-06
+        ],
+        "child_center": [
+          0.024999998555735165,
+          9.251914592095421e-07,
+          0.0,
+          -6.382665084647777e-05,
+          0.0,
+          -0.00033506872003646995
+        ],
+        "child_widths": [
+          0.006250496096684381,
+          0.00010024359054663294,
+          9.697218130378959e-06,
+          4.969742618880977e-05,
+          4.969365875653456e-05,
+          9.71231873660247e-06
+        ],
+        "start": 0.0,
+        "stop": 0.125,
+        "normalized_enclosing_radii": [
+          1.000175213452249,
+          1.005307479993678,
+          1.0001478432809163,
+          1.0551442727765101,
+          1.0550835231138003,
+          1.0021491893906675
+        ],
+        "normalized_displacement_bounds": [
+          7.937453810426746e-05,
+          0.0024050179300031797,
+          6.659457630063106e-05,
+          0.02508299777532438,
+          0.025005288906540874,
+          0.000979855573067908
+        ],
+        "normalized_center_error_bounds": [
+          3.321257678561447e-08,
+          1.7837404213478338e-09,
+          1.373677020733211e-29,
+          4.117214862574204e-07,
+          2.578311757732911e-25,
+          1.3668806985921965e-05
+        ],
+        "derivative_increment_absolute_bounds": [
+          [
+            1.4615579773802604e-05,
+            6.438148144829985e-05,
+            1.0703732743606145e-15,
+            7.257794401540867e-17,
+            1.913347589732469e-17,
+            3.320173429519027e-14
+          ],
+          [
+            0.0023748754103368485,
+            2.9566630660686544e-05,
+            3.3282500453563075e-11,
+            2.273343919804916e-12,
+            5.969683187923427e-13,
+            1.032310595357128e-09
+          ],
+          [
+            1.8198188662665873e-06,
+            2.8764280017412606e-05,
+            2.9557074645491213e-05,
+            1.223332690708382e-12,
+            5.966371341221748e-06,
+            1.0246711933808996e-09
+          ],
+          [
+            3.039167867777495e-07,
+            1.1161030411921395e-05,
+            4.701568222741614e-12,
+            7.458156469461806e-08,
+            5.708580645750391e-15,
+            0.02501721638139344
+          ],
+          [
+            2.2522453069218077e-08,
+            3.5955824095879057e-07,
+            0.025001129962022167,
+            1.5169838418908132e-14,
+            7.458139270710892e-08,
+            1.2807961248116792e-11
+          ],
+          [
+            3.3231518473447966e-05,
+            0.0008922940196159257,
+            3.759024302767145e-10,
+            5.9625487640343814e-06,
+            4.577545338426185e-13,
+            2.956430780876609e-05
+          ]
+        ],
+        "weighted_contraction_bound": 0.0237717122681581,
+        "all_coordinate_hybrids_certified": true,
+        "all_real_intermediate_images_in_child_box": true,
+        "uniqueness_scope": "enclosing normalized box; not arbitrary distant roots",
+        "no_energy_sign_restriction": true,
+        "complex_inverse_certified": true,
+        "floating_point_evaluation_certified": false,
+        "full_objective_complete": false,
+        "complex_ellipse": 1.2,
+        "complex_normalized_enclosing_radii": [
+          1.0168513892988083,
+          1.1253710838939015,
+          1.016983727465654,
+          1.0697271795334204,
+          1.0695522335688827,
+          1.0193028022697013
+        ],
+        "complex_normalized_imaginary_radii": [
+          0.18337658386557723,
+          0.287785891406363,
+          0.183528454466837,
+          0.19292041138736418,
+          0.1928764918614047,
+          0.1842913330001446
+        ],
+        "complex_weighted_contraction_bound": 0.5119687560905037,
+        "complex_contraction_weights": [
+          1.0001935064642544,
+          2.049049138717533,
+          1.0017764430228036,
+          1.0252542888774294,
+          1.0250672038323698,
+          1.0064189737599336,
+          1.0001935064642542,
+          2.049049138717533,
+          1.0017764430228033,
+          1.025254288877429,
+          1.0250672038323705,
+          1.0064189737599336
+        ],
+        "point_flow_steps": 8,
+        "derivative_flow_steps": 64,
+        "derivative_evaluations": 64,
+        "domain_trials": 8,
+        "derivative_flow_calls": 8,
+        "refused_derivative_flow_calls": 0,
+        "largest_range_partition": 1,
+        "certificate_seconds": 0.09495550800056662
+      },
+      "physical_frequency_modulus": {
+        "log_modulus_per_source_l1": 3.963808592408896,
+        "flow_calls_including_refusals": 1,
+        "range_pieces": 1,
+        "seconds": 0.0018869449995690957,
+        "exact_arithmetic_uniform_bound": true
+      },
+      "sufficient_single_cell_order_not_allocated": {
+        "order": 239,
+        "tolerance": 1e-08,
+        "log_uniform_error_per_source_l1": -18.538149152821514,
+        "input_error_amplification": 107850176.00000001,
+        "exact_arithmetic_only": true,
+        "floating_point_evaluation_certified": false,
+        "uniform_single_cell_grid_nodes": 186374892382561,
+        "cascade_weights_on_equal_uniform_grids": 267261595676592474,
+        "grid_constructed": false
+      },
+      "is_complete_original_stack_transform": false
+    },
+    {
+      "case": "stress",
+      "original_stack_endpoints": [
+        -4.0,
+        4.0
+      ],
+      "transfer_certificate": {
+        "parent_center": [
+          0.5000000005483682,
+          1.8989404167235385e-07,
+          0.0,
+          -8.111978294259573e-05,
+          0.0,
+          -0.0015783220293203969
+        ],
+        "parent_widths": [
+          0.25000000046566134,
+          0.010002310897107238,
+          9.698514276124117e-06,
+          4.8481368139619014e-05,
+          4.8481368139619014e-05,
+          1.23150771287329e-05
+        ],
+        "child_center": [
+          0.4999994749442742,
+          1.66294301330947e-05,
+          0.0,
+          -0.00027840901681376785,
+          0.0,
+          -0.0015782977208007743
+        ],
+        "child_widths": [
+          0.25147153758904506,
+          0.010340086822144502,
+          9.798401074173398e-06,
+          5.1678257832315525e-05,
+          4.9726847380248216e-05,
+          1.7304639166832548e-05
+        ],
+        "start": 0.0,
+        "stop": 0.125,
+        "normalized_enclosing_radii": [
+          1.0127446361542394,
+          1.0727057098564634,
+          1.0222428134076307,
+          1.1388659292084873,
+          1.055458361437096,
+          1.8762803725356916
+        ],
+        "normalized_displacement_bounds": [
+          0.005886148482570841,
+          0.03376978865303517,
+          0.0102991855458915,
+          0.06594058326674997,
+          0.025689853410126546,
+          0.4051588135374529
+        ],
+        "normalized_center_error_bounds": [
+          2.9539939615342016e-07,
+          1.0044313663105322e-09,
+          2.2189919632698366e-28,
+          9.66813075820491e-06,
+          2.578336752451729e-25,
+          0.00026766960173376243
+        ],
+        "derivative_increment_absolute_bounds": [
+          [
+            0.0016068542940866901,
+            0.003969886583348676,
+            3.181921665653746e-14,
+            8.578348702854193e-13,
+            1.173889881293447e-13,
+            4.894209363529274e-12
+          ],
+          [
+            0.029957449902645115,
+            0.0031980212407958,
+            1.6418688159264633e-11,
+            4.830765444698218e-10,
+            5.978290583928682e-11,
+            2.489795826075431e-09
+          ],
+          [
+            0.0035981522087240596,
+            0.002996429258928402,
+            0.0031100465274318686,
+            2.8857634120846303e-10,
+            0.0002479125338926527,
+            2.6774909962778985e-09
+          ],
+          [
+            0.0005730248371389147,
+            0.005293991020481205,
+            5.1523460140295164e-11,
+            3.0954077085418936e-06,
+            7.1833750699048385e-12,
+            0.03180130670712678
+          ],
+          [
+            4.4341701538996865e-05,
+            3.736860230674211e-05,
+            0.025044533884977883,
+            3.5093756005843365e-12,
+            3.0946093559601145e-06,
+            3.3199626262112737e-11
+          ],
+          [
+            0.03998477721823424,
+            0.33405125630831006,
+            3.2654688640609834e-09,
+            0.00019528963516108762,
+            4.621283807015875e-10,
+            0.0031102349101070777
+          ]
+        ],
+        "weighted_contraction_bound": 0.21579458478720356,
+        "all_coordinate_hybrids_certified": true,
+        "all_real_intermediate_images_in_child_box": true,
+        "uniqueness_scope": "enclosing normalized box; not arbitrary distant roots",
+        "no_energy_sign_restriction": true,
+        "complex_inverse_certified": true,
+        "floating_point_evaluation_certified": false,
+        "full_objective_complete": false,
+        "complex_ellipse": 1.2,
+        "complex_normalized_enclosing_radii": [
+          1.0298830135066865,
+          1.141028799809017,
+          1.0472830904838784,
+          1.1621044920206522,
+          1.0714469614111655,
+          2.0035450655556515
+        ],
+        "complex_normalized_imaginary_radii": [
+          0.18592545825398824,
+          0.23870626498256825,
+          0.19400044979545877,
+          0.2137942389193822,
+          0.1935146055174801,
+          0.44120658117272527
+        ],
+        "complex_weighted_contraction_bound": 0.5701335916017023,
+        "complex_contraction_weights": [
+          1.0086786842286473,
+          1.4931864991803532,
+          1.0816871067040303,
+          1.0936414180770897,
+          1.0280381753324248,
+          2.326304127196275,
+          1.0086786842286466,
+          1.4931864991803532,
+          1.0816871067040306,
+          1.0936414180770895,
+          1.0280381753324253,
+          2.3263041271962757
+        ],
+        "point_flow_steps": 8,
+        "derivative_flow_steps": 144,
+        "derivative_evaluations": 144,
+        "domain_trials": 9,
+        "derivative_flow_calls": 24,
+        "refused_derivative_flow_calls": 6,
+        "largest_range_partition": 4,
+        "certificate_seconds": 0.18248931200650986
+      },
+      "physical_frequency_modulus": {
+        "log_modulus_per_source_l1": 4.310107536613942,
+        "flow_calls_including_refusals": 6,
+        "range_pieces": 4,
+        "seconds": 0.006564427996636368,
+        "exact_arithmetic_uniform_bound": true
+      },
+      "sufficient_single_cell_order_not_allocated": {
+        "order": 241,
+        "tolerance": 1e-08,
+        "log_uniform_error_per_source_l1": -18.53177213218511,
+        "input_error_amplification": 110592000.00000001,
+        "exact_arithmetic_only": true,
+        "floating_point_evaluation_certified": false,
+        "uniform_single_cell_grid_nodes": 195930594145441,
+        "cascade_weights_on_equal_uniform_grids": 283315639134307686,
+        "grid_constructed": false
+      },
+      "is_complete_original_stack_transform": false
+    }
+  ],
+  "refinement": [
+    {
+      "parent_order": 3,
+      "child_order": 2,
+      "refined": false,
+      "parent_nodes": 729,
+      "max_error_on_all_parent_nodes": 0.0011126391085036769,
+      "apply_seconds": 0.0002207060024375096,
+      "transfer": {
+        "stored_entries": 3990,
+        "array_bytes": 55884,
+        "geometry_points_including_iterations": 4996,
+        "maximum_mixed_inverse_scaled_residual": 8.709170098989008e-10,
+        "maximum_mixed_inverse_iterations": 4,
+        "intermediate_domains_certified": true,
+        "whole_box_error_certified": false,
+        "separable_refinement": null,
+        "complex_intermediate_inverses_certified": false,
+        "certificate": {
+          "parent_center": [
+            0.5000000005483682,
+            1.8989404229249836e-07,
+            0.0,
+            -8.111978294259573e-05,
+            0.0,
+            -0.001578322006385997
+          ],
+          "parent_widths": [
+            0.050000000046566136,
+            0.0010000128440879055,
+            9.696398123537621e-06,
+            4.8481368139619014e-05,
+            4.8481368139619014e-05,
+            9.797582961823577e-06
+          ],
+          "child_center": [
+            0.4999917334832172,
+            6.594618354183583e-05,
+            0.0,
+            -0.0008702162200958786,
+            0.0,
+            -0.0015779350122572032
+          ],
+          "child_widths": [
+            0.05031759197393838,
+            0.001009676885495278,
+            9.725985451022398e-06,
+            5.565495063166878e-05,
+            5.336870341732176e-05,
+            1.1508100401505292e-05
+          ],
+          "start": 0.0,
+          "stop": 0.5,
+          "normalized_enclosing_radii": [
+            1.0137221372684788,
+            1.0208749890634226,
+            1.0065941656660842,
+            1.31908374502443,
+            1.217714438084379,
+            1.3770675521797553
+          ],
+          "normalized_displacement_bounds": [
+            0.006351838541529215,
+            0.009663917283169258,
+            0.0030513730055032606,
+            0.1479657601945335,
+            0.10080852635239067,
+            0.17458565508929783
+          ],
+          "normalized_center_error_bounds": [
+            5.908190637576154e-06,
+            1.4727096232080197e-07,
+            1.3005371971414038e-27,
+            0.00015087232350306326,
+            1.0313865932371132e-24,
+            0.0013458691482844298
+          ],
+          "derivative_increment_absolute_bounds": [
+            [
+              0.0006308610873417799,
+              0.0055897270040593475,
+              1.6163271799612037e-14,
+              3.7394744296464716e-12,
+              2.335023001708947e-13,
+              1.2650946510779725e-12
+            ],
+            [
+              0.00828421175091407,
+              0.0012399929082549954,
+              7.285071742905992e-12,
+              1.9695226952268474e-09,
+              8.496596839730615e-11,
+              5.192696374531607e-10
+            ],
+            [
+              9.920976106059244e-05,
+              0.0011605448089540007,
+              0.001238239215041869,
+              3.0693890842609795e-11,
+              0.0004267221813786138,
+              3.8775947123342874e-10
+            ],
+            [
+              0.0001570305786436545,
+              0.00823031732415213,
+              7.599484604971231e-11,
+              2.1328439611551846e-05,
+              1.861885012079167e-12,
+              0.1011028421167923
+            ],
+            [
+              4.8048886611695715e-06,
+              5.7979438793154266e-05,
+              0.10005869037818564,
+              1.098132361139568e-12,
+              2.1328304683823096e-05,
+              1.9295465019612132e-11
+            ],
+            [
+              0.0045192727006718655,
+              0.16299391312952813,
+              1.5079243288057544e-09,
+              0.00042231795249519715,
+              4.4118229794269665e-11,
+              0.0012381495416250595
+            ]
+          ],
+          "weighted_contraction_bound": 0.12580340424606823,
+          "all_coordinate_hybrids_certified": true,
+          "all_real_intermediate_images_in_child_box": true,
+          "uniqueness_scope": "enclosing normalized box; not arbitrary distant roots",
+          "no_energy_sign_restriction": true,
+          "complex_inverse_certified": false,
+          "floating_point_evaluation_certified": false,
+          "full_objective_complete": false,
+          "point_flow_steps": 32,
+          "derivative_flow_steps": 96,
+          "derivative_evaluations": 96,
+          "domain_trials": 3,
+          "derivative_flow_calls": 3,
+          "refused_derivative_flow_calls": 0,
+          "largest_range_partition": 1,
+          "certificate_seconds": 0.07162291499844287
+        },
+        "total_construction_seconds": 0.2332455120049417,
+        "floating_point_evaluation_certified": false,
+        "full_objective_complete": false
+      },
+      "uniform_error_certified": false,
+      "child_polynomial_exactly_represented": true
+    },
+    {
+      "parent_order": 3,
+      "child_order": 2,
+      "refined": true,
+      "parent_nodes": 729,
+      "max_error_on_all_parent_nodes": 5.046392536067756e-07,
+      "apply_seconds": 0.0003522100014379248,
+      "transfer": {
+        "stored_entries": 13158,
+        "array_bytes": 175512,
+        "geometry_points_including_iterations": 13864,
+        "maximum_mixed_inverse_scaled_residual": 8.709170098989008e-10,
+        "maximum_mixed_inverse_iterations": 4,
+        "intermediate_domains_certified": true,
+        "whole_box_error_certified": false,
+        "separable_refinement": {
+          "source_nodes": 64,
+          "target_nodes": 729,
+          "largest_intermediate_nodes": 729,
+          "stored_entries": 36,
+          "multiply_add_pairs_per_application": 3990,
+          "same_piecewise_polynomial_in_exact_arithmetic": true
+        },
+        "complex_intermediate_inverses_certified": false,
+        "certificate": {
+          "parent_center": [
+            0.5000000005483682,
+            1.8989404229249836e-07,
+            0.0,
+            -8.111978294259573e-05,
+            0.0,
+            -0.001578322006385997
+          ],
+          "parent_widths": [
+            0.050000000046566136,
+            0.0010000128440879055,
+            9.696398123537621e-06,
+            4.8481368139619014e-05,
+            4.8481368139619014e-05,
+            9.797582961823577e-06
+          ],
+          "child_center": [
+            0.4999917334832172,
+            6.594618354183583e-05,
+            0.0,
+            -0.0008702162200958786,
+            0.0,
+            -0.0015779350122572032
+          ],
+          "child_widths": [
+            0.05031759197393838,
+            0.001009676885495278,
+            9.725985451022398e-06,
+            5.565495063166878e-05,
+            5.336870341732176e-05,
+            1.1508100401505292e-05
+          ],
+          "start": 0.0,
+          "stop": 0.5,
+          "normalized_enclosing_radii": [
+            1.0137221372684788,
+            1.0208749890634226,
+            1.0065941656660842,
+            1.31908374502443,
+            1.217714438084379,
+            1.3770675521797553
+          ],
+          "normalized_displacement_bounds": [
+            0.006351838541529215,
+            0.009663917283169258,
+            0.0030513730055032606,
+            0.1479657601945335,
+            0.10080852635239067,
+            0.17458565508929783
+          ],
+          "normalized_center_error_bounds": [
+            5.908190637576154e-06,
+            1.4727096232080197e-07,
+            1.3005371971414038e-27,
+            0.00015087232350306326,
+            1.0313865932371132e-24,
+            0.0013458691482844298
+          ],
+          "derivative_increment_absolute_bounds": [
+            [
+              0.0006308610873417799,
+              0.0055897270040593475,
+              1.6163271799612037e-14,
+              3.7394744296464716e-12,
+              2.335023001708947e-13,
+              1.2650946510779725e-12
+            ],
+            [
+              0.00828421175091407,
+              0.0012399929082549954,
+              7.285071742905992e-12,
+              1.9695226952268474e-09,
+              8.496596839730615e-11,
+              5.192696374531607e-10
+            ],
+            [
+              9.920976106059244e-05,
+              0.0011605448089540007,
+              0.001238239215041869,
+              3.0693890842609795e-11,
+              0.0004267221813786138,
+              3.8775947123342874e-10
+            ],
+            [
+              0.0001570305786436545,
+              0.00823031732415213,
+              7.599484604971231e-11,
+              2.1328439611551846e-05,
+              1.861885012079167e-12,
+              0.1011028421167923
+            ],
+            [
+              4.8048886611695715e-06,
+              5.7979438793154266e-05,
+              0.10005869037818564,
+              1.098132361139568e-12,
+              2.1328304683823096e-05,
+              1.9295465019612132e-11
+            ],
+            [
+              0.0045192727006718655,
+              0.16299391312952813,
+              1.5079243288057544e-09,
+              0.00042231795249519715,
+              4.4118229794269665e-11,
+              0.0012381495416250595
+            ]
+          ],
+          "weighted_contraction_bound": 0.12580340424606823,
+          "all_coordinate_hybrids_certified": true,
+          "all_real_intermediate_images_in_child_box": true,
+          "uniqueness_scope": "enclosing normalized box; not arbitrary distant roots",
+          "no_energy_sign_restriction": true,
+          "complex_inverse_certified": false,
+          "floating_point_evaluation_certified": false,
+          "full_objective_complete": false,
+          "point_flow_steps": 32,
+          "derivative_flow_steps": 96,
+          "derivative_evaluations": 96,
+          "domain_trials": 3,
+          "derivative_flow_calls": 3,
+          "refused_derivative_flow_calls": 0,
+          "largest_range_partition": 1,
+          "certificate_seconds": 0.11621140099305194
+        },
+        "total_construction_seconds": 0.4490227939968463,
+        "floating_point_evaluation_certified": false,
+        "full_objective_complete": false
+      },
+      "uniform_error_certified": false,
+      "child_polynomial_exactly_represented": true
+    },
+    {
+      "parent_order": 5,
+      "child_order": 2,
+      "refined": false,
+      "parent_nodes": 15625,
+      "max_error_on_all_parent_nodes": 0.0011126391085036769,
+      "apply_seconds": 0.00015003100270405412,
+      "transfer": {
+        "stored_entries": 51870,
+        "array_bytes": 726204,
+        "geometry_points_including_iterations": 48128,
+        "maximum_mixed_inverse_scaled_residual": 8.709170098989008e-10,
+        "maximum_mixed_inverse_iterations": 4,
+        "intermediate_domains_certified": true,
+        "whole_box_error_certified": false,
+        "separable_refinement": null,
+        "complex_intermediate_inverses_certified": false,
+        "certificate": {
+          "parent_center": [
+            0.5000000005483682,
+            1.8989404229249836e-07,
+            0.0,
+            -8.111978294259573e-05,
+            0.0,
+            -0.001578322006385997
+          ],
+          "parent_widths": [
+            0.050000000046566136,
+            0.0010000128440879055,
+            9.696398123537621e-06,
+            4.8481368139619014e-05,
+            4.8481368139619014e-05,
+            9.797582961823577e-06
+          ],
+          "child_center": [
+            0.4999917334832172,
+            6.594618354183583e-05,
+            0.0,
+            -0.0008702162200958786,
+            0.0,
+            -0.0015779350122572032
+          ],
+          "child_widths": [
+            0.05031759197393838,
+            0.001009676885495278,
+            9.725985451022398e-06,
+            5.565495063166878e-05,
+            5.336870341732176e-05,
+            1.1508100401505292e-05
+          ],
+          "start": 0.0,
+          "stop": 0.5,
+          "normalized_enclosing_radii": [
+            1.0137221372684788,
+            1.0208749890634226,
+            1.0065941656660842,
+            1.31908374502443,
+            1.217714438084379,
+            1.3770675521797553
+          ],
+          "normalized_displacement_bounds": [
+            0.006351838541529215,
+            0.009663917283169258,
+            0.0030513730055032606,
+            0.1479657601945335,
+            0.10080852635239067,
+            0.17458565508929783
+          ],
+          "normalized_center_error_bounds": [
+            5.908190637576154e-06,
+            1.4727096232080197e-07,
+            1.3005371971414038e-27,
+            0.00015087232350306326,
+            1.0313865932371132e-24,
+            0.0013458691482844298
+          ],
+          "derivative_increment_absolute_bounds": [
+            [
+              0.0006308610873417799,
+              0.0055897270040593475,
+              1.6163271799612037e-14,
+              3.7394744296464716e-12,
+              2.335023001708947e-13,
+              1.2650946510779725e-12
+            ],
+            [
+              0.00828421175091407,
+              0.0012399929082549954,
+              7.285071742905992e-12,
+              1.9695226952268474e-09,
+              8.496596839730615e-11,
+              5.192696374531607e-10
+            ],
+            [
+              9.920976106059244e-05,
+              0.0011605448089540007,
+              0.001238239215041869,
+              3.0693890842609795e-11,
+              0.0004267221813786138,
+              3.8775947123342874e-10
+            ],
+            [
+              0.0001570305786436545,
+              0.00823031732415213,
+              7.599484604971231e-11,
+              2.1328439611551846e-05,
+              1.861885012079167e-12,
+              0.1011028421167923
+            ],
+            [
+              4.8048886611695715e-06,
+              5.7979438793154266e-05,
+              0.10005869037818564,
+              1.098132361139568e-12,
+              2.1328304683823096e-05,
+              1.9295465019612132e-11
+            ],
+            [
+              0.0045192727006718655,
+              0.16299391312952813,
+              1.5079243288057544e-09,
+              0.00042231795249519715,
+              4.4118229794269665e-11,
+              0.0012381495416250595
+            ]
+          ],
+          "weighted_contraction_bound": 0.12580340424606823,
+          "all_coordinate_hybrids_certified": true,
+          "all_real_intermediate_images_in_child_box": true,
+          "uniqueness_scope": "enclosing normalized box; not arbitrary distant roots",
+          "no_energy_sign_restriction": true,
+          "complex_inverse_certified": false,
+          "floating_point_evaluation_certified": false,
+          "full_objective_complete": false,
+          "point_flow_steps": 32,
+          "derivative_flow_steps": 96,
+          "derivative_evaluations": 96,
+          "domain_trials": 3,
+          "derivative_flow_calls": 3,
+          "refused_derivative_flow_calls": 0,
+          "largest_range_partition": 1,
+          "certificate_seconds": 0.10049075400456786
+        },
+        "total_construction_seconds": 0.9460908799956087,
+        "floating_point_evaluation_certified": false,
+        "full_objective_complete": false
+      },
+      "uniform_error_certified": false,
+      "child_polynomial_exactly_represented": true
+    },
+    {
+      "parent_order": 5,
+      "child_order": 2,
+      "refined": true,
+      "parent_nodes": 15625,
+      "max_error_on_all_parent_nodes": 9.472223005957403e-11,
+      "apply_seconds": 0.0010984270047629252,
+      "transfer": {
+        "stored_entries": 468810,
+        "array_bytes": 6000888,
+        "geometry_points_including_iterations": 296888,
+        "maximum_mixed_inverse_scaled_residual": 8.709170098989008e-10,
+        "maximum_mixed_inverse_iterations": 4,
+        "intermediate_domains_certified": true,
+        "whole_box_error_certified": false,
+        "separable_refinement": {
+          "source_nodes": 64,
+          "target_nodes": 15625,
+          "largest_intermediate_nodes": 15625,
+          "stored_entries": 60,
+          "multiply_add_pairs_per_application": 51870,
+          "same_piecewise_polynomial_in_exact_arithmetic": true
+        },
+        "complex_intermediate_inverses_certified": false,
+        "certificate": {
+          "parent_center": [
+            0.5000000005483682,
+            1.8989404229249836e-07,
+            0.0,
+            -8.111978294259573e-05,
+            0.0,
+            -0.001578322006385997
+          ],
+          "parent_widths": [
+            0.050000000046566136,
+            0.0010000128440879055,
+            9.696398123537621e-06,
+            4.8481368139619014e-05,
+            4.8481368139619014e-05,
+            9.797582961823577e-06
+          ],
+          "child_center": [
+            0.4999917334832172,
+            6.594618354183583e-05,
+            0.0,
+            -0.0008702162200958786,
+            0.0,
+            -0.0015779350122572032
+          ],
+          "child_widths": [
+            0.05031759197393838,
+            0.001009676885495278,
+            9.725985451022398e-06,
+            5.565495063166878e-05,
+            5.336870341732176e-05,
+            1.1508100401505292e-05
+          ],
+          "start": 0.0,
+          "stop": 0.5,
+          "normalized_enclosing_radii": [
+            1.0137221372684788,
+            1.0208749890634226,
+            1.0065941656660842,
+            1.31908374502443,
+            1.217714438084379,
+            1.3770675521797553
+          ],
+          "normalized_displacement_bounds": [
+            0.006351838541529215,
+            0.009663917283169258,
+            0.0030513730055032606,
+            0.1479657601945335,
+            0.10080852635239067,
+            0.17458565508929783
+          ],
+          "normalized_center_error_bounds": [
+            5.908190637576154e-06,
+            1.4727096232080197e-07,
+            1.3005371971414038e-27,
+            0.00015087232350306326,
+            1.0313865932371132e-24,
+            0.0013458691482844298
+          ],
+          "derivative_increment_absolute_bounds": [
+            [
+              0.0006308610873417799,
+              0.0055897270040593475,
+              1.6163271799612037e-14,
+              3.7394744296464716e-12,
+              2.335023001708947e-13,
+              1.2650946510779725e-12
+            ],
+            [
+              0.00828421175091407,
+              0.0012399929082549954,
+              7.285071742905992e-12,
+              1.9695226952268474e-09,
+              8.496596839730615e-11,
+              5.192696374531607e-10
+            ],
+            [
+              9.920976106059244e-05,
+              0.0011605448089540007,
+              0.001238239215041869,
+              3.0693890842609795e-11,
+              0.0004267221813786138,
+              3.8775947123342874e-10
+            ],
+            [
+              0.0001570305786436545,
+              0.00823031732415213,
+              7.599484604971231e-11,
+              2.1328439611551846e-05,
+              1.861885012079167e-12,
+              0.1011028421167923
+            ],
+            [
+              4.8048886611695715e-06,
+              5.7979438793154266e-05,
+              0.10005869037818564,
+              1.098132361139568e-12,
+              2.1328304683823096e-05,
+              1.9295465019612132e-11
+            ],
+            [
+              0.0045192727006718655,
+              0.16299391312952813,
+              1.5079243288057544e-09,
+              0.00042231795249519715,
+              4.4118229794269665e-11,
+              0.0012381495416250595
+            ]
+          ],
+          "weighted_contraction_bound": 0.12580340424606823,
+          "all_coordinate_hybrids_certified": true,
+          "all_real_intermediate_images_in_child_box": true,
+          "uniqueness_scope": "enclosing normalized box; not arbitrary distant roots",
+          "no_energy_sign_restriction": true,
+          "complex_inverse_certified": false,
+          "floating_point_evaluation_certified": false,
+          "full_objective_complete": false,
+          "point_flow_steps": 32,
+          "derivative_flow_steps": 96,
+          "derivative_evaluations": 96,
+          "domain_trials": 3,
+          "derivative_flow_calls": 3,
+          "refused_derivative_flow_calls": 0,
+          "largest_range_partition": 1,
+          "certificate_seconds": 0.07313176200841554
+        },
+        "total_construction_seconds": 4.862313239995274,
+        "floating_point_evaluation_certified": false,
+        "full_objective_complete": false
+      },
+      "uniform_error_certified": false,
+      "child_polynomial_exactly_represented": true
+    }
+  ],
+  "cadence_count_model": [
+    {
+      "cadence": "regular",
+      "exposures": 64,
+      "levels": 7,
+      "modeled_total": 1261336617.3451695,
+      "modeled_upper_bound": 8500804608.0,
+      "root_count_model": 1214383104.0,
+      "resolution_law_is_assumed": true,
+      "full_objective_complete": false
+    },
+    {
+      "cadence": "clustered",
+      "exposures": 64,
+      "levels": 7,
+      "modeled_total": 6095987731.958852,
+      "modeled_upper_bound": 8500804548.665438,
+      "root_count_model": 1214383095.523634,
+      "resolution_law_is_assumed": true,
+      "full_objective_complete": false
+    },
+    {
+      "cadence": "regular",
+      "exposures": 1024,
+      "levels": 11,
+      "modeled_total": 1268044706.2652507,
+      "modeled_upper_bound": 13360299008.0,
+      "root_count_model": 1214383104.0,
+      "resolution_law_is_assumed": true,
+      "full_objective_complete": false
+    },
+    {
+      "cadence": "clustered",
+      "exposures": 1024,
+      "levels": 11,
+      "modeled_total": 10955455236.414436,
+      "modeled_upper_bound": 13360299007.894285,
+      "root_count_model": 1214383103.9903896,
+      "resolution_law_is_assumed": true,
+      "full_objective_complete": false
+    },
+    {
+      "cadence": "regular",
+      "exposures": 16384,
+      "levels": 15,
+      "modeled_total": 1300061254.6009002,
+      "modeled_upper_bound": 18249284608.0,
+      "root_count_model": 1214383104.0,
+      "resolution_law_is_assumed": true,
+      "full_objective_complete": false
+    },
+    {
+      "cadence": "clustered",
+      "exposures": 16384,
+      "levels": 15,
+      "modeled_total": 15844412494.119871,
+      "modeled_upper_bound": 18249284602.24717,
+      "root_count_model": 1214383103.616478,
+      "resolution_law_is_assumed": true,
+      "full_objective_complete": false
+    }
+  ]
+}

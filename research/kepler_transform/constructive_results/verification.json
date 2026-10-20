@@ -1,0 +1,8 @@
+{
+  "source_files_hashed": 62,
+  "whole_atlases_verified_with_exact_rationals": 3,
+  "real_and_complex_certificates_replayed": 99,
+  "seconds": 73.88365496099868,
+  "full_objective_complete": false,
+  "floating_point_operator_certified": false
+}

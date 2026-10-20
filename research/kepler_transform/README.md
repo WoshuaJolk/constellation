@@ -1,6 +1,17 @@
 # Full-objective Kepler transform attempts
 
-**Latest:** the [segment-field construction](segment_field_theory.md) now builds
+**Latest:** the [constructive factorization](constructive_factorization.md)
+certifies the cascade's intermediate coordinate inverses over whole real and
+complex domains, constructs child padding, and refines child polynomials
+separably before changing coordinates. `CertifiedAtlasTransform` integrates
+these operations into the complete segment recurrence and retains the entire
+original state box through adaptive patches. A new counting argument handles
+arbitrary cadence under an explicit, still-unproved resolution law.
+[Results and replay](constructive_results/README.md) distinguish these
+constructive results from the unresolved physical-resolution accuracy, total
+archive cost and data-inverse requirements. **The full FKT is not complete.**
+
+The preceding [segment-field construction](segment_field_theory.md) builds
 actual shared fields bottom-up, encloses whole chart transitions with a
 reception-coordinate interval ODE, and implements a second interpolation route
 using six one-dimensional cascade stages. It supplies an algebraic adjoint and
