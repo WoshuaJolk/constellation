@@ -1,5 +1,6 @@
 """Auditable downloads to disk, with timeouts and credentials kept out of receipts."""
 import base64
+from contextlib import contextmanager
 import gzip
 import hashlib
 import json
@@ -35,6 +36,14 @@ class Blocked(ArchiveError):
     pass
 
 
+class ServiceUnavailable(ArchiveError):
+    """Transport/service failure, not an empty astronomical search."""
+
+
+class BudgetExpired(ArchiveError):
+    """Work deferred by the fast pass, not evidence that an archive is down."""
+
+
 class Transport:
     def __init__(self, directory, timeout=600, credentials=None):
         self.directory = Path(directory)
@@ -42,6 +51,31 @@ class Transport:
         self.timeout = timeout
         self.credentials = credentials
         self.calls = []
+        self.deadline = None
+
+    def remaining(self):
+        if self.deadline is None:
+            return self.timeout
+        remaining = self.deadline - time.monotonic()
+        if remaining <= 0:
+            raise BudgetExpired("Fast-pass time budget reached; resume with --deep for remaining frames")
+        return min(self.timeout, remaining)
+
+    @contextmanager
+    def slot(self, lock):
+        # Waiting behind another archive request must consume the same budget.
+        while not lock.acquire(timeout=min(.1, self.remaining())):
+            pass
+        try:
+            self.remaining()
+            yield
+        finally:
+            lock.release()
+
+    def _progress(self, phase, **values):
+        callback = getattr(self, "on_progress", None)
+        if callback:
+            callback(phase=phase, **values)
 
     def cached_request(self, url, *, binary=False):
         """Share immutable public metadata within a run, retaining a receipt per use."""
@@ -51,7 +85,7 @@ class Transport:
         path, info = root / (key + ".response"), root / (key + ".json")
         with _guard:
             lock = _locks.setdefault("metadata:" + str(path), threading.Lock())
-        with lock:
+        with self.slot(lock):
             if not path.exists() or not info.exists():
                 downloaded = self.request(url, binary=True, auth={})
                 if path.exists():
@@ -67,14 +101,17 @@ class Transport:
                 record.update(cacheHit=True, responseFile=local.name, reusedAt=time.time())
                 self.calls.append(record)
         if binary:
+            self._progress("processing cached metadata")
             return path
         payload = path.read_bytes()
         if payload.startswith(b"\x1f\x8b"):
             payload = gzip.decompress(payload)
+        self._progress("processing cached metadata")
         return payload.decode(errors="replace")
 
     def request(self, url, *, data=None, headers=None, auth=None, private_data=None, binary=False, sensitive_response=False):
         """`data` is recorded; `private_data` is transmitted but never recorded."""
+        self.remaining()
         headers = dict(headers or {})
         host = urllib.parse.urlsplit(url).hostname
         profile = {"mast.stsci.edu": "mast", "astroarchive.noirlab.edu": "noirlab", "irsa.ipac.caltech.edu": "irsa", "archive-api.lco.global": "lco", "archive.gemini.edu": "gemini", "data.lsst.cloud": "rubin", "api.starglass.cfa.harvard.edu": "dasch", "splus.cloud": "splus"}.get(host)
@@ -111,11 +148,16 @@ class Transport:
         self.calls.append(record)
         digest = hashlib.sha256()
         size = 0
-        with lock:
+        self._progress("waiting for archive slot", requestNumber=len(self.calls), responseBytes=0)
+        with self.slot(lock):
             try:
                 request = urllib.request.Request(url, data=body, headers=headers)
                 opener = urllib.request.build_opener(SameOriginRedirect())
-                with opener.open(request, timeout=self.timeout) as response, path.with_suffix(".partial").open("wb") as out:
+                self._progress("waiting for archive response")
+                request_timeout = self.remaining()
+                record["timeoutSeconds"] = request_timeout
+                with opener.open(request, timeout=request_timeout) as response, path.with_suffix(".partial").open("wb") as out:
+                    self._progress("receiving archive response")
                     record["httpStatus"] = response.status
                     record["contentType"] = response.headers.get("Content-Type")
                     if sensitive_response:
@@ -126,19 +168,25 @@ class Transport:
                         if len(payload) > 1048576:
                             raise ArchiveError("Authentication response exceeds 1 MiB")
                         record.update(responseRedacted=True, finishedAt=time.time())
+                        self._progress("processing archive response")
                         return (gzip.decompress(payload) if payload.startswith(b"\x1f\x8b") else payload).decode()
                     deadline = time.monotonic() + self.timeout
                     while True:
+                        self.remaining()
                         if time.monotonic() > deadline:
                             raise TimeoutError("Response exceeded the requested transfer deadline")
-                        chunk = response.read(65536)
+                        # read1 returns after one socket read, so a slow trickle
+                        # cannot keep a large buffered read alive indefinitely.
+                        chunk = response.read1(65536)
                         if not chunk:
                             break
                         digest.update(chunk)
                         size += len(chunk)
                         out.write(chunk)
+                        self._progress("receiving archive response", responseBytes=size)
                 path.with_suffix(".partial").replace(path)
                 record.update(bytes=size, sha256=digest.hexdigest(), responseFile=path.name, finishedAt=time.time())
+                self._progress("processing archive response")
                 if binary:
                     return path
                 payload = path.read_bytes()
@@ -155,7 +203,15 @@ class Transport:
                 record["httpStatus"] = e.code
                 if e.code in (401, 403):
                     raise Blocked(f"Archive returned HTTP {e.code}; authentication or access is required") from None
+                if e.code >= 500 or e.code in (408, 429):
+                    raise ServiceUnavailable(f"Archive returned HTTP {e.code}; remaining queries for this provider deferred until resume") from None
                 # Do not echo response bodies: some services echo credentials.
                 raise ArchiveError(f"Archive returned HTTP {e.code}; inspect the recorded public request") from None
             except (urllib.error.URLError, OSError, TimeoutError) as e:
-                raise ArchiveError(f"Archive transport failed ({type(e).__name__}); retry or increase timeoutSeconds") from None
+                # A fast-pass timeout says nothing about service health.
+                is_timeout = isinstance(e, TimeoutError) or isinstance(getattr(e, "reason", None), TimeoutError)
+                if self.deadline is not None and is_timeout:
+                    raise BudgetExpired("Archive did not finish within the fast-pass allowance; resume with --deep") from None
+                if isinstance(e, (urllib.error.URLError, TimeoutError, ConnectionError)):
+                    raise ServiceUnavailable(f"Archive transport failed ({type(e).__name__}); retry or increase timeoutSeconds") from None
+                raise ArchiveError(f"Archive I/O failed ({type(e).__name__}); inspect local storage and the recorded request") from None

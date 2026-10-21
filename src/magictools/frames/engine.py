@@ -1,5 +1,6 @@
 """SQLite checkpoints, complete native responses, and streaming query events."""
 from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
+from collections import Counter, deque
 from dataclasses import asdict
 import csv
 import hashlib
@@ -18,7 +19,8 @@ from .inventory import coverage
 from .model import PROVIDERS, LIMITATIONS, iso, mjd
 from .parsers import merge_frames
 from .profiles import NOIRLAB_INSTRUMENTS, KOA_INSTRUMENTS
-from .transport import Transport, Blocked
+from .transport import Transport, Blocked, BudgetExpired, ServiceUnavailable
+from .progress import QueryProgress, query_context
 
 
 def stable(value):
@@ -81,7 +83,7 @@ def connect(directory):
     return db
 
 
-def _query(job, x, directory, credentials, transport_factory):
+def _query(job, x, directory, credentials, transport_factory, progress=None, deadline=None):
     s = stats()
     counts = evidence()
     attempt = uuid.uuid4().hex
@@ -89,6 +91,10 @@ def _query(job, x, directory, credentials, transport_factory):
     folder.mkdir(parents=True, exist_ok=True, mode=0o700)
     transport = transport_factory(folder, timeout=x["timeoutSeconds"], credentials=credentials)
     transport.shared_cache = Path(directory) / "metadata-cache"
+    transport.deadline = deadline
+    if progress is not None:
+        transport.on_progress = progress.update
+        progress.update(phase="querying archive")
     output = folder / "frames.ndjson.partial"
     receipt = {"jobId": job.id, "attemptId": attempt, "artifactDirectory": str(folder.relative_to(directory)), "provider": job.provider, "hypothesis": job.hypothesis,
                "startedAt": time.time(), "status": "ok", "count": 0, "queryUrl": None}
@@ -98,6 +104,10 @@ def _query(job, x, directory, credentials, transport_factory):
                 stream.write(stable(f) + "\n")
                 receipt["count"] += 1
                 observe(counts, f)
+                if progress is not None:
+                    progress.update(candidateRows=receipt["count"])
+                if deadline is not None and time.monotonic() >= deadline:
+                    raise BudgetExpired("Fast-pass allowance reached; valid rows retained; resume with --deep")
         if s.get("incomplete"):
             receipt.update(status="limited", message=s["incomplete"])
         elif s.get("partial"):
@@ -106,6 +116,10 @@ def _query(job, x, directory, credentials, transport_factory):
             receipt.update(status="partial", message="Valid rows retained; malformed rows counted separately")
         else:
             receipt["message"] = "Query completed; completeness is relative to this archive index"
+    except BudgetExpired as error:
+        receipt.update(status="deferred", message=str(error))
+    except ServiceUnavailable as error:
+        receipt.update(status="unavailable", message=credentials.redact(str(error)))
     except Blocked as error:
         receipt.update(status="blocked", message=credentials.redact(str(error)))
     except Exception as error:
@@ -127,7 +141,13 @@ def _query(job, x, directory, credentials, transport_factory):
     return receipt, folder / "frames.ndjson"
 
 
-def run(x, directory, *, resume=False, credentials=None, emit=None, transport_factory=Transport, retry_partial=False):
+def run(x, directory, *, resume=False, credentials=None, emit=None, transport_factory=Transport, retry_partial=False,
+        progress_interval=5, max_seconds=None, query_seconds=10):
+    from .model import finite
+    progress_interval = finite(progress_interval, "progress interval", 0.01, 3600)
+    if max_seconds is not None:
+        max_seconds = finite(max_seconds, "fast-pass budget", 0.01, 86400)
+    query_seconds = finite(query_seconds, "query allowance", 0.01, 86400)
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=True, mode=0o700)
     # One writer per run directory; concurrent agents should use distinct runs.
@@ -141,12 +161,12 @@ def run(x, directory, *, resume=False, credentials=None, emit=None, transport_fa
         raise ValueError("Run is already active, or advisory locking is unavailable on this platform") from None
     try:
         return _run_locked(x, directory, resume, credentials or Credentials(), emit or (lambda event: None),
-                           transport_factory, retry_partial)
+                           transport_factory, retry_partial, progress_interval, max_seconds, query_seconds)
     finally:
         os.close(lock_fd)
 
 
-def _run_locked(x, directory, resume, credentials, emit, transport_factory, retry_partial):
+def _run_locked(x, directory, resume, credentials, emit, transport_factory, retry_partial, progress_interval, max_seconds, query_seconds):
     jobs, unavailable = plan(x)
     signature = hashlib.sha256(stable({k: v for k, v in x.items() if k not in {"timeoutSeconds", "concurrency"}}).encode()).hexdigest()
     db = connect(directory)
@@ -162,20 +182,69 @@ def _run_locked(x, directory, resume, credentials, emit, transport_factory, retr
         db.commit()
         successful = {"ok", "split"} | (set() if retry_partial else {"partial"})
         queued = [Job(**json.loads(spec)) for spec, state in db.execute("SELECT spec,status FROM jobs ORDER BY rowid") if state not in successful]
-        emit({"type": "plan", "queries": len(queued), "unqueried": unavailable, "runDirectory": str(directory)})
+        total = db.execute("SELECT COUNT(*) FROM jobs").fetchone()[0]
+        finished = total - len(queued)
+        candidate_rows = 0
+        started = time.monotonic()
+        deadline = started + max_seconds if max_seconds is not None else None
+        # Round-robin providers, with at most one active query each. A long
+        # ephemeris must not monopolize all workers before other surveys start.
+        provider_order = deque(dict.fromkeys(j.provider for j in queued))
+        db.execute("INSERT OR REPLACE INTO meta VALUES ('execution',?)", (stable({
+            "mode": "fast" if deadline is not None else "deep", "budgetSeconds": max_seconds,
+            "queryAllowanceSeconds": query_seconds if deadline is not None else None}),))
+        db.commit()
+        next_progress = started + progress_interval
+        emit({"type": "plan", "queries": len(queued), "totalQueries": total, "reusedQueries": finished,
+              "unqueried": unavailable, "runDirectory": str(directory),
+              "searchMode": "fast" if deadline is not None else "deep", "budgetSeconds": max_seconds,
+              "surveys": survey_results(x, [], unavailable, jobs)})
         with ThreadPoolExecutor(max_workers=x["concurrency"]) as pool:
             active = {}
             while queued or active:
+                if deadline is not None and time.monotonic() >= deadline:
+                    for job in queued:
+                        defer_job(db, job, "deferred", "Fast-pass budget reached before this query; resume with --deep")
+                    queued.clear()
+                    db.commit()
                 while queued and len(active) < x["concurrency"]:
-                    job = queued.pop(0)
+                    busy = {j.provider for j, _ in active.values()}
+                    selected = None
+                    for _ in range(len(provider_order)):
+                        provider = provider_order[0]
+                        provider_order.rotate(-1)
+                        if provider not in busy:
+                            selected = next((i for i, j in enumerate(queued) if j.provider == provider), None)
+                            if selected is not None:
+                                break
+                    if selected is None:
+                        break
+                    job = queued.pop(selected)
                     db.execute("UPDATE jobs SET status='running' WHERE id=?", (job.id,))
                     db.commit()
-                    emit({"type": "query-start", "jobId": job.id, "provider": job.provider, "hypothesis": job.hypothesis})
-                    active[pool.submit(_query, job, x, directory, credentials, transport_factory)] = job
-                done, _ = wait(active, return_when=FIRST_COMPLETED)
+                    emit({"type": "query-start", **query_context(job)})
+                    progress = QueryProgress()
+                    query_deadline = min(deadline, time.monotonic() + query_seconds) if deadline is not None else None
+                    active[pool.submit(_query, job, x, directory, credentials, transport_factory, progress, query_deadline)] = (job, progress)
+                if not active:
+                    break
+                done, _ = wait(active, timeout=max(0, next_progress - time.monotonic()), return_when=FIRST_COMPLETED)
+                if time.monotonic() >= next_progress:
+                    snapshots = [{**query_context(job), **progress.snapshot()}
+                                 for job, progress in active.values()]
+                    emit({"type": "progress", "elapsedSeconds": round(time.monotonic() - started, 1),
+                          "finishedQueries": finished, "totalQueries": total, "queuedQueries": len(queued),
+                          "candidateRowsThisRun": candidate_rows + sum(p["candidateRows"] for p in snapshots), "active": snapshots})
+                    next_progress = time.monotonic() + progress_interval
                 for future in done:
-                    job = active.pop(future)
+                    job, progress = active.pop(future)
                     receipt, frame_file = future.result()
+                    if receipt["status"] == "unavailable":
+                        remaining = [j for j in queued if j.provider == job.provider]
+                        for skipped in remaining:
+                            defer_job(db, skipped, receipt["status"], receipt["message"], job.id)
+                        queued = [j for j in queued if j.provider != job.provider]
+                        finished += len(remaining)
                     # Failed retries must not erase valid rows from earlier attempts.
                     if receipt["status"] == "ok":
                         db.execute("DELETE FROM records WHERE job_id=?", (job.id,))
@@ -196,21 +265,66 @@ def _run_locked(x, directory, resume, credentials, emit, transport_factory, retr
                             inserted = db.execute("INSERT OR IGNORE INTO jobs VALUES (?,?,?,NULL)", (child.id, stable(asdict(child)), "pending")).rowcount
                             if inserted:
                                 queued.append(child)
+                                total += 1
                         receipt["status"] = "split"
                         receipt["message"] += "; automatically subdivided into persisted child queries"
                     db.execute("UPDATE jobs SET status=?,receipt=? WHERE id=?", (receipt["status"], stable(receipt), job.id))
                     db.commit()
-                    emit({"type": "query-complete", **receipt})
+                    finished += 1
+                    candidate_rows += receipt["count"]
+                    emit({"type": "query-complete", **receipt, **query_context(job), "finishedQueries": finished, "totalQueries": total})
+        emit({"type": "finalizing"})
         result = result_from_db(db)
         temp = directory / "manifest.json.partial"
         temp.write_text(json.dumps(result, indent=2, allow_nan=False)+"\n")
         temp.replace(directory / "manifest.json")
         export_csv(result, directory / "frames.csv")
         emit({"type": "complete", "count": len(result["frames"]), "status": result["status"],
+              "surveys": result["surveys"], "execution": result["execution"],
               "manifest": str(directory / "manifest.json"), "csv": str(directory / "frames.csv")})
         return result
     finally:
         db.close()
+
+
+def defer_job(db, job, state, message, cause=None):
+    # Keep an earlier attempt's receipt and rows, including its raw artifacts.
+    previous = db.execute("SELECT receipt FROM jobs WHERE id=?", (job.id,)).fetchone()[0]
+    receipt = json.loads(previous) if previous else {
+        **query_context(job), "count": 0, "requests": [], "receivedRows": 0,
+        "rejectedRows": 0, "excludedRows": 0}
+    receipt.update(status=state, message=message, deferredAt=time.time())
+    if "coverageAssessment" in receipt:
+        receipt["coverageAssessment"].update(querySucceeded=False, indexExhausted=False)
+    if cause:
+        receipt["deferredBecauseJob"] = cause
+    db.execute("UPDATE jobs SET status=?,receipt=? WHERE id=?", (state, stable(receipt), job.id))
+
+
+def survey_results(x, checks, unavailable, jobs=None, frames=()):
+    """Provider summaries are candidates, not assertions of sky coverage."""
+    from .inventory import DATASETS
+    result = []
+    for provider in x["providers"]:
+        own = [c for c in checks if c["provider"] == provider]
+        states = Counter(c["status"] for c in own)
+        gap = next((u for u in unavailable if u.get("provider") == provider), None)
+        pending = sum(j.provider == provider for j in jobs or []) if not own else sum(
+            n for s, n in states.items() if s not in {"ok", "split", "partial"})
+        matches = [f for f in frames if any(p["provider"] == provider for p in f["provenance"])]
+        state = next((s for s in ("unavailable", "blocked", "error", "deferred", "running", "pending", "limited", "partial") if states[s]),
+                     "unqueried" if gap else "ok" if own else "pending")
+        messages = list(dict.fromkeys(c.get("message", "") for c in own if c["status"] not in {"ok", "split"}))
+        if gap:
+            messages.append(gap["reason"])
+        result.append({"provider": provider,
+                       "name": (PROVIDERS.get(provider) or x.get("services", {}).get(provider, {})).get("name", provider),
+                       "status": state, "queryStates": dict(states), "remainingQueries": pending,
+                       "candidateDatasets": [name for name, providers, _ in DATASETS if provider in providers],
+                       "matchedSurveys": sorted({f["survey"] for f in matches if f.get("survey")}),
+                       "frameCount": len(matches), "messages": messages,
+                       "interpretation": "Candidate datasets describe archive holdings; only returned frames are matches, not proof of detection or complete coverage."})
+    return result
 
 
 def result_from_db(db):
@@ -228,7 +342,10 @@ def result_from_db(db):
             checks.append({"jobId": job["id"], "provider": job["provider"], "hypothesis": job["hypothesis"],
                            "status": state, "count": 0, "message": "Query has not completed"})
     frames = sorted(merged.values(), key=lambda f: (f["startMjd"] if f["startMjd"] is not None else math_inf(), f["key"]))
-    return {"version": 2, "queriedAt": time.time(), "input": json.loads(meta["input"]),
+    x, unavailable = json.loads(meta["input"]), json.loads(meta["unqueried"])
+    return {"version": 2, "queriedAt": time.time(), "input": x,
+            "execution": json.loads(meta.get("execution", '{}')),
+            "surveys": survey_results(x, checks, unavailable, frames=frames),
             "status": "complete" if all(c["status"] in {"ok", "split"} for c in checks) and checks and not json.loads(meta["unqueried"]) else "incomplete",
             "frames": frames, "checks": checks, "datasetCoverage": coverage(checks), "coverageAssessment": summarize(checks, json.loads(meta["unqueried"])),
             "unqueried": json.loads(meta["unqueried"]), "limitations": LIMITATIONS}
