@@ -271,7 +271,7 @@ def parser():
         subs.add_parser(name, help=("Experimental/specialist: " if name in EXPERIMENTAL else "") + "Run the " + name + " manifest tool")
     for name in DEMO_COMMANDS:
         subs.add_parser(name, help="Generate and run the " + name + " experiment")
-    subs.add_parser("solve_itf", help="Experimental tracklet linkage; shortcut for run solve_itf")
+    subs.add_parser("solve_itf", help="Full-file preparation: solve_itf catalogue; small-scene inference: run solve_itf")
     subs.add_parser("kepler-propagate", help="Propagate supplied orbits; shortcut for run kepler-propagate")
     for name in RESEARCH_COMMANDS:
         subs.add_parser(name, help="Experimental: run the " + name + " research interface")
@@ -316,6 +316,9 @@ def main(argv=None):
     owned = None
     executing = False
     try:
+        if argv[:2] == ["solve_itf", "catalogue"]:
+            from .itf_catalogue import main as catalogue_main
+            return catalogue_main(argv[2:])
         if argv and argv[0] in ("kepler-propagate", "solve_itf"):
             argv.insert(0, "run")
         if argv and argv[0] in ARCHIVE_ALIASES:

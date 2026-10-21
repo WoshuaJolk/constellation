@@ -1,0 +1,49 @@
+name: whole ITF snapshot
+on: [pull_request]
+permissions:
+  contents: read
+concurrency:
+  group: itf-catalogue-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  records:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install '.[test]'
+      - run: python -m pytest tests/test_itf_catalogue.py tests/test_solve_itf.py -q
+  complete-snapshot:
+    if: github.head_ref == 'codex/solve-itf'
+    needs: records
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install .
+      - uses: actions/cache@v4
+        id: source
+        with:
+          path: /tmp/itf-source
+          key: solve-itf-official-snapshot-2026-10-21-v1
+      - name: Fetch the entire official file once
+        if: steps.source.outputs.cache-hit != 'true'
+        run: constellation solve_itf catalogue fetch --output /tmp/itf-source
+      - name: Prepare every source record
+        run: constellation solve_itf catalogue prepare /tmp/itf-source/source.gz --output /tmp/itf-catalogue
+      - name: Independently read and verify complete record accounting
+        run: constellation solve_itf catalogue verify /tmp/itf-catalogue
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: full-itf-snapshot
+          compression-level: 1
+          retention-days: 14
+          path: |
+            /tmp/itf-source/download.json
+            /tmp/itf-catalogue/
