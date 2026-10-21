@@ -2,6 +2,9 @@
 
 
 def create(tool, directory):
+    if tool == "solve_itf":
+        from .solve_itf_example import example
+        return example()
     if tool == "fit_sky":
         from research.fit_sky.orbital_continuous_control import scene, QUERIES
         return {"description": "Synthetic 24-day ambiguity control, not real-survey data", "scene": scene(), "queries": QUERIES}

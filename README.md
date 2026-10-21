@@ -101,3 +101,8 @@ Experimental or specialist tools, outside the promoted release set:
 They remain callable; [status and promotion gaps](docs/release-readiness.md#not-promoted)
 explain why they are not in the main table. `constellation list` includes their
 interfaces and compatibility aliases.
+
+[`solve_itf`](docs/solve-itf.md) starts a separate full-ITF linkage objective with
+an executable small-scene reference, orbital ambiguity, consistent assignments,
+and explicit unresolved-mass accounting. The full-snapshot 180-second target
+and continuous-orbit coverage remain open; it is not a promoted release tool.

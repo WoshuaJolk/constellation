@@ -18,6 +18,7 @@ READY = {
     'ejector_fit': 'Measured-astrometry fits of specified shared stellar-origin hypotheses',
 }
 EXPERIMENTAL = {
+    'solve_itf': 'Small-scene finite-prior linkage reference; full-ITF continuous-domain search and 180-second target remain open.',
     'fold_kepler': 'Repeated-bank speedups exist, but per-invocation compilation can make the CLI slower than direct evaluation; no general speedup claim.',
     'fold-chart': 'Research transform with bounded geometry and unresolved general numerical/scaling guarantees.',
     'fit_sky': 'Experimental joint inference; approximate mode coverage and broad-scene accuracy remain unresolved.',
