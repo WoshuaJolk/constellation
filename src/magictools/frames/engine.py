@@ -19,6 +19,7 @@ from .model import PROVIDERS, LIMITATIONS, iso, mjd
 from .parsers import merge_frames
 from .profiles import NOIRLAB_INSTRUMENTS, KOA_INSTRUMENTS
 from .transport import Transport, Blocked
+from .progress import QueryProgress, query_context
 
 
 def stable(value):
@@ -81,7 +82,7 @@ def connect(directory):
     return db
 
 
-def _query(job, x, directory, credentials, transport_factory):
+def _query(job, x, directory, credentials, transport_factory, progress=None):
     s = stats()
     counts = evidence()
     attempt = uuid.uuid4().hex
@@ -89,6 +90,9 @@ def _query(job, x, directory, credentials, transport_factory):
     folder.mkdir(parents=True, exist_ok=True, mode=0o700)
     transport = transport_factory(folder, timeout=x["timeoutSeconds"], credentials=credentials)
     transport.shared_cache = Path(directory) / "metadata-cache"
+    if progress is not None:
+        transport.on_progress = progress.update
+        progress.update(phase="querying archive")
     output = folder / "frames.ndjson.partial"
     receipt = {"jobId": job.id, "attemptId": attempt, "artifactDirectory": str(folder.relative_to(directory)), "provider": job.provider, "hypothesis": job.hypothesis,
                "startedAt": time.time(), "status": "ok", "count": 0, "queryUrl": None}
@@ -98,6 +102,8 @@ def _query(job, x, directory, credentials, transport_factory):
                 stream.write(stable(f) + "\n")
                 receipt["count"] += 1
                 observe(counts, f)
+                if progress is not None:
+                    progress.update(candidateRows=receipt["count"])
         if s.get("incomplete"):
             receipt.update(status="limited", message=s["incomplete"])
         elif s.get("partial"):
@@ -127,7 +133,10 @@ def _query(job, x, directory, credentials, transport_factory):
     return receipt, folder / "frames.ndjson"
 
 
-def run(x, directory, *, resume=False, credentials=None, emit=None, transport_factory=Transport, retry_partial=False):
+def run(x, directory, *, resume=False, credentials=None, emit=None, transport_factory=Transport, retry_partial=False,
+        progress_interval=5):
+    from .model import finite
+    progress_interval = finite(progress_interval, "progress interval", 0.01, 3600)
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=True, mode=0o700)
     # One writer per run directory; concurrent agents should use distinct runs.
@@ -141,12 +150,12 @@ def run(x, directory, *, resume=False, credentials=None, emit=None, transport_fa
         raise ValueError("Run is already active, or advisory locking is unavailable on this platform") from None
     try:
         return _run_locked(x, directory, resume, credentials or Credentials(), emit or (lambda event: None),
-                           transport_factory, retry_partial)
+                           transport_factory, retry_partial, progress_interval)
     finally:
         os.close(lock_fd)
 
 
-def _run_locked(x, directory, resume, credentials, emit, transport_factory, retry_partial):
+def _run_locked(x, directory, resume, credentials, emit, transport_factory, retry_partial, progress_interval):
     jobs, unavailable = plan(x)
     signature = hashlib.sha256(stable({k: v for k, v in x.items() if k not in {"timeoutSeconds", "concurrency"}}).encode()).hexdigest()
     db = connect(directory)
@@ -162,7 +171,13 @@ def _run_locked(x, directory, resume, credentials, emit, transport_factory, retr
         db.commit()
         successful = {"ok", "split"} | (set() if retry_partial else {"partial"})
         queued = [Job(**json.loads(spec)) for spec, state in db.execute("SELECT spec,status FROM jobs ORDER BY rowid") if state not in successful]
-        emit({"type": "plan", "queries": len(queued), "unqueried": unavailable, "runDirectory": str(directory)})
+        total = db.execute("SELECT COUNT(*) FROM jobs").fetchone()[0]
+        finished = total - len(queued)
+        candidate_rows = 0
+        started = time.monotonic()
+        next_progress = started + progress_interval
+        emit({"type": "plan", "queries": len(queued), "totalQueries": total, "reusedQueries": finished,
+              "unqueried": unavailable, "runDirectory": str(directory)})
         with ThreadPoolExecutor(max_workers=x["concurrency"]) as pool:
             active = {}
             while queued or active:
@@ -170,11 +185,19 @@ def _run_locked(x, directory, resume, credentials, emit, transport_factory, retr
                     job = queued.pop(0)
                     db.execute("UPDATE jobs SET status='running' WHERE id=?", (job.id,))
                     db.commit()
-                    emit({"type": "query-start", "jobId": job.id, "provider": job.provider, "hypothesis": job.hypothesis})
-                    active[pool.submit(_query, job, x, directory, credentials, transport_factory)] = job
-                done, _ = wait(active, return_when=FIRST_COMPLETED)
+                    emit({"type": "query-start", **query_context(job)})
+                    progress = QueryProgress()
+                    active[pool.submit(_query, job, x, directory, credentials, transport_factory, progress)] = (job, progress)
+                done, _ = wait(active, timeout=max(0, next_progress - time.monotonic()), return_when=FIRST_COMPLETED)
+                if time.monotonic() >= next_progress:
+                    snapshots = [{**query_context(job), **progress.snapshot()}
+                                 for job, progress in active.values()]
+                    emit({"type": "progress", "elapsedSeconds": round(time.monotonic() - started, 1),
+                          "finishedQueries": finished, "totalQueries": total, "queuedQueries": len(queued),
+                          "candidateRowsThisRun": candidate_rows + sum(p["candidateRows"] for p in snapshots), "active": snapshots})
+                    next_progress = time.monotonic() + progress_interval
                 for future in done:
-                    job = active.pop(future)
+                    job, progress = active.pop(future)
                     receipt, frame_file = future.result()
                     # Failed retries must not erase valid rows from earlier attempts.
                     if receipt["status"] == "ok":
@@ -196,11 +219,15 @@ def _run_locked(x, directory, resume, credentials, emit, transport_factory, retr
                             inserted = db.execute("INSERT OR IGNORE INTO jobs VALUES (?,?,?,NULL)", (child.id, stable(asdict(child)), "pending")).rowcount
                             if inserted:
                                 queued.append(child)
+                                total += 1
                         receipt["status"] = "split"
                         receipt["message"] += "; automatically subdivided into persisted child queries"
                     db.execute("UPDATE jobs SET status=?,receipt=? WHERE id=?", (receipt["status"], stable(receipt), job.id))
                     db.commit()
-                    emit({"type": "query-complete", **receipt})
+                    finished += 1
+                    candidate_rows += receipt["count"]
+                    emit({"type": "query-complete", **receipt, **query_context(job), "finishedQueries": finished, "totalQueries": total})
+        emit({"type": "finalizing"})
         result = result_from_db(db)
         temp = directory / "manifest.json.partial"
         temp.write_text(json.dumps(result, indent=2, allow_nan=False)+"\n")

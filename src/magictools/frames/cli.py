@@ -9,6 +9,7 @@ from .engine import export_csv, merge_manifests, plan, run, status
 from .inventory import coverage
 from .model import LIMITATIONS, MOST_CATALOGS, PROVIDERS, validate
 from .transport import ArchiveError, Transport
+from .progress import TextProgress
 
 
 def capabilities():
@@ -20,6 +21,10 @@ def capabilities():
             "customServices": {"protocols": ["obscore", "sia1", "sia2"], "idPrefix": "vo:",
                                "configuration": "services object in the search manifest", "credentials": "Private credential profile with explicit HTTPS allowedOrigins"},
             "discoveryCommands": ["discover", "frames inspect", "links", "audit"],
+            "progress": {"default": "text on stderr", "intervalSeconds": 5,
+                         "options": ["--progress text", "--progress json", "--progress none", "--progress-interval SECONDS"],
+                         "ndjson": "--format ndjson keeps machine-readable events on stdout",
+                         "counts": "Queries and candidate rows; not archive coverage or detections"},
             "example": {"mode": "field", "ra": 180, "dec": 30, "radius": 0.05, "start": "2019-01-28", "end": "2019-01-29", "providers": ["ztf"]}}
 
 
@@ -50,6 +55,10 @@ def main(argv=None, *, prog="constellation"):
     search.add_argument("--timeout", type=float, help="Override per-request timeout, seconds (default 600)")
     search.add_argument("--credentials", type=Path)
     search.add_argument("--format", choices=["json", "ndjson", "csv"], default="json")
+    search.add_argument("--progress", choices=["text", "json", "none"], default="text",
+                        help="Progress on stderr (default: text); NDJSON stdout events are always preserved")
+    search.add_argument("--progress-interval", type=float, default=5, metavar="SECONDS",
+                        help="Interval for progress while queries are running (default: 5 seconds)")
     search.add_argument("--plan", action="store_true", help="Validate and show requests without contacting any archive")
     check = commands.add_parser("status", help="Inspect a run from another agent/process, including pending queries")
     check.add_argument("run_dir", type=Path)
@@ -120,12 +129,18 @@ def main(argv=None, *, prog="constellation"):
                 jobs, unavailable = plan(x)
                 result = {"input": x, "queries": [asdict(j) for j in jobs], "unqueried": unavailable}
             else:
+                text_progress = TextProgress(sys.stderr)
                 def emit(event):
-                    stream = sys.stdout if args.format == "ndjson" else sys.stderr
-                    stream.write(json.dumps(event, allow_nan=False)+"\n")
-                    stream.flush()
+                    if args.format == "ndjson":
+                        sys.stdout.write(json.dumps(event, allow_nan=False)+"\n")
+                        sys.stdout.flush()
+                    if args.progress == "json":
+                        sys.stderr.write(json.dumps(event, allow_nan=False)+"\n")
+                        sys.stderr.flush()
+                    elif args.progress == "text":
+                        text_progress(event)
                 result = run(x, args.run_dir, resume=args.resume, credentials=Credentials(args.credentials),
-                             emit=emit, retry_partial=args.retry_partial)
+                             emit=emit, retry_partial=args.retry_partial, progress_interval=args.progress_interval)
                 if args.format == "csv":
                     with (args.run_dir / "frames.csv").open() as f:
                         for chunk in iter(lambda: f.read(65536), ""):

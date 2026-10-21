@@ -25,8 +25,8 @@ artifacts. The shared executable also offers [Kepler and FitSky](agent-cli.md).
 
 1. Inspect `capabilities`; choose `providers: "all"` or named providers.
 2. Run `search ... --plan` for a validated, network-free query plan.
-3. Run the search in a new run directory. JSON goes to stdout; progress events
-   go to stderr. `--format ndjson` streams progress/receipts to stdout; final
+3. Run the search in a new run directory. JSON goes to stdout; readable progress
+   goes to stderr. `--format ndjson` streams progress/receipts to stdout; final
    frames remain in the run artifacts. `--format csv` prints the final CSV.
 4. Inspect **both** `checks` and `unqueried`. A zero count with `error`, `blocked`,
    `limited`, or an unqueried service does not establish absence of observations.
@@ -41,6 +41,39 @@ constellation audit runs/field --checksums
 constellation search examples/frames/field.json --run-dir runs/field --resume --timeout 900
 constellation merge runs/field/manifest.json runs/orbits/manifest.json -o combined.json
 ```
+
+### Live search progress
+
+Search reports query starts and outcomes immediately, with a progress update
+every five seconds while archives are working. Updates show finished/total
+queries, active providers and hypotheses, queued queries, elapsed time, and
+candidate rows found so far. Active requests show whether they are waiting for
+an archive slot, waiting for a response, receiving bytes, or processing a response.
+These are real query counters, not an estimate of how much sky an archive has
+scanned. There is no estimated completion time.
+
+Progress is flushed to **stderr**, including when output is redirected or an
+agent captures it. JSON/CSV on stdout stays usable:
+
+```sh
+constellation search mission-query.json --run-dir runs/mission > result.json
+constellation search mission-query.json --run-dir runs/mission --resume --progress-interval 2
+constellation search mission-query.json --run-dir runs/mission --resume --progress json 2> progress.ndjson
+constellation search mission-query.json --run-dir runs/mission --resume --progress none
+```
+
+`--progress json` preserves the prior JSON event format on stderr and adds
+periodic `progress` events. `--progress none` silences progress on stderr;
+errors still appear there. `--format ndjson` always emits machine-readable
+events on stdout, regardless of the stderr setting. Use `--progress none`
+with NDJSON if you only want that event stream.
+
+Finished queries include reused checkpoints and failed/blocked attempts, not
+just successful queries. Totals grow when an overflowing query splits into
+smaller queries. Live candidate-row counts cover the current invocation and
+may contain duplicates across archives or windows; the final frame count is
+deduplicated and includes preserved results from previous attempts. Search
+finalization is announced before the JSON/CSV artifacts are written.
 
 Exit codes: **0** all scheduled checks completed; **3** incomplete archive
 checks; **2** invalid input/configuration; **4** artifact-integrity audit failure;

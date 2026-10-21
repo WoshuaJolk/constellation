@@ -43,6 +43,11 @@ class Transport:
         self.credentials = credentials
         self.calls = []
 
+    def _progress(self, phase, **values):
+        callback = getattr(self, "on_progress", None)
+        if callback:
+            callback(phase=phase, **values)
+
     def cached_request(self, url, *, binary=False):
         """Share immutable public metadata within a run, retaining a receipt per use."""
         root = Path(getattr(self, "shared_cache", self.directory / "metadata-cache"))
@@ -67,10 +72,12 @@ class Transport:
                 record.update(cacheHit=True, responseFile=local.name, reusedAt=time.time())
                 self.calls.append(record)
         if binary:
+            self._progress("processing cached metadata")
             return path
         payload = path.read_bytes()
         if payload.startswith(b"\x1f\x8b"):
             payload = gzip.decompress(payload)
+        self._progress("processing cached metadata")
         return payload.decode(errors="replace")
 
     def request(self, url, *, data=None, headers=None, auth=None, private_data=None, binary=False, sensitive_response=False):
@@ -111,11 +118,14 @@ class Transport:
         self.calls.append(record)
         digest = hashlib.sha256()
         size = 0
+        self._progress("waiting for archive slot", requestNumber=len(self.calls), responseBytes=0)
         with lock:
             try:
                 request = urllib.request.Request(url, data=body, headers=headers)
                 opener = urllib.request.build_opener(SameOriginRedirect())
+                self._progress("waiting for archive response")
                 with opener.open(request, timeout=self.timeout) as response, path.with_suffix(".partial").open("wb") as out:
+                    self._progress("receiving archive response")
                     record["httpStatus"] = response.status
                     record["contentType"] = response.headers.get("Content-Type")
                     if sensitive_response:
@@ -126,6 +136,7 @@ class Transport:
                         if len(payload) > 1048576:
                             raise ArchiveError("Authentication response exceeds 1 MiB")
                         record.update(responseRedacted=True, finishedAt=time.time())
+                        self._progress("processing archive response")
                         return (gzip.decompress(payload) if payload.startswith(b"\x1f\x8b") else payload).decode()
                     deadline = time.monotonic() + self.timeout
                     while True:
@@ -137,8 +148,10 @@ class Transport:
                         digest.update(chunk)
                         size += len(chunk)
                         out.write(chunk)
+                        self._progress("receiving archive response", responseBytes=size)
                 path.with_suffix(".partial").replace(path)
                 record.update(bytes=size, sha256=digest.hexdigest(), responseFile=path.name, finishedAt=time.time())
+                self._progress("processing archive response")
                 if binary:
                     return path
                 payload = path.read_bytes()
