@@ -1,0 +1,38 @@
+name: solve_itf reference
+on: [push, pull_request]
+permissions:
+  contents: read
+concurrency:
+  group: solve-itf-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  reference:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install '.[test]'
+      - run: python -m pytest tests/test_solve_itf.py -q --junitxml=solve-itf-junit.xml
+      - name: Run the installed command outside the checkout
+        working-directory: /tmp
+        run: |
+          constellation example solve_itf --output solve-itf-input
+          constellation solve_itf solve-itf-input/input.json --output solve-itf-result
+          python -c "import json; r=json.load(open('solve-itf-result/report.json')); assert r['status']=='finite_prior_complete'; assert not r['full_itf_search_complete']; print(r['timings'])"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: solve-itf-reference-${{ matrix.python-version }}
+          path: |
+            solve-itf-junit.xml
+            /tmp/solve-itf-input/
+            /tmp/solve-itf-result/

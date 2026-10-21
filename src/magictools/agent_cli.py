@@ -115,7 +115,11 @@ def admission(tool, value, base):
         ids = [row["id"] for row in rows]
         if len(set(ids)) != len(ids):
             raise InputError("IDs must be unique within each input list")
-    if tool == "fit_sky":
+    if tool == "solve_itf":
+        from .solve_itf import validate
+        validate(value)
+        scope = "Small-scene contract and geometry; no propagation, continuous-domain or full-ITF completeness proof"
+    elif tool == "fit_sky":
         from research.fit_sky.sequential import BlockModel
         import numpy as np
         model = BlockModel(value["scene"])
@@ -195,6 +199,12 @@ def admission(tool, value, base):
 
 
 def execute(tool, value, directory, args):
+    if tool == "solve_itf":
+        from .solve_itf import run
+        report = run(value)
+        write(directory/"report.json", report)
+        return report, {k: report[k] for k in ("status", "stop_reason", "unresolved_mass_upper",
+                                              "full_itf_search_complete", "timings")}
     if tool == "fit_sky":
         from research.fit_sky.workflow import prepare, advance
         settings = {key: getattr(args, key) for key in FIT_OPTIONS if getattr(args, key) is not None}
@@ -261,6 +271,7 @@ def parser():
         subs.add_parser(name, help=("Experimental/specialist: " if name in EXPERIMENTAL else "") + "Run the " + name + " manifest tool")
     for name in DEMO_COMMANDS:
         subs.add_parser(name, help="Generate and run the " + name + " experiment")
+    subs.add_parser("solve_itf", help="Experimental tracklet linkage; shortcut for run solve_itf")
     subs.add_parser("kepler-propagate", help="Propagate supplied orbits; shortcut for run kepler-propagate")
     for name in RESEARCH_COMMANDS:
         subs.add_parser(name, help="Experimental: run the " + name + " research interface")
@@ -305,7 +316,7 @@ def main(argv=None):
     owned = None
     executing = False
     try:
-        if argv and argv[0] == "kepler-propagate":
+        if argv and argv[0] in ("kepler-propagate", "solve_itf"):
             argv.insert(0, "run")
         if argv and argv[0] in ARCHIVE_ALIASES:
             argv[0] = ARCHIVE_ALIASES[argv[0]]
@@ -338,7 +349,7 @@ def main(argv=None):
             }, "commands": {
                 "archive": dict(ARCHIVE_COMMANDS, **{"frames inspect": "Inspect an archive service schema"}),
                 "manifests": list(MANIFEST_COMMANDS), "demos": list(DEMO_COMMANDS),
-                "direct": {"kepler-propagate": "run kepler-propagate"},
+                "direct": {"kepler-propagate": "run kepler-propagate", "solve_itf": "run solve_itf"},
                 "research": list(RESEARCH_COMMANDS),
                 "science": ["list", "doctor", "schema", "example", "validate", "run", "inspect"],
                 "help": "constellation <command> --help; each tool retains its output and exit-code contract",

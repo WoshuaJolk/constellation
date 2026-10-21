@@ -94,7 +94,13 @@ SCHEMAS["kepler-fold"]["oneOf"] = [
     {"required": ["trajectories"], "not": {"anyOf": [{"required": ["orbits"]}, {"required": ["epoch_mjd_tdb"]}]}},
 ]
 
+from .solve_itf_contract import SCHEMA as SOLVE_ITF_SCHEMA
+SCHEMAS["solve_itf"] = SOLVE_ITF_SCHEMA
+
 TOOLS = {
+    "solve_itf": dict(summary="Budgeted tracklet linkage reference with assignment ambiguity and unresolved-mass bounds",
+                     dependencies=["numpy", "scipy", "astropy"], accuracy="finite_prior_research",
+                     limits="Small normalized astrometry scenes; explicit finite orbit prior, no continuous-domain or full-ITF completeness claim"),
     "fit_sky": dict(summary="Joint sequential pixel inference with unknown sources, orbits, blends and shared calibration",
                    dependencies=["numpy", "scipy", "astropy", "flint"], accuracy="approximate_uncertified",
                    limits="Can miss posterior modes; two-body orbits, instantaneous Gaussian PSFs, supplied calibration model"),
