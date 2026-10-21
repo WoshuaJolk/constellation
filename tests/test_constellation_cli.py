@@ -126,3 +126,37 @@ def test_one_fitsky_tool_selects_explicit_engine(flags, module, monkeypatch):
     monkeypatch.setattr(fit_sky_cli, "import_module", imported)
     assert fit_sky_cli.main(["input.json", "new-output", *flags, "--seed", "7"]) == 4
     assert calls == [(["input.json", "new-output", "--seed", "7"], {"prog": "constellation fit_sky"})]
+
+
+def test_release_catalogue_and_default_doctor_exclude_research_requirements(capsys):
+    from magictools.release import READY, EXPERIMENTAL
+    assert agent_cli.main(['list','--ready']) == 0
+    result=json.loads(capsys.readouterr().out)['result']
+    assert set(result['tools']) == set(READY)
+    assert not (set(result['tools']) & set(EXPERIMENTAL))
+    assert agent_cli.main(['doctor']) == 0
+    result=json.loads(capsys.readouterr().out)['result']
+    assert result['ready'] and set(result['tools']) == set(READY)
+    assert all('flint' not in dependencies for dependencies in result['tools'].values())
+
+
+def test_auto_run_paths_are_unique_and_resume_requires_explicit_run(tmp_path, monkeypatch, capsys):
+    from magictools.frames import engine
+    monkeypatch.chdir(tmp_path)
+    manifest=tmp_path/'query.json'
+    manifest.write_text(json.dumps(dict(mode='field',ra=10,dec=20,start='2020-01-01',end='2020-01-02',providers=['ztf'])))
+    monkeypatch.setattr(engine,'execute',lambda *_: iter(()))
+    assert agent_cli.main(['find_frames',str(manifest),'--plan']) == 0
+    capsys.readouterr()
+    assert not (tmp_path/'runs').exists()
+    assert agent_cli.main(['find_frames',str(manifest),'--resume']) == 2
+    assert 'Resume requires' in capsys.readouterr().err
+    assert not (tmp_path/'runs').exists()
+    directories=[]
+    for _ in range(2):
+        assert agent_cli.main(['find_frames',str(manifest),'--progress','none']) == 0
+        directories.append(json.loads(capsys.readouterr().out)['execution']['runDirectory'])
+    assert directories[0] != directories[1]
+    monkeypatch.setattr(engine,'execute',lambda *_: pytest.fail('A successful query must not repeat'))
+    assert agent_cli.main(['find_frames',str(manifest),'-o',directories[0],'--deep','--resume','--progress','none']) == 0
+    capsys.readouterr()

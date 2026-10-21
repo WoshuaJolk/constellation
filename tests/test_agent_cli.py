@@ -29,7 +29,7 @@ def test_discovery_schemas_and_usage_errors(capsys):
         assert code == 0 and result["result"]["title"] == tool
     code, result, _ = call(capsys, "does-not-exist")
     assert code == 2 and result["error"]["code"] == "invalid_input"
-    code, result, _ = call(capsys, "doctor")
+    code, result, _ = call(capsys, "doctor", "--all")
     assert code == 0 and "flint" in result["result"]["tools"]["fit_sky"]
 
 

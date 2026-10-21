@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "source_sha256": "b00b223cc66b6736d405e987a9b9c919443a6bdc82977daad03006f1d40af33f",
+  "complete": true,
+  "expected_tools": [
+    "check_frames",
+    "dig_floor",
+    "ejector_fit",
+    "find_frames",
+    "force_track",
+    "inject_all",
+    "inject_tracks",
+    "judge_line",
+    "kepler-propagate",
+    "learn_null",
+    "map_complete",
+    "map_cover",
+    "match_all",
+    "prove_floor",
+    "verify_match",
+    "weigh_stamp"
+  ],
+  "tested_tools": [
+    "check_frames",
+    "dig_floor",
+    "ejector_fit",
+    "find_frames",
+    "force_track",
+    "inject_all",
+    "inject_tracks",
+    "judge_line",
+    "kepler-propagate",
+    "learn_null",
+    "map_complete",
+    "map_cover",
+    "match_all",
+    "prove_floor",
+    "verify_match",
+    "weigh_stamp"
+  ],
+  "results": {
+    "force_track": {
+      "baseline": "Single central-pixel flux estimate, with the true background and PSF known",
+      "demonstrated_value": "Lower flux uncertainty by using the full PSF while fitting a background",
+      "metrics": {
+        "mean_flux_error": 9.21424399750021,
+        "single_pixel_error": 19.64478029373949
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "dig_floor": {
+      "baseline": "A 5-sigma test on each exposure separately",
+      "demonstrated_value": "Recovers the correct supplied trajectory by combining subthreshold exposures",
+      "metrics": {
+        "best_single_snr": 3.188064145286067,
+        "joint_snr": 6.549790991069073,
+        "ranked_first": "true"
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "judge_line": {
+      "baseline": "Accepting a high joint score alone",
+      "demonstrated_value": "Flags a candidate driven by one exposure",
+      "metrics": {
+        "joint_snr": 15.348131505942977,
+        "flags": [
+          "jackknife_below_requested_snr"
+        ]
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "inject_tracks": {
+      "baseline": "Assuming a nominal sensitivity implies track recovery",
+      "demonstrated_value": "Actually reruns the search on zero-flux and bright injections; preserves input pixels",
+      "metrics": {
+        "new_recovery_fractions": [
+          0.0,
+          1.0
+        ],
+        "unchanged_images": 8
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "map_cover": {
+      "baseline": "Counting a predicted position inside image bounds as usable coverage",
+      "demonstrated_value": "Rejects masked detector area and does not invent non-detections",
+      "metrics": {
+        "on_chip_predictions": 3,
+        "usable_fraction": 0.0
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "weigh_stamp": {
+      "baseline": "Equal integrated positive flux for a trail and a spike",
+      "demonstrated_value": "Distinguishes their pixel morphologies under the supplied model family",
+      "metrics": {
+        "preferred_models": [
+          "moving_source",
+          "cosmic_ray_spike"
+        ]
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "learn_null": {
+      "baseline": "Uniform hypothesis weights and choosing the first listed follow-up",
+      "demonstrated_value": "Uses supplied detection efficiencies to update probabilities and select information",
+      "metrics": {
+        "posterior": [
+          0.09999999999999998,
+          0.9
+        ],
+        "first_followup": "informative",
+        "information_nats": 0.3250829733914484
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "map_complete": {
+      "baseline": "Independent-survey union calculation gives 0.75 for one shared exposure",
+      "demonstrated_value": "Returns the correct 0.5 union by retaining shared-exposure dependence",
+      "metrics": {
+        "naive_union": 0.75,
+        "correct_union": 0.5
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "inject_all": {
+      "baseline": "Exact enumeration refuses 24 exposures under its declared resource limit",
+      "demonstrated_value": "Computes a selection estimate with Monte Carlo uncertainty, checked against an analytic answer",
+      "metrics": {
+        "exposures": 24,
+        "analytic_probability": 0.7080109756612276,
+        "estimate": 0.7046,
+        "interval": [
+          0.6964618818464063,
+          0.7127381181535937
+        ]
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "match_all": {
+      "baseline": "Greedy highest-score candidate gives objective 10",
+      "demonstrated_value": "Finds the globally optimal compatible assignment for the supplied candidates",
+      "metrics": {
+        "greedy": 10,
+        "optimal": 12
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "verify_match": {
+      "baseline": "Trusting a solver report without checking its certificate",
+      "demonstrated_value": "Accepts the valid result and rejects a tampered objective",
+      "metrics": {
+        "valid_accepted": true,
+        "tampered_rejected": true
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "prove_floor": {
+      "baseline": "Known-template oracle bound ignores uncertainty over 20 templates",
+      "demonstrated_value": "Produces a tighter prior-average power bound under the stated Gaussian model",
+      "metrics": {
+        "oracle_upper_bound": 0.09236224807369404,
+        "mixture_upper_bound": 0.03916418188612924,
+        "analytic_check": 0.03916418188612922
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "kepler-propagate": {
+      "baseline": "Constant-velocity extrapolation over 100 days",
+      "demonstrated_value": "Matches the analytic two-body circular solution",
+      "metrics": {
+        "linear_error_au": 0.16389580012545246,
+        "propagated_error_au": 1.1102230246251565e-16
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "ejector_fit": {
+      "baseline": "Assigning one common launch time to two distinct ejections",
+      "demonstrated_value": "Fits distinct encounter times sharing one source state within the declared model",
+      "metrics": {
+        "recovered_ages_myr": [
+          1.2999999916045568,
+          3.0999999678951164
+        ],
+        "best_single_age_max_error_myr": 0.9001400000000002,
+        "chi2": 2.1422491740917412e-11
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "find_frames": {
+      "baseline": "Concatenating duplicate archive rows and mistaking a failed service for no coverage",
+      "demonstrated_value": "Queries multiple services, deduplicates the native frame, and retains the failed-provider status",
+      "metrics": {
+        "raw_matching_rows": 2,
+        "unique_frames": 1,
+        "failed_provider_visible": true
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    },
+    "check_frames": {
+      "baseline": "Trusting stored responses and successful query labels",
+      "demonstrated_value": "Detects a modified response and distinguishes query success from complete coverage",
+      "metrics": {
+        "checked_responses": 2,
+        "corruption_detected": true
+      },
+      "status": "passed",
+      "scope": "Declared control only; not a survey-wide scientific guarantee"
+    }
+  },
+  "network": "Local HTTP archive controls; no assumption about public archive uptime",
+  "limits": "Fixed controlled cases and stated baselines. Passing is not a discovery, global completeness, or calibrated real-survey false-positive rate."
+}

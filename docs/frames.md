@@ -24,6 +24,21 @@ artifacts. The shared executable also offers [Kepler and FitSky](agent-cli.md).
 `find_frames` is the canonical lookup command; `check_frames` checks a saved run.
 The former names `search` and `audit` remain aliases with the same data contracts.
 
+## Short commands and output locations
+
+```sh
+constellation find_frames query.json
+constellation find_frames query.json -o runs/mission
+constellation check_frames runs/mission --checksums
+constellation find_frames query.json -o runs/mission --deep --resume
+```
+
+A first search can omit `-o`: it chooses a unique directory under `runs/`, prints
+its location in progress, and includes the absolute path in
+`execution.runDirectory`. `--output` and `--run-dir` are aliases for `-o`.
+Resume always requires the saved directory explicitly. Validation and `--plan`
+do not create a run directory. `-o` names a directory, not the JSON stdout file.
+
 ## Agent workflow
 
 1. Inspect `capabilities`; choose `providers: "all"` or named providers.

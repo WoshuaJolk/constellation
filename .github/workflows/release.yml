@@ -1,0 +1,36 @@
+name: release acceptance
+on: [push, pull_request]
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  wheel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install build twine
+      - run: python -m build
+      - run: python -m twine check dist/*
+      - name: Install the built wheel in isolation
+        run: |
+          python -m venv /tmp/constellation-release
+          /tmp/constellation-release/bin/pip install dist/*.whl pytest
+          /tmp/constellation-release/bin/pip check
+      - name: Exercise installed CLIs against independent baselines
+        env:
+          CONSTELLATION_RELEASE_REPORT: ${{ github.workspace }}/release-artifacts/validation.json
+        run: |
+          /tmp/constellation-release/bin/python -m pytest tests/test_release_cli.py -q --junitxml=release-artifacts/junit.xml
+          /tmp/constellation-release/bin/python -c "import json; r=json.load(open('release-artifacts/validation.json')); assert r['complete'], r"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: constellation-release-artifacts
+          path: |
+            dist/
+            release-artifacts/
