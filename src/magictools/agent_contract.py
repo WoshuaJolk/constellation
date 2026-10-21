@@ -66,7 +66,7 @@ for key in ELEMENTS[3:]:
     ORBIT["properties"][key] = {"type": "number", "minimum": -360, "maximum": 360}
 
 SCHEMAS = {
-    "fitsky": obj({"description": {"type": "string"}, "scene": SCENE, "queries": array(STRING)}, ("scene",)),
+    "fit_sky": obj({"description": {"type": "string"}, "scene": SCENE, "queries": array(STRING)}, ("scene",)),
     "kepler-propagate": obj({"schema_version": {"const": 1},
         "states": array(obj({"id": STRING, "state": array(NUMBER, 6)}, ("id", "state"))),
         "times_days": array(NUMBER), "observers_heliocentric_au": array(VECTOR)},
@@ -95,7 +95,7 @@ SCHEMAS["kepler-fold"]["oneOf"] = [
 ]
 
 TOOLS = {
-    "fitsky": dict(summary="Joint sequential pixel inference with unknown sources, orbits, blends and shared calibration",
+    "fit_sky": dict(summary="Joint sequential pixel inference with unknown sources, orbits, blends and shared calibration",
                    dependencies=["numpy", "scipy", "astropy", "flint"], accuracy="approximate_uncertified",
                    limits="Can miss posterior modes; two-body orbits, instantaneous Gaussian PSFs, supplied calibration model"),
     "kepler-propagate": dict(summary="Propagate Cartesian states; optionally solve observer-dependent light time",
@@ -123,7 +123,11 @@ EXPOSURE["properties"]["time"] = dict(NUMBER, description="TDB days from source-
 EXPOSURE["properties"]["observer"] = dict(VECTOR, description="Heliocentric reception position in AU, in the source-state inertial frame")
 
 
+TOOL_ALIASES = {"fitsky": "fit_sky"}
+
+
 def schema(tool):
+    tool = TOOL_ALIASES.get(tool, tool)
     result = deepcopy(SCHEMAS[tool])
     result.update({"$schema": "https://json-schema.org/draft/2020-12/schema", "title": tool,
                    "description": TOOLS[tool]["limits"]})

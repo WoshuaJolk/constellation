@@ -13,7 +13,8 @@ from .progress import TextProgress
 
 
 def capabilities():
-    return {"version": 2, "providers": PROVIDERS, "mostCatalogs": MOST_CATALOGS,
+    return {"version": 2, "commands": {"find_frames": "search surveys and frames", "check_frames": "check evidence and receipts"},
+            "aliases": {"search": "find_frames", "audit": "check_frames"}, "providers": PROVIDERS, "mostCatalogs": MOST_CATALOGS,
             "modes": ["field", "object", "orbits", "arc", "ephemeris"],
             "defaultTimeoutSeconds": 600, "clientRowLimit": None, "dateSpanLimit": None,
             "searchPolicy": {"default": "fast", "budgetSeconds": 60, "queryAllowanceSeconds": 10,
@@ -23,7 +24,7 @@ def capabilities():
             "limitations": LIMITATIONS, "datasetCoverage": coverage(),
             "customServices": {"protocols": ["obscore", "sia1", "sia2"], "idPrefix": "vo:",
                                "configuration": "services object in the search manifest", "credentials": "Private credential profile with explicit HTTPS allowedOrigins"},
-            "discoveryCommands": ["discover", "frames inspect", "links", "audit"],
+            "discoveryCommands": ["discover", "frames inspect", "links", "check_frames"],
             "progress": {"default": "text on stderr", "intervalSeconds": 5,
                          "options": ["--progress text", "--progress json", "--progress none", "--progress-interval SECONDS"],
                          "ndjson": "--format ndjson keeps machine-readable events on stdout",
@@ -36,7 +37,7 @@ def main(argv=None, *, prog="constellation"):
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("capabilities", help="Print adapters, schemas, limits, and credential instructions as JSON")
     commands.add_parser("coverage", help="Map every constellation imaging dataset to adapters and explicit gaps")
-    audit = commands.add_parser("audit", help="Assess coverage evidence separately from query success")
+    audit = commands.add_parser("check_frames", aliases=["audit"], help="Assess coverage evidence separately from query success")
     audit.add_argument("run_dir", type=Path)
     audit.add_argument("--checksums", action="store_true", help="Verify saved raw-response SHA-256 receipts")
     discover = commands.add_parser("discover", help="Find candidate SIA/TAP endpoints in the IVOA registry")
@@ -50,7 +51,7 @@ def main(argv=None, *, prog="constellation"):
         command.add_argument("--output-dir", type=Path, required=True, help="New directory for metadata and request receipts")
         command.add_argument("--timeout", type=float, default=600)
         command.add_argument("--credentials", type=Path)
-    search = commands.add_parser("search", help="Execute a JSON manifest and save complete local query receipts")
+    search = commands.add_parser("find_frames", aliases=["search"], help="Execute a JSON manifest and save complete local query receipts")
     search.add_argument("manifest", type=Path)
     search.add_argument("--run-dir", type=Path, required=True)
     search.add_argument("--resume", action="store_true")
@@ -85,7 +86,7 @@ def main(argv=None, *, prog="constellation"):
             result = capabilities()
         elif args.command == "coverage":
             result = coverage()
-        elif args.command == "audit":
+        elif args.command in {"check_frames", "audit"}:
             from .assessment import audit_run
             result = audit_run(args.run_dir, args.checksums)
             json.dump(result, sys.stdout, indent=2, allow_nan=False)

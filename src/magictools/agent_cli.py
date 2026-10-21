@@ -11,7 +11,7 @@ import math
 from pathlib import Path
 import sys
 
-from .agent_contract import TOOLS, schema
+from .agent_contract import TOOLS, TOOL_ALIASES, schema
 from .cli import MANIFEST_COMMANDS, DEMO_COMMANDS
 from . import __version__
 
@@ -19,19 +19,23 @@ from . import __version__
 ARCHIVE_COMMANDS = {
     "capabilities": "Describe archive providers, query modes and credentials",
     "coverage": "Map imaging datasets to archive adapters and gaps",
-    "search": "Search archives using a JSON manifest",
+    "find_frames": "Find candidate surveys and frames using a JSON manifest",
     "status": "Inspect an archive search run",
-    "audit": "Assess archive coverage evidence and receipt integrity",
+    "check_frames": "Check archive coverage evidence and receipt integrity",
     "discover": "Discover candidate archive services in the VO registry",
     "links": "Resolve public archive DataLink product references",
     "credentials": "Manage private archive credential profiles",
     "merge": "Deduplicate archive frame manifests",
     "serve": "Run the optional local archive search API",
 }
-RESEARCH_COMMANDS = {
-    "fold-chart": "research.kepler_transform.chart_search",
+ARCHIVE_ALIASES = {"search": "find_frames", "audit": "check_frames"}
+RESEARCH_ALIASES = {
     "fit-sky": "research.fit_sky.cli",
     "fit-sky-stream": "research.fit_sky.sequential_cli",
+}
+RESEARCH_COMMANDS = {
+    "fold-chart": "research.kepler_transform.chart_search",
+    "fit_sky": "magictools.fit_sky_cli",
 }
 
 
@@ -110,7 +114,7 @@ def admission(tool, value, base):
         ids = [row["id"] for row in rows]
         if len(set(ids)) != len(ids):
             raise InputError("IDs must be unique within each input list")
-    if tool == "fitsky":
+    if tool == "fit_sky":
         from research.fit_sky.sequential import BlockModel
         import numpy as np
         model = BlockModel(value["scene"])
@@ -190,32 +194,19 @@ def admission(tool, value, base):
 
 
 def execute(tool, value, directory, args):
-    if tool == "fitsky":
-        from research.fit_sky.sequential import SequentialFit
+    if tool == "fit_sky":
+        from research.fit_sky.workflow import prepare, advance
         settings = {key: getattr(args, key) for key in FIT_OPTIONS if getattr(args, key) is not None}
-        if args.resume:
-            fit = SequentialFit.load(args.resume, value["scene"])
-            if any(fit.settings[k] != v for k, v in settings.items()):
-                raise InputError("Resume settings conflict with checkpoint; omit overrides or start a new fit")
-            if "queries" in value:
-                fit.model.events(fit.population, value["queries"])
-                fit.queries = value["queries"]
-        else:
-            fit = SequentialFit(value["scene"], queries=value.get("queries"), **settings)
-        stop = len(value["scene"]["exposures"]) if args.stop_after is None else args.stop_after
-        if not fit.assimilated < stop <= len(value["scene"]["exposures"]):
-            raise InputError("stop-after must append at least one available exposure")
-        batch = args.exposure_batch or 1
-        if batch < 1:
-            raise InputError("exposure-batch must be positive")
-        # A starting checkpoint also survives interruption during first assimilation.
-        fit.save(directory/"checkpoint.npz")
-        while fit.assimilated < stop:
-            fit.assimilate(min(stop, fit.assimilated+batch))
-            fit.save(directory/"checkpoint.npz")
-            write(directory/"report.json", fit.report(include_catalogues=bool(args.catalogues)))
-            print(json.dumps({"event": "exposure_complete", "summary": fit.summary()}, allow_nan=False), file=sys.stderr, flush=True)
-        return fit.report(include_catalogues=bool(args.catalogues)), fit.summary()
+        try:
+            fit, stop = prepare(value, settings, resume=args.resume, stop_after=args.stop_after,
+                                exposure_batch=args.exposure_batch or 1)
+        except ValueError as error:
+            raise InputError(str(error)) from error
+        def progress(summary):
+            print(json.dumps({"event": "exposure_complete", "summary": summary}, allow_nan=False),
+                  file=sys.stderr, flush=True)
+        return advance(fit, directory, stop=stop, exposure_batch=args.exposure_batch or 1,
+                       catalogues=bool(args.catalogues), on_progress=progress)
     if tool == "kepler-fold":
         from .fold_kepler import run_fold
         report = run_fold(directory/"input.json")
@@ -274,13 +265,13 @@ def parser():
     subs.add_parser("list", help="Discover tools and scientific limitations")
     subs.add_parser("doctor", help="Check optional dependencies without running science")
     s = subs.add_parser("schema", help="Return a tool's JSON Schema in result")
-    s.add_argument("tool", choices=TOOLS)
+    s.add_argument("tool", choices=TOOLS, type=lambda name: TOOL_ALIASES.get(name, name))
     e = subs.add_parser("example", help="Create a runnable synthetic manifest and its resources")
-    e.add_argument("tool", choices=TOOLS)
+    e.add_argument("tool", choices=TOOLS, type=lambda name: TOOL_ALIASES.get(name, name))
     e.add_argument("--output", required=True, type=Path)
     for name in ["validate", "run"]:
         s = subs.add_parser(name)
-        s.add_argument("tool", choices=TOOLS)
+        s.add_argument("tool", choices=TOOLS, type=lambda name: TOOL_ALIASES.get(name, name))
         s.add_argument("manifest", type=Path)
         if name == "run":
             s.add_argument("--output", required=True, type=Path)
@@ -310,6 +301,8 @@ def main(argv=None):
     owned = None
     executing = False
     try:
+        if argv and argv[0] in ARCHIVE_ALIASES:
+            argv[0] = ARCHIVE_ALIASES[argv[0]]
         if argv and (argv[0] == "frames" or argv[0] in ARCHIVE_COMMANDS):
             from .frames.cli import main as frames_main
             if argv[0] == "frames":
@@ -318,16 +311,22 @@ def main(argv=None):
         if argv and argv[0] in (*MANIFEST_COMMANDS, *DEMO_COMMANDS):
             from .cli import main as manifest_main
             return manifest_main(argv, prog="constellation") or 0
-        if argv and argv[0] in RESEARCH_COMMANDS:
+        if argv and argv[0] in (RESEARCH_COMMANDS.keys() | RESEARCH_ALIASES.keys()):
             envelope.update(command=argv[0])
-            entry = import_module(RESEARCH_COMMANDS[argv[0]]).main
+            entry = import_module((RESEARCH_COMMANDS | RESEARCH_ALIASES)[argv[0]]).main
             return entry(argv[1:], prog="constellation " + argv[0]) or 0
         args = parser().parse_args(argv)
         envelope.update(command=args.command)
         if hasattr(args, "tool"):
             envelope.update(tool=args.tool, scientific_scope=TOOLS[args.tool]["accuracy"], full_objective_complete=False)
         if args.command == "list":
-            result = {"tools": TOOLS, "commands": {
+            result = {"tools": TOOLS, "aliases": {
+                "archive": ARCHIVE_ALIASES, "science": TOOL_ALIASES,
+                "research": {"fit-sky": "fit_sky --engine bounded",
+                             "fit-sky-stream": "fit_sky --engine sequential"},
+                "interfaces": {"run kepler-fold": "fold_kepler", "run kepler-chart": "fold-chart",
+                               "run fit_sky": "fit_sky --engine sequential (agent JSON contract)"},
+            }, "commands": {
                 "archive": dict(ARCHIVE_COMMANDS, **{"frames inspect": "Inspect an archive service schema"}),
                 "manifests": list(MANIFEST_COMMANDS), "demos": list(DEMO_COMMANDS),
                 "research": list(RESEARCH_COMMANDS),
@@ -368,7 +367,7 @@ def main(argv=None):
                 if args.command == "validate":
                     result = {"valid": True, "validation_scope": scope, "resources": list(map(str, resources))}
                 else:
-                    if args.tool != "fitsky" and any(getattr(args, k) is not None for k in
+                    if args.tool != "fit_sky" and any(getattr(args, k) is not None for k in
                             (*FIT_OPTIONS, "resume", "stop_after", "exposure_batch", "catalogues")):
                         raise InputError("FitSky execution options cannot be used with a Kepler tool")
                     args.output.mkdir(parents=True, exist_ok=False)

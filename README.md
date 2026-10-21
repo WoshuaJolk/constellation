@@ -43,13 +43,13 @@ Save your coordinates and dates as `query.json`:
 
 ```sh
 # Fast pass: live progress, candidate survey list, and available frames.
-constellation search query.json --run-dir runs/my-field
+constellation find_frames query.json --run-dir runs/my-field
 
 # Continue the same search without the fast-pass budget.
-constellation search query.json --run-dir runs/my-field --deep --resume
+constellation find_frames query.json --run-dir runs/my-field --deep --resume
 
 # Inspect evidence and verify saved response checksums.
-constellation audit runs/my-field --checksums
+constellation check_frames runs/my-field --checksums
 ```
 
 The default fast pass targets 60 seconds, with a 10-second allowance per query.
@@ -64,19 +64,46 @@ still need footprint, epoch, access, and detectability checks. Image retrieval
 is a separate step. See the [archive guide](docs/frames.md) for input formats,
 credentials, provider scope, streaming output, and timeout behavior.
 
-## Work with your own data
+## Tools
 
-| Task | Tools | Guide |
-| --- | --- | --- |
-| Propagate orbits and check usable image coverage | `kepler-propagate`, `map_cover` | [Agent interface](docs/agent-cli.md), [orbit coverage](docs/ambitious-tools.md) |
-| Measure flux along a supplied track | `force_track` | [Input formats](docs/formats.md) |
-| Search a finite trajectory bank and measure injection recovery | `dig_floor`, `fold_kepler`, `inject_tracks` | [Formats](docs/formats.md), [orbit folding](docs/fold-kepler.md) |
-| Examine candidate consistency and artifact alternatives | `judge_line`, `weigh_stamp` | [Methods](docs/methods.md), [stamp models](docs/ambitious-tools.md) |
-| Update hypotheses after non-detections and rank follow-up | `learn_null` | [Formats and calibration inputs](docs/formats.md) |
-| Calculate finite survey selection, population recovery, or assignments | `map_complete`, `inject_all`, `match_all` | [Methods](docs/methods.md) |
-| Bound detection power under a specified model | `prove_floor` | [Detection bounds](docs/prove-floor.md) |
-| Fit and assess possible common stellar origins | `find_ejector`, `ejector_fit`, `ejector_search`, `ejector_bound` | [Fits](docs/ejector-fit.md), [search and bounds](docs/ejector-search.md) |
-| Infer interacting sources across images (experimental) | `fitsky`, `fit-sky`, `fit-sky-stream` | [Agent interface](docs/agent-cli.md), [FitSky](docs/fit-sky.md) |
+Each row is one tool. Alternate interfaces and old names are aliases, not
+additional scientific capabilities. Click a name for its input contract.
+
+| Tool | What it does |
+| --- | --- |
+| [`find_frames`](docs/frames.md) | Finds candidate surveys and frame references by field, object, orbit, arc, or ephemeris; saves resumable receipts. |
+| [`check_frames`](docs/frames.md) | Checks a saved archive run's coverage evidence and optional response checksums. |
+| [`kepler-propagate`](docs/agent-cli.md) | Propagates supplied Cartesian orbits with optional observer-dependent light time; invoke through `constellation run`. |
+| [`map_cover`](docs/ambitious-tools.md) | Projects orbit samples onto local FITS images and checks usable pixels, masks, trails, and family coverage. |
+| [`force_track`](docs/formats.md) | Measures signed flux and uncertainty at supplied track positions using Gaussian or measured PSFs. |
+| [`dig_floor`](docs/formats.md) | Scores a finite trajectory bank with a joint pixel likelihood and stated Gaussian trial corrections. |
+| [`fold_kepler`](docs/fold-kepler.md) | Accelerates repeated finite-bank searches with shared sums and precise candidate refinement. |
+| [`inject_tracks`](docs/archive-workflow.md) | Injects tracks into supplied images and reruns the search to measure recovery. |
+| [`judge_line`](docs/archive-workflow.md) | Tests candidate consistency with temporal splits, leave-one-out fits, residuals, and control tracks. |
+| [`weigh_stamp`](docs/ambitious-tools.md) | Compares moving-source, stationary-source, and supplied artifact models on the same pixels. |
+| [`learn_null`](docs/formats.md) | Updates supplied hypotheses after non-detections and ranks follow-up using calibrated detection efficiencies. |
+| [`map_complete`](docs/selection-and-assignment.md) | Calculates exact finite-population cadence selection and survey-union probabilities. |
+| [`inject_all`](docs/selection-and-assignment.md) | Simulates finite-population selection and reports Monte Carlo uncertainty and conditional count likelihoods. |
+| [`match_all`](docs/selection-and-assignment.md) | Solves a finite weighted candidate-assignment problem and produces checkable certificates. |
+| [`verify_match`](docs/selection-and-assignment.md) | Independently checks a saved assignment certificate. |
+| [`prove_floor`](docs/prove-floor.md) | Bounds prior-average detection power for a supplied template family and noise model. |
+| [`find_ejector`](docs/find-ejector.md) | Searches supplied stellar phase-space samples for possible past convergence. |
+| [`ejector_prepare`](docs/find-ejector-catalogue.md) | Prepares Gaia astrometry and supplied distance/RV assumptions for stellar traceback analysis. |
+| [`ejector_fit`](docs/ejector-fit.md) | Fits possible shared stellar origins in measured astrometry and radial velocity. |
+| [`ejector_search`](docs/ejector-search.md) | Fits groups in a supplied stellar catalogue, evaluates search controls, and checks source counterparts. |
+| [`ejector_bound`](docs/ejector-search.md) | Certifies or excludes encounters within a declared continuous model domain, or reports unresolved cases. |
+| [`ztf_search`](docs/archive-workflow.md) | Queries ZTF exposures for the ZTF-specific cutout-preparation workflow; use `find_frames` for general discovery. |
+| [`ztf_fetch`](docs/archive-workflow.md) | Downloads selected ZTF cutouts and prepares image, variance, mask, and PSF inputs. |
+| [`fold-chart`](research/kepler_transform/chart_construction.md) | Applies the experimental bounded observer-chart transform to supplied Fourier fields. |
+| [`fit_sky`](docs/fit-sky.md) | Infers interacting sources and instrument uncertainty jointly; selects approximate sequential or bounded research inference with `--engine`. |
+
+`find_frames` and `check_frames` replace the names `search` and `audit`.
+`fit_sky` is one tool with two distinct engines: `--engine sequential` (default,
+resumable and approximate) and `--engine bounded` (small-scene research inference).
+The agent interface `constellation run fit_sky` uses the same sequential workflow.
+Old spellings remain compatibility aliases; see the [migration guide](docs/agent-cli.md#canonical-names-and-compatibility).
+Setup, inspection, archive-service utilities, and synthetic demos are listed by
+`constellation --help`.
 
 `constellation list` lists command families and scientific tool IDs. Agent
 operations support schema discovery, examples, validation and execution:

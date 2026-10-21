@@ -1,8 +1,8 @@
 # Kepler and FitSky for agents
 
 `constellation` provides discovery, JSON Schemas, runnable examples, validation,
-execution and inspection through one noninteractive command. Existing science
-commands and research engines are unchanged. Use Python 3.11 or later for the complete research installation below.
+execution and inspection through one noninteractive command. Scientific engines
+retain their existing model assumptions and accuracy scopes. Use Python 3.11 or later for the complete research installation below.
 
 The Python distribution is named `const-ellation`; the executable is `constellation`. The
 Python import package remains `magictools` for compatibility. If you installed
@@ -33,7 +33,7 @@ login, detector catalogue or interactive prompts are required. Science inputs
 are local files. The generated examples are synthetic, not discoveries.
 
 The same executable provides [archive discovery](frames.md) through
-`constellation search`, `constellation capabilities`, and `constellation frames`.
+`constellation find_frames`, `constellation capabilities`, and `constellation frames`.
 Archive schema inspection uses `constellation frames inspect`; the scientific
 `constellation inspect` command and its JSON contract remain unchanged.
 
@@ -44,11 +44,11 @@ command families, or `constellation --help` for command help.
 
 | Family | Examples |
 |---|---|
-| Archive discovery | `constellation search query.json --run-dir runs/search`, `constellation capabilities` |
-| Scientific agent contracts | `constellation run fitsky input.json --output runs/fit`, `constellation schema kepler-propagate` |
+| Archive discovery | `constellation find_frames query.json --run-dir runs/search`, `constellation capabilities` |
+| Scientific agent contracts | `constellation run fit_sky input.json --output runs/fit`, `constellation schema kepler-propagate` |
 | Manifest tools | `constellation force_track input.json`, `constellation fold_kepler input.json`, `constellation ztf_search query.json` |
 | Synthetic demonstrations | `constellation demo demo-output`, `constellation orbit_demo orbit-output` |
-| Research interfaces | `constellation fold-chart --help`, `constellation fit-sky --help`, `constellation fit-sky-stream --help` |
+| Research interfaces | `constellation fold-chart --help`, `constellation fit_sky --help` |
 
 The former `magictools` and `magictools-*` executables remain compatibility
 aliases. Use `constellation` for new integrations. Each delegated tool keeps
@@ -56,11 +56,39 @@ its documented JSON, streaming and exit-code contract; the single-envelope
 contract below applies to the scientific agent operations. Research commands
 require the optional research dependencies.
 
+## Canonical names and compatibility
+
+Use `find_frames` for archive lookup and `check_frames` for checking saved
+coverage evidence and receipts. `search` and `audit` remain aliases, including
+under `constellation frames`. They operate on the same manifests and run directories.
+
+FitSky is presented as one tool, `fit_sky`, with explicit engine selection:
+
+```sh
+constellation fit_sky input.json new-output --engine sequential
+constellation fit_sky examples/fit-sky.json new-bounded-output --engine bounded --verify
+constellation run fit_sky input.json --output new-agent-output
+```
+
+The direct sequential interface and the agent interface share initialization,
+resume validation, assimilation, checkpointing, and report writing. The direct
+interface streams summaries; the agent interface adds schema validation,
+provenance, and a final JSON envelope. Bounded inference uses a different model
+contract and does not share sequential checkpoints or accuracy guarantees.
+Use `constellation fit_sky --engine bounded --help` for its options.
+
+Compatibility spellings retain their original routing: `fit-sky` selects the
+bounded engine, `fit-sky-stream` selects sequential inference, and the scientific
+tool ID `fitsky` resolves to `fit_sky`. Checkpoint schema IDs remain unchanged.
+`run kepler-fold` wraps `fold_kepler`; `run kepler-chart` wraps `fold-chart`.
+These are alternate interfaces, not additional transform engines. `list` reports
+aliases separately from canonical command names.
+
 ## Choose the scientific operation
 
 | Tool ID | Input | Result | Scientific scope |
 |---|---|---|---|
-| `fitsky` | JSON scene with pixels, source/count priors, instrument response, queries | Joint sequential inference report and resumable checkpoint | Approximate, uncertified posterior; retains blends, source identity, continuous orbital parameters and shared calibration |
+| `fit_sky` | JSON scene with pixels, source/count priors, instrument response, queries | Joint sequential inference report and resumable checkpoint | Approximate, uncertified posterior; retains blends, source identity, continuous orbital parameters and shared calibration |
 | `kepler-propagate` | Cartesian states and times; optional reception observers | Positions/velocities and optional light-time-corrected RA/Dec | Numerical all-conic two-body propagation, no search/inference |
 | `kepler-fold` | FITS exposure manifest plus finite elliptic-orbit bank or pixel trajectories | Scored/ranked orbit hypotheses and detection bounds | Existing finite-bank folding engine; **not** the PFKT time-compression research engine |
 | `kepler-chart` | Bounded observer-chart domain and NPZ Fourier fields/query coordinates | Complex scores, geometry certificates and audits | Existing chart research transform; no raw-pixel adapter or whole-archive/full-score guarantee |
@@ -72,14 +100,14 @@ not relabel the finite-bank or chart engine as that construction.
 ## Runnable FitSky workflow
 
 ```sh
-constellation example fitsky --output fit-example
-constellation schema fitsky
-constellation validate fitsky fit-example/input.json
-constellation run fitsky fit-example/input.json --output fit-first \
+constellation example fit_sky --output fit-example
+constellation schema fit_sky
+constellation validate fit_sky fit-example/input.json
+constellation run fit_sky fit-example/input.json --output fit-first \
   --particles 256 --sweeps 8 --seed 42 --stop-after 2
 constellation inspect fit-first
 constellation inspect fit-first/checkpoint.npz
-constellation run fitsky fit-example/input.json --output fit-rest \
+constellation run fit_sky fit-example/input.json --output fit-rest \
   --resume fit-first/checkpoint.npz --catalogues
 ```
 
@@ -139,7 +167,7 @@ For example, a completed FitSky run returns an envelope shaped like:
   "schema_version": 1,
   "ok": true,
   "command": "run",
-  "tool": "fitsky",
+  "tool": "fit_sky",
   "scientific_scope": "approximate_uncertified",
   "scientific_status": "approximate_uncertified",
   "full_objective_complete": false,
@@ -155,7 +183,7 @@ For example, a completed FitSky run returns an envelope shaped like:
 This illustration omits other summary/artifact fields. The complete result is
 in `report.json`; stdout stays compact, even with `--catalogues`. A schema is
 returned in the `result` member; extract it with
-`constellation schema fitsky | jq '.result'` when a validator needs the raw
+`constellation schema fit_sky | jq '.result'` when a validator needs the raw
 JSON Schema. Unknown keys, duplicate JSON keys and nonfinite numeric literals
 are rejected. JSON Schemas use draft 2020-12 and contain no remote references.
 
@@ -187,7 +215,7 @@ inference; checkpoint inspection is metadata inspection, not full validation.
   axes are orbit, time, state-coordinate; RA/Dec axes are orbit, time, angle.
   Constants are reported explicitly. They are the Kepler propagator defaults,
   not FitSky's slightly different model constants.
-- `fitsky`: source Cartesian orbits use the scene's zero epoch and consistent
+- `fit_sky`: source Cartesian orbits use the scene's zero epoch and consistent
   heliocentric frame. Exposure times are offsets, not absolute MJD. Tangent
   bases, observers and angular pixel scales are required for orbital classes.
   See [FitSky's complete model contract](fit-sky.md).

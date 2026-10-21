@@ -15,19 +15,19 @@ https://github.com/WoshuaJolk/constellation/blob/main/docs/frames.md
 
 Discover available providers, input modes, and credentials:
 constellation capabilities
-constellation search --help
+constellation find_frames --help
 constellation credentials status
 
 Build mission-query.json from your real mission inputs. Choose field, object, orbits, arc (MPC80), or ephemeris mode as appropriate. Use the documented schema, UTC date range, coordinates or orbital parameters, and uncertainty information. Supplied ephemerides require an explicit observer. Use providers: "all" for broad discovery, or select providers justified by the mission. Ask for essential missing inputs rather than inventing targets or using bundled demonstration data. Configure any archive credentials privately using the documented credential profiles.
 
 Validate the query plan without contacting archives, then execute and audit it:
-constellation search mission-query.json --run-dir runs/mission --plan
-constellation search mission-query.json --run-dir runs/mission
-constellation audit runs/mission --checksums
+constellation find_frames mission-query.json --run-dir runs/mission --plan
+constellation find_frames mission-query.json --run-dir runs/mission
+constellation check_frames runs/mission --checksums
 
 Use a new run directory for a new query. To inspect progress or resume the same query after its process has stopped:
 constellation status runs/mission
-constellation search mission-query.json --run-dir runs/mission --resume
+constellation find_frames mission-query.json --run-dir runs/mission --deep --resume
 
 Read manifest.json, frames.csv, and the query receipts in the run directory. Report native frame IDs, observation times, retrieval links, and provenance relevant to the mission. Distinguish returned candidates, failed or blocked queries, and unqueried coverage. SSOIS supplied-ephemeris search is disabled by default; direct archives can search the supplied track. Archive matches are not detections or proof of detectability. Search retrieves metadata and product references, not the image pixels; retrieve selected products separately when needed.`;
 
@@ -48,7 +48,7 @@ export function SearchPrompt() {
     <div className="mt-5 text-xs">
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
         <a href="https://github.com/WoshuaJolk/constellation/blob/main/README.md" className="underline underline-offset-4">
-          Search surveys with constellation search
+          Search surveys with constellation find_frames
         </a>
         <button
           type="button"
