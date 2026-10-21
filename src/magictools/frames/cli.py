@@ -16,6 +16,9 @@ def capabilities():
     return {"version": 2, "providers": PROVIDERS, "mostCatalogs": MOST_CATALOGS,
             "modes": ["field", "object", "orbits", "arc", "ephemeris"],
             "defaultTimeoutSeconds": 600, "clientRowLimit": None, "dateSpanLimit": None,
+            "searchPolicy": {"default": "fast", "budgetSeconds": 60, "queryAllowanceSeconds": 10,
+                             "deep": "--deep --resume", "budgetOption": "--budget SECONDS",
+                             "scope": "CLI search; Python/API runs remain deep unless a budget is supplied"},
             "orbitCountLimit": None, "credentials": {"init": "constellation credentials init", "status": "constellation credentials status"},
             "limitations": LIMITATIONS, "datasetCoverage": coverage(),
             "customServices": {"protocols": ["obscore", "sia1", "sia2"], "idPrefix": "vo:",
@@ -52,6 +55,10 @@ def main(argv=None, *, prog="constellation"):
     search.add_argument("--run-dir", type=Path, required=True)
     search.add_argument("--resume", action="store_true")
     search.add_argument("--retry-partial", action="store_true")
+    policy = search.add_mutually_exclusive_group()
+    policy.add_argument("--deep", action="store_true", help="Exhaust planned queries without a fast-pass time budget")
+    policy.add_argument("--budget", type=float, metavar="SECONDS",
+                        help="Fast-pass time budget (default: 60 seconds); unfinished queries can be resumed")
     search.add_argument("--timeout", type=float, help="Override per-request timeout, seconds (default 600)")
     search.add_argument("--credentials", type=Path)
     search.add_argument("--format", choices=["json", "ndjson", "csv"], default="json")
@@ -140,7 +147,8 @@ def main(argv=None, *, prog="constellation"):
                     elif args.progress == "text":
                         text_progress(event)
                 result = run(x, args.run_dir, resume=args.resume, credentials=Credentials(args.credentials),
-                             emit=emit, retry_partial=args.retry_partial, progress_interval=args.progress_interval)
+                             emit=emit, retry_partial=args.retry_partial, progress_interval=args.progress_interval,
+                             max_seconds=None if args.deep else (args.budget if args.budget is not None else 60))
                 if args.format == "csv":
                     with (args.run_dir / "frames.csv").open() as f:
                         for chunk in iter(lambda: f.read(65536), ""):

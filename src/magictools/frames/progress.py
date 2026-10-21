@@ -57,6 +57,11 @@ class TextProgress:
         kind = event["type"]
         if kind == "plan":
             self.write(f"Search: {event['queries']} queries to run; {event.get('reusedQueries', 0)} reused from checkpoints. Run: {event['runDirectory']}")
+            if event.get("searchMode") == "fast":
+                self.write(f"Fast pass: about {event['budgetSeconds']:g}s. Continue unfinished work with --deep --resume and the same manifest/run directory.")
+            for survey in event.get("surveys", []):
+                datasets = ", ".join(survey["candidateDatasets"]) or survey["name"]
+                self.write(f"CANDIDATE {survey['provider']}: {datasets} | {survey['status']} (coverage unverified)")
             for item in event["unqueried"]:
                 self.write(f"UNQUERIED {item.get('provider', item.get('name', 'coverage'))}: {item['reason']}")
         elif kind == "query-start":
@@ -73,4 +78,8 @@ class TextProgress:
         elif kind == "finalizing":
             self.write("Finalizing: deduplicating frames and writing JSON/CSV artifacts")
         elif kind == "complete":
+            for survey in event.get("surveys", []):
+                self.write(f"SURVEY {survey['provider']} | {survey['status'].upper()} | {survey['frameCount']} frames | {survey['remainingQueries']} queries unfinished")
+                for message in survey["messages"]:
+                    self.write(f"  {message}")
             self.write(f"{event['status'].upper()}: {event['count']} deduplicated candidate frames. Manifest: {event['manifest']}; CSV: {event['csv']}")

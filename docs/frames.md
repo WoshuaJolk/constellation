@@ -28,7 +28,8 @@ artifacts. The shared executable also offers [Kepler and FitSky](agent-cli.md).
 3. Run the search in a new run directory. JSON goes to stdout; readable progress
    goes to stderr. `--format ndjson` streams progress/receipts to stdout; final
    frames remain in the run artifacts. `--format csv` prints the final CSV.
-4. Inspect **both** `checks` and `unqueried`. A zero count with `error`, `blocked`,
+4. Read `surveys` for a compact per-provider summary, then inspect **both** `checks`
+   and `unqueried`. A zero count with `error`, `unavailable`, `deferred`, `blocked`,
    `limited`, or an unqueried service does not establish absence of observations.
    Read `coverageAssessment` or run `audit` to assess the evidence behind matches.
 5. Retrieve the desired native products using `url`, `linkKind` and `products`.
@@ -38,9 +39,54 @@ artifacts. The shared executable also offers [Kepler and FitSky](agent-cli.md).
 ```sh
 constellation status runs/field
 constellation audit runs/field --checksums
-constellation search examples/frames/field.json --run-dir runs/field --resume --timeout 900
+constellation search examples/frames/field.json --run-dir runs/field --deep --resume --timeout 900
 constellation merge runs/field/manifest.json runs/orbits/manifest.json -o combined.json
 ```
+
+### Fast first, deep when needed
+
+CLI search defaults to a **60-second fast pass**, with a **10-second allowance
+per query**. `--budget SECONDS` changes the pass budget. `--deep` removes both
+fast-pass allowances and uses the manifest's per-request timeout (600 seconds
+by default). `--deep` and `--budget` are mutually exclusive.
+
+Providers rotate through the worker queue, with at most one active query per
+provider. The initial progress event lists candidate surveys immediately;
+completed queries report their outcomes as they arrive. A long track's windows
+cannot occupy every worker ahead of other providers. Candidate datasets come
+from the archive inventory: they are possible sources, not a geometric coverage
+result. `matchedSurveys` and `frameCount` in the final `surveys` summary describe
+returned, deduplicated candidates. Read `coverageAssessment` for their evidence.
+
+If a service returns HTTP 5xx, 408, 429, or a network failure, its query becomes
+`unavailable`, with the actual failure recorded. Remaining queries for that
+provider are deferred for this invocation and reference the failed query through
+`deferredBecauseJob`; other providers continue. HTTP authentication failures
+remain `blocked`, invalid input/parse failures remain `error`. A fast-pass timeout
+is `deferred`, not a claim that the service is unavailable. A service failure
+on one provider does not disable another provider sharing its host.
+
+Fast passes preserve valid rows, successful checkpoints, pending queries, and
+failed-attempt receipts. Continue with the **same input and run directory**:
+
+```sh
+constellation search mission-query.json --run-dir runs/mission
+constellation search mission-query.json --run-dir runs/mission --deep --resume
+```
+
+Resume retries unavailable/deferred/failed queries and reuses successful ones.
+As before, `--retry-partial` also retries queries marked partial for malformed
+rows or adapter scope limitations. There is no implicit row or date cap. A fast
+pass that leaves work unfinished returns exit code 3 and `status: incomplete`.
+The `execution` field records the chosen mode and budget.
+
+The budget is a **cooperative target, not a hard process deadline**: it stops
+scheduling, bounds network waits, checks between download chunks and emitted
+rows, and then saves results. OS DNS resolution, an in-progress socket read,
+adapter parsing/polling, and final artifact serialization can take extra time.
+No workers are abandoned while writing receipts. The Python `run()` and local
+HTTP job API retain deep behavior unless the Python caller supplies `max_seconds`;
+`capabilities.searchPolicy` describes this distinction.
 
 ### Live search progress
 
@@ -68,7 +114,7 @@ errors still appear there. `--format ndjson` always emits machine-readable
 events on stdout, regardless of the stderr setting. Use `--progress none`
 with NDJSON if you only want that event stream.
 
-Finished queries include reused checkpoints and failed/blocked attempts, not
+Finished queries include reused checkpoints and failed/blocked/deferred attempts, not
 just successful queries. Totals grow when an overflowing query splits into
 smaller queries. Live candidate-row counts cover the current invocation and
 may contain duplicates across archives or windows; the final frame count is
@@ -81,7 +127,8 @@ checks; **2** invalid input/configuration; **4** artifact-integrity audit failur
 execution is never a claim about all public surveys or detectability.
 
 There is no client row cap, date-span cap, or orbit-family size cap. The default
-per-request timeout is 600 seconds; set `timeoutSeconds` or `--timeout`.
+per-request timeout in deep mode is 600 seconds; set `timeoutSeconds` or `--timeout`.
+Fast-pass allowances take precedence over a longer per-request timeout.
 `concurrency` defaults to 3 (maximum 16), with one in-flight request per archive
 host. Archives retain their own limits and may reject large requests.
 

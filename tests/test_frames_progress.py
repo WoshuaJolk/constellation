@@ -149,3 +149,207 @@ def test_progress_interval_is_validated_before_starting(interval, tmp_path):
     with pytest.raises(ValueError, match="progress interval"):
         engine.run(validate(FIELD), tmp_path / "new", progress_interval=interval)
     assert not (tmp_path / "new").exists()
+
+
+
+def many_jobs(monkeypatch, per_provider=3):
+    from magictools.frames.adapters import Job
+    original = engine.plan
+
+    def planned(value):
+        jobs, unavailable = original(value)
+        expanded = []
+        for job in jobs:
+            for n in range(per_provider):
+                child = Job(job.provider, job.hypothesis, {**job.window, "start": job.window["start"] + n / 10},
+                            job.orbit, job.params)
+                child.id = engine.job_id(child)
+                expanded.append(child)
+        return expanded, unavailable
+    monkeypatch.setattr(engine, "plan", planned)
+
+
+def test_fast_budget_preserves_rows_and_deep_resume(tmp_path, monkeypatch):
+    import time
+    many_jobs(monkeypatch)
+    calls = []
+
+    def execute(job, value, transport, counters):
+        calls.append(job.id)
+        yield frame(job, {}, id=job.id)
+        # Simulate processing a large page: the engine stops between records.
+        time.sleep(.02)
+        yield frame(job, {}, id=job.id + "-second")
+
+    monkeypatch.setattr(engine, "execute", execute)
+    value = validate(FIELD)
+    first = engine.run(value, tmp_path, max_seconds=.01, progress_interval=.01)
+    assert first["status"] == "incomplete"
+    assert len(calls) == 1
+    assert len(first["frames"]) == 2  # Retain the row that crossed the deadline.
+    assert all(c["status"] == "deferred" for c in first["checks"])
+    assert first["surveys"][0]["remainingQueries"] == 3
+    assert first["surveys"][0]["frameCount"] == 2
+    assert first["execution"]["mode"] == "fast"
+    resumed = engine.run(value, tmp_path, resume=True)
+    assert resumed["status"] == "complete" and len(resumed["frames"]) == 6
+    assert resumed["execution"]["mode"] == "deep"
+    assert resumed["surveys"][0]["status"] == "ok"
+    assert resumed["surveys"][0]["remainingQueries"] == 0
+
+
+def test_fair_provider_rotation_and_successful_checkpoint_reuse(tmp_path, monkeypatch):
+    many_jobs(monkeypatch)
+    calls = []
+
+    def execute(job, *args):
+        calls.append(job.provider)
+        yield frame(job, {}, id=job.id)
+
+    monkeypatch.setattr(engine, "execute", execute)
+    value = validate({**FIELD, "providers": ["ztf", "eso", "cadc"], "concurrency": 1})
+    first = engine.run(value, tmp_path, max_seconds=5)
+    assert calls == ["ztf", "eso", "cadc"] * 3
+    calls.clear()
+    assert engine.run(value, tmp_path, resume=True)["frames"] == first["frames"]
+    assert calls == []
+
+
+def test_http_outage_isolated_to_provider_and_retryable(tmp_path, monkeypatch):
+    many_jobs(monkeypatch)
+    requests = []
+    healthy = threading.Event()
+
+    class Handler(BaseHTTPRequestHandler):
+        def log_message(self, *_):
+            pass
+
+        def do_GET(self):
+            requests.append(self.path)
+            self.send_response(200 if healthy.is_set() else 503)
+            self.end_headers()
+            self.wfile.write(b"ok")
+
+    server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+
+    def execute(job, value, transport, counters):
+        if job.provider == "ztf":
+            transport.request(f"http://127.0.0.1:{server.server_port}/archive")
+        yield frame(job, {}, id=job.id)
+
+    monkeypatch.setattr(engine, "execute", execute)
+    value = validate({**FIELD, "providers": ["ztf", "eso"]})
+    try:
+        result = engine.run(value, tmp_path)
+        assert len(requests) == 1  # Do not repeat an outage for every date window.
+        bad, good = result["surveys"]
+        assert bad["status"] == "unavailable" and bad["remainingQueries"] == 3
+        assert "503" in bad["messages"][0]
+        assert good["status"] == "ok" and good["frameCount"] == 3
+        assert result["checks"][0]["requests"][0]["httpStatus"] == 503
+        assert sum("deferredBecauseJob" in c for c in result["checks"]) == 2
+        healthy.set()
+        resumed = engine.run(value, tmp_path, resume=True)
+        assert resumed["status"] == "complete" and len(requests) == 4
+        assert len(resumed["frames"]) == 6
+    finally:
+        server.shutdown()
+        server.server_close()
+        thread.join(3)
+
+
+def test_fast_slow_archive_defers_without_claiming_outage(tmp_path, monkeypatch):
+    import time
+    release = threading.Event()
+
+    class Handler(BaseHTTPRequestHandler):
+        def log_message(self, *_):
+            pass
+
+        def do_GET(self):
+            release.wait(3)
+            self.send_response(200)
+            self.end_headers()
+
+    server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+
+    def execute(job, value, transport, counters):
+        if job.provider == "ztf":
+            transport.request(f"http://127.0.0.1:{server.server_port}/slow")
+        yield frame(job, {}, id=job.id)
+
+    monkeypatch.setattr(engine, "execute", execute)
+    started = time.monotonic()
+    try:
+        result = engine.run(validate({**FIELD, "providers": ["ztf", "eso"]}), tmp_path,
+                            max_seconds=.3, query_seconds=.05, progress_interval=.01)
+        assert time.monotonic() - started < 1
+        assert result["surveys"][0]["status"] == "deferred"
+        assert result["surveys"][1]["status"] == "ok"
+        assert result["status"] == "incomplete" and len(result["frames"]) == 1
+    finally:
+        release.set()
+        server.shutdown()
+        server.server_close()
+        thread.join(3)
+
+
+@pytest.mark.parametrize("options,budget", [([], 60), (["--budget", "12"], 12), (["--deep"], None)])
+def test_cli_selects_fast_or_deep(options, budget, tmp_path, monkeypatch, capsys):
+    captured = {}
+    def run(value, path, **kwargs):
+        captured.update(kwargs)
+        return {"status": "complete", "frames": []}
+    monkeypatch.setattr(cli, "run", run)
+    manifest = tmp_path / "input.json"
+    manifest.write_text(json.dumps(FIELD))
+    assert cli.main(["search", str(manifest), "--run-dir", str(tmp_path / "run"), *options]) == 0
+    assert captured["max_seconds"] == budget
+    capsys.readouterr()
+
+
+@pytest.mark.parametrize("budget", [0, -1, float("nan"), float("inf")])
+def test_invalid_fast_budget_does_not_create_run(budget, tmp_path):
+    with pytest.raises(ValueError, match="fast-pass budget"):
+        engine.run(validate(FIELD), tmp_path / "new", max_seconds=budget)
+    assert not (tmp_path / "new").exists()
+
+
+def test_fast_budget_includes_host_lock_wait(tmp_path, monkeypatch):
+    import time
+    from magictools.frames import transport as module
+    lock = threading.Lock()
+    lock.acquire()
+    monkeypatch.setitem(module._locks, "budget.invalid", lock)
+    transport = module.Transport(tmp_path)
+    transport.deadline = time.monotonic() + .03
+    started = time.monotonic()
+    try:
+        with pytest.raises(module.BudgetExpired):
+            transport.request("https://budget.invalid/should-not-be-sent")
+        assert time.monotonic() - started < .5
+        assert lock.locked()  # We did not acquire or release another request's lock.
+    finally:
+        lock.release()
+
+
+def test_one_bad_query_does_not_suppress_other_windows(tmp_path, monkeypatch):
+    from magictools.frames.transport import ArchiveError
+    many_jobs(monkeypatch)
+    calls = []
+
+    def execute(job, *args):
+        calls.append(job.id)
+        if len(calls) == 1:
+            raise ArchiveError("Invalid response for this window")
+        yield frame(job, {}, id=job.id)
+
+    monkeypatch.setattr(engine, "execute", execute)
+    result = engine.run(validate(FIELD), tmp_path)
+    assert len(calls) == 3 and len(result["frames"]) == 2
+    assert [c["status"] for c in result["checks"]] == ["error", "ok", "ok"]
+    assert result["surveys"][0]["status"] == "error"
