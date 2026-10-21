@@ -1,4 +1,4 @@
-# FitSky research interface
+# `fit_sky`: joint source inference
 
 **The full catalogue objective remains open.** This interface exposes the
 research implementation and its conditional guarantees, not an all-sky service.
@@ -8,7 +8,7 @@ See the [fixed contract](../research/fit_sky/OBJECTIVE.md),
 
 ```sh
 pip install '.[research]'
-constellation fit-sky examples/fit-sky.json /tmp/new-fit-sky \
+constellation fit_sky --engine bounded examples/fit-sky.json /tmp/new-fit-sky \
   --verify --samples 100 --statistical-samples 100000
 ```
 
@@ -18,14 +18,14 @@ scope is printed in the manifest. Output directories must be new.
 For an **approximate, resumable** variable-count posterior across exposures:
 
 ```sh
-constellation fit-sky-stream input.json /tmp/fit-sky-first \
+constellation fit_sky --engine sequential input.json /tmp/fit-sky-first \
   --particles 2048 --sweeps 20 --gibbs-flux --split-merge \
   --stop-after 10 --catalogues
-constellation fit-sky-stream input-with-more-exposures.json /tmp/fit-sky-next \
+constellation fit_sky --engine sequential input-with-more-exposures.json /tmp/fit-sky-next \
   --resume /tmp/fit-sky-first/checkpoint.npz --catalogues
 ```
 
-This separate command does not replace certified integration. It reports
+The sequential engine does not replace bounded integration. It reports
 `approximate_uncertified`, keeps the accuracy target unmet, and never presents
 particle agreement or ESS as a confidence interval. Its point estimates can
 still miss posterior modes. It supports star/galaxy/Kepler populations, motion,
@@ -65,7 +65,7 @@ as zero likelihood for an excluded part of the prior.
 See the [sequential derivation](../research/fit_sky/sequential_derivation.md)
 and [fixed 30-exposure campaign](../research/fit_sky/SEQUENTIAL_CAMPAIGN.md).
 
-The certified `constellation fit-sky` command writes:
+The bounded `constellation fit_sky --engine bounded` engine writes:
 
 - `report.json`: model, prior, requested queries, global evidence/posterior
   bounds, full partition certificate, work, and unresolved status.

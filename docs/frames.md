@@ -13,33 +13,36 @@ locking are required (Linux/macOS). Install from this checkout:
 python -m pip install -e .
 constellation capabilities
 constellation credentials status
-constellation search examples/frames/field.json --run-dir runs/field
+constellation find_frames examples/frames/field.json --run-dir runs/field
 ```
 
 Every archive command is also available under `constellation frames`, for
-example `constellation frames search ...`. Use `constellation frames inspect`
+example `constellation frames find_frames ...`. Use `constellation frames inspect`
 for archive schema inspection; `constellation inspect` inspects scientific run
 artifacts. The shared executable also offers [Kepler and FitSky](agent-cli.md).
+
+`find_frames` is the canonical lookup command; `check_frames` checks a saved run.
+The former names `search` and `audit` remain aliases with the same data contracts.
 
 ## Agent workflow
 
 1. Inspect `capabilities`; choose `providers: "all"` or named providers.
-2. Run `search ... --plan` for a validated, network-free query plan.
+2. Run `find_frames ... --plan` for a validated, network-free query plan.
 3. Run the search in a new run directory. JSON goes to stdout; readable progress
    goes to stderr. `--format ndjson` streams progress/receipts to stdout; final
    frames remain in the run artifacts. `--format csv` prints the final CSV.
 4. Read `surveys` for a compact per-provider summary, then inspect **both** `checks`
    and `unqueried`. A zero count with `error`, `unavailable`, `deferred`, `blocked`,
    `limited`, or an unqueried service does not establish absence of observations.
-   Read `coverageAssessment` or run `audit` to assess the evidence behind matches.
+   Read `coverageAssessment` or run `check_frames` to assess the evidence behind matches.
 5. Retrieve the desired native products using `url`, `linkKind` and `products`.
    Some archives supply a product manifest or registered request page instead
    of an immediately downloadable FITS file.
 
 ```sh
 constellation status runs/field
-constellation audit runs/field --checksums
-constellation search examples/frames/field.json --run-dir runs/field --deep --resume --timeout 900
+constellation check_frames runs/field --checksums
+constellation find_frames examples/frames/field.json --run-dir runs/field --deep --resume --timeout 900
 constellation merge runs/field/manifest.json runs/orbits/manifest.json -o combined.json
 ```
 
@@ -70,8 +73,8 @@ Fast passes preserve valid rows, successful checkpoints, pending queries, and
 failed-attempt receipts. Continue with the **same input and run directory**:
 
 ```sh
-constellation search mission-query.json --run-dir runs/mission
-constellation search mission-query.json --run-dir runs/mission --deep --resume
+constellation find_frames mission-query.json --run-dir runs/mission
+constellation find_frames mission-query.json --run-dir runs/mission --deep --resume
 ```
 
 Resume retries unavailable/deferred/failed queries and reuses successful ones.
@@ -102,10 +105,10 @@ Progress is flushed to **stderr**, including when output is redirected or an
 agent captures it. JSON/CSV on stdout stays usable:
 
 ```sh
-constellation search mission-query.json --run-dir runs/mission > result.json
-constellation search mission-query.json --run-dir runs/mission --resume --progress-interval 2
-constellation search mission-query.json --run-dir runs/mission --resume --progress json 2> progress.ndjson
-constellation search mission-query.json --run-dir runs/mission --resume --progress none
+constellation find_frames mission-query.json --run-dir runs/mission > result.json
+constellation find_frames mission-query.json --run-dir runs/mission --resume --progress-interval 2
+constellation find_frames mission-query.json --run-dir runs/mission --resume --progress json 2> progress.ndjson
+constellation find_frames mission-query.json --run-dir runs/mission --resume --progress none
 ```
 
 `--progress json` preserves the prior JSON event format on stderr and adds
@@ -358,8 +361,8 @@ constellation discover --text Chandra --output-dir runs/discovery
 constellation discover --protocol sia2 --text infrared --output-dir runs/infrared-services
 constellation frames inspect alma --output-dir runs/alma-schema
 constellation frames inspect my-service.json --output-dir runs/custom-schema
-constellation search examples/frames/custom-services.json --run-dir runs/custom --plan
-constellation search examples/frames/multiwavelength.json --run-dir runs/crab
+constellation find_frames examples/frames/custom-services.json --run-dir runs/custom --plan
+constellation find_frames examples/frames/multiwavelength.json --run-dir runs/crab
 ```
 
 `discover` queries RegTAP and returns candidate service configurations. A TAP

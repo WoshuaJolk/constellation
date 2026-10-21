@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from .sequential import SequentialFit
+from .workflow import prepare, advance
 
 
 def main(argv=None, *, prog=None):
@@ -33,27 +33,17 @@ def main(argv=None, *, prog=None):
     settings = {k: getattr(args, k) for k in ("particles", "sweeps", "seed", "pixel_block",
                                            "max_stages", "gibbs_flux", "split_merge")
                 if getattr(args, k) is not None}
-    if args.resume:
-        fit = SequentialFit.load(args.resume, value["scene"])
-        if any(fit.settings[k] != v for k, v in settings.items()):
-            parser.error("Resume uses checkpoint settings; conflicting settings require a fresh fit")
-        if "queries" in value:
-            fit.model.events(fit.population, value["queries"])
-            fit.queries = value["queries"]
-    else:
-        fit = SequentialFit(value["scene"], queries=value.get("queries"), **settings)
-    stop = len(value["scene"]["exposures"]) if args.stop_after is None else args.stop_after
-    if not fit.assimilated < stop <= len(value["scene"]["exposures"]):
-        parser.error("--stop-after must append at least one available exposure")
+    try:
+        fit, stop = prepare(value, settings, resume=args.resume, stop_after=args.stop_after,
+                            exposure_batch=args.exposure_batch)
+    except ValueError as error:
+        parser.error(str(error))
     args.output.mkdir(parents=True)
     (args.output/"input.json").write_text(json.dumps(value, indent=2, allow_nan=False)+"\n")
     try:
-        while fit.assimilated < stop:
-            fit.assimilate(min(stop, fit.assimilated+args.exposure_batch))
-            fit.save(args.output/"checkpoint.npz")
-            (args.output/"report.json").write_text(
-                json.dumps(fit.report(include_catalogues=args.catalogues), indent=2, allow_nan=False)+"\n")
-            print(json.dumps(fit.summary(), allow_nan=False), flush=True)
+        advance(fit, args.output, stop=stop, exposure_batch=args.exposure_batch,
+                catalogues=args.catalogues,
+                on_progress=lambda summary: print(json.dumps(summary, allow_nan=False), flush=True))
     except Exception as exc:
         (args.output/"failure.json").write_text(json.dumps({
             "status": "interrupted", "last_complete_exposure": fit.assimilated,

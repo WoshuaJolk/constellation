@@ -11,11 +11,17 @@ from magictools.frames import cli as frames_cli
 def test_catalogue_includes_every_command_family(capsys):
     assert agent_cli.main(["list"]) == 0
     result = json.loads(capsys.readouterr().out)["result"]
-    assert "fitsky" in result["tools"]
-    assert "search" in result["commands"]["archive"]
+    assert "fit_sky" in result["tools"]
+    assert "fitsky" not in result["tools"]
+    assert result["aliases"]["science"]["fitsky"] == "fit_sky"
+    assert "find_frames" in result["commands"]["archive"]
+    assert "check_frames" in result["commands"]["archive"]
+    assert "search" not in result["commands"]["archive"]
+    assert result["aliases"]["archive"]["search"] == "find_frames"
     assert "frames inspect" in result["commands"]["archive"]
     assert "force_track" in result["commands"]["manifests"]
-    assert "fit-sky-stream" in result["commands"]["research"]
+    assert "fit_sky" in result["commands"]["research"]
+    assert "fit-sky-stream" not in result["commands"]["research"]
 
 
 @pytest.mark.parametrize("prefix", [[], ["frames"]])
@@ -72,3 +78,51 @@ def test_namespaced_help_uses_public_command(capsys):
         agent_cli.main(["frames", "inspect", "--help"])
     assert exited.value.code == 0
     assert "constellation frames inspect" in capsys.readouterr().out
+
+
+@pytest.mark.parametrize("prefix", [[], ["frames"]])
+def test_archive_new_names_and_aliases_share_plan_and_receipts(prefix, tmp_path, monkeypatch, capsys):
+    from magictools.frames import engine
+    from magictools.frames.adapters import frame
+    manifest = tmp_path / "query.json"
+    manifest.write_text(json.dumps({"mode": "field", "ra": 150, "dec": 2, "radius": .01,
+                                   "start": "2020-01-01", "end": "2020-01-02", "providers": ["ztf"]}))
+    run = tmp_path / "run"
+    common = [str(manifest), "--run-dir", str(run)]
+    assert agent_cli.main(prefix + ["find_frames", *common, "--plan"]) == 0
+    canonical = json.loads(capsys.readouterr().out)
+    assert agent_cli.main(prefix + ["search", *common, "--plan"]) == 0
+    assert json.loads(capsys.readouterr().out) == canonical
+
+    monkeypatch.setattr(engine, "execute", lambda job, *_: iter([frame(job, {}, id="frame-1")]))
+    assert agent_cli.main(prefix + ["find_frames", *common, "--progress", "none"]) == 0
+    assert json.loads(capsys.readouterr().out)["frames"][0]["id"] == "frame-1"
+    assert agent_cli.main(prefix + ["check_frames", str(run), "--checksums"]) == 0
+    canonical = json.loads(capsys.readouterr().out)
+    assert agent_cli.main(prefix + ["audit", str(run), "--checksums"]) == 0
+    assert json.loads(capsys.readouterr().out) == canonical
+
+
+@pytest.mark.parametrize("command,module", agent_cli.RESEARCH_ALIASES.items())
+def test_legacy_fitsky_commands_keep_their_engine(command, module, monkeypatch):
+    calls = []
+    def imported(name):
+        assert name == module
+        return SimpleNamespace(main=lambda argv, **kwargs: calls.append(argv) or 0)
+    monkeypatch.setattr(agent_cli, "import_module", imported)
+    assert agent_cli.main([command, "input.json", "new-output"]) == 0
+    assert calls == [["input.json", "new-output"]]
+
+
+@pytest.mark.parametrize("flags,module", [([], "research.fit_sky.sequential_cli"),
+    (["--engine", "sequential"], "research.fit_sky.sequential_cli"),
+    (["--engine", "bounded"], "research.fit_sky.cli")])
+def test_one_fitsky_tool_selects_explicit_engine(flags, module, monkeypatch):
+    from magictools import fit_sky_cli
+    calls = []
+    def imported(name):
+        assert name == module
+        return SimpleNamespace(main=lambda argv, **kwargs: calls.append((argv, kwargs)) or 4)
+    monkeypatch.setattr(fit_sky_cli, "import_module", imported)
+    assert fit_sky_cli.main(["input.json", "new-output", *flags, "--seed", "7"]) == 4
+    assert calls == [(["input.json", "new-output", "--seed", "7"], {"prog": "constellation fit_sky"})]
