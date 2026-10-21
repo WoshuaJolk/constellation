@@ -186,11 +186,17 @@ def partition_search(log_ratios, log_prior, activity, *, max_nodes=100000,
 
     pending = float(logsumexp([-row[0] for row in frontier])) if frontier else -math.inf
     total_upper = float(np.logaddexp(log_known, pending))
-    unresolved = math.exp(pending-total_upper) if frontier else 0.
+    def upper_probability(log_mass, log_denominator):
+        if not math.isfinite(log_mass):
+            return 0.
+        # Preserve a positive ceiling when a nonempty contribution underflows.
+        return min(1., max(float(np.nextafter(0., 1.)), math.exp(min(0., log_mass-log_denominator))))
+
+    unresolved = upper_probability(pending, total_upper) if frontier else 0.
 
     def interval(log_event):
         lower = math.exp(log_event-total_upper) if math.isfinite(log_event) else 0.
-        upper = math.exp(float(np.logaddexp(log_event, pending))-total_upper)
+        upper = upper_probability(float(np.logaddexp(log_event, pending)), total_upper)
         return [max(0., min(1., lower)), max(0., min(1., upper))]
 
     candidates = []
@@ -205,7 +211,7 @@ def partition_search(log_ratios, log_prior, activity, *, max_nodes=100000,
                     # An exact complete assignment cannot occur in the frontier.
                     "probability_interval": [
                         math.exp(score-total_upper),
-                        math.exp(score-log_known)]}
+                        upper_probability(score, log_known)]}
                    for score, p in best]
     max_unseen = max((row[4] for row in frontier), default=-math.inf)
     remaining_count = sum(completions(n-row[3], len(row[2])) for row in frontier)
@@ -215,6 +221,7 @@ def partition_search(log_ratios, log_prior, activity, *, max_nodes=100000,
         "completed_assignments": completed, "remaining_assignments": remaining_count,
         "total_assignments": completions(n, 0), "visited_nodes": visited,
         "frontier_nodes": len(frontier), "unresolved_mass_upper": unresolved,
+        "log_unresolved_mass_upper": pending-total_upper if frontier else None,
         "log_partition_function_interval": [
             None if not math.isfinite(log_known) else log_known, total_upper],
         "ranked_candidates": candidates[:top_k],

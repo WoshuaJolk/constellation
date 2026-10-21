@@ -225,3 +225,27 @@ def test_cli_example_direct_run_and_provenance(tmp_path, capsys):
     before = (output/"report.json").read_bytes()
     code, result = call("solve_itf", folder/"input.json", "--output", output)
     assert code == 2 and (output/"report.json").read_bytes() == before
+
+
+@pytest.mark.parametrize("activity", [.001, .5, 1., 2., 100.])
+def test_mass_ceiling_across_link_prior_regimes(activity):
+    ratios = np.exp(np.random.default_rng(17).normal(0., 3., (4, 3)))
+    weights = [.1, .2, .7]
+    truth, total = exhaustive(ratios, weights, activity)
+    for budget in [3, 8, 15, 21]:
+        result = partition_search(np.log(ratios), np.log(weights), activity,
+                                  max_nodes=budget, queries=[(0, 1, 2)])
+        event = sum(p for partition, p in truth.items()
+                    if any({0, 1, 2} <= set(block) for block in partition))
+        lower, upper = result["queries"][0]["probability_interval"]
+        assert lower-1e-12 <= event <= upper+1e-12
+        assert result["log_partition_function_interval"][1] >= math.log(total)-1e-12
+
+
+def test_nonempty_unresolved_mass_does_not_underflow_to_zero():
+    result = partition_search(np.array([[1000.], [1000.]]), np.array([0.]), 1.,
+                              max_nodes=3)
+    assert result["status"] == "incomplete"
+    assert result["remaining_assignments"] == 1
+    assert 0 < result["unresolved_mass_upper"] < 1e-300
+    assert result["log_unresolved_mass_upper"] == pytest.approx(-2000.)
