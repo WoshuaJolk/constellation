@@ -53,7 +53,8 @@ def main(argv=None, *, prog="constellation"):
         command.add_argument("--credentials", type=Path)
     search = commands.add_parser("find_frames", aliases=["search"], help="Execute a JSON manifest and save complete local query receipts")
     search.add_argument("manifest", type=Path)
-    search.add_argument("--run-dir", type=Path, required=True)
+    search.add_argument("-o", "--output", "--run-dir", dest="run_dir", type=Path,
+                        help="Run directory (default: a new unique directory under runs/)")
     search.add_argument("--resume", action="store_true")
     search.add_argument("--retry-partial", action="store_true")
     policy = search.add_mutually_exclusive_group()
@@ -128,6 +129,8 @@ def main(argv=None, *, prog="constellation"):
             serve(args.directory, args.port, Credentials(args.credentials))
             return 0
         else:
+            if args.resume and args.run_dir is None:
+                raise ValueError("Resume requires -o RUN_DIRECTORY (or --run-dir) to identify the saved run")
             data = json.loads(args.manifest.read_text())
             if args.timeout is not None:
                 data["timeoutSeconds"] = args.timeout
@@ -137,6 +140,9 @@ def main(argv=None, *, prog="constellation"):
                 jobs, unavailable = plan(x)
                 result = {"input": x, "queries": [asdict(j) for j in jobs], "unqueried": unavailable}
             else:
+                if args.run_dir is None:
+                    from ..run_paths import new_run
+                    args.run_dir = new_run("find_frames", args.manifest)
                 text_progress = TextProgress(sys.stderr)
                 def emit(event):
                     if args.format == "ndjson":

@@ -2,7 +2,7 @@
 
 `constellation` provides discovery, JSON Schemas, runnable examples, validation,
 execution and inspection through one noninteractive command. Scientific engines
-retain their existing model assumptions and accuracy scopes. Use Python 3.11 or later for the complete research installation below.
+retain their existing model assumptions and accuracy scopes. Use Python 3.11 or later for the complete research installation below. The promoted core tools support Python 3.10+ and include JSON schema support without extras.
 
 The Python distribution is named `const-ellation`; the executable is `constellation`. The
 Python import package remains `magictools` for compatibility. If you installed
@@ -36,6 +36,27 @@ The same executable provides [archive discovery](frames.md) through
 `constellation find_frames`, `constellation capabilities`, and `constellation frames`.
 Archive schema inspection uses `constellation frames inspect`; the scientific
 `constellation inspect` command and its JSON contract remain unchanged.
+
+## Release tools and concise invocation
+
+`constellation list --ready` shows only the tools with recorded release acceptance
+cases. The complete `list` response includes `release.ready` and
+`release.experimental` with scope and promotion gaps. `doctor` checks the base
+installation for the ready tools; `doctor --all` also checks research dependencies.
+A missing optional research dependency does not make the base installation unready.
+
+```sh
+constellation kepler-propagate orbit.json
+constellation kepler-propagate orbit.json -o runs/orbit
+constellation force_track tracks.json -o fluxes.json
+```
+
+`kepler-propagate` is a shortcut to `run kepler-propagate`. Scientific `run`
+accepts `-o` or `--output` for a new artifact directory; if omitted, a unique
+path under `runs/` is chosen and returned in the JSON envelope. Existing files
+and directories are never overwritten. Other manifest tools write JSON to
+stdout, or to the new file named by `-o`. See the
+[acceptance evidence](release-readiness.md) for each promoted tool.
 
 ## One command for every tool
 

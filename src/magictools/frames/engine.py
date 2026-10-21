@@ -192,6 +192,7 @@ def _run_locked(x, directory, resume, credentials, emit, transport_factory, retr
         provider_order = deque(dict.fromkeys(j.provider for j in queued))
         db.execute("INSERT OR REPLACE INTO meta VALUES ('execution',?)", (stable({
             "mode": "fast" if deadline is not None else "deep", "budgetSeconds": max_seconds,
+            "runDirectory": str(directory.resolve()),
             "queryAllowanceSeconds": query_seconds if deadline is not None else None}),))
         db.commit()
         next_progress = started + progress_interval

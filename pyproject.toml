@@ -4,14 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "const-ellation"
-version = "0.6.0"
+version = "0.7.0"
 description = "Astronomical inference, orbit searches, stellar tracebacks, and Gaussian detection bounds"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "astropy>=6,<9"]
+dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "astropy>=6,<9", "jsonschema>=4.21,<5"]
+
+[project.urls]
+Repository = "https://github.com/WoshuaJolk/constellation"
+Documentation = "https://github.com/WoshuaJolk/constellation/blob/main/README.md"
+Issues = "https://github.com/WoshuaJolk/constellation/issues"
 
 [project.optional-dependencies]
-agent = ["jsonschema>=4.21,<5"]
+agent = []  # Compatibility extra; schema support is now included in the base install.
 test = ["pytest>=8,<10"]
 ephemeris = ["jplephem>=2.22,<3"]
 research = ["finufft>=2.4,<3", "python-flint>=0.8,<0.9", "mpmath>=1.3,<2"]

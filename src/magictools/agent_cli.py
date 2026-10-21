@@ -14,6 +14,7 @@ import sys
 from .agent_contract import TOOLS, TOOL_ALIASES, schema
 from .cli import MANIFEST_COMMANDS, DEMO_COMMANDS
 from . import __version__
+from .release import READY, EXPERIMENTAL, catalogue as release_catalogue
 
 
 ARCHIVE_COMMANDS = {
@@ -257,13 +258,16 @@ def parser():
     for name, help_text in ARCHIVE_COMMANDS.items():
         subs.add_parser(name, help=help_text)
     for name in MANIFEST_COMMANDS:
-        subs.add_parser(name, help="Run the " + name + " manifest tool")
+        subs.add_parser(name, help=("Experimental/specialist: " if name in EXPERIMENTAL else "") + "Run the " + name + " manifest tool")
     for name in DEMO_COMMANDS:
         subs.add_parser(name, help="Generate and run the " + name + " experiment")
+    subs.add_parser("kepler-propagate", help="Propagate supplied orbits; shortcut for run kepler-propagate")
     for name in RESEARCH_COMMANDS:
-        subs.add_parser(name, help="Run the " + name + " research interface")
-    subs.add_parser("list", help="Discover tools and scientific limitations")
-    subs.add_parser("doctor", help="Check optional dependencies without running science")
+        subs.add_parser(name, help="Experimental: run the " + name + " research interface")
+    listing = subs.add_parser("list", help="Discover tools, release status, and scientific limitations")
+    listing.add_argument("--ready", action="store_true", help="Show only tools with release acceptance evidence")
+    doctor = subs.add_parser("doctor", help="Check dependencies for release-ready tools")
+    doctor.add_argument("--all", action="store_true", help="Also inspect optional research dependencies")
     s = subs.add_parser("schema", help="Return a tool's JSON Schema in result")
     s.add_argument("tool", choices=TOOLS, type=lambda name: TOOL_ALIASES.get(name, name))
     e = subs.add_parser("example", help="Create a runnable synthetic manifest and its resources")
@@ -274,7 +278,7 @@ def parser():
         s.add_argument("tool", choices=TOOLS, type=lambda name: TOOL_ALIASES.get(name, name))
         s.add_argument("manifest", type=Path)
         if name == "run":
-            s.add_argument("--output", required=True, type=Path)
+            s.add_argument("-o", "--output", type=Path, help="New run directory (default: unique directory under runs/)")
             s.add_argument("--resume", type=Path, help="FitSky checkpoint, including v1 non-orbital checkpoints")
             for key in ["particles", "sweeps", "seed", "pixel_block", "max_stages", "stop_after", "exposure_batch"]:
                 minimum = 2 if key == "particles" else 0 if key == "seed" else 1
@@ -301,6 +305,8 @@ def main(argv=None):
     owned = None
     executing = False
     try:
+        if argv and argv[0] == "kepler-propagate":
+            argv.insert(0, "run")
         if argv and argv[0] in ARCHIVE_ALIASES:
             argv[0] = ARCHIVE_ALIASES[argv[0]]
         if argv and (argv[0] == "frames" or argv[0] in ARCHIVE_COMMANDS):
@@ -316,11 +322,14 @@ def main(argv=None):
             entry = import_module((RESEARCH_COMMANDS | RESEARCH_ALIASES)[argv[0]]).main
             return entry(argv[1:], prog="constellation " + argv[0]) or 0
         args = parser().parse_args(argv)
+        if args.command == "run" and args.output is None:
+            from .run_paths import new_run
+            args.output = new_run(args.tool, args.manifest)
         envelope.update(command=args.command)
         if hasattr(args, "tool"):
             envelope.update(tool=args.tool, scientific_scope=TOOLS[args.tool]["accuracy"], full_objective_complete=False)
         if args.command == "list":
-            result = {"tools": TOOLS, "aliases": {
+            result = {"release": release_catalogue(), "tools": TOOLS, "aliases": {
                 "archive": ARCHIVE_ALIASES, "science": TOOL_ALIASES,
                 "research": {"fit-sky": "fit_sky --engine bounded",
                              "fit-sky-stream": "fit_sky --engine sequential"},
@@ -329,13 +338,23 @@ def main(argv=None):
             }, "commands": {
                 "archive": dict(ARCHIVE_COMMANDS, **{"frames inspect": "Inspect an archive service schema"}),
                 "manifests": list(MANIFEST_COMMANDS), "demos": list(DEMO_COMMANDS),
+                "direct": {"kepler-propagate": "run kepler-propagate"},
                 "research": list(RESEARCH_COMMANDS),
                 "science": ["list", "doctor", "schema", "example", "validate", "run", "inspect"],
                 "help": "constellation <command> --help; each tool retains its output and exit-code contract",
             }, "exit_codes": {"0": "execution completed; inspect scientific status", "2": "input or usage error",
                        "3": "missing dependency", "4": "execution failed/refused", "130": "interrupted"}}
+            if args.ready:
+                result = {"tools": READY, "evidence": "docs/release-readiness.md",
+                          "meaning": release_catalogue()["meaning"]}
         elif args.command == "doctor":
-            result = {"tools": {name: dependencies(name) for name in TOOLS}, "install": "pip install '.[research,agent]'"}
+            core = {name: importlib.util.find_spec(name) is not None for name in ("numpy", "scipy", "astropy", "jsonschema")}
+            checked = {name: dict(core) for name in READY}
+            if args.all:
+                checked.update({name: dependencies(name) for name in TOOLS})
+            result = {"ready": all(core.values()), "tools": checked,
+                      "scope": "Installed dependencies; no archive-uptime or scientific-validation check",
+                      "install": "pip install ." if not args.all else "pip install '.[research]'"}
         elif args.command == "schema":
             result = schema(args.tool)
         elif args.command == "inspect":

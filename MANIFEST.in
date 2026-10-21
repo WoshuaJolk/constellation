@@ -1,0 +1,8 @@
+include README.md
+recursive-include docs *.md *.json
+recursive-include examples *.json *.py
+recursive-include tests *.py *.json *.gz *.fits *.tbl *.csv *.txt *.html
+recursive-include research/ejector_fit/data *.json
+prune node_modules
+prune .next
+global-exclude __pycache__ *.py[cod]
