@@ -193,6 +193,16 @@ difficult propagations, but they do not account for orbits absent from the
 declared finite prior. The ceilings can be very loose; reducing that looseness
 without losing coverage is an important next research problem.
 
+### Reference cost
+
+With N tracklets, M supplied orbit states and O observations, forward geometry
+uses batches over M*O state/time pairs. Distinct block scores are cached; a block
+of size s costs O(M*s) to integrate over the finite prior. Exhausting the search
+still visits every set partition (Bell-number growth), with a heap over the
+pending prefixes. Candidate output also requires conditional orbit weights.
+This is an independent correctness baseline, not the scalable representation
+needed to meet the full-ITF objective. There is no hidden sublinear-cost claim.
+
 ### Reading a report
 
 - finite_prior_complete: every assignment in this small finite-prior model was

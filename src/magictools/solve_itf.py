@@ -134,6 +134,9 @@ def partition_search(log_ratios, log_prior, activity, *, max_nodes=100000,
 
     def bound(partition, k):
         weight = sum(block_score(b) for b in partition)
+        if k == n:
+            # A terminal singleton cannot mature: its exact weight is available.
+            return float(weight), float(weight), float(weight)
         ceiling = weight+sum(singleton[b[0]] for b in partition if len(b) == 1)+suffix[k]
         return float(ceiling+math.log(completions(n-k, len(partition)))), float(ceiling), float(weight)
 
