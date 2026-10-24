@@ -1,0 +1,209 @@
+{
+  "created_utc": 1792833432.4119773,
+  "version": "v5.2-bounded-evidence-pilot-1",
+  "status": "fixed_design_pending_external_commitment",
+  "study_mode": "EVIDENCE_ONLY",
+  "purpose": "Measure whether the fixed independent-reference evidence procedure can resolve untouched candidate associations; self-review is provisional, and this is not a purity or discovery certificate.",
+  "frame_sha256": "3e2fa96e75ad8fc77af0f5d15142c452fc9f779f9588a58da4f96d5bb4ae4aa4",
+  "routes": {
+    "no_shared_returned_candidate_v2": {
+      "N": 18863,
+      "N_plan": 18863,
+      "n1": 24,
+      "n2": 24,
+      "looks": 1,
+      "resource_capacity_cases": 24,
+      "t_plan_agent_minutes": 10,
+      "strata": {
+        "modern|lt4blocks|multi_station": 9364,
+        "modern|ge4blocks|multi_station": 4814,
+        "modern|lt4blocks|single_station": 4181,
+        "modern|ge4blocks|single_station": 470,
+        "pre2000|lt4blocks|multi_station": 7,
+        "pre2000|ge4blocks|multi_station": 26,
+        "pre2000|lt4blocks|single_station": 1
+      },
+      "planning_audit": {
+        "N": 18863,
+        "n": 1431,
+        "c": 5,
+        "alpha": 0.0025,
+        "K_good": 37,
+        "power_at_good": 0.9420562637788255
+      },
+      "all_clean_preflight": {
+        "q_hat": 0,
+        "q_L": 0,
+        "q_U": 0.19047871494460053,
+        "width": 0.19047871494460053,
+        "point_audit_power": 1.0,
+        "decision": "EVIDENCE_ONLY",
+        "can_SCREEN_GO": false
+      }
+    },
+    "returned_known_candidate_v2": {
+      "N": 386,
+      "N_plan": 386,
+      "n1": 24,
+      "n2": 24,
+      "looks": 1,
+      "resource_capacity_cases": 24,
+      "t_plan_agent_minutes": 10,
+      "strata": {
+        "modern|lt4blocks|single_station": 292,
+        "modern|lt4blocks|multi_station": 91,
+        "pre2000|lt4blocks|single_station": 1,
+        "modern|ge4blocks|single_station": 2
+      },
+      "planning_audit": {
+        "N": 386,
+        "n": 299,
+        "c": 0,
+        "alpha": 0.0025,
+        "K_good": 0,
+        "power_at_good": 1.0
+      },
+      "all_clean_preflight": {
+        "q_hat": 0,
+        "q_L": 0,
+        "q_U": 0.18393782383419688,
+        "width": 0.18393782383419688,
+        "point_audit_power": 1.0,
+        "decision": "EVIDENCE_ONLY",
+        "can_SCREEN_GO": false
+      }
+    }
+  },
+  "input_hashes": {
+    "/workspace/constellation/runs/solve-itf-certification-v5-20261024/pilot-evidence-v1/frame.jsonl.gz": "3e2fa96e75ad8fc77af0f5d15142c452fc9f779f9588a58da4f96d5bb4ae4aa4",
+    "/workspace/constellation/runs/solve-itf-certification-v5-20261024/pilot-frame-closure-v2/summary.json": "ac848538909d3fcab2deaf4b3130650eda8f38549cec53f1f862a866bcc2f72b",
+    "/workspace/constellation/runs/solve-itf-certification-v5-20261024/pilot-cost-calibration-v2/timing-summary.json": "67e19278c04e350537f3bd029d3a059c0ac26899ae306466a1fdf6b5f566b229",
+    "/workspace/constellation/runs/solve-itf-certification-v5-20261024/pilot-cost-calibration-v2/source-contract.json": "af9fda80e01aa0334d5c75440aa22aa7cda764488bc1a9c971fff8a6561527f9",
+    "/workspace/constellation/runs/solve-itf-certification-v5-20261024/pilot-frame-closure-v2/preparation-contract.json": "c2834c114cc506b23008bd41676cf25990782df83ffb51ef97f312a99c19933d",
+    "/workspace/constellation/research/solve_itf/ASSOCIATION-PROTOCOL-V5.md": "ae492d58cdf3e4b78425e335c86dadca7ed189ea95b1ecb0bd6d548a7474e4e3",
+    "/workspace/constellation/research/solve_itf/ASSOCIATION-SELF-REVIEW-ADDENDUM-V5.2.md": "eed9829c52b6b9f034599057817730a4d191161ceb961955f24f447a563eda37",
+    "/workspace/constellation/.cache/solve_itf/final-cold-cache/tracklets.npy": "e0805dae89e6736f8cdeccd859ad6d37dfad8588d552bac9fc935fb2b69075b6",
+    "/workspace/constellation/.cache/solve_itf/final-cold-cache/observations.npy": "5889c476a721bc4d61c7e8f0fdb1d980b77c60817b0d7f8c3e930a7a39d159d3",
+    "/workspace/constellation/research/solve_itf/cloud/pilot_fixed_draw.py": "8f4ae242a9724565939d508ae80ae7e340af7a678cada122cba561701899e180",
+    "/workspace/constellation/research/solve_itf/cloud/pilot_evidence_launch.py": "4c12ca57393c6aa7d65b0c9e741904b29a12a428cf9f24b868d8f3847da4c928",
+    "/workspace/constellation/research/solve_itf/cloud/pilot_evidence_sources.py": "884964daf8a3e6e782a6e31e77f28749c8d1807f9eafe7b7d3709ab8ae6dec0f",
+    "/workspace/constellation/research/solve_itf/cloud/pilot_evidence_coordinator.py": "c318f3c5fdbfb63db7334963383c0e42cf47c710cc55b5b05d2279897f01d5fd",
+    "/workspace/constellation/research/solve_itf/cloud/pilot_covariance_followthrough.py": "6a358ffc96f0e109601cd888c5cc75d628bb2b9d69f296600b2e15a7d966907c",
+    "/workspace/constellation/research/solve_itf/cloud/warm_reference_fleet.py": "aa6eee8017f8a5b6d9e2460ce2b5ea6f6125dad835a1fc139ca9ac40dce13b84",
+    "/workspace/constellation/research/solve_itf/cloud/pilot_season_reference.py": "edb8fb7713b7a7a71328f55b926f26160ee3e15695292251812c76f08f00dc49",
+    "/workspace/constellation/research/solve_itf/cloud/development_followthrough.py": "23de1156f61996134d0981ee88517c2fc36e4d74f587c9e189b68138c2df2119",
+    "/workspace/constellation/research/solve_itf/cloud/pilot_cost_packets.py": "8941e2a38fa8d55d0e464854de7f6910c51e032f78a92b7cc58b92dd202a1513",
+    "/workspace/constellation/research/solve_itf/cloud/pilot_cost_review.py": "23ee94e68731331b7ecd0cb916c2e46f70acf2c0e4dd3878c3d02dd03d26c152",
+    "/workspace/constellation/research/solve_itf/cloud/pilot_cost_competition_matrix.py": "1ccf6977023055fba832b101b38cfc5823d93e519c7f33bcc1f7ef6fb59b5dde",
+    "/workspace/constellation/research/solve_itf/cloud/reference_refits.py": "a076290a32de6fa52b652651e23b1231b856449e139fe06e88d1e91e1da0b650",
+    "/workspace/constellation/research/solve_itf/cloud/certification_self_audit.py": "5e92ab70767ec80e4281ccebc1898d46cbda86cc456c9d7c621110fbeaa85d97",
+    "/workspace/constellation/research/solve_itf/cloud/pilot_evidence_packets.py": "d3191852ff40ec74867e57158893464343ce6fa58a2f77252954cebeba63f8d9"
+  },
+  "code_hashes": {
+    "research/solve_itf/cloud/pilot_fixed_draw.py": "8f4ae242a9724565939d508ae80ae7e340af7a678cada122cba561701899e180",
+    "research/solve_itf/cloud/pilot_evidence_launch.py": "4c12ca57393c6aa7d65b0c9e741904b29a12a428cf9f24b868d8f3847da4c928",
+    "research/solve_itf/cloud/pilot_evidence_sources.py": "884964daf8a3e6e782a6e31e77f28749c8d1807f9eafe7b7d3709ab8ae6dec0f",
+    "research/solve_itf/cloud/pilot_evidence_coordinator.py": "c318f3c5fdbfb63db7334963383c0e42cf47c710cc55b5b05d2279897f01d5fd",
+    "research/solve_itf/cloud/pilot_covariance_followthrough.py": "6a358ffc96f0e109601cd888c5cc75d628bb2b9d69f296600b2e15a7d966907c",
+    "research/solve_itf/cloud/warm_reference_fleet.py": "aa6eee8017f8a5b6d9e2460ce2b5ea6f6125dad835a1fc139ca9ac40dce13b84",
+    "research/solve_itf/cloud/pilot_season_reference.py": "edb8fb7713b7a7a71328f55b926f26160ee3e15695292251812c76f08f00dc49",
+    "research/solve_itf/cloud/development_followthrough.py": "23de1156f61996134d0981ee88517c2fc36e4d74f587c9e189b68138c2df2119",
+    "research/solve_itf/cloud/pilot_cost_packets.py": "8941e2a38fa8d55d0e464854de7f6910c51e032f78a92b7cc58b92dd202a1513",
+    "research/solve_itf/cloud/pilot_cost_review.py": "23ee94e68731331b7ecd0cb916c2e46f70acf2c0e4dd3878c3d02dd03d26c152",
+    "research/solve_itf/cloud/pilot_cost_competition_matrix.py": "1ccf6977023055fba832b101b38cfc5823d93e519c7f33bcc1f7ef6fb59b5dde",
+    "research/solve_itf/cloud/reference_refits.py": "a076290a32de6fa52b652651e23b1231b856449e139fe06e88d1e91e1da0b650",
+    "research/solve_itf/cloud/certification_self_audit.py": "5e92ab70767ec80e4281ccebc1898d46cbda86cc456c9d7c621110fbeaa85d97",
+    "research/solve_itf/cloud/pilot_evidence_packets.py": "d3191852ff40ec74867e57158893464343ce6fa58a2f77252954cebeba63f8d9"
+  },
+  "tracklets": "/workspace/constellation/.cache/solve_itf/final-cold-cache/tracklets.npy",
+  "observations": "/workspace/constellation/.cache/solve_itf/final-cold-cache/observations.npy",
+  "source_contract_template": "/workspace/constellation/runs/solve-itf-certification-v5-20261024/pilot-cost-calibration-v2/source-contract.json",
+  "source_job_name": "certv5evidencepilot20261024v1",
+  "resources": {
+    "starting_cumulative_usd": 222.88127942107232,
+    "incremental_cloud_cap_usd": 75,
+    "stop_at_cumulative_usd": 297.88127942107235,
+    "deadline_utc": 1792876632.4119773,
+    "previous_spend_not_reclassified": true,
+    "source_concurrency": 2,
+    "source_timeout_seconds": 45,
+    "source_stop_on_429": true,
+    "numerical_slots": 25,
+    "actual_cpus_per_slot": 8,
+    "provisioned_hourly_usd": 5.35715,
+    "agent": "Codex /root",
+    "agent_active_ceiling_minutes": 720,
+    "core_agent_minutes": 480,
+    "diagnostic_agent_minutes": 80,
+    "setup_minutes": 40,
+    "overrun_minutes": 120,
+    "core_review_timeout_minutes": 10,
+    "diagnostic_review_timeout_minutes": 5,
+    "automated_fit_timeout_seconds": 180,
+    "measured_agent_calibration_seconds": 451.9059953689575,
+    "measured_calibration_numerical_usd": 0.6542888400374807,
+    "planning_cloud_usd_per_case": 0.1,
+    "planning_case_capacity_per_route": 24,
+    "cloud_case_allowance_per_route": 10,
+    "standing_fleet_twelve_hour_cost": 64.2858,
+    "overrun_reserve_usd": 10.7142,
+    "human_review_minutes": null,
+    "human_publication_capacity_committed": false,
+    "caveat": "10-minute agent reserve is not human all-in person-time. Automated source/fit/covariance times and shared work are recorded separately; all standing-fleet billing counts. Resource stop never changes the fixed sample or discards timeouts."
+  },
+  "beacon": {
+    "provider": "NIST beacon 2 HTTPS response",
+    "not_before_utc": 1792833780,
+    "url": "https://beacon.nist.gov/beacon/2.0/pulse/time/1792833780000",
+    "give_up_utc": 1792835580,
+    "rule": "Use exact committed minute pulse; verify timestamp and 64-byte output; keep raw HTTPS receipt. No fallback, pulse substitution or seed shopping; outage means no draw.",
+    "signature_validation": "Authenticated HTTPS retrieval; beacon digital signature is retained but not independently verified"
+  },
+  "scientific_procedure": {
+    "source_inventory": "Pinned full SkyKnown below-threshold inventory; every returned identity on every sampled tracklet, no rank/threshold selection",
+    "source_reconstruction": "Same timed conservative branch: fixed-site modern optical domain, 60-second observation/alias exclusion plus all-station +/-180-day quarantine; two source-only starts, exact-state covariance and nominal/linearization checks. No warm known orbit.",
+    "branch_limitation": "The 180-day branch is a deliberately conservative procedure under test, not a universal physical-eligibility criterion. Unsupported reference evidence is UNKNOWN.",
+    "per_detection_checks": [
+      "source provenance and naturalness anchored by independent attribution",
+      "complete candidate-excluded reference support and alias genealogy",
+      "retained-source goodness and numerical validity",
+      "epoch-specific reference uncertainty and validated astrometric error domain",
+      "all-tracklet and per-tracklet competition; source splits, replacements, artificial hypotheses",
+      "coverage, capped retrievals, missing source histories and timeouts explicit"
+    ],
+    "source_fit_guard": "Native fitted status means a numerical solution was returned. A branch with poor residual compatibility against its retained source cannot support attribution; retain all branches and diagnostics.",
+    "scientific_cutoffs": "Original v5/v5.2 checks; no new likelihood acceptance cut. The 3 arcsec split-matrix marker is descriptive only. Missing required evidence remains UNKNOWN.",
+    "missing_implementation": "Joint realistic-error coverage, complete source/naturalness genealogy and full alternative search are not claimed validated. Record which failures are common-mode. The pilot may STOP with no TRUE labels; full production engine is not a prerequisite."
+  },
+  "review": {
+    "mode": "self_review",
+    "evidence_challenge_reconciliation": "Three separately recorded passes per case; fixed review ceilings, no scores/classes in packets",
+    "independent_review": "publication_only",
+    "formal_verdict": null,
+    "publication_eligible": false
+  },
+  "decision": {
+    "alpha_tail": 0.00625,
+    "x": "FALSE+UNKNOWN",
+    "integrity_or_common_mode_failure": "STOP with reason before statistical route decision",
+    "narrow": "q_L > 0.003; retains objects as provisional, not physically false",
+    "screen_go": "Disabled: frozen all-clean width fails 0.02 screen",
+    "final_otherwise": "INCONCLUSIVE; no uncommitted expansion",
+    "incomplete_look": "RESOURCE_STOP_INCOMPLETE; never infer from completed prefix",
+    "census_available": false,
+    "formal_release_alpha_spent": 0
+  },
+  "scope_limits": [
+    "All original 726 known-route memberships remain NO_FRAME, preserved as unsuccessful prior route.",
+    "Conditional frame after shared-tracklet, designation, opened-reference and station/date+/-1 closure; excludes 292793 original rows without declaring them false.",
+    "Full alias/field genealogy remains unresolved; no whole-original-database claim and no S/E opening.",
+    "Any common-mode source/independence failure is STOP, not valid evidence of purity or physical falsehood.",
+    "All prior pilot/rehearsal/calibration evidence remains development."
+  ],
+  "pre_draw_amendment": {
+    "created_utc": 1792833515.6082358,
+    "previous_design_sha256": "b640473d9ce3da5e2ecaba65d7982602350d0869fa28ec5423197682bae9275a",
+    "previous_commit": "48f74307dead22967ec45c69b7cf98b9ebdc266c",
+    "reason": "Correct pilot metadata in reusable packet stage and expose retained-source residual quality; no sample, resource or scientific-cut changes; no draw or outcomes opened."
+  }
+}
