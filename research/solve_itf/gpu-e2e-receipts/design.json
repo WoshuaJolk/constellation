@@ -1,0 +1,40 @@
+{
+  "registered_unix": 1793218134.877754,
+  "scope": "historical fast-profile workload; complete catalogue input,10000 seeds,extension and output",
+  "phases": [
+    "CPU four processes cold",
+    "compact GPU cold",
+    "compact GPU warm"
+  ],
+  "settings": {
+    "seconds": 280,
+    "workers": 4,
+    "max_seeds": 10000,
+    "profile": "fast"
+  },
+  "gpu_batch_size": 128,
+  "prefetch": false,
+  "workload_cuts_unchanged": true,
+  "price_ceiling_hourly": 4.41,
+  "compute_budget_usd": 2,
+  "worker_deadline_seconds": 1500,
+  "historical_report": "benchmark-2026-10-21.json",
+  "input": {
+    "itf.txt.gz": {
+      "bytes": 131583431,
+      "sha256": "f3bb8bd234c1e9438f165f6bcaae1d893a4d6f852ed14bb3426ed634e037b624"
+    },
+    "ObsCodes.html": {
+      "bytes": 149304,
+      "sha256": "58454e19015f622472a67928d517ca081abfa13c987a211dbf4533e293226fe4"
+    }
+  },
+  "comparison_limitations": [
+    "current implementation, not reconstructed historical source",
+    "historical CPU hardware differs",
+    "current pipeline adapter uses128-chain synchronous batches, not sustained1024-chain prefetch",
+    "application cold caches; OS cache not flushed",
+    "single passes, not a repeatability distribution"
+  ],
+  "stop_on_failure": true
+}

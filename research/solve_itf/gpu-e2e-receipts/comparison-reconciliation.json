@@ -1,0 +1,1 @@
+{"issue":"Display tracklet names are not unique catalogue keys. Initial name-keyed summary collapsed 18 rows.","resolution":"Use exact sorted tracklet_indices with row-count uniqueness assertions. Initial analysis files preserved; all native reports unchanged; no fitting rerun."}
