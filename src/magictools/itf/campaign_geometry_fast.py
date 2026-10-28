@@ -35,7 +35,7 @@ def prepare_observation_ids(cache, directory):
 
 
 @njit(cache=True)
-def gather(indices, starts, counts, ready, identities, times, units, observers):
+def gather_offsets(indices, starts, counts, ready, identities):
     size = 0
     for track in indices:
         if not ready[track]:
@@ -56,7 +56,13 @@ def gather(indices, starts, counts, ready, identities, times, units, observers):
         if j == 0 or keys[order[j]] != keys[order[j-1]]:
             keep[used] = order[j]; used += 1
     keep = keep[:used]; offsets = offsets[keep]
-    return times[offsets], units[offsets], observers[offsets], labels[keep]
+    return offsets, labels[keep]
+
+
+@njit(cache=True)
+def gather(indices, starts, counts, ready, identities, times, units, observers):
+    offsets, labels = gather_offsets(indices, starts, counts, ready, identities)
+    return times[offsets], units[offsets], observers[offsets], labels
 
 
 class FastAtlasGeometry(AtlasGeometry):
@@ -76,3 +82,8 @@ class FastAtlasGeometry(AtlasGeometry):
         # Keep numpy's tie ordering identical to Geometry.get.
         order = np.argsort(values[0])
         return tuple(value[order] for value in values)
+
+    def observation_indices(self, indices):
+        offsets, _ = gather_offsets(np.asarray(indices, dtype=np.int64), self.starts, self.counts,
+                                    self.ready, self.identities)
+        return np.ascontiguousarray(offsets[np.argsort(self.times[offsets])])

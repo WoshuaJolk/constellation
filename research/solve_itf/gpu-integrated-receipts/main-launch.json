@@ -1,0 +1,10 @@
+{
+  "id": 613641101,
+  "name": "itf-h100-integrated-prefetch-20261028",
+  "created_at": "2026-10-28T20:39:43Z",
+  "created_local": 1793219984.0234144,
+  "deadline_local": 1793222084.0234146,
+  "price_hourly": 4.41,
+  "size": "gpu-h100x1-80gb",
+  "part": 48
+}

@@ -1,0 +1,29 @@
+{
+  "utc": 1793221783.290399,
+  "result": "Matched cached full search1.27xGPU advantage at69836seeds;CPU20faster at10K. No100x achieved.",
+  "defaults": "CPU production preserved; GPU prefetch research default uses copied inputs and existing normal accumulator. Indexed/register options explicit.",
+  "disagreement": "Two CPU/GPU membership differences reproduced with older GPU adapter; not introduced by new optimizations.",
+  "unperformed_control": "Collector already finished/deleted second worker; attempted ownership assertion failed safely, no process killed or new control launched. End-to-end register timings are cross-instance only.",
+  "resources": {
+    "attempts": [
+      {
+        "id": 613641101,
+        "deleted_utc": 1793220575.1732478,
+        "remaining_ids": [],
+        "estimated_compute_usd": 0.7241585643649102
+      },
+      {
+        "id": 613644961,
+        "deleted_utc": 1793221440.2219176,
+        "remaining_ids": [],
+        "estimated_compute_usd": 0.5055836560308934
+      }
+    ],
+    "total_estimated_compute_usd": 1.2297422203958037,
+    "budget_usd": 3,
+    "original_deadline_unix": 1793222084.0234146,
+    "all_deleted_before_deadline": true,
+    "remaining_droplets": [],
+    "snapshots": "Historical snapshots unchanged; their ongoing storage is not included in incremental compute."
+  }
+}

@@ -7,9 +7,13 @@ from gpu_batch_host import prepare_bank, finish_group
 
 
 class CompactGPUBatch:
-    def __init__(self, *, allow_simulator=False):
+    def __init__(self, *, allow_simulator=False, resident_geometry=None, profile_events=False, completion_interval=4, register_normal=False):
         self.receipts = []
         self.allow_simulator = allow_simulator
+        self.resident_geometry = resident_geometry
+        self.profile_events = profile_events
+        self.completion_interval = completion_interval
+        self.register_normal = register_normal
 
     def __call__(self, geometry, jobs):
         before = time.perf_counter()
@@ -27,8 +31,8 @@ class CompactGPUBatch:
         bank, plans, groups, epochs, bounds, limit = prepared
         if not len(bank['states']):
             return [None]*len(jobs)
-        workspace = ResidentWorkspace(bank, coalesced=True, allow_simulator=self.allow_simulator)
-        out = workspace.solve(bank['states'], limit, parallel_normal=True, parallel_copy=True)
+        workspace = ResidentWorkspace(bank, coalesced=True, allow_simulator=self.allow_simulator, resident_geometry=self.resident_geometry)
+        out = workspace.solve(bank['states'], limit, parallel_normal=True, parallel_copy=True, profile_events=self.profile_events, completion_interval=self.completion_interval, register_normal=self.register_normal)
         t = time.perf_counter()
         states, flags, residuals, jacobians, fallback = checked_cpu_arrays(bank, out, limit)
         verified = time.perf_counter()-t

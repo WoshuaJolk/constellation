@@ -1,0 +1,129 @@
+{
+  "chains": 1024,
+  "starts": 25786,
+  "parity": {
+    "states": true,
+    "success": true,
+    "cost": true,
+    "reasons": true,
+    "iterations": true,
+    "evaluations": true
+  },
+  "timings": {
+    "existing": {
+      "times": [
+        0.07013731300003201,
+        0.06896193600005063,
+        0.06909807200003115
+      ],
+      "median_seconds": 0.06909807200003115,
+      "profile": {
+        "wall_seconds": 0.07987913299996308,
+        "state_upload_seconds": 0.0003146490000176527,
+        "workspace_setup_seconds": 0.061733076999985315,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "register_normal": false,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.07898272300002418,
+        "final_download_seconds": 0.0005793349999976272,
+        "completion_interval": 16,
+        "completion_checks": [
+          [
+            16,
+            22514
+          ],
+          [
+            32,
+            11242
+          ],
+          [
+            48,
+            6354
+          ],
+          [
+            64,
+            4675
+          ],
+          [
+            80,
+            3885
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0,
+        "instrumented_kernel_seconds": {
+          "propagation": 0.022145023927092552,
+          "initialization": 4.972799867391586e-05,
+          "normal_scales": 0.006248671956360342,
+          "normal_accumulate": 0.03414239999651908,
+          "normal_flags": 0.0003322560021188108,
+          "proposal": 0.0016310720052570109,
+          "accept": 0.003942463988438251,
+          "copy_accepted": 0.007281056027859448
+        },
+        "timing_warning": "Per-kernel events add launch overhead; not headline timing"
+      },
+      "state_sha256": "8f915a243e413199bc800b9574ab6569c0a3022673f1c5a05b811c27a0e5599d"
+    },
+    "register": {
+      "times": [
+        0.059320762000027116,
+        0.06049906099997315,
+        0.05950420200002782
+      ],
+      "median_seconds": 0.05950420200002782,
+      "profile": {
+        "wall_seconds": 0.07331315899995161,
+        "state_upload_seconds": 0.000318550999963918,
+        "workspace_setup_seconds": 0.061733076999985315,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "register_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.07231744400002071,
+        "final_download_seconds": 0.0006746340000063356,
+        "completion_interval": 16,
+        "completion_checks": [
+          [
+            16,
+            22514
+          ],
+          [
+            32,
+            11242
+          ],
+          [
+            48,
+            6354
+          ],
+          [
+            64,
+            4675
+          ],
+          [
+            80,
+            3885
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0,
+        "instrumented_kernel_seconds": {
+          "propagation": 0.02722985595464705,
+          "initialization": 4.8448000103235245e-05,
+          "normal_scales": 0.0066594559922814375,
+          "normal_accumulate_register": 0.01559299197793007,
+          "normal_flags": 0.0003099839980714021,
+          "proposal": 0.0050486079789698116,
+          "accept": 0.004766496013849973,
+          "copy_accepted": 0.008555711958557371
+        },
+        "timing_warning": "Per-kernel events add launch overhead; not headline timing"
+      },
+      "state_sha256": "8f915a243e413199bc800b9574ab6569c0a3022673f1c5a05b811c27a0e5599d"
+    }
+  },
+  "warning": "Fixed1024-chain replay. Uninstrumented medians and separate event profiles. Not full-search speedup."
+}

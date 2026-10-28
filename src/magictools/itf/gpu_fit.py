@@ -69,6 +69,38 @@ def _normal_accumulate(bounds, r, j, cost, scales, gradient, normal, refresh, do
         normal[c, l, k] = normal[c, k, l]
 
 
+@cuda.jit(fastmath=False)
+def _normal_accumulate_register(bounds, r, j, cost, scales, gradient, normal, refresh, done):
+    index = cuda.grid(1)
+    c, task = index // 27, index % 27
+    if c >= len(cost) or done[c] or not refresh[c]:
+        return
+    if not math.isfinite(cost[c]) or cost[c] >= 1e23:
+        return
+    # Same observation order and arithmetic as _normal_accumulate. Only the
+    # storage of the running sum and assignment of independent entries changes.
+    total = 0.
+    if task < 6:
+        k = task
+        for row in range(2*bounds[c], 2*bounds[c+1]):
+            value = j[row, k]/scales[c, k]
+            total += value*r[row]
+        gradient[c, k] = total
+    else:
+        pair = task-6
+        k = 0
+        while pair > k:
+            pair -= k+1
+            k += 1
+        l = pair
+        for row in range(2*bounds[c], 2*bounds[c+1]):
+            value = j[row, k]/scales[c, k]
+            total += value*j[row, l]/scales[c, l]
+        normal[c, k, l] = total
+        if l != k:
+            normal[c, l, k] = total
+
+
 @cuda.jit
 def _clear_refresh(refresh, done):
     c = cuda.grid(1)
@@ -239,10 +271,10 @@ class ResidentWorkspace:
     Setup cost is reported separately, never hidden in throughput claims.
     A workspace is single-stream/non-reentrant and must not be shared by callers.
     """
-    def __init__(self, bank, *, allow_simulator=False, coalesced=False, columnar_jacobian=False):
+    def __init__(self, bank, *, allow_simulator=False, coalesced=False, columnar_jacobian=False, resident_geometry=None):
         started = time.perf_counter()
         order = 'F' if coalesced else 'C'
-        base = ResidentBank(bank, allow_simulator=allow_simulator, columnar_jacobian=columnar_jacobian)
+        base = ResidentBank(bank, allow_simulator=allow_simulator, columnar_jacobian=columnar_jacobian, resident_geometry=resident_geometry)
         if np.any(np.diff(base.case_index) < 0):
             raise ValueError("LM requires observations grouped contiguously by case")
         n, nobs = len(bank['states']), len(bank['offsets'])
@@ -294,10 +326,10 @@ class ResidentWorkspace:
         self.columnar_jacobian = columnar_jacobian
 
     def solve(self, initial_states, max_iterations=80, *, profile_events=False,
-              parallel_normal=False, parallel_copy=False):
+              parallel_normal=False, parallel_copy=False, completion_interval=4, register_normal=False):
         return _solve_workspace(self, initial_states, max_iterations,
                                 profile_events=profile_events,
-                                parallel_normal=parallel_normal, parallel_copy=parallel_copy)
+                                parallel_normal=parallel_normal, parallel_copy=parallel_copy, completion_interval=completion_interval, register_normal=register_normal)
 
 
 def solve_resident(bank, max_iterations=80, *, allow_simulator=False,
@@ -314,9 +346,13 @@ def solve_resident(bank, max_iterations=80, *, allow_simulator=False,
 
 
 def _solve_workspace(workspace, initial_states, max_iterations, *,
-                     profile_events=False, parallel_normal=False, parallel_copy=False):
+                     profile_events=False, parallel_normal=False, parallel_copy=False, completion_interval=4, register_normal=False):
     if not isinstance(max_iterations, (int, np.integer)) or max_iterations < 0:
         raise ValueError('max_iterations must be a nonnegative integer')
+    if register_normal and not parallel_normal:
+        raise ValueError('Register accumulation requires parallel normal equations')
+    if not isinstance(completion_interval, (int, np.integer)) or not 1 <= completion_interval <= 80:
+        raise ValueError('completion_interval must be an integer in [1, 80]')
     initial_states = np.asarray(initial_states)
     if initial_states.dtype != np.float64 or initial_states.shape != (workspace.n, 6):
         raise ValueError('Updated state shape/dtype differs from frozen workspace')
@@ -361,23 +397,26 @@ def _solve_workspace(workspace, initial_states, max_iterations, *,
             kernel[blocks,128](*args)
     grid, observation_grid = (n+127)//128, (nobs+127)//128
     loop_start = time.perf_counter()
-    launch('propagation',_evaluate,observation_grid,(*base.inputs,base.sigma,base.active,base.residual,base.jacobian,base.valid))
+    launch('propagation',base.kernel,observation_grid,(*base.inputs,base.sigma,base.active,base.residual,base.jacobian,base.valid))
     launch('initialization',_initialize,grid,(bounds,r,j,base.valid,cost,damping,increase,refresh,done,success,reasons,iterations,evaluations))
     checks = []
     for iteration in range(max_iterations):
         if parallel_normal:
             normal_args = (bounds,r,j,cost,scales,gradient,normal,refresh,done)
             launch('normal_scales',_normal_parallel,(6*n+127)//128,normal_args)
-            launch('normal_accumulate',_normal_accumulate,(6*n+127)//128,normal_args)
+            if register_normal:
+                launch('normal_accumulate_register',_normal_accumulate_register,(27*n+127)//128,normal_args)
+            else:
+                launch('normal_accumulate',_normal_accumulate,(6*n+127)//128,normal_args)
             launch('normal_flags',_clear_refresh,grid,(refresh,done))
         launch('proposal',_propose,grid,(states,bounds,r,j,cost,damping,refresh,scales,normal,gradient,trials,
                scaled_steps,steps,done,success,reasons,iterations,pending,iteration))
-        launch('propagation',_evaluate,observation_grid,(trials,*base.inputs[1:],base.sigma,pending,trial_r,trial_j,trial_valid))
+        launch('propagation',base.kernel,observation_grid,(trials,*base.inputs[1:],base.sigma,pending,trial_r,trial_j,trial_valid))
         launch('accept',_accept,grid,(states,bounds,r,j,cost,damping,increase,refresh,normal,gradient,trials,
                scaled_steps,steps,done,success,reasons,pending,trial_r.reshape(2*nobs),trial_j.reshape(2*nobs,6),trial_valid,evaluations,not parallel_copy))
         if parallel_copy:
             launch('copy_accepted',_copy_accepted,observation_grid,(base.inputs[1],refresh,pending,r,j,trial_r.reshape(2*nobs),trial_j.reshape(2*nobs,6)))
-        if iteration%4 == 3 or iteration+1==max_iterations:
+        if (iteration+1)%completion_interval == 0 or iteration+1==max_iterations:
             remaining.copy_to_device(np.zeros(1,np.int32));_remaining[grid,128](done,remaining)
             count=int(remaining.copy_to_host()[0]);checks.append([iteration+1,count])
             if count==0:break
@@ -392,11 +431,11 @@ def _solve_workspace(workspace, initial_states, max_iterations, *,
     profile=dict(wall_seconds=time.perf_counter()-started,
                  state_upload_seconds=state_upload_seconds,
                  workspace_setup_seconds=workspace.setup_seconds,
-                 workspace_reused=True, parallel_normal=parallel_normal,
+                 workspace_reused=True, parallel_normal=parallel_normal, register_normal=register_normal,
                  coalesced=workspace.coalesced, columnar_jacobian=workspace.columnar_jacobian,
                  parallel_copy=parallel_copy,
                  device_iterations_wall_seconds=loop_seconds,final_download_seconds=download_seconds,
-                 completion_checks=checks,per_iteration_full_array_transfers=0)
+                 completion_interval=completion_interval, completion_checks=checks,per_iteration_full_array_transfers=0)
     if profile_events:
         times={}
         for name,start,end in launch_profile:

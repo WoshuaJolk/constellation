@@ -1,0 +1,938 @@
+{
+  "status": "complete",
+  "phases": [
+    {
+      "name": "cpu4-10k",
+      "backend": "cpu",
+      "workers": 4,
+      "seed_budget": 10000,
+      "elapsed_seconds": 43.179605275,
+      "exit_code": 0,
+      "user_cpu_seconds": 157.229046,
+      "system_cpu_seconds": 1.10938,
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 6.8089335699999936,
+        "seed_generation_seconds": 0.6729421919999936,
+        "observer_preparation_seconds": 0.002369203999990077,
+        "triple_fitting_seconds": 30.00833410300001,
+        "extension_seconds": 3.911168024999995,
+        "solve_seconds": 41.443682881,
+        "application_setup_seconds": 0.13742560200000753,
+        "before_output_seconds": 41.681853545000024
+      },
+      "counts": {
+        "fits_attempted": 10282,
+        "fits_rejected": 5939,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 256,
+        "triple_seeds_started": 10000,
+        "triple_seeds_completed": 10000,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 44,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 34241,
+        "seeds_retained": 10000,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "fork",
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 339,
+        "maximal_candidates": 3699,
+        "contained_candidates": 644,
+        "candidates_with_partial_overlaps": 1189,
+        "distinct_candidate_tracklets": 10680,
+        "accepted_chains_with_close_epochs": 174,
+        "weak_best_orbits": 1035
+      },
+      "candidates": 4343,
+      "seed_sha256": "7c801be199b56be8406b28057e8aa70c77018564f260243aa3d0e5b7bc63be7c",
+      "pipeline": null,
+      "resident_geometry": null
+    },
+    {
+      "name": "cpu20-10k",
+      "backend": "cpu",
+      "workers": 20,
+      "seed_budget": 10000,
+      "elapsed_seconds": 11.533381801000019,
+      "exit_code": 0,
+      "user_cpu_seconds": 163.49448399999997,
+      "system_cpu_seconds": 4.244112,
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 1.8294355009999776,
+        "seed_generation_seconds": 0.6714839499999812,
+        "observer_preparation_seconds": 0.0022950320000063584,
+        "triple_fitting_seconds": 6.475450921999993,
+        "extension_seconds": 0.8376288919999979,
+        "solve_seconds": 9.85890438399997,
+        "application_setup_seconds": 0.15092679599996472,
+        "before_output_seconds": 10.214610464999964
+      },
+      "counts": {
+        "fits_attempted": 10282,
+        "fits_rejected": 5939,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 256,
+        "triple_seeds_started": 10000,
+        "triple_seeds_completed": 10000,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 44,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 34241,
+        "seeds_retained": 10000,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "fork",
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 339,
+        "maximal_candidates": 3699,
+        "contained_candidates": 644,
+        "candidates_with_partial_overlaps": 1189,
+        "distinct_candidate_tracklets": 10680,
+        "accepted_chains_with_close_epochs": 174,
+        "weak_best_orbits": 1035
+      },
+      "candidates": 4343,
+      "seed_sha256": "7c801be199b56be8406b28057e8aa70c77018564f260243aa3d0e5b7bc63be7c",
+      "pipeline": null,
+      "resident_geometry": null
+    },
+    {
+      "name": "compact-10k",
+      "backend": "compact",
+      "workers": 20,
+      "seed_budget": 10000,
+      "elapsed_seconds": 25.00286401799997,
+      "exit_code": 0,
+      "user_cpu_seconds": 55.91211400000003,
+      "system_cpu_seconds": 2.9528039999999995,
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 1.810798215000034,
+        "seed_generation_seconds": 0.6712904489999687,
+        "observer_preparation_seconds": 0.002480950999995457,
+        "triple_fitting_seconds": 19.120547950999992,
+        "extension_seconds": 1.1319792659999734,
+        "solve_seconds": 22.740426198000023,
+        "application_setup_seconds": 0.30926536199996235,
+        "before_output_seconds": 23.170565420000003
+      },
+      "counts": {
+        "fits_attempted": 10282,
+        "fits_rejected": 5939,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 256,
+        "triple_seeds_started": 10000,
+        "triple_seeds_completed": 10000,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 44,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 34241,
+        "seeds_retained": 10000,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "injected_batch",
+        "batch_submitted_not_returned": 0,
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 339,
+        "maximal_candidates": 3699,
+        "contained_candidates": 644,
+        "candidates_with_partial_overlaps": 1189,
+        "distinct_candidate_tracklets": 10680,
+        "accepted_chains_with_close_epochs": 174,
+        "weak_best_orbits": 1035
+      },
+      "candidates": 4343,
+      "seed_sha256": "7c801be199b56be8406b28057e8aa70c77018564f260243aa3d0e5b7bc63be7c",
+      "pipeline": null,
+      "resident_geometry": null,
+      "batch_totals": {
+        "chains": 10282,
+        "starts": 255933,
+        "planning_seconds": 3.183421398999826,
+        "gpu_setup_seconds": 1.0038288159999524,
+        "cpu_verify_fallback_seconds": 0.8553465270003926,
+        "cpu_fallback_starts": 0,
+        "selection_seconds": 3.349636334000195,
+        "execution_seconds": 16.39120801000007,
+        "gpu_solve_seconds": 11.180935555999781,
+        "note": "Preparation overlaps execution; phase elapsed, not sum, is headline wall time."
+      }
+    },
+    {
+      "name": "prefetch-10k",
+      "backend": "prefetch",
+      "workers": 20,
+      "seed_budget": 10000,
+      "elapsed_seconds": 18.342913630999988,
+      "exit_code": 0,
+      "user_cpu_seconds": 52.82280399999996,
+      "system_cpu_seconds": 3.7826079999999997,
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 1.811224884000012,
+        "seed_generation_seconds": 0.6781344620000027,
+        "observer_preparation_seconds": 0.0023578999999926964,
+        "triple_fitting_seconds": 12.483459795000044,
+        "extension_seconds": 1.112107788000003,
+        "solve_seconds": 16.090428121000002,
+        "application_setup_seconds": 0.30381996200003414,
+        "before_output_seconds": 16.531409411000027
+      },
+      "counts": {
+        "fits_attempted": 10282,
+        "fits_rejected": 5939,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 256,
+        "triple_seeds_started": 10000,
+        "triple_seeds_completed": 10000,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 44,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 34241,
+        "seeds_retained": 10000,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "injected_batch",
+        "batch_submitted_not_returned": 0,
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 339,
+        "maximal_candidates": 3699,
+        "contained_candidates": 644,
+        "candidates_with_partial_overlaps": 1189,
+        "distinct_candidate_tracklets": 10680,
+        "accepted_chains_with_close_epochs": 174,
+        "weak_best_orbits": 1035
+      },
+      "candidates": 4343,
+      "seed_sha256": "7c801be199b56be8406b28057e8aa70c77018564f260243aa3d0e5b7bc63be7c",
+      "pipeline": {
+        "submitted_batches": 14,
+        "returned_batches": 14,
+        "cancelled_batches": 0,
+        "unused_prepared_batches": 0,
+        "peak_pending_batches": 3,
+        "drain_seconds": 8.062999995672726e-06,
+        "drain_errors": []
+      },
+      "resident_geometry": null,
+      "batch_totals": {
+        "chains": 10282,
+        "starts": 255933,
+        "planning_seconds": 3.7101067920000332,
+        "gpu_setup_seconds": 0.9957427870000402,
+        "cpu_verify_fallback_seconds": 0.38533915299996124,
+        "cpu_fallback_starts": 0,
+        "selection_seconds": 3.2628024289999757,
+        "execution_seconds": 11.78525691799996,
+        "gpu_solve_seconds": 7.141035355999918,
+        "note": "Preparation overlaps execution; phase elapsed, not sum, is headline wall time."
+      }
+    },
+    {
+      "name": "cpu20-large",
+      "backend": "cpu",
+      "workers": 20,
+      "seed_budget": 100000,
+      "elapsed_seconds": 49.38779458699997,
+      "exit_code": 0,
+      "user_cpu_seconds": 863.868683,
+      "system_cpu_seconds": 6.556350000000002,
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 1.8070876300000123,
+        "seed_generation_seconds": 0.8319511340000076,
+        "observer_preparation_seconds": 0.02605115000000069,
+        "triple_fitting_seconds": 41.690985997999974,
+        "extension_seconds": 2.142762984000001,
+        "solve_seconds": 46.615695371000015,
+        "application_setup_seconds": 0.135409419000041,
+        "before_output_seconds": 47.215891045000035
+      },
+      "counts": {
+        "fits_attempted": 70133,
+        "fits_rejected": 57214,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 258,
+        "triple_seeds_started": 69836,
+        "triple_seeds_completed": 69836,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 45,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 105980,
+        "seeds_retained": 69836,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "fork",
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 517,
+        "maximal_candidates": 12234,
+        "contained_candidates": 685,
+        "candidates_with_partial_overlaps": 7389,
+        "distinct_candidate_tracklets": 27396,
+        "accepted_chains_with_close_epochs": 176,
+        "weak_best_orbits": 1048
+      },
+      "candidates": 12919,
+      "seed_sha256": "63afc3c35871372c034c05293e49fbe05eda0a16969b3a39ed201a580e275d5c",
+      "pipeline": null,
+      "resident_geometry": null
+    },
+    {
+      "name": "prefetch-large",
+      "backend": "prefetch",
+      "workers": 20,
+      "seed_budget": 100000,
+      "elapsed_seconds": 38.82364145899999,
+      "exit_code": 0,
+      "user_cpu_seconds": 105.03857999999991,
+      "system_cpu_seconds": 6.536152999999999,
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 1.8296024960000068,
+        "seed_generation_seconds": 0.802889615999959,
+        "observer_preparation_seconds": 0.021956708999994135,
+        "triple_fitting_seconds": 30.20857343199998,
+        "extension_seconds": 2.5291205659999605,
+        "solve_seconds": 35.487124789999996,
+        "application_setup_seconds": 0.302823495000041,
+        "before_output_seconds": 36.14644656400003
+      },
+      "counts": {
+        "fits_attempted": 70133,
+        "fits_rejected": 57214,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 258,
+        "triple_seeds_started": 69836,
+        "triple_seeds_completed": 69836,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 45,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 105980,
+        "seeds_retained": 69836,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "injected_batch",
+        "batch_submitted_not_returned": 0,
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 517,
+        "maximal_candidates": 12234,
+        "contained_candidates": 685,
+        "candidates_with_partial_overlaps": 7390,
+        "distinct_candidate_tracklets": 27393,
+        "accepted_chains_with_close_epochs": 176,
+        "weak_best_orbits": 1049
+      },
+      "candidates": 12919,
+      "seed_sha256": "63afc3c35871372c034c05293e49fbe05eda0a16969b3a39ed201a580e275d5c",
+      "pipeline": {
+        "submitted_batches": 73,
+        "returned_batches": 73,
+        "cancelled_batches": 0,
+        "unused_prepared_batches": 0,
+        "peak_pending_batches": 3,
+        "drain_seconds": 6.488999986231647e-06,
+        "drain_errors": []
+      },
+      "resident_geometry": null,
+      "batch_totals": {
+        "chains": 70133,
+        "starts": 1713934,
+        "planning_seconds": 18.77922346999992,
+        "gpu_setup_seconds": 3.441209843000081,
+        "cpu_verify_fallback_seconds": 2.939402343999859,
+        "cpu_fallback_starts": 11,
+        "selection_seconds": 10.684985867999558,
+        "execution_seconds": 27.939212696000027,
+        "gpu_solve_seconds": 10.871917000999986,
+        "note": "Preparation overlaps execution; phase elapsed, not sum, is headline wall time."
+      }
+    },
+    {
+      "name": "indexed-10k",
+      "backend": "indexed",
+      "workers": 20,
+      "seed_budget": 10000,
+      "elapsed_seconds": 19.892455315000007,
+      "exit_code": 0,
+      "user_cpu_seconds": 54.23834600000009,
+      "system_cpu_seconds": 4.225785999999999,
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 1.8270778699999823,
+        "seed_generation_seconds": 0.6643777510000177,
+        "observer_preparation_seconds": 0.0023681499999952393,
+        "triple_fitting_seconds": 14.004760935999968,
+        "extension_seconds": 1.131896284999982,
+        "solve_seconds": 17.633555091000005,
+        "application_setup_seconds": 0.30356047099996886,
+        "before_output_seconds": 18.077113605999955
+      },
+      "counts": {
+        "fits_attempted": 10282,
+        "fits_rejected": 5939,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 256,
+        "triple_seeds_started": 10000,
+        "triple_seeds_completed": 10000,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 44,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 34241,
+        "seeds_retained": 10000,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "injected_batch",
+        "batch_submitted_not_returned": 0,
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 339,
+        "maximal_candidates": 3699,
+        "contained_candidates": 644,
+        "candidates_with_partial_overlaps": 1189,
+        "distinct_candidate_tracklets": 10680,
+        "accepted_chains_with_close_epochs": 174,
+        "weak_best_orbits": 1035
+      },
+      "candidates": 4343,
+      "seed_sha256": "7c801be199b56be8406b28057e8aa70c77018564f260243aa3d0e5b7bc63be7c",
+      "pipeline": {
+        "submitted_batches": 14,
+        "returned_batches": 14,
+        "cancelled_batches": 0,
+        "unused_prepared_batches": 0,
+        "peak_pending_batches": 3,
+        "drain_seconds": 7.111000002169021e-06,
+        "drain_errors": []
+      },
+      "resident_geometry": {
+        "upload_bytes": 857679360,
+        "setup_seconds": 0.5284932819999995,
+        "total_preparation_seconds": 1.440929701000016,
+        "bindings": 14,
+        "avoided_upload_bytes": 216084176,
+        "validation_seconds": 0.14446705599999632
+      },
+      "batch_totals": {
+        "chains": 10282,
+        "starts": 255933,
+        "planning_seconds": 3.796194512999989,
+        "gpu_setup_seconds": 1.0494168380001838,
+        "cpu_verify_fallback_seconds": 0.4244265219999761,
+        "cpu_fallback_starts": 0,
+        "selection_seconds": 3.178823290000082,
+        "execution_seconds": 11.95846560199999,
+        "gpu_solve_seconds": 7.305484129999968,
+        "note": "Preparation overlaps execution; phase elapsed, not sum, is headline wall time."
+      }
+    },
+    {
+      "name": "indexed-large",
+      "backend": "indexed",
+      "workers": 20,
+      "seed_budget": 100000,
+      "elapsed_seconds": 40.83749422799997,
+      "exit_code": 0,
+      "user_cpu_seconds": 107.44693600000005,
+      "system_cpu_seconds": 6.706181999999998,
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 1.8093176380000386,
+        "seed_generation_seconds": 0.7987073619999592,
+        "observer_preparation_seconds": 0.019398082000009254,
+        "triple_fitting_seconds": 32.019575076999956,
+        "extension_seconds": 2.759268130999999,
+        "solve_seconds": 37.48990497200003,
+        "application_setup_seconds": 0.3024173160000032,
+        "before_output_seconds": 38.146573726999975
+      },
+      "counts": {
+        "fits_attempted": 70133,
+        "fits_rejected": 57214,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 258,
+        "triple_seeds_started": 69836,
+        "triple_seeds_completed": 69836,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 45,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 105980,
+        "seeds_retained": 69836,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "injected_batch",
+        "batch_submitted_not_returned": 0,
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 517,
+        "maximal_candidates": 12234,
+        "contained_candidates": 685,
+        "candidates_with_partial_overlaps": 7390,
+        "distinct_candidate_tracklets": 27393,
+        "accepted_chains_with_close_epochs": 176,
+        "weak_best_orbits": 1049
+      },
+      "candidates": 12919,
+      "seed_sha256": "63afc3c35871372c034c05293e49fbe05eda0a16969b3a39ed201a580e275d5c",
+      "pipeline": {
+        "submitted_batches": 73,
+        "returned_batches": 73,
+        "cancelled_batches": 0,
+        "unused_prepared_batches": 0,
+        "peak_pending_batches": 3,
+        "drain_seconds": 6.967000047097827e-06,
+        "drain_errors": []
+      },
+      "resident_geometry": {
+        "upload_bytes": 857679360,
+        "setup_seconds": 0.5180152519999979,
+        "total_preparation_seconds": 1.413061755000001,
+        "bindings": 73,
+        "avoided_upload_bytes": 999429640,
+        "validation_seconds": 0.6610057710003048
+      },
+      "batch_totals": {
+        "chains": 70133,
+        "starts": 1713934,
+        "planning_seconds": 18.8584465080001,
+        "gpu_setup_seconds": 3.335599198000068,
+        "cpu_verify_fallback_seconds": 2.772421412999904,
+        "cpu_fallback_starts": 11,
+        "selection_seconds": 11.241761904999976,
+        "execution_seconds": 28.848071150000237,
+        "gpu_solve_seconds": 11.496382548000213,
+        "note": "Preparation overlaps execution; phase elapsed, not sum, is headline wall time."
+      }
+    }
+  ],
+  "comparisons": {
+    "cpu4-10k__cpu20-10k": {
+      "same_seed_hash": true,
+      "shared_memberships": 4343,
+      "only_left": [],
+      "only_right": [],
+      "max_best_rms_difference_arcsec": 0.0,
+      "alternate_mode_count_changes": 0,
+      "elapsed_ratio": 3.7438806778473293,
+      "triple_fitting_ratio": 4.634169027680887
+    },
+    "cpu20-10k__compact-10k": {
+      "same_seed_hash": true,
+      "shared_memberships": 4343,
+      "only_left": [],
+      "only_right": [],
+      "max_best_rms_difference_arcsec": 1.8510794563830757e-09,
+      "alternate_mode_count_changes": 23,
+      "elapsed_ratio": 0.46128242719301876,
+      "triple_fitting_ratio": 0.3386645057764326
+    },
+    "compact-10k__prefetch-10k": {
+      "same_seed_hash": true,
+      "shared_memberships": 4343,
+      "only_left": [],
+      "only_right": [],
+      "max_best_rms_difference_arcsec": 0.0,
+      "alternate_mode_count_changes": 0,
+      "elapsed_ratio": 1.363080289259199,
+      "triple_fitting_ratio": 1.5316705676945648
+    },
+    "prefetch-10k__indexed-10k": {
+      "same_seed_hash": true,
+      "shared_memberships": 4343,
+      "only_left": [],
+      "only_right": [],
+      "max_best_rms_difference_arcsec": 0.0,
+      "alternate_mode_count_changes": 0,
+      "elapsed_ratio": 0.9221040510352898,
+      "triple_fitting_ratio": 0.8913725733732919
+    },
+    "cpu20-10k__prefetch-10k": {
+      "same_seed_hash": true,
+      "shared_memberships": 4343,
+      "only_left": [],
+      "only_right": [],
+      "max_best_rms_difference_arcsec": 1.8510794563830757e-09,
+      "alternate_mode_count_changes": 23,
+      "elapsed_ratio": 0.6287649842884454,
+      "triple_fitting_ratio": 0.5187224558205877
+    },
+    "cpu20-large__prefetch-large": {
+      "same_seed_hash": true,
+      "shared_memberships": 12918,
+      "only_left": [
+        [
+          101989,
+          119877,
+          120472
+        ]
+      ],
+      "only_right": [
+        [
+          849241,
+          849382,
+          849735
+        ]
+      ],
+      "max_best_rms_difference_arcsec": 1.8510794563830757e-09,
+      "alternate_mode_count_changes": 51,
+      "elapsed_ratio": 1.2721061891929004,
+      "triple_fitting_ratio": 1.380104429355034
+    },
+    "prefetch-large__indexed-large": {
+      "same_seed_hash": true,
+      "shared_memberships": 12919,
+      "only_left": [],
+      "only_right": [],
+      "max_best_rms_difference_arcsec": 0.0,
+      "alternate_mode_count_changes": 0,
+      "elapsed_ratio": 0.9506861817290642,
+      "triple_fitting_ratio": 0.9434407970547729
+    },
+    "cpu20-large__indexed-large": {
+      "same_seed_hash": true,
+      "shared_memberships": 12918,
+      "only_left": [
+        [
+          101989,
+          119877,
+          120472
+        ]
+      ],
+      "only_right": [
+        [
+          849241,
+          849382,
+          849735
+        ]
+      ],
+      "max_best_rms_difference_arcsec": 1.8510794563830757e-09,
+      "alternate_mode_count_changes": 51,
+      "elapsed_ratio": 1.209373775757709,
+      "triple_fitting_ratio": 1.3020468228495359
+    }
+  },
+  "input_verification_seconds": 1.3207914489999837,
+  "kernel_profile": {
+    "chains": 1024,
+    "starts": 25786,
+    "seconds": 11.23182116800001,
+    "profiles": {
+      "copied-poll4": {
+        "wall_seconds": 0.08518254099999467,
+        "state_upload_seconds": 0.00035843599999907383,
+        "workspace_setup_seconds": 0.05938257499997235,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.08418088600001283,
+        "final_download_seconds": 0.0006408219999798348,
+        "completion_interval": 4,
+        "completion_checks": [
+          [
+            4,
+            25736
+          ],
+          [
+            8,
+            25599
+          ],
+          [
+            12,
+            22920
+          ],
+          [
+            16,
+            22514
+          ],
+          [
+            20,
+            19956
+          ],
+          [
+            24,
+            16679
+          ],
+          [
+            28,
+            13711
+          ],
+          [
+            32,
+            11242
+          ],
+          [
+            36,
+            9390
+          ],
+          [
+            40,
+            8105
+          ],
+          [
+            44,
+            7148
+          ],
+          [
+            48,
+            6354
+          ],
+          [
+            52,
+            5794
+          ],
+          [
+            56,
+            5398
+          ],
+          [
+            60,
+            5008
+          ],
+          [
+            64,
+            4675
+          ],
+          [
+            68,
+            4395
+          ],
+          [
+            72,
+            4190
+          ],
+          [
+            76,
+            4042
+          ],
+          [
+            80,
+            3885
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0,
+        "instrumented_kernel_seconds": {
+          "propagation": 0.022779104009270672,
+          "initialization": 4.7680001705884936e-05,
+          "normal_scales": 0.006914495982229709,
+          "normal_accumulate": 0.034627584040164944,
+          "normal_flags": 0.00031177600333467123,
+          "proposal": 0.0015652799922972922,
+          "accept": 0.004023903990164399,
+          "copy_accepted": 0.007346272010356189
+        },
+        "timing_warning": "Per-kernel events add launch overhead; not headline timing"
+      },
+      "copied-poll16": {
+        "wall_seconds": 0.07817398800000319,
+        "state_upload_seconds": 0.00031458900002689916,
+        "workspace_setup_seconds": 0.052760547999980645,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.07725456099996109,
+        "final_download_seconds": 0.0006024570000136009,
+        "completion_interval": 16,
+        "completion_checks": [
+          [
+            16,
+            22514
+          ],
+          [
+            32,
+            11242
+          ],
+          [
+            48,
+            6354
+          ],
+          [
+            64,
+            4675
+          ],
+          [
+            80,
+            3885
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0,
+        "instrumented_kernel_seconds": {
+          "propagation": 0.022335648119449623,
+          "initialization": 4.854400083422661e-05,
+          "normal_scales": 0.006016799986362456,
+          "normal_accumulate": 0.03350601589679717,
+          "normal_flags": 0.00032611200213432314,
+          "proposal": 0.0016207360103726387,
+          "accept": 0.003799839993938803,
+          "copy_accepted": 0.007136640019714833
+        },
+        "timing_warning": "Per-kernel events add launch overhead; not headline timing"
+      },
+      "indexed-poll16": {
+        "wall_seconds": 0.0801431330000355,
+        "state_upload_seconds": 0.00036276700001280915,
+        "workspace_setup_seconds": 0.06544090400001323,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.07915005600000313,
+        "final_download_seconds": 0.0006274670000152582,
+        "completion_interval": 16,
+        "completion_checks": [
+          [
+            16,
+            22514
+          ],
+          [
+            32,
+            11242
+          ],
+          [
+            48,
+            6354
+          ],
+          [
+            64,
+            4675
+          ],
+          [
+            80,
+            3885
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0,
+        "instrumented_kernel_seconds": {
+          "propagation": 0.02275542405247689,
+          "initialization": 5.100800096988678e-05,
+          "normal_scales": 0.006294560018926859,
+          "normal_accumulate": 0.03402771201729774,
+          "normal_flags": 0.0003263360022101551,
+          "proposal": 0.0015811840053647757,
+          "accept": 0.00408515201508999,
+          "copy_accepted": 0.007432832010090353
+        },
+        "timing_warning": "Per-kernel events add launch overhead; not headline timing"
+      }
+    },
+    "parity": {
+      "copied-poll16": {
+        "states": true,
+        "success": true,
+        "cost": true,
+        "reasons": true,
+        "iterations": true,
+        "evaluations": true
+      },
+      "indexed-poll16": {
+        "states": true,
+        "success": true,
+        "cost": true,
+        "reasons": true,
+        "iterations": true,
+        "evaluations": true
+      }
+    },
+    "warning": "Separate replay with per-kernel events; not headline timing. No new hypotheses or cuts."
+  },
+  "limitations": [
+    "Single fixed-order passes; no significance or purity claims.",
+    "Same cached input/atlas reused; no claim of cold ingestion included.",
+    "Large seed-neighbor policy is broader than10K, but identical between matched backends.",
+    "Fitted starts, scientific cuts and observations unchanged across each matched cohort.",
+    "GPU initialization, CPU prefetch startup/drain, scans, fitting, growth and output are included in elapsed.",
+    "A cap exceeding available seeds does not imply that many seeds were fitted."
+  ]
+}

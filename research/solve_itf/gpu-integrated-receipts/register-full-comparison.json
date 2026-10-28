@@ -1,0 +1,20 @@
+{
+  "prefetch-10k__register-10k": {
+    "shared_memberships": 4343,
+    "only_left": [],
+    "only_right": [],
+    "max_best_rms_difference_arcsec": 0.0,
+    "mode_count_changes": 0,
+    "full_retained_row_changes": 0,
+    "timing_limitation": "Different instances of the same H100 SKU; not a paired same-host end-to-end timing control."
+  },
+  "prefetch-large__register-large": {
+    "shared_memberships": 12919,
+    "only_left": [],
+    "only_right": [],
+    "max_best_rms_difference_arcsec": 0.0,
+    "mode_count_changes": 0,
+    "full_retained_row_changes": 0,
+    "timing_limitation": "Different instances of the same H100 SKU; not a paired same-host end-to-end timing control."
+  }
+}

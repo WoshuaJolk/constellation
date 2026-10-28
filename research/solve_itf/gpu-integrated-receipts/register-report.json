@@ -1,0 +1,171 @@
+{
+  "status": "complete",
+  "phase": "done",
+  "phases": [
+    {
+      "name": "register-10k",
+      "backend": "prefetch",
+      "workers": 20,
+      "seed_budget": 10000,
+      "elapsed_seconds": 21.248233078999988,
+      "exit_code": 0,
+      "user_cpu_seconds": 57.63380899999999,
+      "system_cpu_seconds": 3.9974579999999995,
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 2.0091000409999538,
+        "seed_generation_seconds": 0.6772672560000501,
+        "observer_preparation_seconds": 0.0023255129999597557,
+        "triple_fitting_seconds": 12.402579403000004,
+        "extension_seconds": 3.652338033000035,
+        "solve_seconds": 18.74680069599998,
+        "application_setup_seconds": 0.306462420999992,
+        "before_output_seconds": 19.197106906999977
+      },
+      "counts": {
+        "fits_attempted": 10282,
+        "fits_rejected": 5939,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 256,
+        "triple_seeds_started": 10000,
+        "triple_seeds_completed": 10000,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 44,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 34241,
+        "seeds_retained": 10000,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "injected_batch",
+        "batch_submitted_not_returned": 0,
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 339,
+        "maximal_candidates": 3699,
+        "contained_candidates": 644,
+        "candidates_with_partial_overlaps": 1189,
+        "distinct_candidate_tracklets": 10680,
+        "accepted_chains_with_close_epochs": 174,
+        "weak_best_orbits": 1035
+      },
+      "candidates": 4343
+    },
+    {
+      "name": "register-large",
+      "backend": "prefetch",
+      "workers": 20,
+      "seed_budget": 100000,
+      "elapsed_seconds": 40.39768680100002,
+      "exit_code": 0,
+      "user_cpu_seconds": 108.993848,
+      "system_cpu_seconds": 6.778765,
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 1.8922260580000057,
+        "seed_generation_seconds": 0.8366408489999912,
+        "observer_preparation_seconds": 0.02423904200003335,
+        "triple_fitting_seconds": 31.199507842000003,
+        "extension_seconds": 2.851331152,
+        "solve_seconds": 36.902983221,
+        "application_setup_seconds": 0.3067377769999666,
+        "before_output_seconds": 37.57342530699998
+      },
+      "counts": {
+        "fits_attempted": 70133,
+        "fits_rejected": 57214,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 258,
+        "triple_seeds_started": 69836,
+        "triple_seeds_completed": 69836,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 45,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 105980,
+        "seeds_retained": 69836,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "injected_batch",
+        "batch_submitted_not_returned": 0,
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 517,
+        "maximal_candidates": 12234,
+        "contained_candidates": 685,
+        "candidates_with_partial_overlaps": 7390,
+        "distinct_candidate_tracklets": 27393,
+        "accepted_chains_with_close_epochs": 176,
+        "weak_best_orbits": 1049
+      },
+      "candidates": 12919
+    }
+  ],
+  "outputs": {
+    "register-check.log": {
+      "path": "register-check.log",
+      "bytes": 2481,
+      "sha256": "4793d8f94bcdaec6e221ffc315baca9f7b423c8845381b5791f0f3f98a5f2477"
+    },
+    "register-kernel.json": {
+      "path": "register-kernel.json",
+      "bytes": 3752,
+      "sha256": "2c17210fa83c8e0da4ed0aa775a28c904763c9fe07f69076dbaabaccce28535c"
+    },
+    "disagreement-replay.json": {
+      "path": "disagreement-replay.json",
+      "bytes": 9181,
+      "sha256": "1070a8856aaf2db44c327882d47cf06aea75ff6ad1094651b88213816ef5093d"
+    },
+    "register-10k-report.json.gz": {
+      "path": "register-10k-report.json.gz",
+      "bytes": 3945075,
+      "sha256": "6f87da9ebb5c002c1d83cdff68e9673c4294a881c30592b2f2e6e1b12a3a3153"
+    },
+    "register-10k.log": {
+      "path": "register-10k.log",
+      "bytes": 2365,
+      "sha256": "231e76cbed31467f190b95e5f04d978bf7f5843335cc2043b1bde39c40fae662"
+    },
+    "register-10k/extra.json": {
+      "path": "register-10k/extra.json",
+      "bytes": 76667,
+      "sha256": "7100bd776b4d2661f59cf7d8a392d6466830b52223f61d9195e1278ced8e9524"
+    },
+    "register-large-report.json.gz": {
+      "path": "register-large-report.json.gz",
+      "bytes": 8016662,
+      "sha256": "56f19c92e93bd6c2712bf96b8682d49fa009d49a561a88c3d5e83224d4206f1e"
+    },
+    "register-large.log": {
+      "path": "register-large.log",
+      "bytes": 2614,
+      "sha256": "8c0529f1d09dac2de84a2cfc23d33f8e106ae523b5f3decee2cfab2dd5884f4d"
+    },
+    "register-large/extra.json": {
+      "path": "register-large/extra.json",
+      "bytes": 155246,
+      "sha256": "a2ce3281b977fb300fb5f4edee82fa73d1ad73bbd73d16e9d6af36cdcb237306"
+    }
+  },
+  "scope": "Full catalogue scan, fixed seed budget, unchanged fast-profile fit/growth policy, reused hash-verified catalogue/atlas; no production update",
+  "input_verification_seconds": 1.3283707700000207
+}

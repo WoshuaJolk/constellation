@@ -76,6 +76,15 @@ def prepare_bank(geometry, jobs):
             _pack_group(lo, bounds[lo], states, times, plan.t, plan.observers, plan.u,
                         plan.east, plan.north, bank['states'], bank['case_index'], bank['offsets'],
                         bank['observers'], bank['observed'], bank['east'], bank['north'])
+    if hasattr(geometry, 'observation_indices'):
+        observation_index = np.empty(nobs, dtype=np.int64)
+        for plan, (lo, hi) in zip(plans, groups):
+            if hi > lo:
+                ids = geometry.observation_indices(plan.indices)
+                if len(ids) != len(plan.t) or not np.array_equal(geometry.times[ids], plan.t):
+                    raise ValueError('Observation-index mapping differs from fitted input')
+                observation_index[bounds[lo]:bounds[hi]] = np.tile(ids, hi-lo)
+        bank['observation_index'] = observation_index
     all_epochs = np.concatenate(epochs) if epochs else np.empty(0)
     return bank, plans, groups, all_epochs, bounds, (policy[1] if policy else 80)
 

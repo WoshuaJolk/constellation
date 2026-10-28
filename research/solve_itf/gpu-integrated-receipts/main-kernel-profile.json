@@ -1,0 +1,227 @@
+{
+  "chains": 1024,
+  "starts": 25786,
+  "seconds": 11.23182116800001,
+  "profiles": {
+    "copied-poll4": {
+      "wall_seconds": 0.08518254099999467,
+      "state_upload_seconds": 0.00035843599999907383,
+      "workspace_setup_seconds": 0.05938257499997235,
+      "workspace_reused": true,
+      "parallel_normal": true,
+      "coalesced": true,
+      "columnar_jacobian": false,
+      "parallel_copy": true,
+      "device_iterations_wall_seconds": 0.08418088600001283,
+      "final_download_seconds": 0.0006408219999798348,
+      "completion_interval": 4,
+      "completion_checks": [
+        [
+          4,
+          25736
+        ],
+        [
+          8,
+          25599
+        ],
+        [
+          12,
+          22920
+        ],
+        [
+          16,
+          22514
+        ],
+        [
+          20,
+          19956
+        ],
+        [
+          24,
+          16679
+        ],
+        [
+          28,
+          13711
+        ],
+        [
+          32,
+          11242
+        ],
+        [
+          36,
+          9390
+        ],
+        [
+          40,
+          8105
+        ],
+        [
+          44,
+          7148
+        ],
+        [
+          48,
+          6354
+        ],
+        [
+          52,
+          5794
+        ],
+        [
+          56,
+          5398
+        ],
+        [
+          60,
+          5008
+        ],
+        [
+          64,
+          4675
+        ],
+        [
+          68,
+          4395
+        ],
+        [
+          72,
+          4190
+        ],
+        [
+          76,
+          4042
+        ],
+        [
+          80,
+          3885
+        ]
+      ],
+      "per_iteration_full_array_transfers": 0,
+      "instrumented_kernel_seconds": {
+        "propagation": 0.022779104009270672,
+        "initialization": 4.7680001705884936e-05,
+        "normal_scales": 0.006914495982229709,
+        "normal_accumulate": 0.034627584040164944,
+        "normal_flags": 0.00031177600333467123,
+        "proposal": 0.0015652799922972922,
+        "accept": 0.004023903990164399,
+        "copy_accepted": 0.007346272010356189
+      },
+      "timing_warning": "Per-kernel events add launch overhead; not headline timing"
+    },
+    "copied-poll16": {
+      "wall_seconds": 0.07817398800000319,
+      "state_upload_seconds": 0.00031458900002689916,
+      "workspace_setup_seconds": 0.052760547999980645,
+      "workspace_reused": true,
+      "parallel_normal": true,
+      "coalesced": true,
+      "columnar_jacobian": false,
+      "parallel_copy": true,
+      "device_iterations_wall_seconds": 0.07725456099996109,
+      "final_download_seconds": 0.0006024570000136009,
+      "completion_interval": 16,
+      "completion_checks": [
+        [
+          16,
+          22514
+        ],
+        [
+          32,
+          11242
+        ],
+        [
+          48,
+          6354
+        ],
+        [
+          64,
+          4675
+        ],
+        [
+          80,
+          3885
+        ]
+      ],
+      "per_iteration_full_array_transfers": 0,
+      "instrumented_kernel_seconds": {
+        "propagation": 0.022335648119449623,
+        "initialization": 4.854400083422661e-05,
+        "normal_scales": 0.006016799986362456,
+        "normal_accumulate": 0.03350601589679717,
+        "normal_flags": 0.00032611200213432314,
+        "proposal": 0.0016207360103726387,
+        "accept": 0.003799839993938803,
+        "copy_accepted": 0.007136640019714833
+      },
+      "timing_warning": "Per-kernel events add launch overhead; not headline timing"
+    },
+    "indexed-poll16": {
+      "wall_seconds": 0.0801431330000355,
+      "state_upload_seconds": 0.00036276700001280915,
+      "workspace_setup_seconds": 0.06544090400001323,
+      "workspace_reused": true,
+      "parallel_normal": true,
+      "coalesced": true,
+      "columnar_jacobian": false,
+      "parallel_copy": true,
+      "device_iterations_wall_seconds": 0.07915005600000313,
+      "final_download_seconds": 0.0006274670000152582,
+      "completion_interval": 16,
+      "completion_checks": [
+        [
+          16,
+          22514
+        ],
+        [
+          32,
+          11242
+        ],
+        [
+          48,
+          6354
+        ],
+        [
+          64,
+          4675
+        ],
+        [
+          80,
+          3885
+        ]
+      ],
+      "per_iteration_full_array_transfers": 0,
+      "instrumented_kernel_seconds": {
+        "propagation": 0.02275542405247689,
+        "initialization": 5.100800096988678e-05,
+        "normal_scales": 0.006294560018926859,
+        "normal_accumulate": 0.03402771201729774,
+        "normal_flags": 0.0003263360022101551,
+        "proposal": 0.0015811840053647757,
+        "accept": 0.00408515201508999,
+        "copy_accepted": 0.007432832010090353
+      },
+      "timing_warning": "Per-kernel events add launch overhead; not headline timing"
+    }
+  },
+  "parity": {
+    "copied-poll16": {
+      "states": true,
+      "success": true,
+      "cost": true,
+      "reasons": true,
+      "iterations": true,
+      "evaluations": true
+    },
+    "indexed-poll16": {
+      "states": true,
+      "success": true,
+      "cost": true,
+      "reasons": true,
+      "iterations": true,
+      "evaluations": true
+    }
+  },
+  "warning": "Separate replay with per-kernel events; not headline timing. No new hypotheses or cuts."
+}

@@ -136,7 +136,7 @@ def validate_bank(bank):
 
 
 class ResidentBank:
-    def __init__(self, bank, *, allow_simulator=False, columnar_jacobian=False):
+    def __init__(self, bank, *, allow_simulator=False, columnar_jacobian=False, resident_geometry=None):
         if cuda.config.ENABLE_CUDASIM and not allow_simulator:
             raise RuntimeError('CUDA simulator is not a GPU benchmark')
         if not cuda.is_available():
@@ -147,7 +147,14 @@ class ResidentBank:
         self.n = len(case)
         self.case_index = case.copy()
         self.inputs = [cuda.to_device(arrays['states']), cuda.to_device(case)]
-        self.inputs += [cuda.to_device(arrays[k]) for k in ('offsets', 'observers', 'observed', 'east', 'north')]
+        self.inputs.append(cuda.to_device(arrays['offsets']))
+        self.kernel = _evaluate
+        if resident_geometry is None:
+            self.inputs += [cuda.to_device(arrays[k]) for k in ('observers', 'observed', 'east', 'north')]
+        else:
+            from .gpu_indexed import _evaluate_indexed
+            self.inputs += resident_geometry.bind(bank, arrays)
+            self.kernel = _evaluate_indexed
         self.residual = cuda.device_array((self.n, 2), np.float64)
         self.jacobian = (cuda.device_array((2*self.n, 6), np.float64, order='F').reshape(self.n, 2, 6)
                          if columnar_jacobian else cuda.device_array((self.n, 2, 6), np.float64))
@@ -165,7 +172,7 @@ class ResidentBank:
             self.active.copy_to_device(active)
         self.profile['state_upload_seconds'] += time.perf_counter()-stamp
         stamp = time.perf_counter()
-        _evaluate[(self.n+127)//128, 128](*self.inputs, self.sigma, self.active, self.residual, self.jacobian, self.valid)
+        self.kernel[(self.n+127)//128, 128](*self.inputs, self.sigma, self.active, self.residual, self.jacobian, self.valid)
         cuda.synchronize()
         self.profile['kernel_sync_seconds'] += time.perf_counter()-stamp
         if download:
