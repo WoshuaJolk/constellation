@@ -1,0 +1,15 @@
+{
+  "unix": 1793210960.2547758,
+  "sha256": "96f85e5bd8fdc2724a4b68176f17872cd5cdc3d4be7d918544adbf571eafd0b5",
+  "change": "Fork CPU pool before starting utilization thread; numerical settings unchanged",
+  "status_before": {
+    "utc": 1793210959.8650396,
+    "cpus": 20,
+    "jobs": {
+      "gpufit": {
+        "pid": 4682,
+        "exit_code": null
+      }
+    }
+  }
+}

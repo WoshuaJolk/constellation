@@ -1,0 +1,16 @@
+{
+  "verified_unix": 1793211809.9952276,
+  "benchmark_code_sha256": "5ff5f80fe42b90ea2ed223bf668d39f0352847b67135c0a58fc33865e76d906b",
+  "cpu_process_code_sha256": "6d7a552e1f747593c7f8fa98d478d78e528e5f32d34e3f1d86af97c1f791b084",
+  "raw_evidence_directory": "/tmp/itf-deep-benchmark-20261028",
+  "raw_evidence_hash_receipts": [
+    "returned-evidence.json",
+    "cpu-process-returned.json"
+  ],
+  "raw_outputs_verified_before_worker_deletion": true,
+  "additional_compute_cap_usd": 5.0,
+  "estimated_compute_usd": 2.1690668046176436,
+  "no_production_catalogue_changes": true,
+  "fresh_graph_build_measured": false,
+  "observed_droplets_after_cleanup": 0
+}

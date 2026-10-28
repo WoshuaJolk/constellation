@@ -1,0 +1,66 @@
+{
+  ".remote/gpufit.log": {
+    "bytes": 198801,
+    "sha256": "6bdc68c0641d5ec5b6b4196773e898856e9682c6faf514dab6c2b43ff347f29a"
+  },
+  "fit-results/cpu-0-batches.json": {
+    "bytes": 43475,
+    "sha256": "d167a89b6338079d5acb0d68bf815f112ee238cf97783d57ee3dab4b679c46bc"
+  },
+  "fit-results/cpu-0.jsonl.gz": {
+    "bytes": 4268012,
+    "sha256": "e611362d20969c37c1f3823cef0866dc5aefd826e1d29e673ec4afba0e1e30e0"
+  },
+  "fit-results/cpu-1-batches.json": {
+    "bytes": 43004,
+    "sha256": "f21929c6f7ac2a95d14efe8186495e9cfd24b15c67bda40244c96e2dfe4ad36c"
+  },
+  "fit-results/cpu-1.jsonl.gz": {
+    "bytes": 4185853,
+    "sha256": "259b0040d406dd3d4fec8b0bd6a7ab3c8fc73b8a92aec5d80824b0f29313ed7f"
+  },
+  "fit-results/gpu-0-batches.json": {
+    "bytes": 408940,
+    "sha256": "9909bdd1da9fc332275cc46281d11abed71a965800f2f3c91d36be29bd35414b"
+  },
+  "fit-results/gpu-0.jsonl.gz": {
+    "bytes": 6789128,
+    "sha256": "86512a7ff7a263f9982c4cf42d9ac6f785880efd7b0b4576bd3c374c7790cb8d"
+  },
+  "fit-results/gpu-1-batches.json": {
+    "bytes": 406858,
+    "sha256": "b102a90f8c6ab0e757ff5b38a8c982b1386813554e23aca8f8c9268783711b1a"
+  },
+  "fit-results/gpu-1.jsonl.gz": {
+    "bytes": 6766184,
+    "sha256": "fb6c2804e2ef03e5ac2c06c7ba366278429643a34474fec7220ed2d9c5892351"
+  },
+  "fit-results/longgap-caches.tar.gz": {
+    "bytes": 5200421,
+    "sha256": "0aa97dff06efe1bd018587288aa9b49efb5507f8e4edee44aa2d276549c8a952"
+  },
+  "fit-results/longgap.jsonl.gz": {
+    "bytes": 571877,
+    "sha256": "6c8e8a0bff21fd3388094020c88e73dd849da3c91b70c4fda14323ca09a0260f"
+  },
+  "fit-results/paired-comparison.json": {
+    "bytes": 390,
+    "sha256": "da6aad2fbbb4620847d17d4f2b7c1aee6ea0551f18898633dc1dd8e5dcea84da"
+  },
+  "fit-results/report.json": {
+    "bytes": 8302,
+    "sha256": "160a66230d22bf57a57df9e127cbc36292249e505906302e4f7bc82610ee749d"
+  },
+  "fit-results/utilization.jsonl": {
+    "bytes": 60041,
+    "sha256": "a6cf6bbf26d98f5b87ef38685442cee431664b90e7ee38a3419611f189befb5f"
+  },
+  "gpu-tests.log": {
+    "bytes": 1302,
+    "sha256": "d1038f317447a3381bd5b9954f32499ad535509421b81030b5cd4f9017fb600a"
+  },
+  "hardware.json": {
+    "bytes": 460,
+    "sha256": "361d67de24511cb2eb3ff01088480d6a40cb564b862088a7fab11e5adc29bcb8"
+  }
+}

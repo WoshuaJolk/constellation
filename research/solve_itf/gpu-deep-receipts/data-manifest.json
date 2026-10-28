@@ -1,0 +1,112 @@
+{
+  "catalogue/manifest.json": {
+    "path": "/workspace/constellation/.cache/solve_itf/iteration5-cold-cache/manifest.json",
+    "bytes": 917,
+    "sha256": "878ecf0e4cd694a670cae44b82a802a376b67bd70e32652968269d0c083c10b0"
+  },
+  "catalogue/observations.npy": {
+    "path": "/workspace/constellation/.cache/solve_itf/iteration5-cold-cache/observations.npy",
+    "bytes": 142946752,
+    "sha256": "5889c476a721bc4d61c7e8f0fdb1d980b77c60817b0d7f8c3e930a7a39d159d3"
+  },
+  "catalogue/tracklets.npy": {
+    "path": "/workspace/constellation/.cache/solve_itf/iteration5-cold-cache/tracklets.npy",
+    "bytes": 231896193,
+    "sha256": "e0805dae89e6736f8cdeccd859ad6d37dfad8588d552bac9fc935fb2b69075b6"
+  },
+  "atlas/identity.json": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/fit-geometry/identity.json",
+    "bytes": 1041,
+    "sha256": "609d895db598a0568a66efaf00ca85261733f5eb99ea560d370cc275eeb5df5b"
+  },
+  "atlas/unit.npy": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/fit-geometry/unit.npy",
+    "bytes": 214419968,
+    "sha256": "12d0362bb91a2e695ed17cc2ca151ea6f01d9e71840de70544ea7745a45f2e50"
+  },
+  "atlas/ready.npy": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/fit-geometry/ready.npy",
+    "bytes": 2548435,
+    "sha256": "e6ba9184fb3d698cab801ac4e99244a0eb4868f4b04db33f1e003b3539ef5ad4"
+  },
+  "atlas/times.npy": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/fit-geometry/times.npy",
+    "bytes": 71473408,
+    "sha256": "bed4d820c50036d8e75878baffcaed71b328fd389a3fcdfe940266051e9fa1aa"
+  },
+  "atlas/observers.npy": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/fit-geometry/observers.npy",
+    "bytes": 214419968,
+    "sha256": "bc9fe19f742bb199f155e53060a9bf87ac67e356df074f173d7e0041e4f4b337"
+  },
+  "atlas/complete.json": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/fit-geometry/complete.json",
+    "bytes": 60,
+    "sha256": "ccd8e36e2d56592c52e7d6b3b6e600b916f54bfb8f7e06ead0531433c08f0bb2"
+  },
+  "seeds.npy": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/seeds.npy",
+    "bytes": 84000128,
+    "sha256": "884f1f3c36850bbe469419205aac8fcae3930d4c65735c9f79140327a3f25a86"
+  },
+  "seeds.json": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/seeds.json",
+    "bytes": 378,
+    "sha256": "3751334cbaa9e0814f3363cd8495ce46823d372d43dbeb1529883e6ad48884e5"
+  },
+  "seeds-identity.json": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/seeds-identity.json",
+    "bytes": 306,
+    "sha256": "cfc89763f8ba469274206856470556b3a8f905c76b45d905c98944ae85cc39ba"
+  },
+  "graph/extended-offsets.npy": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/graph/extended-offsets.npy",
+    "bytes": 20386592,
+    "sha256": "66f757bd9024860c42a6d4d6e218a377f83e9989988daf3b92aad1f13e2b912a"
+  },
+  "graph/extended-neighbors.npy": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/graph/extended-neighbors.npy",
+    "bytes": 80153992,
+    "sha256": "038dfa04700ec404f65fc54652f4d29e050120b4807c01970b868cc156f2dd7f"
+  },
+  "graph/extended-scores.npy": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/graph/extended-scores.npy",
+    "bytes": 160307856,
+    "sha256": "1ddd1b8a39afbeeeb63eaf17414d335bed678ca51091c597bdb8452dc93ab981"
+  },
+  "graph/extended-csr.json": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/graph/extended-csr.json",
+    "bytes": 155,
+    "sha256": "0305648434b341c8bfb5cdbb3a410ccec3ea0ada54960c204769d0e01f5c8e64"
+  },
+  "graph/graph-identity.json": {
+    "path": "/workspace/constellation/runs/solve-itf-seven-million/graph/graph-identity.json",
+    "bytes": 2015,
+    "sha256": "55808a1178c0f84088ef97f70a5158bc3557051994bfb70b23988eb6442c3e6f"
+  },
+  "ObsCodes.html": {
+    "path": "/workspace/constellation/.cache/solve_itf/ObsCodes.html",
+    "bytes": 149304,
+    "sha256": "58454e19015f622472a67928d517ca081abfa13c987a211dbf4533e293226fe4"
+  },
+  "de440s.bsp": {
+    "path": "/workspace/constellation/.cache/solve_itf/ephemerides/de440s.bsp",
+    "bytes": 32726016,
+    "sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2"
+  },
+  "longgap-parents.json": {
+    "path": "/tmp/itf-deep-benchmark-20261028/longgap-parents.json",
+    "bytes": 2184077,
+    "sha256": "1dbb6532bcbe66035fc8e0339b9ed753a76cebce858c004679cf0183e97cf5f0"
+  },
+  "longgap-selection.json": {
+    "path": "/tmp/itf-deep-benchmark-20261028/longgap-selection.json",
+    "bytes": 475,
+    "sha256": "fa22f697e77c1c8e1305bf06507e0ea57830af2594d3699ac26e72a59b9e2f1a"
+  },
+  "design.json": {
+    "path": "/tmp/itf-deep-benchmark-20261028/design.json",
+    "bytes": 2371,
+    "sha256": "aef164d7b66bc70e50e929f72eb53cbe1004cbdb532cfe53834fce6116c2bc53"
+  }
+}

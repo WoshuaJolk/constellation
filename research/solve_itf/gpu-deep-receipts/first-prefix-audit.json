@@ -1,0 +1,21 @@
+{
+  "common_within_budget": 106496,
+  "status_changes": [],
+  "max_retained_rms_difference_arcsec": 6.816404940490628e-10,
+  "rms_changes_over_001_arcsec": [],
+  "mode_count_changes": [
+    4694,
+    292326,
+    709308,
+    1188022,
+    1652291,
+    1803020,
+    1950071,
+    2200332,
+    4422103,
+    5112012,
+    5693113,
+    6118077,
+    6294707
+  ]
+}
