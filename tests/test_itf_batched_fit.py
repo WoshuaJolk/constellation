@@ -56,3 +56,44 @@ def test_resident_solver_preserves_policy_and_invalid_cases(iterations):
     assert not result['success'][-1]
     assert result['reasons'][-1] == (2 if iterations else 4)
     assert result['profile']['per_iteration_full_array_transfers']==0
+
+@pytest.mark.skipif(not cuda.is_available(), reason='CUDA or explicit simulator required')
+@pytest.mark.parametrize('coalesced,parallel', [(False, False), (False, True), (True, True)])
+def test_workspace_reuse_resets_all_solver_state(coalesced, parallel):
+    from magictools.itf.gpu_fit import ResidentWorkspace, solve_resident
+    bank = fixture_bank()
+    workspace = ResidentWorkspace(bank, allow_simulator=True, coalesced=coalesced)
+    initial = bank['states'].copy();initial[:-1, 0] += .001
+    expected = solve_resident(dict(bank, states=initial), 5, allow_simulator=True)
+    workspace.solve(bank['states'], 1, parallel_normal=parallel)  # contaminate scratch
+    for _ in range(2):
+        actual = workspace.solve(initial, 5, parallel_normal=parallel)
+        for key in ('states', 'success', 'cost', 'reasons', 'iterations', 'evaluations'):
+            np.testing.assert_array_equal(actual[key], expected[key])
+    with pytest.raises(ValueError, match='shape/dtype'):
+        workspace.solve(initial.astype(np.float32))
+    with pytest.raises(ValueError, match='nonnegative'):
+        workspace.solve(initial, -1)
+
+
+def test_workspace_rejects_interleaved_observations():
+    if not cuda.is_available():
+        pytest.skip('CUDA or explicit simulator required')
+    from magictools.itf.gpu_fit import ResidentWorkspace
+    bank = fixture_bank()
+    bank['case_index'] = bank['case_index'].copy()
+    bank['case_index'][0], bank['case_index'][-1] = bank['case_index'][-1], bank['case_index'][0]
+    with pytest.raises(ValueError, match='grouped'):
+        ResidentWorkspace(bank, allow_simulator=True)
+
+@pytest.mark.skipif(not cuda.is_available(), reason='CUDA or explicit simulator required')
+@pytest.mark.parametrize('columnar,copy_parallel', [(True,False),(False,True),(True,True)])
+def test_columnar_jacobian_and_parallel_accept_copy(columnar, copy_parallel):
+    from magictools.itf.gpu_fit import ResidentWorkspace, solve_resident
+    bank = fixture_bank();bank['states'] = bank['states'].copy();bank['states'][:-1,0] += .001
+    expected=solve_resident(bank,5,allow_simulator=True)
+    workspace=ResidentWorkspace(bank,allow_simulator=True,coalesced=True,columnar_jacobian=columnar)
+    for _ in range(2):
+        result=workspace.solve(bank['states'],5,parallel_normal=True,parallel_copy=copy_parallel)
+        for key in ('states','success','cost','reasons','iterations','evaluations'):
+            np.testing.assert_array_equal(result[key],expected[key])

@@ -136,7 +136,7 @@ def validate_bank(bank):
 
 
 class ResidentBank:
-    def __init__(self, bank, *, allow_simulator=False):
+    def __init__(self, bank, *, allow_simulator=False, columnar_jacobian=False):
         if cuda.config.ENABLE_CUDASIM and not allow_simulator:
             raise RuntimeError('CUDA simulator is not a GPU benchmark')
         if not cuda.is_available():
@@ -149,7 +149,8 @@ class ResidentBank:
         self.inputs = [cuda.to_device(arrays['states']), cuda.to_device(case)]
         self.inputs += [cuda.to_device(arrays[k]) for k in ('offsets', 'observers', 'observed', 'east', 'north')]
         self.residual = cuda.device_array((self.n, 2), np.float64)
-        self.jacobian = cuda.device_array((self.n, 2, 6), np.float64)
+        self.jacobian = (cuda.device_array((2*self.n, 6), np.float64, order='F').reshape(self.n, 2, 6)
+                         if columnar_jacobian else cuda.device_array((self.n, 2, 6), np.float64))
         self.valid = cuda.device_array(self.n, np.uint8)
 
     def evaluate(self, *, download=True, states=None, active=None):

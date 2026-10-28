@@ -1,5 +1,8 @@
 # Complete-fit GPU development benchmark, 2026-10-28
 
+Later measurements and optimizations: [GPU-OPTIMIZATION.md](GPU-OPTIMIZATION.md).
+The earlier measurements and failed checks below are preserved.
+
 The experiment runs complete **single-start** `solve_lm` optimizations, not the
 entire linker, multi-start selection or scientific verification. It preserves
 observations, sigma, two-body/light-time equations, 80-iteration limit, damping

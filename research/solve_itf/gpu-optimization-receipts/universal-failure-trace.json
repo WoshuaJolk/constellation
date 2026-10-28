@@ -1,0 +1,253 @@
+{
+  "scope": "Trace prior 28 CPU-invalid final GPU states, no refits or changed tolerances. Local derivative output parity checked per traced invocation.",
+  "cases": [
+    {
+      "start": 72,
+      "observation_index": 752,
+      "light_time_iteration": 1,
+      "emitted_days": 113.69853567971458,
+      "reason": 5
+    },
+    {
+      "start": 73,
+      "observation_index": 760,
+      "light_time_iteration": 2,
+      "emitted_days": 113.69480843679224,
+      "reason": 5
+    },
+    {
+      "start": 74,
+      "observation_index": 770,
+      "light_time_iteration": 0,
+      "emitted_days": 113.7125700268225,
+      "reason": 5
+    },
+    {
+      "start": 79,
+      "observation_index": 813,
+      "light_time_iteration": 1,
+      "emitted_days": 113.69003805930461,
+      "reason": 5
+    },
+    {
+      "start": 98,
+      "observation_index": 986,
+      "light_time_iteration": 2,
+      "emitted_days": 113.70000101181587,
+      "reason": 5
+    },
+    {
+      "start": 99,
+      "observation_index": 995,
+      "light_time_iteration": 0,
+      "emitted_days": 113.7125700268225,
+      "reason": 5
+    },
+    {
+      "start": 103,
+      "observation_index": 1029,
+      "light_time_iteration": 2,
+      "emitted_days": 113.68882624666904,
+      "reason": 5
+    },
+    {
+      "start": 120,
+      "observation_index": 1182,
+      "light_time_iteration": 2,
+      "emitted_days": 113.6902623001609,
+      "reason": 5
+    },
+    {
+      "start": 121,
+      "observation_index": 1192,
+      "light_time_iteration": 2,
+      "emitted_days": 113.69495319500689,
+      "reason": 5
+    },
+    {
+      "start": 122,
+      "observation_index": 1201,
+      "light_time_iteration": 1,
+      "emitted_days": 113.69723680744956,
+      "reason": 5
+    },
+    {
+      "start": 127,
+      "observation_index": 1247,
+      "light_time_iteration": 2,
+      "emitted_days": 113.69824538887268,
+      "reason": 5
+    },
+    {
+      "start": 230,
+      "observation_index": 2647,
+      "light_time_iteration": 1,
+      "emitted_days": -732.3020376362037,
+      "reason": 5
+    },
+    {
+      "start": 624,
+      "observation_index": 8616,
+      "light_time_iteration": 1,
+      "emitted_days": -734.6171669887483,
+      "reason": 5
+    },
+    {
+      "start": 628,
+      "observation_index": 8670,
+      "light_time_iteration": 0,
+      "emitted_days": 113.73828160391713,
+      "reason": 5
+    },
+    {
+      "start": 629,
+      "observation_index": 8673,
+      "light_time_iteration": 0,
+      "emitted_days": -733.9717715748993,
+      "reason": 5
+    },
+    {
+      "start": 645,
+      "observation_index": 8847,
+      "light_time_iteration": 1,
+      "emitted_days": -734.0020462036418,
+      "reason": 5
+    },
+    {
+      "start": 646,
+      "observation_index": 8860,
+      "light_time_iteration": 1,
+      "emitted_days": -733.976515107998,
+      "reason": 5
+    },
+    {
+      "start": 647,
+      "observation_index": 8869,
+      "light_time_iteration": 1,
+      "emitted_days": -734.0013425144273,
+      "reason": 5
+    },
+    {
+      "start": 1134,
+      "observation_index": 16419,
+      "light_time_iteration": 0,
+      "emitted_days": 358.04946157347877,
+      "reason": 5
+    },
+    {
+      "start": 1137,
+      "observation_index": 16451,
+      "light_time_iteration": 1,
+      "emitted_days": 358.0400376260068,
+      "reason": 5
+    },
+    {
+      "start": 1141,
+      "observation_index": 16495,
+      "light_time_iteration": 0,
+      "emitted_days": 358.0440715734803,
+      "reason": 5
+    },
+    {
+      "start": 1809,
+      "observation_index": 25249,
+      "light_time_iteration": 1,
+      "emitted_days": 358.05695829579787,
+      "reason": 5
+    },
+    {
+      "start": 1813,
+      "observation_index": 25290,
+      "light_time_iteration": 0,
+      "emitted_days": 358.066431573483,
+      "reason": 5
+    },
+    {
+      "start": 12297,
+      "observation_index": 152797,
+      "light_time_iteration": 2,
+      "emitted_days": -359.04450755805175,
+      "reason": 5
+    },
+    {
+      "start": 43502,
+      "observation_index": 591011,
+      "light_time_iteration": 1,
+      "emitted_days": -359.95133840651545,
+      "reason": 5
+    },
+    {
+      "start": 43954,
+      "observation_index": 596769,
+      "light_time_iteration": 1,
+      "emitted_days": 355.0288862674713,
+      "reason": 5
+    },
+    {
+      "start": 71075,
+      "observation_index": 949817,
+      "light_time_iteration": 1,
+      "emitted_days": -359.8575057988589,
+      "reason": 5
+    },
+    {
+      "start": 71078,
+      "observation_index": 949851,
+      "light_time_iteration": 1,
+      "emitted_days": -359.88534532847757,
+      "reason": 5
+    }
+  ],
+  "reasons": {
+    "1": {
+      "source_line_relative": 7,
+      "context": [
+        "    invalid = (np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan)",
+        "    if radius < 1e-5 or not math.isfinite(radius):",
+        "        return invalid"
+      ]
+    },
+    "2": {
+      "source_line_relative": 16,
+      "context": [
+        "        value = rv*edge*edge*c+(1-alpha*radius)*edge**3*ss+radius*edge-root_mu*dt",
+        "        if not math.isfinite(value):",
+        "            return invalid"
+      ]
+    },
+    "3": {
+      "source_line_relative": 21,
+      "context": [
+        "        edge *= 2",
+        "    else:",
+        "        return invalid"
+      ]
+    },
+    "4": {
+      "source_line_relative": 30,
+      "context": [
+        "        radial = rv*chi*(1-z*ss)+(1-alpha*radius)*chi*chi*c+radius",
+        "        if not math.isfinite(radial) or radial <= 0:",
+        "            return invalid"
+      ]
+    },
+    "5": {
+      "source_line_relative": 41,
+      "context": [
+        "        chi = proposed if lo < proposed < hi else .5*(lo+hi)",
+        "    else:",
+        "        return invalid"
+      ]
+    },
+    "6": {
+      "source_line_relative": 46,
+      "context": [
+        "    rn = math.sqrt(x*x+y*y+zp*zp)",
+        "    if rn < 1e-5:",
+        "        return invalid"
+      ]
+    }
+  },
+  "exact_trace_parity_calls": 441,
+  "label": "Diagnostic failure mechanism in CPU implementation, not proof CPU or GPU is physically correct"
+}

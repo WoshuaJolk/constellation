@@ -1,0 +1,237 @@
+{
+  "observed_utc": 1793200208.6057384,
+  "droplet_count": 0,
+  "droplet_ids": [],
+  "this_turn_compute_usd": 0.6447700417399407,
+  "combined_compute_usd": 3.4417694432399406,
+  "medians": {
+    "cpu-20": 3.497837952999987,
+    "parallel-baseline": 0.3291392010000038,
+    "columnar": 0.3291979389999824,
+    "parallel-copy": 0.2774224679999975,
+    "columnar-copy": 0.2778306490000091
+  },
+  "best_setup_seconds": 0.5325929099999769,
+  "best_first_call_seconds": 0.8099476199999742,
+  "steady_cpu_speedup": 12.608344155456143,
+  "first_batch_cpu_speedup": 4.31859772981381,
+  "gpu_reference_hashes": {
+    "parallel-baseline": "56cdaf0f050905ad0ee84a703d28c7c9313a7f71cbd1348207d40c29a8b3c1fb",
+    "columnar": "56cdaf0f050905ad0ee84a703d28c7c9313a7f71cbd1348207d40c29a8b3c1fb",
+    "parallel-copy": "56cdaf0f050905ad0ee84a703d28c7c9313a7f71cbd1348207d40c29a8b3c1fb",
+    "columnar-copy": "56cdaf0f050905ad0ee84a703d28c7c9313a7f71cbd1348207d40c29a8b3c1fb"
+  },
+  "profiles": {
+    "columnar=False;copy=False": {
+      "wall_seconds": 0.33204251300000465,
+      "state_upload_seconds": 0.001325460999993311,
+      "workspace_setup_seconds": 0.5349190910000061,
+      "workspace_reused": true,
+      "parallel_normal": true,
+      "coalesced": true,
+      "columnar_jacobian": false,
+      "parallel_copy": false,
+      "device_iterations_wall_seconds": 0.32792602100002455,
+      "final_download_seconds": 0.0027873619999922994,
+      "completion_checks": [
+        [
+          4,
+          239839
+        ],
+        [
+          8,
+          238680
+        ],
+        [
+          12,
+          205664
+        ],
+        [
+          16,
+          185251
+        ],
+        [
+          20,
+          157942
+        ],
+        [
+          24,
+          131678
+        ],
+        [
+          28,
+          107284
+        ],
+        [
+          32,
+          85185
+        ],
+        [
+          36,
+          68298
+        ],
+        [
+          40,
+          56254
+        ],
+        [
+          44,
+          47906
+        ],
+        [
+          48,
+          41264
+        ],
+        [
+          52,
+          36047
+        ],
+        [
+          56,
+          32081
+        ],
+        [
+          60,
+          28982
+        ],
+        [
+          64,
+          26562
+        ],
+        [
+          68,
+          24529
+        ],
+        [
+          72,
+          22709
+        ],
+        [
+          76,
+          21144
+        ],
+        [
+          80,
+          19758
+        ]
+      ],
+      "per_iteration_full_array_transfers": 0,
+      "instrumented_kernel_seconds": {
+        "propagation": 0.15839593559503562,
+        "initialization": 7.388799637556076e-05,
+        "normal_scales": 0.008156448021531107,
+        "normal_accumulate": 0.06184431990981104,
+        "normal_flags": 0.00041171200480312123,
+        "proposal": 0.005465440012514592,
+        "accept": 0.08900543999671934
+      },
+      "timing_warning": "Per-kernel events add launch overhead; not headline timing"
+    },
+    "columnar=True;copy=True": {
+      "wall_seconds": 0.2800914690000127,
+      "state_upload_seconds": 0.0013405859999977565,
+      "workspace_setup_seconds": 0.5329827839999837,
+      "workspace_reused": true,
+      "parallel_normal": true,
+      "coalesced": true,
+      "columnar_jacobian": true,
+      "parallel_copy": true,
+      "device_iterations_wall_seconds": 0.2759552830000018,
+      "final_download_seconds": 0.002791900999994823,
+      "completion_checks": [
+        [
+          4,
+          239839
+        ],
+        [
+          8,
+          238680
+        ],
+        [
+          12,
+          205664
+        ],
+        [
+          16,
+          185251
+        ],
+        [
+          20,
+          157942
+        ],
+        [
+          24,
+          131678
+        ],
+        [
+          28,
+          107284
+        ],
+        [
+          32,
+          85185
+        ],
+        [
+          36,
+          68298
+        ],
+        [
+          40,
+          56254
+        ],
+        [
+          44,
+          47906
+        ],
+        [
+          48,
+          41264
+        ],
+        [
+          52,
+          36047
+        ],
+        [
+          56,
+          32081
+        ],
+        [
+          60,
+          28982
+        ],
+        [
+          64,
+          26562
+        ],
+        [
+          68,
+          24529
+        ],
+        [
+          72,
+          22709
+        ],
+        [
+          76,
+          21144
+        ],
+        [
+          80,
+          19758
+        ]
+      ],
+      "per_iteration_full_array_transfers": 0,
+      "instrumented_kernel_seconds": {
+        "propagation": 0.1583648315668105,
+        "initialization": 7.635200023651123e-05,
+        "normal_scales": 0.00868665602430701,
+        "normal_accumulate": 0.06162697619199754,
+        "normal_flags": 0.00041376000363379725,
+        "proposal": 0.005478400010615589,
+        "accept": 0.006552832033485172,
+        "copy_accepted": 0.030395327903330327
+      },
+      "timing_warning": "Per-kernel events add launch overhead; not headline timing"
+    }
+  }
+}

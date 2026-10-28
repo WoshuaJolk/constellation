@@ -35,6 +35,48 @@ def _initialize(bounds, r, j, valid, cost, damping, increase, refresh, done,
 
 
 @cuda.jit(fastmath=False)
+def _normal_parallel(bounds, r, j, cost, scales, gradient, normal, refresh, done):
+    index = cuda.grid(1)
+    c, k = index // 6, index % 6
+    if c >= len(cost) or done[c] or not refresh[c]:
+        return
+    # Do not act on invalid initial residual sentinels.
+    if not math.isfinite(cost[c]) or cost[c] >= 1e23:
+        return
+    value = 0.
+    for row in range(2*bounds[c], 2*bounds[c+1]):
+        value += j[row, k]*j[row, k]
+    scales[c, k] = max(math.sqrt(value), 1e-12)
+
+
+@cuda.jit(fastmath=False)
+def _normal_accumulate(bounds, r, j, cost, scales, gradient, normal, refresh, done):
+    index = cuda.grid(1)
+    c, k = index // 6, index % 6
+    if c >= len(cost) or done[c] or not refresh[c]:
+        return
+    if not math.isfinite(cost[c]) or cost[c] >= 1e23:
+        return
+    gradient[c, k] = 0.
+    for l in range(k+1):
+        normal[c, k, l] = 0.
+    for row in range(2*bounds[c], 2*bounds[c+1]):
+        value = j[row, k]/scales[c, k]
+        gradient[c, k] += value*r[row]
+        for l in range(k+1):
+            normal[c, k, l] += value*j[row, l]/scales[c, l]
+    for l in range(k):
+        normal[c, l, k] = normal[c, k, l]
+
+
+@cuda.jit
+def _clear_refresh(refresh, done):
+    c = cuda.grid(1)
+    if c < len(refresh) and not done[c]:
+        refresh[c] = 0
+
+
+@cuda.jit(fastmath=False)
 def _propose(states, bounds, r, j, cost, damping, refresh, scales, normal,
              gradient, trials, scaled_steps, steps, done, success, reasons,
              iterations, pending, iteration):
@@ -112,7 +154,7 @@ def _propose(states, bounds, r, j, cost, damping, refresh, scales, normal,
 @cuda.jit(fastmath=False)
 def _accept(states, bounds, r, j, cost, damping, increase, refresh, normal,
             gradient, trials, scaled_steps, steps, done, success, reasons,
-            pending, nr, nj, valid, evaluations):
+            pending, nr, nj, valid, evaluations, copy_inline):
     c = cuda.grid(1)
     if c >= len(states) or pending[c] == 0:
         return
@@ -141,10 +183,11 @@ def _accept(states, bounds, r, j, cost, damping, increase, refresh, normal,
             states[c, k] = trials[c, k]
             step_norm += steps[c, k]*steps[c, k]
             state_norm += states[c, k]*states[c, k]
-        for row in range(2*bounds[c], 2*bounds[c+1]):
-            r[row] = nr[row]
-            for k in range(6):
-                j[row, k] = nj[row, k]
+        if copy_inline:
+            for row in range(2*bounds[c], 2*bounds[c+1]):
+                r[row] = nr[row]
+                for k in range(6):
+                    j[row, k] = nj[row, k]
         refresh[c] = 1
         small = math.sqrt(step_norm) <= 1e-9*(math.sqrt(state_norm)+1e-9)
         cost[c] = new_cost
@@ -167,6 +210,20 @@ def _accept(states, bounds, r, j, cost, damping, increase, refresh, normal,
             done[c], reasons[c] = 1, 1 if success[c] else 3
 
 
+@cuda.jit(fastmath=False)
+def _copy_accepted(case_index, refresh, pending, r, j, nr, nj):
+    obs = cuda.grid(1)
+    if obs >= len(case_index):
+        return
+    c = case_index[obs]
+    if refresh[c] and pending[c]:
+        for coordinate in range(2):
+            row = 2*obs+coordinate
+            r[row] = nr[row]
+            for k in range(6):
+                j[row,k] = nj[row,k]
+
+
 @cuda.jit
 def _remaining(done, remaining):
     c = cuda.grid(1)
@@ -174,30 +231,126 @@ def _remaining(done, remaining):
         cuda.atomic.add(remaining, 0, 1)
 
 
-def solve_resident(bank, max_iterations=80, *, allow_simulator=False, profile_events=False):
-    """Same local-fit policy; one upload, device iterations, one final download.
+class ResidentWorkspace:
+    """Validated observation bank and scratch storage reused across start batches.
 
-    Check completion every four iterations (4-byte count). Completed cases do
-    no numerical work in the intervening launches. Timing events are optional
-    diagnostics; headline timing uses no per-kernel events.
+    Observations, weights and dimensions are fixed at construction. Each solve
+    requires an explicit fresh state bank; damping, flags and counters reset.
+    Setup cost is reported separately, never hidden in throughput claims.
+    A workspace is single-stream/non-reentrant and must not be shared by callers.
     """
+    def __init__(self, bank, *, allow_simulator=False, coalesced=False, columnar_jacobian=False):
+        started = time.perf_counter()
+        order = 'F' if coalesced else 'C'
+        base = ResidentBank(bank, allow_simulator=allow_simulator, columnar_jacobian=columnar_jacobian)
+        if np.any(np.diff(base.case_index) < 0):
+            raise ValueError("LM requires observations grouped contiguously by case")
+        n, nobs = len(bank['states']), len(bank['offsets'])
+        bounds = cuda.to_device(np.r_[0,np.cumsum(np.bincount(bank['case_index']))].astype(np.int64))
+        states = base.inputs[0]
+        r, j = base.residual.reshape(2*nobs), base.jacobian.reshape(2*nobs, 6)
+        trials = cuda.device_array((n,6),np.float64, order=order)
+        trial_r = cuda.device_array((nobs,2),np.float64)
+        trial_j = (cuda.device_array((2*nobs,6),np.float64, order='F').reshape(nobs,2,6)
+                   if columnar_jacobian else cuda.device_array((nobs,2,6),np.float64))
+        trial_valid = cuda.device_array(nobs,np.uint8)
+        cost, damping, increase = [cuda.device_array(n,np.float64) for _ in range(3)]
+        scales, gradient, scaled_steps, steps = [cuda.device_array((n,6),np.float64, order=order) for _ in range(4)]
+        normal = cuda.device_array((n,6,6),np.float64, order=order)
+        refresh, done, success, pending = [cuda.device_array(n,np.uint8) for _ in range(4)]
+        reasons, iterations, evaluations = [cuda.device_array(n,np.int64) for _ in range(3)]
+        remaining = cuda.to_device(np.array([n],np.int32))
+        self.base = base
+        self.n = n
+        self.nobs = nobs
+        self.bounds = bounds
+        self.states = states
+        self.r = r
+        self.j = j
+        self.trials = trials
+        self.trial_r = trial_r
+        self.trial_j = trial_j
+        self.trial_valid = trial_valid
+        self.cost = cost
+        self.damping = damping
+        self.increase = increase
+        self.scales = scales
+        self.gradient = gradient
+        self.scaled_steps = scaled_steps
+        self.steps = steps
+        self.normal = normal
+        self.refresh = refresh
+        self.done = done
+        self.success = success
+        self.pending = pending
+        self.reasons = reasons
+        self.iterations = iterations
+        self.evaluations = evaluations
+        self.remaining = remaining
+
+        cuda.synchronize()
+        self.setup_seconds = time.perf_counter()-started
+        self.coalesced = coalesced
+        self.columnar_jacobian = columnar_jacobian
+
+    def solve(self, initial_states, max_iterations=80, *, profile_events=False,
+              parallel_normal=False, parallel_copy=False):
+        return _solve_workspace(self, initial_states, max_iterations,
+                                profile_events=profile_events,
+                                parallel_normal=parallel_normal, parallel_copy=parallel_copy)
+
+
+def solve_resident(bank, max_iterations=80, *, allow_simulator=False,
+                   profile_events=False):
+    """Compatibility wrapper: charge construction and solve for every call."""
     started = time.perf_counter()
-    base = ResidentBank(bank, allow_simulator=allow_simulator)
-    n, nobs = len(bank['states']), len(bank['offsets'])
-    bounds = cuda.to_device(np.r_[0,np.cumsum(np.bincount(bank['case_index']))].astype(np.int64))
-    states = base.inputs[0]
-    r, j = base.residual.reshape(2*nobs), base.jacobian.reshape(2*nobs, 6)
-    trials = cuda.device_array((n,6),np.float64)
-    trial_r = cuda.device_array((nobs,2),np.float64)
-    trial_j = cuda.device_array((nobs,2,6),np.float64)
-    trial_valid = cuda.device_array(nobs,np.uint8)
-    cost, damping, increase = [cuda.device_array(n,np.float64) for _ in range(3)]
-    scales, gradient, scaled_steps, steps = [cuda.device_array((n,6),np.float64) for _ in range(4)]
-    normal = cuda.device_array((n,6,6),np.float64)
-    refresh, done, success, pending = [cuda.device_array(n,np.uint8) for _ in range(4)]
-    reasons, iterations, evaluations = [cuda.device_array(n,np.int64) for _ in range(3)]
-    remaining = cuda.to_device(np.array([n],np.int32))
-    allocation = time.perf_counter()-started
+    workspace = ResidentWorkspace(bank, allow_simulator=allow_simulator)
+    result = workspace.solve(bank['states'], max_iterations,
+                             profile_events=profile_events)
+    profile = result['profile']
+    profile['allocation_upload_seconds'] = workspace.setup_seconds + profile['state_upload_seconds']
+    profile['wall_seconds'] = time.perf_counter()-started
+    return result
+
+
+def _solve_workspace(workspace, initial_states, max_iterations, *,
+                     profile_events=False, parallel_normal=False, parallel_copy=False):
+    if not isinstance(max_iterations, (int, np.integer)) or max_iterations < 0:
+        raise ValueError('max_iterations must be a nonnegative integer')
+    initial_states = np.asarray(initial_states)
+    if initial_states.dtype != np.float64 or initial_states.shape != (workspace.n, 6):
+        raise ValueError('Updated state shape/dtype differs from frozen workspace')
+    started = time.perf_counter()
+    base = workspace.base
+    n = workspace.n
+    nobs = workspace.nobs
+    bounds = workspace.bounds
+    states = workspace.states
+    r = workspace.r
+    j = workspace.j
+    trials = workspace.trials
+    trial_r = workspace.trial_r
+    trial_j = workspace.trial_j
+    trial_valid = workspace.trial_valid
+    cost = workspace.cost
+    damping = workspace.damping
+    increase = workspace.increase
+    scales = workspace.scales
+    gradient = workspace.gradient
+    scaled_steps = workspace.scaled_steps
+    steps = workspace.steps
+    normal = workspace.normal
+    refresh = workspace.refresh
+    done = workspace.done
+    success = workspace.success
+    pending = workspace.pending
+    reasons = workspace.reasons
+    iterations = workspace.iterations
+    evaluations = workspace.evaluations
+    remaining = workspace.remaining
+    states.copy_to_device(np.ascontiguousarray(initial_states))
+    cuda.synchronize()
+    state_upload_seconds = time.perf_counter()-started
     launch_profile = []
     def launch(kind, kernel, blocks, args):
         if profile_events:
@@ -212,11 +365,18 @@ def solve_resident(bank, max_iterations=80, *, allow_simulator=False, profile_ev
     launch('initialization',_initialize,grid,(bounds,r,j,base.valid,cost,damping,increase,refresh,done,success,reasons,iterations,evaluations))
     checks = []
     for iteration in range(max_iterations):
+        if parallel_normal:
+            normal_args = (bounds,r,j,cost,scales,gradient,normal,refresh,done)
+            launch('normal_scales',_normal_parallel,(6*n+127)//128,normal_args)
+            launch('normal_accumulate',_normal_accumulate,(6*n+127)//128,normal_args)
+            launch('normal_flags',_clear_refresh,grid,(refresh,done))
         launch('proposal',_propose,grid,(states,bounds,r,j,cost,damping,refresh,scales,normal,gradient,trials,
                scaled_steps,steps,done,success,reasons,iterations,pending,iteration))
         launch('propagation',_evaluate,observation_grid,(trials,*base.inputs[1:],base.sigma,pending,trial_r,trial_j,trial_valid))
         launch('accept',_accept,grid,(states,bounds,r,j,cost,damping,increase,refresh,normal,gradient,trials,
-               scaled_steps,steps,done,success,reasons,pending,trial_r.reshape(2*nobs),trial_j.reshape(2*nobs,6),trial_valid,evaluations))
+               scaled_steps,steps,done,success,reasons,pending,trial_r.reshape(2*nobs),trial_j.reshape(2*nobs,6),trial_valid,evaluations,not parallel_copy))
+        if parallel_copy:
+            launch('copy_accepted',_copy_accepted,observation_grid,(base.inputs[1],refresh,pending,r,j,trial_r.reshape(2*nobs),trial_j.reshape(2*nobs,6)))
         if iteration%4 == 3 or iteration+1==max_iterations:
             remaining.copy_to_device(np.zeros(1,np.int32));_remaining[grid,128](done,remaining)
             count=int(remaining.copy_to_host()[0]);checks.append([iteration+1,count])
@@ -229,7 +389,12 @@ def solve_resident(bank, max_iterations=80, *, allow_simulator=False, profile_ev
                   iterations=iterations.copy_to_host(),evaluations=evaluations.copy_to_host())
     unfinished = done.copy_to_host()==0;result['reasons'][unfinished]=4
     download_seconds = time.perf_counter()-stamp
-    profile=dict(wall_seconds=time.perf_counter()-started,allocation_upload_seconds=allocation,
+    profile=dict(wall_seconds=time.perf_counter()-started,
+                 state_upload_seconds=state_upload_seconds,
+                 workspace_setup_seconds=workspace.setup_seconds,
+                 workspace_reused=True, parallel_normal=parallel_normal,
+                 coalesced=workspace.coalesced, columnar_jacobian=workspace.columnar_jacobian,
+                 parallel_copy=parallel_copy,
                  device_iterations_wall_seconds=loop_seconds,final_download_seconds=download_seconds,
                  completion_checks=checks,per_iteration_full_array_transfers=0)
     if profile_events:
