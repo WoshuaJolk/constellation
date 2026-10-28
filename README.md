@@ -44,6 +44,27 @@ See the [installation guide](docs/agent-cli.md) for virtual environments and ali
 | [`prove_floor`](docs/prove-floor.md) | Bounds prior-average detection power for a specified finite Gaussian template family. |
 | [`ejector_fit`](docs/ejector-fit.md) | Fits specified stellar-origin hypotheses in measured astrometry and radial velocity, including separate launches from one source. |
 
+## Link Isolated Tracklet File observations
+
+[`solve_itf`](docs/solve-itf.md) ingests the complete MPC ITF, builds a compact
+catalogue, proposes cross-night associations, fits alternative orbits, and grows
+longer chains. It supports bounded short-arc searches, checkpointed campaign
+stages, and JPL-driven long-arc recovery. Results are **candidate associations**;
+RMS cuts and BIC scores do not establish identity or calibrated probabilities.
+
+```sh
+pip install -e '.[itf]'
+solve_itf fetch --directory .cache/solve_itf
+solve_itf run --input .cache/solve_itf/itf.txt.gz \
+  --cache .cache/solve_itf/catalogue \
+  --observatories .cache/solve_itf/ObsCodes.html \
+  --output runs/solve-itf-first --seconds 280
+```
+
+The runtime budget is adjustable, not a hardware-independent completion promise.
+See the [linker guide](docs/solve-itf.md) for broader searches, resumption,
+coordinate conventions, tests, and known limitations.
+
 ## Find frames
 
 Save your own query as `query.json` (ICRS degrees, UTC dates; end exclusive):

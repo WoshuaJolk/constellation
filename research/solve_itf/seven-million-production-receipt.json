@@ -1,0 +1,74 @@
+{
+  "scope": "Historical completed 7M cascade first pass; not complete full-grid search or complete arc growth",
+  "counts": {
+    "seed_target": 7000000,
+    "seeds_attempted": 7000000,
+    "seeds_completed": 7000000,
+    "seeds_without_accepted_fit": 6759898,
+    "accepted_seed_fits": 240102,
+    "seeds_retryable": 0,
+    "seeds_unattempted": 0,
+    "seeds_deferred_full_grid": 6759898,
+    "seeds_pending_deeper_initializations": 7000000
+  },
+  "export": {
+    "candidates": 240102,
+    "orbit_modes": 276359,
+    "bytes": 445054701,
+    "sha256": "f1dab91932d3ccfac8a9a9c428233cf1f933175654c0837603b4bf5f76e2df57"
+  },
+  "seed_selection": {
+    "target": 7000000,
+    "supplied": 7000000,
+    "unique_available": 16688387,
+    "raw_wedges": 17382926,
+    "shortfall": 0,
+    "bytes": 84000000,
+    "counts": {
+      "visited": 36808633,
+      "capped_anchors": 345763
+    },
+    "ordering": "per-anchor proposal ordinal, summed edge score, deterministic ID hash",
+    "exhaustive": false,
+    "seed_sha256": "884f1f3c36850bbe469419205aac8fcae3930d4c65735c9f79140327a3f25a86"
+  },
+  "fitting_settings": {
+    "cascade": {
+      "compiled_gauss": true,
+      "harmonic_gate": 100.0,
+      "pilot_evaluations": 12,
+      "promote_rms": 300.0,
+      "protect_fast": true,
+      "ranges": [],
+      "rescue": true
+    },
+    "seed_seconds": 5.0,
+    "start_policy": "cascade"
+  },
+  "implementation_sha256": {
+    "campaign_fit.py": "d016fc7a55b9baa00d047ecbbab2336bb7a019317af22e6c5d20a43b4d68c322",
+    "campaign_geometry.py": "319834d93f20b83188df0053c6643c1cc8b596b0e588c6832393e2a612547b47",
+    "campaign_geometry_fast.py": "ed6eafde2fc9b2b03a6f9d28dafe6362f60d60844293e66ee9a83f7ccf33d045",
+    "cascade.py": "137053ba0150bf598dda04ca30517783dd3f1d334ead1191ed2910580942b804",
+    "derivatives.py": "cafea251261c91ff95ff1527dcaafa63f44ecdaf1e0f03c18ba2fad098d4a11f",
+    "fit.py": "ff70f377c4022354af3fcf2771b2ec39254b05badcc657d6e81f306217e9db77",
+    "harmonic.py": "cc0e1ee76079b7810cc75eaabd6a97a82b97b06ea52f09b8f2c77f69039b6a1a"
+  },
+  "batches": {
+    "count": 6836,
+    "seed_slots": 7000000,
+    "sum_recorded_batch_elapsed_seconds": 12710.542682513813,
+    "min_batch_seconds": 0.6665461569973559,
+    "max_batch_seconds": 25.27954630699969,
+    "meaning": "Sum of durations stored for final checkpoint batches, across four workers. Not wall time or CPU time; not a ledger of superseded failed attempts."
+  },
+  "end_to_end_wall_seconds": null,
+  "missing": "No single complete, reconciled wall-time ledger located for all graph/geometry/restarts/fitting/refinement/recovery stages. Do not divide batch elapsed sums by four and report that as measured wall time.",
+  "source_files_sha256": {
+    "cascade-stage-complete.json": "2e8649228d43e08647bbcd716a14855b2f8aad65bf9d181be253b5008d08dd40",
+    "export-cascade.json": "e761c5d6718a23e17f46e5942f79c934aa39594ef60d416004a57dcbf37b77c7",
+    "seeds.json": "3751334cbaa9e0814f3363cd8495ce46823d372d43dbeb1529883e6ad48884e5"
+  },
+  "extraction_sql": "SELECT count(*),sum(end-start),sum(seconds),min(seconds),max(seconds) FROM batches",
+  "checkpoint_relative_path": "runs/solve-itf-seven-million/fitting-cascade.sqlite"
+}
