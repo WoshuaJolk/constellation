@@ -1,0 +1,54 @@
+{
+  "created_unix": 1793229062.1792734,
+  "source_sha256": "290b5e4f41236877d6f75616ae6c0ba3db1926631787b3dcef67ed4a14db6380",
+  "selection": "Every connected shared-tracklet family among planetary rows withboundmode>=30AU. Representative longestarc,thenmosttracklets,thenlowestinputRMS. Descriptive grouping,notindependentobjects.",
+  "representatives": [
+    [
+      647068,
+      806025,
+      845912,
+      845915,
+      845931,
+      846855,
+      852642
+    ],
+    [
+      651290,
+      724790,
+      2548062,
+      2548063
+    ],
+    [
+      661001,
+      661002,
+      779228,
+      838717,
+      838719,
+      848523
+    ],
+    [
+      669311,
+      716638,
+      758269,
+      759454,
+      824964,
+      850252,
+      986332
+    ],
+    [
+      683767,
+      687160,
+      687165,
+      713738
+    ]
+  ],
+  "states_sha256": [
+    "5cc3c5675affd11e8eac39313e276ce815c4188665c0eb8e3efa57d13b713709",
+    "ca4a97e0865e2b692c3fec546274a68241178041e7e4818838145fd662f5478d",
+    "252872a35d6d7704e1ab205437a3648b58b87e00fd8dd93481f0de3e7f78cd81",
+    "d13162aa82e1f67b3e57f1424ad1294d6711e0778c2827e7cc924d459437a95d",
+    "091bac709e66cb459284efee1929f0da52e84c86eed5b65eb3b79942b6ff1dc3"
+  ],
+  "prediction": "Existing compiled JPL apparent path; same global ephemerisgrid,rtol2e-11,maxstep10d,lighttime; no refit or new data",
+  "code_sha256": "1d1289e9f65e4f6471ec922829e44ee69547214811d0d31b97063e7a432322f8"
+}

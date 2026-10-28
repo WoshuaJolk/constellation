@@ -1,0 +1,92 @@
+{
+  "cases": [
+    {
+      "identity": "00433",
+      "name": "Eros",
+      "input_tracklets": 6,
+      "pure_chains": 0,
+      "mixed_chains": 0,
+      "longest_pure": 0,
+      "longest_span_days": 0
+    },
+    {
+      "identity": "05145",
+      "name": "Pholus",
+      "input_tracklets": 6,
+      "pure_chains": 8,
+      "mixed_chains": 0,
+      "longest_pure": 5,
+      "longest_span_days": 9.235550003017124
+    },
+    {
+      "identity": "B1309",
+      "name": "111309",
+      "input_tracklets": 6,
+      "pure_chains": 14,
+      "mixed_chains": 0,
+      "longest_pure": 5,
+      "longest_span_days": 54.568660017306684
+    },
+    {
+      "identity": "q8219",
+      "name": "2008 KV42 (retrograde TNO)",
+      "input_tracklets": 6,
+      "pure_chains": 21,
+      "mixed_chains": 0,
+      "longest_pure": 6,
+      "longest_span_days": 64.98450997976033
+    },
+    {
+      "identity": "00004",
+      "name": "Vesta",
+      "input_tracklets": 3,
+      "pure_chains": 0,
+      "mixed_chains": 0,
+      "longest_pure": 0,
+      "longest_span_days": 0
+    },
+    {
+      "identity": "01685",
+      "name": "Toro",
+      "input_tracklets": 6,
+      "pure_chains": 0,
+      "mixed_chains": 0,
+      "longest_pure": 0,
+      "longest_span_days": 0
+    },
+    {
+      "identity": "02060",
+      "name": "Chiron",
+      "input_tracklets": 6,
+      "pure_chains": 17,
+      "mixed_chains": 0,
+      "longest_pure": 6,
+      "longest_span_days": 82.50607997635234
+    },
+    {
+      "identity": "20000",
+      "name": "Varuna",
+      "input_tracklets": 6,
+      "pure_chains": 18,
+      "mixed_chains": 0,
+      "longest_pure": 6,
+      "longest_span_days": 12.23113000371086
+    },
+    {
+      "identity": "p4107",
+      "name": "514107 (retrograde co-orbital)",
+      "input_tracklets": 6,
+      "pure_chains": 5,
+      "mixed_chains": 0,
+      "longest_pure": 4,
+      "longest_span_days": 4.909104001606465
+    }
+  ],
+  "search_status": "bounded_search_complete",
+  "graph_complete": true,
+  "limitations": [
+    "Real catalogue labels are development assumptions.",
+    "Known seasons are availability-selected; not detection completeness.",
+    "The reserved later tracklets did not enter search/fits."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "registered_unix": 1793227380.799076,
+  "primary": "Distant potentially large objects; retain secondary NEO,Centaur,retrograde,hyperbolic and other modes",
+  "scope": "All 2548307 catalogue tracklets accounted. Dedicated proposal lane <=600arcsec/day, span<=0.6d,count>=2; no inclination/energy/brightness exclusion. Reuse prior completed million-seed general candidates; do not mislabel them new discoveries.",
+  "distance_au": [
+    10,
+    20,
+    30,
+    40,
+    60,
+    100,
+    150,
+    300,
+    1000
+  ],
+  "max_gap_days": 120,
+  "radial_proposal_au_per_day": 0,
+  "proposal_aperture_arcsec": "30+0.1*gap_days^2",
+  "neighbors_per_day": 16,
+  "graph_cap_per_partition": 150000,
+  "graph_global_cap": 2000000,
+  "partition_seconds": 600,
+  "max_seeds": 1000000,
+  "fit_settings": "Existing broad Gauss/range/radial grid,80iterations,sigma.3,RMS.6arcsec,allconics;GPUCPUresidualcheck/fallback unchanged",
+  "fit_seconds": 1500,
+  "planetary": "128 distant +32 each retrograde,hyperbolic,NEO,general; best residual mode per chain/lane,order span/tracklets/RMS/hash;20processes,60s/parent,10s/fit,900soverall;two growth rounds,12uncertainty samples,16candidates/window,maxcone2deg;finite caps disclosed",
+  "controls": "Nine existing real catalogue identities, first available season,anonymousIDs,all later observations reserved. First726-row control search; minimum one pure Varuna or2008KV42 chain before full scan. No significance/completeness claim.",
+  "budget": {
+    "maximum_incremental_usd": 20,
+    "worker_lifetime_seconds": 5400,
+    "hourly_ceiling": 4.41,
+    "one_worker": true
+  },
+  "limitations": [
+    "Finite proposal grid and caps, not exhaustive coverage.",
+    "Short-arc allconic fits do not establish discovery or interstellar origin.",
+    "No size inference without observed photometry and distance assumptions.",
+    "No release or purity claims."
+  ],
+  "code_manifest_sha256": "7bf10f9b5d003e6f8e335a8e7a296cc2e6b4c1a056f8c562bc536e0d16d5b509"
+}

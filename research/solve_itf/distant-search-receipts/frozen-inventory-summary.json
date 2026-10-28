@@ -1,0 +1,11 @@
+{
+  "source": "/workspace/constellation/runs/skyknown-bulk/20261023-import/frozen-fit-annotations.jsonl.gz",
+  "source_sha256": "36b59a54ed28ed5c068ab576cd8b7ba1d1c65db52bc2492b53e6dc335f304733",
+  "historical_fit_versions_checked": 312133,
+  "current_union_memberships": 17985,
+  "already_present_memberships": 8661,
+  "absent_memberships": 9324,
+  "planetary_unique_memberships": 47,
+  "planetary_already_present": 12,
+  "scope": "Exact track-index membership comparison to all312133 frozen fit versions, retaining coverage-missing indices; absence is not discovery or absence from every external catalogue."
+}

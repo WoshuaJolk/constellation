@@ -1,0 +1,15 @@
+{
+  "selection": "For each of nine existing control identities, order eligible tracklets by UTC time (count>=2,0<span<=0.6d). Select first starting index with >=3 tracklets in next120d, take first up to6. Reserve first eligible tracklet >=180d after last fitted time. No outcomes used.",
+  "roles": "Known catalogue identities are development labels; all observation identities replaced before search; no evaluation split opened. Search background first2000 full-catalogue ordinals with t in[60000,60010), independent of labels.",
+  "known_names": {
+    "05145": "Pholus",
+    "02060": "Chiron",
+    "20000": "Varuna",
+    "q8219": "2008 KV42 (retrograde TNO)",
+    "p4107": "514107 (retrograde co-orbital)",
+    "00433": "Eros",
+    "B1309": "111309",
+    "00004": "Vesta",
+    "01685": "Toro"
+  }
+}

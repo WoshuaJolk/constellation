@@ -1,0 +1,16 @@
+{
+  "time_unix": 1793229338.2549248,
+  "changes": [
+    {
+      "file": "candidates.csv",
+      "old_sha256": "24d69630288a001308ae46085900020bea9a43199381da3fd7c5fd0af4815421",
+      "new_sha256": "a98868c272a2de7ee4e12a61555747dc992603c2077f69c6f021000c0abbcb71"
+    },
+    {
+      "file": "planetary-candidates.csv",
+      "old_sha256": "9f254f6b226e98a4439215eed4092018274d46cac14eaa8b0e0e8b565fb6f1ca",
+      "new_sha256": "21ffce63d296cebf7692bb19a32a3cb92ef89b3e610c169edb3f1a7baab82b30"
+    }
+  ],
+  "scope": "Tables only: arc uses full detection span; novelty compares exact membership to prior million-seed general result. No fit, orbit or frozen dossier changed."
+}

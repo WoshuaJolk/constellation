@@ -1,0 +1,319 @@
+{
+  "complete": true,
+  "counts": {
+    "source_nights_completed": 8500,
+    "queries": 547045965,
+    "day_distance_pairs": 6756534,
+    "queries_at_cap": 1685,
+    "proposed_edges": 1978023,
+    "edge_cap_discarded": 0,
+    "tracklets_total": 2548307,
+    "distant_rate_eligible": 623221,
+    "merge_cap_discarded": 0,
+    "edges_retained": 644477
+  },
+  "partitions": [
+    {
+      "part": 0,
+      "complete": true,
+      "counts": {
+        "source_nights_completed": 425,
+        "queries": 27041967,
+        "day_distance_pairs": 337869,
+        "queries_at_cap": 5,
+        "proposed_edges": 77593,
+        "edge_cap_discarded": 0
+      },
+      "edges": 24102,
+      "seconds": 72.15296340200001,
+      "sha256": "866ac607f26525a81458a08880673a24c98a402c4e579f6146ebb207736e23d4"
+    },
+    {
+      "part": 1,
+      "complete": true,
+      "counts": {
+        "source_nights_completed": 425,
+        "queries": 23715162,
+        "day_distance_pairs": 338031,
+        "queries_at_cap": 18,
+        "proposed_edges": 59381,
+        "edge_cap_discarded": 0
+      },
+      "edges": 17716,
+      "seconds": 71.18980374900002,
+      "sha256": "e03c573b4d02173b2a3c055989b4aa4139c0802285aff7d551c4ee1cf32da6da"
+    },
+    {
+      "part": 2,
+      "complete": true,
+      "counts": {
+        "source_nights_completed": 425,
+        "queries": 31065786,
+        "day_distance_pairs": 338058,
+        "queries_at_cap": 16,
+        "proposed_edges": 92183,
+        "edge_cap_discarded": 0
+      },
+      "edges": 26762,
+      "seconds": 74.40656524799999,
+      "sha256": "fe31e6a65fab757e293e9b739d6f15d00b0899b56315e4b40165e3c1fb785e6f"
+    },
+    {
+      "part": 3,
+      "complete": true,
+      "counts": {
+        "queries": 28379880,
+        "day_distance_pairs": 338040,
+        "source_nights_completed": 425,
+        "queries_at_cap": 35,
+        "proposed_edges": 67558,
+        "edge_cap_discarded": 0
+      },
+      "edges": 19888,
+      "seconds": 73.41519210400003,
+      "sha256": "00c669aec6b15cda6606936e1dd726568c89d9975f5599af73f590972971e81c"
+    },
+    {
+      "part": 4,
+      "complete": true,
+      "counts": {
+        "queries": 31626126,
+        "day_distance_pairs": 337914,
+        "source_nights_completed": 425,
+        "queries_at_cap": 9,
+        "proposed_edges": 69102,
+        "edge_cap_discarded": 0
+      },
+      "edges": 20458,
+      "seconds": 74.02070482199997,
+      "sha256": "f03d05a5449c60509b6666cc8df3459096456ce7b0efe8f01868ff4b36ba8dd5"
+    },
+    {
+      "part": 5,
+      "complete": true,
+      "counts": {
+        "queries": 36120843,
+        "day_distance_pairs": 337797,
+        "source_nights_completed": 425,
+        "queries_at_cap": 49,
+        "proposed_edges": 85792,
+        "edge_cap_discarded": 0
+      },
+      "edges": 27386,
+      "seconds": 76.34429491500003,
+      "sha256": "efe672124d1fe17c5236d846afe3836f37a04cc9daad4eecc204c57ad3953ec9"
+    },
+    {
+      "part": 6,
+      "complete": true,
+      "counts": {
+        "queries": 31264632,
+        "day_distance_pairs": 337734,
+        "source_nights_completed": 425,
+        "queries_at_cap": 14,
+        "proposed_edges": 47863,
+        "edge_cap_discarded": 0
+      },
+      "edges": 13073,
+      "seconds": 74.355645316,
+      "sha256": "1431d93942415166262ddbe81ffbca98398ae389bf3b991cf13b13ddd42a230e"
+    },
+    {
+      "part": 7,
+      "complete": true,
+      "counts": {
+        "source_nights_completed": 425,
+        "queries": 22950801,
+        "day_distance_pairs": 337914,
+        "queries_at_cap": 10,
+        "proposed_edges": 35022,
+        "edge_cap_discarded": 0
+      },
+      "edges": 10166,
+      "seconds": 70.57162108699998,
+      "sha256": "1136d030e5c38333194570f52bce5832a1b4ef09f7299f0bf25394412f1bda8b"
+    },
+    {
+      "part": 8,
+      "complete": true,
+      "counts": {
+        "source_nights_completed": 425,
+        "queries": 29987118,
+        "day_distance_pairs": 337770,
+        "queries_at_cap": 96,
+        "proposed_edges": 70899,
+        "edge_cap_discarded": 0
+      },
+      "edges": 21296,
+      "seconds": 75.08741755300002,
+      "sha256": "1813916c2597abfec90bd945da233a6fe092c1c2340b3c45aacb69b7ff09eb49"
+    },
+    {
+      "part": 9,
+      "complete": true,
+      "counts": {
+        "source_nights_completed": 425,
+        "queries": 32200155,
+        "day_distance_pairs": 337797,
+        "queries_at_cap": 26,
+        "proposed_edges": 110672,
+        "edge_cap_discarded": 0
+      },
+      "edges": 37602,
+      "seconds": 74.83305941499998,
+      "sha256": "bb77aee213784d4ed9d104d0d99afbcda22a5a5a219de764d81bcdcee94027ce"
+    },
+    {
+      "part": 10,
+      "complete": true,
+      "counts": {
+        "source_nights_completed": 425,
+        "queries": 32003487,
+        "day_distance_pairs": 337680,
+        "queries_at_cap": 7,
+        "proposed_edges": 132310,
+        "edge_cap_discarded": 0
+      },
+      "edges": 41522,
+      "seconds": 75.015332506,
+      "sha256": "0207a2cf29802cac4ef204ab22dd836636853c728478195ffee983e687563f34"
+    },
+    {
+      "part": 11,
+      "complete": true,
+      "counts": {
+        "source_nights_completed": 425,
+        "queries": 27779364,
+        "day_distance_pairs": 337545,
+        "queries_at_cap": 159,
+        "proposed_edges": 89913,
+        "edge_cap_discarded": 0
+      },
+      "edges": 28578,
+      "seconds": 72.37004479699999,
+      "sha256": "daeef0f162ba5f8c5cf798f68b3a12673ca71ea4fb3fd5e33ab2def74c1e88c2"
+    },
+    {
+      "part": 12,
+      "complete": true,
+      "counts": {
+        "queries": 24487524,
+        "day_distance_pairs": 337617,
+        "source_nights_completed": 425,
+        "queries_at_cap": 30,
+        "proposed_edges": 137780,
+        "edge_cap_discarded": 0
+      },
+      "edges": 42943,
+      "seconds": 71.4931537,
+      "sha256": "28e69a8f76375aa739be0e9597856c040bf445bd268758991df05699b5873dd7"
+    },
+    {
+      "part": 13,
+      "complete": true,
+      "counts": {
+        "queries": 24787107,
+        "day_distance_pairs": 337509,
+        "source_nights_completed": 425,
+        "queries_at_cap": 6,
+        "proposed_edges": 107747,
+        "edge_cap_discarded": 0
+      },
+      "edges": 34223,
+      "seconds": 71.49799006699999,
+      "sha256": "1f6fcfc278b11fda45c48ba14a9218364b06ad05b99ff7b2d2767ede2b2955b9"
+    },
+    {
+      "part": 14,
+      "complete": true,
+      "counts": {
+        "queries": 21685446,
+        "day_distance_pairs": 337752,
+        "source_nights_completed": 425,
+        "queries_at_cap": 8,
+        "proposed_edges": 29906,
+        "edge_cap_discarded": 0
+      },
+      "edges": 9295,
+      "seconds": 69.78833699,
+      "sha256": "eda0ed760c4410dad40657013aa920ddaf5b0ad0445101c445de46ec29bc2672"
+    },
+    {
+      "part": 15,
+      "complete": true,
+      "counts": {
+        "queries": 22260267,
+        "day_distance_pairs": 337869,
+        "source_nights_completed": 425,
+        "queries_at_cap": 232,
+        "proposed_edges": 66358,
+        "edge_cap_discarded": 0
+      },
+      "edges": 19126,
+      "seconds": 70.23107322599998,
+      "sha256": "1f9067d392bbda9b33456abeb441d36238f806d064d337f620c0f290460c7259"
+    },
+    {
+      "part": 16,
+      "complete": true,
+      "counts": {
+        "source_nights_completed": 425,
+        "queries": 23064066,
+        "day_distance_pairs": 337878,
+        "queries_at_cap": 883,
+        "proposed_edges": 209986,
+        "edge_cap_discarded": 0
+      },
+      "edges": 82394,
+      "seconds": 70.976102814,
+      "sha256": "2d5f90d86f7e2396591dfb2fe51185469dc6d7becc0452f9002168cbc45f1d8c"
+    },
+    {
+      "part": 17,
+      "complete": true,
+      "counts": {
+        "source_nights_completed": 425,
+        "queries": 21453858,
+        "day_distance_pairs": 337977,
+        "proposed_edges": 160178,
+        "queries_at_cap": 19,
+        "edge_cap_discarded": 0
+      },
+      "edges": 60090,
+      "seconds": 70.12212443700002,
+      "sha256": "5ccec2f4ed52d7906b71e585b6ddafbfddc3d7b250c7f57efb4be3084c0e2f5b"
+    },
+    {
+      "part": 18,
+      "complete": true,
+      "counts": {
+        "source_nights_completed": 425,
+        "queries": 34513416,
+        "day_distance_pairs": 337896,
+        "queries_at_cap": 12,
+        "proposed_edges": 248108,
+        "edge_cap_discarded": 0
+      },
+      "edges": 82945,
+      "seconds": 76.04090204099998,
+      "sha256": "8a1d7f2845caf9c11935f4b78da344934be43237a589509d3ff57ffee3f388e1"
+    },
+    {
+      "part": 19,
+      "complete": true,
+      "counts": {
+        "queries": 20658960,
+        "day_distance_pairs": 337887,
+        "source_nights_completed": 425,
+        "proposed_edges": 79672,
+        "queries_at_cap": 51,
+        "edge_cap_discarded": 0
+      },
+      "edges": 24912,
+      "seconds": 69.770208712,
+      "sha256": "5db7d3054800fc91be0c2cd7e3c1df65652c915b6dfb660d84792bc20136e187"
+    }
+  ],
+  "seconds": 82.744295868,
+  "sha256": "18461ec0039032682a153c3b4bbc77d844640ea1adf76db9e902cbd3ab151609"
+}

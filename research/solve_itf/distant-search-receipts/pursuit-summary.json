@@ -1,0 +1,95 @@
+{
+  "shared_tracklet_families": 5,
+  "bound_distant_memberships": 21,
+  "representatives": [
+    {
+      "tracklets": [
+        "H222383",
+        "H435252",
+        "H484585",
+        "H484592",
+        "H484609",
+        "H485634",
+        "H492491"
+      ],
+      "span_days": 1212.7627215577886,
+      "rms_arcsec": 0.23191000009385648,
+      "range_au": 36.76081892285032,
+      "observations": 29,
+      "known_status": "complete_no_match",
+      "seen_in_frozen_inventory": true,
+      "replay_rms_difference_arcsec": 0.0,
+      "detections_accounted": true
+    },
+    {
+      "tracklets": [
+        "H227873",
+        "H321307",
+        "yy0000b",
+        "yy0000c"
+      ],
+      "span_days": 83.97195001672662,
+      "rms_arcsec": 0.1732483189741211,
+      "range_au": 34.828465957143685,
+      "observations": 14,
+      "known_status": "complete_no_match",
+      "seen_in_frozen_inventory": false,
+      "replay_rms_difference_arcsec": 0.0,
+      "detections_accounted": true
+    },
+    {
+      "tracklets": [
+        "H239723",
+        "H239723",
+        "H397290",
+        "H476685",
+        "H476687",
+        "H487533"
+      ],
+      "span_days": 419.8754199861869,
+      "rms_arcsec": 0.17949181153091123,
+      "range_au": 32.75799910113561,
+      "observations": 21,
+      "known_status": "incomplete_or_unmapped",
+      "seen_in_frozen_inventory": false,
+      "replay_rms_difference_arcsec": 0.0,
+      "detections_accounted": true
+    },
+    {
+      "tracklets": [
+        "H250540",
+        "H311994",
+        "H365156",
+        "H366550",
+        "H459783",
+        "H489530",
+        "LA5424"
+      ],
+      "span_days": 1831.0450015733877,
+      "rms_arcsec": 0.15147958700000708,
+      "range_au": 39.36401177992606,
+      "observations": 27,
+      "known_status": "complete_no_match",
+      "seen_in_frozen_inventory": false,
+      "replay_rms_difference_arcsec": 0.0,
+      "detections_accounted": true
+    },
+    {
+      "tracklets": [
+        "H269351",
+        "H273962",
+        "H273967",
+        "H308587"
+      ],
+      "span_days": 354.082789996457,
+      "rms_arcsec": 0.17939028350742128,
+      "range_au": 41.03165186368143,
+      "observations": 19,
+      "known_status": "complete_no_match",
+      "seen_in_frozen_inventory": false,
+      "replay_rms_difference_arcsec": 0.0,
+      "detections_accounted": true
+    }
+  ],
+  "meaning": "Families group overlapping alternatives, not independent confirmedobjects."
+}

@@ -1,0 +1,14 @@
+{
+  "recorded_unix": 1793228658.8688452,
+  "reason": "Frozen-graph injection did not copy seeds_retained/full_catalogue_scan_complete into legacy counters. Legacy remaining=-1000000 is a reporting bug, not missing or extra numerical jobs. Original numerical reports remain byte-identical.",
+  "original_fit_summary_sha256": "f50f9e5e6211aee13e67f2298a95d51029d5ced056c5fa8dcd3e64bff2a890c1",
+  "original_raw_triple_seeds_remaining": -1000000,
+  "corrected_seeds_retained": 1000000,
+  "corrected_triple_seeds_remaining": 0,
+  "dedicated_graph_partitions_complete": true,
+  "original_raw_full_catalogue_scan_complete": false,
+  "scope": "Complete dedicated fixed-rate/distance lane scan, not exhaustive association coverage. General million-seed report reused.",
+  "started": 1000000,
+  "completed": 1000000,
+  "submitted_not_returned": 0
+}

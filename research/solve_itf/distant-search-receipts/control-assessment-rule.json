@@ -1,0 +1,5 @@
+{
+  "purpose": "Read-only summary of every control prediction; not a new acceptance gate",
+  "representative": "For each identity choose longest pure membership, then longest fitted arc, then lowest input-fit RMS, then lexical membership; choose minimum input-fit RMS mode. Never use reserved-observation errors for selection.",
+  "reported": "All-mode nominal prediction errors remain saved. Representative and full distribution reported. No prediction cut or significance claim."
+}

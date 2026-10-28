@@ -1,0 +1,27 @@
+{
+  "counts": {
+    "seed_combinations_considered": 3579205,
+    "seeds_retained": 1000000,
+    "seed_search_bounded": true
+  },
+  "sha256": "ae3e6e57e8cc729640ccc8fdfcac5d4c22584aa9ef115b3c7a97b268f8972586",
+  "config": {
+    "workers": 20,
+    "max_gap_days": 120,
+    "position_gate_arcsec": 30.0,
+    "curvature_gate_arcsec_per_day2": 1.0,
+    "neighbors_per_day": 8,
+    "max_edges": 644477,
+    "max_seeds": 1000000,
+    "seed_neighbors": 0,
+    "broad_search": true,
+    "sparse_curved": false,
+    "branches": 4,
+    "max_parent_seeds": 16,
+    "joint_extensions": true,
+    "sigma_arcsec": 0.3,
+    "rms_limit_arcsec": 0.6,
+    "prior_link_probability": 0.001,
+    "seconds": 1500
+  }
+}

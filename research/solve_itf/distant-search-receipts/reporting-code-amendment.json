@@ -1,0 +1,6 @@
+{
+  "recorded_unix": 1793228863.1906142,
+  "before_sha256": "405c460230dd925d75a7a14646fe06c319f83efaccb7dc505515cd9134f2afd9",
+  "after_sha256": "2564273b6ac597fe1902775c663f2b8a462c2c9765777492d33c45d972ae3380",
+  "scope": "Post-run fix copies frozen seed and scan counts into legacy report counters. No scientific rerun or changes to graph, states, fits, controls, followup or frozen output bytes. Executed source preserved separately."
+}
