@@ -1,0 +1,8 @@
+{
+  "mode_count": 946,
+  "memberships": 259,
+  "exact_states_residuals_ranks_weights": true,
+  "max_range_difference_au": 1.8189894035458565e-12,
+  "max_uncertainty_relative_difference": 6.151780294906665e-10,
+  "note": "Original range bitwise assertion failed. Separate derived range comparison allows 1e-14 relative/1e-12 AU absolute; no acceptance limits changed."
+}

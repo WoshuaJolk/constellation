@@ -1,5 +1,6 @@
 """Topocentric, light-time-corrected multistart orbit fitting and explicit scores."""
 from functools import lru_cache
+from dataclasses import dataclass
 import math
 from pathlib import Path
 import time
@@ -18,6 +19,7 @@ from scipy.special import expit, logsumexp
 from .catalogue import unit_vectors
 from .derivatives import residual_jacobian, solve_lm, state_geometry
 from .kernels import ARCSEC, MU, directions, position
+from .fit_bookkeeping import element_values, uncertainty_values, candidate_summary, duplicate_index
 
 
 class BudgetExpired(Exception):
@@ -154,19 +156,12 @@ def gauss_seeds(t, u, observer):
 
 
 def orbital_elements(state):
-    r, v = state[:3], state[3:]
-    radius = np.linalg.norm(r)
-    h = np.cross(r, v)
-    hn = np.linalg.norm(h)
-    if hn < 1e-14 or radius < .01:
+    eccentricity, perihelion, axis, inclination, energy, hn = element_values(state)
+    if not np.isfinite(hn):
         return None
-    eccentricity = np.linalg.norm(np.cross(v, h)/MU-r/radius)
-    energy = np.dot(v, v)/2-MU/radius
-    obl = np.deg2rad(23.439291111)
-    hz = -np.sin(obl)*h[1]+np.cos(obl)*h[2]
-    return dict(eccentricity=float(eccentricity), perihelion_au=float(hn*hn/(MU*(1+eccentricity))),
-                semimajor_axis_au=float(-MU/(2*energy)) if abs(energy) > 1e-16 else None,
-                inclination_deg=float(np.rad2deg(np.arccos(np.clip(hz/hn, -1, 1)))),
+    return dict(eccentricity=float(eccentricity), perihelion_au=float(perihelion),
+                semimajor_axis_au=float(axis) if np.isfinite(axis) else None,
+                inclination_deg=float(inclination),
                 conic='hyperbolic' if energy > 0 else 'elliptic')
 
 
@@ -188,52 +183,43 @@ def local_uncertainty(state, jacobian, epoch_offset, observer):
     the covariance square root so nearly singular normal equations are never
     formed and small residuals do not artificially shrink the specified noise.
     """
-    scales = np.maximum(np.linalg.norm(jacobian, axis=0), 1e-30)
-    _, singular, vt = np.linalg.svd(jacobian/scales, full_matrices=False)
-    rank = int(np.sum(singular > singular[0]*max(jacobian.shape)*np.finfo(float).eps))
-    diagnostics = dict(scaled_jacobian_rank=rank, scaled_jacobian_condition=None,
+    rank, condition, range_sigma, inclination_sigma, energy_sigma, resolved, weak = uncertainty_values(
+        state, jacobian, epoch_offset, observer)
+    diagnostics = dict(scaled_jacobian_rank=int(rank), scaled_jacobian_condition=None,
                        range_sigma_au=None, inclination_sigma_deg=None,
                        energy_sigma_au2_per_day2=None, energy_sign_resolved_3sigma=False,
                        local_linearization_weak=True,
                        uncertainty_kind='local linear Gaussian; fixed astrometric sigma; no model error or mode integration')
     if rank < 6:
         return diagnostics
-    factor = (vt.T/singular)/scales[:, None]
-    p, _, position_jac = state_geometry(state, epoch_offset)
-    delta = p-observer
-    distance = np.linalg.norm(delta)
-    range_sigma = float(np.linalg.norm((delta/distance)@position_jac@factor))
-    r, v = state[:3], state[3:]
-    radius = np.linalg.norm(r)
-    energy = np.dot(v, v)/2-MU/radius
-    energy_sigma = float(np.linalg.norm(np.r_[MU*r/radius**3, v]@factor))
-    h = np.cross(r, v)
-    hn = np.linalg.norm(h)
-    obl = np.deg2rad(23.439291111)
-    pole = np.array([0., -np.sin(obl), np.cos(obl)])
-    cosine = np.clip(h@pole/hn, -1., 1.)
-    sine = np.sqrt(max(0., 1-cosine*cosine))
-    inclination_sigma = None
-    if sine > 1e-10:
-        dh = np.column_stack([np.cross(np.eye(3)[k], v) for k in range(3)]+
-                             [np.cross(r, np.eye(3)[k]) for k in range(3)])
-        gradient = -(pole-cosine*h/hn)/(hn*sine)*180/np.pi
-        inclination_sigma = float(np.linalg.norm(gradient@dh@factor))
-    diagnostics.update(scaled_jacobian_condition=float(singular[0]/singular[-1]),
-                       range_sigma_au=range_sigma, inclination_sigma_deg=inclination_sigma,
-                       energy_sigma_au2_per_day2=energy_sigma,
-                       energy_sign_resolved_3sigma=bool(abs(energy) > 3*energy_sigma),
-                       local_linearization_weak=bool(range_sigma > .5*distance or
-                           inclination_sigma is None or inclination_sigma > 10.))
+    diagnostics.update(scaled_jacobian_condition=float(condition),
+                       range_sigma_au=float(range_sigma),
+                       inclination_sigma_deg=float(inclination_sigma) if np.isfinite(inclination_sigma) else None,
+                       energy_sigma_au2_per_day2=float(energy_sigma),
+                       energy_sign_resolved_3sigma=bool(resolved),
+                       local_linearization_weak=bool(weak))
     return diagnostics
 
 
-def fit_chain(geometry, indices, *, sigma=.3, rms_limit=.6, prior=.001,
-              deadline=np.inf, extra_seeds=(), max_nfev=80, jacobian_backend="compiled",
-              broad_starts=False, start_policy="full", allow_two_tracklets=False, optimizer=None):
+@dataclass(frozen=True)
+class FitPlan:
+    """One chain's prepared geometry and exact ordered starts; never a fit result."""
+    indices: tuple
+    t: np.ndarray
+    u: np.ndarray
+    observers: np.ndarray
+    labels: np.ndarray
+    east: np.ndarray
+    north: np.ndarray
+    middle: int
+    epoch: float
+    seeds: tuple
+    start_policy: str
+
+
+def prepare_fit(geometry, indices, *, deadline=np.inf, extra_seeds=(),
+                broad_starts=False, start_policy="full", allow_two_tracklets=False):
     check_deadline(deadline)
-    if optimizer is not None and jacobian_backend != "compiled":
-        raise ValueError("Injected optimizer requires compiled policy")
     if start_policy not in ('full', 'scout', 'provided'):
         raise ValueError('Unknown orbit-start policy')
     t, u, observers, labels = geometry.get(indices)
@@ -266,7 +252,41 @@ def fit_chain(geometry, indices, *, sigma=.3, rms_limit=.6, prior=.001,
         r = observers[middle]+distance*u[middle]
         v = (observers[-1]-observers[0]+distance*(u[-1]-u[0]))/dt
         seeds.append((np.r_[r, v+vr*u[middle]], epoch))
-    solutions, canonical_states = [], []
+    return FitPlan(tuple(map(int, indices)), t, u, observers, labels, east, north,
+                   middle, epoch, tuple(seeds), start_policy)
+
+
+def fit_chain(geometry, indices, *, sigma=.3, rms_limit=.6, prior=.001,
+              deadline=np.inf, extra_seeds=(), max_nfev=80, jacobian_backend="compiled",
+              broad_starts=False, start_policy="full", allow_two_tracklets=False, optimizer=None):
+    if optimizer is not None and jacobian_backend != "compiled":
+        raise ValueError("Injected optimizer requires compiled policy")
+    plan = prepare_fit(geometry, indices, deadline=deadline, extra_seeds=extra_seeds,
+                       broad_starts=broad_starts, start_policy=start_policy,
+                       allow_two_tracklets=allow_two_tracklets)
+    if plan is None:
+        return None
+    return fit_prepared(plan, sigma=sigma, rms_limit=rms_limit, prior=prior,
+                        deadline=deadline, max_nfev=max_nfev,
+                        jacobian_backend=jacobian_backend, start_policy=start_policy,
+                        optimizer=optimizer)
+
+
+def fit_prepared(plan, *, sigma=.3, rms_limit=.6, prior=.001, deadline=np.inf,
+                 max_nfev=80, jacobian_backend="compiled", start_policy=None, optimizer=None):
+    """Fit an already prepared chain; used to share planning with batch backends."""
+    if start_policy is None:
+        start_policy = plan.start_policy
+    elif start_policy != plan.start_policy:
+        raise ValueError('Prepared fit start policy cannot be relabelled')
+    check_deadline(deadline)
+    if optimizer is not None and jacobian_backend != "compiled":
+        raise ValueError("Injected optimizer requires compiled policy")
+    indices, t, u, observers, labels = plan.indices, plan.t, plan.u, plan.observers, plan.labels
+    east, north, middle, epoch, seeds = plan.east, plan.north, plan.middle, plan.epoch, plan.seeds
+    solutions = []
+    canonical_positions = np.empty((len(seeds), 3))
+    canonical_velocities = np.empty((len(seeds), 3))
     attempts = 0
     for seed, seed_epoch in seeds:
         check_deadline(deadline)
@@ -305,39 +325,31 @@ def fit_chain(geometry, indices, *, sigma=.3, rms_limit=.6, prior=.001,
         else:
             result = least_squares(residual, seed, jac=jacobian, method='lm', x_scale='jac', max_nfev=max_nfev,
                                    ftol=1e-7, xtol=1e-9, gtol=1e-7)
-        chi2 = float(result.fun@result.fun)
-        rms = sigma*math.sqrt(chi2/len(t))
-        if not result.success or rms > rms_limit:
+        if not result.success:
             continue
-        per_observation = sigma*np.linalg.norm(result.fun.reshape(-1, 2), axis=1)
-        if np.max(per_observation) > max(3*sigma, 2*rms_limit):
+        accepted, chi2, rms, maximum, distance, canonical_position, canonical_velocity, values = candidate_summary(
+            result.x, result.fun, sigma, rms_limit, labels, epoch-seed_epoch, observers[middle])
+        if not accepted:
             continue
-        if any(np.sqrt(np.mean(per_observation[labels == label]**2)) > rms_limit
-               for label in np.unique(labels)):
-            continue
-        elements = orbital_elements(result.x)
-        if elements is None or elements['perihelion_au'] < .005:
-            continue
-        # Collapse repeated numerical solutions, preserving materially different modes.
-        # Compare states at their own epochs through prediction AND physical range.
-        distance = float(np.linalg.norm(position(result.x, epoch-seed_epoch)-observers[middle]))
-        canonical_position = position(result.x, epoch-seed_epoch)
-        canonical_velocity = (position(result.x, epoch-seed_epoch+.001)-
-                              position(result.x, epoch-seed_epoch-.001))/.002
-        duplicate = next((i for i, (p, v) in enumerate(canonical_states)
-                          if np.linalg.norm(canonical_position-p) < max(1e-5, distance*1e-3)
-                          and np.linalg.norm(canonical_velocity-v) < 1e-6), None)
-        if duplicate is not None:
+        duplicate = duplicate_index(canonical_positions, canonical_velocities, len(solutions),
+                                    canonical_position, canonical_velocity, distance)
+        if duplicate >= 0:
             if solutions[duplicate]['chi2'] <= chi2:
                 continue
             del solutions[duplicate]
-            del canonical_states[duplicate]
-        canonical_states.append((canonical_position, canonical_velocity))
+            for i in range(duplicate, len(solutions)):
+                canonical_positions[i] = canonical_positions[i+1]
+                canonical_velocities[i] = canonical_velocities[i+1]
+        canonical_positions[len(solutions)] = canonical_position
+        canonical_velocities[len(solutions)] = canonical_velocity
+        eccentricity, perihelion, axis, inclination, energy, hn = values
         solutions.append(dict(state_au_au_per_day=result.x.tolist(), epoch_mjd_tdb=seed_epoch,
                               chi2=chi2, rms_arcsec=rms, range_au=distance,
-                              max_residual_arcsec=float(np.max(per_observation)),
-                              jacobian_rank=int(np.linalg.matrix_rank(result.jac)),
-                              _jacobian=result.jac, **elements))
+                              max_residual_arcsec=maximum, _jacobian=result.jac,
+                              eccentricity=float(eccentricity), perihelion_au=float(perihelion),
+                              semimajor_axis_au=float(axis) if np.isfinite(axis) else None,
+                              inclination_deg=float(inclination),
+                              conic='hyperbolic' if energy > 0 else 'elliptic'))
     if not solutions:
         return None
     solutions.sort(key=lambda s: s['chi2'])
@@ -349,6 +361,7 @@ def fit_chain(geometry, indices, *, sigma=.3, rms_limit=.6, prior=.001,
     log_odds = math.log(prior)-math.log1p(-prior)+log_bf
     logs = np.array([-.5*s['chi2'] for s in solutions])
     for solution, weight in zip(solutions, np.exp(logs-logsumexp(logs))):
+        solution['jacobian_rank'] = int(np.linalg.matrix_rank(solution['_jacobian']))
         solution['relative_mode_likelihood'] = float(weight)
         solution['local_uncertainty'] = local_uncertainty(
             np.array(solution['state_au_au_per_day']), solution.pop('_jacobian'),

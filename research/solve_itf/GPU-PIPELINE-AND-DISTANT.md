@@ -172,3 +172,9 @@ not an invoice). Zero Droplets remained at the final provider check.
 Both workers were deleted after hash-verified returns. No old scientific snapshots
 or production evidence were deleted, and no old search/certification campaign was
 restarted.
+
+The subsequent [bookkeeping optimization](GPU-BOOKKEEPING.md) reduces the warm
+hybrid controlled pipeline to 1.436 s (median of two warm repeats), with unchanged
+CPU states and memberships. The further 100× target remains unmet and new
+catalogue linking remains paused. It also preserves a negative exact spatial-index
+benchmark on 2.55 million local tracklets; that index is not enabled.

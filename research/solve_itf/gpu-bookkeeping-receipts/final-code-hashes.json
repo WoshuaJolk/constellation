@@ -1,0 +1,10 @@
+{
+  "src/magictools/itf/fit.py": "e8858a89d746ddf42bf7302cb2205ba9ad0e246652c33ad56d89a6f364308291",
+  "src/magictools/itf/fit_bookkeeping.py": "a65c10b964cf519c18fa881d6ca27b1fb55a044386c5c11fcfda58a08264ba03",
+  "src/magictools/itf/night_query_indexed.py": "f930b8344c4db4b67ad954579e092c0d22f45bf48b450ac4f088f38c819f7f92",
+  "research/solve_itf/gpu_pipeline_adapter.py": "dc8544e92f889dc8bc4a0c9d7308866d5d7ce48b2bbc5192df1167e0bc4d43c5",
+  "research/solve_itf/gpu_bookkeeping_benchmark.py": "875ed1cbebbf4c11528e3f0f52760fc20610a293e0e56f1825249c1f31f345b6",
+  "research/solve_itf/night_index_benchmark.py": "e2715b9aef814fa14c3a3c8a61eef4b6a253eb09d0327bdf88c750748030a858",
+  "tests/test_itf_fit_bookkeeping.py": "d75f8c3de38bcb7871a4365fb5c50b8ef2921d00425a438a7a9fb9c5d5012c80",
+  "tests/test_itf_night_query_indexed.py": "31e9424a7ddf5c58f5cf495d0af6177937d39e98c2d83631d77e354bb6af83c8"
+}

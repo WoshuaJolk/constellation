@@ -9,7 +9,7 @@ from types import SimpleNamespace
 import time
 import numpy as np
 from numba import njit
-from magictools.itf.fit import fit_chain, check_deadline
+from magictools.itf.fit import fit_chain, prepare_fit, fit_prepared, check_deadline
 from magictools.itf.derivatives import solve_lm, residual_jacobian
 from magictools.itf.gpu_fit import ResidentWorkspace
 
@@ -56,12 +56,21 @@ class GPUBatch:
 
     def __call__(self, geometry, jobs):
         started=time.perf_counter();calls=[];groups=[];plans=[]
-        def collect(*args):
-            calls.append(tuple(x.copy() if isinstance(x,np.ndarray) else x for x in args))
-            return args[0], np.full(2*len(args[1]),1e12),np.zeros((2*len(args[1]),6)),False
-        for key,settings in jobs:
-            before=len(calls);fit_chain(geometry,key,**settings,optimizer=collect)
-            groups.append((before,len(calls)))
+        planning_keys = {'deadline', 'extra_seeds', 'broad_starts', 'start_policy', 'allow_two_tracklets'}
+        for key, settings in jobs:
+            if settings.get('jacobian_backend', 'compiled') != 'compiled':
+                raise ValueError('GPU adapter requires compiled policy')
+            before = len(calls)
+            plan = prepare_fit(geometry, key, **{k:v for k,v in settings.items() if k in planning_keys})
+            plans.append(plan)
+            if plan is not None:
+                for state, epoch in plan.seeds:
+                    check_deadline(settings.get('deadline', np.inf))
+                    if np.isfinite(state).all():
+                        calls.append((state.copy(), plan.t-epoch, plan.observers, plan.u,
+                                      plan.east, plan.north, settings.get('sigma', .3),
+                                      settings.get('max_nfev', 80)))
+            groups.append((before, len(calls)))
         if not calls:return [None]*len(jobs)
         sigma=float(calls[0][-2]);limit=int(calls[0][-1])
         assert all(x[-2]==sigma and x[-1]==limit for x in calls)
@@ -74,7 +83,9 @@ class GPUBatch:
         checked,fallback=checked_cpu_replay(b,out,limit)
         verified=time.perf_counter()-check_start
         def select(job):
-            (key,settings),(lo,hi)=job
+            (key,settings),(lo,hi),plan=job
+            if plan is None:
+                return None
             index=lo;fixed_geometry=None
             def replay(*args):
                 nonlocal index,fixed_geometry
@@ -93,10 +104,10 @@ class GPUBatch:
                     or args[1].tobytes()!=expected[1].tobytes()
                     or args[-2:]!=expected[-2:]):raise ValueError('Fit seed/epoch/policy changed')
                 answer=checked[index];index+=1;return answer
-            row=fit_chain(geometry,key,**settings,optimizer=replay)
+            row=fit_prepared(plan,**{k:v for k,v in settings.items() if k not in {'extra_seeds','broad_starts','allow_two_tracklets'}},optimizer=replay)
             if index!=hi:raise ValueError('Replay omitted starts')
             return row
-        with ThreadPoolExecutor(max_workers=20) as pool:rows=list(pool.map(select,zip(jobs,groups)))
+        with ThreadPoolExecutor(max_workers=20) as pool:rows=list(pool.map(select,zip(jobs,groups,plans)))
         self.receipts.append(dict(chains=len(jobs),starts=len(calls),planning_seconds=planned,
             gpu_setup_seconds=workspace.setup_seconds,gpu_solve_profile=out['profile'],
             cpu_verify_fallback_seconds=verified,cpu_fallback_starts=int(fallback.sum()),

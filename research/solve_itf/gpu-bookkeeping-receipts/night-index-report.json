@@ -1,0 +1,111 @@
+{
+  "design": {
+    "seed": 20261028,
+    "selection": "Every finite local tracklet with >=2 observations and finite rate. Query 4096 evenly spaced original eligible catalogue ordinals, plus 4096 seed-fixed isotropic directions at those nights. Query both at 1 arcsec, 1 arcmin, 0.1, 1 and 10 degrees. No outcome selection.",
+    "scope": "Exact nightly spatial query stage only. Uses motion-to-night-center approximation of existing NightIndex; no new predictions, orbit fits, uncertainty model, classification or catalogue linking.",
+    "baseline": "Existing compiled x-slab query_nights",
+    "alternative": "Smallest of three coordinate slabs, identical full 3D distance check and output ordering"
+  },
+  "tracklets": 2545458,
+  "nights": 10246,
+  "additional_index_bytes": 61090992,
+  "build_seconds": 0.4707742240061634,
+  "warmup_seconds": 4.308891501001199,
+  "runs": [
+    {
+      "radius_arcsec": 1.0,
+      "queries": 8192,
+      "hits": 4362,
+      "seconds": {
+        "baseline": [
+          0.0037044169948785566,
+          0.0034014720004051924,
+          0.002234829000371974
+        ],
+        "indexed": [
+          0.020575770002324134,
+          0.017079297998861875,
+          0.018683307003811933
+        ]
+      },
+      "speedup": 0.18205941805223208,
+      "exact_parity": true
+    },
+    {
+      "radius_arcsec": 60.0,
+      "queries": 8192,
+      "hits": 4889,
+      "seconds": {
+        "baseline": [
+          0.0026273890034644864,
+          0.00552064099611016,
+          0.0028979240014450625
+        ],
+        "indexed": [
+          0.019645725995360408,
+          0.07412989500153344,
+          0.018348711004364304
+        ]
+      },
+      "speedup": 0.14750913262912477,
+      "exact_parity": true
+    },
+    {
+      "radius_arcsec": 360.0,
+      "queries": 8192,
+      "hits": 11008,
+      "seconds": {
+        "baseline": [
+          0.003928450001694728,
+          0.004157943003519904,
+          0.0035679219945450313
+        ],
+        "indexed": [
+          0.016712718999770004,
+          0.018704132999118883,
+          0.01884002699807752
+        ]
+      },
+      "speedup": 0.2100311199604809,
+      "exact_parity": true
+    },
+    {
+      "radius_arcsec": 3600.0,
+      "queries": 8192,
+      "hits": 260132,
+      "seconds": {
+        "baseline": [
+          0.019491972001560498,
+          0.019865362002747133,
+          0.02090036799927475
+        ],
+        "indexed": [
+          0.04298229399864795,
+          0.053327204004745,
+          0.05307099299534457
+        ]
+      },
+      "speedup": 0.3743167572630446,
+      "exact_parity": true
+    },
+    {
+      "radius_arcsec": 36000.0,
+      "queries": 8192,
+      "hits": 3384169,
+      "seconds": {
+        "baseline": [
+          0.4545185369934188,
+          0.1479284229935729,
+          0.22691601899714442
+        ],
+        "indexed": [
+          0.5077945119992364,
+          0.32779998399928445,
+          0.5544405539985746
+        ]
+      },
+      "speedup": 0.44686583575658184,
+      "exact_parity": true
+    }
+  ]
+}

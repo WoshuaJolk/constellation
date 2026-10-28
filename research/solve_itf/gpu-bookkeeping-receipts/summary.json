@@ -1,0 +1,18 @@
+{
+  "created_unix": 1793207481.3926635,
+  "status": "100X_TARGET_NOT_MET_NEW_LINKING_PAUSED",
+  "warm_median_seconds": {
+    "old_cpu": 3.898680452000008,
+    "new_cpu": 1.5603016169999933,
+    "new_gpu": 1.4361562654999886
+  },
+  "old_cpu_to_new_gpu_speedup": 2.714663122430279,
+  "prior_hybrid_to_new_hybrid_speedup": 2.528090622322344,
+  "prior_hybrid_comparison_caveat": "Different identical-size provider instances; previous figure was one warm run, new figure median of two. Same fixed fixture and search policy.",
+  "target_seconds": 0.03630733187,
+  "incremental_compute_usd": 0.31636138154268245,
+  "cumulative_gpu_compute_usd": 4.391786565997375,
+  "all_droplets_deleted": true,
+  "deletion_receipt": "hardware-deleted.json",
+  "source_match": "Hardware payload frozen before a subsequent metadata-only prepared-plan policy guard; guard tested locally, no changes to valid-path numerical calculations."
+}
