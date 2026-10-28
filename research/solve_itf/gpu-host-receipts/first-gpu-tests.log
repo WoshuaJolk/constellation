@@ -1,0 +1,71 @@
+...s..............................................F.F............        [100%]
+=================================== FAILURES ===================================
+___________________ test_all_modes_and_uncertainty_preserved ___________________
+
+injected_catalogue = (<magictools.itf.catalogue.Catalogue object at 0x7f14f5b2caf0>, {b'500': <EarthLocation (0., 0., 0.) m>}, PosixPath('/tmp/pytest-of-root/pytest-0/test_all_modes_and_uncertainty0/ObsCodes.html'))
+
+    def test_all_modes_and_uncertainty_preserved(injected_catalogue):
+        cat,sites,_=injected_catalogue;geometry=Geometry(cat,sites);geometry.prepare(range(6))
+        settings=dict(broad_starts=True)
+>       a=reference().fit_chain(geometry,[0,1,2],**settings)
+
+tests/test_itf_fit_bookkeeping.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_itf_fit_bookkeeping.py:13: in reference
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:879: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1016: in get_code
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_frozen_importlib_external.SourceFileLoader object at 0x7f14f888ae30>
+path = '/workspace/constellation/research/solve_itf/gpu-bookkeeping-receipts/reference_fit.py'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/workspace/constellation/research/solve_itf/gpu-bookkeeping-receipts/reference_fit.py'
+
+<frozen importlib._bootstrap_external>:1073: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Parsed 24 rows; indexing 24 optical observations
+Cached 6 tracklets in 0.0s
+________________ test_uncertainty_rank_and_elements_edge_cases _________________
+
+    def test_uncertainty_rank_and_elements_edge_cases():
+>       ref=reference();state=np.array([2.4,.7,.3,-.004,.009,.002]);observer=np.array([1.,0,0])
+
+tests/test_itf_fit_bookkeeping.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_itf_fit_bookkeeping.py:13: in reference
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:879: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1016: in get_code
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <_frozen_importlib_external.SourceFileLoader object at 0x7f14f5ae3fa0>
+path = '/workspace/constellation/research/solve_itf/gpu-bookkeeping-receipts/reference_fit.py'
+
+>   ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/workspace/constellation/research/solve_itf/gpu-bookkeeping-receipts/reference_fit.py'
+
+<frozen importlib._bootstrap_external>:1073: FileNotFoundError
+=============================== warnings summary ===============================
+tests/test_itf_gpu.py::test_all_conics_and_failure_parity
+tests/test_itf_batched_fit.py::test_resident_solver_preserves_policy_and_invalid_cases[0]
+tests/test_itf_batched_fit.py::test_resident_solver_preserves_policy_and_invalid_cases[1]
+tests/test_itf_batched_fit.py::test_resident_solver_preserves_policy_and_invalid_cases[1]
+tests/test_itf_batched_fit.py::test_resident_solver_preserves_policy_and_invalid_cases[1]
+tests/test_itf_batched_fit.py::test_workspace_reuse_resets_all_solver_state[False-True]
+tests/test_itf_batched_fit.py::test_workspace_reuse_resets_all_solver_state[False-True]
+tests/test_itf_batched_fit.py::test_workspace_reuse_resets_all_solver_state[False-True]
+tests/test_itf_batched_fit.py::test_columnar_jacobian_and_parallel_accept_copy[False-True]
+  /workspace/constellation/.venv/lib/python3.10/site-packages/numba_cuda/numba/cuda/dispatcher.py:748: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+    warn(errors.NumbaPerformanceWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_itf_fit_bookkeeping.py::test_all_modes_and_uncertainty_preserved
+FAILED tests/test_itf_fit_bookkeeping.py::test_uncertainty_rank_and_elements_edge_cases
+2 failed, 62 passed, 1 skipped, 9 warnings in 52.76s

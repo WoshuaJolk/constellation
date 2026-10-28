@@ -1,0 +1,7 @@
+{
+  "note": "The byte-comparison diagnostic reused the local timing script but ran one preparation comparison and four selection cases. Its inherited local-design metadata still said three repetitions. Treat local-bitcheck.json only as input-byte equality evidence, not as a headline performance estimate. Three-repetition timings remain in first-local-report.json.",
+  "actual_bitcheck_chains": 1024,
+  "actual_preparation_comparisons": 1,
+  "actual_selection_cases": 4,
+  "performance_claim_used": false
+}

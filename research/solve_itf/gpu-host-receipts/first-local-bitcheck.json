@@ -1,0 +1,28 @@
+{
+  "planning": [
+    {
+      "old": 1.2833190789970104,
+      "new": 0.4458814430036
+    }
+  ],
+  "planning_speedup": 2.8781621194014324,
+  "selection": [
+    {
+      "new": 3.159100015182048e-05,
+      "old": 0.0009280989979743026
+    },
+    {
+      "old": 0.0006063070031814277,
+      "new": 4.018199979327619e-05
+    },
+    {
+      "new": 2.9084003472235054e-05,
+      "old": 0.0008998279954539612
+    }
+  ],
+  "selection_speedup": 28.483681780556328,
+  "selection_cases": 4,
+  "selected_cases_retained": 0,
+  "bank_arrays_exact": true,
+  "selected_rows_exact": true
+}

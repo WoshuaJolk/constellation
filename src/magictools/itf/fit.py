@@ -248,10 +248,15 @@ def prepare_fit(geometry, indices, *, deadline=np.inf, extra_seeds=(),
         hypotheses = [(distance, 0.) for distance in (.03, 1., 40., 1000.)]
     elif start_policy == 'provided':
         hypotheses = []
-    for distance, vr in hypotheses:
+    if hypotheses:
+        # Batch identical elementwise operations without a Python loop per start.
+        # Keep hypothesis order and operation order; no fast math or new starts.
+        values = np.asarray(hypotheses, dtype=np.float64)
+        distance, vr = values[:, :1], values[:, 1:]
         r = observers[middle]+distance*u[middle]
         v = (observers[-1]-observers[0]+distance*(u[-1]-u[0]))/dt
-        seeds.append((np.r_[r, v+vr*u[middle]], epoch))
+        states = np.column_stack((r, v+vr*u[middle]))
+        seeds.extend((state, epoch) for state in states)
     return FitPlan(tuple(map(int, indices)), t, u, observers, labels, east, north,
                    middle, epoch, tuple(seeds), start_policy)
 
@@ -350,6 +355,19 @@ def fit_prepared(plan, *, sigma=.3, rms_limit=.6, prior=.001, deadline=np.inf,
                               semimajor_axis_au=float(axis) if np.isfinite(axis) else None,
                               inclination_deg=float(inclination),
                               conic='hyperbolic' if energy > 0 else 'elliptic'))
+    return finish_prepared(plan, solutions, attempts, sigma=sigma, prior=prior,
+                           jacobian_backend=jacobian_backend)
+
+
+def finish_prepared(plan, solutions, attempts, *, sigma=.3, prior=.001,
+                    jacobian_backend="compiled"):
+    """Assemble unchanged output from ordered, accepted and deduplicated modes.
+
+    Internal batch boundary: callers must apply the same candidate and duplicate
+    checks first. This function neither fits nor accepts supplied orbital states.
+    """
+    indices, t, u, observers, labels = plan.indices, plan.t, plan.u, plan.observers, plan.labels
+    middle, epoch, start_policy = plan.middle, plan.epoch, plan.start_policy
     if not solutions:
         return None
     solutions.sort(key=lambda s: s['chi2'])

@@ -1,0 +1,42 @@
+{
+  "recorded_unix": 1793214379.1515021,
+  "baseline_chains_per_second": 622.9333333333333,
+  "target_100x_chains_per_second": 62293.33333333333,
+  "scope": "Original full catalogue and original7M checkpoint; full Gauss plus44 range/radial starts,80 iterations,sigma.3,RMS.6 and original physical/per-tracklet cuts. No production updates.",
+  "phases": [
+    [
+      "legacy_gpu",
+      120,
+      0
+    ],
+    [
+      "compact_gpu",
+      120,
+      0
+    ],
+    [
+      "prefetch_gpu_0",
+      180,
+      0
+    ],
+    [
+      "process_cpu",
+      120,
+      0
+    ],
+    [
+      "prefetch_gpu_1",
+      180,
+      1000000
+    ]
+  ],
+  "ordering": "Existing affine permutation (104729*i+20261028)%7000000,1024 chains/batch; no outcome-based selection. Last16positions warmup only.",
+  "prefetch": "4 forked CPU producers,at most4inflight banks,ordered consumption,no concurrentCPUfit phase; report and discard unconsumed preparation,not scientific rejection. All pool processes fork beforeCUDA.",
+  "timing": "Count only complete fit batches within budget. Include preparation/IPC/writing in wall clock, report all drain separately. Never sum overlapped preparation and execution as wall time.",
+  "checks": "Frozen legacy GPU versus compact GPU shared-seed membership,RMS,mode counts; processCPU equivalence and numerical failures; full raw outputs retained.",
+  "maximum_additional_usd": 3.0,
+  "maximum_worker_seconds": 1800,
+  "new_workers": 1,
+  "hardware": "H10080GB20vCPU at no more than$4.41/h; delete after verified returns or at guarddeadline.",
+  "unchanged_downstream": "Planetary retrieval implementation unchanged; do not repeat the completed deep benchmark or claim new recovery speedups."
+}

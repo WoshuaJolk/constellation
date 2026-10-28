@@ -32,7 +32,7 @@ def _check_block(lo,hi,seeds,states,bounds,offsets,observers,observed,east,north
         residuals[2*begin:2*end]=r;jacobians[2*begin:2*end]=j
 
 
-def checked_cpu_replay(bank,out,limit,threads=20):
+def checked_cpu_arrays(bank,out,limit,threads=20):
     """Compiled blocks replace per-start Python tasks; same checks and fallback."""
     bounds=np.r_[0,np.cumsum(np.bincount(bank['case_index']))]
     n=len(bank['states']);no=len(bank['offsets']);states=out['states'].copy();flags=out['success'].copy()
@@ -41,7 +41,14 @@ def checked_cpu_replay(bank,out,limit,threads=20):
         _check_block(*pair,bank['states'],states,bounds,*[bank[k] for k in ('offsets','observers','observed','east','north')],float(bank['sigma']),limit,out['cost'],flags,r,j,fallback)
     edges=np.linspace(0,n,min(n,threads*8)+1,dtype=int)
     with ThreadPoolExecutor(max_workers=threads) as pool:list(pool.map(run,zip(edges[:-1],edges[1:])))
-    return [(states[c],r[2*bounds[c]:2*bounds[c+1]],j[2*bounds[c]:2*bounds[c+1]],bool(flags[c])) for c in range(n)],fallback
+    return states, flags, r, j, fallback
+
+
+def checked_cpu_replay(bank,out,limit,threads=20):
+    states, flags, r, j, fallback = checked_cpu_arrays(bank,out,limit,threads)
+    bounds = np.r_[0,np.cumsum(np.bincount(bank['case_index']))]
+    return [(states[c],r[2*bounds[c]:2*bounds[c+1]],j[2*bounds[c]:2*bounds[c+1]],bool(flags[c])) for c in range(len(states))],fallback
+
 
 
 def cpu_batch(geometry, jobs):
