@@ -1,0 +1,53 @@
+.F......................................s                                [100%]
+=================================== FAILURES ===================================
+__________ test_compact_reused_workspace_matches_fresh_and_cpu_checks __________
+
+    @pytest.mark.skipif(not cuda.is_available(),reason='CUDA or simulator required')
+    def test_compact_reused_workspace_matches_fresh_and_cpu_checks():
+        original=fixture_bank();pool=DeviceBufferPool()
+        for scale in [1.,1.001,1.]:
+            bank={k:np.copy(v) for k,v in original.items()}
+            bank['states'][:,0]*=scale
+            compact=dict(bank,geometry_index=np.arange(len(bank['offsets'])-1,-1,-1,dtype=np.int64))
+            for k in ['observers','observed','east','north']:compact[k]=np.ascontiguousarray(bank[k][::-1])
+            expected=ResidentWorkspace(bank,allow_simulator=True,coalesced=True).solve(bank['states'],5,parallel_normal=True,parallel_copy=True)
+>           pool.begin();w=ResidentWorkspace(compact,allow_simulator=True,coalesced=True,allocator=pool)
+
+tests/test_itf_gpu_stream.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/magictools/itf/gpu_fit.py:293: in __init__
+    normal = allocate((n,6,6),np.float64, order=order)
+research/solve_itf/gpu_stream_adapter.py:95: in empty
+    return slot[:count].reshape(tuple(reversed(shape))).transpose(tuple(reversed(range(len(shape)))))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <numba.cuda.cudadrv.devicearray.DeviceNDArray object at 0x7f17c8748670>
+axes = (2, 1, 0)
+
+    def transpose(self, axes=None):
+        if axes and tuple(axes) == tuple(range(self.ndim)):
+            return self
+        elif self.ndim != 2:
+            msg = "transposing a non-2D DeviceNDArray isn't supported"
+>           raise NotImplementedError(msg)
+E           NotImplementedError: transposing a non-2D DeviceNDArray isn't supported
+
+.venv/lib/python3.10/site-packages/numba_cuda/numba/cuda/cudadrv/devicearray.py:162: NotImplementedError
+=============================== warnings summary ===============================
+tests/test_itf_gpu_stream.py: 18 warnings
+tests/test_itf_gpu_indexed.py: 1 warning
+  /workspace/constellation/.venv/lib/python3.10/site-packages/numba_cuda/numba/cuda/dispatcher.py:748: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+    warn(errors.NumbaPerformanceWarning(msg))
+
+tests/test_itf_gpu_indexed.py::test_indexed_arrays_match_copied_arrays_and_lm
+  /workspace/constellation/.venv/lib/python3.10/site-packages/numba_cuda/numba/cuda/dispatcher.py:748: NumbaPerformanceWarning: Grid size 2 will likely result in GPU under-utilization due to low occupancy.
+    warn(errors.NumbaPerformanceWarning(msg))
+
+tests/test_itf_gpu_indexed.py::test_atlas_template_is_exact_for_selected_fit
+  /workspace/constellation/.venv/lib/python3.10/site-packages/numba_cuda/numba/cuda/dispatcher.py:748: NumbaPerformanceWarning: Grid size 3 will likely result in GPU under-utilization due to low occupancy.
+    warn(errors.NumbaPerformanceWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_itf_gpu_stream.py::test_compact_reused_workspace_matches_fresh_and_cpu_checks
+1 failed, 39 passed, 1 skipped, 21 warnings in 46.07s

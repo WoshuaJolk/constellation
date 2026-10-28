@@ -1,0 +1,43 @@
+{
+  "counts": {
+    "tracklets_total": 2548307,
+    "seed_eligible_tracklets": 2545389,
+    "rate_unavailable_tracklets": 2918,
+    "long_tracklets_not_seeded": 0,
+    "edges_retained": 3000000,
+    "full_catalogue_scan_complete": true,
+    "day_pairs_scanned": 512611,
+    "neighbor_queries_at_cap": 32754,
+    "edges_proposed": 13054614,
+    "edge_pool_discarded": 10054614,
+    "tracklets_scanned": 2545389,
+    "seed_combinations_considered": 8991963,
+    "seeds_retained": 1000000,
+    "seed_search_bounded": true
+  },
+  "config": {
+    "workers": 20,
+    "max_gap_days": 60,
+    "position_gate_arcsec": 30.0,
+    "curvature_gate_arcsec_per_day2": 1.0,
+    "neighbors_per_day": 32,
+    "max_edges": 3000000,
+    "max_seeds": 1000000,
+    "seed_neighbors": 0,
+    "broad_search": false,
+    "sparse_curved": false,
+    "branches": 4,
+    "max_parent_seeds": 16,
+    "joint_extensions": true,
+    "sigma_arcsec": 0.3,
+    "rms_limit_arcsec": 0.6,
+    "prior_link_probability": 0.001,
+    "seconds": 900
+  },
+  "scan_seconds": 13.156601306000027,
+  "total_seconds": 62.62940492400003,
+  "available_seeds": 1000000,
+  "edges_sha256": "1b99c06602fdfe15bbcb38fe3465d662b73c5a2cbc12b318af4c60f92b5f0d58",
+  "seeds_sha256": "3da886aa22d431dc2088149ac3c728988b700cf81077bb06b2c264a31e09e10d",
+  "scope": "One frozen 60-day graph; original fast fit starts/cuts; no broad augmentation; no replicated benchmark seeds"
+}

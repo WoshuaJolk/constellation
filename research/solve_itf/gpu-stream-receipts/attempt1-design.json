@@ -1,0 +1,48 @@
+{
+  "registered_unix": 1793222735.6560335,
+  "scope": "distinct-seed cached-graph full-search scaling; no production update",
+  "graph": {
+    "max_gap_days": 60,
+    "neighbors_per_day": 32,
+    "max_edges": 3000000,
+    "max_seeds": 1000000,
+    "seed_neighbors": 0,
+    "broad_search": false
+  },
+  "prefixes": [
+    100000,
+    300000,
+    1000000
+  ],
+  "shortfall": "collapse duplicate actual prefix sizes, disclose actual pool, never repeat seeds to fill budget",
+  "fit": {
+    "max_iterations": 80,
+    "sigma": 0.3,
+    "rms_limit": 0.6,
+    "broad_starts": false,
+    "branches": 4
+  },
+  "backends": "CPU20 and streaming GPU each size; old prefetch GPU smallest size; fixed order CPU/prefetch/stream",
+  "stream": {
+    "batch_size": 1024,
+    "preparation_workers": 4,
+    "depth": 3,
+    "finish_threads": 16,
+    "completion_interval": 16,
+    "register_normal": false
+  },
+  "gates": "hardware tests then exact retained-row comparison of 128 frozen seeds in four batches; stop on failed gate",
+  "cost": {
+    "maximum_usd": 5,
+    "worker_lifetime_seconds": 3600,
+    "price_ceiling_hourly": 4.41
+  },
+  "timing": "graph creation and hash verification recorded separately, cached graph loaded into same full search; includes fits/growth/results/gzip; no comparison with prior14daygraph",
+  "code_manifest_sha256": "60e4e7271f0186a84a32b1e626f22ce642db83192e151e1fcab7c0324ad11420",
+  "local_validation": {
+    "cpu_passed": 52,
+    "cpu_skipped": 15,
+    "simulator_passed": 10
+  },
+  "no_new_scientific_cuts": true
+}

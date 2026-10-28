@@ -1,0 +1,18 @@
+{
+  "scope": "GPU pipeline and distinct-seed scaling development; no production catalogue or scientific release",
+  "original_attempt": "/tmp/itf-stream-scaling-20261028",
+  "original_worker": 50,
+  "retry_worker": 51,
+  "original_deadline_unix": 1793226120.6903472,
+  "combined_compute_cap_usd": 5,
+  "first_attempt_cost_usd": 0.5446210407435894,
+  "first_attempt_failures": [
+    "CUDA hardware does not support non-2D transpose; explicit Fortran stride views substituted before numerical benchmark",
+    "Shared transport mapped each array independently and exhausted file descriptors; replaced by one aligned read-only mapping per batch"
+  ],
+  "failures_preserved": true,
+  "repairs_changed_scientific_cuts": false,
+  "prior_timed_searches_completed": 0,
+  "input_pool": "Regenerate with unchanged fixed 60-day proposal graph, require exact earlier edge and seed SHA-256 hashes before fitting",
+  "local_test_note": "FD-lifetime test initially retained its own last loop view; assertion fixed by releasing that view, original failed log preserved"
+}

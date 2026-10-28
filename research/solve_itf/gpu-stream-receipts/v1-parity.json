@@ -1,0 +1,27 @@
+{
+  "chains": 128,
+  "batches": 4,
+  "exact_rows": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "pipeline": {
+    "submitted_batches": 4,
+    "returned_batches": 4,
+    "cancelled_batches": 0,
+    "unused_prepared_batches": 0,
+    "peak_pending_batches": 3,
+    "drain_seconds": 1.499999996212864e-06,
+    "drain_errors": [],
+    "shared_bytes": 2622696,
+    "shared_metadata_bytes": 118777,
+    "overlapped_batches": 3,
+    "device_allocations": 33,
+    "device_reuses": 99,
+    "device_capacity_bytes": 4704955
+  },
+  "seconds": 26.296963780999988,
+  "remaining_shared_directories": []
+}

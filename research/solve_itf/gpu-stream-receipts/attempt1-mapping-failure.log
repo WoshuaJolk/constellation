@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/workspace/constellation/research/solve_itf/gpu_scaling_benchmark.py", line 148, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+  File "/workspace/constellation/research/solve_itf/gpu_scaling_benchmark.py", line 108, in main
+    if a.parity:return parity(a.output)
+  File "/workspace/constellation/research/solve_itf/gpu_scaling_benchmark.py", line 96, in parity
+    actual=list(adapter.iter_batches(g,iter(batches)));pipeline=adapter.pipeline.copy()
+  File "/workspace/constellation/research/solve_itf/gpu_stream_adapter.py", line 154, in iter_batches
+    prepared=load_prepared(receipt);bank,_,_,_,_,limit=prepared
+  File "/workspace/constellation/research/solve_itf/gpu_stream_adapter.py", line 69, in load_prepared
+    return Reader(io.BytesIO(receipt['metadata'])).load()
+  File "/workspace/constellation/research/solve_itf/gpu_stream_adapter.py", line 66, in persistent_load
+    seen[item] = (np.memmap(path,mode='r',offset=offset,shape=shape,dtype=dt)
+  File "/workspace/constellation/.venv/lib/python3.10/site-packages/numpy/_core/memmap.py", line 289, in __new__
+    mm = mmap.mmap(fid.fileno(), bytes, access=acc, offset=start)
+OSError: [Errno 24] Too many open files

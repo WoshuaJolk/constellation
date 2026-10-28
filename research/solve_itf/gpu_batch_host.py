@@ -26,7 +26,7 @@ def _pack_group(start, begin, seeds, epochs, t, observer, u, east, north,
             norths[p] = north[j]
 
 
-def prepare_bank(geometry, jobs):
+def prepare_bank(geometry, jobs, *, compact_geometry=False):
     plans, groups, seeds, epochs = [], [], [], []
     count = 0
     policy = None
@@ -68,14 +68,31 @@ def prepare_bank(geometry, jobs):
     nobs = int(bounds[-1])
     bank = dict(states=np.empty((count, 6)), case_index=np.empty(nobs, dtype=np.int64),
                 offsets=np.empty(nobs), sigma=np.array(policy[0] if policy else .3))
-    for name in ['observers', 'observed', 'east', 'north']:
-        bank[name] = np.empty((nobs, 3))
-    for plan, (lo, hi), states, times, (_, settings) in zip(plans, groups, seeds, epochs, jobs):
-        check_deadline(settings.get('deadline', np.inf))
-        if hi > lo:
-            _pack_group(lo, bounds[lo], states, times, plan.t, plan.observers, plan.u,
-                        plan.east, plan.north, bank['states'], bank['case_index'], bank['offsets'],
-                        bank['observers'], bank['observed'], bank['east'], bank['north'])
+    if compact_geometry:
+        # One exact vector per chain detection, reused across its starting states.
+        live = [(p, group) for p, group in zip(plans, groups) if group[1] > group[0]]
+        for name, attr in [('observers','observers'),('observed','u'),('east','east'),('north','north')]:
+            bank[name] = np.concatenate([getattr(p,attr) for p,_ in live]) if live else np.empty((0,3))
+        bank['geometry_index'] = np.empty(nobs, dtype=np.int64)
+        origin = 0
+        for plan, (lo,hi), states, times, (_,settings) in zip(plans,groups,seeds,epochs,jobs):
+            check_deadline(settings.get('deadline',np.inf))
+            if hi > lo:
+                n = len(plan.t)
+                bank['states'][lo:hi] = states
+                bank['case_index'][bounds[lo]:bounds[hi]] = np.repeat(np.arange(lo,hi),n)
+                bank['offsets'][bounds[lo]:bounds[hi]] = (plan.t[None,:]-times[:,None]).ravel()
+                bank['geometry_index'][bounds[lo]:bounds[hi]] = np.tile(np.arange(origin,origin+n),hi-lo)
+                origin += n
+    else:
+        for name in ['observers', 'observed', 'east', 'north']:
+            bank[name] = np.empty((nobs, 3))
+        for plan, (lo, hi), states, times, (_, settings) in zip(plans, groups, seeds, epochs, jobs):
+            check_deadline(settings.get('deadline', np.inf))
+            if hi > lo:
+                _pack_group(lo, bounds[lo], states, times, plan.t, plan.observers, plan.u,
+                            plan.east, plan.north, bank['states'], bank['case_index'], bank['offsets'],
+                            bank['observers'], bank['observed'], bank['east'], bank['north'])
     if hasattr(geometry, 'observation_indices'):
         observation_index = np.empty(nobs, dtype=np.int64)
         for plan, (lo, hi) in zip(plans, groups):

@@ -1,0 +1,10 @@
+{
+  "id": 613654258,
+  "name": "itf-h100-stream-scaling-retry-20261028",
+  "created_at": "2026-10-28T21:31:18Z",
+  "created_local": 1793223079.1956916,
+  "deadline_local": 1793226120.6903472,
+  "price_hourly": 4.41,
+  "size": "gpu-h100x1-80gb",
+  "part": 51
+}

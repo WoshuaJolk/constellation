@@ -1,0 +1,30 @@
+.....F                                                                   [100%]
+=================================== FAILURES ===================================
+______________ test_shared_bank_uses_one_mapping_for_many_arrays _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-30/test_shared_bank_uses_one_mapp0')
+
+    def test_shared_bank_uses_one_mapping_for_many_arrays(tmp_path):
+        import os,gc
+        arrays=[np.arange(i%7+1,dtype=np.float64) for i in range(4096)]
+        receipt=store_prepared(arrays,tmp_path)
+        before=len(os.listdir('/proc/self/fd'))
+        loaded=load_prepared(receipt)
+        after=len(os.listdir('/proc/self/fd'))
+        assert after-before<=2
+        for a,b in zip(arrays,loaded):
+            np.testing.assert_array_equal(a,b)
+            assert not b.flags.writeable and b.flags.aligned
+        Path(receipt['path']).unlink()
+        assert loaded[-1][0]==0 # Mapping survives unlink until last view released.
+        del loaded;gc.collect()
+>       assert len(os.listdir('/proc/self/fd'))<=before
+E       AssertionError: assert 16 <= 15
+E        +  where 16 = len(['0', '1', '2', '3', '4', '5', ...])
+E        +    where ['0', '1', '2', '3', '4', '5', ...] = <built-in function listdir>('/proc/self/fd')
+E        +      where <built-in function listdir> = <module 'os' (frozen)>.listdir
+
+tests/test_itf_gpu_stream.py:127: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_itf_gpu_stream.py::test_shared_bank_uses_one_mapping_for_many_arrays
+1 failed, 5 passed in 6.94s

@@ -1,0 +1,6 @@
+{
+  "utc": 1793222752.290766,
+  "reason": "Real CUDA DeviceNDArray.transpose cannot produce 3D F-order view; simulator supports it. Replace with explicit stride view. Await original preflight failure; no numerical benchmark relaunch until terminal proof.",
+  "paused_collector_pid": 438793,
+  "original_deadline_unchanged": true
+}

@@ -32,13 +32,34 @@ def _check_block(lo,hi,seeds,states,bounds,offsets,observers,observed,east,north
         residuals[2*begin:2*end]=r;jacobians[2*begin:2*end]=j
 
 
+@njit(cache=True,nogil=True)
+def _check_block_indexed(lo,hi,seeds,states,bounds,offsets,observers,observed,east,north,
+                 sigma,limit,costs,flags,residuals,jacobians,fallback,index):
+    for c in range(lo,hi):
+        begin,end=bounds[c],bounds[c+1]
+        ix=index[begin:end]
+        r,j=residual_jacobian(states[c],offsets[begin:end],observers[ix],
+                             observed[ix],east[ix],north[ix],sigma)
+        cost=np.dot(r,r)
+        mismatch=(not np.isfinite(r).all() or not np.isfinite(j).all() or np.all(r==1e12)
+                  or not np.isfinite(costs[c])
+                  or abs(sigma*np.sqrt(cost/(end-begin))-sigma*np.sqrt(costs[c]/(end-begin)))>.001)
+        if mismatch:
+            x,r,j,ok=solve_lm(seeds[c],offsets[begin:end],observers[ix],
+                             observed[ix],east[ix],north[ix],sigma,limit)
+            states[c]=x;flags[c]=ok;fallback[c]=True
+        residuals[2*begin:2*end]=r;jacobians[2*begin:2*end]=j
+
+
 def checked_cpu_arrays(bank,out,limit,threads=20):
     """Compiled blocks replace per-start Python tasks; same checks and fallback."""
     bounds=np.r_[0,np.cumsum(np.bincount(bank['case_index']))]
     n=len(bank['states']);no=len(bank['offsets']);states=out['states'].copy();flags=out['success'].copy()
     r=np.empty(2*no);j=np.empty((2*no,6));fallback=np.zeros(n,dtype=np.bool_)
     def run(pair):
-        _check_block(*pair,bank['states'],states,bounds,*[bank[k] for k in ('offsets','observers','observed','east','north')],float(bank['sigma']),limit,out['cost'],flags,r,j,fallback)
+        check = _check_block_indexed if 'geometry_index' in bank else _check_block
+        extra = (bank['geometry_index'],) if 'geometry_index' in bank else ()
+        check(*pair,bank['states'],states,bounds,*[bank[k] for k in ('offsets','observers','observed','east','north')],float(bank['sigma']),limit,out['cost'],flags,r,j,fallback,*extra)
     edges=np.linspace(0,n,min(n,threads*8)+1,dtype=int)
     with ThreadPoolExecutor(max_workers=threads) as pool:list(pool.map(run,zip(edges[:-1],edges[1:])))
     return states, flags, r, j, fallback

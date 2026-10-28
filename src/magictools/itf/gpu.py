@@ -112,8 +112,13 @@ def validate_bank(bank):
     for name in names:
         if arrays[name].dtype != np.float64 or not arrays[name].flags.c_contiguous:
             raise ValueError(name+' must be contiguous float64')
+    vector_n = len(arrays['observers']) if 'geometry_index' in bank else n
+    if 'geometry_index' in bank:
+        index = np.asarray(bank['geometry_index'])
+        if index.dtype != np.int64 or index.shape != (n,) or not index.flags.c_contiguous or n == 0 or index.min() < 0 or index.max() >= vector_n:
+            raise ValueError('Invalid compact geometry index')
     for name in ('observers', 'observed', 'east', 'north'):
-        if arrays[name].shape != (n, 3) or not np.isfinite(arrays[name]).all():
+        if arrays[name].shape != (vector_n, 3) or not np.isfinite(arrays[name]).all():
             raise ValueError(name+' must be finite (observations, 3)')
     for name in ('observed', 'east', 'north'):
         if not np.allclose(np.linalg.norm(arrays[name], axis=1), 1, atol=1e-10, rtol=0):
@@ -136,29 +141,37 @@ def validate_bank(bank):
 
 
 class ResidentBank:
-    def __init__(self, bank, *, allow_simulator=False, columnar_jacobian=False, resident_geometry=None):
+    def __init__(self, bank, *, allow_simulator=False, columnar_jacobian=False, resident_geometry=None, allocator=None):
         if cuda.config.ENABLE_CUDASIM and not allow_simulator:
             raise RuntimeError('CUDA simulator is not a GPU benchmark')
         if not cuda.is_available():
             raise RuntimeError('No CUDA device; no CPU fallback or timing claim')
         arrays, case, self.sigma = validate_bank(bank)
+        allocate = allocator.empty if allocator is not None else cuda.device_array
+        upload = allocator.upload if allocator is not None else cuda.to_device
+        if 'geometry_index' in bank and resident_geometry is not None:
+            raise ValueError('Compact bank cannot also bind a catalogue-wide geometry')
         self.profile = dict(state_upload_seconds=0., kernel_sync_seconds=0., download_seconds=0., validity_accounting_seconds=0.)
-        self.active = cuda.to_device(np.ones(len(arrays['states']), np.uint8))
+        self.active = upload(np.ones(len(arrays['states']), np.uint8))
         self.n = len(case)
         self.case_index = case.copy()
-        self.inputs = [cuda.to_device(arrays['states']), cuda.to_device(case)]
-        self.inputs.append(cuda.to_device(arrays['offsets']))
+        self.inputs = [upload(arrays['states']), upload(case)]
+        self.inputs.append(upload(arrays['offsets']))
         self.kernel = _evaluate
         if resident_geometry is None:
-            self.inputs += [cuda.to_device(arrays[k]) for k in ('observers', 'observed', 'east', 'north')]
+            self.inputs += [upload(arrays[k]) for k in ('observers', 'observed', 'east', 'north')]
         else:
             from .gpu_indexed import _evaluate_indexed
             self.inputs += resident_geometry.bind(bank, arrays)
             self.kernel = _evaluate_indexed
-        self.residual = cuda.device_array((self.n, 2), np.float64)
-        self.jacobian = (cuda.device_array((2*self.n, 6), np.float64, order='F').reshape(self.n, 2, 6)
-                         if columnar_jacobian else cuda.device_array((self.n, 2, 6), np.float64))
-        self.valid = cuda.device_array(self.n, np.uint8)
+        if 'geometry_index' in bank:
+            from .gpu_indexed import _evaluate_indexed
+            self.inputs.append(upload(bank['geometry_index']))
+            self.kernel = _evaluate_indexed
+        self.residual = allocate((self.n, 2), np.float64)
+        self.jacobian = (allocate((2*self.n, 6), np.float64, order='F').reshape(self.n, 2, 6)
+                         if columnar_jacobian else allocate((self.n, 2, 6), np.float64))
+        self.valid = allocate(self.n, np.uint8)
 
     def evaluate(self, *, download=True, states=None, active=None):
         stamp = time.perf_counter()
@@ -198,8 +211,9 @@ def cpu_reference(bank):
     valid = np.zeros(len(case), dtype=np.uint8)
     for c in np.unique(case):
         ix = np.flatnonzero(case == c)
+        vector_ix = bank['geometry_index'][ix] if 'geometry_index' in bank else ix
         r, j = derivatives.residual_jacobian(arrays['states'][c], arrays['offsets'][ix],
-            arrays['observers'][ix], arrays['observed'][ix], arrays['east'][ix], arrays['north'][ix], sigma)
+            arrays['observers'][vector_ix], arrays['observed'][vector_ix], arrays['east'][vector_ix], arrays['north'][vector_ix], sigma)
         if np.isfinite(r).all() and np.isfinite(j).all() and not np.all(r == 1e12):
             residual[ix], jacobian[ix], valid[ix] = r.reshape(-1, 2), j.reshape(-1, 2, 6), 1
     return residual, jacobian, valid

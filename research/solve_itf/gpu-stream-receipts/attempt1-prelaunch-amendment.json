@@ -1,0 +1,8 @@
+{
+  "utc": 1793222652.3914845,
+  "reason": "Preserve zero-dimensional array shape through shared-memory transport; make CPU reference accept compact banks explicitly",
+  "science_not_launched": true,
+  "prior_archive_sha256": "3476c9c03495fc3c12373e4daa007c10b51a83051d60908c28dd7f00b43626c6",
+  "new_archive_sha256": "2b66ee81aa65d065dce6758d286a50f833234db7fdd7d048a3f0a7881b1fbea3",
+  "clock_reset": false
+}

@@ -271,27 +271,29 @@ class ResidentWorkspace:
     Setup cost is reported separately, never hidden in throughput claims.
     A workspace is single-stream/non-reentrant and must not be shared by callers.
     """
-    def __init__(self, bank, *, allow_simulator=False, coalesced=False, columnar_jacobian=False, resident_geometry=None):
+    def __init__(self, bank, *, allow_simulator=False, coalesced=False, columnar_jacobian=False, resident_geometry=None, allocator=None):
         started = time.perf_counter()
         order = 'F' if coalesced else 'C'
-        base = ResidentBank(bank, allow_simulator=allow_simulator, columnar_jacobian=columnar_jacobian, resident_geometry=resident_geometry)
+        base = ResidentBank(bank, allow_simulator=allow_simulator, columnar_jacobian=columnar_jacobian, resident_geometry=resident_geometry, allocator=allocator)
         if np.any(np.diff(base.case_index) < 0):
             raise ValueError("LM requires observations grouped contiguously by case")
+        allocate = allocator.empty if allocator is not None else cuda.device_array
+        upload = allocator.upload if allocator is not None else cuda.to_device
         n, nobs = len(bank['states']), len(bank['offsets'])
-        bounds = cuda.to_device(np.r_[0,np.cumsum(np.bincount(bank['case_index']))].astype(np.int64))
+        bounds = upload(np.r_[0,np.cumsum(np.bincount(bank['case_index']))].astype(np.int64))
         states = base.inputs[0]
         r, j = base.residual.reshape(2*nobs), base.jacobian.reshape(2*nobs, 6)
-        trials = cuda.device_array((n,6),np.float64, order=order)
-        trial_r = cuda.device_array((nobs,2),np.float64)
-        trial_j = (cuda.device_array((2*nobs,6),np.float64, order='F').reshape(nobs,2,6)
-                   if columnar_jacobian else cuda.device_array((nobs,2,6),np.float64))
-        trial_valid = cuda.device_array(nobs,np.uint8)
-        cost, damping, increase = [cuda.device_array(n,np.float64) for _ in range(3)]
-        scales, gradient, scaled_steps, steps = [cuda.device_array((n,6),np.float64, order=order) for _ in range(4)]
-        normal = cuda.device_array((n,6,6),np.float64, order=order)
-        refresh, done, success, pending = [cuda.device_array(n,np.uint8) for _ in range(4)]
-        reasons, iterations, evaluations = [cuda.device_array(n,np.int64) for _ in range(3)]
-        remaining = cuda.to_device(np.array([n],np.int32))
+        trials = allocate((n,6),np.float64, order=order)
+        trial_r = allocate((nobs,2),np.float64)
+        trial_j = (allocate((2*nobs,6),np.float64, order='F').reshape(nobs,2,6)
+                   if columnar_jacobian else allocate((nobs,2,6),np.float64))
+        trial_valid = allocate(nobs,np.uint8)
+        cost, damping, increase = [allocate(n,np.float64) for _ in range(3)]
+        scales, gradient, scaled_steps, steps = [allocate((n,6),np.float64, order=order) for _ in range(4)]
+        normal = allocate((n,6,6),np.float64, order=order)
+        refresh, done, success, pending = [allocate(n,np.uint8) for _ in range(4)]
+        reasons, iterations, evaluations = [allocate(n,np.int64) for _ in range(3)]
+        remaining = upload(np.array([n],np.int32))
         self.base = base
         self.n = n
         self.nobs = nobs

@@ -1,0 +1,44 @@
+{
+  "registered_utc": 1793224103.0202916,
+  "original_deadline_unix": 1793226120.6903472,
+  "combined_cap_usd": 5,
+  "additional_workers": 0,
+  "reason": "V1 100K profile: indexed verification25.36s versus7.59s, and unnecessary duplicate transport seeds. Use contiguous views where exact index sequence proves them; preserve general gathers; transport already preserves every state in bank.",
+  "scope": "Unchanged fixed prefix, all starts/weights/cuts/growth, input hashes; original V1 results preserved. V2 follow-up only after original job terminal.",
+  "sizes_rule": ">=650s:1M then100K if time; >=300s:100K; otherwise skip. Each phase <= nominal cap and remaining-90seconds; skip if <120seconds. No inference from partial work.",
+  "gates": "8 focused local simulator tests passed; rerun on hardware, then exact128case parity against existing compact GPU before timing",
+  "files": [
+    {
+      "path": "research/solve_itf/gpu_stream_adapter.py",
+      "payload": "v2-payload/gpu_stream_adapter.py",
+      "old_sha256": "514679e2af73bdee0c64a473de66c2eff4d80c829b2fbeec97dd9fe0573e509e",
+      "new_sha256": "4ad50290f5df07f89838fda20ceacca2e347e7d43b3ce260255d941db03320ee"
+    },
+    {
+      "path": "research/solve_itf/gpu_stream_adapter_v2.py",
+      "payload": "v2-payload/gpu_stream_adapter_v2.py",
+      "old_sha256": null,
+      "new_sha256": "50f9da3e305b77780c5e5e87876b4963eaba219c71930c47ca63f889b356caeb"
+    },
+    {
+      "path": "research/solve_itf/gpu_scaling_followup.py",
+      "payload": "v2-payload/gpu_scaling_followup.py",
+      "old_sha256": null,
+      "new_sha256": "78fa4d7930451d2ba844202800696ef47bdd682717f8a543441fe4e15505ce11"
+    },
+    {
+      "path": "tests/test_itf_gpu_stream.py",
+      "payload": "v2-payload/test_itf_gpu_stream.py",
+      "old_sha256": "b5a8411207418360ba1051a9630d54bc3f91814a25a1a7fcb4e95d2577ceed55",
+      "new_sha256": "e4861c1483816bea8e11516042afdd49a846bd70aaa1bcadf3643990f53760b0"
+    },
+    {
+      "path": "tests/test_itf_gpu_stream_v2.py",
+      "payload": "v2-payload/test_itf_gpu_stream_v2.py",
+      "old_sha256": null,
+      "new_sha256": "e457ba828284c893d71efd709d2f453a196cea97dea3db9dc53f972e18fcbe97"
+    }
+  ],
+  "resource_amendment_utc": 1793224206.0090628,
+  "amendment_reason": "Prioritize requested million-seed GPU measurement if long CPU control consumes most remaining time; no V2 outcomes examined."
+}
