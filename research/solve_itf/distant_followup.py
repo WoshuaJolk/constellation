@@ -54,7 +54,7 @@ def one(task):
     except Exception as e:return dict(digest=r['digest'],roles=r['roles'],status='unresolved_exception',error=type(e).__name__+': '+str(e),rows=[],counts={},seconds=time.monotonic()-before)
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);a=p.parse_args();a.output.mkdir(exist_ok=True)
+    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--policy-description',default='128 distant,32 retrograde,32 hyperbolic,32 NEO,32 general; one minimum-RMS available mode per chain/lane; order descending span,tracklets then RMS/hash. All raw alternatives saved. No identity labels.');a=p.parse_args();a.output.mkdir(exist_ok=True)
     merged={};sources=[]
     for source in [Path('general-candidates.json.gz'),Path('distant-results/production/candidates.json.gz')]:
         with gzip.open(source,'rt') as f:data=json.load(f)
@@ -67,7 +67,7 @@ def main():
         sources.append(dict(path=str(source),candidates=len(data['candidates']),status=data['status']))
     rows=list(merged.values());selected,stats=select(rows)
     with gzip.open(a.output/'all-candidates.json.gz','wt',compresslevel=1) as f:json.dump(dict(sources=sources,candidates=rows),f,allow_nan=False)
-    write(a.output/'selection.json',dict(policy='128 distant,32 retrograde,32 hyperbolic,32 NEO,32 general; one minimum-RMS available mode per chain/lane; order descending span,tracklets then RMS/hash. All raw alternatives saved. No identity labels.',lanes=stats,selected=selected))
+    write(a.output/'selection.json',dict(policy=a.policy_description,lanes=stats,selected=selected))
     from magictools.itf.catalogue import Catalogue
     from magictools.itf.fit import read_sites
     from magictools.itf.nbody import Ephemeris,JPLGeometry

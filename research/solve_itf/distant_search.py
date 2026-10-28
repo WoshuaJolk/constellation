@@ -28,17 +28,18 @@ def distant_eligible(tracks):
             (np.linalg.norm(tracks['v'],axis=1)*ARCSEC<=600))
 
 def scan_partition(arguments):
-    directory,part,parts,seconds=arguments;directory=Path(directory)
+    directory,part,parts,seconds=arguments[:4];options=arguments[4] if len(arguments)>4 else {};directory=Path(directory)
+    max_gap=int(options.get("max_gap_days",120));distances=tuple(options.get("distances",DISTANCES))
     arrays=[np.load(directory/(name+'.npy'),mmap_mode='r') for name in ('tracks','positions','velocities','days','earth','earth_velocity')]
     tracks,positions,velocities,days,earth,ev=arrays;clock=time.monotonic();deadline=clock+seconds
     ids=np.flatnonzero(distant_eligible(tracks)&np.isfinite(positions).all(axis=1));day=np.floor(tracks['t'][ids]).astype(int);order=np.argsort(day,kind='stable');ids,day=ids[order],day[order]
     nights,starts=np.unique(day,return_index=True);groups={int(d):ids[a:b] for d,a,b in zip(nights,starts,np.r_[starts[1:],len(ids)])};ep=CubicHermiteSpline(days,earth,ev)
-    edges=np.empty((0,3));pending=[];size=0;counts=Counter();complete=True;cap=150000
+    edges=np.empty((0,3));pending=[];size=0;counts=Counter();complete=True;cap=int(options.get("partition_edge_cap",150000))
     for ordinal,(day,a) in enumerate(groups.items()):
         if ordinal%parts!=part:continue
         if time.monotonic()>=deadline:complete=False;break
-        for distance in DISTANCES:
-            for gap in range(1,121):
+        for distance in distances:
+            for gap in range(1,max_gap+1):
                 if day+gap not in groups:continue
                 if time.monotonic()>=deadline:complete=False;break
                 b=groups[day+gap];ref=day+.5+gap/2;earth_ref=ep(ref)
@@ -54,9 +55,9 @@ def scan_partition(arguments):
                 ii,jj=np.where(np.isfinite(ds))
                 if len(ii):
                     ai,bi=aa[ii],bb[j[ii,jj]];dt=tracks['t'][bi]-tracks['t'][ai]
-                    good=(dt>=.3)&(dt<=120)&(tracks['id'][ai]!=tracks['id'][bi]);ai,bi,dt=ai[good],bi[good],dt[good]
+                    good=(dt>=.3)&(dt<=max_gap)&(tracks['id'][ai]!=tracks['id'][bi]);ai,bi,dt=ai[good],bi[good],dt[good]
                     noise=.3*(np.sqrt(12/tracks['count'][ai])/tracks['span'][ai]+np.sqrt(12/tracks['count'][bi])/tracks['span'][bi]);scale=30.+.5*noise*dt
-                    score=.5*(ds[ii[good],jj[good]]*ARCSEC/scale)**2+2*np.log(scale/30)+np.log(len(DISTANCES))
+                    score=.5*(ds[ii[good],jj[good]]*ARCSEC/scale)**2+2*np.log(scale/30)+np.log(len(distances))
                     pending.append(np.column_stack((ai,bi,score)));size+=len(ai);counts['proposed_edges']+=len(ai)
                 if size>cap:
                     combined=unique_edges(np.concatenate([edges]+pending));counts['edge_cap_discarded']+=max(0,len(combined)-cap);edges=best_edges(combined,cap);pending=[];size=0
@@ -68,13 +69,14 @@ def scan_partition(arguments):
     receipt=dict(part=part,complete=complete,counts=dict(counts),edges=len(edges),seconds=time.monotonic()-clock,sha256=sha256(path))
     write(directory/f'part-{part}.json',receipt);return receipt
 
-def graph(cat,sites,out,workers,seconds):
+def graph(cat,sites,out,workers,seconds,*,options=None):
+    options=dict(options or {})
     out.mkdir(exist_ok=True);started=time.monotonic();geom=approximate_observers(cat.tracks,sites)
     for name,a in zip(('tracks','positions','velocities','days','earth','earth_velocity'),(cat.tracks,*geom)):np.save(out/(name+'.npy'),a)
     del geom
     with ProcessPoolExecutor(max_workers=workers,mp_context=mp.get_context('fork')) as pool:
-        receipts=list(pool.map(scan_partition,[(str(out),i,workers,seconds) for i in range(workers)]))
-    edges=unique_edges(np.concatenate([np.load(out/f'part-{i}.npy') for i in range(workers)]));before=len(edges);edges=best_edges(edges,2000000)
+        receipts=list(pool.map(scan_partition,[(str(out),i,workers,seconds,options) for i in range(workers)]))
+    edges=unique_edges(np.concatenate([np.load(out/f'part-{i}.npy') for i in range(workers)]));before=len(edges);edges=best_edges(edges,int(options.get("global_edge_cap",2000000)))
     counts=Counter()
     for r in receipts:counts.update(r['counts'])
     counts.update(tracklets_total=len(cat.tracks),distant_rate_eligible=int(distant_eligible(cat.tracks).sum()),merge_cap_discarded=before-len(edges),edges_retained=len(edges))
@@ -84,10 +86,10 @@ def graph(cat,sites,out,workers,seconds):
     for name in ('tracks','positions','velocities','days','earth','earth_velocity'):(out/(name+'.npy')).unlink()
     return edges,record
 
-def solve_graph(g,edges,out,max_seeds,seconds,*,scan_complete=False):
+def solve_graph(g,edges,out,max_seeds,seconds,*,scan_complete=False,max_gap_days=120):
     from magictools.itf import search
     from gpu_stream_adapter_v2 import StreamGPUBatchV2
-    cfg=SearchConfig(workers=20,max_gap_days=120,max_edges=max(1,len(edges)),max_seeds=max_seeds,seed_neighbors=0,broad_search=True,seconds=seconds)
+    cfg=SearchConfig(workers=20,max_gap_days=max_gap_days,max_edges=max(1,len(edges)),max_seeds=max_seeds,seed_neighbors=0,broad_search=True,seconds=seconds)
     counts={};keys,adj=make_seeds(edges,g.catalogue.tracks,cfg,counts,time.monotonic()+120)
     np.save(out/'seeds.npy',np.asarray(keys,dtype=np.int64).reshape(-1,3));write(out/'seed-freeze.json',dict(counts=counts,sha256=sha256(out/'seeds.npy'),config=asdict(cfg)))
     # Use this frozen graph and ordinary extension machinery; no second graph scan.

@@ -1,0 +1,64 @@
+{
+  "registered_unix": 1793231482.1753776,
+  "supersedes_unlaunched_plan": "A seed-count-only/constant-acceleration one-year expansion was not launched. This design changes proposals, recovery tests and follow-up priorities.",
+  "scope": "Full existing catalogue; no new observations. Preserve prior17985 memberships and all modes. New slow-object proposals count>=2,0<span<=.6d,rate<=600arcsec/day.",
+  "proposals": {
+    "method": "Cached common-reference two-body universal propagation; eachanchor\u00b1365d,anchors180d apart",
+    "distances_au": [
+      10,
+      20,
+      30,
+      35,
+      40,
+      45,
+      50,
+      60,
+      80,
+      100,
+      150,
+      250,
+      400,
+      700,
+      1000,
+      2000
+    ],
+    "radial_fractions_of_escape_speed": [
+      -0.5,
+      0,
+      0.5
+    ],
+    "max_pair_gap_days": 365,
+    "cap_per_night_hypothesis": 16,
+    "aperture_arcsec": "min(3600,60+0.5*(tracklet_rate_noise_a+tracklet_rate_noise_b)*gap+0.002*gap^2)",
+    "partitions": 20,
+    "partition_seconds": 480,
+    "partition_edges": 250000,
+    "global_edges": 4000000,
+    "partial_coverage": "Every unfinished partition and cap reported; not exhaustive."
+  },
+  "seeds": {
+    "pool_cap": 8000000,
+    "new_fit_cap": 7000000,
+    "prior_distant_1M_excluded": true,
+    "bright_quota": 1500000,
+    "long_gap_quota": 1500000,
+    "ordinary_and_unfilled_quota": 4000000,
+    "ordering": "Fixed graph score; first bright>=2tracklets reportedmedian<=22.5, then>120day, fillordinary; roundrobin lanes. No fit outcome selection."
+  },
+  "fitter": "Unchanged broad Gauss/range/radial starts,80iterations,.3arcsec assumed noise,RMS.6,pertracklet.6,maxresid1.2,allconics.3000sfit phase.",
+  "controls": "Nine opened catalogue identities,first365dseason,up to12timestamp-quantiles,first latercomplete>=180dreserved. MinimumoneVaruna/KV42pure>=60dchain,bound25\u2013100AU,input-only representative laterRMS<=30arcsec. Engineeringgate not productioncut orcalibration. Laterdata excluded fromfits/initializers.",
+  "followup": "256bright-bound-distant,128bound-distant,64eachretrograde/hyperbolic/NEO/general,exactoldfollowupstatesexcluded. Existingplanetarytwo-round fullcatalogue retrieval;60sparent10sfit900scohort. Returned failures explicit.",
+  "budget": {
+    "maximum_incremental_usd": 20,
+    "worker_lifetime_seconds": 5400,
+    "hourly_ceiling": 4.41,
+    "one_worker": true
+  },
+  "limitations": [
+    "Magnitude bands unconverted; no physical-size certainty.",
+    "Two-body proposal motion, approximate observers and finite range/radial grid; planetary finalrefits.",
+    "Heldoutnominalpredictions no uncertainty coverageclaim.",
+    "Developmentsearch not certification or exhaustive branch coverage."
+  ],
+  "code_manifest_sha256": "030af62754f1ff46bd7b479c8e12405d32b311c3943bbf78519b27d79cad7f6d"
+}

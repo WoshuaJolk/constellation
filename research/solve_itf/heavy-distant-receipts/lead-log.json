@@ -1,0 +1,19 @@
+{
+  "recorded_unix": 1793230178.5543244,
+  "source_dossier_sha256": "45f683c2ae387ff19679dc84c42c4d875327882e45829798228998e3a3363a84",
+  "members": [
+    "H250540",
+    "H311994",
+    "H365156",
+    "H366550",
+    "H459783",
+    "H489530",
+    "LA5424"
+  ],
+  "priority": "Preserve TNO follow-up; below primary larger-object goal under nominal size assumptions",
+  "approximate_diameter_km": [
+    80,
+    200
+  ],
+  "assumptions": "r-band23.6 treated as rough V proxy, heliocentric distance~40AU/geocentric39.4AU, geometric albedo0.04\u20130.25, no phase correction. Neither band conversion, orbit nor association validated. Not a dwarf-planet classification."
+}
