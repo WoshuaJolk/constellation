@@ -56,6 +56,24 @@ per-case outputs remain in `/tmp/itf-gpu-prototype-results` on the preparation
 workspace. The input bank SHA256 is
 `1c37a51fe051decfa9a401f4e70185e8b15c11e25d7e2a27976076afe1917f72`.
 
+### Subsequent provider attempt
+
+DigitalOcean access was subsequently restored. The API successfully provisioned
+an H100 at $4.41/hour, then one serial retry with explicit firewall allowances
+and a more tolerant package-update bootstrap. Both appeared active at the API
+but neither exposed a reachable HTTPS worker service. Proxy probes reported an
+upstream connection failure; bootstrap logs could not be retrieved, so the root
+cause remains unresolved. No payload or science job reached either machine.
+
+Both Droplets and their temporary SSH keys were deleted. A fresh provider check
+at 2026-10-28 05:10 UTC returned zero Droplets. Estimated pre-tax compute for the
+two setup attempts was **$1.23**, against the self-imposed $5 ceiling. The original
+45-minute aggregate deadline was not reset. There was no third paid retry.
+See `gpu-prototype-receipts/provider-attempt.json`. A larger frozen bank of
+10,000 real candidates / 121,813 observations is also prepared locally, but no
+GPU timing or hardware-parity result exists for it. Working remote transport
+must be established before another paid GPU attempt.
+
 ## Reproduce
 
 Install the existing ITF/test extras and a CUDA toolkit/driver compatible with
@@ -97,9 +115,9 @@ establish equal-time search gains.
 
 ## Next gates for the requested CPU-versus-GPU search comparison
 
-1. Restore protected DigitalOcean access; read actual GPU quota, region stock,
-   FP64 capability and price. Provision nothing until these are verified and a
-   bounded benchmark budget and evidence-safe teardown are in place.
+1. DigitalOcean provisioning is now verified, but remote worker transport is
+   blocked. Diagnose that connection before another paid GPU attempt; recheck
+   current region stock and price when ready, with a bounded budget and teardown.
 2. Compile on the selected GPU and run full-bank parity plus pathological and
    invalid cases. Measure transfer, compilation, kernel, and output costs; sweep
    a few prospectively declared batch sizes without changing scientific cuts.
