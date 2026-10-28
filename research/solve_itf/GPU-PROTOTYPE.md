@@ -27,9 +27,8 @@ must never become accepted chains. A simulator is allowed only explicitly for
 tests and is forbidden by the timing harness. No CUDA device causes an explicit
 block, never a disguised CPU fallback.
 
-The finite-state kernel has **not been compiled or timed on actual GPU hardware**.
-CUDA simulator success checks logic; it does not prove hardware compilation,
-rounding parity, memory behavior, occupancy, or performance. Planetary final
+The kernel has now compiled and run on an H100; see the hardware follow-up below.
+The initial simulator checks alone did not establish this. Planetary final
 fitting remains on the existing CPU path.
 
 ## Evidence available on 2026-10-28
@@ -74,6 +73,58 @@ See `gpu-prototype-receipts/provider-attempt.json`. A larger frozen bank of
 GPU timing or hardware-parity result exists for it. Working remote transport
 must be established before another paid GPU attempt.
 
+### Connection repair
+
+The failure was reproduced cheaply on the exact NVIDIA image, ID 236925144.
+Despite the current documentation describing Ubuntu 24.04, this image is Ubuntu
+22.04.5: `apt-get -s install caddy` returns `Unable to locate package caddy`.
+The bundled apt installation aborted before TLS setup. Original deleted H100
+logs were unavailable; this is a same-image reproduction of the mechanism.
+
+`gpu-worker-bootstrap/` now installs a checksum-pinned standalone Caddy binary
+before workload dependencies. On the exact NVIDIA image running on a cheap CPU
+Droplet, authenticated HTTPS, upload/download checksum parity, remote execution
+and returned output passed; unauthenticated access returned 403. The same transport checks subsequently passed on an H100. The minimal public bootstrap endpoint exposes
+only stage/error status, never credentials, logs or scientific data. See
+`gpu-prototype-receipts/connection-repair.json`.
+
+### H100 follow-up (2026-10-28 05:48 UTC)
+
+The repaired connection enabled the prepared real-data benchmark: 10,000 frozen
+candidate states and 121,813 observations. CUDA hardware tests: 3 passed; the
+simulator-only guard test was appropriately skipped. The FP64 kernel compiled
+on an H100 80GB, driver 580.173.02, CUDA 13.1, Python 3.10.12, Numba 0.68.1 and
+numba-cuda 0.30.4. Package versions and test output are preserved in receipts.
+
+All 10,000 cases evaluated on both backends with matching validity masks and no
+unresolved or uncomputed rows. Maximum residual disagreement was
+4.0077575924613024e-9 arcsec; maximum scaled Jacobian disagreement was
+2.4157788597681847e-9, below the predeclared limits.
+
+One timed stage pass, including chunk transfers and host result accounting:
+
+| Backend | Seconds | Unique cases |
+| --- | ---: | ---: |
+| CPU, one thread | 0.7864665769999988 | 10,000 |
+| H100 | 0.5163946440000018 | 10,000 |
+
+This is **1.52x for this stage in one measurement**, not full-search speedup or a
+comparison against all 20 host CPU cores. Both exhaust the fixed bank well
+before their 30-second ceilings. CPU warm-up took 0.1431 seconds; initial GPU
+upload/setup took 0.2637 seconds and first evaluation 1.9742 seconds. Those setup
+costs are separate from the table and exceed the warm stage saving on one small
+pass. Occupancy, optimizer integration and full-search throughput remain open.
+No scientific acceptance or orbit fitting was performed by this benchmark.
+
+A 10.9-MB single-request archive upload returned HTTP 502. Identical content sent
+in 512-KiB checksum-verified parts succeeded; the ordered archive hash was checked
+before extraction. No job launch was blindly retried. All result files were
+returned before deleting the H100. Provider verification found **zero Droplets**
+and no test SSH keys left. This connection repair and hardware run cost an
+estimated **$0.38**, or **$1.60 including the two prior failed H100 attempts**,
+pretax, within the $5 ceiling. See `connection-disposition.json`,
+`h100-gpu-comparison.json`, `h100-hardware.json` and `h100-returned-evidence.json`.
+
 ## Reproduce
 
 Install the existing ITF/test extras and a CUDA toolkit/driver compatible with
@@ -115,12 +166,12 @@ establish equal-time search gains.
 
 ## Next gates for the requested CPU-versus-GPU search comparison
 
-1. DigitalOcean provisioning is now verified, but remote worker transport is
-   blocked. Diagnose that connection before another paid GPU attempt; recheck
-   current region stock and price when ready, with a bounded budget and teardown.
-2. Compile on the selected GPU and run full-bank parity plus pathological and
-   invalid cases. Measure transfer, compilation, kernel, and output costs; sweep
-   a few prospectively declared batch sizes without changing scientific cuts.
+1. Provisioning, authenticated transport, CUDA compilation and this full-bank
+   parity check are now verified. Recheck stock/price and retain bounded lifetime
+   and teardown for any subsequent run.
+2. Repeat measurements on a representative bank and measure device compute,
+   transfers and host accounting separately; sweep prospectively declared batch
+   sizes without changing scientific cuts.
 3. Integrate the kernel into batched optimizer iterations: maintain states and
    Jacobians on device, preserve convergence/failure semantics, compact active
    candidates. Compare the optimized CPU implementation, including its better
@@ -132,5 +183,5 @@ establish equal-time search gains.
    time and actual incremental cost. Do not use additional low-quality fits as
    evidence of scientific improvement.
 
-The hardware and full-search gates remain open. This prototype creates no
+The full-search gate remains open. This prototype creates no
 calibrated probabilities, new acceptance threshold, or confirmed objects.

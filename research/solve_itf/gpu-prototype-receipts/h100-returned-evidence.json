@@ -1,0 +1,26 @@
+{
+  "hardware.json": {
+    "bytes": 271,
+    "sha256": "235af9b285c4404133556a0c04e97a44db477a77c559a625e297e3c530ab4703"
+  },
+  "gpu-tests.log": {
+    "bytes": 584,
+    "sha256": "1a5284f2b97f17be5924ede95e833d99c987a672510dd1bd17ff2f6117ccd72f"
+  },
+  "gpu-comparison.json": {
+    "bytes": 1367,
+    "sha256": "d4236a8ce50bb995c6dc43a8206072d8c05899e5dce3808f914978271c24d6e1"
+  },
+  "gpu-comparison-cpu-cases.json": {
+    "bytes": 815745,
+    "sha256": "a30f0545661015c0aed02562beaa4cba723b5d467168c05284ff1f4a9d738bc8"
+  },
+  "gpu-comparison-gpu-cases.json": {
+    "bytes": 815713,
+    "sha256": "681eae4b50d27d6869ea74a3b53083eef518a348ff992e792abb9aacefb19d29"
+  },
+  ".remote/gpubenchmark.log": {
+    "bytes": 15816,
+    "sha256": "44e6bd85d9163f5cbfad69f954e642cee6b0261c8164ee5d6acd2a3fd49f26f6"
+  }
+}

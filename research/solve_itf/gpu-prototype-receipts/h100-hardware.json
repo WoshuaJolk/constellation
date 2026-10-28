@@ -1,0 +1,13 @@
+{
+  "python": "3.10.12",
+  "cpus": 20,
+  "packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "numba": "0.68.1",
+    "numba-cuda": "0.30.4",
+    "llvmlite": "0.50.0",
+    "astropy": "6.1.7"
+  },
+  "nvidia_smi": "NVIDIA H100 80GB HBM3, 580.173.02, 81559 MiB\n"
+}

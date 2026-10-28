@@ -1,0 +1,273 @@
+{
+  "cause": "Selected NVIDIA image 236925144 is Ubuntu 22.04.5; apt reports Unable to locate package caddy. Bundled apt install aborts before TLS. Original deleted H100 bootstrap logs unavailable; reproduced on same exact image on CPU.",
+  "fix": "Pinned official Caddy 2.10.2 standalone binary, separate from apt/workload installation; original certificate verification and bearer authentication preserved.",
+  "binary": {
+    "url": "https://github.com/caddyserver/caddy/releases/download/v2.10.2/caddy_2.10.2_linux_amd64.tar.gz",
+    "sha512": "747df7ee74de188485157a383633a1a963fd9233b71fbb4a69ddcbcc589ce4e2cc82dacf5dbbe136cb51d17e14c59daeb5d9bc92487610b0f3b93680b2646546",
+    "sha256": "5c218bc34c9197369263da7e9317a83acdbd80ef45d94dca5eff76e727c67cdd",
+    "bytes": 15875694
+  },
+  "baseline_ubuntu": {
+    "upload": {
+      "ok": true,
+      "bytes": 45056
+    },
+    "uploaded_sha256": "560d06a6f6e9ffe3edba0cf432c1f3c3d68b5a70aec424cb80d4850d1e835ee1",
+    "downloaded_sha256": "560d06a6f6e9ffe3edba0cf432c1f3c3d68b5a70aec424cb80d4850d1e835ee1",
+    "https_default_certificate_verification": true
+  },
+  "nvidia_image_cpu": {
+    "utc": 1793166120.4734964,
+    "worker": 35,
+    "authenticated_https": true,
+    "unauthenticated_status": 403,
+    "roundtrip_bytes": 48000,
+    "sha256": "89221cf5d1eebfe09b58d8889aeb3338da3eaec7ae1eb01af62091f140dd6d08",
+    "execution_exit_code": 0,
+    "returned_result_sha256": "8bc1ac8a463faae19f70a8f6057ceeea460780223a6539c6c3af801823806789"
+  },
+  "image_evidence": {
+    "caddy_simulation": {
+      "code": 100,
+      "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\n",
+      "stderr": "E: Unable to locate package caddy\n"
+    },
+    "python_venv": {
+      "code": 1,
+      "stdout": "The virtual environment was not created successfully because ensurepip is not\navailable.  On Debian/Ubuntu systems, you need to install the python3-venv\npackage using the following command.\n\n    apt install python3.10-venv\n\nYou may need to use sudo with that command.  After installing the python3-venv\npackage, recreate your virtual environment.\n\nFailing command: /tmp/venv-smoke/bin/python3\n\n",
+      "stderr": ""
+    },
+    "pip": {
+      "code": 1,
+      "stdout": "",
+      "stderr": "/usr/bin/python3: No module named pip\n"
+    },
+    "os": {
+      "code": 0,
+      "stdout": "PRETTY_NAME=\"Ubuntu 22.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"22.04\"\nVERSION=\"22.04.5 LTS (Jammy Jellyfish)\"\nVERSION_CODENAME=jammy\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=jammy\n",
+      "stderr": ""
+    },
+    "cuda_paths": [
+      "/usr/local/cuda-13.1",
+      "/usr/local/cuda-13",
+      "/usr/local/cuda"
+    ]
+  },
+  "cpu_test_deletions": [
+    {
+      "id": 613401227,
+      "deleted_utc": 1793165693.3390706,
+      "remaining_ids": [],
+      "estimated_compute_usd": 0.01
+    },
+    {
+      "id": 613402179,
+      "deleted_utc": 1793165694.3790598,
+      "remaining_ids": [],
+      "estimated_compute_usd": 0.01
+    },
+    {
+      "id": 613403474,
+      "deleted_utc": 1793165912.0136845,
+      "remaining_ids": [],
+      "estimated_compute_usd": 0.01
+    },
+    {
+      "id": 613404001,
+      "deleted_utc": 1793166172.9995837,
+      "remaining_ids": [],
+      "estimated_compute_usd": 0.01
+    }
+  ],
+  "h100_verification": {
+    "utc": 1793166365.084203,
+    "worker": 34,
+    "authenticated_https": true,
+    "unauthenticated_status": 403,
+    "roundtrip_bytes": 48000,
+    "sha256": "89221cf5d1eebfe09b58d8889aeb3338da3eaec7ae1eb01af62091f140dd6d08",
+    "execution_exit_code": 0,
+    "returned_result_sha256": "98a2df588c4571217c3810931daa9f108c30c323e84156f1aea4fd0c4df9195b"
+  },
+  "large_upload": {
+    "original_single_request_bytes": 10875081,
+    "original_result": "HTTP 502 before any benchmark launch intent",
+    "recovery": "512 KiB immutable chunks; SHA256 checked individually by worker and after assembly; exactly one named benchmark job launched",
+    "receipt": {
+      "chunks": {
+        "payload-parts/000": {
+          "sha256": "e506485377d1df9e7e8d45883ea133366f28539db7e39e679681ae2df16b4e3a",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/001": {
+          "sha256": "ae6691bcf4a30204a77bc752c0e0ffd544c55e34db29d23aec230042470389f3",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/002": {
+          "sha256": "516e697eecec6983d56b514834e4666243073017d2866ead6332b97c23c4616d",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/003": {
+          "sha256": "641ea4441e48ea5495d4926852fdc0536f352e13e8136215c7fd5323c5df9ccd",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/004": {
+          "sha256": "976b1bdaffdb71b4132cdd64a9064f68c22eefcf49e22fcdbbad4b6ae6fed054",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/005": {
+          "sha256": "e6172fa79c0baf202580cf631fbdef888048d83c51e9c25e9436d2c27e42174b",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/006": {
+          "sha256": "61c7960403a82278a6ec1f8ed1587296db949ab71f2e257daf5eed535a11cfce",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/007": {
+          "sha256": "cf395d055cd6c4ce73f194bc9959b1cb99b731c8b7934a490ff237153c6c7c0e",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/008": {
+          "sha256": "493a3b588e7cb073a347e2d887522232c0cfbf7b592bb939b6d547a3fbd23be2",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/009": {
+          "sha256": "efa8d2d879c996a7e439efa03d79eb8ee24fd1b886b99ff4d9e380a6cc22ce54",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/010": {
+          "sha256": "b56fc50d8946620ec96cec2e277fcfd8fb77fad849e18e7a8a6254156fcb9314",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/011": {
+          "sha256": "52c44334dfffc31fbd66f7833e3bac62938fd818583f91edff1939a7bcbbf70d",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/012": {
+          "sha256": "2c1da4fdcd96d7825bca519b3eb0cce230e5a020cf7eb26b80be4b3e13b354b4",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/013": {
+          "sha256": "742cf463f5e592eba43429a16c0eb4b77e50884a27d4a64d0eb8f48e0735f575",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/014": {
+          "sha256": "fe3799556e1690aa1c5022f99ab2ba424fd5d4276ad5578bf0b5f0fedae23ddb",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/015": {
+          "sha256": "475d1ccc479d29a131eb19cfcaf4a2e1193cbf8a4e144d7bde71ef6ff458cb84",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/016": {
+          "sha256": "1631ff6f4ad082aa4431cba4bb860e3b23e2f8e1607d3ab57299dd173aeacf41",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/017": {
+          "sha256": "95ffac658e2142e79313e960d6b97d7d2d8a3abfcf7c2c0108af11afe44d4a74",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/018": {
+          "sha256": "cdee07a0faf77a4dfbefa1dc81c7b86051ffdafa8b1f9a7f7f55fa7fd3995f2e",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/019": {
+          "sha256": "d2536bd155cd2ec79a9ba35af84b8898aaa6b84cd539a3040d65d3749169a95a",
+          "bytes": 524288,
+          "receipt": {
+            "ok": true,
+            "bytes": 524288
+          }
+        },
+        "payload-parts/020": {
+          "sha256": "e3bb499738c8acf56b17330093941cb23fffb78f8e2d278b4fa118ba0b0bf61f",
+          "bytes": 389321,
+          "receipt": {
+            "ok": true,
+            "bytes": 389321
+          }
+        }
+      },
+      "assembled_sha256": "9806e47e9374e2f88ce4639f978e90e8ebabb5d2ec951d16a70894214cf86927",
+      "bytes": 10875081
+    }
+  },
+  "final_resource_disposition": "connection-disposition.json",
+  "hardware_benchmark": "h100-gpu-comparison.json"
+}
