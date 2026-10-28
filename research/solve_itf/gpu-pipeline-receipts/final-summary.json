@@ -1,0 +1,9 @@
+{
+  "observed_utc": 1793204806.3691432,
+  "droplets": [],
+  "incremental_compute_usd": 0.6336557412147522,
+  "combined_compute_usd": 4.0754251844546925,
+  "cumulative_cap_usd": 5,
+  "scope": "Two pipeline development benchmarks; no production search or deployment",
+  "status": "completed_no_100x_claim"
+}

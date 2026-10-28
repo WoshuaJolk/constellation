@@ -230,8 +230,10 @@ def local_uncertainty(state, jacobian, epoch_offset, observer):
 
 def fit_chain(geometry, indices, *, sigma=.3, rms_limit=.6, prior=.001,
               deadline=np.inf, extra_seeds=(), max_nfev=80, jacobian_backend="compiled",
-              broad_starts=False, start_policy="full", allow_two_tracklets=False):
+              broad_starts=False, start_policy="full", allow_two_tracklets=False, optimizer=None):
     check_deadline(deadline)
+    if optimizer is not None and jacobian_backend != "compiled":
+        raise ValueError("Injected optimizer requires compiled policy")
     if start_policy not in ('full', 'scout', 'provided'):
         raise ValueError('Unknown orbit-start policy')
     t, u, observers, labels = geometry.get(indices)
@@ -298,7 +300,7 @@ def fit_chain(geometry, indices, *, sigma=.3, rms_limit=.6, prior=.001,
             raise ValueError('Unknown Jacobian backend')
         attempts += 1
         if jacobian_backend == 'compiled':
-            x, fun, jac, success = solve_lm(seed, offsets, observers, u, east, north, sigma, max_nfev)
+            x, fun, jac, success = (solve_lm if optimizer is None else optimizer)(seed, offsets, observers, u, east, north, sigma, max_nfev)
             result = SimpleNamespace(x=x, fun=fun, jac=jac, success=success)
         else:
             result = least_squares(residual, seed, jac=jacobian, method='lm', x_scale='jac', max_nfev=max_nfev,

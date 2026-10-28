@@ -289,7 +289,7 @@ def _fit_worker(indices, settings):
     return fit_chain(_FIT_GEOMETRY, indices, **settings)
 
 
-def solve(catalogue, sites, config, progress=print, *, deadline=None, audit=None):
+def solve(catalogue, sites, config, progress=print, *, deadline=None, audit=None, batch_fitter=None):
     # The observer receives proposals/outcomes, never supplies labels or decisions.
     def emit(event, **fields):
         if audit is not None:
@@ -328,7 +328,9 @@ def solve(catalogue, sites, config, progress=print, *, deadline=None, audit=None
         prepare_start = time.monotonic()
         geometry.prepare(np.array(seeds, dtype=int).ravel(), deadline)
         timings['observer_preparation_seconds'] = time.monotonic()-prepare_start
-        if config.workers == 1:
+        if batch_fitter is not None:
+            counts['fit_worker_start_method'] = 'injected_batch'
+        elif config.workers == 1:
             executor = ThreadPoolExecutor(max_workers=1)
             counts['fit_worker_start_method'] = 'thread'
         else:
@@ -343,6 +345,52 @@ def solve(catalogue, sites, config, progress=print, *, deadline=None, audit=None
         def parallel_fits(jobs, triple_phase):
             nonlocal last_update
             jobs = iter(jobs)
+            if batch_fitter is not None:
+                accepted = []
+                while True:
+                    batch = []
+                    while len(batch) < 128:
+                        check_deadline(deadline)
+                        try:
+                            indices, extra = next(jobs)
+                        except StopIteration:
+                            break
+                        key = tuple(sorted(map(int, indices)))
+                        if key in fitted:
+                            continue
+                        fitted.add(key)
+                        if triple_phase:
+                            counts['triple_seeds_started'] += 1
+                        if any(catalogue.tracks[i]['site'] not in sites for i in key):
+                            counts['fits_observer_unavailable'] += 1
+                            emit('fit', indices=key, outcome='observer_unavailable')
+                            if triple_phase:
+                                counts['triple_seeds_completed'] += 1
+                            continue
+                        settings = dict(sigma=config.sigma_arcsec, rms_limit=config.rms_limit_arcsec,
+                                        prior=config.prior_link_probability, deadline=deadline,
+                                        extra_seeds=extra, broad_starts=config.broad_search)
+                        batch.append((key, settings))
+                        emit('submitted', indices=key)
+                    if not batch:
+                        return accepted
+                    outcomes = batch_fitter(geometry, batch)
+                    if len(outcomes) != len(batch):
+                        raise ValueError('Batch fitter omitted outcomes')
+                    for (key, _), result in zip(batch, outcomes):
+                        counts['fits_attempted'] += 1
+                        if triple_phase:
+                            counts['triple_seeds_completed'] += 1
+                        emit('fit', indices=key, outcome='retained' if result else 'not_retained',
+                             rms_arcsec=result.get('rms_arcsec') if result else None,
+                             log_odds_bic=result.get('log_odds_bic') if result else None)
+                        if result is None:
+                            counts['fits_rejected'] += 1
+                        else:
+                            rows[key] = result
+                            accepted.append(result)
+                            if not triple_phase:
+                                counts['successful_extensions'] += 1
             exhausted = False
             accepted = []
             while pending or not exhausted:

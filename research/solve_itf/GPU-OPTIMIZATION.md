@@ -1,5 +1,7 @@
 # GPU local fitting: resident-buffer and kernel optimization
 
+Later whole-search and distant-control results: [GPU-PIPELINE-AND-DISTANT.md](GPU-PIPELINE-AND-DISTANT.md).
+
 Measured October 28, 2026. Follow-up to [the complete-fit benchmark](GPU-FIT-BENCHMARK.md).
 This is an experimental two-body optimizer, not a deployed linker or an orbit verifier.
 

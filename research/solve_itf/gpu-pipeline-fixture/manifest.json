@@ -1,0 +1,12 @@
+{
+  "schema": 2,
+  "counts": {
+    "tracklets": 747,
+    "stored_observations": 3526
+  },
+  "source_sha256": "f3bb8bd234c1e9438f165f6bcaae1d893a4d6f852ed14bb3426ed634e037b624",
+  "synthetic_controls": 12,
+  "real_background_tracklets": 675,
+  "selection": "First up to 2000 catalogue ordinals with UTC mean time [60000,60010); synthetic controls appended without fitting-based selection",
+  "synthetic_warning": "Independent two-body DOP853 controls with 0.1 arcsec noise; geocentric station500; no flux, detectability, planets or observational correlation model"
+}
