@@ -1,0 +1,538 @@
+{
+  "seconds": 2.4425355269995634,
+  "invalid_starts": 28,
+  "cases": [
+    {
+      "start": 72,
+      "parent": 3,
+      "grid_index": 0,
+      "state": [
+        3.604778933979133,
+        1.9479233402724616,
+        -0.1726582724307069,
+        -0.047234803016395266,
+        -0.025890292374999607,
+        0.0022039037665313012
+      ],
+      "gpu_reported_cost": 223847575.2944499,
+      "gpu_success": false,
+      "cpu_original_success": true,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 73,
+      "parent": 3,
+      "grid_index": 1,
+      "state": [
+        3.68724818688458,
+        2.004423945101193,
+        -0.1798004021817662,
+        -0.04783240465425697,
+        -0.026355530994834935,
+        0.0022751103904688863
+      ],
+      "gpu_reported_cost": 210573315.3547671,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 74,
+      "parent": 3,
+      "grid_index": 2,
+      "state": [
+        3.6542219405403147,
+        1.9812002919098959,
+        -0.17685749646867335,
+        -0.046136214572661795,
+        -0.02540541589890207,
+        0.0021668860490305975
+      ],
+      "gpu_reported_cost": 220676817.3131623,
+      "gpu_success": true,
+      "cpu_original_success": false,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 79,
+      "parent": 3,
+      "grid_index": 7,
+      "state": [
+        3.4655071330867298,
+        1.8528727762199753,
+        -0.16064635395537974,
+        -0.04699360580457884,
+        -0.025498104460954674,
+        0.002121812241994003
+      ],
+      "gpu_reported_cost": 246229057.39199454,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 98,
+      "parent": 4,
+      "grid_index": 2,
+      "state": [
+        3.7895252963526236,
+        2.0738753815063937,
+        -0.18857434595368605,
+        -0.04703021034907528,
+        -0.026115048483662764,
+        0.0022753801677597467
+      ],
+      "gpu_reported_cost": 200353506.49142587,
+      "gpu_success": true,
+      "cpu_original_success": true,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 99,
+      "parent": 4,
+      "grid_index": 3,
+      "state": [
+        3.9510915506586963,
+        2.1838219523528517,
+        -0.2024667268775668,
+        -0.04623096328485937,
+        -0.025959996269925352,
+        0.0022930421754433173
+      ],
+      "gpu_reported_cost": 184659470.74095398,
+      "gpu_success": true,
+      "cpu_original_success": true,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 103,
+      "parent": 4,
+      "grid_index": 7,
+      "state": [
+        3.8432826801579107,
+        2.1105432239187216,
+        -0.19319760073830308,
+        -0.04699093148059505,
+        -0.026186360552726468,
+        0.002295828776477258
+      ],
+      "gpu_reported_cost": 198741892.5794525,
+      "gpu_success": true,
+      "cpu_original_success": false,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 120,
+      "parent": 5,
+      "grid_index": 0,
+      "state": [
+        3.4620879659736263,
+        1.850373431872661,
+        -0.16032720644040463,
+        -0.04664737077001306,
+        -0.025311266865674146,
+        0.00210201305341337
+      ],
+      "gpu_reported_cost": 248134892.97648132,
+      "gpu_success": false,
+      "cpu_original_success": true,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 121,
+      "parent": 5,
+      "grid_index": 1,
+      "state": [
+        3.722115877120486,
+        2.0282664110372033,
+        -0.18280999257650646,
+        -0.047964444982844766,
+        -0.026487931385111074,
+        0.0022984532244852275
+      ],
+      "gpu_reported_cost": 205894066.78880155,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 122,
+      "parent": 5,
+      "grid_index": 2,
+      "state": [
+        3.9862774554056255,
+        2.2083400477307573,
+        -0.20555622559561806,
+        -0.047430196454578175,
+        -0.02664896103305984,
+        0.0023780811733663675
+      ],
+      "gpu_reported_cost": 180291958.53907603,
+      "gpu_success": true,
+      "cpu_original_success": false,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 127,
+      "parent": 5,
+      "grid_index": 7,
+      "state": [
+        3.60189197890378,
+        1.9461116752621392,
+        -0.17243111178199927,
+        -0.04760630422798304,
+        -0.02607974739250856,
+        0.0022225791382792385
+      ],
+      "gpu_reported_cost": 222987156.19643393,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 230,
+      "parent": 9,
+      "grid_index": 14,
+      "state": [
+        -14.904276030967011,
+        8.21270911841197,
+        0.2805701747229017,
+        -0.023043813898622312,
+        0.012612369032817894,
+        0.00040927293465926017
+      ],
+      "gpu_reported_cost": 1233749.2974529485,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 9,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 624,
+      "parent": 26,
+      "grid_index": 0,
+      "state": [
+        0.12351178296009248,
+        0.9989257659108561,
+        0.3715514263719729,
+        0.047858954760504294,
+        0.026704674652860288,
+        -0.13715213412135188
+      ],
+      "gpu_reported_cost": 16401685648692.207,
+      "gpu_success": true,
+      "cpu_original_success": false,
+      "observations": 11,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 628,
+      "parent": 26,
+      "grid_index": 4,
+      "state": [
+        -2.3182298930517473,
+        2.429800288185956,
+        0.350861287403203,
+        0.04274143678547036,
+        -0.04438054484134737,
+        -0.006386288297786818
+      ],
+      "gpu_reported_cost": 8299662225.8221035,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 11,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 629,
+      "parent": 26,
+      "grid_index": 5,
+      "state": [
+        -15.087950364361618,
+        9.208881578916829,
+        0.7831844646071697,
+        -0.022988141793445917,
+        0.01420067313263483,
+        0.00122321011584248
+      ],
+      "gpu_reported_cost": 3564342011.2630844,
+      "gpu_success": true,
+      "cpu_original_success": true,
+      "observations": 11,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 645,
+      "parent": 26,
+      "grid_index": 21,
+      "state": [
+        -96.66177622488243,
+        56.797637099650444,
+        3.905234785638192,
+        -0.1315208400865618,
+        0.07547719121954055,
+        0.00479810275705211
+      ],
+      "gpu_reported_cost": 78168005.59337151,
+      "gpu_success": true,
+      "cpu_original_success": false,
+      "observations": 11,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 646,
+      "parent": 26,
+      "grid_index": 22,
+      "state": [
+        -96.81161750243633,
+        56.88554930447381,
+        3.911004497740697,
+        -0.13168641515186377,
+        0.0755566654252795,
+        0.004803898217852968
+      ],
+      "gpu_reported_cost": 78570168.6523887,
+      "gpu_success": true,
+      "cpu_original_success": true,
+      "observations": 11,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 647,
+      "parent": 26,
+      "grid_index": 23,
+      "state": [
+        -101.84324606043482,
+        59.81227099963248,
+        4.101790259939432,
+        -0.138698218601459,
+        0.0797065544908465,
+        0.005072441577864262
+      ],
+      "gpu_reported_cost": 86813301.01676206,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 11,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 1134,
+      "parent": 47,
+      "grid_index": 6,
+      "state": [
+        -11.137455862136278,
+        0.33535680004092816,
+        -0.08224173573775226,
+        0.03243833352364638,
+        -0.0010025089714108155,
+        0.00022496091105363142
+      ],
+      "gpu_reported_cost": 6234996.9324149275,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 11,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 1137,
+      "parent": 47,
+      "grid_index": 9,
+      "state": [
+        -11.49882819483528,
+        0.3462639118398484,
+        -0.08563986016853246,
+        0.033638803264658165,
+        -0.0010369146071555733,
+        0.00023703333493842185
+      ],
+      "gpu_reported_cost": 5686653.945405763,
+      "gpu_success": true,
+      "cpu_original_success": false,
+      "observations": 11,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 1141,
+      "parent": 47,
+      "grid_index": 13,
+      "state": [
+        -11.54845438549854,
+        0.347772018841534,
+        -0.08610778652625331,
+        0.033801572231525405,
+        -0.0010416373378657547,
+        0.00023865884733399308
+      ],
+      "gpu_reported_cost": 5603378.177177156,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 11,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 1809,
+      "parent": 75,
+      "grid_index": 9,
+      "state": [
+        -11.322399868220295,
+        0.3953459248707321,
+        -0.06880988045154243,
+        0.03311276611551382,
+        -0.0011790198786638508,
+        0.0001879012661708995
+      ],
+      "gpu_reported_cost": 5459956.494837064,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 10,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 1813,
+      "parent": 75,
+      "grid_index": 13,
+      "state": [
+        -12.1731756705503,
+        0.4255938898271305,
+        -0.0755140925055048,
+        0.03593049598582561,
+        -0.0012754383815350358,
+        0.00021171377046898908
+      ],
+      "gpu_reported_cost": 4454283.818471142,
+      "gpu_success": true,
+      "cpu_original_success": false,
+      "observations": 10,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 12297,
+      "parent": 512,
+      "grid_index": 9,
+      "state": [
+        8.91577657772619,
+        -5.5049773784898095,
+        0.03390583901535875,
+        0.024842548344436326,
+        -0.015565853856027203,
+        -3.84705512539923e-05
+      ],
+      "gpu_reported_cost": 22155812.46840517,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 12,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 43502,
+      "parent": 1812,
+      "grid_index": 14,
+      "state": [
+        -9.555933566170438,
+        -5.591457562341625,
+        -0.023358256791258584,
+        -0.026489664831640045,
+        -0.015302463939762393,
+        -6.843300825268817e-05
+      ],
+      "gpu_reported_cost": 1116535757.9683383,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 16,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 43954,
+      "parent": 1831,
+      "grid_index": 10,
+      "state": [
+        10.553146852289748,
+        -4.8250699103393515,
+        0.594712667710318,
+        -0.030153652491872327,
+        0.013775025399140823,
+        -0.0016397184620335747
+      ],
+      "gpu_reported_cost": 103003017.80795698,
+      "gpu_success": true,
+      "cpu_original_success": false,
+      "observations": 12,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 71075,
+      "parent": 2961,
+      "grid_index": 11,
+      "state": [
+        -8.957793689475306,
+        -4.965709204730506,
+        0.1634096959111753,
+        -0.024577370218149257,
+        -0.013410398200798377,
+        0.0004343725561447379
+      ],
+      "gpu_reported_cost": 929053883.5790613,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 12,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    },
+    {
+      "start": 71078,
+      "parent": 2961,
+      "grid_index": 14,
+      "state": [
+        -9.542649000100571,
+        -5.317549682761528,
+        0.17950918094070223,
+        -0.02643684272270483,
+        -0.014545107124450783,
+        0.00048466964495063355
+      ],
+      "gpu_reported_cost": 774642399.6393138,
+      "gpu_success": false,
+      "cpu_original_success": false,
+      "observations": 12,
+      "cpu_residual_finite": true,
+      "cpu_jacobian_finite": true
+    }
+  ]
+}

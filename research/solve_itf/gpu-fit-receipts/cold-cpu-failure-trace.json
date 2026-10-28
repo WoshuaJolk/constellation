@@ -1,0 +1,236 @@
+{
+  "scope": "Diagnostic CPU replay only, no refits, no changed tolerances; original final GPU parity failure unchanged",
+  "reason_codes": {
+    "1": "nonfinite or too-small propagated distance in light-time iteration",
+    "2": "nonfinite light-time update",
+    "3": "20-iteration light-time cap",
+    "4": "invalid final range/denominator",
+    "5": "tangent projection norm too small"
+  },
+  "cases": [
+    {
+      "start": 72,
+      "parent": 3,
+      "reason_code": 1,
+      "local_observation": 8,
+      "epoch_offset_days": 113.7125700268225,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 73,
+      "parent": 3,
+      "reason_code": 1,
+      "local_observation": 7,
+      "epoch_offset_days": 113.70871002682543,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 74,
+      "parent": 3,
+      "reason_code": 1,
+      "local_observation": 8,
+      "epoch_offset_days": 113.7125700268225,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 79,
+      "parent": 3,
+      "reason_code": 1,
+      "local_observation": 6,
+      "epoch_offset_days": 113.70484002682497,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 98,
+      "parent": 4,
+      "reason_code": 1,
+      "local_observation": 8,
+      "epoch_offset_days": 113.7125700268225,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 99,
+      "parent": 4,
+      "reason_code": 1,
+      "local_observation": 8,
+      "epoch_offset_days": 113.7125700268225,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 103,
+      "parent": 4,
+      "reason_code": 1,
+      "local_observation": 6,
+      "epoch_offset_days": 113.7009700268245,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 120,
+      "parent": 5,
+      "reason_code": 1,
+      "local_observation": 6,
+      "epoch_offset_days": 113.70484002682497,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 121,
+      "parent": 5,
+      "reason_code": 1,
+      "local_observation": 7,
+      "epoch_offset_days": 113.70871002682543,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 122,
+      "parent": 5,
+      "reason_code": 1,
+      "local_observation": 7,
+      "epoch_offset_days": 113.70871002682543,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 127,
+      "parent": 5,
+      "reason_code": 1,
+      "local_observation": 8,
+      "epoch_offset_days": 113.7125700268225,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 230,
+      "parent": 9,
+      "reason_code": 1,
+      "local_observation": 1,
+      "epoch_offset_days": -732.2835000002524,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 624,
+      "parent": 26,
+      "reason_code": 1,
+      "local_observation": 0,
+      "epoch_offset_days": -733.9975615749063,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 628,
+      "parent": 26,
+      "reason_code": 1,
+      "local_observation": 10,
+      "epoch_offset_days": 113.73828160391713,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 629,
+      "parent": 26,
+      "reason_code": 1,
+      "local_observation": 2,
+      "epoch_offset_days": -733.9717715748993,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 645,
+      "parent": 26,
+      "reason_code": 1,
+      "local_observation": 0,
+      "epoch_offset_days": -733.9975615749063,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 646,
+      "parent": 26,
+      "reason_code": 1,
+      "local_observation": 2,
+      "epoch_offset_days": -733.9717715748993,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 647,
+      "parent": 26,
+      "reason_code": 1,
+      "local_observation": 0,
+      "epoch_offset_days": -733.9975615749063,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 1134,
+      "parent": 47,
+      "reason_code": 1,
+      "local_observation": 9,
+      "epoch_offset_days": 358.04946157347877,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 1137,
+      "parent": 47,
+      "reason_code": 1,
+      "local_observation": 8,
+      "epoch_offset_days": 358.0440715734803,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 1141,
+      "parent": 47,
+      "reason_code": 1,
+      "local_observation": 8,
+      "epoch_offset_days": 358.0440715734803,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 1809,
+      "parent": 75,
+      "reason_code": 1,
+      "local_observation": 7,
+      "epoch_offset_days": 358.06104157348454,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 1813,
+      "parent": 75,
+      "reason_code": 1,
+      "local_observation": 8,
+      "epoch_offset_days": 358.066431573483,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 12297,
+      "parent": 512,
+      "reason_code": 1,
+      "local_observation": 1,
+      "epoch_offset_days": -359.0423700019019,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 43502,
+      "parent": 1812,
+      "reason_code": 1,
+      "local_observation": 3,
+      "epoch_offset_days": -359.95049157375615,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 43954,
+      "parent": 1831,
+      "reason_code": 1,
+      "local_observation": 9,
+      "epoch_offset_days": 355.03047157573747,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 71075,
+      "parent": 2961,
+      "reason_code": 1,
+      "local_observation": 5,
+      "epoch_offset_days": -359.85667157373973,
+      "trace_reproduces_original": true
+    },
+    {
+      "start": 71078,
+      "parent": 2961,
+      "reason_code": 1,
+      "local_observation": 3,
+      "epoch_offset_days": -359.8844015737486,
+      "trace_reproduces_original": true
+    }
+  ]
+}

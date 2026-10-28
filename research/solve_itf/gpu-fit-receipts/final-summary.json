@@ -1,0 +1,27 @@
+{
+  "utc_epoch": 1793170876.2052631,
+  "timed_work_completed": true,
+  "compatibility_gate": "BLOCKED: final same-state CPU/GPU validity masks disagree; original report unchanged",
+  "starts": 240000,
+  "unique_parent_chains": 10000,
+  "cpu4_median_seconds": 17.12607022199998,
+  "cpu20_median_seconds": 3.4994409299999916,
+  "gpu_resident_median_seconds": 0.9620641190000185,
+  "raw_gpu_gain_vs_cpu20": 3.637430043267131,
+  "raw_gpu_gain_vs_cpu4": 17.80138130481473,
+  "convergence_disagreements": 68,
+  "final_rms_difference_over_0_001_arcsec": 106,
+  "cpu_reevaluation_invalid_final_gpu_states": 28,
+  "invalid_state_gpu_rms_range_arcsec": [
+    111.07426783251594,
+    366327.1896173368
+  ],
+  "invalid_state_gpu_rms_at_most_0_6": 0,
+  "new_full_fit_and_gpu_optimization_estimated_compute_usd": 1.193581063604355,
+  "combined_prototype_and_all_followups_estimated_compute_usd": 2.79699940147958,
+  "total_cap_usd": 5,
+  "remaining_droplets": 0,
+  "test_ssh_keys_remaining": 0,
+  "scope": "Numerical development benchmark; no production deployment, new objects, purity or scientific-acceptance claim",
+  "cold_profiles": "Not run: fixed post-fit numerical check failed after all timed repetitions. Warm profiles preserved separately."
+}

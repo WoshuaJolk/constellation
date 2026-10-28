@@ -1,0 +1,13 @@
+{
+  "scope": "Development complete single-start local optimizer benchmark; not full multi-start search or scientific acceptance",
+  "bank": "/tmp/itf-gpu-prototype-results/bank-10000.npz",
+  "bank_sha256": "2c32db53b6a4a8f197e97007e1827910f5b006a4911dbbf30d28e93e5dcf6b68",
+  "selection": "All 10000 cases in existing frozen bank, in existing order, no new states/observations or outcome-based replacement",
+  "iterations": 80,
+  "policy": "Existing derivatives.solve_lm arithmetic and convergence criteria; original compiled CPU remains reference. GPU accelerator replaces only residual/Jacobian evaluations using the same batched host state machine as diagnostic CPU adapter.",
+  "runs": "One uncounted warmup, then 3 repetitions each original CPU with 1/4/all exposed vCPUs, CPU batched adapter once for equivalence/profile, GPU batched adapter 3 repetitions; CPU parallel comparisons include scheduling and result collection",
+  "equivalence": "First validate CPU state machine against original solve_lm. GPU same-state residual/Jacobian gate remains <=0.001 arcsec and <=1e-6 scaled Jacobian. Report all final convergence/RMS/state differences, including optimizer branch divergence; do not hide or repair disappointing cases.",
+  "failure_handling": "Numerical invalids and nonconvergence separate; abort timing claims if same-state parity fails. Hard resource stop returns partial, never restarts budget.",
+  "resource_limit": "One H100, max20min provisioned lifetime, max$1.50 this worker; keep combined prototype/repair/benchmark compute under$5. No other machines. Local development before provisioning. Delete after compact verified results.",
+  "profiling": "Wall-clock evaluation, optimizer proposal/update, GPU transfer and kernel times; initialization/warmup separate. No claim that historical entire pipeline is profiled."
+}

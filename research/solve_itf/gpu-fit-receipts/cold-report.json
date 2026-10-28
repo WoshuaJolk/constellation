@@ -1,0 +1,583 @@
+{
+  "scope": "Frozen production-grid local-fit benchmark; no chain acceptance or new search.",
+  "source_bank_sha256": "9bcec2d7483d045fa6f3ea577ecb5013957b8230b08a7f67615babb492d00765",
+  "starts": 240000,
+  "unique_parent_chains": 10000,
+  "iterations_limit": 80,
+  "repeats": 3,
+  "runs": {
+    "cpu-4": [
+      {
+        "cases": 240000,
+        "converged": 220217,
+        "nonconverged": 19783,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709515655291,
+          0.17650847378218695,
+          0.4141116972960583,
+          3.4973987236414508,
+          388395.49948771304
+        ],
+        "profile": {
+          "wall_seconds": 17.15127658
+        }
+      },
+      {
+        "cases": 240000,
+        "converged": 220217,
+        "nonconverged": 19783,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709515655291,
+          0.17650847378218695,
+          0.4141116972960583,
+          3.4973987236414508,
+          388395.49948771304
+        ],
+        "profile": {
+          "wall_seconds": 17.123178216000014
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 240000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "cases": 240000,
+        "converged": 220217,
+        "nonconverged": 19783,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709515655291,
+          0.17650847378218695,
+          0.4141116972960583,
+          3.4973987236414508,
+          388395.49948771304
+        ],
+        "profile": {
+          "wall_seconds": 17.12607022199998
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 240000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    ],
+    "cpu-20": [
+      {
+        "cases": 240000,
+        "converged": 220217,
+        "nonconverged": 19783,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709515655291,
+          0.17650847378218695,
+          0.4141116972960583,
+          3.4973987236414508,
+          388395.49948771304
+        ],
+        "profile": {
+          "wall_seconds": 3.530958591000001
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 240000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "cases": 240000,
+        "converged": 220217,
+        "nonconverged": 19783,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709515655291,
+          0.17650847378218695,
+          0.4141116972960583,
+          3.4973987236414508,
+          388395.49948771304
+        ],
+        "profile": {
+          "wall_seconds": 3.4994409299999916
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 240000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "cases": 240000,
+        "converged": 220217,
+        "nonconverged": 19783,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709515655291,
+          0.17650847378218695,
+          0.4141116972960583,
+          3.4973987236414508,
+          388395.49948771304
+        ],
+        "profile": {
+          "wall_seconds": 3.496429090000021
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 240000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    ],
+    "gpu-resident": [
+      {
+        "cases": 240000,
+        "converged": 220239,
+        "nonconverged": 19761,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.035117095158275005,
+          0.17650847378245677,
+          0.4141116972957348,
+          3.4973987237479145,
+          388395.4994877027
+        ],
+        "profile": {
+          "wall_seconds": 0.9946484220000116,
+          "allocation_upload_seconds": 0.5519775200000083,
+          "device_iterations_wall_seconds": 0.43650279499999556,
+          "final_download_seconds": 0.00616437200000064,
+          "completion_checks": [
+            [
+              4,
+              239839
+            ],
+            [
+              8,
+              238680
+            ],
+            [
+              12,
+              205664
+            ],
+            [
+              16,
+              185251
+            ],
+            [
+              20,
+              157942
+            ],
+            [
+              24,
+              131678
+            ],
+            [
+              28,
+              107284
+            ],
+            [
+              32,
+              85185
+            ],
+            [
+              36,
+              68298
+            ],
+            [
+              40,
+              56254
+            ],
+            [
+              44,
+              47906
+            ],
+            [
+              48,
+              41264
+            ],
+            [
+              52,
+              36047
+            ],
+            [
+              56,
+              32081
+            ],
+            [
+              60,
+              28982
+            ],
+            [
+              64,
+              26562
+            ],
+            [
+              68,
+              24529
+            ],
+            [
+              72,
+              22709
+            ],
+            [
+              76,
+              21144
+            ],
+            [
+              80,
+              19758
+            ]
+          ],
+          "per_iteration_full_array_transfers": 0
+        },
+        "reference_comparison": {
+          "success_disagreements": 68,
+          "exact_state_matches": 0,
+          "max_state_absolute_difference": 117.61740836906483,
+          "max_rms_difference_arcsec": 419.63764791960875,
+          "rms_difference_above_0_001_arcsec": 106,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            2.4579019375359223e-12,
+            9.99206273277764e-12,
+            1.638061549735799e-07,
+            419.63764791960875
+          ]
+        }
+      },
+      {
+        "cases": 240000,
+        "converged": 220239,
+        "nonconverged": 19761,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.035117095158275005,
+          0.17650847378245677,
+          0.4141116972957348,
+          3.4973987237479145,
+          388395.4994877027
+        ],
+        "profile": {
+          "wall_seconds": 0.9612455339999997,
+          "allocation_upload_seconds": 0.5237279810000075,
+          "device_iterations_wall_seconds": 0.4349688849999893,
+          "final_download_seconds": 0.0025450759999898764,
+          "completion_checks": [
+            [
+              4,
+              239839
+            ],
+            [
+              8,
+              238680
+            ],
+            [
+              12,
+              205664
+            ],
+            [
+              16,
+              185251
+            ],
+            [
+              20,
+              157942
+            ],
+            [
+              24,
+              131678
+            ],
+            [
+              28,
+              107284
+            ],
+            [
+              32,
+              85185
+            ],
+            [
+              36,
+              68298
+            ],
+            [
+              40,
+              56254
+            ],
+            [
+              44,
+              47906
+            ],
+            [
+              48,
+              41264
+            ],
+            [
+              52,
+              36047
+            ],
+            [
+              56,
+              32081
+            ],
+            [
+              60,
+              28982
+            ],
+            [
+              64,
+              26562
+            ],
+            [
+              68,
+              24529
+            ],
+            [
+              72,
+              22709
+            ],
+            [
+              76,
+              21144
+            ],
+            [
+              80,
+              19758
+            ]
+          ],
+          "per_iteration_full_array_transfers": 0
+        },
+        "reference_comparison": {
+          "success_disagreements": 68,
+          "exact_state_matches": 0,
+          "max_state_absolute_difference": 117.61740836906483,
+          "max_rms_difference_arcsec": 419.63764791960875,
+          "rms_difference_above_0_001_arcsec": 106,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            2.4579019375359223e-12,
+            9.99206273277764e-12,
+            1.638061549735799e-07,
+            419.63764791960875
+          ]
+        },
+        "first_gpu_repeat_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 240000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "cases": 240000,
+        "converged": 220239,
+        "nonconverged": 19761,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.035117095158275005,
+          0.17650847378245677,
+          0.4141116972957348,
+          3.4973987237479145,
+          388395.4994877027
+        ],
+        "profile": {
+          "wall_seconds": 0.9620641190000185,
+          "allocation_upload_seconds": 0.5225788500000021,
+          "device_iterations_wall_seconds": 0.43712044299999775,
+          "final_download_seconds": 0.0023609989999897607,
+          "completion_checks": [
+            [
+              4,
+              239839
+            ],
+            [
+              8,
+              238680
+            ],
+            [
+              12,
+              205664
+            ],
+            [
+              16,
+              185251
+            ],
+            [
+              20,
+              157942
+            ],
+            [
+              24,
+              131678
+            ],
+            [
+              28,
+              107284
+            ],
+            [
+              32,
+              85185
+            ],
+            [
+              36,
+              68298
+            ],
+            [
+              40,
+              56254
+            ],
+            [
+              44,
+              47906
+            ],
+            [
+              48,
+              41264
+            ],
+            [
+              52,
+              36047
+            ],
+            [
+              56,
+              32081
+            ],
+            [
+              60,
+              28982
+            ],
+            [
+              64,
+              26562
+            ],
+            [
+              68,
+              24529
+            ],
+            [
+              72,
+              22709
+            ],
+            [
+              76,
+              21144
+            ],
+            [
+              80,
+              19758
+            ]
+          ],
+          "per_iteration_full_array_transfers": 0
+        },
+        "reference_comparison": {
+          "success_disagreements": 68,
+          "exact_state_matches": 0,
+          "max_state_absolute_difference": 117.61740836906483,
+          "max_rms_difference_arcsec": 419.63764791960875,
+          "rms_difference_above_0_001_arcsec": 106,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            2.4579019375359223e-12,
+            9.99206273277764e-12,
+            1.638061549735799e-07,
+            419.63764791960875
+          ]
+        },
+        "first_gpu_repeat_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 240000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    ]
+  },
+  "outputs": {
+    "cpu-reference": {
+      "path": "cpu-reference.npz",
+      "sha256": "298d3ec5d870fa669facabd55ee5cb35ea4857a6283bc1dd0b2da67d69ee3e97"
+    },
+    "gpu-reference": {
+      "path": "gpu-reference.npz",
+      "sha256": "56cdaf0f050905ad0ee84a703d28c7c9313a7f71cbd1348207d40c29a8b3c1fb"
+    }
+  },
+  "status": "blocked",
+  "cpu_driver": "Compiled original solve_lm scheduling blocks; no Python per-fit loop",
+  "limitations": [
+    "Parents are retained candidates, not all attempted ITF combinations",
+    "24 genuine range/radial starts per parent; no Gauss or saved starts",
+    "Numerical convergence is not astrometric/physical acceptance",
+    "Different local outcomes may occur from GPU floating-point ordering"
+  ],
+  "warmup_seconds": 6.87284803999998,
+  "phase": "final_same_state_parity",
+  "initial_same_state_parity": {
+    "max_residual_error_arcsec": 5.4761767387390134e-08,
+    "max_scaled_jacobian_error": 9.330330319467751e-09
+  },
+  "blocker": "ValueError: CPU/GPU validity masks disagree"
+}

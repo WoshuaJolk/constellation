@@ -1,0 +1,13 @@
+{
+ "scope":"Existing production range/radial seed grid benchmark, not full search or discovery",
+ "parents":10000,
+ "starts_per_parent":24,
+ "total_starts":240000,
+ "selection":"Every parent in existing frozen 10000 bank, every existing fit_chain distance/radial hypothesis, same ordering. No outcome filtering, no altered observations or Gauss/saved-seed supplement.",
+ "cpu_baseline":"Original compiled solve_lm in compiled scheduling blocks; full cohort on4and20threads,3repetitions each. Same80iteration limit.",
+ "gpu":"Device-resident solver, unchanged from prior resident benchmark; full cohort3repetitions; include bank setup/uploads and output download in headline. Separate CUDA-event profiling run.",
+ "parity":"Same-state residual<=0.001arcsec and scaled Jacobian<=1e-6, same validity flags before and after fit. Final optimizer outcomes compared and differences retained; no guarantee of bit-identical local minima.",
+ "outcomes":"Every attempted start including nonconvergence and numerical invalidity. Starts are not distinct chains; report both. No scientific acceptance threshold or statistical claim.",
+ "resources":"One H100, max20min/$1.50 this phase; total all prototype/repair/full-fit/resident/cold phases remains capped$5. Provision only after data/code prepared. Stop/return partial if limit reached. No budget reset or outcome-based subset.",
+ "rationale":"User asked for workloads where GPU parallelism helps. Prior warm saved starts had median2iterations. This uses actual existing seed-generation work rather than duplicating easy fits or weakening CPU baseline."
+}

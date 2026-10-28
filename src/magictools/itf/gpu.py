@@ -6,6 +6,7 @@ Inputs stay resident across evaluations; outputs are explicitly copied on reques
 Two-body dynamics only: planetary final fitting stays on the CPU.
 """
 import math
+import time
 from types import FunctionType
 
 import numpy as np
@@ -29,9 +30,9 @@ ARCSEC, C = kernels.ARCSEC, kernels.C
 
 @cuda.jit(fastmath=False)
 def _evaluate(states, case_index, offsets, observers, observed, east, north,
-              sigma, residual, jacobian, valid):
+              sigma, active, residual, jacobian, valid):
     i = cuda.grid(1)
-    if i >= len(offsets):
+    if i >= len(offsets) or active[case_index[i]] == 0:
         return
     valid[i] = 0
     for coordinate in range(2):
@@ -141,6 +142,8 @@ class ResidentBank:
         if not cuda.is_available():
             raise RuntimeError('No CUDA device; no CPU fallback or timing claim')
         arrays, case, self.sigma = validate_bank(bank)
+        self.profile = dict(state_upload_seconds=0., kernel_sync_seconds=0., download_seconds=0., validity_accounting_seconds=0.)
+        self.active = cuda.to_device(np.ones(len(arrays['states']), np.uint8))
         self.n = len(case)
         self.case_index = case.copy()
         self.inputs = [cuda.to_device(arrays['states']), cuda.to_device(case)]
@@ -149,17 +152,33 @@ class ResidentBank:
         self.jacobian = cuda.device_array((self.n, 2, 6), np.float64)
         self.valid = cuda.device_array(self.n, np.uint8)
 
-    def evaluate(self, *, download=True):
-        _evaluate[(self.n+127)//128, 128](*self.inputs, self.sigma, self.residual, self.jacobian, self.valid)
+    def evaluate(self, *, download=True, states=None, active=None):
+        stamp = time.perf_counter()
+        if states is not None:
+            if states.shape != self.inputs[0].shape or states.dtype != np.float64:
+                raise ValueError('Updated state shape/dtype differs from frozen bank')
+            self.inputs[0].copy_to_device(states)
+        if active is not None:
+            if active.shape != self.active.shape or active.dtype != np.uint8:
+                raise ValueError('Activity mask must match state bank, uint8')
+            self.active.copy_to_device(active)
+        self.profile['state_upload_seconds'] += time.perf_counter()-stamp
+        stamp = time.perf_counter()
+        _evaluate[(self.n+127)//128, 128](*self.inputs, self.sigma, self.active, self.residual, self.jacobian, self.valid)
         cuda.synchronize()
+        self.profile['kernel_sync_seconds'] += time.perf_counter()-stamp
         if download:
+            stamp = time.perf_counter()
             r, j, valid = self.residual.copy_to_host(), self.jacobian.copy_to_host(), self.valid.copy_to_host()
+            self.profile['download_seconds'] += time.perf_counter()-stamp
+            stamp = time.perf_counter()
             self.last_point_valid = valid.copy()
             # CPU residual_jacobian invalidates a whole candidate when any
             # observation fails. Preserve that behavior and the raw point mask.
             bad_cases = np.unique(self.case_index[valid == 0])
             bad = np.isin(self.case_index, bad_cases)
             r[bad], j[bad], valid[bad] = np.nan, np.nan, 0
+            self.profile['validity_accounting_seconds'] += time.perf_counter()-stamp
             return r, j, valid
 
 

@@ -2,7 +2,8 @@
 
 This branch adds an experimental CUDA translation of two-body propagation,
 retarded topocentric residuals, and their analytic six-state Jacobians. It is
-**not yet a GPU optimizer or a full GPU linker**. The production pipeline and
+**not a production GPU linker**. Subsequent experimental complete optimizers
+and cold-start benchmarks are documented in [GPU-FIT-BENCHMARK.md](GPU-FIT-BENCHMARK.md). The production pipeline and
 scientific acceptance rules are unchanged.
 
 Historical timing motivates this target: the 10,000-seed CPU run recorded
@@ -172,10 +173,10 @@ establish equal-time search gains.
 2. Repeat measurements on a representative bank and measure device compute,
    transfers and host accounting separately; sweep prospectively declared batch
    sizes without changing scientific cuts.
-3. Integrate the kernel into batched optimizer iterations: maintain states and
-   Jacobians on device, preserve convergence/failure semantics, compact active
-   candidates. Compare the optimized CPU implementation, including its better
-   threading setting, against GPU on the **same starts and fit policy**.
+3. Experimental device-resident optimizer benchmarks now exist; see the full-fit
+   report. Resolve the recorded numerical compatibility edge cases before
+   integrating this into production multi-start orchestration. Keep comparing
+   against the compiled parallel CPU baseline on the same starts and policy.
 4. Freeze a representative production queue including failed/deferred starts,
    distant, retrograde, NEO and hyperbolic modes. Run identical-work and
    identical-time full-search comparisons. Report distinct memberships, arcs,
