@@ -1,0 +1,22 @@
+{
+  "status": "bounded_followup_complete",
+  "completed": 147,
+  "selected": 147,
+  "seconds": 22.666666189000352,
+  "index_counts": {
+    "indexed_tracklets": 2545457,
+    "unindexed_tracklets": 2850,
+    "indexed_nights": 10246,
+    "catalogue_tracklets": 2548307
+  },
+  "status_counts": {
+    "searched": 122,
+    "partial_failure": 24,
+    "numerical_failure": 1
+  },
+  "limitations": [
+    "A timeout or failed local fit is unresolved, not an exclusion of the association.",
+    "Finite seed modes, windows, cones, branch and proposal caps; not exhaustive.",
+    "Planetary fits and uncertainty-guided retrieval are follow-up evidence, not confirmation or calibrated probabilities."
+  ]
+}

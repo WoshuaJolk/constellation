@@ -1,0 +1,77 @@
+{
+  "verified_unix": 1793235919.517587,
+  "files": {
+    "distant-results/production.log": {
+      "sha256": "278caaf713a7acc28eea8de4587a6632a9f2dc33621a86fbad7f320ed5185171",
+      "bytes": 76
+    },
+    "distant-results/planetary-followup.log": {
+      "sha256": "08c96d46639684769a4147bf32f38804baef77ba56dc45e15fcc50bae65a76b0",
+      "bytes": 28928
+    },
+    "distant-results/report.json": {
+      "sha256": "afd1e1bd75784df9a617347760ac04fc1bd6c6d7626937fc3984d0e0f48c0980",
+      "bytes": 2783
+    },
+    "distant-results/followup/recovery.jsonl.gz": {
+      "sha256": "67fa87596fb9c42316b1e94514b0c5a4c56acf5c284f6e277a7ac8e39ad81430",
+      "bytes": 100203
+    },
+    "distant-results/followup/summary.json": {
+      "sha256": "64da3bcc60cddb581dc109543c56bdaae8bc61e8b451efba1a60750f72d1a410",
+      "bytes": 207439
+    },
+    "distant-results/followup/all-candidates.json.gz": {
+      "sha256": "1c94a5c6102375270b9cccbb851b85d3af937c6629f6010e0911a76f4904c46b",
+      "bytes": 22224577
+    },
+    "distant-results/followup/recovery-evidence.tar.gz": {
+      "sha256": "ccd3d7a13cd8fa3e3a4658aee2b39d9790226d750590da9bc467251729acabf7",
+      "bytes": 965206
+    },
+    "distant-results/followup/selection.json": {
+      "sha256": "8951f88601ce027c5a2daf4b6ce182fb67d2219aa4e53ba8a1fbebe128f02570",
+      "bytes": 1082446
+    },
+    "distant-results/production/fit-summary.json": {
+      "sha256": "f1deab6e5aa63368eff3e85e5f99432656bb1369a41db42444c83503b7f3e310",
+      "bytes": 3831
+    },
+    "distant-results/production/seed-freeze.json": {
+      "sha256": "1bd55ccdd97920e6ca597fb595752385958a21d776729989986a11dcc9a3a0a0",
+      "bytes": 966
+    },
+    "distant-results/production/candidates.json.gz": {
+      "sha256": "64a9b0e958e581138d5ed0ed3d2d8dc99bea39e4fa061caa612b5380ab93881c",
+      "bytes": 6612374
+    },
+    "distant-results/production/batch-profile.json": {
+      "sha256": "93caba2a9e45b5edc830003ac083fbc8b087766f58c23a0ecf97944c7519146d",
+      "bytes": 7569805
+    },
+    "distant-results/production/graph/summary.json": {
+      "sha256": "45e06f46ffd6f48cc7e9030d4f33b68abb61913dc05bc97fdef6f631a564a8f4",
+      "bytes": 11956
+    },
+    "hardware.json": {
+      "sha256": "361d67de24511cb2eb3ff01088480d6a40cb564b862088a7fab11e5adc29bcb8",
+      "bytes": 460
+    },
+    "gpu-tests.log": {
+      "sha256": "bda99e2afb18aededec8fad6d2d8ead4846238204286813950f423ba67cd728a",
+      "bytes": 1233
+    },
+    "utilization.jsonl": {
+      "sha256": "3e54e4257544fa3d1e6b808b16cb716b9a4929c7f8b5ab492a951703705ea7ab",
+      "bytes": 65057
+    },
+    "transfer-verification.json": {
+      "sha256": "faece040f582ce00941f10d05cdc5fb56a2bcba023ddbb0cd6ec0741dab2a205",
+      "bytes": 710
+    },
+    ".remote/gpufit.log": {
+      "sha256": "e8c51ad069ba968a9b80329791e961a73c49802a00646dc22f3f0517156e4cb7",
+      "bytes": 12608
+    }
+  }
+}

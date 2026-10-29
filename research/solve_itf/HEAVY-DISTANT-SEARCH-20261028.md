@@ -57,3 +57,18 @@ A separately recorded implementation repair merges sorted neighbor-pair streams 
 Unchanged quotas and exact prior-seed exclusion then froze seven million seeds in 101.64 seconds total: 1,500,000 brightness-priority, 1,413,162 long-gap-priority, and 4,086,838 ordinary/fill seeds. The ranked pool contained 2,001 seeds from the earlier distant million, all excluded. The prior distant million is not rerun. The general-lane historical seed set is not part of this exclusion claim.
 
 A replacement worker resumes only fitting and the registered planetary follow-up from hash-verified inputs. The passed control experiment and proposal scan are not repeated. There is only one concurrently provisioned worker. The **original absolute deadline (01:22:31 UTC / 9:22:31 p.m. Eastern)** and $20 total experiment ceiling are carried forward, including the first phase's cost; they are not reset. Fitting uses at most the original 3,000 seconds and reserves 1,100 seconds of remaining lifetime for follow-up and evidence return. Any unfitted seeds remain uncomputed. Current completion and deletion must be read from `/tmp/itf-heavy-distant-resume-20261028`, not inferred from the initial phase's closed receipt.
+
+
+## Final result and resource disposition
+
+The continuation and planetary follow-up finished; verified returns preceded worker deletion at **01:05:31 UTC / 9:05:31 p.m. Eastern**. A subsequent provider query confirms zero droplets. Estimated total compute was **$4.96254**, including the initial failed phase.
+
+The fitting time budget returned **6,352,896 / 7,000,000 seeds (90.76%)** and 4,502 numerically retained chain rows. The 647,104 remaining seeds include 5,120 submitted without returned results; none is a successful rejection. Triple fitting exhausted the time allowance before ordinary chain growth, so that stage reports zero extensions. The separately registered planetary follow-up still ran: 147 parents, with 122 searched, 24 partial failures and one numerical failure.
+
+The union contains 22,144 memberships, 4,159 absent from the supplied 17,985-membership baseline. These are chain hypotheses, largely overlapping alternatives, not new object counts. Planetary results contain 36 distinct memberships, 23 with a best bound distant mode, grouped into five shared-tracklet families. Three overlap the earlier bound follow-up; two do not: H310801 + H310802 + two distinct H360032 tracklet records (324.05 days, nominal 41.31 AU, RMS 0.154 arcseconds), and H307645 + H307649 + two distinct H360791 records (354.97 days, nominal 41.78 AU, RMS 0.170 arcseconds). Repeated designations are disambiguated by catalogue indices.
+
+Both additional families are faint (roughly magnitude 24 in available red bands). They do not supply a convincing new dwarf-planet-size lead. An older brightness-favored chain remains numerically weak with incomplete known-object coverage; it must not be presented as a new discovery from this run. All nominal distances, sizes and association identities remain unconfirmed.
+
+The larger search did **not** exhaust the proposal grid or seed queue. Its cached common-epoch scan completed 3,602 anchor/hypothesis combinations, but time and edge caps left substantial unsearched work. The engine's generic log line “Full scan complete” is not authoritative here: the saved graph and fit counters explicitly record `full_catalogue_scan_complete=false`. Stronger real-control recovery and the exact-ranking repair are demonstrated; whole-population completeness, production purity and physical sizes are not.
+
+Final tables and raw returns are under `/tmp/itf-heavy-distant-resume-20261028`, with graph/control failure evidence in the original run. Completion, review, provider and resource receipts accompany this report.
