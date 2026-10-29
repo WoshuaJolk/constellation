@@ -12,35 +12,35 @@ from magictools.itf.catalogue import sha256
 from distant_epoch_graph import projected
 
 
-def finish(a,b,distance,times,noise,identities):
+def finish(a,b,distance,times,noise,identities,max_gap_days=365.):
     dt=times[b]-times[a];scale=60+.5*(noise[a]+noise[b])*dt+.002*dt*dt
     mismatch=distance*ARCSEC
-    good=(dt>=.3)&(dt<=365)&(identities[a]!=identities[b])&(mismatch<=np.minimum(3600,scale))
+    good=(dt>=.3)&(dt<=max_gap_days)&(identities[a]!=identities[b])&(mismatch<=np.minimum(3600,scale))
     score=.5*(mismatch[good]/scale[good])**2+2*np.log(scale[good]/60)+np.log(48)
     out=np.column_stack((a[good],b[good],score))
     return out[np.lexsort((out[:,1],out[:,0]))] if len(out) else out
 
 
-def nightly(p,t,noise,identities,radius=3600/ARCSEC):
+def nightly(p,t,noise,identities,radius=3600/ARCSEC,max_gap_days=365.):
     night=np.floor(t).astype('i8');days=np.unique(night);groups=[np.flatnonzero(night==d) for d in days]
     trees=[cKDTree(p[g]) for g in groups];aa=[];bb=[];dd=[];queries=0;calls=0
     for i,(day,a) in enumerate(zip(days,groups)):
         for j in range(i+1,len(days)):
-            if days[j]-day>365:break
+            if days[j]-day>max_gap_days:break
             b=groups[j];k=min(16,len(b));d,loc=trees[j].query(p[a],k=list(range(1,k+1)),distance_upper_bound=radius,workers=1)
             qi,ki=np.where(np.isfinite(d));aa.append(a[qi]);bb.append(b[loc[qi,ki]]);dd.append(d[qi,ki]);queries+=len(a);calls+=1
     if not aa:return np.empty((0,3)),dict(queries=queries,calls=calls)
-    return finish(np.concatenate(aa),np.concatenate(bb),np.concatenate(dd),t,noise,identities),dict(queries=queries,calls=calls)
+    return finish(np.concatenate(aa),np.concatenate(bb),np.concatenate(dd),t,noise,identities,max_gap_days),dict(queries=queries,calls=calls)
 
 
-def shared(p,t,noise,identities,radius=3600/ARCSEC,max_raw_neighbors=8000000):
+def shared(p,t,noise,identities,radius=3600/ARCSEC,max_raw_neighbors=8000000,max_gap_days=365.):
     if not len(p):return np.empty((0,3)),dict(queries=0,calls=0,raw_neighbors=0,tie_fallbacks=0)
     tree=cKDTree(p);counts=tree.query_ball_point(p,radius,return_length=True,workers=1)
     raw=int(counts.sum())
     if raw>max_raw_neighbors:raise MemoryError(f'{raw} raw neighbors exceed {max_raw_neighbors}; no partial graph returned')
     neighborhoods=tree.query_ball_point(p,radius,return_sorted=False,workers=1)
     a=np.repeat(np.arange(len(p)),counts);b=np.concatenate(neighborhoods).astype('i8');night=np.floor(t).astype('i8')
-    good=(night[b]>night[a])&(night[b]-night[a]<=365);a,b=a[good],b[good]
+    good=(night[b]>night[a])&(night[b]-night[a]<=max_gap_days);a,b=a[good],b[good]
     delta=p[a]-p[b];squared=np.einsum('ij,ij->i',delta,delta)
     # query uses a strict upper bound; query_ball_point includes its boundary.
     inside=squared<radius*radius;a,b,squared=a[inside],b[inside],squared[inside]
@@ -61,7 +61,7 @@ def shared(p,t,noise,identities,radius=3600/ARCSEC,max_raw_neighbors=8000000):
     a,b,dist=a[keep],b[keep],np.sqrt(squared[keep])
     if replacements:
         a=np.concatenate([a]+[x[0] for x in replacements]);b=np.concatenate([b]+[x[1] for x in replacements]);dist=np.concatenate([dist]+[x[2] for x in replacements])
-    return finish(a,b,dist,t,noise,identities),dict(queries=2*len(p)+len(tied),calls=2+len(tied),raw_neighbors=raw,tie_fallbacks=len(tied))
+    return finish(a,b,dist,t,noise,identities,max_gap_days),dict(queries=2*len(p)+len(tied),calls=2+len(tied),raw_neighbors=raw,tie_fallbacks=len(tied))
 
 
 def main():

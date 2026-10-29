@@ -54,7 +54,7 @@ def one(task):
     except Exception as e:return dict(digest=r['digest'],roles=r['roles'],status='unresolved_exception',error=type(e).__name__+': '+str(e),rows=[],counts={},seconds=time.monotonic()-before)
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--policy-description',default='128 distant,32 retrograde,32 hyperbolic,32 NEO,32 general; one minimum-RMS available mode per chain/lane; order descending span,tracklets then RMS/hash. All raw alternatives saved. No identity labels.');a=p.parse_args();a.output.mkdir(exist_ok=True)
+    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--policy-description',default='128 distant,32 retrograde,32 hyperbolic,32 NEO,32 general; one minimum-RMS available mode per chain/lane; order descending span,tracklets then RMS/hash. All raw alternatives saved. No identity labels.');p.add_argument('--seconds',type=float,default=900);p.add_argument('--seed-seconds',type=float,default=60);p.add_argument('--fit-seconds',type=float,default=10);p.add_argument('--iterations',type=int,default=2);p.add_argument('--branches',type=int,default=4);p.add_argument('--max-candidates',type=int,default=16);p.add_argument('--uncertainty-samples',type=int,default=12);a=p.parse_args();a.output.mkdir(exist_ok=True)
     merged={};sources=[]
     for source in [Path('general-candidates.json.gz'),Path('distant-results/production/candidates.json.gz')]:
         with gzip.open(source,'rt') as f:data=json.load(f)
@@ -64,7 +64,7 @@ def main():
             else:
                 old=merged[k];old['search_sources'].append(str(source));seen={(m['epoch_mjd_tdb'],tuple(m['state_au_au_per_day'])) for m in old['modes']}
                 old['modes'] += [m for m in row['modes'] if (m['epoch_mjd_tdb'],tuple(m['state_au_au_per_day'])) not in seen]
-        sources.append(dict(path=str(source),candidates=len(data['candidates']),status=data['status']))
+        sources.append(dict(path=str(source),candidates=len(data['candidates']),status=data.get('status','preserved_baseline')))
     rows=list(merged.values());selected,stats=select(rows)
     with gzip.open(a.output/'all-candidates.json.gz','wt',compresslevel=1) as f:json.dump(dict(sources=sources,candidates=rows),f,allow_nan=False)
     write(a.output/'selection.json',dict(policy=a.policy_description,lanes=stats,selected=selected))
@@ -74,10 +74,10 @@ def main():
     from magictools.itf.longarc import NightIndex,attach_arcs
     cat=Catalogue('catalogue');sites=read_sites('ObsCodes.html');endpoints=Time([cat.tracks['t'].min()-66,cat.tracks['t'].max()+2],format='mjd',scale='utc').tdb.mjd
     ep=Ephemeris('de440s.bsp',*endpoints);idx=NightIndex(cat,sites,ep);attach_arcs(idx,[r['tracklet_indices'] for r in rows],cat)
-    args=SimpleNamespace(ephemeris=Path('de440s.bsp'),backend='compiled',output=a.output/'private',sigma_arcsec=.3,seed_seconds=60.,max_seed_seconds=60.,fit_seconds=10.,fast_fit=False,fit_cascade=False,staged=True,bridge_first=True,iterations=2,branches=4,min_gap_days=0.,max_gap_days=0.,max_cone_deg=2.,max_candidates=16,retrieval='position',position_reserve=0,uncertainty_samples=12,direct_arcs=True,swap_limit=0,fast_retrieval=False,no_work_reuse=False)
+    args=SimpleNamespace(ephemeris=Path('de440s.bsp'),backend='compiled',output=a.output/'private',sigma_arcsec=.3,seed_seconds=a.seed_seconds,max_seed_seconds=a.seed_seconds,fit_seconds=a.fit_seconds,fast_fit=False,fit_cascade=False,staged=True,bridge_first=True,iterations=a.iterations,branches=a.branches,min_gap_days=0.,max_gap_days=0.,max_cone_deg=2.,max_candidates=a.max_candidates,retrieval='position',position_reserve=0,uncertainty_samples=a.uncertainty_samples,direct_arcs=True,swap_limit=0,fast_retrieval=False,no_work_reuse=False)
     args.output.mkdir(exist_ok=True)
     global CTX
-    CTX=(JPLGeometry(cat,sites,ep),idx,ep,args);started=time.monotonic();deadline=started+900;summaries=[]
+    CTX=(JPLGeometry(cat,sites,ep),idx,ep,args);started=time.monotonic();deadline=started+a.seconds;summaries=[]
     with ProcessPoolExecutor(max_workers=20,mp_context=mp.get_context('fork'),initializer=initialize) as pool,gzip.open(a.output/'recovery.jsonl.gz','wt',compresslevel=1) as f:
         futures=[pool.submit(one,(i,r,deadline)) for i,r in enumerate(selected)]
         for future in as_completed(futures):

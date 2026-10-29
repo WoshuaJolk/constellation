@@ -28,12 +28,13 @@ def test_plan_invalid_and_empty():
 
 
 @pytest.mark.skipif(not cuda.is_available(), reason='CUDA hardware or explicit simulator required')
-def test_resident_projection_cpu_parity_and_reuse():
+@pytest.mark.parametrize('window',[365.,1095.])
+def test_resident_projection_cpu_parity_and_reuse(window):
     from gpu_distant_projection import ProjectionBank
     from distant_epoch_graph import projected, DISTANCES
     from magictools.itf.kernels import MU, ARCSEC
     rng = np.random.default_rng(20261029)
-    t = np.array([-366., -365., -150., 0., 100., 365., 366.])
+    t = np.array([-1096., -1095., -366., -365., -150., 0., 100., 365., 366., 1095., 1096.])
     u = rng.normal(size=(len(t),3));u /= np.linalg.norm(u,axis=1)[:,None]
     du = rng.normal(size=u.shape)*1e-5; du -= (du*u).sum(axis=1)[:,None]*u
     obs = rng.normal(size=u.shape)*.5
@@ -42,11 +43,11 @@ def test_resident_projection_cpu_parity_and_reuse():
     h = np.array([(d,f) for d in DISTANCES for f in (-.5,0,.5)])
     for ref in (0., 37.):
         earth = np.array([.3,-.8,.1])
-        actual, receipt = bank.project(ref,earth,h)
+        actual, receipt = bank.project(ref,earth,h,max_days=window)
         assert receipt['output_bytes'] == actual.nbytes
         for j,(d,f) in enumerate(h):
             expected = projected(t,u,du,obs,vel,ref,earth,d,f*np.sqrt(2*MU/d))
-            expected[np.abs(ref-t)>365] = np.nan
+            expected[np.abs(ref-t)>window] = np.nan
             np.testing.assert_array_equal(np.isfinite(actual[j]),np.isfinite(expected))
             good = np.isfinite(expected).all(axis=1)
             error = np.linalg.norm(np.cross(expected[good],actual[j,good]),axis=1)*ARCSEC

@@ -14,7 +14,7 @@ from magictools.itf.kernels import MU
 
 
 @cuda.jit(fastmath=False)
-def _project(t, u, du, observer, velocity, ref, earth, hypotheses, out):
+def _project(t, u, du, observer, velocity, ref, earth, hypotheses, max_days, out):
     i, h = cuda.grid(2)
     if i >= len(t) or h >= len(hypotheses):
         return
@@ -24,7 +24,7 @@ def _project(t, u, du, observer, velocity, ref, earth, hypotheses, out):
     distance, fraction = hypotheses[h, 0], hypotheses[h, 1]
     radial = fraction*math.sqrt(2*MU/distance)
     rho = distance-radial*dt
-    if abs(dt) > 365 or rho <= .001:
+    if abs(dt) > max_days or rho <= .001:
         return
     state = cuda.local.array(6, float64)
     for k in range(3):
@@ -63,9 +63,11 @@ class ProjectionBank:
         self.upload_seconds = time.perf_counter()-started
         self.input_bytes = sum(a.nbytes for a in arrays)
 
-    def project(self, ref, earth, hypotheses, *, max_output_bytes=256*1024**2):
+    def project(self, ref, earth, hypotheses, *, max_output_bytes=256*1024**2, max_days=365.):
         if not np.isfinite(ref):
             raise ValueError('Reference epoch must be finite')
+        if not np.isfinite(max_days) or max_days <= 0:
+            raise ValueError('Positive finite epoch window required')
         earth = _array(earth, (3,), 'earth')
         h = np.asarray(hypotheses)
         if h.ndim != 2 or h.shape[1] != 2:
@@ -81,7 +83,7 @@ class ProjectionBank:
         out = cuda.device_array(shape, dtype=np.float64)
         if self.n and len(h):
             _project[((self.n+127)//128, len(h)), (128, 1)](
-                *self.arrays, float(ref), cuda.to_device(earth), cuda.to_device(h), out)
+                *self.arrays, float(ref), cuda.to_device(earth), cuda.to_device(h), float(max_days), out)
         cuda.synchronize()
         evaluated = time.perf_counter()-started
         started = time.perf_counter()
