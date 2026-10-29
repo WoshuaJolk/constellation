@@ -1,0 +1,9 @@
+{
+  "research/solve_itf/gpu_distant_projection.py": "8b44c8a3a5b3ae958b6cf94d5b885d0ad39b80720b662e459f1fec552015f921",
+  "research/solve_itf/gpu_night_query.py": "2cac95c737cc9009cab88b3131351ff4db18e82d7e34aa54dac5c03b8d3815f6",
+  "research/solve_itf/benchmark_proposal_retrieval.py": "b6bd3ef30b0f33d2903a802793686a28843fe83801bf0b58b390b52231e294b0",
+  "research/solve_itf/prepare_proposal_retrieval_benchmark.py": "5c7ff2ee71237b5fedee58dfbab6d3ca91dc85169adffa7ce396011b8ee9b6ae",
+  "research/solve_itf/distant_coverage_plan.py": "f60b3b8ea6c83f4ec00222eb768b8b65e78420a9271e24d4cb7b5079abfbb5b9",
+  "tests/test_gpu_distant_projection.py": "b6f8863bcdee53c5277926b20e749a19166b95bf9ce536504f363a810909ca26",
+  "tests/test_gpu_night_query.py": "c7fd67d4a4dac04d2e94b7a4962acc682b1c666fba11f5c7a3e756b0f8452322"
+}

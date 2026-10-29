@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "projection": "All eligible rows within365d of floor(median eligible UTC/180)*180; if >131072, evenly spaced original ordinals. Distinct prefix sizes1024,16384,65536,full. All48 distance/radial hypotheses; no fit outcomes.",
+  "retrieval": "All finite local count>=2 tracklets, moved linearly to own UTC-night center; no magnitude or rate cut. 262144 evenly spaced source ordinals. Half query own night, half first available night >=365d later, terminal wrapped to first night. Radii1,60,360,3600arcsec cycle. These are geometry stress queries, not propagated orbits.",
+  "science": "All9 previously opened controls. Previously selected representative membership, every saved mode; first previously reserved later tracklet only. Anonymous query bank,120arcsec nominal center screening; refine every hit at actual detection timestamps/stations,30arcsec maximum per detection. Fixed engineering diagnostics, not a calibrated rule.",
+  "restrictions": "No refitting, no new source acquisition, no production search, no outcome-dependent replacement. Full ITF holdings plus explicitly inserted reserved controls; neither sky census nor untouched validation.",
+  "repeats": 3,
+  "cpu_threads": 20,
+  "projection_parity_arcsec": 1e-05,
+  "query_distance_tolerance": 1e-15,
+  "budget": {
+    "maximum_incremental_compute_usd": 5,
+    "maximum_worker_lifetime_seconds": 3600,
+    "workers": 1
+  }
+}

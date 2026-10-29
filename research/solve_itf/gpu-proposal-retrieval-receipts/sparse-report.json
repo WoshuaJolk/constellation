@@ -1,0 +1,345 @@
+{
+  "design": {
+    "projection_sha256": "5e1978e3b6c33a18cd22523d175f649533d7171d4488e31b9308e1341343b125",
+    "metadata_sha256": "e1d3276035918744a7127ae03d3c635581c61076aecfd654ca588d4fb1c892d0",
+    "sizes": [
+      4096,
+      16384
+    ],
+    "hypothesis_indices": [
+      6,
+      24,
+      45
+    ],
+    "repeats": 2,
+    "raw_neighbor_cap": 8000000,
+    "scope": "Proposal-stage implementation comparison only; identical frozen projection inputs. No production fitting. Shared top16 ties use original point index; any differing edges fail parity."
+  },
+  "runs": [
+    {
+      "size": 4096,
+      "hypothesis_index": 6,
+      "distance": 30.0,
+      "radial_fraction": -0.5,
+      "invalid": 0,
+      "repeats": [
+        {
+          "seconds": {
+            "nightly": 1.7587989799999946,
+            "shared": 0.012356194999995296
+          },
+          "counts": {
+            "nightly": {
+              "queries": 492778,
+              "calls": 80141
+            },
+            "shared": {
+              "queries": 8192,
+              "calls": 2,
+              "raw_neighbors": 10914
+            }
+          },
+          "edges": {
+            "nightly": 734,
+            "shared": 734
+          },
+          "parity": true
+        },
+        {
+          "seconds": {
+            "shared": 0.012240390999977535,
+            "nightly": 1.7642901410000036
+          },
+          "counts": {
+            "shared": {
+              "queries": 8192,
+              "calls": 2,
+              "raw_neighbors": 10914
+            },
+            "nightly": {
+              "queries": 492778,
+              "calls": 80141
+            }
+          },
+          "edges": {
+            "shared": 734,
+            "nightly": 734
+          },
+          "parity": true
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "size": 4096,
+      "hypothesis_index": 24,
+      "distance": 80.0,
+      "radial_fraction": -0.5,
+      "invalid": 0,
+      "repeats": [
+        {
+          "seconds": {
+            "nightly": 1.7384308879999821,
+            "shared": 0.01240980599999375
+          },
+          "counts": {
+            "nightly": {
+              "queries": 492778,
+              "calls": 80141
+            },
+            "shared": {
+              "queries": 8192,
+              "calls": 2,
+              "raw_neighbors": 10886
+            }
+          },
+          "edges": {
+            "nightly": 742,
+            "shared": 742
+          },
+          "parity": true
+        },
+        {
+          "seconds": {
+            "shared": 0.01228242100000898,
+            "nightly": 1.7624969130000068
+          },
+          "counts": {
+            "shared": {
+              "queries": 8192,
+              "calls": 2,
+              "raw_neighbors": 10886
+            },
+            "nightly": {
+              "queries": 492778,
+              "calls": 80141
+            }
+          },
+          "edges": {
+            "shared": 742,
+            "nightly": 742
+          },
+          "parity": true
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "size": 4096,
+      "hypothesis_index": 45,
+      "distance": 2000.0,
+      "radial_fraction": -0.5,
+      "invalid": 0,
+      "repeats": [
+        {
+          "seconds": {
+            "nightly": 1.7516791859999898,
+            "shared": 0.012648064000018167
+          },
+          "counts": {
+            "nightly": {
+              "queries": 492778,
+              "calls": 80141
+            },
+            "shared": {
+              "queries": 8192,
+              "calls": 2,
+              "raw_neighbors": 11038
+            }
+          },
+          "edges": {
+            "nightly": 776,
+            "shared": 776
+          },
+          "parity": true
+        },
+        {
+          "seconds": {
+            "shared": 0.012323899000023175,
+            "nightly": 1.7607368029999861
+          },
+          "counts": {
+            "shared": {
+              "queries": 8192,
+              "calls": 2,
+              "raw_neighbors": 11038
+            },
+            "nightly": {
+              "queries": 492778,
+              "calls": 80141
+            }
+          },
+          "edges": {
+            "shared": 776,
+            "nightly": 776
+          },
+          "parity": true
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "size": 16384,
+      "hypothesis_index": 6,
+      "distance": 30.0,
+      "radial_fraction": -0.5,
+      "invalid": 0,
+      "repeats": [
+        {
+          "seconds": {
+            "nightly": 2.8970634470000505,
+            "shared": 0.0847999229999914
+          },
+          "counts": {
+            "nightly": {
+              "queries": 2401889,
+              "calls": 113590
+            },
+            "shared": {
+              "queries": 32768,
+              "calls": 2,
+              "raw_neighbors": 127394
+            }
+          },
+          "edges": {
+            "nightly": 11388,
+            "shared": 11388
+          },
+          "parity": true
+        },
+        {
+          "seconds": {
+            "shared": 0.08375040299995362,
+            "nightly": 2.909381020000012
+          },
+          "counts": {
+            "shared": {
+              "queries": 32768,
+              "calls": 2,
+              "raw_neighbors": 127394
+            },
+            "nightly": {
+              "queries": 2401889,
+              "calls": 113590
+            }
+          },
+          "edges": {
+            "shared": 11388,
+            "nightly": 11388
+          },
+          "parity": true
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "size": 16384,
+      "hypothesis_index": 24,
+      "distance": 80.0,
+      "radial_fraction": -0.5,
+      "invalid": 0,
+      "repeats": [
+        {
+          "seconds": {
+            "nightly": 2.9065304129999845,
+            "shared": 0.08449303600002622
+          },
+          "counts": {
+            "nightly": {
+              "queries": 2401889,
+              "calls": 113590
+            },
+            "shared": {
+              "queries": 32768,
+              "calls": 2,
+              "raw_neighbors": 129238
+            }
+          },
+          "edges": {
+            "nightly": 11588,
+            "shared": 11588
+          },
+          "parity": true
+        },
+        {
+          "seconds": {
+            "shared": 0.12112760400003708,
+            "nightly": 2.9233341249999967
+          },
+          "counts": {
+            "shared": {
+              "queries": 32768,
+              "calls": 2,
+              "raw_neighbors": 129238
+            },
+            "nightly": {
+              "queries": 2401889,
+              "calls": 113590
+            }
+          },
+          "edges": {
+            "shared": 11588,
+            "nightly": 11588
+          },
+          "parity": true
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "size": 16384,
+      "hypothesis_index": 45,
+      "distance": 2000.0,
+      "radial_fraction": -0.5,
+      "invalid": 0,
+      "repeats": [
+        {
+          "seconds": {
+            "nightly": 2.923408230000007,
+            "shared": 0.08348819400004004
+          },
+          "counts": {
+            "nightly": {
+              "queries": 2401889,
+              "calls": 113590
+            },
+            "shared": {
+              "queries": 32768,
+              "calls": 2,
+              "raw_neighbors": 129340
+            }
+          },
+          "edges": {
+            "nightly": 11226,
+            "shared": 11226
+          },
+          "parity": true
+        },
+        {
+          "seconds": {
+            "shared": 0.083083232999968,
+            "nightly": 2.8997836350000057
+          },
+          "counts": {
+            "shared": {
+              "queries": 32768,
+              "calls": 2,
+              "raw_neighbors": 129340
+            },
+            "nightly": {
+              "queries": 2401889,
+              "calls": 113590
+            }
+          },
+          "edges": {
+            "shared": 11226,
+            "nightly": 11226
+          },
+          "parity": true
+        }
+      ],
+      "status": "completed"
+    }
+  ],
+  "status": "completed"
+}

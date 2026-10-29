@@ -1,0 +1,89 @@
+[
+  {
+    "case": 1,
+    "mode": 0,
+    "gap_days": 321.18342155980645,
+    "state_sha256": "52493c321de367883818207b995e9d8f6987cd0fdec8f14881abf3456ed1f2a4",
+    "retrieved_tracklets": 0,
+    "details": []
+  },
+  {
+    "case": 2,
+    "mode": 0,
+    "gap_days": 310.5845799828021,
+    "state_sha256": "68d43d73d60db77bb5129c00ecc9f79fd00df620929b87303390bcf4350e7d3b",
+    "retrieved_tracklets": 0,
+    "details": []
+  },
+  {
+    "case": 3,
+    "mode": 0,
+    "gap_days": 330.85455000039656,
+    "state_sha256": "70e894a16e7827449a44c356e7d96281e7eff7b92643673d40a34f91d596b73c",
+    "retrieved_tracklets": 1,
+    "details": [
+      {
+        "tracklet": 2548310,
+        "observations": 2,
+        "residuals_arcsec": [
+          7.363420294756645,
+          7.1271545681953565
+        ],
+        "rms_arcsec": 7.246250433023343,
+        "within_fixed_30arcsec": true,
+        "status": "predicted"
+      }
+    ]
+  },
+  {
+    "case": 6,
+    "mode": 0,
+    "gap_days": 247.24821002425597,
+    "state_sha256": "08f6a3a7cc62b8584b41e2f6eb9f0166ef6ef8751cd5614ab39f8bf8f4bf55e5",
+    "retrieved_tracklets": 1,
+    "details": [
+      {
+        "tracklet": 2548313,
+        "observations": 4,
+        "residuals_arcsec": [
+          6.200646864517819,
+          6.043197731986979,
+          5.911204068250927,
+          5.977021701981718
+        ],
+        "rms_arcsec": 6.0339742775556715,
+        "within_fixed_30arcsec": true,
+        "status": "predicted"
+      }
+    ]
+  },
+  {
+    "case": 7,
+    "mode": 0,
+    "gap_days": 299.0073699855566,
+    "state_sha256": "dda98c5d8934b96768f3567ea06cb1335758fb5db1b7f4905ef45c0c13b89268",
+    "retrieved_tracklets": 1,
+    "details": [
+      {
+        "tracklet": 2548314,
+        "observations": 3,
+        "residuals_arcsec": [
+          2.5971998119441047,
+          2.641559924619934,
+          2.624431720723948
+        ],
+        "rms_arcsec": 2.621127464486903,
+        "within_fixed_30arcsec": true,
+        "status": "predicted"
+      }
+    ]
+  },
+  {
+    "case": 8,
+    "mode": 0,
+    "gap_days": 567.1966225528449,
+    "state_sha256": "8992227281fb51d67e0b12f607a50a9604ee20fe8cdac0054b60fc2a0c85bb30",
+    "retrieved_tracklets": 0,
+    "details": []
+  }
+]

@@ -1,0 +1,13 @@
+.....                                                                    [100%]
+=============================== warnings summary ===============================
+tests/test_gpu_distant_projection.py::test_resident_projection_cpu_parity_and_reuse
+  /workspace/constellation/.venv/lib/python3.10/site-packages/numba_cuda/numba/cuda/dispatcher.py:748: NumbaPerformanceWarning: Grid size 48 will likely result in GPU under-utilization due to low occupancy.
+    warn(errors.NumbaPerformanceWarning(msg))
+
+tests/test_gpu_night_query.py::test_exact_hits_order_empty_boundary_duplicates_and_overflow
+tests/test_gpu_night_query.py::test_exact_hits_order_empty_boundary_duplicates_and_overflow
+  /workspace/constellation/.venv/lib/python3.10/site-packages/numba_cuda/numba/cuda/dispatcher.py:748: NumbaPerformanceWarning: Grid size 1 will likely result in GPU under-utilization due to low occupancy.
+    warn(errors.NumbaPerformanceWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 3 warnings in 6.64s

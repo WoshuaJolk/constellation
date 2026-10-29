@@ -1,0 +1,73 @@
+{
+  "verified_unix": 1793249163.9686046,
+  "files": {
+    "results/report.json": {
+      "sha256": "f7ed3da564f66349168b5d5bf484a2f478938b5d1f471052839424d0990ff65d",
+      "bytes": 12651
+    },
+    "results/science-refined.json": {
+      "sha256": "26769445bf9cd2ef7cfc9e1e6fdf57a60ff8b7c3e81352f45088fcbdbf980c2c",
+      "bytes": 2210
+    },
+    "results/science-retrieved.npz": {
+      "sha256": "7401b531fb6ca03dab0456f53e37981c984b3a01d22dcda0dd73e5e995399345",
+      "bytes": 657
+    },
+    "results/design.json": {
+      "sha256": "d65f8605e101c3cdc87990e7740b28d77957a0158e7eb572ad07225e869c9f0b",
+      "bytes": 1410
+    },
+    "results/epoch-pipeline/report.json": {
+      "sha256": "afaf436553ac5bc8f9c46c5b223f194c7da6ba9a9954bbb1a2f7c0a1183e0f45",
+      "bytes": 100220
+    },
+    "results/epoch-pipeline/edges-evidence.tar.gz": {
+      "sha256": "aabb7f7d53f759efa79cc5ce603996abb9f11dae660469fa4054e097020413fd",
+      "bytes": 241803344
+    },
+    "results/epoch-pipeline/design.json": {
+      "sha256": "6854c463f2471dffc06e1ed701189521ed39741ec7fffee4752df20569aa8514",
+      "bytes": 535
+    },
+    "results/sparse/report.json": {
+      "sha256": "0063f4f519643d30b8e1080cc0acc8743b3157c81ebea8de88e960bf5156a9bb",
+      "bytes": 8102
+    },
+    "results/sparse/design.json": {
+      "sha256": "7730730db8d315760d95bfcbe6caba41621ef503aba992b37bcf7a0f08ee375f",
+      "bytes": 517
+    },
+    "hardware.json": {
+      "sha256": "361d67de24511cb2eb3ff01088480d6a40cb564b862088a7fab11e5adc29bcb8",
+      "bytes": 460
+    },
+    "gpu-tests.log": {
+      "sha256": "3e6f6778baf05ce40fac5bac7016916accf897da3e48e4763b5f72f243de7b59",
+      "bytes": 1038
+    },
+    "utilization.jsonl": {
+      "sha256": "71e643b0bb3f3e3457229b71e8dc682ff0dd63a0b3505917ce007136a089f5dd",
+      "bytes": 9503
+    },
+    "transfer-verification.json": {
+      "sha256": "b402eeb0bb8bd16877f2d97e3fc849b95db6dddc2da882911ea4d9dfa916124c",
+      "bytes": 528
+    },
+    ".remote/gpufit.log": {
+      "sha256": "5b157499c5abbf9ece08665346e9fb88a112f4a4b5e808f904307de7703d41b7",
+      "bytes": 13352
+    },
+    ".remote/sparsejoin.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    ".remote/epochpipeline.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    ".remote/metrics.log": {
+      "sha256": "e7c039284e4dc585a03ced6b250247ed0bef59066759fa0859e972d850170b56",
+      "bytes": 228
+    }
+  }
+}
