@@ -1,0 +1,46 @@
+{
+  "prior-followup-digests.json": {
+    "sha256": "b926f868568d5982812356fc0607ebb65741f4e89fad14c901aa9695288121fe",
+    "bytes": 12852
+  },
+  "tracklet-magnitude.npy": {
+    "sha256": "3ee0e19887642008b2399aad26b06330f061c86e04631c8984e1a411df3011a9",
+    "bytes": 10193356
+  },
+  "general-candidates.json.gz": {
+    "sha256": "99eafdb731d58bd839ed66fc4ca629d25ddd637b42a58a671a6e8afb8efcbd03",
+    "bytes": 16073643
+  },
+  "run-search.py": {
+    "sha256": "bc6fa1c09b563e16bf43ab63c7d62984a3ce33746593bb16bb678a907a9b0698",
+    "bytes": 3307
+  },
+  "mission-code-manifest.json": {
+    "sha256": "b1c8737302a244b7361e0ac33bfc2b25cb53cf10b363f3a7cae0cbee2d87faf5",
+    "bytes": 22650
+  },
+  "de440s.bsp": {
+    "sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+    "bytes": 32726016
+  },
+  "frozen-graph.npy": {
+    "sha256": "003d2295c415af071db031b4189775a75b222f8b18a675092906b063f5278984",
+    "bytes": 96000128
+  },
+  "frozen-graph-receipt.json": {
+    "sha256": "45e06f46ffd6f48cc7e9030d4f33b68abb61913dc05bc97fdef6f631a564a8f4",
+    "bytes": 11956
+  },
+  "frozen-seeds.npy": {
+    "sha256": "88b2ba7422828e4890a9cde905865085d598db1abc0affa95336202b337f88b3",
+    "bytes": 168000128
+  },
+  "frozen-seed-receipt.json": {
+    "sha256": "f6dbd88566e8b830e97d7df9a1da6513f363bcb08a3169388d97f7ff7b5f8954",
+    "bytes": 796
+  },
+  "control-orbit-recovery.json": {
+    "sha256": "f615eac5243efc7a2ee88c6c66186cba7d245c9f53e70d133341bbb71b6cb46f",
+    "bytes": 6559
+  }
+}
