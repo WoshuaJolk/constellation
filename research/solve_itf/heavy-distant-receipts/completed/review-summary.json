@@ -1,0 +1,24 @@
+{
+  "reviewed_unix": 1793240782.0877676,
+  "status": "Bounded run and cleanup finished; scientific coverage partial",
+  "seed_queue": 7000000,
+  "seed_fits_completed": 6352896,
+  "uncompleted_seeds": 647104,
+  "submitted_without_returned_results": 5120,
+  "numerically_retained_chain_rows": 4502,
+  "additional_memberships_vs_supplied_baseline": 4159,
+  "planetary_followup": {
+    "selected": 147,
+    "searched": 122,
+    "partial_failure": 24,
+    "numerical_failure": 1,
+    "unique_output_memberships": 36,
+    "best_bound_distant_memberships": 23,
+    "overlap_families": 5,
+    "families_disjoint_from_previous_bound_followup": 2
+  },
+  "estimated_total_compute_usd": 4.96254309822917,
+  "current_droplets": [],
+  "large_body_assessment": "No convincing new dwarf-planet-sized lead from completed followup. The two added families are faint, nominally~41AU. An older brightness-favored candidate remains weak and is not a new result. Size and identity unconfirmed.",
+  "coverage": "Original proposal partitions and graph caps were reached; fit budget also reached. Missing work is uncomputed/unreturned, not a rejection."
+}

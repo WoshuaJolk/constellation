@@ -1,0 +1,8 @@
+{
+  "rule": "Median of all finite nonconflicting reported magnitudes; no band conversion. Only scheduling priority, no size/acceptance claim. Missing magnitudes retain ordinary lane access.",
+  "tracklets": 2548307,
+  "with_magnitude": 2524737,
+  "at_most22_5": 1912199,
+  "seconds": 79.33108744799392,
+  "output_sha256": "3ee0e19887642008b2399aad26b06330f061c86e04631c8984e1a411df3011a9"
+}

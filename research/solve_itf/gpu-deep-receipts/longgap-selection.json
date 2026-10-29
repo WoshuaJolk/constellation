@@ -1,0 +1,14 @@
+{
+  "source": "/workspace/constellation/runs/solve-itf-seven-million-recovery-cascade-reuse/report.json.gz",
+  "source_sha256": "6caf59a7a25fd447e1d20bd672cfe129d542714437a262b277059f6680a26473",
+  "rows_visited": 25724,
+  "unique_eligible_modes": 51903,
+  "missing_covariance_modes": 0,
+  "selected": 541,
+  "roles": {
+    "ordinary": 512,
+    "distant": 32,
+    "retrograde": 32
+  },
+  "selected_sha256": "1dbb6532bcbe66035fc8e0339b9ed753a76cebce858c004679cf0183e97cf5f0"
+}

@@ -1,0 +1,201 @@
+{
+  "status": "completed",
+  "compute_usd": 1.1073626501381397,
+  "projection": [
+    {
+      "size": 1024,
+      "median_seconds": {
+        "cpu1": 0.037282089000001406,
+        "cpu20": 0.002868721999988111,
+        "gpu": 0.0023038470000074085
+      },
+      "speedup_vs_cpu1": 16.182536861120344,
+      "speedup_vs_cpu20": 1.245187722960286
+    },
+    {
+      "size": 16384,
+      "median_seconds": {
+        "cpu1": 0.6236474669999836,
+        "cpu20": 0.045421253999990086,
+        "gpu": 0.015788141000001588
+      },
+      "speedup_vs_cpu1": 39.50100692664962,
+      "speedup_vs_cpu20": 2.876922241826034
+    },
+    {
+      "size": 50497,
+      "median_seconds": {
+        "cpu1": 1.9119923590000099,
+        "cpu20": 0.1386763060000078,
+        "gpu": 0.056400369000016326
+      },
+      "speedup_vs_cpu1": 33.900351946269296,
+      "speedup_vs_cpu20": 2.458783665049561
+    }
+  ],
+  "retrieval": [
+    {
+      "size": 8192,
+      "median_seconds": {
+        "cpu1": 0.0009056359999988217,
+        "cpu20": 0.0020842720000189274,
+        "gpu": 0.00242959900000983
+      },
+      "speedup_vs_cpu1": 0.3727512235538283,
+      "speedup_vs_cpu20": 0.8578666685368633
+    },
+    {
+      "size": 65536,
+      "median_seconds": {
+        "cpu1": 0.011550259000017604,
+        "cpu20": 0.0038433869999892067,
+        "gpu": 0.006604215000010072
+      },
+      "speedup_vs_cpu1": 1.748922317035407,
+      "speedup_vs_cpu20": 0.58195970300533
+    },
+    {
+      "size": 262144,
+      "median_seconds": {
+        "cpu1": 0.04781672600000775,
+        "cpu20": 0.008120824999991783,
+        "gpu": 0.01728531200001271
+      },
+      "speedup_vs_cpu1": 2.766321255871609,
+      "speedup_vs_cpu20": 0.46981072716453204
+    }
+  ],
+  "epoch_pipeline": {
+    "median_seconds": {
+      "cpu": 15.877677844999994,
+      "gpu": 2.0614602900000136
+    },
+    "speedup": 7.702150714239511,
+    "hypotheses": 48,
+    "tracklets": 50497,
+    "comparisons_passed": 96,
+    "scope": "Warm stage timing,20CPUworkers both paths; context/compilation/resident upload separately reported. Not whole linker timing."
+  },
+  "controls": [
+    {
+      "case": 0,
+      "name": "Eros",
+      "identity": "00433",
+      "reserved_tracklet": 2548307,
+      "status": "not_recovered",
+      "modes": []
+    },
+    {
+      "case": 1,
+      "name": "Pholus",
+      "identity": "05145",
+      "reserved_tracklet": 2548308,
+      "status": "recovered",
+      "modes": [
+        {
+          "mode": 0,
+          "retrieved": 0,
+          "reserved_screened": false,
+          "reserved_refined": false,
+          "other_refined_hits": 0
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "name": "111309",
+      "identity": "B1309",
+      "reserved_tracklet": 2548309,
+      "status": "recovered",
+      "modes": [
+        {
+          "mode": 0,
+          "retrieved": 0,
+          "reserved_screened": false,
+          "reserved_refined": false,
+          "other_refined_hits": 0
+        }
+      ]
+    },
+    {
+      "case": 3,
+      "name": "2008 KV42 (retrograde TNO)",
+      "identity": "q8219",
+      "reserved_tracklet": 2548310,
+      "status": "recovered",
+      "modes": [
+        {
+          "mode": 0,
+          "retrieved": 1,
+          "reserved_screened": true,
+          "reserved_refined": true,
+          "other_refined_hits": 0
+        }
+      ]
+    },
+    {
+      "case": 4,
+      "name": "Vesta",
+      "identity": "00004",
+      "reserved_tracklet": 2548311,
+      "status": "not_recovered",
+      "modes": []
+    },
+    {
+      "case": 5,
+      "name": "Toro",
+      "identity": "01685",
+      "reserved_tracklet": 2548312,
+      "status": "not_recovered",
+      "modes": []
+    },
+    {
+      "case": 6,
+      "name": "Chiron",
+      "identity": "02060",
+      "reserved_tracklet": 2548313,
+      "status": "recovered",
+      "modes": [
+        {
+          "mode": 0,
+          "retrieved": 1,
+          "reserved_screened": true,
+          "reserved_refined": true,
+          "other_refined_hits": 0
+        }
+      ]
+    },
+    {
+      "case": 7,
+      "name": "Varuna",
+      "identity": "20000",
+      "reserved_tracklet": 2548314,
+      "status": "recovered",
+      "modes": [
+        {
+          "mode": 0,
+          "retrieved": 1,
+          "reserved_screened": true,
+          "reserved_refined": true,
+          "other_refined_hits": 0
+        }
+      ]
+    },
+    {
+      "case": 8,
+      "name": "514107 (retrograde co-orbital)",
+      "identity": "p4107",
+      "reserved_tracklet": 2548315,
+      "status": "recovered",
+      "modes": [
+        {
+          "mode": 0,
+          "retrieved": 0,
+          "reserved_screened": false,
+          "reserved_refined": false,
+          "other_refined_hits": 0
+        }
+      ]
+    }
+  ]
+}

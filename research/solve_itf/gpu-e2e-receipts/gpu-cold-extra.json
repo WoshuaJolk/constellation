@@ -1,0 +1,8912 @@
+{
+  "backend": "gpu",
+  "seed_count": 10000,
+  "seed_sha256": "7c801be199b56be8406b28057e8aa70c77018564f260243aa3d0e5b7bc63be7c",
+  "batch_size": 128,
+  "batch_receipts": [
+    {
+      "chains": 128,
+      "starts": 3212,
+      "planning_seconds": 0.7414848650000181,
+      "gpu_setup_seconds": 0.3574476780000282,
+      "gpu_solve_profile": {
+        "wall_seconds": 6.690144961999977,
+        "state_upload_seconds": 0.0001856509999811351,
+        "workspace_setup_seconds": 0.3574476780000282,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 6.689524136999978,
+        "final_download_seconds": 0.0004324790000396206,
+        "completion_checks": [
+          [
+            4,
+            3212
+          ],
+          [
+            8,
+            3212
+          ],
+          [
+            12,
+            3202
+          ],
+          [
+            16,
+            3130
+          ],
+          [
+            20,
+            2407
+          ],
+          [
+            24,
+            1795
+          ],
+          [
+            28,
+            1341
+          ],
+          [
+            32,
+            1050
+          ],
+          [
+            36,
+            909
+          ],
+          [
+            40,
+            822
+          ],
+          [
+            44,
+            761
+          ],
+          [
+            48,
+            723
+          ],
+          [
+            52,
+            690
+          ],
+          [
+            56,
+            678
+          ],
+          [
+            60,
+            621
+          ],
+          [
+            64,
+            579
+          ],
+          [
+            68,
+            521
+          ],
+          [
+            72,
+            482
+          ],
+          [
+            76,
+            460
+          ],
+          [
+            80,
+            442
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 3.244308673999967,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 9.417849472,
+      "execution_seconds": 19.709776986999998,
+      "serial_planning_plus_execution_seconds": 20.451262083000017
+    },
+    {
+      "chains": 128,
+      "starts": 3232,
+      "planning_seconds": 0.0641903609999872,
+      "gpu_setup_seconds": 0.009794902000010097,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05937701300001663,
+        "state_upload_seconds": 0.0001747800000089228,
+        "workspace_setup_seconds": 0.009794902000010097,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05878401800003985,
+        "final_download_seconds": 0.0004158259999940128,
+        "completion_checks": [
+          [
+            4,
+            3232
+          ],
+          [
+            8,
+            3222
+          ],
+          [
+            12,
+            3047
+          ],
+          [
+            16,
+            3027
+          ],
+          [
+            20,
+            2676
+          ],
+          [
+            24,
+            2136
+          ],
+          [
+            28,
+            1692
+          ],
+          [
+            32,
+            1339
+          ],
+          [
+            36,
+            1159
+          ],
+          [
+            40,
+            993
+          ],
+          [
+            44,
+            890
+          ],
+          [
+            48,
+            801
+          ],
+          [
+            52,
+            717
+          ],
+          [
+            56,
+            669
+          ],
+          [
+            60,
+            620
+          ],
+          [
+            64,
+            584
+          ],
+          [
+            68,
+            566
+          ],
+          [
+            72,
+            551
+          ],
+          [
+            76,
+            533
+          ],
+          [
+            80,
+            521
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010974143999987973,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.07445516600000701,
+      "execution_seconds": 0.15462349900002437,
+      "serial_planning_plus_execution_seconds": 0.21881423399997857
+    },
+    {
+      "chains": 128,
+      "starts": 3218,
+      "planning_seconds": 0.06420227500001374,
+      "gpu_setup_seconds": 0.009458758999983274,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.058781371999998555,
+        "state_upload_seconds": 0.00018819799998937015,
+        "workspace_setup_seconds": 0.009458758999983274,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058168055999999524,
+        "final_download_seconds": 0.00042223500003046865,
+        "completion_checks": [
+          [
+            4,
+            3217
+          ],
+          [
+            8,
+            3209
+          ],
+          [
+            12,
+            2968
+          ],
+          [
+            16,
+            2907
+          ],
+          [
+            20,
+            2602
+          ],
+          [
+            24,
+            2062
+          ],
+          [
+            28,
+            1657
+          ],
+          [
+            32,
+            1261
+          ],
+          [
+            36,
+            993
+          ],
+          [
+            40,
+            856
+          ],
+          [
+            44,
+            766
+          ],
+          [
+            48,
+            695
+          ],
+          [
+            52,
+            652
+          ],
+          [
+            56,
+            601
+          ],
+          [
+            60,
+            552
+          ],
+          [
+            64,
+            507
+          ],
+          [
+            68,
+            487
+          ],
+          [
+            72,
+            471
+          ],
+          [
+            76,
+            450
+          ],
+          [
+            80,
+            424
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011045169999988502,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.07554573900000605,
+      "execution_seconds": 0.1548522710000384,
+      "serial_planning_plus_execution_seconds": 0.21905492000001914
+    },
+    {
+      "chains": 128,
+      "starts": 3237,
+      "planning_seconds": 0.06481661299994812,
+      "gpu_setup_seconds": 0.009549375000005966,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05867544599999519,
+        "state_upload_seconds": 0.00019339200002832513,
+        "workspace_setup_seconds": 0.009549375000005966,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.0580588909999733,
+        "final_download_seconds": 0.0004205380000144032,
+        "completion_checks": [
+          [
+            4,
+            3222
+          ],
+          [
+            8,
+            3183
+          ],
+          [
+            12,
+            2944
+          ],
+          [
+            16,
+            2894
+          ],
+          [
+            20,
+            2606
+          ],
+          [
+            24,
+            2147
+          ],
+          [
+            28,
+            1742
+          ],
+          [
+            32,
+            1421
+          ],
+          [
+            36,
+            1191
+          ],
+          [
+            40,
+            1046
+          ],
+          [
+            44,
+            956
+          ],
+          [
+            48,
+            876
+          ],
+          [
+            52,
+            801
+          ],
+          [
+            56,
+            773
+          ],
+          [
+            60,
+            736
+          ],
+          [
+            64,
+            706
+          ],
+          [
+            68,
+            675
+          ],
+          [
+            72,
+            651
+          ],
+          [
+            76,
+            642
+          ],
+          [
+            80,
+            633
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011069936000012603,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.06631587599997602,
+      "execution_seconds": 0.1456350470000416,
+      "serial_planning_plus_execution_seconds": 0.2104520699999739
+    },
+    {
+      "chains": 128,
+      "starts": 3201,
+      "planning_seconds": 0.4308454700000084,
+      "gpu_setup_seconds": 0.01004181600001175,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.058642624000015076,
+        "state_upload_seconds": 0.00018988200002922895,
+        "workspace_setup_seconds": 0.01004181600001175,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058028758000034486,
+        "final_download_seconds": 0.0004213729999946736,
+        "completion_checks": [
+          [
+            4,
+            3183
+          ],
+          [
+            8,
+            3158
+          ],
+          [
+            12,
+            2961
+          ],
+          [
+            16,
+            2881
+          ],
+          [
+            20,
+            2560
+          ],
+          [
+            24,
+            2179
+          ],
+          [
+            28,
+            1807
+          ],
+          [
+            32,
+            1558
+          ],
+          [
+            36,
+            1348
+          ],
+          [
+            40,
+            1207
+          ],
+          [
+            44,
+            1084
+          ],
+          [
+            48,
+            981
+          ],
+          [
+            52,
+            937
+          ],
+          [
+            56,
+            892
+          ],
+          [
+            60,
+            847
+          ],
+          [
+            64,
+            817
+          ],
+          [
+            68,
+            790
+          ],
+          [
+            72,
+            764
+          ],
+          [
+            76,
+            745
+          ],
+          [
+            80,
+            707
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.0111588110000298,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.060487709000028644,
+      "execution_seconds": 0.14035406400000738,
+      "serial_planning_plus_execution_seconds": 0.5711997690000317
+    },
+    {
+      "chains": 128,
+      "starts": 3226,
+      "planning_seconds": 0.06466743200002156,
+      "gpu_setup_seconds": 0.011241225999981452,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05924405199999683,
+        "state_upload_seconds": 0.00018148599997402926,
+        "workspace_setup_seconds": 0.011241225999981452,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058642195999993874,
+        "final_download_seconds": 0.0004174410000246098,
+        "completion_checks": [
+          [
+            4,
+            3210
+          ],
+          [
+            8,
+            3176
+          ],
+          [
+            12,
+            2769
+          ],
+          [
+            16,
+            2685
+          ],
+          [
+            20,
+            2477
+          ],
+          [
+            24,
+            2157
+          ],
+          [
+            28,
+            1827
+          ],
+          [
+            32,
+            1553
+          ],
+          [
+            36,
+            1316
+          ],
+          [
+            40,
+            1145
+          ],
+          [
+            44,
+            988
+          ],
+          [
+            48,
+            844
+          ],
+          [
+            52,
+            753
+          ],
+          [
+            56,
+            697
+          ],
+          [
+            60,
+            654
+          ],
+          [
+            64,
+            615
+          ],
+          [
+            68,
+            587
+          ],
+          [
+            72,
+            558
+          ],
+          [
+            76,
+            531
+          ],
+          [
+            80,
+            516
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010869273000025714,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.07702025899999398,
+      "execution_seconds": 0.15839976899997055,
+      "serial_planning_plus_execution_seconds": 0.22306744600001593
+    },
+    {
+      "chains": 128,
+      "starts": 3232,
+      "planning_seconds": 0.06537218199997596,
+      "gpu_setup_seconds": 0.011164588999974967,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.0591816060000383,
+        "state_upload_seconds": 0.0001920830000017304,
+        "workspace_setup_seconds": 0.011164588999974967,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05855635799997572,
+        "final_download_seconds": 0.00043067600000767925,
+        "completion_checks": [
+          [
+            4,
+            3232
+          ],
+          [
+            8,
+            3223
+          ],
+          [
+            12,
+            2394
+          ],
+          [
+            16,
+            2377
+          ],
+          [
+            20,
+            2336
+          ],
+          [
+            24,
+            2129
+          ],
+          [
+            28,
+            1901
+          ],
+          [
+            32,
+            1624
+          ],
+          [
+            36,
+            1314
+          ],
+          [
+            40,
+            1057
+          ],
+          [
+            44,
+            873
+          ],
+          [
+            48,
+            740
+          ],
+          [
+            52,
+            613
+          ],
+          [
+            56,
+            547
+          ],
+          [
+            60,
+            490
+          ],
+          [
+            64,
+            434
+          ],
+          [
+            68,
+            402
+          ],
+          [
+            72,
+            365
+          ],
+          [
+            76,
+            347
+          ],
+          [
+            80,
+            336
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01089084099999127,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.09655964400002404,
+      "execution_seconds": 0.1778202790000023,
+      "serial_planning_plus_execution_seconds": 0.2431927959999598
+    },
+    {
+      "chains": 128,
+      "starts": 3242,
+      "planning_seconds": 0.06582783199996811,
+      "gpu_setup_seconds": 0.01164416300002813,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05992207999997845,
+        "state_upload_seconds": 0.00018442999999024323,
+        "workspace_setup_seconds": 0.01164416300002813,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.0593198650000204,
+        "final_download_seconds": 0.0004150069999582229,
+        "completion_checks": [
+          [
+            4,
+            3242
+          ],
+          [
+            8,
+            3217
+          ],
+          [
+            12,
+            2450
+          ],
+          [
+            16,
+            2435
+          ],
+          [
+            20,
+            2388
+          ],
+          [
+            24,
+            2194
+          ],
+          [
+            28,
+            1941
+          ],
+          [
+            32,
+            1604
+          ],
+          [
+            36,
+            1260
+          ],
+          [
+            40,
+            1011
+          ],
+          [
+            44,
+            839
+          ],
+          [
+            48,
+            665
+          ],
+          [
+            52,
+            561
+          ],
+          [
+            56,
+            468
+          ],
+          [
+            60,
+            426
+          ],
+          [
+            64,
+            390
+          ],
+          [
+            68,
+            350
+          ],
+          [
+            72,
+            327
+          ],
+          [
+            76,
+            309
+          ],
+          [
+            80,
+            279
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01081317100005208,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.10384091299999909,
+      "execution_seconds": 0.18624218500002598,
+      "serial_planning_plus_execution_seconds": 0.2520702559999677
+    },
+    {
+      "chains": 128,
+      "starts": 3251,
+      "planning_seconds": 0.06517772300003344,
+      "gpu_setup_seconds": 0.011598413999990953,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05951755899997124,
+        "state_upload_seconds": 0.00019719199997325632,
+        "workspace_setup_seconds": 0.011598413999990953,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05890294400001039,
+        "final_download_seconds": 0.00041456799999650684,
+        "completion_checks": [
+          [
+            4,
+            3244
+          ],
+          [
+            8,
+            3238
+          ],
+          [
+            12,
+            2468
+          ],
+          [
+            16,
+            2465
+          ],
+          [
+            20,
+            2438
+          ],
+          [
+            24,
+            2209
+          ],
+          [
+            28,
+            1911
+          ],
+          [
+            32,
+            1563
+          ],
+          [
+            36,
+            1222
+          ],
+          [
+            40,
+            941
+          ],
+          [
+            44,
+            783
+          ],
+          [
+            48,
+            668
+          ],
+          [
+            52,
+            563
+          ],
+          [
+            56,
+            506
+          ],
+          [
+            60,
+            472
+          ],
+          [
+            64,
+            422
+          ],
+          [
+            68,
+            373
+          ],
+          [
+            72,
+            346
+          ],
+          [
+            76,
+            314
+          ],
+          [
+            80,
+            295
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011723062999976719,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.10153131399999893,
+      "execution_seconds": 0.18439283899999737,
+      "serial_planning_plus_execution_seconds": 0.2495708190000414
+    },
+    {
+      "chains": 128,
+      "starts": 3232,
+      "planning_seconds": 0.06464452000000165,
+      "gpu_setup_seconds": 0.01129174499999408,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.058906951999972534,
+        "state_upload_seconds": 0.00018469299999424038,
+        "workspace_setup_seconds": 0.01129174499999408,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05829232299998921,
+        "final_download_seconds": 0.0004271919999609963,
+        "completion_checks": [
+          [
+            4,
+            3223
+          ],
+          [
+            8,
+            3218
+          ],
+          [
+            12,
+            2452
+          ],
+          [
+            16,
+            2421
+          ],
+          [
+            20,
+            2374
+          ],
+          [
+            24,
+            2162
+          ],
+          [
+            28,
+            1949
+          ],
+          [
+            32,
+            1654
+          ],
+          [
+            36,
+            1352
+          ],
+          [
+            40,
+            1106
+          ],
+          [
+            44,
+            886
+          ],
+          [
+            48,
+            715
+          ],
+          [
+            52,
+            619
+          ],
+          [
+            56,
+            571
+          ],
+          [
+            60,
+            523
+          ],
+          [
+            64,
+            493
+          ],
+          [
+            68,
+            469
+          ],
+          [
+            72,
+            439
+          ],
+          [
+            76,
+            415
+          ],
+          [
+            80,
+            400
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01211676999997735,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.09660144200000786,
+      "execution_seconds": 0.17893880100001525,
+      "serial_planning_plus_execution_seconds": 0.24358360799999446
+    },
+    {
+      "chains": 128,
+      "starts": 3244,
+      "planning_seconds": 0.064968628000031,
+      "gpu_setup_seconds": 0.01158155699999952,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05902548799997476,
+        "state_upload_seconds": 0.00018053399998052555,
+        "workspace_setup_seconds": 0.01158155699999952,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05842783499997495,
+        "final_download_seconds": 0.00041464800000312607,
+        "completion_checks": [
+          [
+            4,
+            3244
+          ],
+          [
+            8,
+            3231
+          ],
+          [
+            12,
+            2372
+          ],
+          [
+            16,
+            2372
+          ],
+          [
+            20,
+            2325
+          ],
+          [
+            24,
+            2123
+          ],
+          [
+            28,
+            1878
+          ],
+          [
+            32,
+            1579
+          ],
+          [
+            36,
+            1290
+          ],
+          [
+            40,
+            1009
+          ],
+          [
+            44,
+            812
+          ],
+          [
+            48,
+            661
+          ],
+          [
+            52,
+            533
+          ],
+          [
+            56,
+            449
+          ],
+          [
+            60,
+            412
+          ],
+          [
+            64,
+            386
+          ],
+          [
+            68,
+            365
+          ],
+          [
+            72,
+            317
+          ],
+          [
+            76,
+            290
+          ],
+          [
+            80,
+            278
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011230274999945777,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.10271306000004188,
+      "execution_seconds": 0.1845723659999976,
+      "serial_planning_plus_execution_seconds": 0.2495412480000141
+    },
+    {
+      "chains": 128,
+      "starts": 3241,
+      "planning_seconds": 0.06980409400000553,
+      "gpu_setup_seconds": 0.01225976900002479,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05966641500003789,
+        "state_upload_seconds": 0.00020669000002726534,
+        "workspace_setup_seconds": 0.01225976900002479,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05903684899999462,
+        "final_download_seconds": 0.0004199989999733589,
+        "completion_checks": [
+          [
+            4,
+            3238
+          ],
+          [
+            8,
+            3225
+          ],
+          [
+            12,
+            2441
+          ],
+          [
+            16,
+            2441
+          ],
+          [
+            20,
+            2385
+          ],
+          [
+            24,
+            2173
+          ],
+          [
+            28,
+            1912
+          ],
+          [
+            32,
+            1579
+          ],
+          [
+            36,
+            1229
+          ],
+          [
+            40,
+            1005
+          ],
+          [
+            44,
+            798
+          ],
+          [
+            48,
+            666
+          ],
+          [
+            52,
+            584
+          ],
+          [
+            56,
+            503
+          ],
+          [
+            60,
+            463
+          ],
+          [
+            64,
+            428
+          ],
+          [
+            68,
+            410
+          ],
+          [
+            72,
+            389
+          ],
+          [
+            76,
+            368
+          ],
+          [
+            80,
+            341
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011944549000020288,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.09499723800001902,
+      "execution_seconds": 0.17889251799999784,
+      "serial_planning_plus_execution_seconds": 0.2486970359999532
+    },
+    {
+      "chains": 128,
+      "starts": 3251,
+      "planning_seconds": 0.06594514300002174,
+      "gpu_setup_seconds": 0.011089235000042663,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05936104599999226,
+        "state_upload_seconds": 0.0001936379999847304,
+        "workspace_setup_seconds": 0.011089235000042663,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05874062899999899,
+        "final_download_seconds": 0.0004238000000214015,
+        "completion_checks": [
+          [
+            4,
+            3248
+          ],
+          [
+            8,
+            3240
+          ],
+          [
+            12,
+            2476
+          ],
+          [
+            16,
+            2472
+          ],
+          [
+            20,
+            2417
+          ],
+          [
+            24,
+            2215
+          ],
+          [
+            28,
+            1967
+          ],
+          [
+            32,
+            1595
+          ],
+          [
+            36,
+            1256
+          ],
+          [
+            40,
+            1019
+          ],
+          [
+            44,
+            874
+          ],
+          [
+            48,
+            738
+          ],
+          [
+            52,
+            634
+          ],
+          [
+            56,
+            545
+          ],
+          [
+            60,
+            480
+          ],
+          [
+            64,
+            433
+          ],
+          [
+            68,
+            387
+          ],
+          [
+            72,
+            370
+          ],
+          [
+            76,
+            351
+          ],
+          [
+            80,
+            331
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011771754999983841,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.09326523999999381,
+      "execution_seconds": 0.17550990499995578,
+      "serial_planning_plus_execution_seconds": 0.24145534899997756
+    },
+    {
+      "chains": 128,
+      "starts": 3231,
+      "planning_seconds": 0.06581317600000602,
+      "gpu_setup_seconds": 0.0109999080000307,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059558931999958986,
+        "state_upload_seconds": 0.00017940399999361034,
+        "workspace_setup_seconds": 0.0109999080000307,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058959501999993336,
+        "final_download_seconds": 0.00041710400000738446,
+        "completion_checks": [
+          [
+            4,
+            3228
+          ],
+          [
+            8,
+            3214
+          ],
+          [
+            12,
+            2473
+          ],
+          [
+            16,
+            2461
+          ],
+          [
+            20,
+            2386
+          ],
+          [
+            24,
+            2143
+          ],
+          [
+            28,
+            1876
+          ],
+          [
+            32,
+            1565
+          ],
+          [
+            36,
+            1242
+          ],
+          [
+            40,
+            1035
+          ],
+          [
+            44,
+            899
+          ],
+          [
+            48,
+            773
+          ],
+          [
+            52,
+            696
+          ],
+          [
+            56,
+            619
+          ],
+          [
+            60,
+            545
+          ],
+          [
+            64,
+            512
+          ],
+          [
+            68,
+            480
+          ],
+          [
+            72,
+            429
+          ],
+          [
+            76,
+            418
+          ],
+          [
+            80,
+            403
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011399363999998968,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.09183483200001774,
+      "execution_seconds": 0.17381516099999317,
+      "serial_planning_plus_execution_seconds": 0.239628716000027
+    },
+    {
+      "chains": 128,
+      "starts": 3237,
+      "planning_seconds": 0.06570119299999533,
+      "gpu_setup_seconds": 0.010019569000007778,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059403446000033,
+        "state_upload_seconds": 0.000177458999985447,
+        "workspace_setup_seconds": 0.010019569000007778,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05881072700003642,
+        "final_download_seconds": 0.0004126309999605837,
+        "completion_checks": [
+          [
+            4,
+            3230
+          ],
+          [
+            8,
+            3223
+          ],
+          [
+            12,
+            2438
+          ],
+          [
+            16,
+            2410
+          ],
+          [
+            20,
+            2341
+          ],
+          [
+            24,
+            2147
+          ],
+          [
+            28,
+            1895
+          ],
+          [
+            32,
+            1582
+          ],
+          [
+            36,
+            1297
+          ],
+          [
+            40,
+            1096
+          ],
+          [
+            44,
+            919
+          ],
+          [
+            48,
+            788
+          ],
+          [
+            52,
+            689
+          ],
+          [
+            56,
+            597
+          ],
+          [
+            60,
+            537
+          ],
+          [
+            64,
+            497
+          ],
+          [
+            68,
+            465
+          ],
+          [
+            72,
+            438
+          ],
+          [
+            76,
+            416
+          ],
+          [
+            80,
+            401
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010523943999999119,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.09347973100000218,
+      "execution_seconds": 0.17344673799999555,
+      "serial_planning_plus_execution_seconds": 0.23914827599998034
+    },
+    {
+      "chains": 128,
+      "starts": 3240,
+      "planning_seconds": 0.07041930100001537,
+      "gpu_setup_seconds": 0.011318238000001202,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.062362404999987575,
+        "state_upload_seconds": 0.00021383500001093125,
+        "workspace_setup_seconds": 0.011318238000001202,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.06172240000000784,
+        "final_download_seconds": 0.0004235600000015438,
+        "completion_checks": [
+          [
+            4,
+            3239
+          ],
+          [
+            8,
+            3230
+          ],
+          [
+            12,
+            2478
+          ],
+          [
+            16,
+            2438
+          ],
+          [
+            20,
+            2345
+          ],
+          [
+            24,
+            2133
+          ],
+          [
+            28,
+            1914
+          ],
+          [
+            32,
+            1595
+          ],
+          [
+            36,
+            1266
+          ],
+          [
+            40,
+            1001
+          ],
+          [
+            44,
+            830
+          ],
+          [
+            48,
+            666
+          ],
+          [
+            52,
+            560
+          ],
+          [
+            56,
+            482
+          ],
+          [
+            60,
+            451
+          ],
+          [
+            64,
+            409
+          ],
+          [
+            68,
+            386
+          ],
+          [
+            72,
+            353
+          ],
+          [
+            76,
+            337
+          ],
+          [
+            80,
+            318
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010811950000004344,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.09321868400002131,
+      "execution_seconds": 0.17773832400001766,
+      "serial_planning_plus_execution_seconds": 0.2481579860000238
+    },
+    {
+      "chains": 128,
+      "starts": 3228,
+      "planning_seconds": 0.07032381900000928,
+      "gpu_setup_seconds": 0.011100290000001678,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06260173200001873,
+        "state_upload_seconds": 0.00019562099998893245,
+        "workspace_setup_seconds": 0.011100290000001678,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.06198154499998054,
+        "final_download_seconds": 0.0004216980000251169,
+        "completion_checks": [
+          [
+            4,
+            3227
+          ],
+          [
+            8,
+            3222
+          ],
+          [
+            12,
+            2465
+          ],
+          [
+            16,
+            2444
+          ],
+          [
+            20,
+            2380
+          ],
+          [
+            24,
+            2211
+          ],
+          [
+            28,
+            1975
+          ],
+          [
+            32,
+            1688
+          ],
+          [
+            36,
+            1419
+          ],
+          [
+            40,
+            1173
+          ],
+          [
+            44,
+            1022
+          ],
+          [
+            48,
+            891
+          ],
+          [
+            52,
+            776
+          ],
+          [
+            56,
+            715
+          ],
+          [
+            60,
+            681
+          ],
+          [
+            64,
+            647
+          ],
+          [
+            68,
+            615
+          ],
+          [
+            72,
+            582
+          ],
+          [
+            76,
+            553
+          ],
+          [
+            80,
+            532
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010914134000017839,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.08904716400002144,
+      "execution_seconds": 0.1736857909999685,
+      "serial_planning_plus_execution_seconds": 0.24400990599997385
+    },
+    {
+      "chains": 128,
+      "starts": 3221,
+      "planning_seconds": 0.07447436100000004,
+      "gpu_setup_seconds": 0.010519043999977384,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06095472100003008,
+        "state_upload_seconds": 0.00017652299999326715,
+        "workspace_setup_seconds": 0.010519043999977384,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.06032793800000036,
+        "final_download_seconds": 0.0004474720000189336,
+        "completion_checks": [
+          [
+            4,
+            3203
+          ],
+          [
+            8,
+            3187
+          ],
+          [
+            12,
+            2603
+          ],
+          [
+            16,
+            2525
+          ],
+          [
+            20,
+            2411
+          ],
+          [
+            24,
+            2201
+          ],
+          [
+            28,
+            1944
+          ],
+          [
+            32,
+            1661
+          ],
+          [
+            36,
+            1393
+          ],
+          [
+            40,
+            1201
+          ],
+          [
+            44,
+            1013
+          ],
+          [
+            48,
+            913
+          ],
+          [
+            52,
+            822
+          ],
+          [
+            56,
+            773
+          ],
+          [
+            60,
+            688
+          ],
+          [
+            64,
+            663
+          ],
+          [
+            68,
+            635
+          ],
+          [
+            72,
+            611
+          ],
+          [
+            76,
+            584
+          ],
+          [
+            80,
+            568
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010822653999980503,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.07990564500005348,
+      "execution_seconds": 0.1622256829999742,
+      "serial_planning_plus_execution_seconds": 0.23670034299999543
+    },
+    {
+      "chains": 128,
+      "starts": 3219,
+      "planning_seconds": 0.06486303299999463,
+      "gpu_setup_seconds": 0.01007812699998567,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05912090800001124,
+        "state_upload_seconds": 0.00017844600000671562,
+        "workspace_setup_seconds": 0.01007812699998567,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05851419499998656,
+        "final_download_seconds": 0.00042582100002164225,
+        "completion_checks": [
+          [
+            4,
+            3200
+          ],
+          [
+            8,
+            3188
+          ],
+          [
+            12,
+            2626
+          ],
+          [
+            16,
+            2572
+          ],
+          [
+            20,
+            2399
+          ],
+          [
+            24,
+            2161
+          ],
+          [
+            28,
+            1904
+          ],
+          [
+            32,
+            1652
+          ],
+          [
+            36,
+            1419
+          ],
+          [
+            40,
+            1252
+          ],
+          [
+            44,
+            1128
+          ],
+          [
+            48,
+            1019
+          ],
+          [
+            52,
+            931
+          ],
+          [
+            56,
+            863
+          ],
+          [
+            60,
+            799
+          ],
+          [
+            64,
+            755
+          ],
+          [
+            68,
+            711
+          ],
+          [
+            72,
+            671
+          ],
+          [
+            76,
+            653
+          ],
+          [
+            80,
+            638
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010944095000013476,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.07530217800001537,
+      "execution_seconds": 0.15546747000001915,
+      "serial_planning_plus_execution_seconds": 0.22033083600001646
+    },
+    {
+      "chains": 128,
+      "starts": 3236,
+      "planning_seconds": 0.06704538299999285,
+      "gpu_setup_seconds": 0.010401497000032123,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.060299525000004905,
+        "state_upload_seconds": 0.00018379499999809923,
+        "workspace_setup_seconds": 0.010401497000032123,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05969953299995723,
+        "final_download_seconds": 0.0004136659999858239,
+        "completion_checks": [
+          [
+            4,
+            3233
+          ],
+          [
+            8,
+            3208
+          ],
+          [
+            12,
+            2513
+          ],
+          [
+            16,
+            2469
+          ],
+          [
+            20,
+            2390
+          ],
+          [
+            24,
+            2158
+          ],
+          [
+            28,
+            1898
+          ],
+          [
+            32,
+            1611
+          ],
+          [
+            36,
+            1339
+          ],
+          [
+            40,
+            1115
+          ],
+          [
+            44,
+            942
+          ],
+          [
+            48,
+            792
+          ],
+          [
+            52,
+            692
+          ],
+          [
+            56,
+            613
+          ],
+          [
+            60,
+            550
+          ],
+          [
+            64,
+            489
+          ],
+          [
+            68,
+            458
+          ],
+          [
+            72,
+            420
+          ],
+          [
+            76,
+            395
+          ],
+          [
+            80,
+            377
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010735697000029631,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.08616219999998975,
+      "execution_seconds": 0.16762123600000223,
+      "serial_planning_plus_execution_seconds": 0.2346670140000242
+    },
+    {
+      "chains": 128,
+      "starts": 3215,
+      "planning_seconds": 0.06699204200003805,
+      "gpu_setup_seconds": 0.010764917000017249,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06027179300002672,
+        "state_upload_seconds": 0.00017714800003432174,
+        "workspace_setup_seconds": 0.010764917000017249,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05967890799996667,
+        "final_download_seconds": 0.00041326500002014654,
+        "completion_checks": [
+          [
+            4,
+            3212
+          ],
+          [
+            8,
+            3198
+          ],
+          [
+            12,
+            2567
+          ],
+          [
+            16,
+            2527
+          ],
+          [
+            20,
+            2375
+          ],
+          [
+            24,
+            2115
+          ],
+          [
+            28,
+            1885
+          ],
+          [
+            32,
+            1599
+          ],
+          [
+            36,
+            1383
+          ],
+          [
+            40,
+            1179
+          ],
+          [
+            44,
+            1000
+          ],
+          [
+            48,
+            909
+          ],
+          [
+            52,
+            829
+          ],
+          [
+            56,
+            758
+          ],
+          [
+            60,
+            685
+          ],
+          [
+            64,
+            630
+          ],
+          [
+            68,
+            592
+          ],
+          [
+            72,
+            570
+          ],
+          [
+            76,
+            532
+          ],
+          [
+            80,
+            525
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011993903000018236,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.07580083100003776,
+      "execution_seconds": 0.15885410999999294,
+      "serial_planning_plus_execution_seconds": 0.22584647400003632
+    },
+    {
+      "chains": 128,
+      "starts": 3205,
+      "planning_seconds": 0.0661184009999829,
+      "gpu_setup_seconds": 0.010738839999987704,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.060241422000046896,
+        "state_upload_seconds": 0.00018105000003743044,
+        "workspace_setup_seconds": 0.010738839999987704,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05962137200003781,
+        "final_download_seconds": 0.00043616499999643565,
+        "completion_checks": [
+          [
+            4,
+            3166
+          ],
+          [
+            8,
+            3156
+          ],
+          [
+            12,
+            2674
+          ],
+          [
+            16,
+            2591
+          ],
+          [
+            20,
+            2324
+          ],
+          [
+            24,
+            2024
+          ],
+          [
+            28,
+            1764
+          ],
+          [
+            32,
+            1497
+          ],
+          [
+            36,
+            1276
+          ],
+          [
+            40,
+            1118
+          ],
+          [
+            44,
+            972
+          ],
+          [
+            48,
+            880
+          ],
+          [
+            52,
+            813
+          ],
+          [
+            56,
+            750
+          ],
+          [
+            60,
+            722
+          ],
+          [
+            64,
+            684
+          ],
+          [
+            68,
+            644
+          ],
+          [
+            72,
+            614
+          ],
+          [
+            76,
+            602
+          ],
+          [
+            80,
+            577
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011720716000013454,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.06212360999995781,
+      "execution_seconds": 0.14484771799999407,
+      "serial_planning_plus_execution_seconds": 0.2109667019999506
+    },
+    {
+      "chains": 128,
+      "starts": 3205,
+      "planning_seconds": 0.0653482140000392,
+      "gpu_setup_seconds": 0.010475934999988112,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06085843399995383,
+        "state_upload_seconds": 0.00017817999997760126,
+        "workspace_setup_seconds": 0.010475934999988112,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.06026280099996484,
+        "final_download_seconds": 0.00041467799997008115,
+        "completion_checks": [
+          [
+            4,
+            3205
+          ],
+          [
+            8,
+            3187
+          ],
+          [
+            12,
+            2665
+          ],
+          [
+            16,
+            2582
+          ],
+          [
+            20,
+            2358
+          ],
+          [
+            24,
+            2131
+          ],
+          [
+            28,
+            1863
+          ],
+          [
+            32,
+            1569
+          ],
+          [
+            36,
+            1361
+          ],
+          [
+            40,
+            1198
+          ],
+          [
+            44,
+            1060
+          ],
+          [
+            48,
+            980
+          ],
+          [
+            52,
+            897
+          ],
+          [
+            56,
+            846
+          ],
+          [
+            60,
+            792
+          ],
+          [
+            64,
+            754
+          ],
+          [
+            68,
+            724
+          ],
+          [
+            72,
+            699
+          ],
+          [
+            76,
+            675
+          ],
+          [
+            80,
+            645
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.0117861489999882,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.06958478500001775,
+      "execution_seconds": 0.15273095600002762,
+      "serial_planning_plus_execution_seconds": 0.21807977600008144
+    },
+    {
+      "chains": 128,
+      "starts": 3213,
+      "planning_seconds": 0.0765159100000119,
+      "gpu_setup_seconds": 0.01005225099999052,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05999052900000379,
+        "state_upload_seconds": 0.00017592000000377084,
+        "workspace_setup_seconds": 0.01005225099999052,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.059383910999997624,
+        "final_download_seconds": 0.00042783699996107316,
+        "completion_checks": [
+          [
+            4,
+            3203
+          ],
+          [
+            8,
+            3172
+          ],
+          [
+            12,
+            2652
+          ],
+          [
+            16,
+            2551
+          ],
+          [
+            20,
+            2350
+          ],
+          [
+            24,
+            2082
+          ],
+          [
+            28,
+            1840
+          ],
+          [
+            32,
+            1556
+          ],
+          [
+            36,
+            1310
+          ],
+          [
+            40,
+            1155
+          ],
+          [
+            44,
+            1024
+          ],
+          [
+            48,
+            904
+          ],
+          [
+            52,
+            839
+          ],
+          [
+            56,
+            790
+          ],
+          [
+            60,
+            748
+          ],
+          [
+            64,
+            701
+          ],
+          [
+            68,
+            665
+          ],
+          [
+            72,
+            632
+          ],
+          [
+            76,
+            601
+          ],
+          [
+            80,
+            589
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011796000000003914,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.06617107399995348,
+      "execution_seconds": 0.1480317030000151,
+      "serial_planning_plus_execution_seconds": 0.22454800000002706
+    },
+    {
+      "chains": 128,
+      "starts": 3198,
+      "planning_seconds": 0.06557320599995364,
+      "gpu_setup_seconds": 0.010340240999994421,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06000323699998944,
+        "state_upload_seconds": 0.0001778079999894544,
+        "workspace_setup_seconds": 0.010340240999994421,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05940050499998506,
+        "final_download_seconds": 0.00042202800000268326,
+        "completion_checks": [
+          [
+            4,
+            3198
+          ],
+          [
+            8,
+            3181
+          ],
+          [
+            12,
+            2629
+          ],
+          [
+            16,
+            2553
+          ],
+          [
+            20,
+            2354
+          ],
+          [
+            24,
+            2089
+          ],
+          [
+            28,
+            1850
+          ],
+          [
+            32,
+            1601
+          ],
+          [
+            36,
+            1370
+          ],
+          [
+            40,
+            1219
+          ],
+          [
+            44,
+            1095
+          ],
+          [
+            48,
+            1003
+          ],
+          [
+            52,
+            917
+          ],
+          [
+            56,
+            841
+          ],
+          [
+            60,
+            802
+          ],
+          [
+            64,
+            782
+          ],
+          [
+            68,
+            737
+          ],
+          [
+            72,
+            712
+          ],
+          [
+            76,
+            682
+          ],
+          [
+            80,
+            660
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011534288999996534,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.07242301100001214,
+      "execution_seconds": 0.15432425399995964,
+      "serial_planning_plus_execution_seconds": 0.2198977329999252
+    },
+    {
+      "chains": 128,
+      "starts": 3201,
+      "planning_seconds": 0.06623591300001408,
+      "gpu_setup_seconds": 0.0100081240000236,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05982560199998943,
+        "state_upload_seconds": 0.0001751059999719473,
+        "workspace_setup_seconds": 0.0100081240000236,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.059226727000009305,
+        "final_download_seconds": 0.0004208010000184004,
+        "completion_checks": [
+          [
+            4,
+            3188
+          ],
+          [
+            8,
+            3169
+          ],
+          [
+            12,
+            2711
+          ],
+          [
+            16,
+            2624
+          ],
+          [
+            20,
+            2417
+          ],
+          [
+            24,
+            2151
+          ],
+          [
+            28,
+            1895
+          ],
+          [
+            32,
+            1624
+          ],
+          [
+            36,
+            1445
+          ],
+          [
+            40,
+            1265
+          ],
+          [
+            44,
+            1120
+          ],
+          [
+            48,
+            996
+          ],
+          [
+            52,
+            910
+          ],
+          [
+            56,
+            846
+          ],
+          [
+            60,
+            776
+          ],
+          [
+            64,
+            741
+          ],
+          [
+            68,
+            705
+          ],
+          [
+            72,
+            675
+          ],
+          [
+            76,
+            654
+          ],
+          [
+            80,
+            638
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011420859999986988,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.0674122180000154,
+      "execution_seconds": 0.14869067899996935,
+      "serial_planning_plus_execution_seconds": 0.2149269390000086
+    },
+    {
+      "chains": 128,
+      "starts": 3193,
+      "planning_seconds": 0.06547170699997196,
+      "gpu_setup_seconds": 0.009794567000028565,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059507380000013654,
+        "state_upload_seconds": 0.0001747839999666212,
+        "workspace_setup_seconds": 0.009794567000028565,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05889261800001577,
+        "final_download_seconds": 0.00043725799997673676,
+        "completion_checks": [
+          [
+            4,
+            3191
+          ],
+          [
+            8,
+            3171
+          ],
+          [
+            12,
+            2671
+          ],
+          [
+            16,
+            2587
+          ],
+          [
+            20,
+            2387
+          ],
+          [
+            24,
+            2137
+          ],
+          [
+            28,
+            1895
+          ],
+          [
+            32,
+            1649
+          ],
+          [
+            36,
+            1430
+          ],
+          [
+            40,
+            1250
+          ],
+          [
+            44,
+            1153
+          ],
+          [
+            48,
+            1042
+          ],
+          [
+            52,
+            971
+          ],
+          [
+            56,
+            912
+          ],
+          [
+            60,
+            876
+          ],
+          [
+            64,
+            830
+          ],
+          [
+            68,
+            787
+          ],
+          [
+            72,
+            761
+          ],
+          [
+            76,
+            714
+          ],
+          [
+            80,
+            690
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011358101999974224,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.064720981999983,
+      "execution_seconds": 0.1454022959999861,
+      "serial_planning_plus_execution_seconds": 0.21087452199998324
+    },
+    {
+      "chains": 128,
+      "starts": 3191,
+      "planning_seconds": 0.06510577599999579,
+      "gpu_setup_seconds": 0.00957213000003776,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.060346344999970825,
+        "state_upload_seconds": 0.00017814599999610436,
+        "workspace_setup_seconds": 0.00957213000003776,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.059744172000023354,
+        "final_download_seconds": 0.0004209909999985939,
+        "completion_checks": [
+          [
+            4,
+            3191
+          ],
+          [
+            8,
+            3160
+          ],
+          [
+            12,
+            2826
+          ],
+          [
+            16,
+            2692
+          ],
+          [
+            20,
+            2414
+          ],
+          [
+            24,
+            2117
+          ],
+          [
+            28,
+            1866
+          ],
+          [
+            32,
+            1620
+          ],
+          [
+            36,
+            1414
+          ],
+          [
+            40,
+            1305
+          ],
+          [
+            44,
+            1190
+          ],
+          [
+            48,
+            1083
+          ],
+          [
+            52,
+            1007
+          ],
+          [
+            56,
+            972
+          ],
+          [
+            60,
+            933
+          ],
+          [
+            64,
+            898
+          ],
+          [
+            68,
+            850
+          ],
+          [
+            72,
+            819
+          ],
+          [
+            76,
+            790
+          ],
+          [
+            80,
+            762
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010970501000031163,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.05215669300002901,
+      "execution_seconds": 0.13307043300000032,
+      "serial_planning_plus_execution_seconds": 0.19817660899997236
+    },
+    {
+      "chains": 128,
+      "starts": 3189,
+      "planning_seconds": 0.06434567499997002,
+      "gpu_setup_seconds": 0.010483961000034014,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.060696702999962326,
+        "state_upload_seconds": 0.0001803089999725671,
+        "workspace_setup_seconds": 0.010483961000034014,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.060093582999968476,
+        "final_download_seconds": 0.0004197249999720043,
+        "completion_checks": [
+          [
+            4,
+            3183
+          ],
+          [
+            8,
+            3171
+          ],
+          [
+            12,
+            2856
+          ],
+          [
+            16,
+            2794
+          ],
+          [
+            20,
+            2523
+          ],
+          [
+            24,
+            2226
+          ],
+          [
+            28,
+            1987
+          ],
+          [
+            32,
+            1753
+          ],
+          [
+            36,
+            1601
+          ],
+          [
+            40,
+            1465
+          ],
+          [
+            44,
+            1355
+          ],
+          [
+            48,
+            1273
+          ],
+          [
+            52,
+            1188
+          ],
+          [
+            56,
+            1127
+          ],
+          [
+            60,
+            1095
+          ],
+          [
+            64,
+            1055
+          ],
+          [
+            68,
+            1017
+          ],
+          [
+            72,
+            981
+          ],
+          [
+            76,
+            966
+          ],
+          [
+            80,
+            938
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01048862300001474,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.050865939999994225,
+      "execution_seconds": 0.13255827599999748,
+      "serial_planning_plus_execution_seconds": 0.19690436299998737
+    },
+    {
+      "chains": 128,
+      "starts": 3183,
+      "planning_seconds": 0.06438965500001359,
+      "gpu_setup_seconds": 0.010201476000020193,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.060366075000047204,
+        "state_upload_seconds": 0.00017623700000513054,
+        "workspace_setup_seconds": 0.010201476000020193,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05976783799997065,
+        "final_download_seconds": 0.0004191579999996975,
+        "completion_checks": [
+          [
+            4,
+            3165
+          ],
+          [
+            8,
+            3134
+          ],
+          [
+            12,
+            2862
+          ],
+          [
+            16,
+            2676
+          ],
+          [
+            20,
+            2310
+          ],
+          [
+            24,
+            1988
+          ],
+          [
+            28,
+            1726
+          ],
+          [
+            32,
+            1466
+          ],
+          [
+            36,
+            1276
+          ],
+          [
+            40,
+            1136
+          ],
+          [
+            44,
+            1038
+          ],
+          [
+            48,
+            964
+          ],
+          [
+            52,
+            912
+          ],
+          [
+            56,
+            866
+          ],
+          [
+            60,
+            839
+          ],
+          [
+            64,
+            809
+          ],
+          [
+            68,
+            793
+          ],
+          [
+            72,
+            770
+          ],
+          [
+            76,
+            744
+          ],
+          [
+            80,
+            713
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011202556999990065,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.049411063999968974,
+      "execution_seconds": 0.13120257000002766,
+      "serial_planning_plus_execution_seconds": 0.19559250200001088
+    },
+    {
+      "chains": 128,
+      "starts": 3169,
+      "planning_seconds": 0.06365120399999569,
+      "gpu_setup_seconds": 0.009990984000012304,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06040022299998782,
+        "state_upload_seconds": 0.00018693699996674695,
+        "workspace_setup_seconds": 0.009990984000012304,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.059784778999983246,
+        "final_download_seconds": 0.00042553800000177944,
+        "completion_checks": [
+          [
+            4,
+            3151
+          ],
+          [
+            8,
+            3120
+          ],
+          [
+            12,
+            2900
+          ],
+          [
+            16,
+            2723
+          ],
+          [
+            20,
+            2397
+          ],
+          [
+            24,
+            2163
+          ],
+          [
+            28,
+            1941
+          ],
+          [
+            32,
+            1731
+          ],
+          [
+            36,
+            1603
+          ],
+          [
+            40,
+            1490
+          ],
+          [
+            44,
+            1383
+          ],
+          [
+            48,
+            1290
+          ],
+          [
+            52,
+            1230
+          ],
+          [
+            56,
+            1171
+          ],
+          [
+            60,
+            1135
+          ],
+          [
+            64,
+            1102
+          ],
+          [
+            68,
+            1072
+          ],
+          [
+            72,
+            1054
+          ],
+          [
+            76,
+            1036
+          ],
+          [
+            80,
+            1020
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010905237999963902,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.036765619999982846,
+      "execution_seconds": 0.11808553700001312,
+      "serial_planning_plus_execution_seconds": 0.1817370589999996
+    },
+    {
+      "chains": 128,
+      "starts": 3159,
+      "planning_seconds": 0.06352056800000128,
+      "gpu_setup_seconds": 0.010087515999998686,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06015043299998979,
+        "state_upload_seconds": 0.0001768939999919894,
+        "workspace_setup_seconds": 0.010087515999998686,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.059555802000033964,
+        "final_download_seconds": 0.0004149810000058096,
+        "completion_checks": [
+          [
+            4,
+            3150
+          ],
+          [
+            8,
+            3118
+          ],
+          [
+            12,
+            2964
+          ],
+          [
+            16,
+            2805
+          ],
+          [
+            20,
+            2565
+          ],
+          [
+            24,
+            2277
+          ],
+          [
+            28,
+            2020
+          ],
+          [
+            32,
+            1795
+          ],
+          [
+            36,
+            1618
+          ],
+          [
+            40,
+            1490
+          ],
+          [
+            44,
+            1405
+          ],
+          [
+            48,
+            1319
+          ],
+          [
+            52,
+            1273
+          ],
+          [
+            56,
+            1227
+          ],
+          [
+            60,
+            1161
+          ],
+          [
+            64,
+            1131
+          ],
+          [
+            68,
+            1082
+          ],
+          [
+            72,
+            1044
+          ],
+          [
+            76,
+            1014
+          ],
+          [
+            80,
+            983
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011225717999991502,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.03516623600000912,
+      "execution_seconds": 0.11665251300001955,
+      "serial_planning_plus_execution_seconds": 0.18017324800001688
+    },
+    {
+      "chains": 128,
+      "starts": 3148,
+      "planning_seconds": 0.06294047300002603,
+      "gpu_setup_seconds": 0.010063495999986571,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05954725800000915,
+        "state_upload_seconds": 0.00018455200000744298,
+        "workspace_setup_seconds": 0.010063495999986571,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058935624000014286,
+        "final_download_seconds": 0.0004246469999884539,
+        "completion_checks": [
+          [
+            4,
+            3147
+          ],
+          [
+            8,
+            3120
+          ],
+          [
+            12,
+            2963
+          ],
+          [
+            16,
+            2762
+          ],
+          [
+            20,
+            2520
+          ],
+          [
+            24,
+            2310
+          ],
+          [
+            28,
+            2102
+          ],
+          [
+            32,
+            1952
+          ],
+          [
+            36,
+            1795
+          ],
+          [
+            40,
+            1653
+          ],
+          [
+            44,
+            1551
+          ],
+          [
+            48,
+            1462
+          ],
+          [
+            52,
+            1367
+          ],
+          [
+            56,
+            1307
+          ],
+          [
+            60,
+            1258
+          ],
+          [
+            64,
+            1204
+          ],
+          [
+            68,
+            1134
+          ],
+          [
+            72,
+            1098
+          ],
+          [
+            76,
+            1043
+          ],
+          [
+            80,
+            1010
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011715711000022111,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.02443468399997073,
+      "execution_seconds": 0.10578339999995023,
+      "serial_planning_plus_execution_seconds": 0.16872409199999083
+    },
+    {
+      "chains": 128,
+      "starts": 3134,
+      "planning_seconds": 0.06230146100000411,
+      "gpu_setup_seconds": 0.010697128000003886,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05952554800001053,
+        "state_upload_seconds": 0.00018339499996500308,
+        "workspace_setup_seconds": 0.010697128000003886,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058903496999960225,
+        "final_download_seconds": 0.00043542700001353296,
+        "completion_checks": [
+          [
+            4,
+            3131
+          ],
+          [
+            8,
+            3090
+          ],
+          [
+            12,
+            2987
+          ],
+          [
+            16,
+            2762
+          ],
+          [
+            20,
+            2454
+          ],
+          [
+            24,
+            2234
+          ],
+          [
+            28,
+            2038
+          ],
+          [
+            32,
+            1893
+          ],
+          [
+            36,
+            1723
+          ],
+          [
+            40,
+            1587
+          ],
+          [
+            44,
+            1484
+          ],
+          [
+            48,
+            1406
+          ],
+          [
+            52,
+            1307
+          ],
+          [
+            56,
+            1230
+          ],
+          [
+            60,
+            1158
+          ],
+          [
+            64,
+            1111
+          ],
+          [
+            68,
+            1067
+          ],
+          [
+            72,
+            1022
+          ],
+          [
+            76,
+            982
+          ],
+          [
+            80,
+            947
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011303642000029868,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.019735418000038862,
+      "execution_seconds": 0.10128551500002914,
+      "serial_planning_plus_execution_seconds": 0.1635873330000095
+    },
+    {
+      "chains": 128,
+      "starts": 3143,
+      "planning_seconds": 0.06274800300002426,
+      "gpu_setup_seconds": 0.008907303000000866,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059771876000013435,
+        "state_upload_seconds": 0.00017969200001743957,
+        "workspace_setup_seconds": 0.008907303000000866,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.059166286999982276,
+        "final_download_seconds": 0.0004231749999803469,
+        "completion_checks": [
+          [
+            4,
+            3136
+          ],
+          [
+            8,
+            3116
+          ],
+          [
+            12,
+            3043
+          ],
+          [
+            16,
+            2863
+          ],
+          [
+            20,
+            2615
+          ],
+          [
+            24,
+            2386
+          ],
+          [
+            28,
+            2189
+          ],
+          [
+            32,
+            2030
+          ],
+          [
+            36,
+            1883
+          ],
+          [
+            40,
+            1746
+          ],
+          [
+            44,
+            1618
+          ],
+          [
+            48,
+            1509
+          ],
+          [
+            52,
+            1461
+          ],
+          [
+            56,
+            1396
+          ],
+          [
+            60,
+            1345
+          ],
+          [
+            64,
+            1293
+          ],
+          [
+            68,
+            1244
+          ],
+          [
+            72,
+            1205
+          ],
+          [
+            76,
+            1156
+          ],
+          [
+            80,
+            1127
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010858247999976811,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.017994770000029803,
+      "execution_seconds": 0.09755904600001486,
+      "serial_planning_plus_execution_seconds": 0.16030744200003255
+    },
+    {
+      "chains": 128,
+      "starts": 3140,
+      "planning_seconds": 0.06202959799998098,
+      "gpu_setup_seconds": 0.009332738000011886,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06071514900003194,
+        "state_upload_seconds": 0.00016963699999905657,
+        "workspace_setup_seconds": 0.009332738000011886,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.06012027600002057,
+        "final_download_seconds": 0.00042251600001463885,
+        "completion_checks": [
+          [
+            4,
+            3134
+          ],
+          [
+            8,
+            3126
+          ],
+          [
+            12,
+            3048
+          ],
+          [
+            16,
+            2869
+          ],
+          [
+            20,
+            2603
+          ],
+          [
+            24,
+            2312
+          ],
+          [
+            28,
+            2101
+          ],
+          [
+            32,
+            1930
+          ],
+          [
+            36,
+            1759
+          ],
+          [
+            40,
+            1604
+          ],
+          [
+            44,
+            1496
+          ],
+          [
+            48,
+            1393
+          ],
+          [
+            52,
+            1336
+          ],
+          [
+            56,
+            1269
+          ],
+          [
+            60,
+            1215
+          ],
+          [
+            64,
+            1173
+          ],
+          [
+            68,
+            1130
+          ],
+          [
+            72,
+            1092
+          ],
+          [
+            76,
+            1054
+          ],
+          [
+            80,
+            1023
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011268675999986044,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.0250646819999929,
+      "execution_seconds": 0.10640188900003977,
+      "serial_planning_plus_execution_seconds": 0.16843185499999436
+    },
+    {
+      "chains": 128,
+      "starts": 3146,
+      "planning_seconds": 0.06261010400004352,
+      "gpu_setup_seconds": 0.009185971000022164,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05967846300001156,
+        "state_upload_seconds": 0.0001788980000014817,
+        "workspace_setup_seconds": 0.009185971000022164,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.059065807000024506,
+        "final_download_seconds": 0.00043063600003279134,
+        "completion_checks": [
+          [
+            4,
+            3137
+          ],
+          [
+            8,
+            3119
+          ],
+          [
+            12,
+            3002
+          ],
+          [
+            16,
+            2850
+          ],
+          [
+            20,
+            2605
+          ],
+          [
+            24,
+            2298
+          ],
+          [
+            28,
+            2122
+          ],
+          [
+            32,
+            1906
+          ],
+          [
+            36,
+            1746
+          ],
+          [
+            40,
+            1634
+          ],
+          [
+            44,
+            1522
+          ],
+          [
+            48,
+            1432
+          ],
+          [
+            52,
+            1358
+          ],
+          [
+            56,
+            1315
+          ],
+          [
+            60,
+            1286
+          ],
+          [
+            64,
+            1245
+          ],
+          [
+            68,
+            1208
+          ],
+          [
+            72,
+            1182
+          ],
+          [
+            76,
+            1163
+          ],
+          [
+            80,
+            1138
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01174521000001505,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.020654421000017464,
+      "execution_seconds": 0.10128784299996596,
+      "serial_planning_plus_execution_seconds": 0.16389831600002935
+    },
+    {
+      "chains": 128,
+      "starts": 3133,
+      "planning_seconds": 0.06180779099997835,
+      "gpu_setup_seconds": 0.009627038999951765,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.060204510000005484,
+        "state_upload_seconds": 0.00019137100002808438,
+        "workspace_setup_seconds": 0.009627038999951765,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05957797600001413,
+        "final_download_seconds": 0.0004321289999893452,
+        "completion_checks": [
+          [
+            4,
+            3125
+          ],
+          [
+            8,
+            3110
+          ],
+          [
+            12,
+            2953
+          ],
+          [
+            16,
+            2774
+          ],
+          [
+            20,
+            2542
+          ],
+          [
+            24,
+            2397
+          ],
+          [
+            28,
+            2261
+          ],
+          [
+            32,
+            2120
+          ],
+          [
+            36,
+            1995
+          ],
+          [
+            40,
+            1882
+          ],
+          [
+            44,
+            1809
+          ],
+          [
+            48,
+            1741
+          ],
+          [
+            52,
+            1679
+          ],
+          [
+            56,
+            1633
+          ],
+          [
+            60,
+            1587
+          ],
+          [
+            64,
+            1551
+          ],
+          [
+            68,
+            1518
+          ],
+          [
+            72,
+            1494
+          ],
+          [
+            76,
+            1476
+          ],
+          [
+            80,
+            1462
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011322587999984535,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.015353328999992755,
+      "execution_seconds": 0.09653243500002873,
+      "serial_planning_plus_execution_seconds": 0.1583404500000256
+    },
+    {
+      "chains": 128,
+      "starts": 3129,
+      "planning_seconds": 0.0616650419999587,
+      "gpu_setup_seconds": 0.008938960000023144,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059227143999976306,
+        "state_upload_seconds": 0.00017757599999868035,
+        "workspace_setup_seconds": 0.008938960000023144,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05861587699996562,
+        "final_download_seconds": 0.0004311929999971653,
+        "completion_checks": [
+          [
+            4,
+            3123
+          ],
+          [
+            8,
+            3087
+          ],
+          [
+            12,
+            2939
+          ],
+          [
+            16,
+            2784
+          ],
+          [
+            20,
+            2514
+          ],
+          [
+            24,
+            2276
+          ],
+          [
+            28,
+            2112
+          ],
+          [
+            32,
+            1989
+          ],
+          [
+            36,
+            1880
+          ],
+          [
+            40,
+            1758
+          ],
+          [
+            44,
+            1667
+          ],
+          [
+            48,
+            1566
+          ],
+          [
+            52,
+            1503
+          ],
+          [
+            56,
+            1449
+          ],
+          [
+            60,
+            1408
+          ],
+          [
+            64,
+            1383
+          ],
+          [
+            68,
+            1349
+          ],
+          [
+            72,
+            1308
+          ],
+          [
+            76,
+            1269
+          ],
+          [
+            80,
+            1234
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011373382999977366,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.020692236999991565,
+      "execution_seconds": 0.10025467200000548,
+      "serial_planning_plus_execution_seconds": 0.16191996999992853
+    },
+    {
+      "chains": 128,
+      "starts": 3137,
+      "planning_seconds": 0.061420769999983804,
+      "gpu_setup_seconds": 0.007449171999951432,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05998017499996422,
+        "state_upload_seconds": 0.0001837460000047031,
+        "workspace_setup_seconds": 0.007449171999951432,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05937745199997835,
+        "final_download_seconds": 0.00041643599996632474,
+        "completion_checks": [
+          [
+            4,
+            3134
+          ],
+          [
+            8,
+            3132
+          ],
+          [
+            12,
+            3056
+          ],
+          [
+            16,
+            2790
+          ],
+          [
+            20,
+            2508
+          ],
+          [
+            24,
+            2281
+          ],
+          [
+            28,
+            2189
+          ],
+          [
+            32,
+            2073
+          ],
+          [
+            36,
+            1979
+          ],
+          [
+            40,
+            1905
+          ],
+          [
+            44,
+            1829
+          ],
+          [
+            48,
+            1742
+          ],
+          [
+            52,
+            1698
+          ],
+          [
+            56,
+            1660
+          ],
+          [
+            60,
+            1624
+          ],
+          [
+            64,
+            1600
+          ],
+          [
+            68,
+            1572
+          ],
+          [
+            72,
+            1547
+          ],
+          [
+            76,
+            1528
+          ],
+          [
+            80,
+            1515
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011408885000037117,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.02194139499999892,
+      "execution_seconds": 0.10080132899997807,
+      "serial_planning_plus_execution_seconds": 0.16222232799998437
+    },
+    {
+      "chains": 128,
+      "starts": 3138,
+      "planning_seconds": 0.06128038600002128,
+      "gpu_setup_seconds": 0.0071181850000243685,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05937183099996446,
+        "state_upload_seconds": 0.00018022899996594788,
+        "workspace_setup_seconds": 0.0071181850000243685,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05876956299999847,
+        "final_download_seconds": 0.00041925699997591437,
+        "completion_checks": [
+          [
+            4,
+            3138
+          ],
+          [
+            8,
+            3138
+          ],
+          [
+            12,
+            3114
+          ],
+          [
+            16,
+            2928
+          ],
+          [
+            20,
+            2640
+          ],
+          [
+            24,
+            2481
+          ],
+          [
+            28,
+            2369
+          ],
+          [
+            32,
+            2295
+          ],
+          [
+            36,
+            2215
+          ],
+          [
+            40,
+            2142
+          ],
+          [
+            44,
+            2080
+          ],
+          [
+            48,
+            2036
+          ],
+          [
+            52,
+            1983
+          ],
+          [
+            56,
+            1941
+          ],
+          [
+            60,
+            1899
+          ],
+          [
+            64,
+            1858
+          ],
+          [
+            68,
+            1828
+          ],
+          [
+            72,
+            1803
+          ],
+          [
+            76,
+            1782
+          ],
+          [
+            80,
+            1762
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01068555000000515,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.026631739000038124,
+      "execution_seconds": 0.10382969200003345,
+      "serial_planning_plus_execution_seconds": 0.16511058900005082
+    },
+    {
+      "chains": 128,
+      "starts": 3130,
+      "planning_seconds": 0.0607200089999651,
+      "gpu_setup_seconds": 0.007194425999955456,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06049933399998508,
+        "state_upload_seconds": 0.00019060299996453978,
+        "workspace_setup_seconds": 0.007194425999955456,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05989278700002387,
+        "final_download_seconds": 0.00041309300002012606,
+        "completion_checks": [
+          [
+            4,
+            3130
+          ],
+          [
+            8,
+            3129
+          ],
+          [
+            12,
+            3063
+          ],
+          [
+            16,
+            2867
+          ],
+          [
+            20,
+            2700
+          ],
+          [
+            24,
+            2568
+          ],
+          [
+            28,
+            2461
+          ],
+          [
+            32,
+            2377
+          ],
+          [
+            36,
+            2312
+          ],
+          [
+            40,
+            2251
+          ],
+          [
+            44,
+            2198
+          ],
+          [
+            48,
+            2158
+          ],
+          [
+            52,
+            2124
+          ],
+          [
+            56,
+            2075
+          ],
+          [
+            60,
+            2031
+          ],
+          [
+            64,
+            1998
+          ],
+          [
+            68,
+            1975
+          ],
+          [
+            72,
+            1959
+          ],
+          [
+            76,
+            1930
+          ],
+          [
+            80,
+            1920
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01138981399998329,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.023701184999993075,
+      "execution_seconds": 0.10280685399999356,
+      "serial_planning_plus_execution_seconds": 0.1635270349999587
+    },
+    {
+      "chains": 128,
+      "starts": 3129,
+      "planning_seconds": 0.060573030999989896,
+      "gpu_setup_seconds": 0.0069086620000007315,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059717698000042674,
+        "state_upload_seconds": 0.00018806000002768997,
+        "workspace_setup_seconds": 0.0069086620000007315,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.059112785000024815,
+        "final_download_seconds": 0.00041380299995807945,
+        "completion_checks": [
+          [
+            4,
+            3126
+          ],
+          [
+            8,
+            3114
+          ],
+          [
+            12,
+            3087
+          ],
+          [
+            16,
+            2936
+          ],
+          [
+            20,
+            2696
+          ],
+          [
+            24,
+            2527
+          ],
+          [
+            28,
+            2394
+          ],
+          [
+            32,
+            2287
+          ],
+          [
+            36,
+            2212
+          ],
+          [
+            40,
+            2152
+          ],
+          [
+            44,
+            2082
+          ],
+          [
+            48,
+            2024
+          ],
+          [
+            52,
+            1979
+          ],
+          [
+            56,
+            1924
+          ],
+          [
+            60,
+            1892
+          ],
+          [
+            64,
+            1867
+          ],
+          [
+            68,
+            1837
+          ],
+          [
+            72,
+            1795
+          ],
+          [
+            76,
+            1764
+          ],
+          [
+            80,
+            1732
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011053202000027795,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.026155040999981338,
+      "execution_seconds": 0.10385662200002344,
+      "serial_planning_plus_execution_seconds": 0.16442990699999882
+    },
+    {
+      "chains": 128,
+      "starts": 3141,
+      "planning_seconds": 0.08615904800001317,
+      "gpu_setup_seconds": 0.009686008000016955,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.08834483300000784,
+        "state_upload_seconds": 0.00021999400001959657,
+        "workspace_setup_seconds": 0.009686008000016955,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.0875837749999846,
+        "final_download_seconds": 0.0005371870000203671,
+        "completion_checks": [
+          [
+            4,
+            3141
+          ],
+          [
+            8,
+            3140
+          ],
+          [
+            12,
+            3076
+          ],
+          [
+            16,
+            2800
+          ],
+          [
+            20,
+            2570
+          ],
+          [
+            24,
+            2417
+          ],
+          [
+            28,
+            2262
+          ],
+          [
+            32,
+            2178
+          ],
+          [
+            36,
+            2120
+          ],
+          [
+            40,
+            2061
+          ],
+          [
+            44,
+            1993
+          ],
+          [
+            48,
+            1950
+          ],
+          [
+            52,
+            1904
+          ],
+          [
+            56,
+            1880
+          ],
+          [
+            60,
+            1839
+          ],
+          [
+            64,
+            1812
+          ],
+          [
+            68,
+            1790
+          ],
+          [
+            72,
+            1750
+          ],
+          [
+            76,
+            1729
+          ],
+          [
+            80,
+            1716
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011551267000015741,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.023646839000036834,
+      "execution_seconds": 0.1332562009999947,
+      "serial_planning_plus_execution_seconds": 0.21941545000004226
+    },
+    {
+      "chains": 128,
+      "starts": 3126,
+      "planning_seconds": 0.08445008499995765,
+      "gpu_setup_seconds": 0.00815363599997454,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.0762731689999896,
+        "state_upload_seconds": 0.00019077499996456027,
+        "workspace_setup_seconds": 0.00815363599997454,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.07554265800001758,
+        "final_download_seconds": 0.0005364730000110285,
+        "completion_checks": [
+          [
+            4,
+            3126
+          ],
+          [
+            8,
+            3114
+          ],
+          [
+            12,
+            3065
+          ],
+          [
+            16,
+            2828
+          ],
+          [
+            20,
+            2661
+          ],
+          [
+            24,
+            2553
+          ],
+          [
+            28,
+            2455
+          ],
+          [
+            32,
+            2376
+          ],
+          [
+            36,
+            2303
+          ],
+          [
+            40,
+            2245
+          ],
+          [
+            44,
+            2169
+          ],
+          [
+            48,
+            2123
+          ],
+          [
+            52,
+            2072
+          ],
+          [
+            56,
+            2031
+          ],
+          [
+            60,
+            2005
+          ],
+          [
+            64,
+            1968
+          ],
+          [
+            68,
+            1936
+          ],
+          [
+            72,
+            1891
+          ],
+          [
+            76,
+            1851
+          ],
+          [
+            80,
+            1818
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011544220000018868,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.01981843400000116,
+      "execution_seconds": 0.11581321500000286,
+      "serial_planning_plus_execution_seconds": 0.20026357699998698
+    },
+    {
+      "chains": 128,
+      "starts": 3125,
+      "planning_seconds": 0.07813684499996043,
+      "gpu_setup_seconds": 0.009118429000011474,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06979521700003488,
+        "state_upload_seconds": 0.00018519300004982142,
+        "workspace_setup_seconds": 0.009118429000011474,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.06918713999999682,
+        "final_download_seconds": 0.0004197659999931602,
+        "completion_checks": [
+          [
+            4,
+            3125
+          ],
+          [
+            8,
+            3123
+          ],
+          [
+            12,
+            3063
+          ],
+          [
+            16,
+            2790
+          ],
+          [
+            20,
+            2605
+          ],
+          [
+            24,
+            2478
+          ],
+          [
+            28,
+            2378
+          ],
+          [
+            32,
+            2312
+          ],
+          [
+            36,
+            2250
+          ],
+          [
+            40,
+            2166
+          ],
+          [
+            44,
+            2119
+          ],
+          [
+            48,
+            2084
+          ],
+          [
+            52,
+            2046
+          ],
+          [
+            56,
+            2019
+          ],
+          [
+            60,
+            1998
+          ],
+          [
+            64,
+            1969
+          ],
+          [
+            68,
+            1942
+          ],
+          [
+            72,
+            1906
+          ],
+          [
+            76,
+            1878
+          ],
+          [
+            80,
+            1858
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010460672000021987,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.020519898999964425,
+      "execution_seconds": 0.10991582299999436,
+      "serial_planning_plus_execution_seconds": 0.18805290699998523
+    },
+    {
+      "chains": 128,
+      "starts": 3133,
+      "planning_seconds": 0.060296654000012495,
+      "gpu_setup_seconds": 0.006168360999993183,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05891733299995394,
+        "state_upload_seconds": 0.0001757649999944988,
+        "workspace_setup_seconds": 0.006168360999993183,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058323914999959925,
+        "final_download_seconds": 0.0004151770000362376,
+        "completion_checks": [
+          [
+            4,
+            3132
+          ],
+          [
+            8,
+            3127
+          ],
+          [
+            12,
+            3073
+          ],
+          [
+            16,
+            2901
+          ],
+          [
+            20,
+            2682
+          ],
+          [
+            24,
+            2557
+          ],
+          [
+            28,
+            2432
+          ],
+          [
+            32,
+            2370
+          ],
+          [
+            36,
+            2289
+          ],
+          [
+            40,
+            2211
+          ],
+          [
+            44,
+            2150
+          ],
+          [
+            48,
+            2108
+          ],
+          [
+            52,
+            2071
+          ],
+          [
+            56,
+            2060
+          ],
+          [
+            60,
+            2030
+          ],
+          [
+            64,
+            2006
+          ],
+          [
+            68,
+            1981
+          ],
+          [
+            72,
+            1960
+          ],
+          [
+            76,
+            1942
+          ],
+          [
+            80,
+            1934
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010726495999961116,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.022096700000020064,
+      "execution_seconds": 0.09793066400004591,
+      "serial_planning_plus_execution_seconds": 0.15822964200003753
+    },
+    {
+      "chains": 128,
+      "starts": 3119,
+      "planning_seconds": 0.05946678699996255,
+      "gpu_setup_seconds": 0.007376457000020764,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.062204762999954255,
+        "state_upload_seconds": 0.00018443999999817606,
+        "workspace_setup_seconds": 0.007376457000020764,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.06160390100001223,
+        "final_download_seconds": 0.0004136370000082934,
+        "completion_checks": [
+          [
+            4,
+            3118
+          ],
+          [
+            8,
+            3117
+          ],
+          [
+            12,
+            3075
+          ],
+          [
+            16,
+            2940
+          ],
+          [
+            20,
+            2757
+          ],
+          [
+            24,
+            2606
+          ],
+          [
+            28,
+            2484
+          ],
+          [
+            32,
+            2409
+          ],
+          [
+            36,
+            2355
+          ],
+          [
+            40,
+            2300
+          ],
+          [
+            44,
+            2221
+          ],
+          [
+            48,
+            2170
+          ],
+          [
+            52,
+            2134
+          ],
+          [
+            56,
+            2102
+          ],
+          [
+            60,
+            2066
+          ],
+          [
+            64,
+            2039
+          ],
+          [
+            68,
+            2010
+          ],
+          [
+            72,
+            1975
+          ],
+          [
+            76,
+            1952
+          ],
+          [
+            80,
+            1937
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010711200999992343,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.020566978000033487,
+      "execution_seconds": 0.10088340000004337,
+      "serial_planning_plus_execution_seconds": 0.16035054399998216
+    },
+    {
+      "chains": 128,
+      "starts": 3115,
+      "planning_seconds": 0.059794860000010885,
+      "gpu_setup_seconds": 0.006409975999986273,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.058985213000028125,
+        "state_upload_seconds": 0.00018006700003070364,
+        "workspace_setup_seconds": 0.006409975999986273,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05839011899996649,
+        "final_download_seconds": 0.0004125070000213782,
+        "completion_checks": [
+          [
+            4,
+            3115
+          ],
+          [
+            8,
+            3114
+          ],
+          [
+            12,
+            3075
+          ],
+          [
+            16,
+            2920
+          ],
+          [
+            20,
+            2759
+          ],
+          [
+            24,
+            2652
+          ],
+          [
+            28,
+            2582
+          ],
+          [
+            32,
+            2501
+          ],
+          [
+            36,
+            2417
+          ],
+          [
+            40,
+            2348
+          ],
+          [
+            44,
+            2282
+          ],
+          [
+            48,
+            2232
+          ],
+          [
+            52,
+            2190
+          ],
+          [
+            56,
+            2153
+          ],
+          [
+            60,
+            2112
+          ],
+          [
+            64,
+            2068
+          ],
+          [
+            68,
+            2029
+          ],
+          [
+            72,
+            1986
+          ],
+          [
+            76,
+            1945
+          ],
+          [
+            80,
+            1928
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011368479999987358,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.018783953000024667,
+      "execution_seconds": 0.0955685489999496,
+      "serial_planning_plus_execution_seconds": 0.1553636659999711
+    },
+    {
+      "chains": 128,
+      "starts": 3122,
+      "planning_seconds": 0.06003409099997725,
+      "gpu_setup_seconds": 0.006891484999982822,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05914839399997618,
+        "state_upload_seconds": 0.00018344299996897462,
+        "workspace_setup_seconds": 0.006891484999982822,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05851895399996465,
+        "final_download_seconds": 0.00044305500000518805,
+        "completion_checks": [
+          [
+            4,
+            3122
+          ],
+          [
+            8,
+            3120
+          ],
+          [
+            12,
+            3023
+          ],
+          [
+            16,
+            2847
+          ],
+          [
+            20,
+            2693
+          ],
+          [
+            24,
+            2576
+          ],
+          [
+            28,
+            2490
+          ],
+          [
+            32,
+            2403
+          ],
+          [
+            36,
+            2335
+          ],
+          [
+            40,
+            2260
+          ],
+          [
+            44,
+            2201
+          ],
+          [
+            48,
+            2133
+          ],
+          [
+            52,
+            2088
+          ],
+          [
+            56,
+            2040
+          ],
+          [
+            60,
+            1998
+          ],
+          [
+            64,
+            1947
+          ],
+          [
+            68,
+            1896
+          ],
+          [
+            72,
+            1844
+          ],
+          [
+            76,
+            1798
+          ],
+          [
+            80,
+            1774
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011327445999995689,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.018316576000017903,
+      "execution_seconds": 0.09570525899999893,
+      "serial_planning_plus_execution_seconds": 0.1557396139999696
+    },
+    {
+      "chains": 128,
+      "starts": 3130,
+      "planning_seconds": 0.06017862200002355,
+      "gpu_setup_seconds": 0.0064617680000083055,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05947426000000178,
+        "state_upload_seconds": 0.00017872500001203662,
+        "workspace_setup_seconds": 0.0064617680000083055,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05887609500001645,
+        "final_download_seconds": 0.0004167429999597516,
+        "completion_checks": [
+          [
+            4,
+            3127
+          ],
+          [
+            8,
+            3122
+          ],
+          [
+            12,
+            3051
+          ],
+          [
+            16,
+            2793
+          ],
+          [
+            20,
+            2532
+          ],
+          [
+            24,
+            2383
+          ],
+          [
+            28,
+            2258
+          ],
+          [
+            32,
+            2169
+          ],
+          [
+            36,
+            2061
+          ],
+          [
+            40,
+            1972
+          ],
+          [
+            44,
+            1908
+          ],
+          [
+            48,
+            1853
+          ],
+          [
+            52,
+            1799
+          ],
+          [
+            56,
+            1760
+          ],
+          [
+            60,
+            1713
+          ],
+          [
+            64,
+            1672
+          ],
+          [
+            68,
+            1645
+          ],
+          [
+            72,
+            1593
+          ],
+          [
+            76,
+            1564
+          ],
+          [
+            80,
+            1531
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011115431999996872,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.025259674999972503,
+      "execution_seconds": 0.10233467599999813,
+      "serial_planning_plus_execution_seconds": 0.1625136280000561
+    },
+    {
+      "chains": 128,
+      "starts": 3129,
+      "planning_seconds": 0.06041963800004169,
+      "gpu_setup_seconds": 0.0069567630000051395,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05924086300001363,
+        "state_upload_seconds": 0.00018072800003210432,
+        "workspace_setup_seconds": 0.0069567630000051395,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05863933599999882,
+        "final_download_seconds": 0.00041801800000484945,
+        "completion_checks": [
+          [
+            4,
+            3129
+          ],
+          [
+            8,
+            3121
+          ],
+          [
+            12,
+            3069
+          ],
+          [
+            16,
+            2898
+          ],
+          [
+            20,
+            2712
+          ],
+          [
+            24,
+            2594
+          ],
+          [
+            28,
+            2499
+          ],
+          [
+            32,
+            2427
+          ],
+          [
+            36,
+            2344
+          ],
+          [
+            40,
+            2265
+          ],
+          [
+            44,
+            2190
+          ],
+          [
+            48,
+            2122
+          ],
+          [
+            52,
+            2054
+          ],
+          [
+            56,
+            2016
+          ],
+          [
+            60,
+            1970
+          ],
+          [
+            64,
+            1918
+          ],
+          [
+            68,
+            1879
+          ],
+          [
+            72,
+            1840
+          ],
+          [
+            76,
+            1811
+          ],
+          [
+            80,
+            1781
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011489374999996471,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.017097074999981032,
+      "execution_seconds": 0.09480418499998677,
+      "serial_planning_plus_execution_seconds": 0.15522411500006683
+    },
+    {
+      "chains": 128,
+      "starts": 3118,
+      "planning_seconds": 0.06011833799999522,
+      "gpu_setup_seconds": 0.0067276890000016465,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05944996499999888,
+        "state_upload_seconds": 0.0001783719999934874,
+        "workspace_setup_seconds": 0.0067276890000016465,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05880888000001505,
+        "final_download_seconds": 0.00046004299997548515,
+        "completion_checks": [
+          [
+            4,
+            3118
+          ],
+          [
+            8,
+            3115
+          ],
+          [
+            12,
+            3061
+          ],
+          [
+            16,
+            2866
+          ],
+          [
+            20,
+            2699
+          ],
+          [
+            24,
+            2588
+          ],
+          [
+            28,
+            2500
+          ],
+          [
+            32,
+            2431
+          ],
+          [
+            36,
+            2354
+          ],
+          [
+            40,
+            2277
+          ],
+          [
+            44,
+            2207
+          ],
+          [
+            48,
+            2144
+          ],
+          [
+            52,
+            2101
+          ],
+          [
+            56,
+            2071
+          ],
+          [
+            60,
+            2042
+          ],
+          [
+            64,
+            2013
+          ],
+          [
+            68,
+            1971
+          ],
+          [
+            72,
+            1936
+          ],
+          [
+            76,
+            1901
+          ],
+          [
+            80,
+            1859
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.0109003740000162,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.018465414999980112,
+      "execution_seconds": 0.09556481600003508,
+      "serial_planning_plus_execution_seconds": 0.1556833660000052
+    },
+    {
+      "chains": 128,
+      "starts": 3118,
+      "planning_seconds": 0.06014520499996934,
+      "gpu_setup_seconds": 0.006690502000026299,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05941464300002508,
+        "state_upload_seconds": 0.00017260800001395182,
+        "workspace_setup_seconds": 0.006690502000026299,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05881483500002105,
+        "final_download_seconds": 0.00042417999998178857,
+        "completion_checks": [
+          [
+            4,
+            3118
+          ],
+          [
+            8,
+            3118
+          ],
+          [
+            12,
+            3030
+          ],
+          [
+            16,
+            2801
+          ],
+          [
+            20,
+            2655
+          ],
+          [
+            24,
+            2542
+          ],
+          [
+            28,
+            2477
+          ],
+          [
+            32,
+            2403
+          ],
+          [
+            36,
+            2323
+          ],
+          [
+            40,
+            2240
+          ],
+          [
+            44,
+            2190
+          ],
+          [
+            48,
+            2145
+          ],
+          [
+            52,
+            2090
+          ],
+          [
+            56,
+            2053
+          ],
+          [
+            60,
+            2014
+          ],
+          [
+            64,
+            1972
+          ],
+          [
+            68,
+            1935
+          ],
+          [
+            72,
+            1896
+          ],
+          [
+            76,
+            1856
+          ],
+          [
+            80,
+            1809
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010435260000008384,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.019617046999997,
+      "execution_seconds": 0.09618016500002113,
+      "serial_planning_plus_execution_seconds": 0.15632563600001959
+    },
+    {
+      "chains": 128,
+      "starts": 3128,
+      "planning_seconds": 0.0595835209999791,
+      "gpu_setup_seconds": 0.006863875000021835,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05916693699998632,
+        "state_upload_seconds": 0.00017546499998388754,
+        "workspace_setup_seconds": 0.006863875000021835,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05857304099998828,
+        "final_download_seconds": 0.0004159620000336872,
+        "completion_checks": [
+          [
+            4,
+            3128
+          ],
+          [
+            8,
+            3123
+          ],
+          [
+            12,
+            3042
+          ],
+          [
+            16,
+            2780
+          ],
+          [
+            20,
+            2559
+          ],
+          [
+            24,
+            2429
+          ],
+          [
+            28,
+            2315
+          ],
+          [
+            32,
+            2220
+          ],
+          [
+            36,
+            2112
+          ],
+          [
+            40,
+            2017
+          ],
+          [
+            44,
+            1956
+          ],
+          [
+            48,
+            1913
+          ],
+          [
+            52,
+            1872
+          ],
+          [
+            56,
+            1836
+          ],
+          [
+            60,
+            1796
+          ],
+          [
+            64,
+            1750
+          ],
+          [
+            68,
+            1704
+          ],
+          [
+            72,
+            1654
+          ],
+          [
+            76,
+            1623
+          ],
+          [
+            80,
+            1601
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010494153000024653,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.023537419000035698,
+      "execution_seconds": 0.10008265200002597,
+      "serial_planning_plus_execution_seconds": 0.15966649399996413
+    },
+    {
+      "chains": 128,
+      "starts": 3127,
+      "planning_seconds": 0.060119466000003285,
+      "gpu_setup_seconds": 0.00730369000001474,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05933883600005174,
+        "state_upload_seconds": 0.0001775570000290827,
+        "workspace_setup_seconds": 0.00730369000001474,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05873226699998213,
+        "final_download_seconds": 0.0004264030000058483,
+        "completion_checks": [
+          [
+            4,
+            3126
+          ],
+          [
+            8,
+            3118
+          ],
+          [
+            12,
+            3036
+          ],
+          [
+            16,
+            2825
+          ],
+          [
+            20,
+            2643
+          ],
+          [
+            24,
+            2527
+          ],
+          [
+            28,
+            2416
+          ],
+          [
+            32,
+            2336
+          ],
+          [
+            36,
+            2258
+          ],
+          [
+            40,
+            2182
+          ],
+          [
+            44,
+            2138
+          ],
+          [
+            48,
+            2061
+          ],
+          [
+            52,
+            2004
+          ],
+          [
+            56,
+            1965
+          ],
+          [
+            60,
+            1924
+          ],
+          [
+            64,
+            1898
+          ],
+          [
+            68,
+            1864
+          ],
+          [
+            72,
+            1833
+          ],
+          [
+            76,
+            1811
+          ],
+          [
+            80,
+            1784
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010738231999994241,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.022003297000026123,
+      "execution_seconds": 0.0994049059999611,
+      "serial_planning_plus_execution_seconds": 0.1595246159999988
+    },
+    {
+      "chains": 128,
+      "starts": 3119,
+      "planning_seconds": 0.060251341999958186,
+      "gpu_setup_seconds": 0.006229851000000508,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.058786279000003105,
+        "state_upload_seconds": 0.00017521799998121423,
+        "workspace_setup_seconds": 0.006229851000000508,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05818388800003049,
+        "final_download_seconds": 0.0004244610000228022,
+        "completion_checks": [
+          [
+            4,
+            3119
+          ],
+          [
+            8,
+            3119
+          ],
+          [
+            12,
+            3064
+          ],
+          [
+            16,
+            2865
+          ],
+          [
+            20,
+            2680
+          ],
+          [
+            24,
+            2587
+          ],
+          [
+            28,
+            2492
+          ],
+          [
+            32,
+            2404
+          ],
+          [
+            36,
+            2316
+          ],
+          [
+            40,
+            2212
+          ],
+          [
+            44,
+            2140
+          ],
+          [
+            48,
+            2091
+          ],
+          [
+            52,
+            2044
+          ],
+          [
+            56,
+            1982
+          ],
+          [
+            60,
+            1944
+          ],
+          [
+            64,
+            1903
+          ],
+          [
+            68,
+            1851
+          ],
+          [
+            72,
+            1793
+          ],
+          [
+            76,
+            1748
+          ],
+          [
+            80,
+            1716
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011024898000016492,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.02093569299995579,
+      "execution_seconds": 0.09699833100000887,
+      "serial_planning_plus_execution_seconds": 0.15724995699997635
+    },
+    {
+      "chains": 128,
+      "starts": 3128,
+      "planning_seconds": 0.060473693000005824,
+      "gpu_setup_seconds": 0.006303607999996075,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059742409000023144,
+        "state_upload_seconds": 0.00017908800003851866,
+        "workspace_setup_seconds": 0.006303607999996075,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05912697200000139,
+        "final_download_seconds": 0.0004334010000093258,
+        "completion_checks": [
+          [
+            4,
+            3128
+          ],
+          [
+            8,
+            3126
+          ],
+          [
+            12,
+            3024
+          ],
+          [
+            16,
+            2803
+          ],
+          [
+            20,
+            2654
+          ],
+          [
+            24,
+            2521
+          ],
+          [
+            28,
+            2413
+          ],
+          [
+            32,
+            2343
+          ],
+          [
+            36,
+            2289
+          ],
+          [
+            40,
+            2228
+          ],
+          [
+            44,
+            2150
+          ],
+          [
+            48,
+            2100
+          ],
+          [
+            52,
+            2067
+          ],
+          [
+            56,
+            2043
+          ],
+          [
+            60,
+            2012
+          ],
+          [
+            64,
+            1982
+          ],
+          [
+            68,
+            1935
+          ],
+          [
+            72,
+            1906
+          ],
+          [
+            76,
+            1874
+          ],
+          [
+            80,
+            1832
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010905393000030017,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.02541803499997286,
+      "execution_seconds": 0.10238952099996368,
+      "serial_planning_plus_execution_seconds": 0.1628635010000039
+    },
+    {
+      "chains": 128,
+      "starts": 3118,
+      "planning_seconds": 0.0625948129999756,
+      "gpu_setup_seconds": 0.007853792999981124,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.07976206600000069,
+        "state_upload_seconds": 0.00017989899998838155,
+        "workspace_setup_seconds": 0.007853792999981124,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.07916430000000219,
+        "final_download_seconds": 0.00041535499997280567,
+        "completion_checks": [
+          [
+            4,
+            3118
+          ],
+          [
+            8,
+            3114
+          ],
+          [
+            12,
+            3063
+          ],
+          [
+            16,
+            2815
+          ],
+          [
+            20,
+            2687
+          ],
+          [
+            24,
+            2586
+          ],
+          [
+            28,
+            2515
+          ],
+          [
+            32,
+            2460
+          ],
+          [
+            36,
+            2409
+          ],
+          [
+            40,
+            2351
+          ],
+          [
+            44,
+            2280
+          ],
+          [
+            48,
+            2230
+          ],
+          [
+            52,
+            2190
+          ],
+          [
+            56,
+            2179
+          ],
+          [
+            60,
+            2141
+          ],
+          [
+            64,
+            2112
+          ],
+          [
+            68,
+            2056
+          ],
+          [
+            72,
+            1997
+          ],
+          [
+            76,
+            1957
+          ],
+          [
+            80,
+            1935
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01335886100002881,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.018074858999966636,
+      "execution_seconds": 0.11907189700002618,
+      "serial_planning_plus_execution_seconds": 0.18166693999995687
+    },
+    {
+      "chains": 128,
+      "starts": 3124,
+      "planning_seconds": 0.07979592800001001,
+      "gpu_setup_seconds": 0.007077715999969314,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05906222800001615,
+        "state_upload_seconds": 0.0001937320000138243,
+        "workspace_setup_seconds": 0.007077715999969314,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05845200100003467,
+        "final_download_seconds": 0.000413720999972611,
+        "completion_checks": [
+          [
+            4,
+            3124
+          ],
+          [
+            8,
+            3122
+          ],
+          [
+            12,
+            2959
+          ],
+          [
+            16,
+            2717
+          ],
+          [
+            20,
+            2557
+          ],
+          [
+            24,
+            2444
+          ],
+          [
+            28,
+            2342
+          ],
+          [
+            32,
+            2262
+          ],
+          [
+            36,
+            2197
+          ],
+          [
+            40,
+            2139
+          ],
+          [
+            44,
+            2104
+          ],
+          [
+            48,
+            2055
+          ],
+          [
+            52,
+            2026
+          ],
+          [
+            56,
+            1998
+          ],
+          [
+            60,
+            1966
+          ],
+          [
+            64,
+            1926
+          ],
+          [
+            68,
+            1874
+          ],
+          [
+            72,
+            1815
+          ],
+          [
+            76,
+            1768
+          ],
+          [
+            80,
+            1729
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011338201000000936,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.020700701999999183,
+      "execution_seconds": 0.09819891299997607,
+      "serial_planning_plus_execution_seconds": 0.177995205000002
+    },
+    {
+      "chains": 128,
+      "starts": 3130,
+      "planning_seconds": 0.059837878999985605,
+      "gpu_setup_seconds": 0.007007786999963628,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059537639000041054,
+        "state_upload_seconds": 0.0001873749999958818,
+        "workspace_setup_seconds": 0.007007786999963628,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05893640800002231,
+        "final_download_seconds": 0.0004112149999855319,
+        "completion_checks": [
+          [
+            4,
+            3130
+          ],
+          [
+            8,
+            3125
+          ],
+          [
+            12,
+            2967
+          ],
+          [
+            16,
+            2672
+          ],
+          [
+            20,
+            2468
+          ],
+          [
+            24,
+            2336
+          ],
+          [
+            28,
+            2225
+          ],
+          [
+            32,
+            2127
+          ],
+          [
+            36,
+            2044
+          ],
+          [
+            40,
+            1955
+          ],
+          [
+            44,
+            1870
+          ],
+          [
+            48,
+            1816
+          ],
+          [
+            52,
+            1769
+          ],
+          [
+            56,
+            1725
+          ],
+          [
+            60,
+            1699
+          ],
+          [
+            64,
+            1671
+          ],
+          [
+            68,
+            1626
+          ],
+          [
+            72,
+            1582
+          ],
+          [
+            76,
+            1557
+          ],
+          [
+            80,
+            1524
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011471276999998281,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.025163254000005963,
+      "execution_seconds": 0.10320072700000082,
+      "serial_planning_plus_execution_seconds": 0.16303888599998118
+    },
+    {
+      "chains": 128,
+      "starts": 3117,
+      "planning_seconds": 0.05976177799999505,
+      "gpu_setup_seconds": 0.006502277000038248,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05892917599999237,
+        "state_upload_seconds": 0.00017612300001701442,
+        "workspace_setup_seconds": 0.006502277000038248,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058333751000020584,
+        "final_download_seconds": 0.00041639799997028604,
+        "completion_checks": [
+          [
+            4,
+            3117
+          ],
+          [
+            8,
+            3116
+          ],
+          [
+            12,
+            3008
+          ],
+          [
+            16,
+            2781
+          ],
+          [
+            20,
+            2627
+          ],
+          [
+            24,
+            2536
+          ],
+          [
+            28,
+            2441
+          ],
+          [
+            32,
+            2357
+          ],
+          [
+            36,
+            2271
+          ],
+          [
+            40,
+            2166
+          ],
+          [
+            44,
+            2091
+          ],
+          [
+            48,
+            2037
+          ],
+          [
+            52,
+            1973
+          ],
+          [
+            56,
+            1912
+          ],
+          [
+            60,
+            1864
+          ],
+          [
+            64,
+            1807
+          ],
+          [
+            68,
+            1760
+          ],
+          [
+            72,
+            1719
+          ],
+          [
+            76,
+            1658
+          ],
+          [
+            80,
+            1613
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011274723999974867,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.019726058000003377,
+      "execution_seconds": 0.09647343500000716,
+      "serial_planning_plus_execution_seconds": 0.15623543800001016
+    },
+    {
+      "chains": 128,
+      "starts": 3133,
+      "planning_seconds": 0.060377673999994386,
+      "gpu_setup_seconds": 0.006482758999993621,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059304981000025236,
+        "state_upload_seconds": 0.00019666200000756362,
+        "workspace_setup_seconds": 0.006482758999993621,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058692752999945697,
+        "final_download_seconds": 0.0004129590000161443,
+        "completion_checks": [
+          [
+            4,
+            3133
+          ],
+          [
+            8,
+            3116
+          ],
+          [
+            12,
+            2989
+          ],
+          [
+            16,
+            2713
+          ],
+          [
+            20,
+            2495
+          ],
+          [
+            24,
+            2344
+          ],
+          [
+            28,
+            2219
+          ],
+          [
+            32,
+            2122
+          ],
+          [
+            36,
+            2005
+          ],
+          [
+            40,
+            1893
+          ],
+          [
+            44,
+            1822
+          ],
+          [
+            48,
+            1740
+          ],
+          [
+            52,
+            1684
+          ],
+          [
+            56,
+            1649
+          ],
+          [
+            60,
+            1589
+          ],
+          [
+            64,
+            1529
+          ],
+          [
+            68,
+            1476
+          ],
+          [
+            72,
+            1423
+          ],
+          [
+            76,
+            1376
+          ],
+          [
+            80,
+            1341
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011199490999956652,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.025056666000011774,
+      "execution_seconds": 0.10206675699998868,
+      "serial_planning_plus_execution_seconds": 0.1624446630000307
+    },
+    {
+      "chains": 128,
+      "starts": 3121,
+      "planning_seconds": 0.060550644000045395,
+      "gpu_setup_seconds": 0.006981501999973716,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05985120600001892,
+        "state_upload_seconds": 0.00018626600001425686,
+        "workspace_setup_seconds": 0.006981501999973716,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05924554899996792,
+        "final_download_seconds": 0.0004167289999941204,
+        "completion_checks": [
+          [
+            4,
+            3121
+          ],
+          [
+            8,
+            3117
+          ],
+          [
+            12,
+            3017
+          ],
+          [
+            16,
+            2734
+          ],
+          [
+            20,
+            2480
+          ],
+          [
+            24,
+            2363
+          ],
+          [
+            28,
+            2267
+          ],
+          [
+            32,
+            2197
+          ],
+          [
+            36,
+            2123
+          ],
+          [
+            40,
+            2053
+          ],
+          [
+            44,
+            1987
+          ],
+          [
+            48,
+            1915
+          ],
+          [
+            52,
+            1842
+          ],
+          [
+            56,
+            1802
+          ],
+          [
+            60,
+            1749
+          ],
+          [
+            64,
+            1714
+          ],
+          [
+            68,
+            1676
+          ],
+          [
+            72,
+            1641
+          ],
+          [
+            76,
+            1594
+          ],
+          [
+            80,
+            1556
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011017872000024909,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.022383753999974942,
+      "execution_seconds": 0.10025568599996859,
+      "serial_planning_plus_execution_seconds": 0.16080661900002724
+    },
+    {
+      "chains": 128,
+      "starts": 3126,
+      "planning_seconds": 0.060038197999972454,
+      "gpu_setup_seconds": 0.006677936000016871,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05922431199996936,
+        "state_upload_seconds": 0.00017516099995873446,
+        "workspace_setup_seconds": 0.006677936000016871,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05862006299997802,
+        "final_download_seconds": 0.00042631200000187164,
+        "completion_checks": [
+          [
+            4,
+            3126
+          ],
+          [
+            8,
+            3118
+          ],
+          [
+            12,
+            2994
+          ],
+          [
+            16,
+            2719
+          ],
+          [
+            20,
+            2538
+          ],
+          [
+            24,
+            2443
+          ],
+          [
+            28,
+            2356
+          ],
+          [
+            32,
+            2274
+          ],
+          [
+            36,
+            2184
+          ],
+          [
+            40,
+            2130
+          ],
+          [
+            44,
+            2069
+          ],
+          [
+            48,
+            2009
+          ],
+          [
+            52,
+            1980
+          ],
+          [
+            56,
+            1945
+          ],
+          [
+            60,
+            1917
+          ],
+          [
+            64,
+            1890
+          ],
+          [
+            68,
+            1859
+          ],
+          [
+            72,
+            1822
+          ],
+          [
+            76,
+            1792
+          ],
+          [
+            80,
+            1754
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010648004000017863,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.023626035000006596,
+      "execution_seconds": 0.10019794400000137,
+      "serial_planning_plus_execution_seconds": 0.16023640699995667
+    },
+    {
+      "chains": 128,
+      "starts": 3142,
+      "planning_seconds": 0.06012665899999092,
+      "gpu_setup_seconds": 0.007123470999999881,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05909781299999395,
+        "state_upload_seconds": 0.00017859799999087045,
+        "workspace_setup_seconds": 0.007123470999999881,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058486393000009684,
+        "final_download_seconds": 0.0004299339999533913,
+        "completion_checks": [
+          [
+            4,
+            3142
+          ],
+          [
+            8,
+            3136
+          ],
+          [
+            12,
+            3041
+          ],
+          [
+            16,
+            2813
+          ],
+          [
+            20,
+            2552
+          ],
+          [
+            24,
+            2369
+          ],
+          [
+            28,
+            2241
+          ],
+          [
+            32,
+            2159
+          ],
+          [
+            36,
+            2044
+          ],
+          [
+            40,
+            1973
+          ],
+          [
+            44,
+            1904
+          ],
+          [
+            48,
+            1847
+          ],
+          [
+            52,
+            1771
+          ],
+          [
+            56,
+            1730
+          ],
+          [
+            60,
+            1694
+          ],
+          [
+            64,
+            1664
+          ],
+          [
+            68,
+            1643
+          ],
+          [
+            72,
+            1602
+          ],
+          [
+            76,
+            1577
+          ],
+          [
+            80,
+            1556
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01101665400000229,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.02681307799997512,
+      "execution_seconds": 0.10407247399996322,
+      "serial_planning_plus_execution_seconds": 0.16419944899996608
+    },
+    {
+      "chains": 128,
+      "starts": 3133,
+      "planning_seconds": 0.06058280300004526,
+      "gpu_setup_seconds": 0.007310134000022117,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.058993480000026466,
+        "state_upload_seconds": 0.00018637500005524998,
+        "workspace_setup_seconds": 0.007310134000022117,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05837810499997431,
+        "final_download_seconds": 0.0004262589999939337,
+        "completion_checks": [
+          [
+            4,
+            3133
+          ],
+          [
+            8,
+            3130
+          ],
+          [
+            12,
+            3052
+          ],
+          [
+            16,
+            2759
+          ],
+          [
+            20,
+            2587
+          ],
+          [
+            24,
+            2468
+          ],
+          [
+            28,
+            2390
+          ],
+          [
+            32,
+            2338
+          ],
+          [
+            36,
+            2279
+          ],
+          [
+            40,
+            2229
+          ],
+          [
+            44,
+            2164
+          ],
+          [
+            48,
+            2102
+          ],
+          [
+            52,
+            2055
+          ],
+          [
+            56,
+            2010
+          ],
+          [
+            60,
+            1993
+          ],
+          [
+            64,
+            1954
+          ],
+          [
+            68,
+            1917
+          ],
+          [
+            72,
+            1865
+          ],
+          [
+            76,
+            1829
+          ],
+          [
+            80,
+            1797
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01119017299998859,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.02419524099997261,
+      "execution_seconds": 0.1017098689999898,
+      "serial_planning_plus_execution_seconds": 0.16229300800006285
+    },
+    {
+      "chains": 128,
+      "starts": 3135,
+      "planning_seconds": 0.060442177000027186,
+      "gpu_setup_seconds": 0.006260714000006828,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05910937300001251,
+        "state_upload_seconds": 0.0001729869999849143,
+        "workspace_setup_seconds": 0.006260714000006828,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05850742199999104,
+        "final_download_seconds": 0.0004260869999939132,
+        "completion_checks": [
+          [
+            4,
+            3135
+          ],
+          [
+            8,
+            3129
+          ],
+          [
+            12,
+            3014
+          ],
+          [
+            16,
+            2760
+          ],
+          [
+            20,
+            2527
+          ],
+          [
+            24,
+            2386
+          ],
+          [
+            28,
+            2304
+          ],
+          [
+            32,
+            2240
+          ],
+          [
+            36,
+            2148
+          ],
+          [
+            40,
+            2067
+          ],
+          [
+            44,
+            2014
+          ],
+          [
+            48,
+            1951
+          ],
+          [
+            52,
+            1915
+          ],
+          [
+            56,
+            1864
+          ],
+          [
+            60,
+            1819
+          ],
+          [
+            64,
+            1790
+          ],
+          [
+            68,
+            1740
+          ],
+          [
+            72,
+            1697
+          ],
+          [
+            76,
+            1632
+          ],
+          [
+            80,
+            1613
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010960392000015418,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.024226338999994823,
+      "execution_seconds": 0.1005764079999949,
+      "serial_planning_plus_execution_seconds": 0.16101901200005386
+    },
+    {
+      "chains": 128,
+      "starts": 3119,
+      "planning_seconds": 0.0603292529999635,
+      "gpu_setup_seconds": 0.006475013999988732,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05943589800000382,
+        "state_upload_seconds": 0.00017609600001833314,
+        "workspace_setup_seconds": 0.006475013999988732,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05884051999998974,
+        "final_download_seconds": 0.0004166650000456684,
+        "completion_checks": [
+          [
+            4,
+            3119
+          ],
+          [
+            8,
+            3111
+          ],
+          [
+            12,
+            3004
+          ],
+          [
+            16,
+            2782
+          ],
+          [
+            20,
+            2605
+          ],
+          [
+            24,
+            2502
+          ],
+          [
+            28,
+            2393
+          ],
+          [
+            32,
+            2300
+          ],
+          [
+            36,
+            2191
+          ],
+          [
+            40,
+            2096
+          ],
+          [
+            44,
+            2032
+          ],
+          [
+            48,
+            1975
+          ],
+          [
+            52,
+            1908
+          ],
+          [
+            56,
+            1846
+          ],
+          [
+            60,
+            1797
+          ],
+          [
+            64,
+            1750
+          ],
+          [
+            68,
+            1698
+          ],
+          [
+            72,
+            1624
+          ],
+          [
+            76,
+            1578
+          ],
+          [
+            80,
+            1549
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010580145999995239,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.020221121000020048,
+      "execution_seconds": 0.0967347999999788,
+      "serial_planning_plus_execution_seconds": 0.15706432299992912
+    },
+    {
+      "chains": 128,
+      "starts": 3122,
+      "planning_seconds": 0.06036563899999692,
+      "gpu_setup_seconds": 0.0062638489999926605,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059315927999989526,
+        "state_upload_seconds": 0.00017490900000893816,
+        "workspace_setup_seconds": 0.0062638489999926605,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05872643399999333,
+        "final_download_seconds": 0.0004116769999882308,
+        "completion_checks": [
+          [
+            4,
+            3122
+          ],
+          [
+            8,
+            3122
+          ],
+          [
+            12,
+            3022
+          ],
+          [
+            16,
+            2803
+          ],
+          [
+            20,
+            2664
+          ],
+          [
+            24,
+            2566
+          ],
+          [
+            28,
+            2494
+          ],
+          [
+            32,
+            2436
+          ],
+          [
+            36,
+            2370
+          ],
+          [
+            40,
+            2312
+          ],
+          [
+            44,
+            2264
+          ],
+          [
+            48,
+            2223
+          ],
+          [
+            52,
+            2186
+          ],
+          [
+            56,
+            2157
+          ],
+          [
+            60,
+            2125
+          ],
+          [
+            64,
+            2093
+          ],
+          [
+            68,
+            2044
+          ],
+          [
+            72,
+            2007
+          ],
+          [
+            76,
+            1969
+          ],
+          [
+            80,
+            1935
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011191867000036382,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.018488531000002695,
+      "execution_seconds": 0.09528243500000144,
+      "serial_planning_plus_execution_seconds": 0.15564831900002218
+    },
+    {
+      "chains": 128,
+      "starts": 3127,
+      "planning_seconds": 0.06015750099999195,
+      "gpu_setup_seconds": 0.006674568999983421,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05924175100000184,
+        "state_upload_seconds": 0.0001850149999995665,
+        "workspace_setup_seconds": 0.006674568999983421,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05863165100004153,
+        "final_download_seconds": 0.0004221919999736201,
+        "completion_checks": [
+          [
+            4,
+            3127
+          ],
+          [
+            8,
+            3121
+          ],
+          [
+            12,
+            3028
+          ],
+          [
+            16,
+            2708
+          ],
+          [
+            20,
+            2527
+          ],
+          [
+            24,
+            2401
+          ],
+          [
+            28,
+            2331
+          ],
+          [
+            32,
+            2252
+          ],
+          [
+            36,
+            2191
+          ],
+          [
+            40,
+            2124
+          ],
+          [
+            44,
+            2063
+          ],
+          [
+            48,
+            2010
+          ],
+          [
+            52,
+            1970
+          ],
+          [
+            56,
+            1936
+          ],
+          [
+            60,
+            1911
+          ],
+          [
+            64,
+            1868
+          ],
+          [
+            68,
+            1804
+          ],
+          [
+            72,
+            1767
+          ],
+          [
+            76,
+            1712
+          ],
+          [
+            80,
+            1660
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01051010399999086,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.021717856000009306,
+      "execution_seconds": 0.09816901699997516,
+      "serial_planning_plus_execution_seconds": 0.15832681399996318
+    },
+    {
+      "chains": 128,
+      "starts": 3125,
+      "planning_seconds": 0.06023450300000377,
+      "gpu_setup_seconds": 0.006872146000034718,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06378292300001931,
+        "state_upload_seconds": 0.00018657700002222555,
+        "workspace_setup_seconds": 0.006872146000034718,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.06316481300001442,
+        "final_download_seconds": 0.00042859400002726034,
+        "completion_checks": [
+          [
+            4,
+            3125
+          ],
+          [
+            8,
+            3124
+          ],
+          [
+            12,
+            3007
+          ],
+          [
+            16,
+            2716
+          ],
+          [
+            20,
+            2531
+          ],
+          [
+            24,
+            2400
+          ],
+          [
+            28,
+            2305
+          ],
+          [
+            32,
+            2243
+          ],
+          [
+            36,
+            2149
+          ],
+          [
+            40,
+            2079
+          ],
+          [
+            44,
+            2044
+          ],
+          [
+            48,
+            2000
+          ],
+          [
+            52,
+            1966
+          ],
+          [
+            56,
+            1933
+          ],
+          [
+            60,
+            1918
+          ],
+          [
+            64,
+            1896
+          ],
+          [
+            68,
+            1854
+          ],
+          [
+            72,
+            1825
+          ],
+          [
+            76,
+            1794
+          ],
+          [
+            80,
+            1760
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010807191999958832,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.02153928399997085,
+      "execution_seconds": 0.10302457699998513,
+      "serial_planning_plus_execution_seconds": 0.16325936600003388
+    },
+    {
+      "chains": 128,
+      "starts": 3118,
+      "planning_seconds": 0.060003125000037016,
+      "gpu_setup_seconds": 0.006534676000001127,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05901289499996665,
+        "state_upload_seconds": 0.00017004199997927572,
+        "workspace_setup_seconds": 0.006534676000001127,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.0584290029999579,
+        "final_download_seconds": 0.00041123500000139757,
+        "completion_checks": [
+          [
+            4,
+            3118
+          ],
+          [
+            8,
+            3118
+          ],
+          [
+            12,
+            3041
+          ],
+          [
+            16,
+            2805
+          ],
+          [
+            20,
+            2618
+          ],
+          [
+            24,
+            2513
+          ],
+          [
+            28,
+            2412
+          ],
+          [
+            32,
+            2337
+          ],
+          [
+            36,
+            2263
+          ],
+          [
+            40,
+            2159
+          ],
+          [
+            44,
+            2082
+          ],
+          [
+            48,
+            2003
+          ],
+          [
+            52,
+            1931
+          ],
+          [
+            56,
+            1875
+          ],
+          [
+            60,
+            1844
+          ],
+          [
+            64,
+            1805
+          ],
+          [
+            68,
+            1769
+          ],
+          [
+            72,
+            1737
+          ],
+          [
+            76,
+            1703
+          ],
+          [
+            80,
+            1676
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011847634000048402,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.01957388899995749,
+      "execution_seconds": 0.09699176899999884,
+      "serial_planning_plus_execution_seconds": 0.15699512600002663
+    },
+    {
+      "chains": 128,
+      "starts": 3121,
+      "planning_seconds": 0.06007389199999125,
+      "gpu_setup_seconds": 0.006704544000001533,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.058858204999978625,
+        "state_upload_seconds": 0.00017902700000149707,
+        "workspace_setup_seconds": 0.006704544000001533,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058248032999983934,
+        "final_download_seconds": 0.00042832999997699517,
+        "completion_checks": [
+          [
+            4,
+            3121
+          ],
+          [
+            8,
+            3111
+          ],
+          [
+            12,
+            2988
+          ],
+          [
+            16,
+            2654
+          ],
+          [
+            20,
+            2441
+          ],
+          [
+            24,
+            2330
+          ],
+          [
+            28,
+            2242
+          ],
+          [
+            32,
+            2118
+          ],
+          [
+            36,
+            2064
+          ],
+          [
+            40,
+            2005
+          ],
+          [
+            44,
+            1941
+          ],
+          [
+            48,
+            1869
+          ],
+          [
+            52,
+            1825
+          ],
+          [
+            56,
+            1792
+          ],
+          [
+            60,
+            1753
+          ],
+          [
+            64,
+            1713
+          ],
+          [
+            68,
+            1687
+          ],
+          [
+            72,
+            1631
+          ],
+          [
+            76,
+            1587
+          ],
+          [
+            80,
+            1547
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011312634999967486,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.0221990759999926,
+      "execution_seconds": 0.09909675599999446,
+      "serial_planning_plus_execution_seconds": 0.15917086499996458
+    },
+    {
+      "chains": 128,
+      "starts": 3111,
+      "planning_seconds": 0.06014734199999339,
+      "gpu_setup_seconds": 0.006701416999987941,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05929087399999844,
+        "state_upload_seconds": 0.0002038979999952062,
+        "workspace_setup_seconds": 0.006701416999987941,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05866369499995017,
+        "final_download_seconds": 0.00042037600002231557,
+        "completion_checks": [
+          [
+            4,
+            3111
+          ],
+          [
+            8,
+            3106
+          ],
+          [
+            12,
+            3039
+          ],
+          [
+            16,
+            2785
+          ],
+          [
+            20,
+            2629
+          ],
+          [
+            24,
+            2530
+          ],
+          [
+            28,
+            2424
+          ],
+          [
+            32,
+            2338
+          ],
+          [
+            36,
+            2267
+          ],
+          [
+            40,
+            2172
+          ],
+          [
+            44,
+            2087
+          ],
+          [
+            48,
+            2003
+          ],
+          [
+            52,
+            1942
+          ],
+          [
+            56,
+            1899
+          ],
+          [
+            60,
+            1858
+          ],
+          [
+            64,
+            1805
+          ],
+          [
+            68,
+            1753
+          ],
+          [
+            72,
+            1694
+          ],
+          [
+            76,
+            1634
+          ],
+          [
+            80,
+            1570
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011328798000022289,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.01682067500001949,
+      "execution_seconds": 0.09416524100004153,
+      "serial_planning_plus_execution_seconds": 0.15431295700000192
+    },
+    {
+      "chains": 128,
+      "starts": 3129,
+      "planning_seconds": 0.060470545999976366,
+      "gpu_setup_seconds": 0.00707595000000083,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.0589296140000215,
+        "state_upload_seconds": 0.00017373100001805142,
+        "workspace_setup_seconds": 0.00707595000000083,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058333634999996775,
+        "final_download_seconds": 0.0004196099999944636,
+        "completion_checks": [
+          [
+            4,
+            3129
+          ],
+          [
+            8,
+            3121
+          ],
+          [
+            12,
+            3028
+          ],
+          [
+            16,
+            2757
+          ],
+          [
+            20,
+            2571
+          ],
+          [
+            24,
+            2433
+          ],
+          [
+            28,
+            2312
+          ],
+          [
+            32,
+            2223
+          ],
+          [
+            36,
+            2159
+          ],
+          [
+            40,
+            2078
+          ],
+          [
+            44,
+            2014
+          ],
+          [
+            48,
+            1951
+          ],
+          [
+            52,
+            1907
+          ],
+          [
+            56,
+            1870
+          ],
+          [
+            60,
+            1819
+          ],
+          [
+            64,
+            1770
+          ],
+          [
+            68,
+            1715
+          ],
+          [
+            72,
+            1659
+          ],
+          [
+            76,
+            1618
+          ],
+          [
+            80,
+            1581
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01125759299998208,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.021921217999988585,
+      "execution_seconds": 0.09920555200000081,
+      "serial_planning_plus_execution_seconds": 0.15967633599996134
+    },
+    {
+      "chains": 128,
+      "starts": 3138,
+      "planning_seconds": 0.06096743500000912,
+      "gpu_setup_seconds": 0.00690855699997428,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059513670000001184,
+        "state_upload_seconds": 0.00017390800002203832,
+        "workspace_setup_seconds": 0.00690855699997428,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058929255999998986,
+        "final_download_seconds": 0.00040764900001022397,
+        "completion_checks": [
+          [
+            4,
+            3138
+          ],
+          [
+            8,
+            3133
+          ],
+          [
+            12,
+            3049
+          ],
+          [
+            16,
+            2731
+          ],
+          [
+            20,
+            2514
+          ],
+          [
+            24,
+            2368
+          ],
+          [
+            28,
+            2268
+          ],
+          [
+            32,
+            2172
+          ],
+          [
+            36,
+            2081
+          ],
+          [
+            40,
+            1968
+          ],
+          [
+            44,
+            1902
+          ],
+          [
+            48,
+            1831
+          ],
+          [
+            52,
+            1780
+          ],
+          [
+            56,
+            1720
+          ],
+          [
+            60,
+            1661
+          ],
+          [
+            64,
+            1631
+          ],
+          [
+            68,
+            1596
+          ],
+          [
+            72,
+            1552
+          ],
+          [
+            76,
+            1522
+          ],
+          [
+            80,
+            1491
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010938523000049827,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.025034402000017053,
+      "execution_seconds": 0.102416594000033,
+      "serial_planning_plus_execution_seconds": 0.1633843019999972
+    },
+    {
+      "chains": 128,
+      "starts": 3128,
+      "planning_seconds": 0.06097922100002506,
+      "gpu_setup_seconds": 0.006900282000003699,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059090880999974615,
+        "state_upload_seconds": 0.000171475999991344,
+        "workspace_setup_seconds": 0.006900282000003699,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058497431000034794,
+        "final_download_seconds": 0.0004191520000063065,
+        "completion_checks": [
+          [
+            4,
+            3128
+          ],
+          [
+            8,
+            3126
+          ],
+          [
+            12,
+            3046
+          ],
+          [
+            16,
+            2773
+          ],
+          [
+            20,
+            2596
+          ],
+          [
+            24,
+            2457
+          ],
+          [
+            28,
+            2329
+          ],
+          [
+            32,
+            2237
+          ],
+          [
+            36,
+            2171
+          ],
+          [
+            40,
+            2095
+          ],
+          [
+            44,
+            1988
+          ],
+          [
+            48,
+            1900
+          ],
+          [
+            52,
+            1853
+          ],
+          [
+            56,
+            1820
+          ],
+          [
+            60,
+            1780
+          ],
+          [
+            64,
+            1730
+          ],
+          [
+            68,
+            1694
+          ],
+          [
+            72,
+            1652
+          ],
+          [
+            76,
+            1609
+          ],
+          [
+            80,
+            1580
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010783161999995627,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.02288059299996803,
+      "execution_seconds": 0.09967657599997892,
+      "serial_planning_plus_execution_seconds": 0.16065606800003707
+    },
+    {
+      "chains": 16,
+      "starts": 392,
+      "planning_seconds": 0.008001982999985557,
+      "gpu_setup_seconds": 0.0037844350000000304,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.06277241300000469,
+        "state_upload_seconds": 0.00015259999997851992,
+        "workspace_setup_seconds": 0.0037844350000000304,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.06221102099999598,
+        "final_download_seconds": 0.00040577100003247324,
+        "completion_checks": [
+          [
+            4,
+            392
+          ],
+          [
+            8,
+            385
+          ],
+          [
+            12,
+            377
+          ],
+          [
+            16,
+            345
+          ],
+          [
+            20,
+            315
+          ],
+          [
+            24,
+            305
+          ],
+          [
+            28,
+            287
+          ],
+          [
+            32,
+            277
+          ],
+          [
+            36,
+            259
+          ],
+          [
+            40,
+            253
+          ],
+          [
+            44,
+            252
+          ],
+          [
+            48,
+            248
+          ],
+          [
+            52,
+            240
+          ],
+          [
+            56,
+            234
+          ],
+          [
+            60,
+            227
+          ],
+          [
+            64,
+            226
+          ],
+          [
+            68,
+            224
+          ],
+          [
+            72,
+            220
+          ],
+          [
+            76,
+            220
+          ],
+          [
+            80,
+            219
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.010463143999970725,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.0025093900000001668,
+      "execution_seconds": 0.07955041499997151,
+      "serial_planning_plus_execution_seconds": 0.08755273299999544
+    },
+    {
+      "chains": 43,
+      "starts": 1336,
+      "planning_seconds": 0.02611827800001265,
+      "gpu_setup_seconds": 0.009183893999988868,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05962407399999847,
+        "state_upload_seconds": 0.00016387099998382837,
+        "workspace_setup_seconds": 0.009183893999988868,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.059065879999991466,
+        "final_download_seconds": 0.00039189099999248356,
+        "completion_checks": [
+          [
+            4,
+            1336
+          ],
+          [
+            8,
+            1329
+          ],
+          [
+            12,
+            1232
+          ],
+          [
+            16,
+            1178
+          ],
+          [
+            20,
+            926
+          ],
+          [
+            24,
+            719
+          ],
+          [
+            28,
+            572
+          ],
+          [
+            32,
+            439
+          ],
+          [
+            36,
+            337
+          ],
+          [
+            40,
+            295
+          ],
+          [
+            44,
+            256
+          ],
+          [
+            48,
+            241
+          ],
+          [
+            52,
+            232
+          ],
+          [
+            56,
+            226
+          ],
+          [
+            60,
+            222
+          ],
+          [
+            64,
+            215
+          ],
+          [
+            68,
+            196
+          ],
+          [
+            72,
+            176
+          ],
+          [
+            76,
+            155
+          ],
+          [
+            80,
+            127
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.01063722899999675,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.033917393000024276,
+      "execution_seconds": 0.11338600099998075,
+      "serial_planning_plus_execution_seconds": 0.13950452899996435
+    },
+    {
+      "chains": 128,
+      "starts": 4099,
+      "planning_seconds": 0.06967361499999924,
+      "gpu_setup_seconds": 0.018307186000015463,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.059160990000009406,
+        "state_upload_seconds": 0.0001793160000147509,
+        "workspace_setup_seconds": 0.018307186000015463,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05854865300000256,
+        "final_download_seconds": 0.00043032499996797924,
+        "completion_checks": [
+          [
+            4,
+            4091
+          ],
+          [
+            8,
+            4006
+          ],
+          [
+            12,
+            3031
+          ],
+          [
+            16,
+            3016
+          ],
+          [
+            20,
+            2896
+          ],
+          [
+            24,
+            2513
+          ],
+          [
+            28,
+            2123
+          ],
+          [
+            32,
+            1689
+          ],
+          [
+            36,
+            1347
+          ],
+          [
+            40,
+            1113
+          ],
+          [
+            44,
+            921
+          ],
+          [
+            48,
+            779
+          ],
+          [
+            52,
+            657
+          ],
+          [
+            56,
+            573
+          ],
+          [
+            60,
+            509
+          ],
+          [
+            64,
+            473
+          ],
+          [
+            68,
+            440
+          ],
+          [
+            72,
+            417
+          ],
+          [
+            76,
+            386
+          ],
+          [
+            80,
+            369
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011498914000014793,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.12904861300000903,
+      "execution_seconds": 0.21803903099998934,
+      "serial_planning_plus_execution_seconds": 0.2877128829999833
+    },
+    {
+      "chains": 108,
+      "starts": 3174,
+      "planning_seconds": 0.057221353999977964,
+      "gpu_setup_seconds": 0.009678903999997601,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05886706800004049,
+        "state_upload_seconds": 0.0001711250000084874,
+        "workspace_setup_seconds": 0.009678903999997601,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.058272204999980204,
+        "final_download_seconds": 0.0004210519999787721,
+        "completion_checks": [
+          [
+            4,
+            3154
+          ],
+          [
+            8,
+            3110
+          ],
+          [
+            12,
+            2717
+          ],
+          [
+            16,
+            2476
+          ],
+          [
+            20,
+            2050
+          ],
+          [
+            24,
+            1585
+          ],
+          [
+            28,
+            1250
+          ],
+          [
+            32,
+            1017
+          ],
+          [
+            36,
+            812
+          ],
+          [
+            40,
+            678
+          ],
+          [
+            44,
+            587
+          ],
+          [
+            48,
+            525
+          ],
+          [
+            52,
+            466
+          ],
+          [
+            56,
+            432
+          ],
+          [
+            60,
+            407
+          ],
+          [
+            64,
+            376
+          ],
+          [
+            68,
+            351
+          ],
+          [
+            72,
+            319
+          ],
+          [
+            76,
+            289
+          ],
+          [
+            80,
+            267
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.011533337999992455,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.08467437699999891,
+      "execution_seconds": 0.1647749679999606,
+      "serial_planning_plus_execution_seconds": 0.22199657199996636
+    },
+    {
+      "chains": 1,
+      "starts": 26,
+      "planning_seconds": 0.0010675010000227303,
+      "gpu_setup_seconds": 0.0038397580000264497,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.05968883100001676,
+        "state_upload_seconds": 0.00014718699998184093,
+        "workspace_setup_seconds": 0.0038397580000264497,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.059148658999959025,
+        "final_download_seconds": 0.0003902509999988979,
+        "completion_checks": [
+          [
+            4,
+            26
+          ],
+          [
+            8,
+            26
+          ],
+          [
+            12,
+            26
+          ],
+          [
+            16,
+            26
+          ],
+          [
+            20,
+            18
+          ],
+          [
+            24,
+            12
+          ],
+          [
+            28,
+            9
+          ],
+          [
+            32,
+            6
+          ],
+          [
+            36,
+            6
+          ],
+          [
+            40,
+            6
+          ],
+          [
+            44,
+            6
+          ],
+          [
+            48,
+            6
+          ],
+          [
+            52,
+            6
+          ],
+          [
+            56,
+            6
+          ],
+          [
+            60,
+            6
+          ],
+          [
+            64,
+            6
+          ],
+          [
+            68,
+            3
+          ],
+          [
+            72,
+            3
+          ],
+          [
+            76,
+            3
+          ],
+          [
+            80,
+            3
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.002563859999952456,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.00035105099999555023,
+      "execution_seconds": 0.0664617879999696,
+      "serial_planning_plus_execution_seconds": 0.06752962100000559
+    },
+    {
+      "chains": 2,
+      "starts": 52,
+      "planning_seconds": 0.0017009059999963938,
+      "gpu_setup_seconds": 0.0032074710000529194,
+      "gpu_solve_profile": {
+        "wall_seconds": 0.058899783000015304,
+        "state_upload_seconds": 0.00014578600001868836,
+        "workspace_setup_seconds": 0.0032074710000529194,
+        "workspace_reused": true,
+        "parallel_normal": true,
+        "coalesced": true,
+        "columnar_jacobian": false,
+        "parallel_copy": true,
+        "device_iterations_wall_seconds": 0.05837809299998753,
+        "final_download_seconds": 0.0003730199999836259,
+        "completion_checks": [
+          [
+            4,
+            52
+          ],
+          [
+            8,
+            52
+          ],
+          [
+            12,
+            52
+          ],
+          [
+            16,
+            52
+          ],
+          [
+            20,
+            36
+          ],
+          [
+            24,
+            24
+          ],
+          [
+            28,
+            18
+          ],
+          [
+            32,
+            12
+          ],
+          [
+            36,
+            12
+          ],
+          [
+            40,
+            12
+          ],
+          [
+            44,
+            12
+          ],
+          [
+            48,
+            12
+          ],
+          [
+            52,
+            12
+          ],
+          [
+            56,
+            12
+          ],
+          [
+            60,
+            12
+          ],
+          [
+            64,
+            12
+          ],
+          [
+            68,
+            6
+          ],
+          [
+            72,
+            6
+          ],
+          [
+            76,
+            6
+          ],
+          [
+            80,
+            6
+          ]
+        ],
+        "per_iteration_full_array_transfers": 0
+      },
+      "cpu_verify_fallback_seconds": 0.004769735000024866,
+      "cpu_fallback_starts": 0,
+      "selection_seconds": 0.0004418770000143013,
+      "execution_seconds": 0.06733661200001961,
+      "serial_planning_plus_execution_seconds": 0.06903785999998036
+    }
+  ]
+}

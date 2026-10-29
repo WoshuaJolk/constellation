@@ -1,0 +1,12 @@
+{
+  "research/solve_itf/GPU-PROPOSAL-RETRIEVAL-20261029.md": "eab9d38a71e23284a9cef0a29d485ac774aef0477961462c693b2e7c60f1e5db",
+  "research/solve_itf/gpu_night_query.py": "2cac95c737cc9009cab88b3131351ff4db18e82d7e34aa54dac5c03b8d3815f6",
+  "research/solve_itf/prepare_proposal_retrieval_benchmark.py": "5c7ff2ee71237b5fedee58dfbab6d3ca91dc85169adffa7ce396011b8ee9b6ae",
+  "research/solve_itf/benchmark_proposal_retrieval.py": "b6bd3ef30b0f33d2903a802793686a28843fe83801bf0b58b390b52231e294b0",
+  "research/solve_itf/benchmark_sparse_epoch_join.py": "ce77fad28f710664338debeb4a211b309adbab0fd1a2a10999eefceef71d9b86",
+  "research/solve_itf/benchmark_epoch_pipeline.py": "7c9f09d196cc28f3d849e95dce7244e7318e1ac4b2d890ea4ce3490f9dc18dec",
+  "research/solve_itf/distant_brightness_priority.py": "f69200ba0cc4ca8671005042711cdff7c352621dfb39f8ca79b27225e85b7e59",
+  "tests/test_gpu_night_query.py": "c7fd67d4a4dac04d2e94b7a4962acc682b1c666fba11f5c7a3e756b0f8452322",
+  "tests/test_sparse_epoch_join.py": "23e6286e624e64f017312ad67d4ab6a71f37064638da85ce673e0a92c8edbf80",
+  "tests/test_distant_brightness_priority.py": "120ade7dd3d7b21f1cdce64508ac50e35617415faa6378b0626de5bcc2f9e570"
+}

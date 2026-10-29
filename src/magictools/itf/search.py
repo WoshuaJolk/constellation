@@ -1,5 +1,6 @@
 """Whole-catalogue sparse candidate search and incremental multi-night linkage."""
-from collections import defaultdict
+from collections import defaultdict, deque
+from contextlib import closing
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, ProcessPoolExecutor, wait
 from dataclasses import asdict, dataclass
 import heapq
@@ -289,7 +290,7 @@ def _fit_worker(indices, settings):
     return fit_chain(_FIT_GEOMETRY, indices, **settings)
 
 
-def solve(catalogue, sites, config, progress=print, *, deadline=None, audit=None):
+def solve(catalogue, sites, config, progress=print, *, deadline=None, audit=None, batch_fitter=None, geometry=None):
     # The observer receives proposals/outcomes, never supplies labels or decisions.
     def emit(event, **fields):
         if audit is not None:
@@ -302,7 +303,15 @@ def solve(catalogue, sites, config, progress=print, *, deadline=None, audit=None
                   triple_seeds_completed=0, fits_interrupted=0, fits_cancelled=0)
     rows, fitted, expanded, covered_extensions = {}, set(), set(), set()
     counts['joint_extension_proposals'] = 0
-    geometry = Geometry(catalogue, sites)
+    if geometry is None:
+        geometry = Geometry(catalogue, sites)
+    elif geometry.catalogue.manifest != catalogue.manifest or set(geometry.sites) != set(sites):
+        raise ValueError('Injected geometry uses a different catalogue or observatory table')
+    # Existing atlas constructors verify the observatory-file hash. Compare
+    # actual coordinates too so other injected implementations cannot bypass it.
+    for code in sites:
+        if not np.array_equal(np.asarray(geometry.sites[code].value), np.asarray(sites[code].value)):
+            raise ValueError('Injected geometry observatory coordinates differ')
     timings = {}
     status = 'search_limits_reached'
     executor = None
@@ -328,7 +337,9 @@ def solve(catalogue, sites, config, progress=print, *, deadline=None, audit=None
         prepare_start = time.monotonic()
         geometry.prepare(np.array(seeds, dtype=int).ravel(), deadline)
         timings['observer_preparation_seconds'] = time.monotonic()-prepare_start
-        if config.workers == 1:
+        if batch_fitter is not None:
+            counts['fit_worker_start_method'] = 'injected_batch'
+        elif config.workers == 1:
             executor = ThreadPoolExecutor(max_workers=1)
             counts['fit_worker_start_method'] = 'thread'
         else:
@@ -343,6 +354,74 @@ def solve(catalogue, sites, config, progress=print, *, deadline=None, audit=None
         def parallel_fits(jobs, triple_phase):
             nonlocal last_update
             jobs = iter(jobs)
+            if batch_fitter is not None:
+                accepted = []
+                batch_size = getattr(batch_fitter, 'batch_size', 128)
+                if not isinstance(batch_size, int) or not 1 <= batch_size <= 4096:
+                    raise ValueError('Batch size must be an integer in [1, 4096]')
+                issued = deque()
+                def batches():
+                    while True:
+                        batch = []
+                        while len(batch) < batch_size:
+                            check_deadline(deadline)
+                            try:
+                                indices, extra = next(jobs)
+                            except StopIteration:
+                                break
+                            key = tuple(sorted(map(int, indices)))
+                            if key in fitted:
+                                continue
+                            fitted.add(key)
+                            if triple_phase:
+                                counts['triple_seeds_started'] += 1
+                            if any(catalogue.tracks[i]['site'] not in sites for i in key):
+                                counts['fits_observer_unavailable'] += 1
+                                emit('fit', indices=key, outcome='observer_unavailable')
+                                if triple_phase:
+                                    counts['triple_seeds_completed'] += 1
+                                continue
+                            settings = dict(sigma=config.sigma_arcsec, rms_limit=config.rms_limit_arcsec,
+                                            prior=config.prior_link_probability, deadline=deadline,
+                                            extra_seeds=extra, broad_starts=config.broad_search)
+                            batch.append((key, settings))
+                            emit('submitted', indices=key)
+                        if not batch:
+                            return
+                        issued.append(tuple(key for key, _ in batch))
+                        yield batch
+                def serial():
+                    for batch in batches():
+                        yield batch, batch_fitter(geometry, batch)
+                iterator = (batch_fitter.iter_batches(geometry, batches())
+                            if hasattr(batch_fitter, 'iter_batches') else serial())
+                try:
+                    with closing(iterator):
+                        for batch, outcomes in iterator:
+                            if not issued or tuple(key for key, _ in batch) != issued[0]:
+                                raise ValueError('Batch fitter changed submission order or membership')
+                            issued.popleft()
+                            if len(outcomes) != len(batch):
+                                raise ValueError('Batch fitter omitted outcomes')
+                            for (key, _), result in zip(batch, outcomes):
+                                counts['fits_attempted'] += 1
+                                if triple_phase:
+                                    counts['triple_seeds_completed'] += 1
+                                emit('fit', indices=key, outcome='retained' if result else 'not_retained',
+                                     rms_arcsec=result.get('rms_arcsec') if result else None,
+                                     log_odds_bic=result.get('log_odds_bic') if result else None)
+                                if result is None:
+                                    counts['fits_rejected'] += 1
+                                else:
+                                    rows[key] = result
+                                    accepted.append(result)
+                                    if not triple_phase:
+                                        counts['successful_extensions'] += 1
+                    if issued:
+                        raise ValueError('Batch fitter omitted submitted batches')
+                    return accepted
+                finally:
+                    counts['batch_submitted_not_returned'] = counts.get('batch_submitted_not_returned', 0)+sum(map(len, issued))
             exhausted = False
             accepted = []
             while pending or not exhausted:

@@ -1,0 +1,48 @@
+{
+  "source": "/tmp/itf-heavy-distant-resume-20261028/distant-results/production/batch-profile.json",
+  "source_sha256": "93caba2a9e45b5edc830003ac083fbc8b087766f58c23a0ecf97944c7519146d",
+  "batches": 6204,
+  "chains": 6352896,
+  "starts": 280935075,
+  "cpu_fallback_starts": 5666914,
+  "cost": {
+    "planning_seconds": {
+      "sum": 2103.3764124579966,
+      "median": 0.3232259290001025
+    },
+    "gpu_setup_seconds": {
+      "sum": 156.1995259540053,
+      "median": 0.023578497000016796
+    },
+    "cpu_verify_fallback_seconds": {
+      "sum": 1428.5705897989885,
+      "median": 0.2376425164999887
+    },
+    "selection_seconds": {
+      "sum": 564.6553741849914,
+      "median": 0.04115674199994146
+    },
+    "gpu_solve_wall_seconds": {
+      "sum": 1804.8358432830066,
+      "median": 0.24618836299998748
+    }
+  },
+  "pipeline": {
+    "submitted_batches": 6209,
+    "returned_batches": 6206,
+    "cancelled_batches": 0,
+    "unused_prepared_batches": 3,
+    "peak_pending_batches": 3,
+    "drain_seconds": 2.5506000383757055e-05,
+    "drain_errors": [
+      "BudgetExpired: "
+    ],
+    "shared_bytes": 167300112048,
+    "shared_metadata_bytes": 1190812583,
+    "overlapped_batches": 6204,
+    "device_allocations": 0,
+    "device_reuses": 0,
+    "device_capacity_bytes": 0
+  },
+  "interpretation": "Summed phase wall times overlap; do not sum as total runtime or equate with hardware utilization. Setup also overlaps GPU solve accounting."
+}

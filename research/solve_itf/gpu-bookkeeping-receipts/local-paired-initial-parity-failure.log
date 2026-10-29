@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/tmp/constellation-ship/research/solve_itf/gpu_bookkeeping_benchmark.py", line 61, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/tmp/constellation-ship/research/solve_itf/gpu_bookkeeping_benchmark.py", line 47, in main
+    assert am[k]==bm[k],k
+           ^^^^^^^^^^^^
+AssertionError: range_au

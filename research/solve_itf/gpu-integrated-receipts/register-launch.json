@@ -1,0 +1,10 @@
+{
+  "id": 613644961,
+  "name": "itf-h100-integrated-register-20261028",
+  "created_at": "2026-10-28T20:57:07Z",
+  "created_local": 1793221027.500569,
+  "deadline_local": 1793222084.0234146,
+  "price_hourly": 4.41,
+  "size": "gpu-h100x1-80gb",
+  "part": 49
+}

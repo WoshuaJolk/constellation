@@ -1,0 +1,51 @@
+{
+  "registered_unix": 1793219972.0654275,
+  "scope": "full-catalogue search with existing immutable observation atlas; matched fixed 10K/100K seed budgets, growth, output",
+  "schedule": [
+    "cpu4-10k",
+    "cpu20-10k",
+    "compact-10k",
+    "prefetch-10k",
+    "cpu20-large",
+    "prefetch-large",
+    "indexed-10k",
+    "indexed-large",
+    "kernel-profile"
+  ],
+  "small": {
+    "max_seeds": 10000,
+    "seed_neighbors": 5
+  },
+  "large": {
+    "max_seeds": 100000,
+    "seed_neighbors": 0
+  },
+  "shared_policy": {
+    "seconds": 480,
+    "max_iterations": 80,
+    "sigma": 0.3,
+    "rms_limit": 0.6,
+    "broad_starts": false,
+    "Gauss_plus_range_radial_starts": 24,
+    "max_gap_days": 14,
+    "branches": 4
+  },
+  "prefetch": {
+    "batch_size": 1024,
+    "preparation_processes": 4,
+    "depth_pending": 3,
+    "maximum_including_consumed_batch": 4,
+    "order": "unchanged submission order",
+    "completion_poll_interval": 16
+  },
+  "indexed": "unchanged arithmetic from AST-transformed reference kernel; fixed vectors uploaded once; exact CPU-bank bit comparisons required",
+  "cache": "preexisting catalogue/atlas/identity caches reused, verification/transfer/setup costs recorded; no new ingestion charged as zero",
+  "code_manifest_sha256": "a54203a10d441b7e32dcb4d37eccc33dd03008bbcd4c144e0d74e996892dede8",
+  "price_ceiling_hourly": 4.41,
+  "compute_budget_usd": 3,
+  "worker_deadline_seconds": 2100,
+  "no_production_update": true,
+  "stop_on_failed_preflight_or_phase": true,
+  "no_threshold_changes": true,
+  "scope_limit": "available seed pool may be below cap; report actual counts; not seven-million production run; no discovery or calibration claims"
+}

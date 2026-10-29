@@ -1,0 +1,59 @@
+{
+  "registered_unix": 1793223074.0701487,
+  "scope": "distinct-seed cached-graph full-search scaling; no production update",
+  "graph": {
+    "max_gap_days": 60,
+    "neighbors_per_day": 32,
+    "max_edges": 3000000,
+    "max_seeds": 1000000,
+    "seed_neighbors": 0,
+    "broad_search": false
+  },
+  "prefixes": [
+    100000,
+    300000,
+    1000000
+  ],
+  "shortfall": "collapse duplicate actual prefix sizes, disclose actual pool, never repeat seeds to fill budget",
+  "fit": {
+    "max_iterations": 80,
+    "sigma": 0.3,
+    "rms_limit": 0.6,
+    "broad_starts": false,
+    "branches": 4
+  },
+  "backends": "CPU20 and streaming GPU each size; old prefetch GPU smallest size; fixed order CPU/prefetch/stream",
+  "stream": {
+    "batch_size": 1024,
+    "preparation_workers": 4,
+    "depth": 3,
+    "finish_threads": 16,
+    "completion_interval": 16,
+    "register_normal": false
+  },
+  "gates": "hardware tests then exact retained-row comparison of 128 frozen seeds in four batches; stop on failed gate",
+  "cost": {
+    "maximum_usd": 5,
+    "worker_lifetime_seconds": 3600,
+    "price_ceiling_hourly": 4.41
+  },
+  "timing": "graph creation and hash verification recorded separately, cached graph loaded into same full search; includes fits/growth/results/gzip; no comparison with prior14daygraph",
+  "code_manifest_sha256": "d48c88a15245687b2c1a54092de72e67ff5ea7852cf5fbcd88a8ab286bc1e0f6",
+  "local_validation": {
+    "cpu_passed": 52,
+    "cpu_skipped": 15,
+    "simulator_passed": 10
+  },
+  "no_new_scientific_cuts": true,
+  "original_deadline": 1793226120.6903472,
+  "prior_cost": 0.5446210407435894,
+  "cumulative_cap_usd": 5,
+  "reason": "Single mmap per prepared bank after preserved FD-limit failure; no prior scientific timings or fits used to select new cohort",
+  "required_inventory_hashes": {
+    "edges_sha256": "1b99c06602fdfe15bbcb38fe3465d662b73c5a2cbc12b318af4c60f92b5f0d58",
+    "seeds_sha256": "3da886aa22d431dc2088149ac3c728988b700cf81077bb06b2c264a31e09e10d"
+  },
+  "finalized_before_launch": 1793223114.03745,
+  "simulator_tests_passed": 6,
+  "tests_note": "FD release assertion now releases its own final loop view; original test failure preserved"
+}

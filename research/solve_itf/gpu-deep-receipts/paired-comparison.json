@@ -1,0 +1,18 @@
+[
+  {
+    "round": 0,
+    "common_within_budget": 106496,
+    "both_retained": 3645,
+    "status_differences": [],
+    "rms_differences_over_001_arcsec": [],
+    "mode_count_differences": 13
+  },
+  {
+    "round": 1,
+    "common_within_budget": 104448,
+    "both_retained": 3560,
+    "status_differences": [],
+    "rms_differences_over_001_arcsec": [],
+    "mode_count_differences": 15
+  }
+]

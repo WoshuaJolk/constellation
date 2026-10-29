@@ -1,0 +1,10 @@
+{
+  "id": 613618664,
+  "name": "itf-h100-host-batch-retry-20261028",
+  "created_at": "2026-10-28T19:14:55Z",
+  "created_local": 1793214897.3214386,
+  "deadline_local": 1793216244.4672034,
+  "price_hourly": 4.41,
+  "size": "gpu-h100x1-80gb",
+  "part": 46
+}

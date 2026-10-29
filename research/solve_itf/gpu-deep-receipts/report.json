@@ -1,0 +1,275 @@
+{
+  "status": "completed_bounded_benchmark",
+  "phase": "done",
+  "outputs": {
+    "cpu-0.jsonl.gz": {
+      "path": "cpu-0.jsonl.gz",
+      "bytes": 4268012,
+      "sha256": "e611362d20969c37c1f3823cef0866dc5aefd826e1d29e673ec4afba0e1e30e0"
+    },
+    "cpu-0-batches.json": {
+      "path": "cpu-0-batches.json",
+      "bytes": 43475,
+      "sha256": "d167a89b6338079d5acb0d68bf815f112ee238cf97783d57ee3dab4b679c46bc"
+    },
+    "gpu-0.jsonl.gz": {
+      "path": "gpu-0.jsonl.gz",
+      "bytes": 6789128,
+      "sha256": "86512a7ff7a263f9982c4cf42d9ac6f785880efd7b0b4576bd3c374c7790cb8d"
+    },
+    "gpu-0-batches.json": {
+      "path": "gpu-0-batches.json",
+      "bytes": 408940,
+      "sha256": "9909bdd1da9fc332275cc46281d11abed71a965800f2f3c91d36be29bd35414b"
+    },
+    "gpu-1.jsonl.gz": {
+      "path": "gpu-1.jsonl.gz",
+      "bytes": 6766184,
+      "sha256": "fb6c2804e2ef03e5ac2c06c7ba366278429643a34474fec7220ed2d9c5892351"
+    },
+    "gpu-1-batches.json": {
+      "path": "gpu-1-batches.json",
+      "bytes": 406858,
+      "sha256": "b102a90f8c6ab0e757ff5b38a8c982b1386813554e23aca8f8c9268783711b1a"
+    },
+    "cpu-1.jsonl.gz": {
+      "path": "cpu-1.jsonl.gz",
+      "bytes": 4185853,
+      "sha256": "259b0040d406dd3d4fec8b0bd6a7ab3c8fc73b8a92aec5d80824b0f29313ed7f"
+    },
+    "cpu-1-batches.json": {
+      "path": "cpu-1-batches.json",
+      "bytes": 43004,
+      "sha256": "f21929c6f7ac2a95d14efe8186495e9cfd24b15c67bda40244c96e2dfe4ad36c"
+    },
+    "paired-comparison.json": {
+      "path": "paired-comparison.json",
+      "bytes": 390,
+      "sha256": "da6aad2fbbb4620847d17d4f2b7c1aee6ea0551f18898633dc1dd8e5dcea84da"
+    },
+    "longgap.jsonl.gz": {
+      "path": "longgap.jsonl.gz",
+      "bytes": 571877,
+      "sha256": "6c8e8a0bff21fd3388094020c88e73dd849da3c91b70c4fda14323ca09a0260f"
+    },
+    "longgap-caches.tar.gz": {
+      "path": "longgap-caches.tar.gz",
+      "bytes": 5200421,
+      "sha256": "0aa97dff06efe1bd018587288aa9b49efb5507f8e4edee44aa2d276549c8a952"
+    },
+    "utilization.jsonl": {
+      "path": "utilization.jsonl",
+      "bytes": 60041,
+      "sha256": "a6cf6bbf26d98f5b87ef38685442cee431664b90e7ee38a3419611f189befb5f"
+    }
+  },
+  "fits": {
+    "cpu-0": {
+      "budget_seconds": 300,
+      "elapsed_seconds": 302.069968917,
+      "counts": {
+        "attempted": 107520,
+        "unavailable": 0,
+        "starts": 4772459,
+        "retained": 3679,
+        "numerical_errors": 0,
+        "modes": 4273,
+        "not_retained": 103841
+      },
+      "within_budget_counts": {
+        "attempted": 106496,
+        "unavailable": 0,
+        "starts": 4726994,
+        "retained": 3645,
+        "numerical_errors": 0,
+        "modes": 4235,
+        "not_retained": 102851
+      },
+      "batches": 105,
+      "queue_start": 0,
+      "next_ordinal": 107520
+    },
+    "gpu-0": {
+      "budget_seconds": 300,
+      "elapsed_seconds": 300.646087909,
+      "counts": {
+        "attempted": 171008,
+        "unavailable": 0,
+        "starts": 7590430,
+        "retained": 5834,
+        "numerical_errors": 0,
+        "modes": 6817,
+        "not_retained": 165174
+      },
+      "within_budget_counts": {
+        "attempted": 169984,
+        "unavailable": 0,
+        "starts": 7545005,
+        "retained": 5802,
+        "numerical_errors": 0,
+        "modes": 6771,
+        "not_retained": 164182
+      },
+      "batches": 167,
+      "queue_start": 0,
+      "next_ordinal": 171008
+    },
+    "gpu-1": {
+      "budget_seconds": 300,
+      "elapsed_seconds": 301.5698412479999,
+      "counts": {
+        "attempted": 169984,
+        "unavailable": 0,
+        "starts": 7544958,
+        "retained": 5859,
+        "numerical_errors": 0,
+        "modes": 6801,
+        "not_retained": 164125
+      },
+      "within_budget_counts": {
+        "attempted": 168960,
+        "unavailable": 0,
+        "starts": 7499520,
+        "retained": 5824,
+        "numerical_errors": 0,
+        "modes": 6766,
+        "not_retained": 163136
+      },
+      "batches": 166,
+      "queue_start": 1000000,
+      "next_ordinal": 1169984
+    },
+    "cpu-1": {
+      "budget_seconds": 300,
+      "elapsed_seconds": 302.42120917399984,
+      "counts": {
+        "attempted": 105472,
+        "unavailable": 0,
+        "starts": 4681318,
+        "retained": 3594,
+        "numerical_errors": 0,
+        "modes": 4193,
+        "not_retained": 101878
+      },
+      "within_budget_counts": {
+        "attempted": 104448,
+        "unavailable": 0,
+        "starts": 4635847,
+        "retained": 3560,
+        "numerical_errors": 0,
+        "modes": 4151,
+        "not_retained": 100888
+      },
+      "batches": 103,
+      "queue_start": 1000000,
+      "next_ordinal": 1105472
+    }
+  },
+  "scope": "Original 7M checkpoint throughput, plus separate historical-parent planetary recovery against full catalogue. No fresh graph generation or production linking.",
+  "setup": {
+    "verify_all_input_seconds": 1.0390752540000108,
+    "checkpoint_load_and_touch_seconds": 0.44639948099995763,
+    "checkpoint_checksums": {
+      "seeds": 22130318873420.0,
+      "graph_offsets": 36963495636821.0,
+      "graph_neighbors": 14100667540241.0,
+      "graph_scores": 242548980.24180317,
+      "times": 518477702252.5282,
+      "units": 2120868.524772581,
+      "observers": 1934563.4007936027
+    },
+    "tracklets": 2548307,
+    "observations": 8934160,
+    "seeds": 7000000,
+    "graph_directed_neighbors": 20038466,
+    "observer_unavailable": 4,
+    "planetary_index_pool_seconds": 2.1197179069999947,
+    "night_index": {
+      "indexed_tracklets": 2545457,
+      "unindexed_tracklets": 2850,
+      "indexed_nights": 10246,
+      "catalogue_tracklets": 2548307
+    },
+    "ephemeris_bounds": [
+      -65.99992751766027,
+      61336.00791505602
+    ],
+    "longgap_parent_count": 541,
+    "warmup_seconds": 6.99385424899998
+  },
+  "updated_unix": 1793211536.7734528,
+  "comparisons": [
+    {
+      "round": 0,
+      "common_within_budget": 106496,
+      "both_retained": 3645,
+      "status_differences": 0,
+      "rms_differences_over_001_arcsec": 0,
+      "mode_count_differences": 13
+    },
+    {
+      "round": 1,
+      "common_within_budget": 104448,
+      "both_retained": 3560,
+      "status_differences": 0,
+      "rms_differences_over_001_arcsec": 0,
+      "mode_count_differences": 15
+    }
+  ],
+  "longgap": {
+    "elapsed_seconds": 46.31020553899998,
+    "budget_seconds": 180,
+    "completed": 541,
+    "total_frozen_parents": 541,
+    "pending": 0,
+    "not_launched": 0,
+    "counts": {
+      "hypotheses_searched": 888,
+      "window_searches": 3962,
+      "nights_considered": 40594652,
+      "nights_in_time_window": 9493328,
+      "ephemeris_unavailable_nights": 0,
+      "outside_time_window_nights": 31101324,
+      "nights_queried": 7824622,
+      "uncertainty_gated_nights": 290312,
+      "excluded_window_uncertainty_gates": 3991,
+      "short_gap_nights": 1378394,
+      "raw_proposals": 119050,
+      "proposals_discarded_at_cap": 103079,
+      "arc_anchors_before_tracklet_cap": 573,
+      "arc_merge_proposals": 1157,
+      "arc_merges_discarded_at_cap": 48,
+      "innovation_rejections": 13030,
+      "branches_discarded_at_cap": 1,
+      "night_prediction_hits": 1477320,
+      "night_prediction_misses": 34437488,
+      "exact_fit_cache_misses": 4593,
+      "extension_fits": 3103,
+      "uncertainty_probes_attempted": 2844,
+      "uncertainty_probe_raw_proposals": 669059,
+      "uncertainty_probe_gated_nights": 1223957,
+      "uncertainty_proposals_retrieved": 2159,
+      "uncertainty_proposals_deferred": 10333,
+      "nonlinear_proposal_refits": 2066,
+      "arc_merge_innovation_rejections": 106,
+      "fit_numerical_failures": 681,
+      "arc_merge_fits": 1003,
+      "accepted_extensions": 431,
+      "parent_window_continuations": 96,
+      "bridge_first_advances": 211,
+      "requery_hypotheses": 252,
+      "branches_at_depth_limit": 56,
+      "alternative_branch_fits": 192,
+      "accepted_alternative_branches": 24,
+      "accepted_arc_merges": 122,
+      "exact_fit_cache_hits": 246,
+      "seed_budget_exhaustions": 1
+    },
+    "statuses": {
+      "searched": 467,
+      "partial_failure": 73,
+      "seed_budget_exhausted": 1
+    },
+    "backend": "CPU20 compiled planetary dynamics, shared downstream stage; no GPU acceleration claim"
+  }
+}

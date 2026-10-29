@@ -1,0 +1,26 @@
+{
+  "updated_unix": 1793231978.8900206,
+  "status": "Hardware preflight and engineering gate passed; production proposal scan active",
+  "run": "Distant large-object priority with secondary candidates preserved",
+  "changes": [
+    "Exact two-body common-epoch proposal propagation; cached across night comparisons",
+    "16 distances10\u20132000AU,3radialvelocities,365daypairs",
+    "Brightness and long-gap seed quotas; previous1Mseed exclusion",
+    "Longer real-known-object controls with prospective orbit/later-prediction gate",
+    "Explicit bound-distant and brightness-priority planetary followups; skip189priorstates"
+  ],
+  "local_tests": "7passed including independent DOP853 propagation and cohortselection",
+  "resources": {
+    "id": 613685208,
+    "name": "itf-h100-heavy-distant-20261028",
+    "created_at": "2026-10-28T23:52:30Z",
+    "created_local": 1793231551.3239872,
+    "deadline_local": 1793236951.3239875,
+    "price_hourly": 4.41,
+    "size": "gpu-h100x1-80gb",
+    "part": 53
+  },
+  "partial_outcomes": "Incomplete scans, budgets and failures remain explicit. No orbit confirmation or size claim.",
+  "hardware_tests": "51 passed,1 skipped",
+  "control_gate": true
+}

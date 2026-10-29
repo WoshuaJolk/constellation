@@ -1,0 +1,94 @@
+{
+  "historical_file": "/workspace/constellation/runs/solve-itf-iteration5/report.json",
+  "historical_sha256": "aa06321180066049cd52683d98841049d3baf8bb1d3445d84a2f101d274a05b0",
+  "historical_candidates_txt_sha256": "631048b3f9a53d934f8d6c60656d41d929345c631140cc984df08db4201f6fd6",
+  "comparison": {
+    "cpu-cold": {
+      "shared_memberships": 4323,
+      "historical_only": [
+        [
+          "H488327",
+          "H488552",
+          "H488843"
+        ],
+        [
+          "H492653",
+          "H492744",
+          "H492760"
+        ]
+      ],
+      "new_only": [
+        [
+          "12ce09",
+          "12cf51",
+          "140714"
+        ],
+        [
+          "H488413",
+          "H488486",
+          "H488825"
+        ]
+      ],
+      "max_best_rms_difference_arcsec": 0.06114754390674976,
+      "alternate_mode_count_changes": 27
+    },
+    "gpu-cold": {
+      "shared_memberships": 4323,
+      "historical_only": [
+        [
+          "H488327",
+          "H488552",
+          "H488843"
+        ],
+        [
+          "H492653",
+          "H492744",
+          "H492760"
+        ]
+      ],
+      "new_only": [
+        [
+          "12ce09",
+          "12cf51",
+          "140714"
+        ],
+        [
+          "H488413",
+          "H488486",
+          "H488825"
+        ]
+      ],
+      "max_best_rms_difference_arcsec": 0.061147543909839105,
+      "alternate_mode_count_changes": 25
+    },
+    "gpu-warm": {
+      "shared_memberships": 4323,
+      "historical_only": [
+        [
+          "H488327",
+          "H488552",
+          "H488843"
+        ],
+        [
+          "H492653",
+          "H492744",
+          "H492760"
+        ]
+      ],
+      "new_only": [
+        [
+          "12ce09",
+          "12cf51",
+          "140714"
+        ],
+        [
+          "H488413",
+          "H488486",
+          "H488825"
+        ]
+      ],
+      "max_best_rms_difference_arcsec": 0.061147543909839105,
+      "alternate_mode_count_changes": 25
+    }
+  }
+}

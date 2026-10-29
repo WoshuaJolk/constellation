@@ -1,0 +1,11 @@
+{
+  "recorded_unix": 1793214887.2744715,
+  "original_deadline_unix": 1793216244.4672034,
+  "total_task_cap_usd": 3.0,
+  "prior_attempt_compute_usd": 0.4107172222018242,
+  "remaining_cap_usd": 2.589282777798176,
+  "reason": "Packaging omitted frozen reference file used by two tests. Failed attempt preserved; 62 tests passed,2 missing-file failures,1 skipped. No benchmark phases launched.",
+  "new_worker": 46,
+  "scientific_code_unchanged": true,
+  "additional_package_path": "research/solve_itf/gpu-bookkeeping-receipts/reference_fit.py"
+}

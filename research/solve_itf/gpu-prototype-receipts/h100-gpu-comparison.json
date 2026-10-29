@@ -1,0 +1,45 @@
+{
+  "scope": "Residual/Jacobian stage only; no optimization, chaining, or scientific acceptance",
+  "bank_sha256": "2c32db53b6a4a8f197e97007e1827910f5b006a4911dbbf30d28e93e5dcf6b68",
+  "python": "3.10.12",
+  "machine": "x86_64",
+  "cpu_threads": 1,
+  "budget_seconds": 30.0,
+  "timing": "Wall time; warm-up and GPU upload separately recorded. Timed phase includes synchronization and output transfer. No repeated candidates.",
+  "statuses": {
+    "cpu": "completed",
+    "gpu": "completed"
+  },
+  "measurements": {
+    "cpu": {
+      "wall_seconds": 0.7864665769999988,
+      "deadline_overshoot_seconds": 0.0,
+      "completed_unique_cases": 10000,
+      "total_cases": 10000,
+      "valid_cases": 10000,
+      "unresolved": 0,
+      "uncomputed": 0
+    },
+    "gpu": {
+      "wall_seconds": 0.5163946440000018,
+      "deadline_overshoot_seconds": 0.0,
+      "completed_unique_cases": 10000,
+      "total_cases": 10000,
+      "valid_cases": 10000,
+      "unresolved": 0,
+      "uncomputed": 0
+    }
+  },
+  "cpu_warmup_seconds": 0.1430925979999813,
+  "gpu_upload_seconds": 0.26370713000000023,
+  "gpu_first_evaluation_seconds": 1.9741902789999983,
+  "parity": {
+    "max_residual_error_arcsec": 4.0077575924613024e-09,
+    "max_scaled_jacobian_error": 2.4157788597681847e-09
+  },
+  "gpu_name": "NVIDIA H100 80GB HBM3",
+  "gpu_compute_capability": [
+    9,
+    0
+  ]
+}

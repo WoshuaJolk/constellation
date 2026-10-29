@@ -1,0 +1,7 @@
+{
+  "seed": 20261028,
+  "selection": "Every finite local tracklet with >=2 observations and finite rate. Query 4096 evenly spaced original eligible catalogue ordinals, plus 4096 seed-fixed isotropic directions at those nights. Query both at 1 arcsec, 1 arcmin, 0.1, 1 and 10 degrees. No outcome selection.",
+  "scope": "Exact nightly spatial query stage only. Uses motion-to-night-center approximation of existing NightIndex; no new predictions, orbit fits, uncertainty model, classification or catalogue linking.",
+  "baseline": "Existing compiled x-slab query_nights",
+  "alternative": "Smallest of three coordinate slabs, identical full 3D distance check and output ordering"
+}

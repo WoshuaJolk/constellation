@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspace/constellation/sample-utilization.py", line 8, in <module>
+    try:r=json.loads(Path('results/report.json').read_text());phase=r['phase'];status=r['status']
+KeyError: 'phase'

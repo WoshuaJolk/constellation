@@ -1,0 +1,287 @@
+{
+  "cases": [
+    {
+      "identity": "00433",
+      "name": "Eros",
+      "status": "not_recovered"
+    },
+    {
+      "identity": "05145",
+      "name": "Pholus",
+      "status": "recovered",
+      "tracklets": 5,
+      "span_days": 9.235550003017124,
+      "rms_arcsec": 0.32828530879015844,
+      "range_au": 7.157852442601629,
+      "eccentricity": 0.8235947880690285,
+      "inclination_deg": 20.80979259864184,
+      "later": {
+        "identity": "05145",
+        "membership": [
+          689,
+          690,
+          691,
+          692,
+          693
+        ],
+        "mode": 0,
+        "rms_arcsec": 7135.826736976108,
+        "errors_arcsec": [
+          7136.014771848134,
+          7135.558402504374,
+          7135.907028601462
+        ],
+        "gap_days": 321.18342155980645,
+        "status": "predicted"
+      },
+      "selected_membership": [
+        689,
+        690,
+        691,
+        692,
+        693
+      ],
+      "selected_mode": 0
+    },
+    {
+      "identity": "B1309",
+      "name": "111309",
+      "status": "recovered",
+      "tracklets": 5,
+      "span_days": 54.568660017306684,
+      "rms_arcsec": 0.44509599706471054,
+      "range_au": 2.0827341137269713,
+      "eccentricity": 0.07064716085947306,
+      "inclination_deg": 10.957607464599418,
+      "later": {
+        "identity": "B1309",
+        "membership": [
+          694,
+          696,
+          697,
+          698,
+          699
+        ],
+        "mode": 0,
+        "rms_arcsec": 246.38280185239532,
+        "errors_arcsec": [
+          246.3970306206379,
+          246.3685722623846
+        ],
+        "gap_days": 310.5845799828021,
+        "status": "predicted"
+      },
+      "selected_membership": [
+        694,
+        696,
+        697,
+        698,
+        699
+      ],
+      "selected_mode": 0
+    },
+    {
+      "identity": "q8219",
+      "name": "2008 KV42 (retrograde TNO)",
+      "status": "recovered",
+      "tracklets": 9,
+      "span_days": 327.27101158172445,
+      "rms_arcsec": 0.28098371701390507,
+      "range_au": 31.1925370030094,
+      "eccentricity": 0.49786353511269515,
+      "inclination_deg": 103.37432115937081,
+      "later": {
+        "identity": "q8219",
+        "membership": [
+          700,
+          701,
+          702,
+          703,
+          704,
+          705,
+          706,
+          707,
+          708
+        ],
+        "mode": 0,
+        "rms_arcsec": 7.246250433023343,
+        "errors_arcsec": [
+          7.363420294756645,
+          7.1271545681953565
+        ],
+        "gap_days": 330.85455000039656,
+        "status": "predicted"
+      },
+      "selected_membership": [
+        700,
+        701,
+        702,
+        703,
+        704,
+        705,
+        706,
+        707,
+        708
+      ],
+      "selected_mode": 0
+    },
+    {
+      "identity": "00004",
+      "name": "Vesta",
+      "status": "not_recovered"
+    },
+    {
+      "identity": "01685",
+      "name": "Toro",
+      "status": "not_recovered"
+    },
+    {
+      "identity": "02060",
+      "name": "Chiron",
+      "status": "recovered",
+      "tracklets": 10,
+      "span_days": 125.35688997357647,
+      "rms_arcsec": 0.18981170163364144,
+      "range_au": 13.447781711723433,
+      "eccentricity": 0.3830457924466271,
+      "inclination_deg": 6.934543627194017,
+      "later": {
+        "identity": "02060",
+        "membership": [
+          725,
+          726,
+          727,
+          728,
+          729,
+          730,
+          731,
+          732,
+          733,
+          734
+        ],
+        "mode": 0,
+        "rms_arcsec": 6.0339742775556715,
+        "errors_arcsec": [
+          6.200646864517819,
+          6.043197731986979,
+          5.911204068250927,
+          5.977021701981718
+        ],
+        "gap_days": 247.24821002425597,
+        "status": "predicted"
+      },
+      "selected_membership": [
+        725,
+        726,
+        727,
+        728,
+        729,
+        730,
+        731,
+        732,
+        733,
+        734
+      ],
+      "selected_mode": 0
+    },
+    {
+      "identity": "20000",
+      "name": "Varuna",
+      "status": "recovered",
+      "tracklets": 11,
+      "span_days": 331.4877999887467,
+      "rms_arcsec": 0.17622833186928522,
+      "range_au": 43.081685610819086,
+      "eccentricity": 0.05516349544502027,
+      "inclination_deg": 17.194368119399616,
+      "later": {
+        "identity": "20000",
+        "membership": [
+          735,
+          737,
+          738,
+          739,
+          740,
+          741,
+          742,
+          743,
+          744,
+          745,
+          746
+        ],
+        "mode": 0,
+        "rms_arcsec": 2.621127464486903,
+        "errors_arcsec": [
+          2.5971998119441047,
+          2.641559924619934,
+          2.624431720723948
+        ],
+        "gap_days": 299.0073699855566,
+        "status": "predicted"
+      },
+      "selected_membership": [
+        735,
+        737,
+        738,
+        739,
+        740,
+        741,
+        742,
+        743,
+        744,
+        745,
+        746
+      ],
+      "selected_mode": 0
+    },
+    {
+      "identity": "p4107",
+      "name": "514107 (retrograde co-orbital)",
+      "status": "recovered",
+      "tracklets": 9,
+      "span_days": 13.996619004457898,
+      "rms_arcsec": 0.18032658763047474,
+      "range_au": 2.8393172446964705,
+      "eccentricity": 0.37707700001901484,
+      "inclination_deg": 162.9785619119494,
+      "later": {
+        "identity": "p4107",
+        "membership": [
+          748,
+          749,
+          751,
+          752,
+          753,
+          754,
+          755,
+          756,
+          757
+        ],
+        "mode": 0,
+        "rms_arcsec": 860.3087579548387,
+        "errors_arcsec": [
+          860.1668829593583,
+          860.2871685919793,
+          860.4721948194308
+        ],
+        "gap_days": 567.1966225528449,
+        "status": "predicted"
+      },
+      "selected_membership": [
+        748,
+        749,
+        751,
+        752,
+        753,
+        754,
+        755,
+        756,
+        757
+      ],
+      "selected_mode": 0
+    }
+  ],
+  "engineering_gate_passed": true,
+  "rule": "At least Varuna or KV42: pure >=60day chain, nominal bound orbit at25\u2013100AU, first reserved later-tracklet RMS<=30arcsec; representative chosen only from fitted data. Engineering prerequisite for this launch, not association acceptance/calibrated coverage.",
+  "limitations": "Opened development controls with longer input seasons than prior run; not an isolated algorithm comparison. Every later prediction retained, no best-after-outcome mode selection."
+}

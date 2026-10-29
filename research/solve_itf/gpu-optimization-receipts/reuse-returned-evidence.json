@@ -1,0 +1,54 @@
+{
+  "hardware.json": {
+    "bytes": 460,
+    "sha256": "361d67de24511cb2eb3ff01088480d6a40cb564b862088a7fab11e5adc29bcb8"
+  },
+  "gpu-tests.log": {
+    "bytes": 1211,
+    "sha256": "3f3b9796568e95166239961fc0fc95138c04ff5b34636a6d6c373de1de7a5b51"
+  },
+  "fit-results/report.json": {
+    "bytes": 49224,
+    "sha256": "1ce577471c39bdee159e3eb7bbb3932bfb22053740fd88c7fbe9e4e06e99f46b"
+  },
+  ".remote/gpufit.log": {
+    "bytes": 14032,
+    "sha256": "3d125a6341224fc14915f9068b0728481f60890952ccbbaa626adeecdcf32819"
+  },
+  "fit-results/cpu-reference.npz": {
+    "bytes": 8878288,
+    "sha256": "298d3ec5d870fa669facabd55ee5cb35ea4857a6283bc1dd0b2da67d69ee3e97"
+  },
+  "fit-results/new-workspace.npz": {
+    "bytes": 9142850,
+    "sha256": "56cdaf0f050905ad0ee84a703d28c7c9313a7f71cbd1348207d40c29a8b3c1fb"
+  },
+  "fit-results/new-workspace-masks.npz": {
+    "bytes": 6200,
+    "sha256": "d637175e7b957ddfaf8b1b688f185e0412d688d6b72989ea94a69f04157cf0e3"
+  },
+  "fit-results/reuse-C-serial.npz": {
+    "bytes": 9142850,
+    "sha256": "56cdaf0f050905ad0ee84a703d28c7c9313a7f71cbd1348207d40c29a8b3c1fb"
+  },
+  "fit-results/reuse-C-serial-masks.npz": {
+    "bytes": 6200,
+    "sha256": "d637175e7b957ddfaf8b1b688f185e0412d688d6b72989ea94a69f04157cf0e3"
+  },
+  "fit-results/reuse-F-serial.npz": {
+    "bytes": 9142850,
+    "sha256": "56cdaf0f050905ad0ee84a703d28c7c9313a7f71cbd1348207d40c29a8b3c1fb"
+  },
+  "fit-results/reuse-F-serial-masks.npz": {
+    "bytes": 6200,
+    "sha256": "d637175e7b957ddfaf8b1b688f185e0412d688d6b72989ea94a69f04157cf0e3"
+  },
+  "fit-results/reuse-F-parallel.npz": {
+    "bytes": 9142850,
+    "sha256": "56cdaf0f050905ad0ee84a703d28c7c9313a7f71cbd1348207d40c29a8b3c1fb"
+  },
+  "fit-results/reuse-F-parallel-masks.npz": {
+    "bytes": 6200,
+    "sha256": "d637175e7b957ddfaf8b1b688f185e0412d688d6b72989ea94a69f04157cf0e3"
+  }
+}

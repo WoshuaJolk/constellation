@@ -1,0 +1,13 @@
+{
+  "scope": "Residual/Jacobian stage only; no optimization, chaining, or scientific acceptance",
+  "bank_sha256": "1c37a51fe051decfa9a401f4e70185e8b15c11e25d7e2a27976076afe1917f72",
+  "python": "3.12.14",
+  "machine": "x86_64",
+  "cpu_threads": 1,
+  "budget_seconds": 30.0,
+  "timing": "Wall time; warm-up and GPU upload separately recorded. Timed phase includes synchronization and output transfer. No repeated candidates.",
+  "statuses": {},
+  "measurements": {},
+  "cpu_warmup_seconds": 0.3213195270000142,
+  "blocked": "RuntimeError: No CUDA device; no CPU fallback or timing claim"
+}

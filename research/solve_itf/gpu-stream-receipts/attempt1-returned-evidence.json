@@ -1,0 +1,42 @@
+{
+  ".remote/gpufitv2.log": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "gpu-tests-before-layout.log": {
+    "bytes": 3435,
+    "sha256": "5aec314bddfa6aa816ac1545c35647359865c96e9cd0ac6937841a183de34415"
+  },
+  "gpu-tests.log": {
+    "bytes": 1233,
+    "sha256": "33079cbbca7b9dd5f4d3dce5df59409f0f0a47e6e85a951005ddcfb534a380bd"
+  },
+  "hardware.json": {
+    "bytes": 460,
+    "sha256": "361d67de24511cb2eb3ff01088480d6a40cb564b862088a7fab11e5adc29bcb8"
+  },
+  "layout-applied.json": {
+    "bytes": 678,
+    "sha256": "d57ce3eb14160f30102fb318ba8106308b004303ee510280571cb4ce7ecd4dd6"
+  },
+  "scaling-results/inventory.json": {
+    "bytes": 1413,
+    "sha256": "d970b3fe4245f0c85ec4f0236f90177ceb21f6e94136e167b78109a07e2362bc"
+  },
+  "scaling-results/report.json": {
+    "bytes": 465,
+    "sha256": "383191d0c19870fe1c6aedea42bb0c99ef71a948b7a99cef496e4969f1adc489"
+  },
+  "scaling-results/stream-parity.log": {
+    "bytes": 1239,
+    "sha256": "ebb4e83925ac4cdf41dba524cb537073fa59efc3808ed266ffc4b2fa72ea7003"
+  },
+  "transfer-verification.json": {
+    "bytes": 528,
+    "sha256": "4b035ee9cfaf820f59c2947cefbb961b804993a8ceb13b40e3f3479d6c5482fb"
+  },
+  "utilization.jsonl": {
+    "bytes": 6348,
+    "sha256": "da31cb3481c49e4bd32eda9c308e5b5365c1b81cb6faacafe7143bfbabe98401"
+  }
+}

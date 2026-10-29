@@ -1,0 +1,110 @@
+{
+  "source_sha256": "2c32db53b6a4a8f197e97007e1827910f5b006a4911dbbf30d28e93e5dcf6b68",
+  "output_sha256": "9bcec2d7483d045fa6f3ea577ecb5013957b8230b08a7f67615babb492d00765",
+  "unique_parent_chains": 10000,
+  "starts": 240000,
+  "unique_source_observation_instances": 121813,
+  "expanded_observation_instances": 2923512,
+  "grid_distance_au_radial_au_day": [
+    [
+      0.1,
+      0.0
+    ],
+    [
+      0.1,
+      -0.01
+    ],
+    [
+      0.1,
+      0.01
+    ],
+    [
+      0.5,
+      0.0
+    ],
+    [
+      0.5,
+      -0.01
+    ],
+    [
+      0.5,
+      0.01
+    ],
+    [
+      1.0,
+      0.0
+    ],
+    [
+      1.0,
+      -0.01
+    ],
+    [
+      1.0,
+      0.01
+    ],
+    [
+      2.0,
+      0.0
+    ],
+    [
+      2.0,
+      -0.01
+    ],
+    [
+      2.0,
+      0.01
+    ],
+    [
+      4.0,
+      0.0
+    ],
+    [
+      4.0,
+      -0.01
+    ],
+    [
+      4.0,
+      0.01
+    ],
+    [
+      10.0,
+      0.0
+    ],
+    [
+      10.0,
+      -0.01
+    ],
+    [
+      10.0,
+      0.01
+    ],
+    [
+      40.0,
+      0.0
+    ],
+    [
+      40.0,
+      -0.01
+    ],
+    [
+      40.0,
+      0.01
+    ],
+    [
+      150.0,
+      0.0
+    ],
+    [
+      150.0,
+      -0.01
+    ],
+    [
+      150.0,
+      0.01
+    ]
+  ],
+  "ordering": "parent source ordinal, then original fit_chain range/radial grid order",
+  "epoch": "Each parent observation midpoint; offsets shifted, no new observation/observer calculations",
+  "excluded_starts": 0,
+  "scope": "Actual 24 range/radial grid only; no Gauss, extra saved, or broad_starts hypotheses. Parent chains remain previously retained sample."
+}

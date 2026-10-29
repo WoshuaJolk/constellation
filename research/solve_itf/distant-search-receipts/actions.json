@@ -1,0 +1,35 @@
+{
+  "updated_unix": 1793229338.2564385,
+  "mission": "Distant-primary search with other candidate classes retained",
+  "worker": {
+    "id": 613669505,
+    "name": "itf-h100-distant-search-20261028",
+    "created_at": "2026-10-28T22:43:56Z",
+    "created_local": 1793227436.5646794,
+    "deadline_local": 1793232836.5646796,
+    "price_hourly": 4.41,
+    "size": "gpu-h100x1-80gb",
+    "part": 52
+  },
+  "preflight": "46 passed,1 skipped on H100; extra local proposal equality test passed after packaging; test-only delta preserved",
+  "controls": "6/9 identities recovered. Varuna,Chiron,KV42 six tracklets each; Pholus5/6. Varuna nominal best mode hyperbolic and later predictions poor, explicitly not orbital recovery.",
+  "graph": "Complete fixed slow-lane scan:2548307 accounted,623221 eligible,644477edges,547045965queries,82.744s;noedgepooldiscarding;1685nearestneighborcap queries.1000000/3579205considered seeds frozen.965181spans>60d.",
+  "status": "All registered numerical stages complete; reports and shipping finalized.",
+  "cleanup": "All78 remote files hash-verified before worker52 deletion; provider subsequently confirms zero droplets.",
+  "modifications": [
+    "Inherited telemetry timeout corrected; nonalphanumeric metrics-current POST rejected400 beforeprocess creation; verifiedregistry then metricscurrent succeeded.",
+    "Final collection job name corrected to alphanumeric returninventory beforelaunch.",
+    "No science code/settings altered afterlaunch.",
+    "Local postprocessing scripts and tests added afterlaunch do not change remote scientific procedures."
+  ],
+  "provenance": "mission-code-manifest.json binds executed code;mission-input-manifest.json binds source/control/generalcandidateinputs;design.json prospectively fixed.",
+  "zero_confirmation_claim": true,
+  "new_results": {
+    "initial_distant_rows": 6460,
+    "union_with_general": 17949,
+    "planetary_memberships": 47,
+    "bound_distant_memberships": 21,
+    "shared_tracklet_families": 5
+  },
+  "estimated_incremental_compute_usd": 1.2852816516101362
+}

@@ -1,0 +1,21 @@
+{
+  "recorded_unix": 1793215159.4872546,
+  "implemented": [
+    "Vectorized unchanged44 broad hypotheses; preserve Gauss ordering",
+    "Compiled packing, CPU verification arrays and ordered candidate selection",
+    "Reuse existing FastAtlasGeometry exact observation identities",
+    "Bounded4-process preparation overlapped withGPU execution;20-process updatedCPUbaseline"
+  ],
+  "abandoned_experiment": {
+    "description": "Direct small-chain atlas key gather prototyped, then retired in favor of already available precomputed observation IDs",
+    "production_atlas_restored_to_frozen_hash": true,
+    "files": {
+      "experimental-campaign_geometry.py": "36a785ce69d538302791a9b5940d0366b47611806ee9bd9abec792a2a1e4bf42",
+      "experimental-atlas_bookkeeping.py": "3dc99571fe8b091d915de92a42f568dcbc3df4fb10b48e61232e736ccf0f1837"
+    }
+  },
+  "local_checks": "local-tests.log,simulator-tests.log,local-bitcheck.json",
+  "hardware_first_attempt": "deleted after packaging failure;gpu-tests.log preserved;no timing phase ran",
+  "retry": "../itf-gpu-host-batch-retry-20261028/retry-amendment.json",
+  "goal": "100x relative to prior622.933chains/sec remains unproven;do not claim component gains as whole-pipeline gains"
+}

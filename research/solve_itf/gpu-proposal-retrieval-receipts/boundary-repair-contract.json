@@ -1,0 +1,6 @@
+{
+  "recorded_unix": 1793249287.779686,
+  "finding": "An exact20.6arcsec radius-boundary pair is excluded by cKDTree.query and included by query_ball_point before physical scoring. Hardware datasets all passed, but adversarial boundary differs.",
+  "repair": "Preserve original strict distance_upper_bound and delegate tied top16 boundary groups to original per-night tree. No tolerance increase. Local fixed-input replay after original hardware outputs frozen.",
+  "cloud_compute": "None; worker already deleted."
+}

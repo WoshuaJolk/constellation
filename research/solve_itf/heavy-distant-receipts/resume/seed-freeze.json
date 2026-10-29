@@ -1,0 +1,22 @@
+{
+  "counts": {
+    "seed_stream_pairs_visited": 12514137,
+    "seed_stream_exhausted": false,
+    "seeds_retained": 8000000,
+    "seed_search_bounded": true
+  },
+  "selection": {
+    "available_new": 7997999,
+    "excluded_prior": 2001,
+    "bright": 1500000,
+    "long_gap": 1413162,
+    "ordinary": 4086838,
+    "selected": 7000000
+  },
+  "sha256": "88b2ba7422828e4890a9cde905865085d598db1abc0affa95336202b337f88b3",
+  "graph_sha256": "003d2295c415af071db031b4189775a75b222f8b18a675092906b063f5278984",
+  "ranking_seconds": 52.24077232500713,
+  "total_seconds": 101.64287117900676,
+  "method": "Exact top-K score/lexicographic stream then unchanged lane quotas/exclusions. No fits or search outcomes used.",
+  "code_sha256": "dae8ae651458136a4a1c8824cd718191e95ec789ca6e33a4423a73929da14b1f"
+}

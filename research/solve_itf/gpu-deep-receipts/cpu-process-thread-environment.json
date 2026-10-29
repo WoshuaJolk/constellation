@@ -1,0 +1,6 @@
+{
+  "unix": 1793211469.1234927,
+  "sha256": "6d7a552e1f747593c7f8fa98d478d78e528e5f32d34e3f1d86af97c1f791b084",
+  "change": "Match OPENBLAS_NUM_THREADS=1 from original main benchmark before imports; no numerical policy change",
+  "before_launch": true
+}

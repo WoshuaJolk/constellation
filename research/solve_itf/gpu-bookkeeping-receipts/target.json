@@ -1,0 +1,10 @@
+{
+  "request": "Another two orders of magnitude before new linking",
+  "target": "100x end-to-end improvement over the latest 3.630733187-second warm hybrid pipeline benchmark",
+  "reference_seconds": 3.630733187,
+  "target_seconds": 0.03630733187,
+  "scope": "Same 747-tracklet controlled fixture, 256-seed cap, all original broad starts, 275 fits, mode selection, graph extension and ranked output; CPU verification remains included",
+  "status": "NOT_MET",
+  "new_catalogue_linking": "PAUSED",
+  "limitations": "Small controlled benchmark is not a whole ITF campaign, final planetary validation or archival uncertainty retrieval. Stage-only improvements cannot close the end-to-end target. Differences in host and software must be reported."
+}

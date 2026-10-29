@@ -1,0 +1,261 @@
+{
+  "status": "complete",
+  "scope": "Full historical fast-profile workload, 10000 seeds; current code on one host.",
+  "limitations": [
+    "Historical CPU hardware/software differ.",
+    "GPU uses current 128-chain compact adapter; sustained 1024-chain prefetch harness is not wired into search.",
+    "Cold means absent application/JIT/CUDA disk caches, not cleared OS page cache.",
+    "Transfer and package installation excluded from application wall time, included in cost."
+  ],
+  "phases": [
+    {
+      "name": "cpu-cold",
+      "backend": "cpu",
+      "elapsed_seconds": 87.797304411,
+      "exit_code": 0,
+      "user_cpu_seconds": 234.920354,
+      "system_cpu_seconds": 2.572541,
+      "initial_data_cache": "absent",
+      "initial_jit_cache": "absent",
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 7.061145121999999,
+        "seed_generation_seconds": 0.8800861089999898,
+        "observer_preparation_seconds": 5.848878718000009,
+        "triple_fitting_seconds": 37.90770453000002,
+        "extension_seconds": 1.7698517569999979,
+        "solve_seconds": 53.49792476599998,
+        "preparation_seconds": 32.29862977799999,
+        "total_seconds_before_output": 86.103660131
+      },
+      "counts": {
+        "fits_attempted": 10282,
+        "fits_rejected": 5939,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 256,
+        "triple_seeds_started": 10000,
+        "triple_seeds_completed": 10000,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 44,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 34241,
+        "seeds_retained": 10000,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "fork",
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 339,
+        "maximal_candidates": 3699,
+        "contained_candidates": 644,
+        "candidates_with_partial_overlaps": 1189,
+        "distinct_candidate_tracklets": 10680,
+        "accepted_chains_with_close_epochs": 174,
+        "weak_best_orbits": 1035
+      },
+      "candidates": 4343
+    },
+    {
+      "name": "gpu-cold",
+      "backend": "gpu",
+      "elapsed_seconds": 87.27818857700004,
+      "exit_code": 0,
+      "user_cpu_seconds": 117.454352,
+      "system_cpu_seconds": 3.0379329999999998,
+      "initial_data_cache": "absent",
+      "initial_jit_cache": "absent",
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 7.211699950000025,
+        "seed_generation_seconds": 0.9025410090000037,
+        "observer_preparation_seconds": 5.84146992899997,
+        "triple_fitting_seconds": 35.66895264600004,
+        "extension_seconds": 1.4380745210000327,
+        "solve_seconds": 51.06730703200003,
+        "preparation_seconds": 32.575859443999946,
+        "total_seconds_before_output": 84.09443997599999
+      },
+      "counts": {
+        "fits_attempted": 10282,
+        "fits_rejected": 5939,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 256,
+        "triple_seeds_started": 10000,
+        "triple_seeds_completed": 10000,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 44,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 34241,
+        "seeds_retained": 10000,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "injected_batch",
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 339,
+        "maximal_candidates": 3699,
+        "contained_candidates": 644,
+        "candidates_with_partial_overlaps": 1189,
+        "distinct_candidate_tracklets": 10680,
+        "accepted_chains_with_close_epochs": 174,
+        "weak_best_orbits": 1035
+      },
+      "candidates": 4343
+    },
+    {
+      "name": "gpu-warm",
+      "backend": "gpu",
+      "elapsed_seconds": 38.74945787500002,
+      "exit_code": 0,
+      "user_cpu_seconds": 60.66191700000002,
+      "system_cpu_seconds": 1.7456050000000003,
+      "initial_data_cache": "present",
+      "initial_jit_cache": "present",
+      "status": "bounded_search_complete",
+      "timings": {
+        "candidate_scan_seconds": 6.972986966999997,
+        "seed_generation_seconds": 0.7735628660000202,
+        "observer_preparation_seconds": 5.857185450000031,
+        "triple_fitting_seconds": 20.583211323,
+        "extension_seconds": 1.4032080459999747,
+        "solve_seconds": 35.59407488099998,
+        "preparation_seconds": 0.24861051499999576,
+        "total_seconds_before_output": 35.986322049999956
+      },
+      "counts": {
+        "fits_attempted": 10282,
+        "fits_rejected": 5939,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 256,
+        "triple_seeds_started": 10000,
+        "triple_seeds_completed": 10000,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 44,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 134165,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 119883,
+        "neighbor_queries_at_cap": 87,
+        "edges_proposed": 134165,
+        "edge_pool_discarded": 0,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 34241,
+        "seeds_retained": 10000,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "injected_batch",
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 339,
+        "maximal_candidates": 3699,
+        "contained_candidates": 644,
+        "candidates_with_partial_overlaps": 1189,
+        "distinct_candidate_tracklets": 10680,
+        "accepted_chains_with_close_epochs": 174,
+        "weak_best_orbits": 1035
+      },
+      "candidates": 4343
+    }
+  ],
+  "outputs": {
+    "cpu-cold-report.json.gz": {
+      "path": "cpu-cold-report.json.gz",
+      "bytes": 2947834,
+      "sha256": "ca8beca82248342e7a3d3d8dee7c5132516484c7b3b5f20cdbc21bd60f5397f3"
+    },
+    "cpu-cold/benchmark-extra.json": {
+      "path": "cpu-cold/benchmark-extra.json",
+      "bytes": 177,
+      "sha256": "b6713af2d115ef7b746bfd009552bd5d24e1a4218c1b4ef0e4c27f5169622cfe"
+    },
+    "cpu-cold/candidates.txt": {
+      "path": "cpu-cold/candidates.txt",
+      "bytes": 470274,
+      "sha256": "23c5a69903c4ad5f942f716498d31c0e15a95068c253da5215f375647dc77a41"
+    },
+    "cpu-cold/maximal_candidates.txt": {
+      "path": "cpu-cold/maximal_candidates.txt",
+      "bytes": 399365,
+      "sha256": "7120ea791ac403b3a8b0423f78fe7edd0d47b4b491f7ba2fcef67422694963e7"
+    },
+    "cpu-cold.log": {
+      "path": "cpu-cold.log",
+      "bytes": 15806,
+      "sha256": "39065fda4e5bba0a4bd48b063e07984b07f19f119470c609c50820d6819877ee"
+    },
+    "gpu-cold-report.json.gz": {
+      "path": "gpu-cold-report.json.gz",
+      "bytes": 2945924,
+      "sha256": "4f9ca80cd1aa049e1e5e8dacdb7d3df67e9f9069c29f2817a87301f67d0ee2e1"
+    },
+    "gpu-cold/benchmark-extra.json": {
+      "path": "gpu-cold/benchmark-extra.json",
+      "bytes": 178727,
+      "sha256": "f03b4b550c285373335e72c2250dff74203708ca6342c4b2b904ea15e4a8d828"
+    },
+    "gpu-cold/candidates.txt": {
+      "path": "gpu-cold/candidates.txt",
+      "bytes": 470274,
+      "sha256": "5b9b37e4bb66d51475a3fb3f43ad7802b00f90671f9ad06ce65a376373c86bc1"
+    },
+    "gpu-cold/maximal_candidates.txt": {
+      "path": "gpu-cold/maximal_candidates.txt",
+      "bytes": 399365,
+      "sha256": "7962f1219ddacba581db5c6de1d299ba2f18ea42cf982d04fcb549bb22dac6c8"
+    },
+    "gpu-cold.log": {
+      "path": "gpu-cold.log",
+      "bytes": 18796,
+      "sha256": "6852f6ed8f6169a5054f17ff4198945b55d14900081177e85c7e887dac8ead3e"
+    },
+    "gpu-warm-report.json.gz": {
+      "path": "gpu-warm-report.json.gz",
+      "bytes": 2945926,
+      "sha256": "f36a3d1114ff9b9248134f525d361fcc44d0505c7175680fec0ecfa5c071f543"
+    },
+    "gpu-warm/benchmark-extra.json": {
+      "path": "gpu-warm/benchmark-extra.json",
+      "bytes": 178765,
+      "sha256": "1eafd8896d963a7f50cc36d11dad979c9c3a3228d4cd2c04a0d8814a4fa70a3f"
+    },
+    "gpu-warm/candidates.txt": {
+      "path": "gpu-warm/candidates.txt",
+      "bytes": 470274,
+      "sha256": "5b9b37e4bb66d51475a3fb3f43ad7802b00f90671f9ad06ce65a376373c86bc1"
+    },
+    "gpu-warm/maximal_candidates.txt": {
+      "path": "gpu-warm/maximal_candidates.txt",
+      "bytes": 399365,
+      "sha256": "7962f1219ddacba581db5c6de1d299ba2f18ea42cf982d04fcb549bb22dac6c8"
+    },
+    "gpu-warm.log": {
+      "path": "gpu-warm.log",
+      "bytes": 18697,
+      "sha256": "85978755725006fcd7b00bcead02f9c683a4c5f1af66fd3703558560841ed9b1"
+    }
+  },
+  "phase": "complete"
+}

@@ -1,0 +1,20 @@
+{
+  "completed_unix": 1793216307.6714354,
+  "estimated_compute_usd": 1.7177474670886994,
+  "cap_usd": 3.0,
+  "original_deadline_unix": 1793216244.4672034,
+  "failed_packaging_attempt_usd": 0.4107172222018242,
+  "successful_attempt_usd": 1.3070302448868751,
+  "retained_raw_evidence_roots": [
+    "/tmp/itf-gpu-host-batch-20261028",
+    "/tmp/itf-gpu-host-batch-retry-20261028"
+  ],
+  "all_outputs_checksum_verified_before_deletion": true,
+  "remaining_droplets": 0,
+  "final_input_validation_guards": {
+    "description": "After hardware measurement, added rejection of non-float64 seed banks, wider-than-float64 epochs, and fractional iteration limits; no solver or scientific-cut change. Retained exact executed host source separately. Guards covered by final local tests; no second hardware timing claimed.",
+    "executed_host_sha256": "21e7a25f950ac1592ace95387b9e56a43f6c64a30b3184fee4d7c8c5223cdf80",
+    "final_host_sha256": "d9f06438a015893876d91e1f2e954f96ac77d31e601ee07f1c2b9596d63eb234"
+  },
+  "target_100x_reached": false
+}

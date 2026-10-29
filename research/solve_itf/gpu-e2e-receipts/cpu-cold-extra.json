@@ -1,0 +1,7 @@
+{
+  "backend": "cpu",
+  "seed_count": 10000,
+  "seed_sha256": "7c801be199b56be8406b28057e8aa70c77018564f260243aa3d0e5b7bc63be7c",
+  "batch_size": null,
+  "batch_receipts": []
+}

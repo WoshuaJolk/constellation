@@ -1,0 +1,42 @@
+{
+  "checked_utc_epoch": 1793166588.665268,
+  "remaining_droplets": 0,
+  "temporary_connection_test_ssh_keys_remaining": 0,
+  "connection_phase_estimated_compute_usd": 0.3777074483752251,
+  "prior_failed_h100_attempts_estimated_compute_usd": 1.2257108895,
+  "combined_estimated_compute_usd": 1.6034183378752251,
+  "budget_usd": 5,
+  "cost_basis": "API hourly rates; estimated elapsed compute with $0.01 minimum per CPU test; pretax, not an invoice; no volumes/snapshots created",
+  "deletions": [
+    {
+      "id": 613401227,
+      "deleted_utc": 1793165693.3390706,
+      "remaining_ids": [],
+      "estimated_compute_usd": 0.01
+    },
+    {
+      "id": 613402179,
+      "deleted_utc": 1793165694.3790598,
+      "remaining_ids": [],
+      "estimated_compute_usd": 0.01
+    },
+    {
+      "id": 613403474,
+      "deleted_utc": 1793165912.0136845,
+      "remaining_ids": [],
+      "estimated_compute_usd": 0.01
+    },
+    {
+      "id": 613404001,
+      "deleted_utc": 1793166172.9995837,
+      "remaining_ids": [],
+      "estimated_compute_usd": 0.01
+    },
+    {
+      "id": 613404739,
+      "deleted_utc": 1793166507.8399959,
+      "remaining_ids": [],
+      "estimated_compute_usd": 0.3377074483752251
+    }
+  ]
+}

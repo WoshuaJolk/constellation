@@ -1,0 +1,258 @@
+{
+  "keys": [
+    [
+      101989,
+      119877,
+      120472
+    ],
+    [
+      849241,
+      849382,
+      849735
+    ]
+  ],
+  "settings": {
+    "sigma": 0.3,
+    "rms_limit": 0.6,
+    "max_nfev": 80,
+    "broad_starts": false
+  },
+  "results": {
+    "cpu": [
+      {
+        "tracklet_indices": [
+          101989,
+          119877,
+          120472
+        ],
+        "observations": 6,
+        "span_days": 18.002630003924423,
+        "rms_arcsec": 0.42501664050099225,
+        "inclination_deg": 179.39764953448116,
+        "modes": [
+          {
+            "state_au_au_per_day": [
+              2072.607561698481,
+              46.61656967198528,
+              38.11280966366869,
+              158.28767064100586,
+              3.5133832903613635,
+              2.8908112463106392
+            ],
+            "epoch_mjd_tdb": 53693.23351285685,
+            "chi2": 12.042609646849979,
+            "rms_arcsec": 0.42501664050099225,
+            "range_au": 2072.919752420182,
+            "max_residual_arcsec": 0.547642858044497,
+            "eccentricity": 56394989.91167667,
+            "perihelion_au": 0.6655038199548841,
+            "semimajor_axis_au": -1.1800761606623714e-08,
+            "inclination_deg": 179.39764953448116,
+            "conic": "hyperbolic",
+            "jacobian_rank": 6,
+            "relative_mode_likelihood": 1.0,
+            "local_uncertainty": {
+              "scaled_jacobian_rank": 6,
+              "scaled_jacobian_condition": 12782903.869774016,
+              "range_sigma_au": 803.3734788793538,
+              "inclination_sigma_deg": 0.08019036923676871,
+              "energy_sigma_au2_per_day2": 9722.724867076673,
+              "energy_sign_resolved_3sigma": false,
+              "local_linearization_weak": false,
+              "uncertainty_kind": "local linear Gaussian; fixed astrometric sigma; no model error or mode integration"
+            }
+          }
+        ],
+        "seeds_attempted": 24,
+        "jacobian_backend": "compiled",
+        "orbit_start_policy": "full",
+        "full_grid_refinement_pending": false,
+        "independent_tracklet_chi2": 4.77897938930437e-19,
+        "log_bayes_factor_bic": 1.4334151259390122,
+        "log_odds_bic": -5.473339652709541,
+        "probability_bic": 0.004179648776929681,
+        "probability_kind": "uncalibrated BIC approximation; independent linear-tracklet null",
+        "sigma_arcsec": 0.3,
+        "prior_link_probability": 0.001
+      },
+      null
+    ],
+    "legacy_gpu": [
+      null,
+      {
+        "tracklet_indices": [
+          849241,
+          849382,
+          849735
+        ],
+        "observations": 14,
+        "span_days": 7.011240002262639,
+        "rms_arcsec": 0.4426445835218209,
+        "inclination_deg": 162.83499026219235,
+        "modes": [
+          {
+            "state_au_au_per_day": [
+              6602.976543489719,
+              4628.383444125072,
+              -594.1652786774416,
+              1254.2009004198692,
+              878.9239869284953,
+              -112.91324751174776
+            ],
+            "epoch_mjd_tdb": 58874.33864074801,
+            "chi2": 30.478657583298755,
+            "rms_arcsec": 0.4426445835218209,
+            "range_au": 8085.505535682086,
+            "max_residual_arcsec": 0.7141407150225161,
+            "eccentricity": 7797335423.379357,
+            "perihelion_au": 0.9783952698006427,
+            "semimajor_axis_au": -1.2547815590855848e-10,
+            "inclination_deg": 162.83499026219235,
+            "conic": "hyperbolic",
+            "jacobian_rank": 6,
+            "relative_mode_likelihood": 1.0,
+            "local_uncertainty": {
+              "scaled_jacobian_rank": 6,
+              "scaled_jacobian_condition": 2742745917.7844033,
+              "range_sigma_au": 43536.50998562187,
+              "inclination_sigma_deg": 0.001571291310869905,
+              "energy_sigma_au2_per_day2": 12683566.978200769,
+              "energy_sign_resolved_3sigma": false,
+              "local_linearization_weak": true,
+              "uncertainty_kind": "local linear Gaussian; fixed astrometric sigma; no model error or mode integration"
+            }
+          }
+        ],
+        "seeds_attempted": 25,
+        "jacobian_backend": "compiled",
+        "orbit_start_policy": "full",
+        "full_grid_refinement_pending": false,
+        "independent_tracklet_chi2": 0.7530768140559807,
+        "log_bayes_factor_bic": -4.866176854095777,
+        "log_odds_bic": -11.77293163274433,
+        "probability_bic": 7.710408850599273e-06,
+        "probability_kind": "uncalibrated BIC approximation; independent linear-tracklet null",
+        "sigma_arcsec": 0.3,
+        "prior_link_probability": 0.001
+      }
+    ],
+    "compact_gpu": [
+      null,
+      {
+        "tracklet_indices": [
+          849241,
+          849382,
+          849735
+        ],
+        "observations": 14,
+        "span_days": 7.011240002262639,
+        "rms_arcsec": 0.4426445835218209,
+        "inclination_deg": 162.83499026219235,
+        "modes": [
+          {
+            "state_au_au_per_day": [
+              6602.976543489719,
+              4628.383444125072,
+              -594.1652786774416,
+              1254.2009004198692,
+              878.9239869284953,
+              -112.91324751174776
+            ],
+            "epoch_mjd_tdb": 58874.33864074801,
+            "chi2": 30.478657583298755,
+            "rms_arcsec": 0.4426445835218209,
+            "range_au": 8085.505535682086,
+            "max_residual_arcsec": 0.7141407150225161,
+            "eccentricity": 7797335423.379357,
+            "perihelion_au": 0.9783952698006427,
+            "semimajor_axis_au": -1.2547815590855848e-10,
+            "inclination_deg": 162.83499026219235,
+            "conic": "hyperbolic",
+            "jacobian_rank": 6,
+            "relative_mode_likelihood": 1.0,
+            "local_uncertainty": {
+              "scaled_jacobian_rank": 6,
+              "scaled_jacobian_condition": 2742745917.7844033,
+              "range_sigma_au": 43536.50998562187,
+              "inclination_sigma_deg": 0.001571291310869905,
+              "energy_sigma_au2_per_day2": 12683566.978200769,
+              "energy_sign_resolved_3sigma": false,
+              "local_linearization_weak": true,
+              "uncertainty_kind": "local linear Gaussian; fixed astrometric sigma; no model error or mode integration"
+            }
+          }
+        ],
+        "seeds_attempted": 25,
+        "jacobian_backend": "compiled",
+        "orbit_start_policy": "full",
+        "full_grid_refinement_pending": false,
+        "independent_tracklet_chi2": 0.7530768140559807,
+        "log_bayes_factor_bic": -4.866176854095777,
+        "log_odds_bic": -11.77293163274433,
+        "probability_bic": 7.710408850599273e-06,
+        "probability_kind": "uncalibrated BIC approximation; independent linear-tracklet null",
+        "sigma_arcsec": 0.3,
+        "prior_link_probability": 0.001
+      }
+    ],
+    "register_gpu": [
+      null,
+      {
+        "tracklet_indices": [
+          849241,
+          849382,
+          849735
+        ],
+        "observations": 14,
+        "span_days": 7.011240002262639,
+        "rms_arcsec": 0.4426445835218209,
+        "inclination_deg": 162.83499026219235,
+        "modes": [
+          {
+            "state_au_au_per_day": [
+              6602.976543489719,
+              4628.383444125072,
+              -594.1652786774416,
+              1254.2009004198692,
+              878.9239869284953,
+              -112.91324751174776
+            ],
+            "epoch_mjd_tdb": 58874.33864074801,
+            "chi2": 30.478657583298755,
+            "rms_arcsec": 0.4426445835218209,
+            "range_au": 8085.505535682086,
+            "max_residual_arcsec": 0.7141407150225161,
+            "eccentricity": 7797335423.379357,
+            "perihelion_au": 0.9783952698006427,
+            "semimajor_axis_au": -1.2547815590855848e-10,
+            "inclination_deg": 162.83499026219235,
+            "conic": "hyperbolic",
+            "jacobian_rank": 6,
+            "relative_mode_likelihood": 1.0,
+            "local_uncertainty": {
+              "scaled_jacobian_rank": 6,
+              "scaled_jacobian_condition": 2742745917.7844033,
+              "range_sigma_au": 43536.50998562187,
+              "inclination_sigma_deg": 0.001571291310869905,
+              "energy_sigma_au2_per_day2": 12683566.978200769,
+              "energy_sign_resolved_3sigma": false,
+              "local_linearization_weak": true,
+              "uncertainty_kind": "local linear Gaussian; fixed astrometric sigma; no model error or mode integration"
+            }
+          }
+        ],
+        "seeds_attempted": 25,
+        "jacobian_backend": "compiled",
+        "orbit_start_policy": "full",
+        "full_grid_refinement_pending": false,
+        "independent_tracklet_chi2": 0.7530768140559807,
+        "log_bayes_factor_bic": -4.866176854095777,
+        "log_odds_bic": -11.77293163274433,
+        "probability_bic": 7.710408850599273e-06,
+        "probability_kind": "uncalibrated BIC approximation; independent linear-tracklet null",
+        "sigma_arcsec": 0.3,
+        "prior_link_probability": 0.001
+      }
+    ]
+  }
+}

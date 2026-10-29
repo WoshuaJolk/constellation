@@ -1,0 +1,47 @@
+{
+  "scope": "Local executor only, after remote search. JSON serialization+buffered write, no fsync; excluded from remote solve timings. Not a GPU comparison.",
+  "rows": [
+    {
+      "backend": "cpu",
+      "repeat": 0,
+      "seconds": 0.01978044499992393,
+      "bytes": 1182874,
+      "sha256": "cd40b74e43aaaa811ab69b37946ded9d898992f7d469a3c66620c18aef48207f"
+    },
+    {
+      "backend": "cpu",
+      "repeat": 1,
+      "seconds": 0.02071702800458297,
+      "bytes": 1182874,
+      "sha256": "cd40b74e43aaaa811ab69b37946ded9d898992f7d469a3c66620c18aef48207f"
+    },
+    {
+      "backend": "cpu",
+      "repeat": 2,
+      "seconds": 0.016620891001366545,
+      "bytes": 1182874,
+      "sha256": "cd40b74e43aaaa811ab69b37946ded9d898992f7d469a3c66620c18aef48207f"
+    },
+    {
+      "backend": "gpu",
+      "repeat": 0,
+      "seconds": 0.016069493001850788,
+      "bytes": 1182039,
+      "sha256": "b445719819b697be72d9fc1ecf3d069ba4e5865f951fafaee447043715b4c30d"
+    },
+    {
+      "backend": "gpu",
+      "repeat": 1,
+      "seconds": 0.017782988004910294,
+      "bytes": 1182039,
+      "sha256": "b445719819b697be72d9fc1ecf3d069ba4e5865f951fafaee447043715b4c30d"
+    },
+    {
+      "backend": "gpu",
+      "repeat": 2,
+      "seconds": 0.017278070998145267,
+      "bytes": 1182039,
+      "sha256": "b445719819b697be72d9fc1ecf3d069ba4e5865f951fafaee447043715b4c30d"
+    }
+  ]
+}

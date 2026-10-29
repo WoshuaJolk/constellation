@@ -1,0 +1,53 @@
+         1053237 function calls (1053135 primitive calls) in 3.410 seconds
+
+   Ordered by: cumulative time
+   List reduced from 233 to 45 due to restriction <45>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       64    2.156    0.034    3.410    0.053 /tmp/constellation-ship/src/magictools/itf/fit.py:231(fit_chain)
+     2219    0.070    0.000    0.452    0.000 /tmp/constellation-ship/src/magictools/itf/fit.py:156(orbital_elements)
+     5958    0.125    0.000    0.385    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/numeric.py:1563(cross)
+    17874    0.061    0.000    0.232    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/numeric.py:1489(moveaxis)
+     2265    0.005    0.000    0.171    0.000 {built-in method builtins.any}
+    10802    0.069    0.000    0.166    0.000 /tmp/constellation-ship/src/magictools/itf/fit.py:315(<genexpr>)
+      208    0.027    0.000    0.163    0.001 /tmp/constellation-ship/src/magictools/itf/fit.py:184(local_uncertainty)
+    19633    0.072    0.000    0.148    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/linalg/_linalg.py:2615(norm)
+    35748    0.089    0.000    0.144    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/numeric.py:1427(normalize_axis_tuple)
+     8537    0.015    0.000    0.095    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:3737(mean)
+     8779    0.036    0.000    0.084    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:115(_mean)
+     2457    0.008    0.000    0.066    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/lib/_arraysetops_impl.py:145(unique)
+      550    0.009    0.000    0.066    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/linalg/_linalg.py:2051(matrix_rank)
+     2457    0.020    0.000    0.056    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/lib/_arraysetops_impl.py:350(_unique1d)
+      758    0.040    0.000    0.055    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/linalg/_linalg.py:1666(svd)
+     4230    0.017    0.000    0.054    0.000 /tmp/constellation-ship/src/magictools/itf/fit.py:327(<genexpr>)
+     2219    0.001    0.000    0.054    0.000 {built-in method builtins.next}
+    19114    0.053    0.000    0.053    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+     3129    0.033    0.000    0.045    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/lib/_index_tricks_impl.py:343(__getitem__)
+     2427    0.009    0.000    0.038    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:2245(clip)
+       64    0.009    0.000    0.038    0.001 /tmp/constellation-ship/src/magictools/itf/fit.py:173(linear_chi2)
+       64    0.009    0.000    0.034    0.001 /tmp/constellation-ship/src/magictools/itf/fit.py:120(gauss_seeds)
+       64    0.007    0.000    0.033    0.001 /tmp/constellation-ship/src/magictools/itf/fit.py:107(get)
+     2555    0.004    0.000    0.030    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:48(_wrapfunc)
+    71496    0.022    0.000    0.030    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/numeric.py:1476(<genexpr>)
+    17160    0.028    0.000    0.028    0.000 {method 'dot' of 'numpy.ndarray' objects}
+       64    0.003    0.000    0.026    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/scipy/special/_logsumexp.py:15(logsumexp)
+     8779    0.022    0.000    0.025    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:73(_count_reduce_items)
+     2427    0.008    0.000    0.025    0.000 {method 'clip' of 'numpy.generic' objects}
+     2879    0.007    0.000    0.024    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:3049(max)
+     3521    0.011    0.000    0.021    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:66(_wrapreduction)
+   129819    0.020    0.000    0.020    0.000 {built-in method builtins.len}
+      242    0.011    0.000    0.017    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/linalg/_linalg.py:2434(lstsq)
+     2427    0.017    0.000    0.017    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:96(_clip)
+    68208    0.016    0.000    0.017    0.000 {built-in method builtins.isinstance}
+       64    0.005    0.000    0.017    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/scipy/special/_logsumexp.py:201(_logsumexp)
+    62401    0.015    0.000    0.015    0.000 {built-in method numpy.lib.array_utils.normalize_axis_index}
+       64    0.002    0.000    0.014    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/lib/_polynomial_impl.py:168(roots)
+    62560    0.013    0.000    0.013    0.000 {built-in method builtins.issubclass}
+     2985    0.004    0.000    0.012    0.000 {method 'all' of 'numpy.ndarray' objects}
+      550    0.002    0.000    0.012    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/_core/numeric.py:483(count_nonzero)
+    19850    0.007    0.000    0.011    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numpy/linalg/_linalg.py:168(isComplexType)
+    14622    0.010    0.000    0.010    0.000 {method 'astype' of 'numpy.ndarray' objects}
+    18263    0.010    0.000    0.010    0.000 /workspace/constellation/.venv/lib/python3.12/site-packages/numba/core/serialize.py:30(_numba_unpickle)
+    17224    0.010    0.000    0.010    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+
+

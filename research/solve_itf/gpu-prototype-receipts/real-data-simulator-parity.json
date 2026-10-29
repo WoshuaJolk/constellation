@@ -1,0 +1,7 @@
+{
+  "max_residual_error_arcsec": 0.0,
+  "max_scaled_jacobian_error": 0.0,
+  "scope": "CUDA simulator logic check, NOT a GPU benchmark or hardware compilation test",
+  "cases": 16,
+  "observations": 176
+}

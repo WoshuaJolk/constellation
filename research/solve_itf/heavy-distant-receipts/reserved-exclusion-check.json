@@ -1,0 +1,6 @@
+{
+  "reserved_observations": 28,
+  "same_site_1ms_1mas_overlaps": [],
+  "control_manifest_sha256": "e4a9594a0ba315c81a4371accfe2e38b74231b84f8017d1a454e0606f8c97eb3",
+  "scope": "Exclude reserved detections and near duplicates from all search/fitting input and initializers; opened development material, not untouched validation."
+}

@@ -1,0 +1,7 @@
+{
+  "scope": "Later-window diagnostic interpretation, no data or thresholds changed",
+  "actual_diagnostic_gate_arcsec": 5.0,
+  "current_default_short_arc_gate_arcsec": 6.0,
+  "reason": "search.solve uses max(5,10*rms_limit), rms_limit default0.6. Earlier design/commentary called5 existing; this is corrected in final report. Frozen raw artifacts retain their original wording.",
+  "no_recalculation_or_reselection": true
+}

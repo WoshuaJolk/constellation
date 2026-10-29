@@ -1,0 +1,48 @@
+{
+  "created_unix": 1793209302.5013757,
+  "seed_queue": "All 7,000,000 original triples in deterministic permutation (104729*i+20261028) modulo 7000000; no retained-fit selection. Full broad Gauss/range/radial starts,80 iterations,sigma .3 arcsec,RMS .6 arcsec; no short timing-based per-case rejection.",
+  "fitting_budget": "Two 300-second passes per CPU/GPU backend, AB then BA. Same distinct prefix within each round; second starts at ordinal1000000. Batch1024. Count only complete batches returned inside budget; preserve overrun work separately.",
+  "long_gap_selection": "From existing planetary recovery report, 512 lowest SHA256 exact membership/epoch/state keys, plus up to32 lowest-hash modes at range>=30AU and32 retrograde (inclination>=90). Deduplicate exact state/context. Do not use new retrieval outcomes.",
+  "long_gap_budget": "180seconds plus inflight tasks,20 CPU workers,30seconds per parent,5seconds per individual planetary fit,2 growth rounds,4 branches,16 proposals/window,full original bridge-first windows and planetary physics. GPU does not implement this stage; measure it as a shared bottleneck.",
+  "recovery_limit": "No independent physical truth labels in historical retained-mode workload. Measure matched-prefix CPU/GPU membership and numerical agreement; old 12 synthetic control regression separately. No production purity or detection completeness.",
+  "scope": "Full catalogue/7M source checkpoint benchmark, not fresh graph creation or a new production linking campaign. Prior graph construction and exact-geometry creation are reused, not timed as new work. Transfer/restore/index/setup/export costs reported separately.",
+  "maximum_worker_seconds": 2400,
+  "maximum_incremental_usd": 5.0,
+  "prior_gpu_compute_usd": 4.391786565997375,
+  "planetary_settings": {
+    "backend": "compiled",
+    "max_nfev": 35,
+    "sigma_arcsec": 0.3,
+    "rms_limit_arcsec": 0.6,
+    "uncertainty_axis_probes": 12,
+    "fast_retrieval": false,
+    "max_cone_deg": 2.0,
+    "bridge_first_windows_days": [
+      [
+        0,
+        14
+      ],
+      [
+        14,
+        60
+      ],
+      [
+        60,
+        180
+      ],
+      [
+        180,
+        730
+      ],
+      [
+        730,
+        0
+      ]
+    ],
+    "iterations": 2,
+    "branches": 4,
+    "max_candidates_per_window": 16,
+    "fit_seconds": 5.0,
+    "parent_seconds": 30.0
+  }
+}

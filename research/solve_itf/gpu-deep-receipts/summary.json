@@ -1,0 +1,367 @@
+{
+  "status": "completed_bounded_benchmark",
+  "setup": {
+    "verify_all_input_seconds": 1.0390752540000108,
+    "checkpoint_load_and_touch_seconds": 0.44639948099995763,
+    "checkpoint_checksums": {
+      "seeds": 22130318873420.0,
+      "graph_offsets": 36963495636821.0,
+      "graph_neighbors": 14100667540241.0,
+      "graph_scores": 242548980.24180317,
+      "times": 518477702252.5282,
+      "units": 2120868.524772581,
+      "observers": 1934563.4007936027
+    },
+    "tracklets": 2548307,
+    "observations": 8934160,
+    "seeds": 7000000,
+    "graph_directed_neighbors": 20038466,
+    "observer_unavailable": 4,
+    "planetary_index_pool_seconds": 2.1197179069999947,
+    "night_index": {
+      "indexed_tracklets": 2545457,
+      "unindexed_tracklets": 2850,
+      "indexed_nights": 10246,
+      "catalogue_tracklets": 2548307
+    },
+    "ephemeris_bounds": [
+      -65.99992751766027,
+      61336.00791505602
+    ],
+    "longgap_parent_count": 541,
+    "warmup_seconds": 6.99385424899998
+  },
+  "backends": {
+    "cpu": {
+      "charged_comparison_seconds": 600,
+      "within_budget_counts": {
+        "attempted": 210944,
+        "starts": 9362841,
+        "retained": 7205,
+        "not_retained": 203739,
+        "numerical_errors": 0,
+        "unavailable": 0,
+        "modes": 8386
+      },
+      "all_elapsed_seconds": 604.4911780909998,
+      "phases": [
+        {
+          "name": "cpu-0",
+          "seconds": 300,
+          "elapsed_seconds": 302.069968917,
+          "within_budget_counts": {
+            "attempted": 106496,
+            "unavailable": 0,
+            "starts": 4726994,
+            "retained": 3645,
+            "numerical_errors": 0,
+            "modes": 4235,
+            "not_retained": 102851
+          },
+          "all_counts": {
+            "attempted": 107520,
+            "unavailable": 0,
+            "starts": 4772459,
+            "retained": 3679,
+            "numerical_errors": 0,
+            "modes": 4273,
+            "not_retained": 103841
+          },
+          "chains_per_second": 354.9866666666667
+        },
+        {
+          "name": "cpu-1",
+          "seconds": 300,
+          "elapsed_seconds": 302.42120917399984,
+          "within_budget_counts": {
+            "attempted": 104448,
+            "unavailable": 0,
+            "starts": 4635847,
+            "retained": 3560,
+            "numerical_errors": 0,
+            "modes": 4151,
+            "not_retained": 100888
+          },
+          "all_counts": {
+            "attempted": 105472,
+            "unavailable": 0,
+            "starts": 4681318,
+            "retained": 3594,
+            "numerical_errors": 0,
+            "modes": 4193,
+            "not_retained": 101878
+          },
+          "chains_per_second": 348.16
+        }
+      ],
+      "chains_per_second": 351.5733333333333,
+      "starts_per_second": 15604.735,
+      "projected_7m_fitting_hours_only": 5.530693770226537,
+      "utilization": {
+        "samples": 120,
+        "cpu_mean_busy_percent": 52.38762340166767,
+        "gpu_mean_util_percent": 0.0,
+        "gpu_peak_memory_mib": 533.0,
+        "sampling_note": "5-second samples; CPU interval may straddle a stage transition."
+      }
+    },
+    "gpu": {
+      "charged_comparison_seconds": 600,
+      "within_budget_counts": {
+        "attempted": 338944,
+        "starts": 15044525,
+        "retained": 11626,
+        "not_retained": 327318,
+        "numerical_errors": 0,
+        "unavailable": 0,
+        "modes": 13537
+      },
+      "all_elapsed_seconds": 602.2159291569999,
+      "phases": [
+        {
+          "name": "gpu-0",
+          "seconds": 300,
+          "elapsed_seconds": 300.646087909,
+          "within_budget_counts": {
+            "attempted": 169984,
+            "unavailable": 0,
+            "starts": 7545005,
+            "retained": 5802,
+            "numerical_errors": 0,
+            "modes": 6771,
+            "not_retained": 164182
+          },
+          "all_counts": {
+            "attempted": 171008,
+            "unavailable": 0,
+            "starts": 7590430,
+            "retained": 5834,
+            "numerical_errors": 0,
+            "modes": 6817,
+            "not_retained": 165174
+          },
+          "chains_per_second": 566.6133333333333
+        },
+        {
+          "name": "gpu-1",
+          "seconds": 300,
+          "elapsed_seconds": 301.5698412479999,
+          "within_budget_counts": {
+            "attempted": 168960,
+            "unavailable": 0,
+            "starts": 7499520,
+            "retained": 5824,
+            "numerical_errors": 0,
+            "modes": 6766,
+            "not_retained": 163136
+          },
+          "all_counts": {
+            "attempted": 169984,
+            "unavailable": 0,
+            "starts": 7544958,
+            "retained": 5859,
+            "numerical_errors": 0,
+            "modes": 6801,
+            "not_retained": 164125
+          },
+          "chains_per_second": 563.2
+        }
+      ],
+      "chains_per_second": 564.9066666666666,
+      "starts_per_second": 25074.208333333332,
+      "projected_7m_fitting_hours_only": 3.442063192346425,
+      "utilization": {
+        "samples": 119,
+        "cpu_mean_busy_percent": 6.882089705944988,
+        "gpu_mean_util_percent": 6.369747899159663,
+        "gpu_peak_memory_mib": 747.0,
+        "sampling_note": "5-second samples; CPU interval may straddle a stage transition."
+      },
+      "gpu_batch_components_seconds": {
+        "planning_seconds": 329.2287647949996,
+        "gpu_setup_seconds": 21.93208375200004,
+        "cpu_verify_fallback_seconds": 28.00451613000166,
+        "total_seconds": 585.1104514759987,
+        "gpu_solve_seconds": 47.817334138001115,
+        "selection_and_other_assembly_seconds": 158.1277526609963
+      },
+      "gpu_batch_component_fractions": {
+        "planning_seconds": 0.5626779763794812,
+        "gpu_setup_seconds": 0.03748366431786374,
+        "cpu_verify_fallback_seconds": 0.04786193112660612,
+        "gpu_solve_seconds": 0.08172360281272908,
+        "selection_and_other_assembly_seconds": 0.2702528253633198
+      },
+      "cpu_fallback_starts": 27319
+    }
+  },
+  "comparisons": [
+    {
+      "round": 0,
+      "common_within_budget": 106496,
+      "both_retained": 3645,
+      "status_differences": 0,
+      "rms_differences_over_001_arcsec": 0,
+      "mode_count_differences": 13
+    },
+    {
+      "round": 1,
+      "common_within_budget": 104448,
+      "both_retained": 3560,
+      "status_differences": 0,
+      "rms_differences_over_001_arcsec": 0,
+      "mode_count_differences": 15
+    }
+  ],
+  "planetary": {
+    "elapsed_seconds": 46.31020553899998,
+    "budget_seconds": 180,
+    "completed": 541,
+    "total_frozen_parents": 541,
+    "pending": 0,
+    "not_launched": 0,
+    "counts": {
+      "hypotheses_searched": 888,
+      "window_searches": 3962,
+      "nights_considered": 40594652,
+      "nights_in_time_window": 9493328,
+      "ephemeris_unavailable_nights": 0,
+      "outside_time_window_nights": 31101324,
+      "nights_queried": 7824622,
+      "uncertainty_gated_nights": 290312,
+      "excluded_window_uncertainty_gates": 3991,
+      "short_gap_nights": 1378394,
+      "raw_proposals": 119050,
+      "proposals_discarded_at_cap": 103079,
+      "arc_anchors_before_tracklet_cap": 573,
+      "arc_merge_proposals": 1157,
+      "arc_merges_discarded_at_cap": 48,
+      "innovation_rejections": 13030,
+      "branches_discarded_at_cap": 1,
+      "night_prediction_hits": 1477320,
+      "night_prediction_misses": 34437488,
+      "exact_fit_cache_misses": 4593,
+      "extension_fits": 3103,
+      "uncertainty_probes_attempted": 2844,
+      "uncertainty_probe_raw_proposals": 669059,
+      "uncertainty_probe_gated_nights": 1223957,
+      "uncertainty_proposals_retrieved": 2159,
+      "uncertainty_proposals_deferred": 10333,
+      "nonlinear_proposal_refits": 2066,
+      "arc_merge_innovation_rejections": 106,
+      "fit_numerical_failures": 681,
+      "arc_merge_fits": 1003,
+      "accepted_extensions": 431,
+      "parent_window_continuations": 96,
+      "bridge_first_advances": 211,
+      "requery_hypotheses": 252,
+      "branches_at_depth_limit": 56,
+      "alternative_branch_fits": 192,
+      "accepted_alternative_branches": 24,
+      "accepted_arc_merges": 122,
+      "exact_fit_cache_hits": 246,
+      "seed_budget_exhaustions": 1
+    },
+    "statuses": {
+      "searched": 467,
+      "partial_failure": 73,
+      "seed_budget_exhausted": 1
+    },
+    "backend": "CPU20 compiled planetary dynamics, shared downstream stage; no GPU acceleration claim",
+    "distinct_output_memberships": 358,
+    "longest_output_membership": 15,
+    "roles": {
+      "ordinary": {
+        "processed": 512,
+        "with_output": 173
+      },
+      "distant": {
+        "processed": 32,
+        "with_output": 0
+      },
+      "retrograde": {
+        "processed": 32,
+        "with_output": 0
+      }
+    },
+    "distinct_memberships_by_output_kind": {
+      "single_tracklet_joint_fit": 331,
+      "alternative_joint_fit": 20,
+      "whole_arc_joint_fit": 41
+    },
+    "distinct_extension_memberships": 358,
+    "longest_extension_membership": 15,
+    "largest_extension_arc_days": 10558.251392439255
+  },
+  "limitations": [
+    "Frozen checkpoint is reused: no measurement of fresh 7M graph construction.",
+    "Full catalogue is available, but timed passes process only their measured subset of distinct original seed triples.",
+    "No independent truth labels for the real seed or historical planetary-mode workloads. Retained does not mean confirmed.",
+    "Both phases ran on the H100 host at its full hourly rate; this is not a standalone CPU-host cost comparison.",
+    "Planetary propagation, uncertainty retrieval and final joint fitting remain CPU-only. No GPU speedup is assigned to that stage.",
+    "Remaining-seed projections cover this fitting policy only, not a whole-campaign completion estimate."
+  ],
+  "accounting": {
+    "estimated_compute_usd": 2.1690668046176436,
+    "worker_hourly_usd": 4.41,
+    "worker_lifetime_seconds": 1770.666776418686,
+    "worker_deleted_unix": 1793211702.452643,
+    "remaining_droplet_ids_at_deletion": [],
+    "scope": "Compute estimate includes setup, transfer, tests, idle intervals and cleanup; not a provider invoice or historical storage total."
+  },
+  "measured_fitting_throughput_ratio_gpu_over_cpu": 1.6067961165048543,
+  "distinct_seed_positions_in_main_timed_passes": 338944,
+  "fraction_of_original_7m_queue_in_main_timed_passes": 0.04842057142857143,
+  "supplementary_cpu_process_baseline": {
+    "status": "completed",
+    "setup_seconds": 0.8104801289998704,
+    "budget_seconds": 120.0,
+    "elapsed_seconds": 120.3827253469999,
+    "counts": {
+      "attempted": 75776,
+      "unavailable": 0,
+      "starts": 3363450,
+      "retained": 2625,
+      "numerical_errors": 0,
+      "modes": 3020,
+      "not_retained": 73151
+    },
+    "within_budget_counts": {
+      "attempted": 74752,
+      "unavailable": 0,
+      "starts": 3318012,
+      "retained": 2587,
+      "numerical_errors": 0,
+      "modes": 2955,
+      "not_retained": 72165
+    },
+    "chains_per_second": 622.9333333333333,
+    "comparison_note": "One prospectively added 120-second CPU20-process pass, not a repeated AB/BA measurement. Same inputs, fitter and all-start policy.",
+    "cpu_mean_busy_percent": 89.52060525973661,
+    "paired_with_thread_cpu": {
+      "common_within_budget": 74752,
+      "status_changes": [],
+      "max_retained_rms_difference_arcsec": 0.0,
+      "rms_changes_over_001_arcsec": [],
+      "mode_count_changes": []
+    },
+    "paired_with_gpu": {
+      "common_within_budget": 74752,
+      "status_changes": [],
+      "max_retained_rms_difference_arcsec": 6.816404940490628e-10,
+      "rms_changes_over_001_arcsec": [],
+      "mode_count_changes": [
+        292326,
+        709308,
+        1652291,
+        1803020,
+        1950071,
+        4422103,
+        5693113,
+        6118077,
+        6294707
+      ]
+    }
+  },
+  "gpu_over_cpu_process_throughput_ratio": 0.9068493150684932
+}

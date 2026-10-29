@@ -1,0 +1,14 @@
+{
+  "reason": "The CPU20-thread baseline measured roughly 50% host utilization; compare existing multi-process CPU execution without changing scientific work or favorable output selection.",
+  "recorded_before_first_gpu_phase": true,
+  "additional_fixed_seconds": 120,
+  "workers": 20,
+  "batch_chains": 1024,
+  "seed_ordinal_start": 0,
+  "selection": "Same frozen affine permutation, same all-start fitting policy and exact geometry; no output-dependent case selection.",
+  "placement": "Only after the original benchmark job exits successfully; no simultaneous numerical work. Preserve original AB/BA benchmark unchanged.",
+  "accounting": "Report separately as a single process baseline check; preserve startup/warmup and budget overrun. No repeat or tuning after its results.",
+  "resources": "Existing worker44 only, original 2400-second lifetime and $5 incremental cap remain unchanged. Skip if less than240seconds remain.",
+  "recorded_unix": 1793210571.53731,
+  "observed_phase": "cpu-0"
+}

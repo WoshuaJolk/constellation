@@ -1,0 +1,481 @@
+{
+  "projection": [
+    {
+      "tracklets": 1024,
+      "hypotheses": 48,
+      "cold_warmup_seconds": 7.264174564000001,
+      "resident_upload_seconds": 0.24904506300001117,
+      "repeats": [
+        {
+          "seconds": {
+            "cpu1": 0.037282089000001406,
+            "cpu20": 0.0028764680000108456,
+            "gpu": 0.0023038470000074085
+          },
+          "checks": {
+            "cpu20": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 0.0,
+              "vectors_equal": true
+            },
+            "gpu": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 4.4779818223107584e-10,
+              "vectors_equal": true
+            }
+          },
+          "valid": 49152
+        },
+        {
+          "seconds": {
+            "gpu": 0.002270197000001417,
+            "cpu20": 0.002868721999988111,
+            "cpu1": 0.037213390999994544
+          },
+          "checks": {
+            "cpu20": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 0.0,
+              "vectors_equal": true
+            },
+            "gpu": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 4.4779818223107584e-10,
+              "vectors_equal": true
+            }
+          },
+          "valid": 49152
+        },
+        {
+          "seconds": {
+            "cpu1": 0.037311784999985775,
+            "cpu20": 0.0028611459999865474,
+            "gpu": 0.0028269710000188297
+          },
+          "checks": {
+            "cpu20": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 0.0,
+              "vectors_equal": true
+            },
+            "gpu": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 4.4779818223107584e-10,
+              "vectors_equal": true
+            }
+          },
+          "valid": 49152
+        }
+      ]
+    },
+    {
+      "tracklets": 16384,
+      "hypotheses": 48,
+      "cold_warmup_seconds": 0.7041170790000137,
+      "resident_upload_seconds": 0.0013103039999862176,
+      "repeats": [
+        {
+          "seconds": {
+            "cpu1": 0.6452050019999831,
+            "cpu20": 0.04593003200000112,
+            "gpu": 0.021158872000000883
+          },
+          "checks": {
+            "cpu20": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 0.0,
+              "vectors_equal": true
+            },
+            "gpu": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 7.902001534879154e-10,
+              "vectors_equal": true
+            }
+          },
+          "valid": 786432
+        },
+        {
+          "seconds": {
+            "gpu": 0.015788141000001588,
+            "cpu20": 0.045421253999990086,
+            "cpu1": 0.6226249759999973
+          },
+          "checks": {
+            "cpu20": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 0.0,
+              "vectors_equal": true
+            },
+            "gpu": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 7.902001534879154e-10,
+              "vectors_equal": true
+            }
+          },
+          "valid": 786432
+        },
+        {
+          "seconds": {
+            "cpu1": 0.6236474669999836,
+            "cpu20": 0.045399337999981526,
+            "gpu": 0.015201620999988563
+          },
+          "checks": {
+            "cpu20": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 0.0,
+              "vectors_equal": true
+            },
+            "gpu": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 7.902001534879154e-10,
+              "vectors_equal": true
+            }
+          },
+          "valid": 786432
+        }
+      ]
+    },
+    {
+      "tracklets": 50497,
+      "hypotheses": 48,
+      "cold_warmup_seconds": 2.115873970999985,
+      "resident_upload_seconds": 0.002782553000002963,
+      "repeats": [
+        {
+          "seconds": {
+            "cpu1": 1.910344992000006,
+            "cpu20": 0.1386763060000078,
+            "gpu": 0.056400369000016326
+          },
+          "checks": {
+            "cpu20": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 0.0,
+              "vectors_equal": true
+            },
+            "gpu": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 9.608621509662532e-10,
+              "vectors_equal": true
+            }
+          },
+          "valid": 2423856
+        },
+        {
+          "seconds": {
+            "gpu": 0.05621761200001174,
+            "cpu20": 0.13877709799999138,
+            "cpu1": 1.9121276179999995
+          },
+          "checks": {
+            "cpu20": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 0.0,
+              "vectors_equal": true
+            },
+            "gpu": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 9.608621509662532e-10,
+              "vectors_equal": true
+            }
+          },
+          "valid": 2423856
+        },
+        {
+          "seconds": {
+            "cpu1": 1.9119923590000099,
+            "cpu20": 0.11309373000000278,
+            "gpu": 0.057124350999998796
+          },
+          "checks": {
+            "cpu20": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 0.0,
+              "vectors_equal": true
+            },
+            "gpu": {
+              "finite_masks_equal": true,
+              "maximum_arcsec": 9.608621509662532e-10,
+              "vectors_equal": true
+            }
+          },
+          "valid": 2423856
+        }
+      ]
+    }
+  ],
+  "retrieval": [
+    {
+      "queries": 8192,
+      "points": 2545467,
+      "cold_warmup_seconds": 0.6155212040000038,
+      "repeats": [
+        {
+          "seconds": {
+            "cpu1": 0.0009500280000054317,
+            "cpu20": 0.0024612420000096336,
+            "gpu": 0.002446520000006558
+          },
+          "exact_hit_and_order_parity": {
+            "cpu20": true,
+            "gpu": true
+          },
+          "hits": 6086
+        },
+        {
+          "seconds": {
+            "gpu": 0.0020481589999974403,
+            "cpu20": 0.0020842720000189274,
+            "cpu1": 0.0009056359999988217
+          },
+          "exact_hit_and_order_parity": {
+            "cpu20": true,
+            "gpu": true
+          },
+          "hits": 6086
+        },
+        {
+          "seconds": {
+            "cpu1": 0.0007679020000068704,
+            "cpu20": 0.00201484900000537,
+            "gpu": 0.00242959900000983
+          },
+          "exact_hit_and_order_parity": {
+            "cpu20": true,
+            "gpu": true
+          },
+          "hits": 6086
+        }
+      ]
+    },
+    {
+      "queries": 65536,
+      "points": 2545467,
+      "cold_warmup_seconds": 0.02366782499998976,
+      "repeats": [
+        {
+          "seconds": {
+            "cpu1": 0.01207060699999829,
+            "cpu20": 0.0037793479999947976,
+            "gpu": 0.006884873999979391
+          },
+          "exact_hit_and_order_parity": {
+            "cpu20": true,
+            "gpu": true
+          },
+          "hits": 151690
+        },
+        {
+          "seconds": {
+            "gpu": 0.006001414999985855,
+            "cpu20": 0.0038433869999892067,
+            "cpu1": 0.011550259000017604
+          },
+          "exact_hit_and_order_parity": {
+            "cpu20": true,
+            "gpu": true
+          },
+          "hits": 151690
+        },
+        {
+          "seconds": {
+            "cpu1": 0.01117808399999376,
+            "cpu20": 0.004286390999993728,
+            "gpu": 0.006604215000010072
+          },
+          "exact_hit_and_order_parity": {
+            "cpu20": true,
+            "gpu": true
+          },
+          "hits": 151690
+        }
+      ]
+    },
+    {
+      "queries": 262144,
+      "points": 2545467,
+      "cold_warmup_seconds": 0.07514077999999813,
+      "repeats": [
+        {
+          "seconds": {
+            "cpu1": 0.04781672600000775,
+            "cpu20": 0.009052152999998953,
+            "gpu": 0.016973557999989453
+          },
+          "exact_hit_and_order_parity": {
+            "cpu20": true,
+            "gpu": true
+          },
+          "hits": 371264
+        },
+        {
+          "seconds": {
+            "gpu": 0.01728531200001271,
+            "cpu20": 0.0075760839999929885,
+            "cpu1": 0.052236375000006774
+          },
+          "exact_hit_and_order_parity": {
+            "cpu20": true,
+            "gpu": true
+          },
+          "hits": 371264
+        },
+        {
+          "seconds": {
+            "cpu1": 0.04777754500000242,
+            "cpu20": 0.008120824999991783,
+            "gpu": 0.01826748800002065
+          },
+          "exact_hit_and_order_parity": {
+            "cpu20": true,
+            "gpu": true
+          },
+          "hits": 371264
+        }
+      ]
+    }
+  ],
+  "science": {
+    "cpu_query_seconds": 1.7299999996112092e-05,
+    "gpu_query_seconds": 0.003003492000004826,
+    "receipt": {
+      "queries": 6,
+      "hits": 3,
+      "output_bytes": 72,
+      "count_upload_download_seconds": 0.0012171870000088347,
+      "fill_seconds": 0.0005980159999978696,
+      "result_download_seconds": 0.00016513700001041798,
+      "simulated": false
+    },
+    "cases": [
+      {
+        "case": 0,
+        "name": "Eros",
+        "identity": "00433",
+        "reserved_tracklet": 2548307,
+        "status": "not_recovered",
+        "modes": []
+      },
+      {
+        "case": 1,
+        "name": "Pholus",
+        "identity": "05145",
+        "reserved_tracklet": 2548308,
+        "status": "recovered",
+        "modes": [
+          {
+            "mode": 0,
+            "retrieved": 0,
+            "reserved_screened": false,
+            "reserved_refined": false,
+            "other_refined_hits": 0
+          }
+        ]
+      },
+      {
+        "case": 2,
+        "name": "111309",
+        "identity": "B1309",
+        "reserved_tracklet": 2548309,
+        "status": "recovered",
+        "modes": [
+          {
+            "mode": 0,
+            "retrieved": 0,
+            "reserved_screened": false,
+            "reserved_refined": false,
+            "other_refined_hits": 0
+          }
+        ]
+      },
+      {
+        "case": 3,
+        "name": "2008 KV42 (retrograde TNO)",
+        "identity": "q8219",
+        "reserved_tracklet": 2548310,
+        "status": "recovered",
+        "modes": [
+          {
+            "mode": 0,
+            "retrieved": 1,
+            "reserved_screened": true,
+            "reserved_refined": true,
+            "other_refined_hits": 0
+          }
+        ]
+      },
+      {
+        "case": 4,
+        "name": "Vesta",
+        "identity": "00004",
+        "reserved_tracklet": 2548311,
+        "status": "not_recovered",
+        "modes": []
+      },
+      {
+        "case": 5,
+        "name": "Toro",
+        "identity": "01685",
+        "reserved_tracklet": 2548312,
+        "status": "not_recovered",
+        "modes": []
+      },
+      {
+        "case": 6,
+        "name": "Chiron",
+        "identity": "02060",
+        "reserved_tracklet": 2548313,
+        "status": "recovered",
+        "modes": [
+          {
+            "mode": 0,
+            "retrieved": 1,
+            "reserved_screened": true,
+            "reserved_refined": true,
+            "other_refined_hits": 0
+          }
+        ]
+      },
+      {
+        "case": 7,
+        "name": "Varuna",
+        "identity": "20000",
+        "reserved_tracklet": 2548314,
+        "status": "recovered",
+        "modes": [
+          {
+            "mode": 0,
+            "retrieved": 1,
+            "reserved_screened": true,
+            "reserved_refined": true,
+            "other_refined_hits": 0
+          }
+        ]
+      },
+      {
+        "case": 8,
+        "name": "514107 (retrograde co-orbital)",
+        "identity": "p4107",
+        "reserved_tracklet": 2548315,
+        "status": "recovered",
+        "modes": [
+          {
+            "mode": 0,
+            "retrieved": 0,
+            "reserved_screened": false,
+            "reserved_refined": false,
+            "other_refined_hits": 0
+          }
+        ]
+      }
+    ],
+    "finite_queries": 6,
+    "unresolved_predictions": 0,
+    "retrieval_sha256": "7401b531fb6ca03dab0456f53e37981c984b3a01d22dcda0dd73e5e995399345",
+    "scope": "Previously opened controls; supplied later windows; full available ITF plus reserved controls. Fixed nominal screening, not calibrated uncertainty, uniqueness, or confirmation."
+  },
+  "retrieval_resident_upload_seconds": 0.007566866999979993,
+  "status": "completed",
+  "elapsed_seconds": 26.285695024000006
+}

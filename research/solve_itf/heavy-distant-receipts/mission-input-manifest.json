@@ -1,0 +1,54 @@
+{
+  "control-catalogue/manifest.json": {
+    "sha256": "e4a9594a0ba315c81a4371accfe2e38b74231b84f8017d1a454e0606f8c97eb3",
+    "bytes": 343
+  },
+  "control-catalogue/observations.npy": {
+    "sha256": "7e8d99f06a0662640974bd4c20020a829af6e43f8c0cd6ee995b8933fb9e578b",
+    "bytes": 56064
+  },
+  "control-catalogue/tracklets.npy": {
+    "sha256": "fccae8f367934171112e0bc9bacaabac0521734c055ab192a24763bff04f9ad7",
+    "bytes": 69325
+  },
+  "control-truth.json": {
+    "sha256": "7fc4f7507a6fc7046a32db9988974ee2cb35b139f5643e68e00f295062e0913a",
+    "bytes": 27003
+  },
+  "control-reserved.json": {
+    "sha256": "3075a8661f8856c7c15e9f7d712a280430d570f6a67bcd943603399a091c52cc",
+    "bytes": 3854
+  },
+  "control-selection-rule.json": {
+    "sha256": "dbec205a23c8d362406bc46d98d47f3ecbfd78d054727f27a9dcaab8e7c4a8d4",
+    "bytes": 820
+  },
+  "run-search.py": {
+    "sha256": "a4129ba63940479c88d142052b6bb6598cbb72b3fa4e24cf832088c7c9697dc8",
+    "bytes": 3204
+  },
+  "mission-code-manifest.json": {
+    "sha256": "030af62754f1ff46bd7b479c8e12405d32b311c3943bbf78519b27d79cad7f6d",
+    "bytes": 22316
+  },
+  "prior-followup-digests.json": {
+    "sha256": "b926f868568d5982812356fc0607ebb65741f4e89fad14c901aa9695288121fe",
+    "bytes": 12852
+  },
+  "tracklet-magnitude.npy": {
+    "sha256": "3ee0e19887642008b2399aad26b06330f061c86e04631c8984e1a411df3011a9",
+    "bytes": 10193356
+  },
+  "general-candidates.json.gz": {
+    "sha256": "99eafdb731d58bd839ed66fc4ca629d25ddd637b42a58a671a6e8afb8efcbd03",
+    "bytes": 16073643
+  },
+  "de440s.bsp": {
+    "sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+    "bytes": 32726016
+  },
+  "prior-distant-seeds.npy": {
+    "sha256": "ae3e6e57e8cc729640ccc8fdfcac5d4c22584aa9ef115b3c7a97b268f8972586",
+    "bytes": 24000128
+  }
+}

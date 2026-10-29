@@ -1,0 +1,12 @@
+{
+  "reserved_tracklets": 9,
+  "reserved_observations": 27,
+  "exact_overlap_count": 0,
+  "same_station_1ms_1mas_near_overlap_count": 0,
+  "all_fit_and_initializer_inputs": "control-catalogue only; no labels/reserved data consumed until solver returns and candidatefileclosed",
+  "control_catalogue_hashes": {
+    "tracklets.npy": "25701a39299ddfd9f599d2ea854792ee8fc71c6f7c33df7cf3b211c997a5082e",
+    "observations.npy": "fa1652fde60fc3879f844f376a5971adc7f77cab05599cdd17b5719d5f2d9e61",
+    "manifest.json": "2ddf0468725a4b21a54000bf671646d005765388de3b29cabbf589346002a1c0"
+  }
+}

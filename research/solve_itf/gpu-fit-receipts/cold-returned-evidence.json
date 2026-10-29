@@ -1,0 +1,26 @@
+{
+  "hardware.json": {
+    "bytes": 460,
+    "sha256": "361d67de24511cb2eb3ff01088480d6a40cb564b862088a7fab11e5adc29bcb8"
+  },
+  "gpu-tests.log": {
+    "bytes": 947,
+    "sha256": "1f0a361d0e972f69e470ce1d30314870c6f4dd2d1bd83470df1d26a38f99e525"
+  },
+  "fit-results/report.json": {
+    "bytes": 14305,
+    "sha256": "1e1c0107e6f52bb7f05a3865941790dee74bf6051134dee2d03a0c50abbcccc9"
+  },
+  "fit-results/cpu-reference.npz": {
+    "bytes": 8878288,
+    "sha256": "298d3ec5d870fa669facabd55ee5cb35ea4857a6283bc1dd0b2da67d69ee3e97"
+  },
+  "fit-results/gpu-reference.npz": {
+    "bytes": 9142850,
+    "sha256": "56cdaf0f050905ad0ee84a703d28c7c9313a7f71cbd1348207d40c29a8b3c1fb"
+  },
+  ".remote/gpufit.log": {
+    "bytes": 13877,
+    "sha256": "4b6430763c86d6193820ecee56ffc55ed28211456ea20f7a454fa6eacfd00dd0"
+  }
+}

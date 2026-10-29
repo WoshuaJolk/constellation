@@ -1,0 +1,587 @@
+{
+  "scope": "Complete single-start LM benchmark; saved-state refinement, not new discovery.",
+  "bank_sha256": "2c32db53b6a4a8f197e97007e1827910f5b006a4911dbbf30d28e93e5dcf6b68",
+  "cases": 10000,
+  "observations": 121813,
+  "iterations_limit": 80,
+  "repeats": 3,
+  "cpu_threads": [
+    1,
+    4,
+    20
+  ],
+  "runs": {
+    "cpu-1": [
+      {
+        "cases": 10000,
+        "converged": 9999,
+        "nonconverged": 1,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709547874553,
+          0.15442458863797137,
+          0.3310508192351686,
+          0.46655115502733885,
+          0.5698427138542543
+        ],
+        "profile": {
+          "wall_seconds": 0.27760115099999894
+        }
+      },
+      {
+        "cases": 10000,
+        "converged": 9999,
+        "nonconverged": 1,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709547874553,
+          0.15442458863797137,
+          0.3310508192351686,
+          0.46655115502733885,
+          0.5698427138542543
+        ],
+        "profile": {
+          "wall_seconds": 0.27816430599997943
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 10000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "cases": 10000,
+        "converged": 9999,
+        "nonconverged": 1,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709547874553,
+          0.15442458863797137,
+          0.3310508192351686,
+          0.46655115502733885,
+          0.5698427138542543
+        ],
+        "profile": {
+          "wall_seconds": 0.2783747050000045
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 10000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    ],
+    "cpu-4": [
+      {
+        "cases": 10000,
+        "converged": 9999,
+        "nonconverged": 1,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709547874553,
+          0.15442458863797137,
+          0.3310508192351686,
+          0.46655115502733885,
+          0.5698427138542543
+        ],
+        "profile": {
+          "wall_seconds": 0.17873700800001302
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 10000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "cases": 10000,
+        "converged": 9999,
+        "nonconverged": 1,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709547874553,
+          0.15442458863797137,
+          0.3310508192351686,
+          0.46655115502733885,
+          0.5698427138542543
+        ],
+        "profile": {
+          "wall_seconds": 0.17737107900001092
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 10000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "cases": 10000,
+        "converged": 9999,
+        "nonconverged": 1,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709547874553,
+          0.15442458863797137,
+          0.3310508192351686,
+          0.46655115502733885,
+          0.5698427138542543
+        ],
+        "profile": {
+          "wall_seconds": 0.17582552799999007
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 10000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    ],
+    "cpu-20": [
+      {
+        "cases": 10000,
+        "converged": 9999,
+        "nonconverged": 1,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709547874553,
+          0.15442458863797137,
+          0.3310508192351686,
+          0.46655115502733885,
+          0.5698427138542543
+        ],
+        "profile": {
+          "wall_seconds": 0.1946615650000183
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 10000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "cases": 10000,
+        "converged": 9999,
+        "nonconverged": 1,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709547874553,
+          0.15442458863797137,
+          0.3310508192351686,
+          0.46655115502733885,
+          0.5698427138542543
+        ],
+        "profile": {
+          "wall_seconds": 0.19422189099998377
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 10000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "cases": 10000,
+        "converged": 9999,
+        "nonconverged": 1,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709547874553,
+          0.15442458863797137,
+          0.3310508192351686,
+          0.46655115502733885,
+          0.5698427138542543
+        ],
+        "profile": {
+          "wall_seconds": 0.21011828400000354
+        },
+        "reference_comparison": {
+          "success_disagreements": 0,
+          "exact_state_matches": 10000,
+          "max_state_absolute_difference": 0.0,
+          "max_rms_difference_arcsec": 0.0,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    ],
+    "cpu-batched": [
+      {
+        "cases": 10000,
+        "converged": 9999,
+        "nonconverged": 1,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709547874553,
+          0.15442458863797137,
+          0.3310508192351686,
+          0.46655115502733885,
+          0.5698427138542543
+        ],
+        "profile": {
+          "wall_seconds": 0.25002105000001507,
+          "initialization_seconds": 0.06938450399999851,
+          "proposal_seconds": 0.02841981999998211,
+          "update_seconds": 0.015648720999990928,
+          "trial_evaluation_seconds": 0.13607405599992717,
+          "active_history": [
+            10000,
+            9827,
+            553,
+            283,
+            178,
+            141,
+            111,
+            101,
+            87,
+            72,
+            72,
+            72,
+            71,
+            69,
+            66,
+            35,
+            32,
+            24,
+            19,
+            12,
+            2,
+            1
+          ],
+          "evaluation_detail": {
+            "cpu_residual_jacobian_seconds": 0.20089940800002637
+          }
+        }
+      }
+    ],
+    "gpu-batched": [
+      {
+        "cases": 10000,
+        "converged": 9998,
+        "nonconverged": 2,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709548563301,
+          0.15442458863826206,
+          0.3310508192377285,
+          0.4665511550142885,
+          0.5698427138635619
+        ],
+        "profile": {
+          "wall_seconds": 0.10815640699999562,
+          "initialization_seconds": 0.010874542999999903,
+          "proposal_seconds": 0.02964860199998043,
+          "update_seconds": 0.016031850000047143,
+          "trial_evaluation_seconds": 0.05094610400001898,
+          "active_history": [
+            10000,
+            9826,
+            499,
+            265,
+            180,
+            141,
+            113,
+            106,
+            91,
+            79,
+            79,
+            79,
+            78,
+            76,
+            72,
+            35,
+            32,
+            24,
+            19,
+            12,
+            2,
+            1
+          ],
+          "evaluation_detail": {
+            "state_upload_seconds": 0.00793629999998302,
+            "kernel_sync_seconds": 0.005321149000053538,
+            "download_seconds": 0.039511666999999306,
+            "validity_accounting_seconds": 0.0022195490000456175
+          }
+        },
+        "allocation_upload_seconds": 0.02381542399999148,
+        "end_to_end_seconds": 0.1319718309999871,
+        "reference_comparison": {
+          "success_disagreements": 3,
+          "exact_state_matches": 2,
+          "max_state_absolute_difference": 2.0247534848749638e-07,
+          "max_rms_difference_arcsec": 4.119595775620155e-10,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            7.771561172376096e-16,
+            2.1483786971643326e-12,
+            6.362479987309658e-12,
+            1.1727734894328996e-11,
+            4.119595775620155e-10
+          ]
+        }
+      },
+      {
+        "cases": 10000,
+        "converged": 9998,
+        "nonconverged": 2,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709548563301,
+          0.15442458863826206,
+          0.3310508192377285,
+          0.4665511550142885,
+          0.5698427138635619
+        ],
+        "profile": {
+          "wall_seconds": 0.09981394199999727,
+          "initialization_seconds": 0.0067907000000104745,
+          "proposal_seconds": 0.028023797000003015,
+          "update_seconds": 0.015811261999971293,
+          "trial_evaluation_seconds": 0.04851516399995148,
+          "active_history": [
+            10000,
+            9826,
+            499,
+            265,
+            180,
+            141,
+            113,
+            106,
+            91,
+            79,
+            79,
+            79,
+            78,
+            76,
+            72,
+            35,
+            32,
+            24,
+            19,
+            12,
+            2,
+            1
+          ],
+          "evaluation_detail": {
+            "state_upload_seconds": 0.008108876999955328,
+            "kernel_sync_seconds": 0.0052903790000016215,
+            "download_seconds": 0.034383779999984654,
+            "validity_accounting_seconds": 0.002333456000002343
+          }
+        },
+        "allocation_upload_seconds": 0.020155915000003688,
+        "end_to_end_seconds": 0.11996985700000096,
+        "reference_comparison": {
+          "success_disagreements": 3,
+          "exact_state_matches": 2,
+          "max_state_absolute_difference": 2.0247534848749638e-07,
+          "max_rms_difference_arcsec": 4.119595775620155e-10,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            7.771561172376096e-16,
+            2.1483786971643326e-12,
+            6.362479987309658e-12,
+            1.1727734894328996e-11,
+            4.119595775620155e-10
+          ]
+        }
+      },
+      {
+        "cases": 10000,
+        "converged": 9998,
+        "nonconverged": 2,
+        "invalid_objective": 0,
+        "rms_arcsec_quantiles": [
+          0.03511709548563301,
+          0.15442458863826206,
+          0.3310508192377285,
+          0.4665511550142885,
+          0.5698427138635619
+        ],
+        "profile": {
+          "wall_seconds": 0.09662407300001519,
+          "initialization_seconds": 0.004679390000006833,
+          "proposal_seconds": 0.028135704000021633,
+          "update_seconds": 0.01615951399995197,
+          "trial_evaluation_seconds": 0.04699968199997784,
+          "active_history": [
+            10000,
+            9826,
+            499,
+            265,
+            180,
+            141,
+            113,
+            106,
+            91,
+            79,
+            79,
+            79,
+            78,
+            76,
+            72,
+            35,
+            32,
+            24,
+            19,
+            12,
+            2,
+            1
+          ],
+          "evaluation_detail": {
+            "state_upload_seconds": 0.007928688999982114,
+            "kernel_sync_seconds": 0.005296809000014946,
+            "download_seconds": 0.0332477559999802,
+            "validity_accounting_seconds": 0.0022228759999904923
+          }
+        },
+        "allocation_upload_seconds": 0.02031726699999581,
+        "end_to_end_seconds": 0.116941340000011,
+        "reference_comparison": {
+          "success_disagreements": 3,
+          "exact_state_matches": 2,
+          "max_state_absolute_difference": 2.0247534848749638e-07,
+          "max_rms_difference_arcsec": 4.119595775620155e-10,
+          "rms_difference_above_0_001_arcsec": 0,
+          "rms_difference_quantiles_arcsec": [
+            7.771561172376096e-16,
+            2.1483786971643326e-12,
+            6.362479987309658e-12,
+            1.1727734894328996e-11,
+            4.119595775620155e-10
+          ]
+        }
+      }
+    ]
+  },
+  "outputs": {
+    "cpu-reference": {
+      "path": "cpu-reference.npz",
+      "sha256": "4782905859a82256a8580d659f84078e0d6696a79e37242b7e59a9fe9b5fe20c"
+    },
+    "cpu-batched": {
+      "path": "cpu-batched.npz",
+      "sha256": "ce9dbccb90fda7080ef3a17a58bd47eb5f0b4230a429b0725a60aa55863c7fa7"
+    },
+    "gpu-0": {
+      "path": "gpu-0.npz",
+      "sha256": "f632293403f9c62d6d9170a5ec8dad42b0aa825ee9705945580b7f52d3d8fe96"
+    },
+    "gpu-1": {
+      "path": "gpu-1.npz",
+      "sha256": "f632293403f9c62d6d9170a5ec8dad42b0aa825ee9705945580b7f52d3d8fe96"
+    },
+    "gpu-2": {
+      "path": "gpu-2.npz",
+      "sha256": "f632293403f9c62d6d9170a5ec8dad42b0aa825ee9705945580b7f52d3d8fe96"
+    }
+  },
+  "selection": "Existing frozen first-10000 retained-candidate bank; one saved start per case; no fresh starts/observations",
+  "limitations": [
+    "Single-start saved-state refinement, not full seed grid or chaining",
+    "No scientific acceptance, purity or discovery claims",
+    "Hybrid GPU: residual/Jacobian on device, same compiled LM state machine on host"
+  ],
+  "initial_same_state_parity": {
+    "max_residual_error_arcsec": 4.0077575924613024e-09,
+    "max_scaled_jacobian_error": 2.4157788597681847e-09
+  },
+  "warmup_seconds": 3.270298958000012,
+  "cpu_state_machine_equivalence": {
+    "success_disagreements": 0,
+    "exact_state_matches": 10000,
+    "max_state_absolute_difference": 0.0,
+    "max_rms_difference_arcsec": 0.0,
+    "rms_difference_above_0_001_arcsec": 0,
+    "rms_difference_quantiles_arcsec": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "instrumented_original_cpu": {
+    "cases": 1000,
+    "exact_state_and_flag_agreements": 1000,
+    "model_calls": 3306,
+    "residual_jacobian_cpu_seconds": 0.021978,
+    "total_instrumented_cpu_seconds": 0.027747,
+    "remaining_solver_cpu_seconds": 0.005769,
+    "scope": "First 1000 fixed cases; single-thread process CPU ticks, bracket overhead included; not throughput timing"
+  },
+  "final_same_state_parity": {
+    "max_residual_error_arcsec": 1.2429515683365365e-08,
+    "max_scaled_jacobian_error": 1.6486315550365685e-09
+  },
+  "status": "completed"
+}

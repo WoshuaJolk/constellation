@@ -1,0 +1,20 @@
+{
+  "observed_utc": "2026-10-28T05:10:22.015083+00:00",
+  "status": "BLOCKED_WORKER_HTTPS_UNREACHABLE",
+  "provider_gpu_provisioning_verified": true,
+  "hardware_cuda_validation_completed": false,
+  "gpu_benchmark_completed": false,
+  "workers_deleted": [
+    613394837,
+    613396551
+  ],
+  "estimated_incremental_compute_usd": 1.225710889518261,
+  "budget_usd": 5,
+  "science_jobs_launched": 0,
+  "payloads_uploaded": 0,
+  "temporary_ssh_keys_removed": true,
+  "remaining_droplets": 0,
+  "cost_basis": "Provider API $4.41/hour times measured provisioning-to-deletion intervals; estimated pre-tax, not final invoice",
+  "billing_reference": "https://docs.digitalocean.com/products/droplets/details/pricing/",
+  "failure": "Both ephemeral workers were API-active but authenticated HTTPS control endpoints remained unreachable; proxy reported upstream connection failure. Bootstrap logs unavailable, root cause unresolved. Second attempt opened UFW ports explicitly and tolerated apt update errors; same bounded failure. No third paid retry."
+}

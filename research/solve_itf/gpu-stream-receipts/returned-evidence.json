@@ -1,0 +1,118 @@
+{
+  ".remote/gpufit.log": {
+    "bytes": 12607,
+    "sha256": "888d73f0b143bd29aa61b6486726f1bc490b25f96a4c6032bb2ea6073dcde4ce"
+  },
+  "gpu-tests.log": {
+    "bytes": 1233,
+    "sha256": "1e8a263945d197c9b6db8edc948d6577f6b3b32aea4c5694b7768b12f622026a"
+  },
+  "hardware.json": {
+    "bytes": 460,
+    "sha256": "361d67de24511cb2eb3ff01088480d6a40cb564b862088a7fab11e5adc29bcb8"
+  },
+  "scaling-results/cpu-100000.log": {
+    "bytes": 597,
+    "sha256": "8242a027f034dacf7c70841d95fd116158f0587118e0c30f7094a40d9b4bff1f"
+  },
+  "scaling-results/cpu-100000/report.json.gz": {
+    "bytes": 4488215,
+    "sha256": "b945f6a16fa924b9cc6e07da04885ea6d6ae22af2147113d53857039cf6a33fd"
+  },
+  "scaling-results/cpu-100000/summary.json": {
+    "bytes": 2086,
+    "sha256": "97b334ba6e2672ee53901249b8d625ed7b9433d82829d4b4785fc9caf83e1f07"
+  },
+  "scaling-results/cpu-1000000.log": {
+    "bytes": 4733,
+    "sha256": "adc7ec417ab6725e94605cfbe32de3767150dff7b6a61c867acbf95bcb27411b"
+  },
+  "scaling-results/cpu-1000000/report.json.gz": {
+    "bytes": 7863369,
+    "sha256": "8ab220afc42d7500884b5739045860e704d7cdea948d0a86954150d294a7bb5d"
+  },
+  "scaling-results/cpu-1000000/summary.json": {
+    "bytes": 1988,
+    "sha256": "8a798fc1d7e34453fed1e071b16aaaf1c7f3b7be878d934ddc822846a8ae2dd3"
+  },
+  "scaling-results/cpu-300000.log": {
+    "bytes": 1533,
+    "sha256": "6756c7d855886f4290fdf096639ea605f406d3f61cad21315845a8175fb14441"
+  },
+  "scaling-results/cpu-300000/report.json.gz": {
+    "bytes": 5917994,
+    "sha256": "f93f44a3cd42d9907cbbd8414eb7906d8af26a4ae974356bbdaf9f6075db70a9"
+  },
+  "scaling-results/cpu-300000/summary.json": {
+    "bytes": 2080,
+    "sha256": "1afa9a8a9a222748435e69d621797569391b7632573230e9aa164c576464c054"
+  },
+  "scaling-results/edges.npy": {
+    "bytes": 72000128,
+    "sha256": "1b99c06602fdfe15bbcb38fe3465d662b73c5a2cbc12b318af4c60f92b5f0d58"
+  },
+  "scaling-results/inventory.json": {
+    "bytes": 1413,
+    "sha256": "eecb09e6a3448bc55c68e62a64a8c1a8f279adc9aa6e2d3f670b1d603da2b27f"
+  },
+  "scaling-results/prefetch-100000.log": {
+    "bytes": 2372,
+    "sha256": "6cc5e849e8d2a462df49d356da88698068aab6cce18216c5046edfdccacb468c"
+  },
+  "scaling-results/prefetch-100000/report.json.gz": {
+    "bytes": 4487791,
+    "sha256": "181e6e85855792391e53a6f97fa0cddc080e2d8f9b94cb7d8f355993d440c51f"
+  },
+  "scaling-results/prefetch-100000/summary.json": {
+    "bytes": 138221,
+    "sha256": "0c2bd87ed874f7cf07e71978e4c464cc4c6b4edf1434df1f2587940316c94a74"
+  },
+  "scaling-results/report.json": {
+    "bytes": 19473,
+    "sha256": "9c77f984f30ccf016c8736de898b79936f32376e3d332834b1065a37aae29e7b"
+  },
+  "scaling-results/seeds.npy": {
+    "bytes": 24000128,
+    "sha256": "3da886aa22d431dc2088149ac3c728988b700cf81077bb06b2c264a31e09e10d"
+  },
+  "scaling-results/stream-100000.log": {
+    "bytes": 2372,
+    "sha256": "6cc5e849e8d2a462df49d356da88698068aab6cce18216c5046edfdccacb468c"
+  },
+  "scaling-results/stream-100000/report.json.gz": {
+    "bytes": 4487741,
+    "sha256": "f5a737419f03dafa6a236f199c3830f9aecf2dd9903c5141638c34c731b11243"
+  },
+  "scaling-results/stream-100000/summary.json": {
+    "bytes": 126627,
+    "sha256": "2f71792bd463769f7e6b24c6f6a4e0869dd84315a0bc500dbc4d5b6fb21cd500"
+  },
+  "scaling-results/stream-300000.log": {
+    "bytes": 3119,
+    "sha256": "c5b68507fc68383f6851f8a2c4cd040d095509c0140ad9e3bdc417f618509b8f"
+  },
+  "scaling-results/stream-300000/report.json.gz": {
+    "bytes": 5922254,
+    "sha256": "1e448b764a400d0a0736ec31d6d14d553e959cba1131732da1f8307b35f96dec"
+  },
+  "scaling-results/stream-300000/summary.json": {
+    "bytes": 366487,
+    "sha256": "c353c03f48c97ca5973182bcbeaf54fa4eeef408f1aeba54e3279adbd6526257"
+  },
+  "scaling-results/stream-parity.json": {
+    "bytes": 593,
+    "sha256": "2e08de860395f834a804c7c9dee7b4cc3af9982f16a609dc2eb9b7e0b8bf9766"
+  },
+  "scaling-results/stream-parity.log": {
+    "bytes": 3234,
+    "sha256": "d8bb24796fb5fbab7cf257cfc07cac46ac130482078757e0e41454c5af8ca068"
+  },
+  "transfer-verification.json": {
+    "bytes": 528,
+    "sha256": "0422ad5ef9230bf90e9e1116413c504454d0c08df1eced5df179fbcf93335f88"
+  },
+  "utilization.jsonl": {
+    "bytes": 43383,
+    "sha256": "0f4213516dca0324525a62f668cd1cce8ffb9c45bd3672da30aa8ee0b9e9aded"
+  }
+}

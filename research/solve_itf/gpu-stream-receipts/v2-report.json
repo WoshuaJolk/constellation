@@ -1,0 +1,205 @@
+{
+  "status": "complete",
+  "phase": "done",
+  "sizes": [
+    1000000,
+    100000
+  ],
+  "outputs": {
+    "parity.log": {
+      "path": "parity.log",
+      "bytes": 3234,
+      "sha256": "d8bb24796fb5fbab7cf257cfc07cac46ac130482078757e0e41454c5af8ca068"
+    },
+    "stream-parity.json": {
+      "path": "stream-parity.json",
+      "bytes": 593,
+      "sha256": "d92427c3ddc6bd332a88d7ce9ff0089947d69be304639e5267f8a217228547b6"
+    },
+    "streamv2-1000000.log": {
+      "path": "streamv2-1000000.log",
+      "bytes": 3123,
+      "sha256": "555b424c5449f65a9aeb1bc40551f57c986ec17c15ec457ecb74546eb0def90e"
+    },
+    "streamv2-1000000/summary.json": {
+      "path": "streamv2-1000000/summary.json",
+      "bytes": 1200622,
+      "sha256": "b7dfba7113480b49d16a8273d7f59fbda20772ae9896058d374d54617abfc5da"
+    },
+    "streamv2-1000000/report.json.gz": {
+      "path": "streamv2-1000000/report.json.gz",
+      "bytes": 8539066,
+      "sha256": "92725c1706cdd0046b94d6bbda58293325047b5e476196a2fb411c8bdf43fa67"
+    },
+    "streamv2-100000.log": {
+      "path": "streamv2-100000.log",
+      "bytes": 2372,
+      "sha256": "6cc5e849e8d2a462df49d356da88698068aab6cce18216c5046edfdccacb468c"
+    },
+    "streamv2-100000/summary.json": {
+      "path": "streamv2-100000/summary.json",
+      "bytes": 126717,
+      "sha256": "fba7b18ee57b50266fc86fc0029486a9cabce1fd2e4da76bca8093b477d5880a"
+    },
+    "streamv2-100000/report.json.gz": {
+      "path": "streamv2-100000/report.json.gz",
+      "bytes": 4487743,
+      "sha256": "b72a63356dc5425cfb0e216239f88a888dec17adfe1fc82a48b4045a92790f09"
+    }
+  },
+  "phases": [
+    {
+      "name": "streamv2-1000000",
+      "seeds": 1000000,
+      "exit_code": 0,
+      "process_seconds": 314.6110349159999,
+      "backend": "stream",
+      "requested_seeds": 1000000,
+      "actual_seeds": 1000000,
+      "seed_sha256": "d435fd6f38f0cff4512991fad65f7e40bf9785207c239a00bb1262c3c269e021",
+      "status": "bounded_search_complete",
+      "counts": {
+        "fits_attempted": 1000991,
+        "fits_rejected": 988160,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 650,
+        "triple_seeds_started": 1000000,
+        "triple_seeds_completed": 1000000,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 100,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 3000000,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 512611,
+        "neighbor_queries_at_cap": 32754,
+        "edges_proposed": 13054614,
+        "edge_pool_discarded": 10054614,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 8991963,
+        "seeds_retained": 1000000,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "injected_batch",
+        "batch_submitted_not_returned": 0,
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 1744,
+        "maximal_candidates": 11285,
+        "contained_candidates": 1546,
+        "candidates_with_partial_overlaps": 5767,
+        "distinct_candidate_tracklets": 25738,
+        "accepted_chains_with_close_epochs": 507,
+        "weak_best_orbits": 1124
+      },
+      "timings": {
+        "candidate_scan_seconds": 0.023134282999762945,
+        "seed_generation_seconds": 16.760951946000205,
+        "observer_preparation_seconds": 0.1856374210001377,
+        "triple_fitting_seconds": 232.03986146600027,
+        "extension_seconds": 57.749202162000074,
+        "solve_seconds": 306.7588965529999
+      },
+      "application_seconds": 312.37033294699995,
+      "setup_seconds": 0.21838027900003,
+      "with_shared_graph_build_seconds": 374.999737871,
+      "candidates": 12831,
+      "pipeline": {
+        "submitted_batches": 983,
+        "returned_batches": 983,
+        "cancelled_batches": 0,
+        "unused_prepared_batches": 0,
+        "peak_pending_batches": 3,
+        "drain_seconds": 1.4957000075810356e-05,
+        "drain_errors": [],
+        "shared_bytes": 13798218152,
+        "shared_metadata_bytes": 187653260,
+        "overlapped_batches": 976,
+        "device_allocations": 65,
+        "device_reuses": 32374,
+        "device_capacity_bytes": 129493958
+      },
+      "timing_scope": "includes graph loading, adjacent reconstruction, fit, growth and gzip output; graph discovery/build separately measured once"
+    },
+    {
+      "name": "streamv2-100000",
+      "seeds": 100000,
+      "exit_code": 0,
+      "process_seconds": 67.13383028299995,
+      "backend": "stream",
+      "requested_seeds": 100000,
+      "actual_seeds": 100000,
+      "seed_sha256": "bd47649e3ba305b69b6f2bbac71ec54e2fcc9de111d50cd0aa6abefe9750f40e",
+      "status": "bounded_search_complete",
+      "counts": {
+        "fits_attempted": 100496,
+        "fits_rejected": 94185,
+        "fits_observer_unavailable": 0,
+        "fits_numerically_failed": 0,
+        "successful_extensions": 386,
+        "triple_seeds_started": 100000,
+        "triple_seeds_completed": 100000,
+        "fits_interrupted": 0,
+        "fits_cancelled": 0,
+        "joint_extension_proposals": 74,
+        "tracklets_total": 2548307,
+        "seed_eligible_tracklets": 2545389,
+        "rate_unavailable_tracklets": 2918,
+        "long_tracklets_not_seeded": 0,
+        "edges_retained": 3000000,
+        "full_catalogue_scan_complete": true,
+        "day_pairs_scanned": 512611,
+        "neighbor_queries_at_cap": 32754,
+        "edges_proposed": 13054614,
+        "edge_pool_discarded": 10054614,
+        "tracklets_scanned": 2545389,
+        "seed_combinations_considered": 8991963,
+        "seeds_retained": 100000,
+        "seed_search_bounded": true,
+        "fit_worker_start_method": "injected_batch",
+        "batch_submitted_not_returned": 0,
+        "triple_seeds_remaining": 0,
+        "individual_extension_subsets_covered": 1683,
+        "maximal_candidates": 5284,
+        "contained_candidates": 1027,
+        "candidates_with_partial_overlaps": 2362,
+        "distinct_candidate_tracklets": 13992,
+        "accepted_chains_with_close_epochs": 272,
+        "weak_best_orbits": 1050
+      },
+      "timings": {
+        "candidate_scan_seconds": 0.023482151000280282,
+        "seed_generation_seconds": 14.74581605100002,
+        "observer_preparation_seconds": 0.0182594880002398,
+        "triple_fitting_seconds": 34.35739099200009,
+        "extension_seconds": 12.183410243000253,
+        "solve_seconds": 61.328486310000244
+      },
+      "application_seconds": 65.20100910800011,
+      "setup_seconds": 0.2201762320000853,
+      "with_shared_graph_build_seconds": 127.83041403200014,
+      "candidates": 6311,
+      "pipeline": {
+        "submitted_batches": 102,
+        "returned_batches": 102,
+        "cancelled_batches": 0,
+        "unused_prepared_batches": 0,
+        "peak_pending_batches": 3,
+        "drain_seconds": 1.0263000604027184e-05,
+        "drain_errors": [],
+        "shared_bytes": 1408372496,
+        "shared_metadata_bytes": 18844553,
+        "overlapped_batches": 97,
+        "device_allocations": 65,
+        "device_reuses": 3301,
+        "device_capacity_bytes": 129493958
+      },
+      "timing_scope": "includes graph loading, adjacent reconstruction, fit, growth and gzip output; graph discovery/build separately measured once"
+    }
+  ],
+  "remaining_seconds_at_selection": 933.4638001918793,
+  "rule": ">=650s:1M then100K if time; >=300s:100K; otherwise skip",
+  "prior_results_not_replaced": true
+}

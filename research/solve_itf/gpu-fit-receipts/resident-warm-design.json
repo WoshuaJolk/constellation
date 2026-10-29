@@ -1,0 +1,14 @@
+{
+  "scope":"User-authorized GPU-strength optimization, complete one-start development benchmark; no production search or acceptance change",
+  "prior_run":"/tmp/itf-gpu-full-fit-20261028; retained unchanged including its Python-per-fit CPU driver timings",
+  "bank_sha256":"2c32db53b6a4a8f197e97007e1827910f5b006a4911dbbf30d28e93e5dcf6b68",
+  "cases":10000,
+  "iterations":80,
+  "policy":"Same original solve_lm scientific inputs, arithmetic model, damping/convergence constants and limits. CPU compiled scheduling block is bit-exact to original; CUDA reduction order may change stopping flags, always reported.",
+  "backends":"Original CPU 1/4/all host CPUs with compiled scheduling blocks; previous hybrid GPU; new resident GPU; 3 uninstrumented repeats each",
+  "resident_design":"One input upload, per-observation propagation kernel, per-chain normal equations and Cholesky/acceptance kernels; 4-byte completion count every4iterations; one final states/costs/status download; no full derivative transfers during iterations",
+  "checks":"Original CPU and batched CPU exact-state/flag agreement; existing 0.001arcsec and1e-6scaled-Jacobian same-state gate before and after GPU fits; report all end-state/status discrepancies, no threshold tuning",
+  "profiling":"Separate fourth resident run with CUDA events; excluded from headline throughput. Original CPU first1000 with process-clock brackets, also separate.",
+  "limits":"One new H100 for max20min/$1.50; previous full-fit run cost~$0.325, combined total prototype/repair/full-fit/resident cap remains$5. No simultaneous machines. Delete on result collection or deadline.",
+  "interpretation":"Retained saved-state refinement, not representative cold-start exploration. No extrapolation to full catalogue search speed or scientific reliability. No corpus replacement."
+}

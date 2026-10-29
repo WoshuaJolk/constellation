@@ -1,0 +1,9 @@
+{
+  "created_unix": 1793248248.5331526,
+  "worker_part": 55,
+  "max_droplets": 1,
+  "max_usd": 5,
+  "max_worker_lifetime_seconds": 3600,
+  "science_timeout_seconds": 900,
+  "scope": "Stage benchmarks and fixed opened-control replay only; no new production search. Inputs and tested code frozen before hardware. Return hashes before deletion."
+}

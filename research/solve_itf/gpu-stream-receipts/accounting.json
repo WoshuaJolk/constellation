@@ -1,0 +1,21 @@
+{
+  "workers": [
+    {
+      "id": 613652225,
+      "deleted_utc": 1793222965.2789493,
+      "remaining_ids": [],
+      "estimated_compute_usd": 0.5446210407435894
+    },
+    {
+      "id": 613654258,
+      "deleted_utc": 1793225615.2487943,
+      "remaining_ids": [],
+      "estimated_compute_usd": 3.1066650558114053
+    }
+  ],
+  "total_compute_usd": 3.651286096554995,
+  "cap_usd": 5,
+  "original_deadline_unix": 1793226120.6903472,
+  "all_deleted_before_deadline": true,
+  "snapshots_untouched": true
+}

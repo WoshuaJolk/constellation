@@ -1,0 +1,30 @@
+{
+  "design.json": {
+    "bytes": 1410,
+    "sha256": "d65f8605e101c3cdc87990e7740b28d77957a0158e7eb572ad07225e869c9f0b"
+  },
+  "grading.json": {
+    "bytes": 1232,
+    "sha256": "6b82aaa06fc95d8c81ee858258a53031f5d5c651b2bbae80f30c9695d5468b07"
+  },
+  "input-summary.json": {
+    "bytes": 1376,
+    "sha256": "566db9009b3276fd50993ba1b9b3573a67f670d231a175dcc04baaa437a4efb9"
+  },
+  "projection.npz": {
+    "bytes": 4075416,
+    "sha256": "5e1978e3b6c33a18cd22523d175f649533d7171d4488e31b9308e1341343b125"
+  },
+  "retrieval.npz": {
+    "bytes": 68537767,
+    "sha256": "d780203bb705d83191c305d5afc5db3d5ec33de680ae404627c258601f427605"
+  },
+  "science-observations.npz": {
+    "bytes": 55810,
+    "sha256": "e772b10640942751c5426596339f395f460484459046cf02215517c9e04ef29b"
+  },
+  "science-queries.json": {
+    "bytes": 3862,
+    "sha256": "89514018051bcf87a1d71798d6c51ac95ce8eac388ee4484abe67888d0956d13"
+  }
+}
