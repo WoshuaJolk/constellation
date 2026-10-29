@@ -37,3 +37,10 @@ Existing Sun/planet/Moon propagation with DE440s searches the full catalogue for
 One H100/20-vCPU worker at $4.41/hour, maximum $20 incremental authorization and an absolute 90-minute lifetime. The actual deadline is recorded once in the launch receipt. Controls precede production. A single-writer watcher collects and SHA-256 verifies outputs before deleting the worker. The deadline guard stops only this run and preserves unreturned evidence by snapshot if necessary. All prior evidence remains intact. No recurring reporting automation is created.
 
 Design, source/input hashes, control selection, launch intents, runtime receipts and outputs live under `/tmp/itf-heavy-distant-20261028`. Read the final result/resource receipts before asserting completion. Implementation: `distant_epoch_graph.py`, `heavy_distant_search.py`, `heavy_distant_controls.py`, and `heavy_distant_followup.py`. Production dashboard and certification rules are not changed.
+
+
+## First execution observations
+
+Hardware preflight: **51 passed, one skipped**. The engineering gate passed and production started automatically. Varuna recovered eleven tracklets over 331.49 days, with nominal range 43.08 AU and eccentricity 0.055; the first reserved tracklet, 299 days later, has nominal RMS 2.621 arcseconds. KV42 recovered nine tracklets over 327.27 days, range 31.19 AU, eccentricity 0.498, and reserved RMS 7.246 arcseconds. Chiron's reserved RMS is 6.034 arcseconds. Pholus, 111309 and 514107 still predict poorly (7,135.8, 246.4 and 860.3 arcseconds); Eros, Vesta and Toro were not recovered. These failures are preserved. Varuna is the only large-TNO control in this small existing set; broad dwarf-planet completeness has not been measured.
+
+This supersedes neither the earlier run's failures nor its receipts. Longer control input seasons and a different proposal algorithm changed together, so the improvement is not an isolated algorithm speed/accuracy comparison. The full search and follow-up remain pending until final receipts say otherwise.
